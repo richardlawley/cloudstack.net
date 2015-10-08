@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2C3EFD17-B9D0-4B04-8132-E5C5C70224A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudStack.Net", "src\CloudStack.Net\CloudStack.Net.csproj", "{8843F486-7521-454A-918D-AB7EE3EE1AF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BCB0EC97-598B-4322-99A9-BF6475006AE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudStack.Net.Tests", "test\CloudStack.Net.Tests\CloudStack.Net.Tests.csproj", "{9CA3B30D-5879-4B72-AE38-81D413F1945F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8843F486-7521-454A-918D-AB7EE3EE1AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8843F486-7521-454A-918D-AB7EE3EE1AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8843F486-7521-454A-918D-AB7EE3EE1AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8843F486-7521-454A-918D-AB7EE3EE1AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA3B30D-5879-4B72-AE38-81D413F1945F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA3B30D-5879-4B72-AE38-81D413F1945F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA3B30D-5879-4B72-AE38-81D413F1945F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA3B30D-5879-4B72-AE38-81D413F1945F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8843F486-7521-454A-918D-AB7EE3EE1AF2} = {2C3EFD17-B9D0-4B04-8132-E5C5C70224A5}
+		{9CA3B30D-5879-4B72-AE38-81D413F1945F} = {BCB0EC97-598B-4322-99A9-BF6475006AE0}
+	EndGlobalSection
+EndGlobal
