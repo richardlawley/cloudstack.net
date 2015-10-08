@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,9 @@ namespace CloudStack.Net.TestClient
 
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 logWriter("Test bad XML exception triggered by GUI URL" + apiUrl);
-                session.StartVirtualMachine("invalid-machine-id");
+                var request = new StartVirtualMachineRequest();
+                request.Parameters["id"] = "invalid-machine-id";
+                session.StartVirtualMachine(request);
                 System.Diagnostics.Debug.Fail("Test should have triggered CloudStackException");
             }
             catch (CloudStackException cex)
@@ -56,11 +59,13 @@ namespace CloudStack.Net.TestClient
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 CreateVolumeRequest request = new CreateVolumeRequest()
                 {
-                    DiskOfferingId = "diskOfferingFoo",
                     Size = 16,
-                    Name = "test",
-                    ZoneId = "zonefoo"
+                    VolumeName = "test",
                 };
+
+                request.Parameters[nameof(request.DiskOfferingId)] = "diskOfferingFoo";
+                request.Parameters[nameof(request.ZoneId)] = "zonefoo";
+
                 session.CreateVolume(request);
                 System.Diagnostics.Debug.Fail("Test should have triggered CloudStackException");
             }
@@ -76,8 +81,7 @@ namespace CloudStack.Net.TestClient
             try
             {
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
-                APIRequest request = new APIRequest("listAsyncJobs");
-                var deployResp = session.SendRequest(request);
+                var deployResp = session.ListAsyncJobs(new ListAsyncJobsRequest());
                 logWriter(deployResp.ToString());
             }
             catch (System.Exception wex)
@@ -91,7 +95,7 @@ namespace CloudStack.Net.TestClient
             var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
-                var deployResp = CloudStack.SDK.AsyncSupport.QueryAsyncJobResult(session, jobid);
+                var deployResp = session.QueryAsyncJobResult(new QueryAsyncJobResultRequest { Id = Guid.Parse(jobid) });
                 logWriter(deployResp.ToString());
             }
             catch (System.Exception wex)
@@ -110,7 +114,7 @@ namespace CloudStack.Net.TestClient
             {
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListNetworksRequest request = new ListNetworksRequest();
-                ListNetworksResponse result = session.ListNetworks(request);
+                var result = session.ListNetworks(request);
                 logWriter(result.ToString());
             }
             catch (System.Exception ex)
@@ -145,12 +149,11 @@ namespace CloudStack.Net.TestClient
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 CreateSecurityGroupRequest request = new CreateSecurityGroupRequest()
                 {
-                    Name = securityGroupName,
+                    SecurityGroupName = securityGroupName,
                     Description = "My security group"
                 };
-                CreateSecurityGroupResponse response = session.CreateSecurityGroup(request);
-                SecurityGroup group = response.SecurityGroup;
-                WriteLog("Created Security Group {0}, Id {1}, Description \"{2}\"", group.Name, group.Id, group.Description);
+                var response = session.CreateSecurityGroup(request);
+                WriteLog("Created Security Group {0}, Id {1}, Description \"{2}\"", response.Name, response.Id, response.Description);
             }
             catch (Exception e)
             {
@@ -166,20 +169,20 @@ namespace CloudStack.Net.TestClient
                 AuthorizeSecurityGroupIngressRequest request = new AuthorizeSecurityGroupIngressRequest()
                 {
                     SecurityGroupName = securityGroupName,
-                    Protocol = ProtocolType.tcp,
+                    Protocol = ProtocolType.Tcp.ToString(),
                     StartPort = 80,
                     EndPort = 80,
-                    CidrList = "0.0.0.0/0"
+                    CidrList = new[] { "0.0.0.0/0" }.ToList()
                 };
                 session.AuthorizeSecurityGroupIngress(request);
 
                 request = new AuthorizeSecurityGroupIngressRequest()
                 {
                     SecurityGroupName = "TestSecurityGroup",
-                    Protocol = ProtocolType.tcp,
+                    Protocol = ProtocolType.Tcp.ToString(),
                     StartPort = 22,
                     EndPort = 22,
-                    CidrList = "0.0.0.0/0"
+                    CidrList = new[] { "0.0.0.0/0" }.ToList()
                 };
                 session.AuthorizeSecurityGroupIngress(request);
             }
@@ -195,13 +198,13 @@ namespace CloudStack.Net.TestClient
             {
                 var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListSecurityGroupsRequest request = new ListSecurityGroupsRequest();
-                ListSecurityGroupsResponse response = session.ListSecurityGroups(request);
-                foreach (SecurityGroup sg in response.SecurityGroup)
+                var response = session.ListSecurityGroups(request);
+                foreach (SecurityGroupResponse sg in response.Results)
                 {
                     WriteLog("Security Group: {0} ", sg.Name);
-                    if (sg.IngressRule != null)
+                    if (sg.Ingressrule != null)
                     {
-                        foreach (IngressRule rule in sg.IngressRule)
+                        foreach (SecurityGroupRuleResponse rule in sg.Ingressrule)
                         {
                             WriteLog(rule.ToString());
                         }
@@ -244,7 +247,7 @@ namespace CloudStack.Net.TestClient
             {
                 TemplateFilter = filter
             };
-            ListTemplatesResponse response = session.ListTemplates(request);
+            var response = session.ListTemplates(request);
             logWriter(response.ToString());
         }
 
@@ -255,23 +258,23 @@ namespace CloudStack.Net.TestClient
         internal string DeployVirtualMachine()
         {
             string id = string.Empty;
-            var session = new CloudStack.SDK.Client(serviceUri, apiKey, secretKey);
+            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 DeployVirtualMachineRequest request = new DeployVirtualMachineRequest()
                 {
-                    TemplateId = templateId,
-                    ServiceOfferingId = serviceOfferingId,
+                    TemplateId = Guid.Parse(templateId),
+                    ServiceOfferingId = Guid.Parse(serviceOfferingId),
                     DisplayName = "Test-Generated",
-                    ZoneId = zoneId,
+                    ZoneId = Guid.Parse(zoneId),
                     UserData = "my user data",
                     StartVm = !deployStopped
                 };
                 if (!string.IsNullOrEmpty(this.networkId))
                 {
-                    request.WithNetworkIds(networkId);
+                    request.NetworkIds = new[] { long.Parse(networkId) }.ToList();
                 }
-                id = session.DeployVirtualMachine(request);
+                id = session.DeployVirtualMachine(request).Id;
                 logWriter("Deployed new VM, id " + id);
             }
             catch (System.Exception wex)
