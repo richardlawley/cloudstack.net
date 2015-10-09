@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Sockets;
 using System.Security;
@@ -13,19 +14,21 @@ namespace CloudStack.Net.TestClient
     /// </summary>
     public class Tests
     {
-        private Action<string> logWriter;
-        private Uri serviceUri;
-        private string apiKey;
-        private bool deployStopped;
-        private string secretKey;
-        private string templateId;
-        private string networkId;
-        private string serviceOfferingId;
-        private string zoneId;
-
+        private Action<string> _logWriter;
+        private Uri _serviceUri;
+        private string _apiKey;
+        private bool _deployStopped;
+        private string _secretKey;
+        private string _templateId;
+        private string _networkId;
+        private string _serviceOfferingId;
+        private string _zoneId;
+        private ICloudStackAPIProxy _proxy;
+        private ICloudStackAPIClient _client;
+        
         public Tests(Action<string> log)
         {
-            logWriter = log;
+            _logWriter = log;
             Setup();
         }
 
@@ -35,19 +38,18 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                string apiUrl = serviceUri.AbsoluteUri.Substring(0, serviceUri.AbsoluteUri.Length - 3);
+                string apiUrl = _serviceUri.AbsoluteUri.Substring(0, _serviceUri.AbsoluteUri.Length - 3);
 
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
-                logWriter("Test bad XML exception triggered by GUI URL" + apiUrl);
+                _logWriter("Test bad XML exception triggered by GUI URL" + apiUrl);
                 var request = new StartVirtualMachineRequest();
                 request.Parameters["id"] = "invalid-machine-id";
-                session.StartVirtualMachine(request);
+                _client.StartVirtualMachine(request);
                 System.Diagnostics.Debug.Fail("Test should have triggered CloudStackException");
             }
             catch (CloudStackException cex)
             {
-                logWriter(cex.Message);
-                logWriter("Test PASSED");
+                _logWriter(cex.Message);
+                _logWriter("Test PASSED");
             }
         }
 
@@ -55,8 +57,7 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                logWriter("Test API call with wrong parameters");
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
+                _logWriter("Test API call with wrong parameters");
                 CreateVolumeRequest request = new CreateVolumeRequest()
                 {
                     Size = 16,
@@ -66,13 +67,13 @@ namespace CloudStack.Net.TestClient
                 request.Parameters[nameof(request.DiskOfferingId)] = "diskOfferingFoo";
                 request.Parameters[nameof(request.ZoneId)] = "zonefoo";
 
-                session.CreateVolume(request);
+                _client.CreateVolume(request);
                 System.Diagnostics.Debug.Fail("Test should have triggered CloudStackException");
             }
             catch (CloudStackException cex)
             {
-                logWriter(cex.Message);
-                logWriter("Test PASSED");
+                _logWriter(cex.Message);
+                _logWriter("Test PASSED");
             }
         }
 
@@ -80,27 +81,25 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
-                var deployResp = session.ListAsyncJobs(new ListAsyncJobsRequest());
-                logWriter(deployResp.ToString());
+                var deployResp = _client.ListAsyncJobs(new ListAsyncJobsRequest());
+                _logWriter(deployResp.ToString());
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
             }
         }
 
         internal void QueryAsyncJobResult(string jobid)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
-                var deployResp = session.QueryAsyncJobResult(new QueryAsyncJobResultRequest { Id = Guid.Parse(jobid) });
-                logWriter(deployResp.ToString());
+                var deployResp = _client.QueryAsyncJobResult(new QueryAsyncJobResultRequest { Id = Guid.Parse(jobid) });
+                _logWriter(deployResp.ToString());
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
             }
         }
 
@@ -112,14 +111,13 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListNetworksRequest request = new ListNetworksRequest();
-                var result = session.ListNetworks(request);
-                logWriter(result.ToString());
+                var result = _client.ListNetworks(request);
+                _logWriter(result.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter("Error listing networks: " + ex.Message);
+                _logWriter("Error listing networks: " + ex.Message);
             }
         }
 
@@ -127,14 +125,13 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListNetworkOfferingsRequest request = new ListNetworkOfferingsRequest();
-                var result = session.ListNetworkOfferings(request);
-                logWriter(result.ToString());
+                var result = _client.ListNetworkOfferings(request);
+                _logWriter(result.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter("Error listing network offerings: " + ex.Message);
+                _logWriter("Error listing network offerings: " + ex.Message);
             }
         }
 
@@ -146,13 +143,12 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 CreateSecurityGroupRequest request = new CreateSecurityGroupRequest()
                 {
                     SecurityGroupName = securityGroupName,
                     Description = "My security group"
                 };
-                var response = session.CreateSecurityGroup(request);
+                var response = _client.CreateSecurityGroup(request);
                 WriteLog("Created Security Group {0}, Id {1}, Description \"{2}\"", response.Name, response.Id, response.Description);
             }
             catch (Exception e)
@@ -165,7 +161,6 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 AuthorizeSecurityGroupIngressRequest request = new AuthorizeSecurityGroupIngressRequest()
                 {
                     SecurityGroupName = securityGroupName,
@@ -174,7 +169,7 @@ namespace CloudStack.Net.TestClient
                     EndPort = 80,
                     CidrList = new[] { "0.0.0.0/0" }.ToList()
                 };
-                session.AuthorizeSecurityGroupIngress(request);
+                _client.AuthorizeSecurityGroupIngress(request);
 
                 request = new AuthorizeSecurityGroupIngressRequest()
                 {
@@ -184,7 +179,7 @@ namespace CloudStack.Net.TestClient
                     EndPort = 22,
                     CidrList = new[] { "0.0.0.0/0" }.ToList()
                 };
-                session.AuthorizeSecurityGroupIngress(request);
+                _client.AuthorizeSecurityGroupIngress(request);
             }
             catch (Exception e)
             {
@@ -196,9 +191,8 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListSecurityGroupsRequest request = new ListSecurityGroupsRequest();
-                var response = session.ListSecurityGroups(request);
+                var response = _client.ListSecurityGroups(request);
                 foreach (SecurityGroupResponse sg in response.Results)
                 {
                     WriteLog("Security Group: {0} ", sg.Name);
@@ -223,16 +217,15 @@ namespace CloudStack.Net.TestClient
 
         internal void ListServiceOfferings()
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 ListServiceOfferingsRequest request = new ListServiceOfferingsRequest();
-                var result = session.ListServiceOfferings(request);
-                logWriter(result.ToString());
+                var result = _client.ListServiceOfferings(request);
+                _logWriter(result.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter("Error listing service offerings: " + ex.Message);
+                _logWriter("Error listing service offerings: " + ex.Message);
             }
         }
 
@@ -242,13 +235,12 @@ namespace CloudStack.Net.TestClient
 
         internal void ListTemplates(string filter)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             ListTemplatesRequest request = new ListTemplatesRequest()
             {
                 TemplateFilter = filter
             };
-            var response = session.ListTemplates(request);
-            logWriter(response.ToString());
+            var response = _client.ListTemplates(request);
+            _logWriter(response.ToString());
         }
 
         #endregion
@@ -258,28 +250,27 @@ namespace CloudStack.Net.TestClient
         internal string DeployVirtualMachine()
         {
             string id = string.Empty;
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 DeployVirtualMachineRequest request = new DeployVirtualMachineRequest()
                 {
-                    TemplateId = Guid.Parse(templateId),
-                    ServiceOfferingId = Guid.Parse(serviceOfferingId),
+                    TemplateId = Guid.Parse(_templateId),
+                    ServiceOfferingId = Guid.Parse(_serviceOfferingId),
                     DisplayName = "Test-Generated",
-                    ZoneId = Guid.Parse(zoneId),
+                    ZoneId = Guid.Parse(_zoneId),
                     UserData = "my user data",
-                    StartVm = !deployStopped
+                    StartVm = !_deployStopped
                 };
-                if (!string.IsNullOrEmpty(this.networkId))
+                if (!string.IsNullOrEmpty(this._networkId))
                 {
-                    request.NetworkIds = new[] { long.Parse(networkId) }.ToList();
+                    request.NetworkIds = new[] { long.Parse(_networkId) }.ToList();
                 }
-                id = session.DeployVirtualMachine(request).Id;
-                logWriter("Deployed new VM, id " + id);
+                id = _client.DeployVirtualMachine(request).Id;
+                _logWriter("Deployed new VM, id " + id);
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
                 System.Diagnostics.Debug.Fail("Not supposed to throw during deploy VM");
             }
             return id;
@@ -287,47 +278,44 @@ namespace CloudStack.Net.TestClient
 
         internal void ListVirtualMachines()
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 ListVirtualMachinesRequest request = new ListVirtualMachinesRequest()
                 {
-                    ZoneId = zoneId
+                    ZoneId = Guid.Parse(_zoneId)
                 };
-                ListVirtualMachinesResponse response = session.ListVirtualMachines(request);
-                logWriter(response.ToString());
+                var response = _client.ListVirtualMachines(request);
+                _logWriter(response.ToString());
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
             }
         }
 
         internal void StartVirtualMachine(string id)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
-                session.StartVirtualMachine(id);
-                logWriter("Sent start to VirtualMachine " + id);
+                _client.StartVirtualMachine(new StartVirtualMachineRequest { Id = Guid.Parse(id) });
+                _logWriter("Sent start to VirtualMachine " + id);
             }
             catch (System.Exception ex)
             {
-                logWriter("Error starting VirtualMachine:" + ex.Message);
+                _logWriter("Error starting VirtualMachine:" + ex.Message);
             }
         }
 
         internal void StopVirtualMachine(string id, bool force)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
-                session.StopVirtualMachine(id, force);
-                logWriter("Sent start to VirtualMachine " + id);
+                _client.StopVirtualMachine(new StopVirtualMachineRequest { Id = Guid.Parse(id), Forced = force });
+                _logWriter("Sent start to VirtualMachine " + id);
             }
             catch (System.Exception ex)
             {
-                logWriter("Error stoppng VirtualMachine:" + ex.Message);
+                _logWriter("Error stoppng VirtualMachine:" + ex.Message);
             }
         }
 
@@ -337,18 +325,17 @@ namespace CloudStack.Net.TestClient
 
         internal string CreateVolume()
         {
-            var session = new Client(serviceUri, apiKey, secretKey);
             string volId = string.Empty;
 
             try
             {
                 ListDiskOfferingsRequest request = new ListDiskOfferingsRequest();
-                ListDiskOfferingsResponse doffers = session.ListDiskOfferings(request);
+                var doffers = _client.ListDiskOfferings(request);
 
-                DiskOffering customOffering = null;
-                foreach (var offer in doffers.DiskOffering)
+                DiskOfferingResponse customOffering = null;
+                foreach (var offer in doffers.Results)
                 {
-                    if (offer.IsCustomized)
+                    if (offer.Iscustomized)
                     {
                         customOffering = offer;
                         break;
@@ -357,74 +344,71 @@ namespace CloudStack.Net.TestClient
                 System.Diagnostics.Debug.Assert(customOffering != null, "There should be at least one custom disk offering defined");
                 CreateVolumeRequest req = new CreateVolumeRequest()
                 {
-                    DiskOfferingId = customOffering.Id,
+                    DiskOfferingId = Guid.Parse(customOffering.Id),
                     Size = 16,
-                    Name = "testVolume",
-                    ZoneId = zoneId
+                    VolumeName = "testVolume",
+                    ZoneId = Guid.Parse(_zoneId)
                 };
-                volId = session.CreateVolume(req);
-                logWriter("Created volume id is " + volId);
+                volId = _client.CreateVolume(req).Id;
+                _logWriter("Created volume id is " + volId);
             }
             catch (System.Exception ex)
             {
                 System.Diagnostics.Debug.Fail("Not supposed to throw during create volume");
-                this.logWriter(ex.Message);
+                this._logWriter(ex.Message);
             }
             return volId;
         }
 
         internal void AttachVolume(string volumeId, string vmId)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
-            string device = "5";
+            long device = 5;
 
             try
             {
                 AttachVolumeRequest request = new AttachVolumeRequest()
                 {
-                    Id = volumeId,
-                    VirtualMachineId = vmId,
+                    Id = Guid.Parse(volumeId),
+                    VirtualMachineId = Guid.Parse(vmId),
                     DeviceId = device
                 };
-                session.AttachVolume(request);
-                logWriter("Attached volume " + volumeId + " to vm " + vmId);
+                _client.AttachVolume(request);
+                _logWriter("Attached volume " + volumeId + " to vm " + vmId);
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
             }
         }
 
         internal void DetachVolume(string volumeId, string vmId)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 DetachVolumeRequest request = new DetachVolumeRequest()
                 {
-                    Id = volumeId,
-                    VirtualMachineId = vmId,
+                    Id = Guid.Parse(volumeId),
+                    VirtualMachineId = Guid.Parse(vmId),
                 };
-                session.DetachVolume(request);
-                logWriter("Detached volume " + volumeId + " from vm " + vmId);
+                _client.DetachVolume(request);
+                _logWriter("Detached volume " + volumeId + " from vm " + vmId);
             }
             catch (System.Exception ex)
             {
-                logWriter(ex.Message);
+                _logWriter(ex.Message);
             }
         }
 
         internal void DeleteVolume(string volumeId)
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
-                session.DeleteVolume(volumeId);
-                logWriter("Deleted volume " + volumeId);
+                _client.DeleteVolume(new DeleteVolumeRequest { Id = Guid.Parse(volumeId) });
+                _logWriter("Deleted volume " + volumeId);
             }
             catch (System.Exception wex)
             {
-                logWriter(wex.Message);
+                _logWriter(wex.Message);
             }
         }
 
@@ -432,14 +416,13 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListVolumesRequest request = new ListVolumesRequest();
-                ListVolumesResponse response = session.ListVolumes(request);
-                logWriter(response.ToString());
+                var response = _client.ListVolumes(request);
+                _logWriter(response.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter("Error listing network volumes: " + ex.Message);
+                _logWriter("Error listing network volumes: " + ex.Message);
             }
         }
 
@@ -447,14 +430,13 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
                 ListDiskOfferingsRequest request = new ListDiskOfferingsRequest();
-                ListDiskOfferingsResponse response = session.ListDiskOfferings(request);
-                logWriter(response.ToString());
+                var response = _client.ListDiskOfferings(request);
+                _logWriter(response.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter("Error listing network volumes: " + ex.Message);
+                _logWriter("Error listing network volumes: " + ex.Message);
             }
         }
 
@@ -464,16 +446,15 @@ namespace CloudStack.Net.TestClient
 
         internal void ListZones()
         {
-            var session = new CloudStackAPIClient(serviceUri.ToString(), apiKey, secretKey);
             try
             {
                 ListZonesRequest request = new ListZonesRequest();
-                ListZonesResponse response = session.ListZones(request);
-                logWriter(response.ToString());
+                var response = _client.ListZones(request);
+                _logWriter(response.ToString());
             }
             catch (System.Exception ex)
             {
-                logWriter(ex.Message);
+                _logWriter(ex.Message);
             }
         }
 
@@ -486,21 +467,24 @@ namespace CloudStack.Net.TestClient
         /// </summary>
         private void Setup()
         {
-            apiKey = Properties.Settings.Default.User;
-            secretKey = Client.CreateSecureString(Properties.Settings.Default.Password);
-            serviceUri = new Uri(Properties.Settings.Default.URL);
+            _apiKey = Properties.Settings.Default.User;
+            _secretKey = Properties.Settings.Default.Password;
+            _serviceUri = new Uri(Properties.Settings.Default.URL);
 
-            templateId = Properties.Settings.Default.TemplateId;
-            networkId = Properties.Settings.Default.SubnetId;
-            serviceOfferingId = Properties.Settings.Default.ServiceOfferingId;
+            _proxy = new CloudStackAPIProxy(_serviceUri.ToString(), _apiKey, _secretKey);
+            _client = new CloudStackAPIClient(_proxy);
 
-            this.deployStopped = Properties.Settings.Default.DeployStopped;
-            zoneId = Properties.Settings.Default.ZoneId;
+            _templateId = Properties.Settings.Default.TemplateId;
+            _networkId = Properties.Settings.Default.SubnetId;
+            _serviceOfferingId = Properties.Settings.Default.ServiceOfferingId;
+
+            this._deployStopped = Properties.Settings.Default.DeployStopped;
+            _zoneId = Properties.Settings.Default.ZoneId;
         }
 
         private void WriteLog(string format, params object[] args)
         {
-            logWriter(string.Format(CultureInfo.InvariantCulture, format, args));
+            _logWriter(string.Format(CultureInfo.InvariantCulture, format, args));
         }
 
         #endregion
