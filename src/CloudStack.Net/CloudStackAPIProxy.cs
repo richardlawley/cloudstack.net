@@ -77,10 +77,17 @@ namespace CloudStack.Net
         /// Reference:
         /// http://docs.cloud.com/CloudStack_Documentation/Developer%27s_Guide%3A_CloudStack#Signing_API_Requests
         /// </remarks>
-        public static string CreateQuery(IDictionary<string, string> arguments, string apiKey, string secretKey, string sessionKey)
+        public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
         {
             StringBuilder query = new StringBuilder();
-            SortedList<string, string> sortedArgs = new SortedList<string, string>(arguments);
+            SortedList<string, string> sortedArgs = new SortedList<string, string>();
+            foreach (KeyValuePair<string, object> item in arguments)
+            {
+                if (item.Value != null)
+                {
+                    sortedArgs.Add(item.Key, SerialiseValue(item.Value));
+                }
+            }
             if (!String.IsNullOrEmpty(apiKey))
             {
                 sortedArgs["apikey"] = apiKey;
@@ -104,6 +111,30 @@ namespace CloudStack.Net
                 query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "sessionkey", Uri.EscapeDataString(sessionKey)));
             }
             return query.ToString();
+        }
+
+        public static string SerialiseValue(object value)
+        {
+            var type = value.GetType();
+            if (type.IsValueType)
+            {
+                return value.ToString();
+            }
+            else if (value is string)
+            {
+                return value.ToString();
+            }
+            else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IList<>))
+            {
+                return "";
+            }
+            else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IDictionary<,>))
+            {
+                return "";
+            }
+            {
+                throw new NotImplementedException("Couldn't serialise object of type " + type.FullName);
+            }
         }
 
         public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()

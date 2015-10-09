@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,7 +10,7 @@ using Shouldly;
 namespace CloudStack.Net.Tests
 {
     [TestClass]
-    public class CloudStackApiProxy
+    public class CloudStackAPIProxy_Tests
     {
         private ICloudStackAPIProxy _sut;
 
@@ -36,7 +37,7 @@ namespace CloudStack.Net.Tests
         {
             const string apiKey = "plgwjfzk4gys3momtvmjuvg-x-jlwlnfauj9gabbbf9edm-kaymmailqzzq1elzlyq_u38zcm0bewzgudp66mg";
 
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            Dictionary<string, object> arguments = new Dictionary<string, object>();
             arguments.Add("response", "json");
             arguments.Add("command", "listusers");
 
@@ -50,7 +51,7 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void CreateQuery_WithSessionKey_CorrectlyBuildsQuery()
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
+            var arguments = new Dictionary<string, object>();
             arguments.Add("response", "json");
             arguments.Add("command", "listusers");
 
@@ -85,5 +86,57 @@ namespace CloudStack.Net.Tests
             response.Results.Count.ShouldBe(3);
         }
 
+        [TestMethod]
+        public void SerializeResponse_CanSerializeAllUsedTypes()
+        {
+            BindingFlags filter = BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty;
+
+            var baseMembers = typeof(APIRequest).GetMembers(filter).Select(mi => mi.Name);
+
+            var requestTypes = typeof(APIRequest).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(APIRequest))).ToList();
+            List<string> failures = new List<string>();
+            foreach (var requestType in requestTypes)
+            {
+                var members = requestType.GetMembers(filter).Where(mi => !baseMembers.Contains(mi.Name)).OfType<PropertyInfo>().ToList();
+                foreach (var pi in members)
+                {
+                    var t = pi.PropertyType;
+                    if (t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Nullable<>))
+                    {
+                        t = t.GetGenericArguments().Single();
+                    }
+
+                    try
+                    {
+                        if (t == typeof(string))
+                        {
+                            CloudStackAPIProxy.SerialiseValue("");
+                        }
+                        else
+                        {
+                            CloudStackAPIProxy.SerialiseValue(Activator.CreateInstance(t));
+                        }
+
+                        
+                    }
+                    catch (MissingMethodException ex)
+                    {
+                        failures.Add($"Couldn't test {requestType.Name}.{pi.Name} ({t.Name})");
+                    }
+                    catch (NotImplementedException)
+                    {
+                        failures.Add($"Unable to serialize {requestType.Name}.{pi.Name} ({t.Name})");
+                    }
+                }
+            }
+
+            failures.ShouldBeEmpty($"{failures.Count} properties could not be serialised\n\n{String.Join("\n", failures)}");
+        }
+
+        [TestMethod]
+        public void SerializeValue_CanSerialise_String()
+        {
+            CloudStackAPIProxy.SerialiseValue("Foo").ShouldBe("Foo");
+        }
     }
 }

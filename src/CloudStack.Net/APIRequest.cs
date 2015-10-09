@@ -12,7 +12,7 @@ namespace CloudStack.Net
         /// <param name="supportsImpersonation">indicates whether impersonation is supported</param>
         public APIRequest(string command, bool supportsImpersonation)
         {
-            Parameters = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, object>();
             SetParameterValue("command", command);
             SetParameterValue("response", "json");
             SupportsImpersonation = supportsImpersonation;
@@ -25,7 +25,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Request parameters.
         /// </summary>
-        public IDictionary<string, string> Parameters { get; }
+        public IDictionary<string, object> Parameters { get; }
 
         public bool SupportsImpersonation { get; }
 
@@ -38,28 +38,28 @@ namespace CloudStack.Net
         {
             if (Parameters.ContainsKey(key) && Parameters[key] != null)
             {
-                return Parameters[key];
+                return (string) Parameters[key];
             }
             return null;
         }
 
-        public int? GetIntParameterValue(string key)
-        {
-            if (Parameters.ContainsKey(key) && Parameters[key] != null)
-            {
-                return (int?)Int32.Parse(Parameters[key]);
-            }
-            return null;
-        }
+        //public int? GetIntParameterValue(string key)
+        //{
+        //    if (Parameters.ContainsKey(key) && Parameters[key] != null)
+        //    {
+        //        return (int?)Int32.Parse(Parameters[key]);
+        //    }
+        //    return null;
+        //}
 
-        public bool? GetBoolParameterValue(string key)
-        {
-            if (Parameters.ContainsKey(key) && Parameters[key] != null)
-            {
-                return (bool?)Boolean.Parse(Parameters[key]);
-            }
-            return null;
-        }
+        //public bool? GetBoolParameterValue(string key)
+        //{
+        //    if (Parameters.ContainsKey(key) && Parameters[key] != null)
+        //    {
+        //        return (bool?)Boolean.Parse(Parameters[key]);
+        //    }
+        //    return null;
+        //}
 
         /// <summary>
         /// Set the named parameter value. If the value is null the named parameter will
