@@ -15,7 +15,8 @@ namespace CloudStack.Net
     {
         public int Count { get; set; }
 
-        [JsonIgnore]        // Cloudstack uses names for its lists which we don't know
         public IList<T> Results { get; set; }
+
+        public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 }

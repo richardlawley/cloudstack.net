@@ -96,7 +96,7 @@ namespace CloudStack.Net
             if (secretKey != null)
             {
                 string signBase64 = CalcSignature(query.ToString().ToLowerInvariant(), secretKey);
-                string urlParamSignature = Uri.EscapeUriString(signBase64);
+                string urlParamSignature = Uri.EscapeDataString(signBase64);
                 query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "signature", urlParamSignature));
             }
             else if (sessionKey != null)
