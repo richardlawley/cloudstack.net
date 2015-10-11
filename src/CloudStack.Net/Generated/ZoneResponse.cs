@@ -100,7 +100,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Meta data associated with the zone (key/value pairs)
         /// </summary>
-        public IList<IDictionary<string, object>> ResourceDetails { get; set; }
+        public IDictionary<string, string> ResourceDetails { get; set; }
 
         /// <summary>
         /// true if security groups support is enabled, false otherwise

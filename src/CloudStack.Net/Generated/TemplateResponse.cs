@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// <summary>
         /// additional key/value details tied with template
         /// </summary>
-        public IList<IDictionary<string, object>> Details { get; set; }
+        public IDictionary<string, string> Details { get; set; }
 
         /// <summary>
         /// the template display text

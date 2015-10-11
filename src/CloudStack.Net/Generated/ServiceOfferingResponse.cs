@@ -145,7 +145,7 @@ namespace CloudStack.Net
         /// <summary>
         /// additional key/value details tied with this service offering
         /// </summary>
-        public IList<IDictionary<string, object>> Serviceofferingdetails { get; set; }
+        public IDictionary<string, string> Serviceofferingdetails { get; set; }
 
         /// <summary>
         /// the storage type for this service offering
