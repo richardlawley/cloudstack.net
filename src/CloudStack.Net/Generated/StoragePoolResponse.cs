@@ -95,7 +95,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the storage pool capabilities
         /// </summary>
-        public IDictionary<string, string> Storagecapabilities { get; set; }
+        public IList<IDictionary<string, object>> Storagecapabilities { get; set; }
 
         /// <summary>
         /// true if this pool is suitable to migrate a volume, false otherwise

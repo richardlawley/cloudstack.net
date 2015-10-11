@@ -68,8 +68,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Network offering details in key/value pairs. Supported keys are internallbprovider/publiclbprovider with service provider as a value
         /// </summary>
-        public IDictionary<string, string> Details {
-            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+        public IList<IDictionary<string, object>> Details {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 
@@ -116,8 +116,8 @@ namespace CloudStack.Net
         /// <summary>
         /// desired service capabilities as part of network offering
         /// </summary>
-        public IDictionary<string, string> Servicecapabilitylist {
-            get { return (IDictionary<string, string>) Parameters[nameof(Servicecapabilitylist).ToLower()]; }
+        public IList<IDictionary<string, object>> Servicecapabilitylist {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Servicecapabilitylist).ToLower()]; }
             set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
         }
 
@@ -132,8 +132,8 @@ namespace CloudStack.Net
         /// <summary>
         /// provider to service mapping. If not specified, the provider for the service will be mapped to the default provider on the physical network
         /// </summary>
-        public IDictionary<string, string> ServiceProviderList {
-            get { return (IDictionary<string, string>) Parameters[nameof(ServiceProviderList).ToLower()]; }
+        public IList<IDictionary<string, object>> ServiceProviderList {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(ServiceProviderList).ToLower()]; }
             set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
         }
 

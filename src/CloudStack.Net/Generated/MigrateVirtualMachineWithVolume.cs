@@ -28,8 +28,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Map of pool to which each volume should be migrated (volume/pool pair)
         /// </summary>
-        public IDictionary<string, string> Migrateto {
-            get { return (IDictionary<string, string>) Parameters[nameof(Migrateto).ToLower()]; }
+        public IList<IDictionary<string, object>> Migrateto {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Migrateto).ToLower()]; }
             set { Parameters[nameof(Migrateto).ToLower()] = value; }
         }
 

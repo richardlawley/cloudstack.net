@@ -100,8 +100,8 @@ namespace CloudStack.Net
         /// <summary>
         /// user to security group mapping
         /// </summary>
-        public IDictionary<string, string> UserSecurityGroupList {
-            get { return (IDictionary<string, string>) Parameters[nameof(UserSecurityGroupList).ToLower()]; }
+        public IList<IDictionary<string, object>> UserSecurityGroupList {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(UserSecurityGroupList).ToLower()]; }
             set { Parameters[nameof(UserSecurityGroupList).ToLower()] = value; }
         }
 

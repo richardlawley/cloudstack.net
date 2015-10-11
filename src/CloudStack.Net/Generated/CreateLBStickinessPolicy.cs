@@ -52,8 +52,8 @@ namespace CloudStack.Net
         /// <summary>
         /// param list. Example: param[0].name=cookiename&param[0].value=LBCookie 
         /// </summary>
-        public IDictionary<string, string> Param {
-            get { return (IDictionary<string, string>) Parameters[nameof(Param).ToLower()]; }
+        public IList<IDictionary<string, object>> Param {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Param).ToLower()]; }
             set { Parameters[nameof(Param).ToLower()] = value; }
         }
 

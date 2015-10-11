@@ -15,7 +15,7 @@ namespace CloudStack.Net
         /// <summary>
         /// details for the account
         /// </summary>
-        public IDictionary<string, string> Accountdetails { get; set; }
+        public IList<IDictionary<string, object>> Accountdetails { get; set; }
 
         /// <summary>
         /// account type (admin, domain-admin, user)

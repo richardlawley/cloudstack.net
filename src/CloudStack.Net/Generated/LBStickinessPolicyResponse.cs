@@ -35,7 +35,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the params of the policy
         /// </summary>
-        public IDictionary<string, string> Params { get; set; }
+        public IList<IDictionary<string, object>> Params { get; set; }
 
         /// <summary>
         /// the state of the policy

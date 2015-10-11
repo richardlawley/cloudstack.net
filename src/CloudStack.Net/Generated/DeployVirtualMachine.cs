@@ -76,8 +76,8 @@ namespace CloudStack.Net
         /// <summary>
         /// used to specify the custom parameters.
         /// </summary>
-        public IDictionary<string, string> Details {
-            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+        public IList<IDictionary<string, object>> Details {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 
@@ -156,8 +156,8 @@ namespace CloudStack.Net
         /// <summary>
         /// ip to network mapping. Can't be specified with networkIds parameter. Example: iptonetworklist[0].ip=10.10.10.11&iptonetworklist[0].ipv6=fc00:1234:5678::abcd&iptonetworklist[0].networkid=uuid - requests to use ip 10.10.10.11 in network id=uuid
         /// </summary>
-        public IDictionary<string, string> IpToNetworkList {
-            get { return (IDictionary<string, string>) Parameters[nameof(IpToNetworkList).ToLower()]; }
+        public IList<IDictionary<string, object>> IpToNetworkList {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(IpToNetworkList).ToLower()]; }
             set { Parameters[nameof(IpToNetworkList).ToLower()] = value; }
         }
 

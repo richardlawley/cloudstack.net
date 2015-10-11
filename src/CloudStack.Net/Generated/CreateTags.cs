@@ -28,8 +28,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Map of tags (key/value pairs)
         /// </summary>
-        public IDictionary<string, string> Tags {
-            get { return (IDictionary<string, string>) Parameters[nameof(Tags).ToLower()]; }
+        public IList<IDictionary<string, object>> Tags {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

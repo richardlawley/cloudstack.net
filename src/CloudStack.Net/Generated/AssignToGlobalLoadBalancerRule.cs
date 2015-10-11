@@ -28,8 +28,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Map of LB rule id's and corresponding weights (between 1-100) in the GSLB rule, if not specified weight of a LB rule is defaulted to 1. Specified as 'gslblbruleweightsmap[0].loadbalancerid=UUID&gslblbruleweightsmap[0].weight=10'
         /// </summary>
-        public IDictionary<string, string> Gslblbruleweightsmap {
-            get { return (IDictionary<string, string>) Parameters[nameof(Gslblbruleweightsmap).ToLower()]; }
+        public IList<IDictionary<string, object>> Gslblbruleweightsmap {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Gslblbruleweightsmap).ToLower()]; }
             set { Parameters[nameof(Gslblbruleweightsmap).ToLower()] = value; }
         }
 

@@ -188,8 +188,8 @@ namespace CloudStack.Net
         /// <summary>
         /// details for planner, used to store specific parameters
         /// </summary>
-        public IDictionary<string, string> Serviceofferingdetails {
-            get { return (IDictionary<string, string>) Parameters[nameof(Serviceofferingdetails).ToLower()]; }
+        public IList<IDictionary<string, object>> Serviceofferingdetails {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Serviceofferingdetails).ToLower()]; }
             set { Parameters[nameof(Serviceofferingdetails).ToLower()] = value; }
         }
 

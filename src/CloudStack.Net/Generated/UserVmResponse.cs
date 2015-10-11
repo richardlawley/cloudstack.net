@@ -40,7 +40,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Vm details in key/value pairs.
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IList<IDictionary<string, object>> Details { get; set; }
 
         /// <summary>
         /// the read (io) of disk on the vm

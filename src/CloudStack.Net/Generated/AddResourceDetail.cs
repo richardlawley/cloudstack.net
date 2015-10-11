@@ -12,8 +12,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Map of (key/value pairs)
         /// </summary>
-        public IDictionary<string, string> Details {
-            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+        public IList<IDictionary<string, object>> Details {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 

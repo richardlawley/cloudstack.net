@@ -20,8 +20,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the details for the image store. Example: details[0].key=accesskey&details[0].value=s389ddssaa&details[1].key=secretkey&details[1].value=8dshfsss
         /// </summary>
-        public IDictionary<string, string> Details {
-            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+        public IList<IDictionary<string, object>> Details {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 

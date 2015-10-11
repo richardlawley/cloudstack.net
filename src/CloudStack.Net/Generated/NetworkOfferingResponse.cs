@@ -30,7 +30,7 @@ namespace CloudStack.Net
         /// <summary>
         /// additional key/value details tied with network offering
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IList<IDictionary<string, object>> Details { get; set; }
 
         /// <summary>
         /// an alternate display text of the network offering.

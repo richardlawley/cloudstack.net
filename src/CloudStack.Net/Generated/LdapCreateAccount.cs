@@ -36,8 +36,8 @@ namespace CloudStack.Net
         /// <summary>
         /// details for account used to store specific parameters
         /// </summary>
-        public IDictionary<string, string> Accountdetails {
-            get { return (IDictionary<string, string>) Parameters[nameof(Accountdetails).ToLower()]; }
+        public IList<IDictionary<string, object>> Accountdetails {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Accountdetails).ToLower()]; }
             set { Parameters[nameof(Accountdetails).ToLower()] = value; }
         }
 

@@ -75,7 +75,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Host details in key/value pairs.
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IList<IDictionary<string, object>> Details { get; set; }
 
         /// <summary>
         /// true if the host is disconnected. False otherwise.

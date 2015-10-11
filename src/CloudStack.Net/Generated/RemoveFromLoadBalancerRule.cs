@@ -28,8 +28,8 @@ namespace CloudStack.Net
         /// <summary>
         /// VM ID and IP map, vmidipmap[0].vmid=1 vmidipmap[0].ip=10.1.1.75
         /// </summary>
-        public IDictionary<string, string> VmIdIpMap {
-            get { return (IDictionary<string, string>) Parameters[nameof(VmIdIpMap).ToLower()]; }
+        public IList<IDictionary<string, object>> VmIdIpMap {
+            get { return (IList<IDictionary<string, object>>) Parameters[nameof(VmIdIpMap).ToLower()]; }
             set { Parameters[nameof(VmIdIpMap).ToLower()] = value; }
         }
 
