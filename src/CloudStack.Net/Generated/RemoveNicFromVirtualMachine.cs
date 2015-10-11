@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// NIC ID
         /// </summary>
-        public Guid NicId { get; set; }
+        public Guid NicId {
+            get { return (Guid) Parameters[nameof(NicId).ToLower()]; }
+            set { Parameters[nameof(NicId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Virtual Machine ID
         /// </summary>
-        public Guid VmId { get; set; }
+        public Guid Virtualmachineid {
+            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
+            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

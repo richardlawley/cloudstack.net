@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of domain to update
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// updates domain with this name
         /// </summary>
-        public string DomainName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network domain for the domain's networks; empty string will update domainName with NULL value
         /// </summary>
-        public string NetworkDomain { get; set; }
+        public string NetworkDomain {
+            get { return (string) Parameters[nameof(NetworkDomain).ToLower()]; }
+            set { Parameters[nameof(NetworkDomain).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// the Id of the snapshot policy
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list of snapshots policy IDs separated by comma
         /// </summary>
-        public IList<long> Ids { get; set; }
+        public IList<Guid> Ids {
+            get { return (IList<Guid>) Parameters[nameof(Ids).ToLower()]; }
+            set { Parameters[nameof(Ids).ToLower()] = value; }
+        }
 
     }
     /// <summary>

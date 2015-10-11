@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// Network ID
         /// </summary>
-        public Guid NetId { get; set; }
+        public Guid Networkid {
+            get { return (Guid) Parameters[nameof(Networkid).ToLower()]; }
+            set { Parameters[nameof(Networkid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Virtual Machine ID
         /// </summary>
-        public Guid VmId { get; set; }
+        public Guid Virtualmachineid {
+            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
+            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// IP Address for the new network
         /// </summary>
-        public string Ipaddr { get; set; }
+        public string Ipaddress {
+            get { return (string) Parameters[nameof(Ipaddress).ToLower()]; }
+            set { Parameters[nameof(Ipaddress).ToLower()] = value; }
+        }
 
     }
     /// <summary>

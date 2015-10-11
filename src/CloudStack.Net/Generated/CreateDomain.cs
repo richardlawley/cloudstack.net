@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// creates domain with this name
         /// </summary>
-        public string DomainName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Domain UUID, required for adding domain from another Region
         /// </summary>
-        public string DomainUUID { get; set; }
+        public string Domainid {
+            get { return (string) Parameters[nameof(Domainid).ToLower()]; }
+            set { Parameters[nameof(Domainid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network domain for networks in the domain
         /// </summary>
-        public string NetworkDomain { get; set; }
+        public string NetworkDomain {
+            get { return (string) Parameters[nameof(NetworkDomain).ToLower()]; }
+            set { Parameters[nameof(NetworkDomain).ToLower()] = value; }
+        }
 
         /// <summary>
         /// assigns new domain a parent domain by domain ID of the parent.  If no parent domain is specied, the ROOT domain is assumed.
         /// </summary>
-        public Guid ParentDomainId { get; set; }
+        public Guid ParentDomainId {
+            get { return (Guid) Parameters[nameof(ParentDomainId).ToLower()]; }
+            set { Parameters[nameof(ParentDomainId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -10,16 +10,19 @@ namespace CloudStack.Net
         public DeleteIpForwardingRuleRequest() : base("deleteIpForwardingRule") {}
 
         /// <summary>
-        /// the ID of the forwarding rule
+        /// the id of the forwarding rule
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Deletes an IP forwarding rule
+    /// Deletes an ip forwarding rule
     /// </summary>
     /// <summary>
-    /// Deletes an IP forwarding rule
+    /// Deletes an ip forwarding rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

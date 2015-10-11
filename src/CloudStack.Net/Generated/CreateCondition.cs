@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of the Counter.
         /// </summary>
-        public Guid CounterId { get; set; }
+        public Guid CounterId {
+            get { return (Guid) Parameters[nameof(CounterId).ToLower()]; }
+            set { Parameters[nameof(CounterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Relational Operator to be used with threshold.
         /// </summary>
-        public string RelationalOperator { get; set; }
+        public string RelationalOperator {
+            get { return (string) Parameters[nameof(RelationalOperator).ToLower()]; }
+            set { Parameters[nameof(RelationalOperator).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Threshold value.
         /// </summary>
-        public long Threshold { get; set; }
+        public long Threshold {
+            get { return (long) Parameters[nameof(Threshold).ToLower()]; }
+            set { Parameters[nameof(Threshold).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the account of the condition. Must be used with the domainId parameter.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the domain ID of the account.
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

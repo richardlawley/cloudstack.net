@@ -23,6 +23,11 @@ namespace CloudStack.Net
         public string Action { get; set; }
 
         /// <summary>
+        /// the list of IDs of the conditions that are being evaluated on every interval
+        /// </summary>
+        public IList<ConditionResponse> Conditions { get; set; }
+
+        /// <summary>
         /// the domain name of the autoscale policy
         /// </summary>
         public string Domain { get; set; }
@@ -51,11 +56,6 @@ namespace CloudStack.Net
         /// the cool down period for which the policy should not be evaluated after the action has been taken
         /// </summary>
         public int QuietTime { get; set; }
-
-        /// <summary>
-        /// the list of IDs of the conditions that are being evaluated on every interval
-        /// </summary>
-        public IList<ConditionResponse> Conditions { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

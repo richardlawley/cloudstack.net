@@ -12,26 +12,44 @@ namespace CloudStack.Net
         /// <summary>
         /// Hostname or ip address of the Cisco ASA 1000v appliance.
         /// </summary>
-        public string Host { get; set; }
+        public string Hostname {
+            get { return (string) Parameters[nameof(Hostname).ToLower()]; }
+            set { Parameters[nameof(Hostname).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId { get; set; }
+        public Guid PhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Cisco ASA 1000v resource ID
         /// </summary>
-        public Guid CiscoAsa1000vResourceId { get; set; }
+        public Guid Resourceid {
+            get { return (Guid) Parameters[nameof(Resourceid).ToLower()]; }
+            set { Parameters[nameof(Resourceid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

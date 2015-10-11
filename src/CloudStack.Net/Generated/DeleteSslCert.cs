@@ -12,14 +12,17 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of SSL certificate
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Delete a certificate to CloudStack
+    /// Delete a certificate to cloudstack
     /// </summary>
     /// <summary>
-    /// Delete a certificate to CloudStack
+    /// Delete a certificate to cloudstack
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

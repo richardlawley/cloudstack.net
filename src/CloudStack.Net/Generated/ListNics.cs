@@ -12,31 +12,52 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the vm
         /// </summary>
-        public Guid VmId { get; set; }
+        public Guid Virtualmachineid {
+            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
+            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list nic of the specific vm's network
         /// </summary>
-        public Guid NetworkId { get; set; }
+        public Guid NetworkId {
+            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
+            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the nic to to list IPs
         /// </summary>
-        public Guid NicId { get; set; }
+        public Guid NicId {
+            get { return (Guid) Parameters[nameof(NicId).ToLower()]; }
+            set { Parameters[nameof(NicId).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

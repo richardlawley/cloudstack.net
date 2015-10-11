@@ -12,21 +12,36 @@ namespace CloudStack.Net
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// parameters for network device
         /// </summary>
-        public IDictionary<string, string> ParamList { get; set; }
+        public IDictionary<string, string> Networkdeviceparameterlist {
+            get { return (IDictionary<string, string>) Parameters[nameof(Networkdeviceparameterlist).ToLower()]; }
+            set { Parameters[nameof(Networkdeviceparameterlist).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network device type, now supports ExternalDhcp, PxeServer, NetscalerMPXLoadBalancer, NetscalerVPXLoadBalancer, NetscalerSDXLoadBalancer, F5BigIpLoadBalancer, JuniperSRXFirewall, PaloAltoFirewall
         /// </summary>
-        public string Type { get; set; }
+        public string Networkdevicetype {
+            get { return (string) Parameters[nameof(Networkdevicetype).ToLower()]; }
+            set { Parameters[nameof(Networkdevicetype).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

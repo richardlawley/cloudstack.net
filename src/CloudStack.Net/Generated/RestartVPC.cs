@@ -12,17 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the id of the VPC
         /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// If cleanup old network elements
-        /// </summary>
-        public bool? Cleanup { get; set; }
-
-        /// <summary>
-        /// Turn a single VPC into a redundant one.
-        /// </summary>
-        public bool? Makeredundant { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>

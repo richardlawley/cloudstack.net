@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the virtual machine
         /// </summary>
-        public Guid VirtualMachineId { get; set; }
+        public Guid VirtualMachineId {
+            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Destination Host ID to migrate VM to. Required for live migrating a VM from host to host
         /// </summary>
-        public Guid HostId { get; set; }
+        public Guid HostId {
+            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
+            set { Parameters[nameof(HostId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Destination storage pool ID to migrate VM volumes to. Required for migrating the root disk volume
         /// </summary>
-        public Guid StorageId { get; set; }
+        public Guid StorageId {
+            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
+            set { Parameters[nameof(StorageId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

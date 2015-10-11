@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the name for the physical network service provider
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Physical Network ID to add the provider to
         /// </summary>
-        public Guid PhysicalNetworkId { get; set; }
+        public Guid PhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the destination Physical Network ID to bridge to
         /// </summary>
-        public Guid DestinationPhysicalNetworkId { get; set; }
+        public Guid DestinationPhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(DestinationPhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(DestinationPhysicalNetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the list of services to be enabled for this physical network service provider
         /// </summary>
-        public IList<string> EnabledServices { get; set; }
+        public IList<string> Servicelist {
+            get { return (IList<string>) Parameters[nameof(Servicelist).ToLower()]; }
+            set { Parameters[nameof(Servicelist).ToLower()] = value; }
+        }
 
     }
     /// <summary>

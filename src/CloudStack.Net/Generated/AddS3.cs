@@ -12,52 +12,66 @@ namespace CloudStack.Net
         /// <summary>
         /// S3 access key
         /// </summary>
-        public string AccessKey { get; set; }
+        public string AccessKey {
+            get { return (string) Parameters[nameof(AccessKey).ToLower()]; }
+            set { Parameters[nameof(AccessKey).ToLower()] = value; }
+        }
 
         /// <summary>
         /// name of the template storage bucket
         /// </summary>
-        public string BucketName { get; set; }
+        public string Bucket {
+            get { return (string) Parameters[nameof(Bucket).ToLower()]; }
+            set { Parameters[nameof(Bucket).ToLower()] = value; }
+        }
 
         /// <summary>
         /// S3 secret key
         /// </summary>
-        public string SecretKey { get; set; }
+        public string SecretKey {
+            get { return (string) Parameters[nameof(SecretKey).ToLower()]; }
+            set { Parameters[nameof(SecretKey).ToLower()] = value; }
+        }
 
         /// <summary>
         /// connection timeout (milliseconds)
         /// </summary>
-        public int? ConnectionTimeout { get; set; }
-
-        /// <summary>
-        /// connection ttl (milliseconds)
-        /// </summary>
-        public int? ConnectionTtl { get; set; }
+        public int? ConnectionTimeout {
+            get { return (int?) Parameters[nameof(ConnectionTimeout).ToLower()]; }
+            set { Parameters[nameof(ConnectionTimeout).ToLower()] = value; }
+        }
 
         /// <summary>
         /// S3 host name
         /// </summary>
-        public string EndPoint { get; set; }
+        public string EndPoint {
+            get { return (string) Parameters[nameof(EndPoint).ToLower()]; }
+            set { Parameters[nameof(EndPoint).ToLower()] = value; }
+        }
 
         /// <summary>
         /// maximum number of times to retry on error
         /// </summary>
-        public int? MaxErrorRetry { get; set; }
+        public int? MaxErrorRetry {
+            get { return (int?) Parameters[nameof(MaxErrorRetry).ToLower()]; }
+            set { Parameters[nameof(MaxErrorRetry).ToLower()] = value; }
+        }
 
         /// <summary>
         /// socket timeout (milliseconds)
         /// </summary>
-        public int? SocketTimeout { get; set; }
+        public int? SocketTimeout {
+            get { return (int?) Parameters[nameof(SocketTimeout).ToLower()]; }
+            set { Parameters[nameof(SocketTimeout).ToLower()] = value; }
+        }
 
         /// <summary>
         /// connect to the S3 endpoint via HTTPS?
         /// </summary>
-        public bool? HttpsFlag { get; set; }
-
-        /// <summary>
-        /// whether tcp keepalive is used
-        /// </summary>
-        public bool? UseTCPKeepAlive { get; set; }
+        public bool? Usehttps {
+            get { return (bool?) Parameters[nameof(Usehttps).ToLower()]; }
+            set { Parameters[nameof(Usehttps).ToLower()] = value; }
+        }
 
     }
     /// <summary>

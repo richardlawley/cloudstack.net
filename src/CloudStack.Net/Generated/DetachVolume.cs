@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the device ID on the virtual machine where volume is detached from
         /// </summary>
-        public long? DeviceId { get; set; }
+        public long? DeviceId {
+            get { return (long?) Parameters[nameof(DeviceId).ToLower()]; }
+            set { Parameters[nameof(DeviceId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the virtual machine where the volume is detached from
         /// </summary>
-        public Guid VirtualMachineId { get; set; }
+        public Guid VirtualMachineId {
+            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

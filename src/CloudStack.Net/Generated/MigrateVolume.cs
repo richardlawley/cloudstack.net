@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// destination storage pool ID to migrate the volume to
         /// </summary>
-        public Guid StorageId { get; set; }
+        public Guid StorageId {
+            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
+            set { Parameters[nameof(StorageId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the volume
         /// </summary>
-        public Guid VolumeId { get; set; }
+        public Guid VolumeId {
+            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
+            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// if the volume should be live migrated when it is attached to a running vm
         /// </summary>
-        public bool? LiveMigrate { get; set; }
+        public bool? LiveMigrate {
+            get { return (bool?) Parameters[nameof(LiveMigrate).ToLower()]; }
+            set { Parameters[nameof(LiveMigrate).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// valid values are HOURLY, DAILY, WEEKLY, and MONTHLY
         /// </summary>
-        public string IntervalType { get; set; }
+        public string IntervalType {
+            get { return (string) Parameters[nameof(IntervalType).ToLower()]; }
+            set { Parameters[nameof(IntervalType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// maximum number of snapshots to retain
         /// </summary>
-        public int MaxSnaps { get; set; }
+        public int MaxSnaps {
+            get { return (int) Parameters[nameof(MaxSnaps).ToLower()]; }
+            set { Parameters[nameof(MaxSnaps).ToLower()] = value; }
+        }
 
         /// <summary>
         /// time the snapshot is scheduled to be taken. Format is:* if HOURLY, MM* if DAILY, MM:HH* if WEEKLY, MM:HH:DD (1-7)* if MONTHLY, MM:HH:DD (1-28)
         /// </summary>
-        public string Schedule { get; set; }
+        public string Schedule {
+            get { return (string) Parameters[nameof(Schedule).ToLower()]; }
+            set { Parameters[nameof(Schedule).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Specifies a timezone for this command. For more information on the timezone parameter, see Time Zone Format.
         /// </summary>
-        public string Timezone { get; set; }
+        public string Timezone {
+            get { return (string) Parameters[nameof(Timezone).ToLower()]; }
+            set { Parameters[nameof(Timezone).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid VolumeId { get; set; }
+        public Guid VolumeId {
+            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
+            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, whether to the display the policy to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// pool name.
         /// </summary>
-        public string PoolName { get; set; }
+        public string PoolName {
+            get { return (string) Parameters[nameof(PoolName).ToLower()]; }
+            set { Parameters[nameof(PoolName).ToLower()] = value; }
+        }
 
     }
     /// <summary>

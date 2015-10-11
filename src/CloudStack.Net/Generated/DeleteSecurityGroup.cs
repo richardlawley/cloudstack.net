@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// the account of the security group. Must be specified with domain ID
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the domain ID of account owning the security group
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The ID of the security group. Mutually exclusive with name parameter
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The ID of the security group. Mutually exclusive with id parameter
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the project of the security group
         /// </summary>
-        public Guid ProjectId { get; set; }
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

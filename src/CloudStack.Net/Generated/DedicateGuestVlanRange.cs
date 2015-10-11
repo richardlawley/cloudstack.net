@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// account who will own the VLAN
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// domain ID of the account owning a VLAN
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// physical network ID of the vlan
         /// </summary>
-        public Guid PhysicalNetworkId { get; set; }
+        public Guid PhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// guest vlan range to be dedicated
         /// </summary>
-        public string Vlan { get; set; }
+        public string Vlanrange {
+            get { return (string) Parameters[nameof(Vlanrange).ToLower()]; }
+            set { Parameters[nameof(Vlanrange).ToLower()] = value; }
+        }
 
         /// <summary>
         /// project who will own the VLAN
         /// </summary>
-        public Guid ProjectId { get; set; }
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

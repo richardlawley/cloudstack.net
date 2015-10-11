@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// the ending IP address in the portable IP range
         /// </summary>
-        public string EndIp { get; set; }
+        public string EndIp {
+            get { return (string) Parameters[nameof(EndIp).ToLower()]; }
+            set { Parameters[nameof(EndIp).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the gateway for the portable IP range
         /// </summary>
-        public string Gateway { get; set; }
+        public string Gateway {
+            get { return (string) Parameters[nameof(Gateway).ToLower()]; }
+            set { Parameters[nameof(Gateway).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the netmask of the portable IP range
         /// </summary>
-        public string Netmask { get; set; }
+        public string Netmask {
+            get { return (string) Parameters[nameof(Netmask).ToLower()]; }
+            set { Parameters[nameof(Netmask).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Id of the Region
         /// </summary>
-        public int RegionId { get; set; }
+        public int RegionId {
+            get { return (int) Parameters[nameof(RegionId).ToLower()]; }
+            set { Parameters[nameof(RegionId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the beginning IP address in the portable IP range
         /// </summary>
-        public string StartIp { get; set; }
+        public string StartIp {
+            get { return (string) Parameters[nameof(StartIp).ToLower()]; }
+            set { Parameters[nameof(StartIp).ToLower()] = value; }
+        }
 
         /// <summary>
         /// VLAN id, if not specified defaulted to untagged
         /// </summary>
-        public string Vlan { get; set; }
+        public string Vlan {
+            get { return (string) Parameters[nameof(Vlan).ToLower()]; }
+            set { Parameters[nameof(Vlan).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,26 +12,44 @@ namespace CloudStack.Net
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the snapshot policy
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid VolumeId { get; set; }
+        public Guid VolumeId {
+            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
+            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

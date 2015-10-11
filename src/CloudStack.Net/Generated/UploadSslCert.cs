@@ -12,44 +12,65 @@ namespace CloudStack.Net
         /// <summary>
         /// SSL certificate
         /// </summary>
-        public string Cert { get; set; }
+        public string Certificate {
+            get { return (string) Parameters[nameof(Certificate).ToLower()]; }
+            set { Parameters[nameof(Certificate).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Private key
         /// </summary>
-        public string Key { get; set; }
+        public string Privatekey {
+            get { return (string) Parameters[nameof(Privatekey).ToLower()]; }
+            set { Parameters[nameof(Privatekey).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// account that will own the SSL certificate
+        /// account who will own the ssl cert
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Certificate chain of trust
         /// </summary>
-        public string Chain { get; set; }
+        public string Certchain {
+            get { return (string) Parameters[nameof(Certchain).ToLower()]; }
+            set { Parameters[nameof(Certchain).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// domain ID of the account owning the SSL certificate
+        /// domain ID of the account owning the ssl cert
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Password for the private key
         /// </summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return (string) Parameters[nameof(Password).ToLower()]; }
+            set { Parameters[nameof(Password).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// an optional project for the SSL certificate
+        /// an optional project for the ssl cert
         /// </summary>
-        public Guid ProjectId { get; set; }
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Upload a certificate to CloudStack
+    /// Upload a certificate to cloudstack
     /// </summary>
     /// <summary>
-    /// Upload a certificate to CloudStack
+    /// Upload a certificate to cloudstack
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

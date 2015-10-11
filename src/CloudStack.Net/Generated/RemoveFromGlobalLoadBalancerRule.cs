@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the load balancer rule
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// the list load balancer rules that will be assigned to gloabal load balancer rule
+        /// the list load balancer rules that will be assigned to gloabal load balacner rule
         /// </summary>
-        public IList<long> LoadBalancerRulesIds { get; set; }
+        public IList<Guid> Loadbalancerrulelist {
+            get { return (IList<Guid>) Parameters[nameof(Loadbalancerrulelist).ToLower()]; }
+            set { Parameters[nameof(Loadbalancerrulelist).ToLower()] = value; }
+        }
 
     }
     /// <summary>

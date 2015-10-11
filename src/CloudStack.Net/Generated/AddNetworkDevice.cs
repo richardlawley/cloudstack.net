@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// parameters for network device
         /// </summary>
-        public IDictionary<string, string> ParamList { get; set; }
+        public IDictionary<string, string> Networkdeviceparameterlist {
+            get { return (IDictionary<string, string>) Parameters[nameof(Networkdeviceparameterlist).ToLower()]; }
+            set { Parameters[nameof(Networkdeviceparameterlist).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network device type, now supports ExternalDhcp, PxeServer, NetscalerMPXLoadBalancer, NetscalerVPXLoadBalancer, NetscalerSDXLoadBalancer, F5BigIpLoadBalancer, JuniperSRXFirewall, PaloAltoFirewall
         /// </summary>
-        public string Type { get; set; }
+        public string Networkdevicetype {
+            get { return (string) Parameters[nameof(Networkdevicetype).ToLower()]; }
+            set { Parameters[nameof(Networkdevicetype).ToLower()] = value; }
+        }
 
     }
     /// <summary>

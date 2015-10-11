@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the acount whose limit to be reset
         /// </summary>
-        public Guid AccountId { get; set; }
+        public Guid Account {
+            get { return (Guid) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
     }
     /// <summary>

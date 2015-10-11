@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the virtual machine
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// If true is passed, the vm is expunged immediately. False by default.
+        /// If true is passed, the vm is expunged immediately. False by default. Parameter can be passed to the call by ROOT/Domain admin only
         /// </summary>
-        public bool? Expunge { get; set; }
+        public bool? Expunge {
+            get { return (bool?) Parameters[nameof(Expunge).ToLower()]; }
+            set { Parameters[nameof(Expunge).ToLower()] = value; }
+        }
 
     }
     /// <summary>

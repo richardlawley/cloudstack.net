@@ -12,27 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the new password for the host/cluster
         /// </summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return (string) Parameters[nameof(Password).ToLower()]; }
+            set { Parameters[nameof(Password).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the username for the host/cluster
         /// </summary>
-        public string Username { get; set; }
+        public string Username {
+            get { return (string) Parameters[nameof(Username).ToLower()]; }
+            set { Parameters[nameof(Username).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the cluster ID
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the host ID
         /// </summary>
-        public Guid HostId { get; set; }
-
-        /// <summary>
-        /// if the password should also be updated on the hosts
-        /// </summary>
-        public bool? UpdatePasswdOnHost { get; set; }
+        public Guid HostId {
+            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
+            set { Parameters[nameof(HostId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the asychronous job
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Jobid {
+            get { return (Guid) Parameters[nameof(Jobid).ToLower()]; }
+            set { Parameters[nameof(Jobid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

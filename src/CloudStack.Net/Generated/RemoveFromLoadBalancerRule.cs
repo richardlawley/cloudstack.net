@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the load balancer rule
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the list of IDs of the virtual machines that are being removed from the load balancer rule (i.e. virtualMachineIds=1,2,3)
         /// </summary>
-        public IList<long> VirtualMachineIds { get; set; }
+        public IList<Guid> VirtualMachineIds {
+            get { return (IList<Guid>) Parameters[nameof(VirtualMachineIds).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineIds).ToLower()] = value; }
+        }
 
         /// <summary>
         /// VM ID and IP map, vmidipmap[0].vmid=1 vmidipmap[0].ip=10.1.1.75
         /// </summary>
-        public IDictionary<string, string> VmIdIpMap { get; set; }
+        public IDictionary<string, string> VmIdIpMap {
+            get { return (IDictionary<string, string>) Parameters[nameof(VmIdIpMap).ToLower()]; }
+            set { Parameters[nameof(VmIdIpMap).ToLower()] = value; }
+        }
 
     }
     /// <summary>

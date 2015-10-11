@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Zone
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

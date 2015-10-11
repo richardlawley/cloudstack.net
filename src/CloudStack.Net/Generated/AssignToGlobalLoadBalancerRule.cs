@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the global load balancer rule
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// the list load balancer rules that will be assigned to global load balancer rule
+        /// the list load balancer rules that will be assigned to gloabal load balacner rule
         /// </summary>
-        public IList<long> LoadBalancerRulesIds { get; set; }
+        public IList<Guid> Loadbalancerrulelist {
+            get { return (IList<Guid>) Parameters[nameof(Loadbalancerrulelist).ToLower()]; }
+            set { Parameters[nameof(Loadbalancerrulelist).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Map of LB rule id's and corresponding weights (between 1-100) in the GSLB rule, if not specified weight of a LB rule is defaulted to 1. Specified as 'gslblbruleweightsmap[0].loadbalancerid=UUID&gslblbruleweightsmap[0].weight=10'
         /// </summary>
-        public IDictionary<string, string> GslbLbRuleWieghtMap { get; set; }
+        public IDictionary<string, string> Gslblbruleweightsmap {
+            get { return (IDictionary<string, string>) Parameters[nameof(Gslblbruleweightsmap).ToLower()]; }
+            set { Parameters[nameof(Gslblbruleweightsmap).ToLower()] = value; }
+        }
 
     }
     /// <summary>

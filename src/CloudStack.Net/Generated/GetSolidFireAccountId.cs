@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// CloudStack Account UUID
         /// </summary>
-        public string AccountUuid { get; set; }
+        public string Accountid {
+            get { return (string) Parameters[nameof(Accountid).ToLower()]; }
+            set { Parameters[nameof(Accountid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Storage Pool UUID
         /// </summary>
-        public string StoragePoolUuid { get; set; }
+        public string Storageid {
+            get { return (string) Parameters[nameof(Storageid).ToLower()]; }
+            set { Parameters[nameof(Storageid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

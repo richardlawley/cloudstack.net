@@ -10,16 +10,19 @@ namespace CloudStack.Net
         public DisassociateIpAddressRequest() : base("disassociateIpAddress") {}
 
         /// <summary>
-        /// the ID of the public IP address to disassociate
+        /// the id of the public ip address to disassociate
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Disassociates an IP address from the account.
+    /// Disassociates an ip address from the account.
     /// </summary>
     /// <summary>
-    /// Disassociates an IP address from the account.
+    /// Disassociates an ip address from the account.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

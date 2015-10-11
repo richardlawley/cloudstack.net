@@ -12,49 +12,73 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid LbRuleId { get; set; }
+        public Guid LbRuleId {
+            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
+            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// the description of the load balancer health check policy
+        /// the description of the load balancer HealthCheck policy
         /// </summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return (string) Parameters[nameof(Description).ToLower()]; }
+            set { Parameters[nameof(Description).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Number of consecutive health check success before declaring an instance healthy
         /// </summary>
-        public int? HealthyThreshold { get; set; }
+        public int? HealthyThreshold {
+            get { return (int?) Parameters[nameof(HealthyThreshold).ToLower()]; }
+            set { Parameters[nameof(HealthyThreshold).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Amount of time between health checks (1 sec - 20940 sec)
         /// </summary>
-        public int? HealthCheckInterval { get; set; }
+        public int? Intervaltime {
+            get { return (int?) Parameters[nameof(Intervaltime).ToLower()]; }
+            set { Parameters[nameof(Intervaltime).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// HTTP ping path
+        /// HTTP Ping Path
         /// </summary>
-        public string PingPath { get; set; }
+        public string PingPath {
+            get { return (string) Parameters[nameof(PingPath).ToLower()]; }
+            set { Parameters[nameof(PingPath).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Time to wait when receiving a response from the health check (2sec - 60 sec)
         /// </summary>
-        public int? ResponsTimeOut { get; set; }
+        public int? Responsetimeout {
+            get { return (int?) Parameters[nameof(Responsetimeout).ToLower()]; }
+            set { Parameters[nameof(Responsetimeout).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Number of consecutive health check failures before declaring an instance unhealthy
         /// </summary>
-        public int? UnhealthyThreshold { get; set; }
+        public int? UnhealthyThreshold {
+            get { return (int?) Parameters[nameof(UnhealthyThreshold).ToLower()]; }
+            set { Parameters[nameof(UnhealthyThreshold).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Creates a load balancer health check policy
+    /// Creates a Load Balancer healthcheck policy 
     /// </summary>
     /// <summary>
-    /// Creates a load balancer health check policy
+    /// Creates a Load Balancer healthcheck policy 
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

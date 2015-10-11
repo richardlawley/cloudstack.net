@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Pod
         /// </summary>
-        public Guid PodId { get; set; }
+        public Guid PodId {
+            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
+            set { Parameters[nameof(PodId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Cluster
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Allocation state of this cluster for allocation of new resources
         /// </summary>
-        public string AllocationState { get; set; }
+        public string AllocationState {
+            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
+            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the cluster name
         /// </summary>
-        public string ClusterName { get; set; }
+        public string ClusterName {
+            get { return (string) Parameters[nameof(ClusterName).ToLower()]; }
+            set { Parameters[nameof(ClusterName).ToLower()] = value; }
+        }
 
         /// <summary>
         /// hypervisor type of the cluster
         /// </summary>
-        public string ClusterType { get; set; }
+        public string ClusterType {
+            get { return (string) Parameters[nameof(ClusterType).ToLower()]; }
+            set { Parameters[nameof(ClusterType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// hypervisor type of the cluster
         /// </summary>
-        public string Hypervisor { get; set; }
+        public string Hypervisor {
+            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
+            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+        }
 
         /// <summary>
         /// whether this cluster is managed by cloudstack
         /// </summary>
-        public string ManagedState { get; set; }
+        public string ManagedState {
+            get { return (string) Parameters[nameof(ManagedState).ToLower()]; }
+            set { Parameters[nameof(ManagedState).ToLower()] = value; }
+        }
 
     }
     /// <summary>

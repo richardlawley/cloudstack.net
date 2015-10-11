@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// new name for the account
         /// </summary>
-        public string NewName { get; set; }
+        public string NewName {
+            get { return (string) Parameters[nameof(NewName).ToLower()]; }
+            set { Parameters[nameof(NewName).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the current account name
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// details for account used to store specific parameters
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IDictionary<string, string> Accountdetails {
+            get { return (IDictionary<string, string>) Parameters[nameof(Accountdetails).ToLower()]; }
+            set { Parameters[nameof(Accountdetails).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the domain where the account exists
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Account id
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network domain for the account's networks; empty string will update domainName with NULL value
         /// </summary>
-        public string NetworkDomain { get; set; }
+        public string NetworkDomain {
+            get { return (string) Parameters[nameof(NetworkDomain).ToLower()]; }
+            set { Parameters[nameof(NetworkDomain).ToLower()] = value; }
+        }
 
     }
     /// <summary>

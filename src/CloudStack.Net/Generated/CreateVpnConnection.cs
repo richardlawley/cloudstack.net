@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// id of the customer gateway
         /// </summary>
-        public Guid CustomerGatewayId { get; set; }
+        public Guid S2scustomergatewayid {
+            get { return (Guid) Parameters[nameof(S2scustomergatewayid).ToLower()]; }
+            set { Parameters[nameof(S2scustomergatewayid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// id of the vpn gateway
         /// </summary>
-        public Guid VpnGatewayId { get; set; }
+        public Guid S2svpngatewayid {
+            get { return (Guid) Parameters[nameof(S2svpngatewayid).ToLower()]; }
+            set { Parameters[nameof(S2svpngatewayid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, whether to the display the vpn to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
         /// <summary>
         /// connection is passive or not
         /// </summary>
-        public bool? Passive { get; set; }
+        public bool? Passive {
+            get { return (bool?) Parameters[nameof(Passive).ToLower()]; }
+            set { Parameters[nameof(Passive).ToLower()] = value; }
+        }
 
     }
     /// <summary>

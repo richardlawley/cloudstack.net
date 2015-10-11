@@ -78,6 +78,11 @@ namespace CloudStack.Net
         public string NetworkName { get; set; }
 
         /// <summary>
+        /// the Secondary ipv4 addr of nic
+        /// </summary>
+        public IList<NicSecondaryIpResponse> Secondaryip { get; set; }
+
+        /// <summary>
         /// the traffic type of the nic
         /// </summary>
         public string TrafficType { get; set; }
@@ -91,11 +96,6 @@ namespace CloudStack.Net
         /// Id of the vm to which the nic belongs
         /// </summary>
         public string Virtualmachineid { get; set; }
-
-        /// <summary>
-        /// the Secondary ipv4 addr of nic
-        /// </summary>
-        public IList<NicSecondaryIpResponse> Secondaryip { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

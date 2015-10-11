@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the network service provider ID of the internal load balancer element
         /// </summary>
-        public Guid NspId { get; set; }
+        public Guid NspId {
+            get { return (Guid) Parameters[nameof(NspId).ToLower()]; }
+            set { Parameters[nameof(NspId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

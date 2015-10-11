@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// Instance group ID
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// new instance group name
         /// </summary>
-        public string GroupName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
     }
     /// <summary>

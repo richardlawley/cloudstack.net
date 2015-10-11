@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the host
         /// </summary>
-        public Guid HostId { get; set; }
+        public Guid HostId {
+            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
+            set { Parameters[nameof(HostId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

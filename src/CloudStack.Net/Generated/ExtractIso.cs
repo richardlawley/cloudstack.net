@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the ISO file
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the mode of extraction - HTTP_DOWNLOAD or FTP_UPLOAD
         /// </summary>
-        public string Mode { get; set; }
+        public string Mode {
+            get { return (string) Parameters[nameof(Mode).ToLower()]; }
+            set { Parameters[nameof(Mode).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// the URL to which the ISO would be extracted
+        /// the url to which the ISO would be extracted
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the zone where the ISO is originally located
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

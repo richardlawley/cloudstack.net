@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// Nuage device ID
         /// </summary>
-        public Guid NuageVspDeviceId { get; set; }
+        public Guid Vspdeviceid {
+            get { return (Guid) Parameters[nameof(Vspdeviceid).ToLower()]; }
+            set { Parameters[nameof(Vspdeviceid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

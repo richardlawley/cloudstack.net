@@ -12,26 +12,44 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if listing all virtual machines currently applied to the load balancer rule; default is true
         /// </summary>
-        public bool? Applied { get; set; }
+        public bool? Applied {
+            get { return (bool?) Parameters[nameof(Applied).ToLower()]; }
+            set { Parameters[nameof(Applied).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// true if load balancer rule VM IP information to be included; default is false
+        /// true if lb rule vm ip information to be included; default is false
         /// </summary>
-        public bool? IsListLbVmip { get; set; }
+        public bool? Lbvmips {
+            get { return (bool?) Parameters[nameof(Lbvmips).ToLower()]; }
+            set { Parameters[nameof(Lbvmips).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

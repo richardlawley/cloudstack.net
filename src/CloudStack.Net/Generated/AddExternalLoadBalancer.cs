@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// Password of the external load balancer appliance.
         /// </summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return (string) Parameters[nameof(Password).ToLower()]; }
+            set { Parameters[nameof(Password).ToLower()] = value; }
+        }
 
         /// <summary>
         /// URL of the external load balancer appliance.
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Username of the external load balancer appliance.
         /// </summary>
-        public string Username { get; set; }
+        public string Username {
+            get { return (string) Parameters[nameof(Username).ToLower()]; }
+            set { Parameters[nameof(Username).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Zone in which to add the external load balancer appliance.
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

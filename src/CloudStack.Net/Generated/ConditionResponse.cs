@@ -18,6 +18,11 @@ namespace CloudStack.Net
         public string Account { get; set; }
 
         /// <summary>
+        /// Details of the Counter.
+        /// </summary>
+        public IList<CounterResponse> Counter { get; set; }
+
+        /// <summary>
         /// the domain name of the owner.
         /// </summary>
         public string Domain { get; set; }
@@ -51,11 +56,6 @@ namespace CloudStack.Net
         /// zone id of counter
         /// </summary>
         public string ZoneId { get; set; }
-
-        /// <summary>
-        /// Details of the Counter.
-        /// </summary>
-        public IList<CounterResponse> Counter { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

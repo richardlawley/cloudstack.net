@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// public ip address id of the vpn server
         /// </summary>
-        public Guid PublicIpId { get; set; }
+        public Guid PublicIpId {
+            get { return (Guid) Parameters[nameof(PublicIpId).ToLower()]; }
+            set { Parameters[nameof(PublicIpId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

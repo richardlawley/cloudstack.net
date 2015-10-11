@@ -61,7 +61,7 @@ namespace CloudStack.Net.TestClient
                 CreateVolumeRequest request = new CreateVolumeRequest()
                 {
                     Size = 16,
-                    VolumeName = "test",
+                    Name = "test",
                 };
 
                 request.Parameters[nameof(request.DiskOfferingId)] = "diskOfferingFoo";
@@ -94,7 +94,7 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                var deployResp = _client.QueryAsyncJobResult(new QueryAsyncJobResultRequest { Id = Guid.Parse(jobid) });
+                var deployResp = _client.QueryAsyncJobResult(new QueryAsyncJobResultRequest { Jobid = Guid.Parse(jobid) });
                 _logWriter(deployResp.ToString());
             }
             catch (System.Exception wex)
@@ -145,7 +145,7 @@ namespace CloudStack.Net.TestClient
             {
                 CreateSecurityGroupRequest request = new CreateSecurityGroupRequest()
                 {
-                    SecurityGroupName = securityGroupName,
+                    Name = securityGroupName,
                     Description = "My security group"
                 };
                 var response = _client.CreateSecurityGroup(request);
@@ -263,7 +263,7 @@ namespace CloudStack.Net.TestClient
                 };
                 if (!string.IsNullOrEmpty(this._networkId))
                 {
-                    request.NetworkIds = new[] { long.Parse(_networkId) }.ToList();
+                    request.NetworkIds = new[] { Guid.Parse(_networkId) }.ToList();
                 }
                 id = _client.DeployVirtualMachine(request).Id;
                 _logWriter("Deployed new VM, id " + id);
@@ -313,7 +313,7 @@ namespace CloudStack.Net.TestClient
             try
             {
                 _client.StopVirtualMachine(new StopVirtualMachineRequest { Id = Guid.Parse(id), Forced = force });
-                _logWriter("Sent start to VirtualMachine " + id);
+                _logWriter("Sent stop to VirtualMachine " + id);
             }
             catch (System.Exception ex)
             {
@@ -348,7 +348,7 @@ namespace CloudStack.Net.TestClient
                 {
                     DiskOfferingId = Guid.Parse(customOffering.Id),
                     Size = 16,
-                    VolumeName = "testVolume",
+                    Name = "testVolume",
                     ZoneId = Guid.Parse(_zoneId)
                 };
                 volId = _client.CreateVolume(req).Id;

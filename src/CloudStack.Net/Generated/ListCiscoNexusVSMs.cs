@@ -12,21 +12,36 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of the CloudStack cluster in which the Cisco Nexus 1000v VSM appliance.
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Id of the CloudStack cluster in which the Cisco Nexus 1000v VSM appliance.
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

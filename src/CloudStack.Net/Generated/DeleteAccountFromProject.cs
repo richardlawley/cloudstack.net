@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// name of the account to be removed from the project
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// ID of the project to remove the account from
+        /// id of the project to remove the account from
         /// </summary>
-        public Guid ProjectId { get; set; }
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// algorithm.
         /// </summary>
-        public string Algorithm { get; set; }
+        public string Algorithm {
+            get { return (string) Parameters[nameof(Algorithm).ToLower()]; }
+            set { Parameters[nameof(Algorithm).ToLower()] = value; }
+        }
 
         /// <summary>
         /// pool name.
         /// </summary>
-        public string PoolName { get; set; }
+        public string PoolName {
+            get { return (string) Parameters[nameof(PoolName).ToLower()]; }
+            set { Parameters[nameof(PoolName).ToLower()] = value; }
+        }
 
     }
     /// <summary>

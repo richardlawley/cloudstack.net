@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// account name of the new VM owner.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// domain id of the new VM owner.
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// id of the VM to be moved
         /// </summary>
-        public Guid VirtualMachineId { get; set; }
+        public Guid VirtualMachineId {
+            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list of new network ids in which the moved VM will participate. In case no network ids are provided the VM will be part of the default network for that zone. In case there is no network yet created for the new account the default network will be created.
         /// </summary>
-        public IList<long> NetworkIds { get; set; }
+        public IList<Guid> NetworkIds {
+            get { return (IList<Guid>) Parameters[nameof(NetworkIds).ToLower()]; }
+            set { Parameters[nameof(NetworkIds).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list of security group ids to be applied on the virtual machine. In case no security groups are provided the VM is part of the default security group.
         /// </summary>
-        public IList<long> SecurityGroupIdList { get; set; }
+        public IList<Guid> Securitygroupids {
+            get { return (IList<Guid>) Parameters[nameof(Securitygroupids).ToLower()]; }
+            set { Parameters[nameof(Securitygroupids).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,16 +12,28 @@ namespace CloudStack.Net
         /// <summary>
         /// netscaler load balancer device ID
         /// </summary>
-        public Guid LbDeviceId { get; set; }
+        public Guid LbDeviceId {
+            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
+            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

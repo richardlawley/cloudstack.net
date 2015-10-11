@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// public ip address id of the vpn gateway
         /// </summary>
-        public Guid VpcId { get; set; }
+        public Guid VpcId {
+            get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
+            set { Parameters[nameof(VpcId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, whether to the display the vpn to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
     }
     /// <summary>

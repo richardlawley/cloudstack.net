@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the image store provider name
         /// </summary>
-        public string ProviderName { get; set; }
+        public string Provider {
+            get { return (string) Parameters[nameof(Provider).ToLower()]; }
+            set { Parameters[nameof(Provider).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the details for the image store. Example: details[0].key=accesskey&details[0].value=s389ddssaa&details[1].key=secretkey&details[1].value=8dshfsss
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IDictionary<string, string> Details {
+            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+            set { Parameters[nameof(Details).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name for the image store
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the URL for the image store
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
     }
     /// <summary>

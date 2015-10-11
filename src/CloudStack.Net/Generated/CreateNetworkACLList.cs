@@ -10,31 +10,43 @@ namespace CloudStack.Net
         public CreateNetworkACLListRequest() : base("createNetworkACLList") {}
 
         /// <summary>
-        /// Name of the network ACL list
+        /// Name of the network ACL List
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// ID of the VPC associated with this network ACL list
+        /// Id of the VPC associated with this network ACL List
         /// </summary>
-        public Guid VpcId { get; set; }
+        public Guid VpcId {
+            get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
+            set { Parameters[nameof(VpcId).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// Description of the network ACL list
+        /// Description of the network ACL List
         /// </summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return (string) Parameters[nameof(Description).ToLower()]; }
+            set { Parameters[nameof(Description).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, whether to the display the list to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Creates a network ACL for the given VPC
+    /// Creates a Network ACL for the given VPC
     /// </summary>
     /// <summary>
-    /// Creates a network ACL for the given VPC
+    /// Creates a Network ACL for the given VPC
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

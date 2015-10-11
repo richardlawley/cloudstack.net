@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// Map of (key/value pairs)
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IDictionary<string, string> Details {
+            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+            set { Parameters[nameof(Details).ToLower()] = value; }
+        }
 
         /// <summary>
         /// resource id to create the details for
         /// </summary>
-        public string ResourceId { get; set; }
+        public string ResourceId {
+            get { return (string) Parameters[nameof(ResourceId).ToLower()]; }
+            set { Parameters[nameof(ResourceId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// type of the resource
         /// </summary>
-        public string ResourceType { get; set; }
+        public string ResourceType {
+            get { return (string) Parameters[nameof(ResourceType).ToLower()]; }
+            set { Parameters[nameof(ResourceType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// pass false if you want this detail to be disabled for the regular user. True by default
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
     }
     /// <summary>

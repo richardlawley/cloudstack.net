@@ -12,62 +12,98 @@ namespace CloudStack.Net
         /// <summary>
         /// an optional account for the security group. Must be used with domainId.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the cidr list associated
         /// </summary>
-        public IList<string> CidrList { get; set; }
+        public IList<string> CidrList {
+            get { return (IList<string>) Parameters[nameof(CidrList).ToLower()]; }
+            set { Parameters[nameof(CidrList).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional domainId for the security group. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// end port for this ingress rule
         /// </summary>
-        public int? EndPort { get; set; }
+        public int? EndPort {
+            get { return (int?) Parameters[nameof(EndPort).ToLower()]; }
+            set { Parameters[nameof(EndPort).ToLower()] = value; }
+        }
 
         /// <summary>
         /// error code for this icmp message
         /// </summary>
-        public int? IcmpCode { get; set; }
+        public int? IcmpCode {
+            get { return (int?) Parameters[nameof(IcmpCode).ToLower()]; }
+            set { Parameters[nameof(IcmpCode).ToLower()] = value; }
+        }
 
         /// <summary>
         /// type of the icmp message being sent
         /// </summary>
-        public int? IcmpType { get; set; }
+        public int? IcmpType {
+            get { return (int?) Parameters[nameof(IcmpType).ToLower()]; }
+            set { Parameters[nameof(IcmpType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional project of the security group
         /// </summary>
-        public Guid ProjectId { get; set; }
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// TCP is default. UDP is the other supported protocol
         /// </summary>
-        public string Protocol { get; set; }
+        public string Protocol {
+            get { return (string) Parameters[nameof(Protocol).ToLower()]; }
+            set { Parameters[nameof(Protocol).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The ID of the security group. Mutually exclusive with securityGroupName parameter
         /// </summary>
-        public Guid SecurityGroupId { get; set; }
+        public Guid SecurityGroupId {
+            get { return (Guid) Parameters[nameof(SecurityGroupId).ToLower()]; }
+            set { Parameters[nameof(SecurityGroupId).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// The name of the security group. Mutually exclusive with securityGroupId parameter
+        /// The name of the security group. Mutually exclusive with securityGroupName parameter
         /// </summary>
-        public string SecurityGroupName { get; set; }
+        public string SecurityGroupName {
+            get { return (string) Parameters[nameof(SecurityGroupName).ToLower()]; }
+            set { Parameters[nameof(SecurityGroupName).ToLower()] = value; }
+        }
 
         /// <summary>
         /// start port for this ingress rule
         /// </summary>
-        public int? StartPort { get; set; }
+        public int? StartPort {
+            get { return (int?) Parameters[nameof(StartPort).ToLower()]; }
+            set { Parameters[nameof(StartPort).ToLower()] = value; }
+        }
 
         /// <summary>
         /// user to security group mapping
         /// </summary>
-        public IDictionary<string, string> UserSecurityGroupList { get; set; }
+        public IDictionary<string, string> UserSecurityGroupList {
+            get { return (IDictionary<string, string>) Parameters[nameof(UserSecurityGroupList).ToLower()]; }
+            set { Parameters[nameof(UserSecurityGroupList).ToLower()] = value; }
+        }
 
     }
     /// <summary>

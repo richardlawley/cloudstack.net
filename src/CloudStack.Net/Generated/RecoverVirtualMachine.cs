@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the virtual machine
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>

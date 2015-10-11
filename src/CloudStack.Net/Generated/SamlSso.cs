@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// Identity Provider Entity ID
         /// </summary>
-        public string IdpId { get; set; }
+        public string IdpId {
+            get { return (string) Parameters[nameof(IdpId).ToLower()]; }
+            set { Parameters[nameof(IdpId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

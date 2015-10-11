@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the host ID
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Force delete the host. All HA enabled vms running on the host will be put to HA; HA disabled ones will be stopped
         /// </summary>
-        public bool? Forced { get; set; }
+        public bool? Forced {
+            get { return (bool?) Parameters[nameof(Forced).ToLower()]; }
+            set { Parameters[nameof(Forced).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Force destroy local storage on this host. All VMs created on this local storage will be destroyed
         /// </summary>
-        public bool? ForceDestroyLocalStorage { get; set; }
+        public bool? ForceDestroyLocalStorage {
+            get { return (bool?) Parameters[nameof(ForceDestroyLocalStorage).ToLower()]; }
+            set { Parameters[nameof(ForceDestroyLocalStorage).ToLower()] = value; }
+        }
 
     }
     /// <summary>

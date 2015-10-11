@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// Name of the counter.
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Source of the counter.
         /// </summary>
-        public string Source { get; set; }
+        public string Source {
+            get { return (string) Parameters[nameof(Source).ToLower()]; }
+            set { Parameters[nameof(Source).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Value of the counter e.g. oid in case of snmp.
         /// </summary>
-        public string Value { get; set; }
+        public string Value {
+            get { return (string) Parameters[nameof(Value).ToLower()]; }
+            set { Parameters[nameof(Value).ToLower()] = value; }
+        }
 
     }
     /// <summary>

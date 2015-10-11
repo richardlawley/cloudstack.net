@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// the URL for the secondary storage
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Zone ID for the secondary storage
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

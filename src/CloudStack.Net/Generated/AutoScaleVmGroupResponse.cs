@@ -63,16 +63,6 @@ namespace CloudStack.Net
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// the current state of the AutoScale Vm Group
-        /// </summary>
-        public string State { get; set; }
-
-        /// <summary>
-        /// the autoscale profile that contains information about the vms in the vm group.
-        /// </summary>
-        public string Vmprofileid { get; set; }
-
-        /// <summary>
         /// list of scaledown autoscale policies
         /// </summary>
         public IList<AutoScalePolicyResponse> ScaleDownPolicies { get; set; }
@@ -81,6 +71,16 @@ namespace CloudStack.Net
         /// list of scaleup autoscale policies
         /// </summary>
         public IList<AutoScalePolicyResponse> ScaleUpPolicies { get; set; }
+
+        /// <summary>
+        /// the current state of the AutoScale Vm Group
+        /// </summary>
+        public string State { get; set; }
+
+        /// <summary>
+        /// the autoscale profile that contains information about the vms in the vm group.
+        /// </summary>
+        public string Vmprofileid { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

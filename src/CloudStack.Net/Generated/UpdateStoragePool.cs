@@ -12,27 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the Id of the storage pool
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// bytes CloudStack can provision from this storage pool
         /// </summary>
-        public long? CapacityBytes { get; set; }
+        public long? CapacityBytes {
+            get { return (long?) Parameters[nameof(CapacityBytes).ToLower()]; }
+            set { Parameters[nameof(CapacityBytes).ToLower()] = value; }
+        }
 
         /// <summary>
         /// IOPS CloudStack can provision from this storage pool
         /// </summary>
-        public long? CapacityIops { get; set; }
-
-        /// <summary>
-        /// false to disable the pool for allocation of new volumes, true to enable it back.
-        /// </summary>
-        public bool? Enabled { get; set; }
+        public long? CapacityIops {
+            get { return (long?) Parameters[nameof(CapacityIops).ToLower()]; }
+            set { Parameters[nameof(CapacityIops).ToLower()] = value; }
+        }
 
         /// <summary>
         /// comma-separated list of tags for the storage pool
         /// </summary>
-        public IList<string> Tags { get; set; }
+        public IList<string> Tags {
+            get { return (IList<string>) Parameters[nameof(Tags).ToLower()]; }
+            set { Parameters[nameof(Tags).ToLower()] = value; }
+        }
 
     }
     /// <summary>

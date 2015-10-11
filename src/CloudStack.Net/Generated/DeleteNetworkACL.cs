@@ -12,14 +12,17 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the network ACL
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Deletes a network ACL
+    /// Deletes a Network ACL
     /// </summary>
     /// <summary>
-    /// Deletes a network ACL
+    /// Deletes a Network ACL
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// URL of the traffic monitor Host
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Zone in which to add the external firewall appliance.
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Traffic going into the listed zones will not be metered
         /// </summary>
-        public string ExclZones { get; set; }
+        public string Excludezones {
+            get { return (string) Parameters[nameof(Excludezones).ToLower()]; }
+            set { Parameters[nameof(Excludezones).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Traffic going into the listed zones will be metered
         /// </summary>
-        public string InclZones { get; set; }
+        public string Includezones {
+            get { return (string) Parameters[nameof(Includezones).ToLower()]; }
+            set { Parameters[nameof(Includezones).ToLower()] = value; }
+        }
 
     }
     /// <summary>

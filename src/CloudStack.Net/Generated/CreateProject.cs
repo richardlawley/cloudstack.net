@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// display text of the project
         /// </summary>
-        public string DisplayText { get; set; }
+        public string DisplayText {
+            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
+            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+        }
 
         /// <summary>
         /// name of the project
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// account who will be Admin for the project
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// domain ID of the account owning a project
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

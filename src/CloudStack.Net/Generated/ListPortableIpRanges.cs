@@ -12,21 +12,36 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of the portable ip range
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Id of a Region
         /// </summary>
-        public int? RegionId { get; set; }
+        public int? RegionId {
+            get { return (int?) Parameters[nameof(RegionId).ToLower()]; }
+            set { Parameters[nameof(RegionId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

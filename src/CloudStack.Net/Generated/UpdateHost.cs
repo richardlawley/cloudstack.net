@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the host to update
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Change resource state of host, valid values are [Enable, Disable]. Operation may failed if host in states not allowing Enable/Disable
         /// </summary>
-        public string AllocationState { get; set; }
+        public string AllocationState {
+            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
+            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list of tags to be added to the host
         /// </summary>
-        public IList<string> HostTags { get; set; }
+        public IList<string> HostTags {
+            get { return (IList<string>) Parameters[nameof(HostTags).ToLower()]; }
+            set { Parameters[nameof(HostTags).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the id of Os category to update the host with
         /// </summary>
-        public Guid OsCategoryId { get; set; }
+        public Guid OsCategoryId {
+            get { return (Guid) Parameters[nameof(OsCategoryId).ToLower()]; }
+            set { Parameters[nameof(OsCategoryId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the new uri for the secondary storage: nfs://host/path
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
     }
     /// <summary>

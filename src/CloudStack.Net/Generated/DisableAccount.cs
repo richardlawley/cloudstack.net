@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// If true, only lock the account; else disable the account
         /// </summary>
-        public bool LockRequested { get; set; }
+        public bool Lock {
+            get { return (bool) Parameters[nameof(Lock).ToLower()]; }
+            set { Parameters[nameof(Lock).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Disables specified account.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Disables specified account in this domain.
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Account id
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -10,26 +10,35 @@ namespace CloudStack.Net
         public UpdateIpAddressRequest() : base("updateIpAddress") {}
 
         /// <summary>
-        /// the ID of the public IP address to update
+        /// the id of the public ip address to update
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
-        public string CustomId { get; set; }
+        public string CustomId {
+            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
+            set { Parameters[nameof(CustomId).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// an optional field, whether to the display the IP to the end user or not
+        /// an optional field, whether to the display the ip to the end user or not
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Updates an IP address
+    /// Updates an ip address
     /// </summary>
     /// <summary>
-    /// Updates an IP address
+    /// Updates an ip address
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

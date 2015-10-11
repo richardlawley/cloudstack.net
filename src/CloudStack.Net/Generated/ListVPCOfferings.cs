@@ -12,41 +12,68 @@ namespace CloudStack.Net
         /// <summary>
         /// list VPC offerings by display text
         /// </summary>
-        public string DisplayText { get; set; }
+        public string DisplayText {
+            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
+            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list VPC offerings by id
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if need to list only default VPC offerings. Default value is false
         /// </summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault {
+            get { return (bool?) Parameters[nameof(IsDefault).ToLower()]; }
+            set { Parameters[nameof(IsDefault).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list VPC offerings by name
         /// </summary>
-        public string VpcOffName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list VPC offerings by state
         /// </summary>
-        public string State { get; set; }
+        public string State {
+            get { return (string) Parameters[nameof(State).ToLower()]; }
+            set { Parameters[nameof(State).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list VPC offerings supporting certain services
         /// </summary>
-        public IList<string> SupportedServices { get; set; }
+        public IList<string> SupportedServices {
+            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+        }
 
     }
     /// <summary>

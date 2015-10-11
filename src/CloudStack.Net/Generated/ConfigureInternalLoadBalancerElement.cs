@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the internal lb provider
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Enables/Disables the Internal Load Balancer element
         /// </summary>
-        public bool Enabled { get; set; }
+        public bool Enabled {
+            get { return (bool) Parameters[nameof(Enabled).ToLower()]; }
+            set { Parameters[nameof(Enabled).ToLower()] = value; }
+        }
 
     }
     /// <summary>

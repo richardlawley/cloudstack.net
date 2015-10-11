@@ -135,7 +135,7 @@ namespace CloudStack.Net
                     {
                         sb.Append("&");
                     }
-                    sb.Append($"{name}[{i}].key={Uri.EscapeDataString(key.ToString())}&{name}[{i}].value={Uri.EscapeDataString(dict[key].ToString())}");
+                    sb.Append($"{name}[0].{Uri.EscapeDataString(key.ToString())}={Uri.EscapeDataString(dict[key].ToString())}");
                 }
                 return sb.ToString();
 

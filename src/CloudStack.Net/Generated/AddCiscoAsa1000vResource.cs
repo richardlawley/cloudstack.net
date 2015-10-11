@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// the Cluster ID
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Hostname or ip address of the Cisco ASA 1000v appliance.
         /// </summary>
-        public string Host { get; set; }
+        public string Hostname {
+            get { return (string) Parameters[nameof(Hostname).ToLower()]; }
+            set { Parameters[nameof(Hostname).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Nexus port profile associated with inside interface of ASA 1000v
         /// </summary>
-        public string InPortProfile { get; set; }
+        public string Insideportprofile {
+            get { return (string) Parameters[nameof(Insideportprofile).ToLower()]; }
+            set { Parameters[nameof(Insideportprofile).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId { get; set; }
+        public Guid PhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

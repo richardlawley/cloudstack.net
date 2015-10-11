@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// stratosphere ssp api name
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// stratosphere ssp server url
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the zone ID
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// stratosphere ssp api password
         /// </summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return (string) Parameters[nameof(Password).ToLower()]; }
+            set { Parameters[nameof(Password).ToLower()] = value; }
+        }
 
         /// <summary>
         /// stratosphere ssp tenant uuid
         /// </summary>
-        public string TenantUuid { get; set; }
+        public string TenantUuid {
+            get { return (string) Parameters[nameof(TenantUuid).ToLower()]; }
+            set { Parameters[nameof(TenantUuid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// stratosphere ssp api username
         /// </summary>
-        public string Username { get; set; }
+        public string Username {
+            get { return (string) Parameters[nameof(Username).ToLower()]; }
+            set { Parameters[nameof(Username).ToLower()] = value; }
+        }
 
     }
     /// <summary>

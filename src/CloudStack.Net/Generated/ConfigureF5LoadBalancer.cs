@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// F5 load balancer device ID
         /// </summary>
-        public Guid LbDeviceId { get; set; }
+        public Guid LbDeviceId {
+            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
+            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// capacity of the device, Capacity will be interpreted as number of networks device can handle
         /// </summary>
-        public long? Capacity { get; set; }
+        public long? Lbdevicecapacity {
+            get { return (long?) Parameters[nameof(Lbdevicecapacity).ToLower()]; }
+            set { Parameters[nameof(Lbdevicecapacity).ToLower()] = value; }
+        }
 
     }
     /// <summary>

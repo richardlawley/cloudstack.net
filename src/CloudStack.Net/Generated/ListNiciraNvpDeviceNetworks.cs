@@ -12,16 +12,28 @@ namespace CloudStack.Net
         /// <summary>
         /// nicira nvp device ID
         /// </summary>
-        public Guid NiciraNvpDeviceId { get; set; }
+        public Guid Nvpdeviceid {
+            get { return (Guid) Parameters[nameof(Nvpdeviceid).ToLower()]; }
+            set { Parameters[nameof(Nvpdeviceid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

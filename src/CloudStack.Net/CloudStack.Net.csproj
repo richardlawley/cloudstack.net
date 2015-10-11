@@ -58,7 +58,6 @@
     <Compile Include="Generated\AddBaremetalPxeKickStartServer.cs" />
     <Compile Include="Generated\AddBaremetalPxePingServer.cs" />
     <Compile Include="Generated\AddBaremetalRct.cs" />
-    <Compile Include="Generated\AddBigSwitchBcfDevice.cs" />
     <Compile Include="Generated\AddBrocadeVcsDevice.cs" />
     <Compile Include="Generated\AddCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\AddCiscoVnmcResource.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="Generated\BaremetalPxeResponse.cs" />
     <Compile Include="Generated\BaremetalRctResponse.cs" />
     <Compile Include="Generated\BaseResponse.cs" />
-    <Compile Include="Generated\BigSwitchBcfDeviceResponse.cs" />
     <Compile Include="Generated\BrocadeVcsDeviceResponse.cs" />
     <Compile Include="Generated\CancelHostMaintenance.cs" />
     <Compile Include="Generated\CancelStorageMaintenance.cs" />
@@ -238,7 +236,6 @@
     <Compile Include="Generated\DeleteAutoScaleVmGroup.cs" />
     <Compile Include="Generated\DeleteAutoScaleVmProfile.cs" />
     <Compile Include="Generated\DeleteBaremetalRct.cs" />
-    <Compile Include="Generated\DeleteBigSwitchBcfDevice.cs" />
     <Compile Include="Generated\DeleteBrocadeVcsDevice.cs" />
     <Compile Include="Generated\DeleteCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\DeleteCiscoNexusVSM.cs" />
@@ -362,9 +359,6 @@
     <Compile Include="Generated\GetSolidFireVolumeIscsiName.cs" />
     <Compile Include="Generated\GetSolidFireVolumeSize.cs" />
     <Compile Include="Generated\GetSPMetadata.cs" />
-    <Compile Include="Generated\GetUploadParamsForTemplate.cs" />
-    <Compile Include="Generated\GetUploadParamsForVolume.cs" />
-    <Compile Include="Generated\GetUploadParamsResponse.cs" />
     <Compile Include="Generated\GetUser.cs" />
     <Compile Include="Generated\GetVirtualMachineUserData.cs" />
     <Compile Include="Generated\GetVMPassword.cs" />
@@ -383,7 +377,6 @@
     <Compile Include="Generated\HypervisorType.cs" />
     <Compile Include="Generated\IdpResponse.cs" />
     <Compile Include="Generated\ImageFormat.cs" />
-    <Compile Include="Generated\ImageStoreDetailResponse.cs" />
     <Compile Include="Generated\ImageStoreResponse.cs" />
     <Compile Include="Generated\ImportLdapUsers.cs" />
     <Compile Include="Generated\InstanceGroupResponse.cs" />
@@ -398,8 +391,6 @@
     <Compile Include="Generated\LdapConfigurationResponse.cs" />
     <Compile Include="Generated\LdapCreateAccount.cs" />
     <Compile Include="Generated\LdapUserResponse.cs" />
-    <Compile Include="Generated\LinkDomainToLdap.cs" />
-    <Compile Include="Generated\LinkDomainToLdapResponse.cs" />
     <Compile Include="Generated\ListAccounts.cs" />
     <Compile Include="Generated\ListAffinityGroups.cs" />
     <Compile Include="Generated\ListAffinityGroupTypes.cs" />
@@ -413,7 +404,6 @@
     <Compile Include="Generated\ListBaremetalDhcp.cs" />
     <Compile Include="Generated\ListBaremetalPxeServers.cs" />
     <Compile Include="Generated\ListBaremetalRct.cs" />
-    <Compile Include="Generated\ListBigSwitchBcfDevices.cs" />
     <Compile Include="Generated\ListBrocadeVcsDeviceNetworks.cs" />
     <Compile Include="Generated\ListBrocadeVcsDevices.cs" />
     <Compile Include="Generated\ListCapabilities.cs" />
@@ -612,7 +602,6 @@
     <Compile Include="Generated\RemoveGuestOsMapping.cs" />
     <Compile Include="Generated\RemoveIpFromNic.cs" />
     <Compile Include="Generated\RemoveNicFromVirtualMachine.cs" />
-    <Compile Include="Generated\RemoveRawUsageRecords.cs" />
     <Compile Include="Generated\RemoveRegion.cs" />
     <Compile Include="Generated\RemoveResourceDetail.cs" />
     <Compile Include="Generated\RemoveVmwareDc.cs" />

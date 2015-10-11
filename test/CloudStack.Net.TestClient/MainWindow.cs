@@ -180,7 +180,8 @@ namespace CloudStack.Net.TestClient
         private void ButtonCreateVolume_Click(object sender, EventArgs e)
         {
             Tests tests = new Tests(this.WriteToLogBox);
-            tests.CreateVolume();
+            string volumeId = tests.CreateVolume();
+            TextBoxVolId.Text = volumeId;
         }
 
         private void ButtonAttachVolume_Click(object sender, EventArgs e)

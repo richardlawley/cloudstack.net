@@ -263,16 +263,6 @@ namespace CloudStack.Net
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// the user's ID who deployed the virtual machine
-        /// </summary>
-        public string UserId { get; set; }
-
-        /// <summary>
-        /// the user's name who deployed the virtual machine
-        /// </summary>
-        public string UserName { get; set; }
-
-        /// <summary>
         /// the vgpu type used by the virtual machine
         /// </summary>
         public string Vgpu { get; set; }

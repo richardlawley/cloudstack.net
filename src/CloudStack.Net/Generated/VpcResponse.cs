@@ -73,11 +73,6 @@ namespace CloudStack.Net
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// if this VPC has redundant router
-        /// </summary>
-        public bool Redundantvpcrouter { get; set; }
-
-        /// <summary>
         /// true if VPC is region level
         /// </summary>
         public bool RegionLevelVpc { get; set; }

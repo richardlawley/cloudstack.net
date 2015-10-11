@@ -12,24 +12,33 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the network ACL
         /// </summary>
-        public Guid AclId { get; set; }
+        public Guid AclId {
+            get { return (Guid) Parameters[nameof(AclId).ToLower()]; }
+            set { Parameters[nameof(AclId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the private gateway
         /// </summary>
-        public Guid PrivateGatewayId { get; set; }
+        public Guid Gatewayid {
+            get { return (Guid) Parameters[nameof(Gatewayid).ToLower()]; }
+            set { Parameters[nameof(Gatewayid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the network
         /// </summary>
-        public Guid NetworkId { get; set; }
+        public Guid NetworkId {
+            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
+            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Replaces ACL associated with a network or private gateway
+    /// Replaces ACL associated with a Network or private gateway
     /// </summary>
     /// <summary>
-    /// Replaces ACL associated with a network or private gateway
+    /// Replaces ACL associated with a Network or private gateway
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

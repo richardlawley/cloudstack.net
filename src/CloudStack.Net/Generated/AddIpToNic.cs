@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the nic to which you want to assign private IP
         /// </summary>
-        public Guid NicId { get; set; }
+        public Guid NicId {
+            get { return (Guid) Parameters[nameof(NicId).ToLower()]; }
+            set { Parameters[nameof(NicId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Secondary IP Address
         /// </summary>
-        public string IpAddr { get; set; }
+        public string Ipaddress {
+            get { return (string) Parameters[nameof(Ipaddress).ToLower()]; }
+            set { Parameters[nameof(Ipaddress).ToLower()] = value; }
+        }
 
     }
     /// <summary>

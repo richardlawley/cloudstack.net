@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// LUN path.
         /// </summary>
-        public string Path { get; set; }
+        public string Path {
+            get { return (string) Parameters[nameof(Path).ToLower()]; }
+            set { Parameters[nameof(Path).ToLower()] = value; }
+        }
 
     }
     /// <summary>

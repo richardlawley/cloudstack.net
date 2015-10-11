@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Cluster
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the containing domain
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the account which needs dedication. Must be used with domainId.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
     }
     /// <summary>

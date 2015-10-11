@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the vm
         /// </summary>
-        public Guid VmId { get; set; }
+        public Guid Virtualmachineid {
+            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
+            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The description of the snapshot
         /// </summary>
-        public string Description { get; set; }
+        public string Description {
+            get { return (string) Parameters[nameof(Description).ToLower()]; }
+            set { Parameters[nameof(Description).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The display name of the snapshot
         /// </summary>
-        public string DisplayName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// quiesce vm if true
         /// </summary>
-        public bool? Quiescevm { get; set; }
+        public bool? Quiescevm {
+            get { return (bool?) Parameters[nameof(Quiescevm).ToLower()]; }
+            set { Parameters[nameof(Quiescevm).ToLower()] = value; }
+        }
 
         /// <summary>
         /// snapshot memory if true
         /// </summary>
-        public bool? SnapshotMemory { get; set; }
+        public bool? SnapshotMemory {
+            get { return (bool?) Parameters[nameof(SnapshotMemory).ToLower()]; }
+            set { Parameters[nameof(SnapshotMemory).ToLower()] = value; }
+        }
 
     }
     /// <summary>

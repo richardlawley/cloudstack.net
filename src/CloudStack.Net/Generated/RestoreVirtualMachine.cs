@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// Virtual Machine ID
         /// </summary>
-        public Guid VmId { get; set; }
+        public Guid Virtualmachineid {
+            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
+            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// an optional template Id to restore vm from the new template. This can be an ISO id in case of restore vm deployed using ISO
         /// </summary>
-        public Guid TemplateId { get; set; }
+        public Guid TemplateId {
+            get { return (Guid) Parameters[nameof(TemplateId).ToLower()]; }
+            set { Parameters[nameof(TemplateId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

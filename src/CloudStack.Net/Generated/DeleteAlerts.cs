@@ -12,22 +12,34 @@ namespace CloudStack.Net
         /// <summary>
         /// end date range to delete alerts (including) this date (use format "yyyy-MM-dd" or the new format "yyyy-MM-ddThh:mm:ss")
         /// </summary>
-        public DateTime? EndDate { get; set; }
+        public DateTime? EndDate {
+            get { return (DateTime?) Parameters[nameof(EndDate).ToLower()]; }
+            set { Parameters[nameof(EndDate).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the IDs of the alerts
         /// </summary>
-        public IList<long> Ids { get; set; }
+        public IList<Guid> Ids {
+            get { return (IList<Guid>) Parameters[nameof(Ids).ToLower()]; }
+            set { Parameters[nameof(Ids).ToLower()] = value; }
+        }
 
         /// <summary>
         /// start date range to delete alerts (including) this date (use format "yyyy-MM-dd" or the new format "yyyy-MM-ddThh:mm:ss")
         /// </summary>
-        public DateTime? StartDate { get; set; }
+        public DateTime? StartDate {
+            get { return (DateTime?) Parameters[nameof(StartDate).ToLower()]; }
+            set { Parameters[nameof(StartDate).ToLower()] = value; }
+        }
 
         /// <summary>
         /// delete by alert type
         /// </summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return (string) Parameters[nameof(Type).ToLower()]; }
+            set { Parameters[nameof(Type).ToLower()] = value; }
+        }
 
     }
     /// <summary>

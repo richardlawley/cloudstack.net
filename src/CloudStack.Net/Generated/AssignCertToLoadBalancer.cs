@@ -12,19 +12,25 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the certificate
         /// </summary>
-        public Guid CertId { get; set; }
+        public Guid CertId {
+            get { return (Guid) Parameters[nameof(CertId).ToLower()]; }
+            set { Parameters[nameof(CertId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid LbRuleId { get; set; }
+        public Guid LbRuleId {
+            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
+            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Assigns a certificate to a load balancer rule
+    /// Assigns a certificate to a Load Balancer Rule
     /// </summary>
     /// <summary>
-    /// Assigns a certificate to a load balancer rule
+    /// Assigns a certificate to a Load Balancer Rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

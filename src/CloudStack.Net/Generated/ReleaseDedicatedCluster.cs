@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Cluster
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

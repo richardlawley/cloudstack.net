@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of Guest OS category
         /// </summary>
-        public Guid OsCategoryId { get; set; }
+        public Guid OsCategoryId {
+            get { return (Guid) Parameters[nameof(OsCategoryId).ToLower()]; }
+            set { Parameters[nameof(OsCategoryId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Unique display name for Guest OS
         /// </summary>
-        public string OsDisplayName { get; set; }
+        public string OsDisplayName {
+            get { return (string) Parameters[nameof(OsDisplayName).ToLower()]; }
+            set { Parameters[nameof(OsDisplayName).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Optional name for Guest OS
         /// </summary>
-        public string OsName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
     }
     /// <summary>

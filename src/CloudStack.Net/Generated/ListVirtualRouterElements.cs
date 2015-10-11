@@ -12,26 +12,44 @@ namespace CloudStack.Net
         /// <summary>
         /// list network offerings by enabled state
         /// </summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled {
+            get { return (bool?) Parameters[nameof(Enabled).ToLower()]; }
+            set { Parameters[nameof(Enabled).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list virtual router elements by id
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list virtual router elements by network service provider id
         /// </summary>
-        public Guid NspId { get; set; }
+        public Guid NspId {
+            get { return (Guid) Parameters[nameof(NspId).ToLower()]; }
+            set { Parameters[nameof(NspId).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

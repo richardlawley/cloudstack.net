@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the id of the VLAN IP range
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of domain to delete
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if all domain resources (child domains, accounts) have to be cleaned up, false otherwise
         /// </summary>
-        public bool? Cleanup { get; set; }
+        public bool? Cleanup {
+            get { return (bool?) Parameters[nameof(Cleanup).ToLower()]; }
+            set { Parameters[nameof(Cleanup).ToLower()] = value; }
+        }
 
     }
     /// <summary>

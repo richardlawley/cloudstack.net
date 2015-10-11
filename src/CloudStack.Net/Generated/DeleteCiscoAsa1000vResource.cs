@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// Cisco ASA 1000v resource ID
         /// </summary>
-        public Guid CiscoAsa1000vResourceId { get; set; }
+        public Guid Resourceid {
+            get { return (Guid) Parameters[nameof(Resourceid).ToLower()]; }
+            set { Parameters[nameof(Resourceid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

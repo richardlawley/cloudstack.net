@@ -12,21 +12,36 @@ namespace CloudStack.Net
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// network service provider name
         /// </summary>
-        public string ProviderName { get; set; }
+        public string Provider {
+            get { return (string) Parameters[nameof(Provider).ToLower()]; }
+            set { Parameters[nameof(Provider).ToLower()] = value; }
+        }
 
         /// <summary>
         /// network service name to list providers and capabilities of
         /// </summary>
-        public string ServiceName { get; set; }
+        public string Service {
+            get { return (string) Parameters[nameof(Service).ToLower()]; }
+            set { Parameters[nameof(Service).ToLower()] = value; }
+        }
 
     }
     /// <summary>

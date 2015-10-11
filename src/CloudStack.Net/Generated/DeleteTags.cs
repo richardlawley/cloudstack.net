@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// Delete tags for resource id(s)
         /// </summary>
-        public IList<string> ResourceIds { get; set; }
+        public IList<string> ResourceIds {
+            get { return (IList<string>) Parameters[nameof(ResourceIds).ToLower()]; }
+            set { Parameters[nameof(ResourceIds).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Delete tag by resource type
         /// </summary>
-        public string ResourceType { get; set; }
+        public string ResourceType {
+            get { return (string) Parameters[nameof(ResourceType).ToLower()]; }
+            set { Parameters[nameof(ResourceType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Delete tags matching key/value pairs
         /// </summary>
-        public IDictionary<string, string> Tag { get; set; }
+        public IDictionary<string, string> Tags {
+            get { return (IDictionary<string, string>) Parameters[nameof(Tags).ToLower()]; }
+            set { Parameters[nameof(Tags).ToLower()] = value; }
+        }
 
     }
     /// <summary>

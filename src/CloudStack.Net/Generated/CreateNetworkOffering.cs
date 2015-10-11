@@ -12,97 +12,154 @@ namespace CloudStack.Net
         /// <summary>
         /// the display text of the network offering
         /// </summary>
-        public string DisplayText { get; set; }
+        public string DisplayText {
+            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
+            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+        }
 
         /// <summary>
         /// guest type of the network offering: Shared or Isolated
         /// </summary>
-        public string GuestIptype { get; set; }
+        public string GuestIptype {
+            get { return (string) Parameters[nameof(GuestIptype).ToLower()]; }
+            set { Parameters[nameof(GuestIptype).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the network offering
         /// </summary>
-        public string NetworkOfferingName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// services supported by the network offering
         /// </summary>
-        public IList<string> SupportedServices { get; set; }
+        public IList<string> SupportedServices {
+            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the traffic type for the network offering. Supported type in current release is GUEST only
         /// </summary>
-        public string Traffictype { get; set; }
+        public string Traffictype {
+            get { return (string) Parameters[nameof(Traffictype).ToLower()]; }
+            set { Parameters[nameof(Traffictype).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the availability of network offering. Default value is Optional
         /// </summary>
-        public string Availability { get; set; }
+        public string Availability {
+            get { return (string) Parameters[nameof(Availability).ToLower()]; }
+            set { Parameters[nameof(Availability).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if the network offering is IP conserve mode enabled
         /// </summary>
-        public bool? ConserveMode { get; set; }
+        public bool? ConserveMode {
+            get { return (bool?) Parameters[nameof(ConserveMode).ToLower()]; }
+            set { Parameters[nameof(ConserveMode).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Network offering details in key/value pairs. Supported keys are internallbprovider/publiclbprovider with service provider as a value
         /// </summary>
-        public IDictionary<string, string> Details { get; set; }
+        public IDictionary<string, string> Details {
+            get { return (IDictionary<string, string>) Parameters[nameof(Details).ToLower()]; }
+            set { Parameters[nameof(Details).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if guest network default egress policy is allow; false if default egress policy is deny
         /// </summary>
-        public bool? EgressDefaultPolicy { get; set; }
+        public bool? EgressDefaultPolicy {
+            get { return (bool?) Parameters[nameof(EgressDefaultPolicy).ToLower()]; }
+            set { Parameters[nameof(EgressDefaultPolicy).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if network offering supports persistent networks; defaulted to false if not specified
         /// </summary>
-        public bool? IsPersistent { get; set; }
+        public bool? IsPersistent {
+            get { return (bool?) Parameters[nameof(IsPersistent).ToLower()]; }
+            set { Parameters[nameof(IsPersistent).ToLower()] = value; }
+        }
 
         /// <summary>
         /// if true keepalive will be turned on in the loadbalancer. At the time of writing this has only an effect on haproxy; the mode http and httpclose options are unset in the haproxy conf file.
         /// </summary>
-        public bool? KeepAliveEnabled { get; set; }
+        public bool? KeepAliveEnabled {
+            get { return (bool?) Parameters[nameof(KeepAliveEnabled).ToLower()]; }
+            set { Parameters[nameof(KeepAliveEnabled).ToLower()] = value; }
+        }
 
         /// <summary>
         /// maximum number of concurrent connections supported by the network offering
         /// </summary>
-        public int? MaxConnections { get; set; }
+        public int? MaxConnections {
+            get { return (int?) Parameters[nameof(MaxConnections).ToLower()]; }
+            set { Parameters[nameof(MaxConnections).ToLower()] = value; }
+        }
 
         /// <summary>
         /// data transfer rate in megabits per second allowed
         /// </summary>
-        public int? NetworkRate { get; set; }
+        public int? NetworkRate {
+            get { return (int?) Parameters[nameof(NetworkRate).ToLower()]; }
+            set { Parameters[nameof(NetworkRate).ToLower()] = value; }
+        }
 
         /// <summary>
         /// desired service capabilities as part of network offering
         /// </summary>
-        public IDictionary<string, string> ServiceCapabilitystList { get; set; }
+        public IDictionary<string, string> Servicecapabilitylist {
+            get { return (IDictionary<string, string>) Parameters[nameof(Servicecapabilitylist).ToLower()]; }
+            set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the service offering ID used by virtual router provider
         /// </summary>
-        public Guid ServiceOfferingId { get; set; }
+        public Guid ServiceOfferingId {
+            get { return (Guid) Parameters[nameof(ServiceOfferingId).ToLower()]; }
+            set { Parameters[nameof(ServiceOfferingId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// provider to service mapping. If not specified, the provider for the service will be mapped to the default provider on the physical network
         /// </summary>
-        public IDictionary<string, string> ServiceProviderList { get; set; }
+        public IDictionary<string, string> ServiceProviderList {
+            get { return (IDictionary<string, string>) Parameters[nameof(ServiceProviderList).ToLower()]; }
+            set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if network offering supports specifying ip ranges; defaulted to false if not specified
         /// </summary>
-        public bool? SpecifyIpRanges { get; set; }
+        public bool? SpecifyIpRanges {
+            get { return (bool?) Parameters[nameof(SpecifyIpRanges).ToLower()]; }
+            set { Parameters[nameof(SpecifyIpRanges).ToLower()] = value; }
+        }
 
         /// <summary>
         /// true if network offering supports vlans
         /// </summary>
-        public bool? SpecifyVlan { get; set; }
+        public bool? SpecifyVlan {
+            get { return (bool?) Parameters[nameof(SpecifyVlan).ToLower()]; }
+            set { Parameters[nameof(SpecifyVlan).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the tags for the network offering.
         /// </summary>
-        public string Tags { get; set; }
+        public string Tags {
+            get { return (string) Parameters[nameof(Tags).ToLower()]; }
+            set { Parameters[nameof(Tags).ToLower()] = value; }
+        }
 
     }
     /// <summary>

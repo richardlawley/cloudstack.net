@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// Nicira device ID
         /// </summary>
-        public Guid NiciraNvpDeviceId { get; set; }
+        public Guid Nvpdeviceid {
+            get { return (Guid) Parameters[nameof(Nvpdeviceid).ToLower()]; }
+            set { Parameters[nameof(Nvpdeviceid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

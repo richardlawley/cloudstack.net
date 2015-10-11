@@ -23,11 +23,6 @@ namespace CloudStack.Net
         public string KvmNetworkLabel { get; set; }
 
         /// <summary>
-        /// The network name of the physical device dedicated to this traffic on an OVM3 host
-        /// </summary>
-        public string Ovm3NetworkLabel { get; set; }
-
-        /// <summary>
         /// the physical network this belongs to
         /// </summary>
         public string PhysicalNetworkId { get; set; }

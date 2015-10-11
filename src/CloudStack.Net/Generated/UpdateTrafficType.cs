@@ -12,32 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// traffic type id
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a Hyperv host
         /// </summary>
-        public string HypervLabel { get; set; }
+        public string Hypervnetworklabel {
+            get { return (string) Parameters[nameof(Hypervnetworklabel).ToLower()]; }
+            set { Parameters[nameof(Hypervnetworklabel).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a KVM host
         /// </summary>
-        public string KvmLabel { get; set; }
-
-        /// <summary>
-        /// The network name of the physical device dedicated to this traffic on an OVM3 host
-        /// </summary>
-        public string Ovm3Label { get; set; }
+        public string Kvmnetworklabel {
+            get { return (string) Parameters[nameof(Kvmnetworklabel).ToLower()]; }
+            set { Parameters[nameof(Kvmnetworklabel).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a VMware host
         /// </summary>
-        public string VmwareLabel { get; set; }
+        public string Vmwarenetworklabel {
+            get { return (string) Parameters[nameof(Vmwarenetworklabel).ToLower()]; }
+            set { Parameters[nameof(Vmwarenetworklabel).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a XenServer host
         /// </summary>
-        public string XenLabel { get; set; }
+        public string Xennetworklabel {
+            get { return (string) Parameters[nameof(Xennetworklabel).ToLower()]; }
+            set { Parameters[nameof(Xennetworklabel).ToLower()] = value; }
+        }
 
     }
     /// <summary>

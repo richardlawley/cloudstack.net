@@ -12,31 +12,52 @@ namespace CloudStack.Net
         /// <summary>
         /// list Guest OS mapping by hypervisor
         /// </summary>
-        public string Hypervisor { get; set; }
+        public string Hypervisor {
+            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
+            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list Guest OS mapping by hypervisor version. Must be used with hypervisor parameter
         /// </summary>
-        public string HypervisorVersion { get; set; }
+        public string HypervisorVersion {
+            get { return (string) Parameters[nameof(HypervisorVersion).ToLower()]; }
+            set { Parameters[nameof(HypervisorVersion).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list mapping by its UUID
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list mapping by Guest OS Type UUID
         /// </summary>
-        public Guid OsTypeId { get; set; }
+        public Guid OsTypeId {
+            get { return (Guid) Parameters[nameof(OsTypeId).ToLower()]; }
+            set { Parameters[nameof(OsTypeId).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

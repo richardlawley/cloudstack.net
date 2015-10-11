@@ -12,51 +12,84 @@ namespace CloudStack.Net
         /// <summary>
         /// list storage pools belongig to the specific cluster
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the storage pool
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the IP address for the storage pool
         /// </summary>
-        public string IpAddress { get; set; }
+        public string IpAddress {
+            get { return (string) Parameters[nameof(IpAddress).ToLower()]; }
+            set { Parameters[nameof(IpAddress).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the storage pool
         /// </summary>
-        public string StoragePoolName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the storage pool path
         /// </summary>
-        public string Path { get; set; }
+        public string Path {
+            get { return (string) Parameters[nameof(Path).ToLower()]; }
+            set { Parameters[nameof(Path).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Pod ID for the storage pool
         /// </summary>
-        public Guid PodId { get; set; }
+        public Guid PodId {
+            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
+            set { Parameters[nameof(PodId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the storage pool
         /// </summary>
-        public string Scope { get; set; }
+        public string Scope {
+            get { return (string) Parameters[nameof(Scope).ToLower()]; }
+            set { Parameters[nameof(Scope).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Zone ID for the storage pool
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// the network service provider ID of the virtual router element
         /// </summary>
-        public Guid NspId { get; set; }
+        public Guid NspId {
+            get { return (Guid) Parameters[nameof(NspId).ToLower()]; }
+            set { Parameters[nameof(NspId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// The provider type. Supported types are VirtualRouter (default) and VPCVirtualRouter
         /// </summary>
-        public Guid ProviderType { get; set; }
+        public Guid ProviderType {
+            get { return (Guid) Parameters[nameof(ProviderType).ToLower()]; }
+            set { Parameters[nameof(ProviderType).ToLower()] = value; }
+        }
 
     }
     /// <summary>

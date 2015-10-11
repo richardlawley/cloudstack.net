@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// Domain uuid
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// User uuid
         /// </summary>
-        public Guid UserId { get; set; }
+        public Guid UserId {
+            get { return (Guid) Parameters[nameof(UserId).ToLower()]; }
+            set { Parameters[nameof(UserId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

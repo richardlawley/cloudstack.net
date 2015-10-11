@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// netscaler load balancer device ID
         /// </summary>
-        public Guid LbDeviceId { get; set; }
+        public Guid LbDeviceId {
+            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
+            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

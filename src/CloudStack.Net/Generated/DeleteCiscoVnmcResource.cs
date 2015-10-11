@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// Cisco Vnmc resource ID
         /// </summary>
-        public Guid CiscoVnmcResourceId { get; set; }
+        public Guid Resourceid {
+            get { return (Guid) Parameters[nameof(Resourceid).ToLower()]; }
+            set { Parameters[nameof(Resourceid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,27 +12,42 @@ namespace CloudStack.Net
         /// <summary>
         /// Type of dhcp device
         /// </summary>
-        public string DhcpType { get; set; }
+        public string Dhcpservertype {
+            get { return (string) Parameters[nameof(Dhcpservertype).ToLower()]; }
+            set { Parameters[nameof(Dhcpservertype).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Credentials to reach external dhcp device
         /// </summary>
-        public string Password { get; set; }
+        public string Password {
+            get { return (string) Parameters[nameof(Password).ToLower()]; }
+            set { Parameters[nameof(Password).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId { get; set; }
+        public Guid PhysicalNetworkId {
+            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
+            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// URL of the external dhcp appliance.
         /// </summary>
-        public string Url { get; set; }
+        public string Url {
+            get { return (string) Parameters[nameof(Url).ToLower()]; }
+            set { Parameters[nameof(Url).ToLower()] = value; }
+        }
 
         /// <summary>
         /// Credentials to reach external dhcp device
         /// </summary>
-        public string Username { get; set; }
+        public string Username {
+            get { return (string) Parameters[nameof(Username).ToLower()]; }
+            set { Parameters[nameof(Username).ToLower()] = value; }
+        }
 
     }
     /// <summary>

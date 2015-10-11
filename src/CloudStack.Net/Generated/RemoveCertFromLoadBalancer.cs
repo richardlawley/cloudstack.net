@@ -12,14 +12,17 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid LbRuleId { get; set; }
+        public Guid LbRuleId {
+            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
+            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Removes a certificate from a load balancer rule
+    /// Removes a certificate from a Load Balancer Rule
     /// </summary>
     /// <summary>
-    /// Removes a certificate from a load balancer rule
+    /// Removes a certificate from a Load Balancer Rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

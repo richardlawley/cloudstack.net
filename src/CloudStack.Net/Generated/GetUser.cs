@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// API key of the user
         /// </summary>
-        public string ApiKey { get; set; }
+        public string Userapikey {
+            get { return (string) Parameters[nameof(Userapikey).ToLower()]; }
+            set { Parameters[nameof(Userapikey).ToLower()] = value; }
+        }
 
     }
     /// <summary>

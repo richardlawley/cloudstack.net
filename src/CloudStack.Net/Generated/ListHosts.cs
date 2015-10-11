@@ -12,71 +12,116 @@ namespace CloudStack.Net
         /// <summary>
         /// lists hosts existing in particular cluster
         /// </summary>
-        public Guid ClusterId { get; set; }
+        public Guid ClusterId {
+            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
+            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// comma separated list of host details requested, value can be a list of [ min, all, capacity, events, stats]
         /// </summary>
-        public IList<string> ViewDetails { get; set; }
+        public IList<string> Details {
+            get { return (IList<string>) Parameters[nameof(Details).ToLower()]; }
+            set { Parameters[nameof(Details).ToLower()] = value; }
+        }
 
         /// <summary>
         /// if true, list only hosts dedicated to HA
         /// </summary>
-        public bool? HaHost { get; set; }
+        public bool? HaHost {
+            get { return (bool?) Parameters[nameof(HaHost).ToLower()]; }
+            set { Parameters[nameof(HaHost).ToLower()] = value; }
+        }
 
         /// <summary>
         /// hypervisor type of host: XenServer,KVM,VMware,Hyperv,BareMetal,Simulator
         /// </summary>
-        public string Hypervisor { get; set; }
+        public string Hypervisor {
+            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
+            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the id of the host
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the host
         /// </summary>
-        public string HostName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Pod ID for the host
         /// </summary>
-        public Guid PodId { get; set; }
+        public Guid PodId {
+            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
+            set { Parameters[nameof(PodId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list hosts by resource state. Resource state represents current state determined by admin of host, valule can be one of [Enabled, Disabled, Unmanaged, PrepareForMaintenance, ErrorInMaintenance, Maintenance, Error]
         /// </summary>
-        public string ResourceState { get; set; }
+        public string ResourceState {
+            get { return (string) Parameters[nameof(ResourceState).ToLower()]; }
+            set { Parameters[nameof(ResourceState).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the state of the host
         /// </summary>
-        public string State { get; set; }
+        public string State {
+            get { return (string) Parameters[nameof(State).ToLower()]; }
+            set { Parameters[nameof(State).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the host type
         /// </summary>
-        public string Type { get; set; }
+        public string Type {
+            get { return (string) Parameters[nameof(Type).ToLower()]; }
+            set { Parameters[nameof(Type).ToLower()] = value; }
+        }
 
         /// <summary>
         /// lists hosts in the same cluster as this VM and flag hosts with enough CPU/RAm to host this VM
         /// </summary>
-        public Guid VirtualMachineId { get; set; }
+        public Guid VirtualMachineId {
+            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Zone ID for the host
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

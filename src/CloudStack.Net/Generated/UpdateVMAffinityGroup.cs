@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the virtual machine
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// comma separated list of affinity groups id that are going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupnames parameter
         /// </summary>
-        public IList<long> AffinityGroupIdList { get; set; }
+        public IList<Guid> Affinitygroupids {
+            get { return (IList<Guid>) Parameters[nameof(Affinitygroupids).ToLower()]; }
+            set { Parameters[nameof(Affinitygroupids).ToLower()] = value; }
+        }
 
         /// <summary>
         /// comma separated list of affinity groups names that are going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupids parameter
         /// </summary>
-        public IList<string> AffinityGroupNameList { get; set; }
+        public IList<string> Affinitygroupnames {
+            get { return (IList<string>) Parameters[nameof(Affinitygroupnames).ToLower()]; }
+            set { Parameters[nameof(Affinitygroupnames).ToLower()] = value; }
+        }
 
     }
     /// <summary>

@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// API name
         /// </summary>
-        public string Name { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
     }
     /// <summary>

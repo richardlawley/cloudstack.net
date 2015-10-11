@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// the user ID for the cloud identifier
         /// </summary>
-        public Guid Userid { get; set; }
+        public Guid Userid {
+            get { return (Guid) Parameters[nameof(Userid).ToLower()]; }
+            set { Parameters[nameof(Userid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

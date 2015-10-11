@@ -12,33 +12,51 @@ namespace CloudStack.Net
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
-        public bool? Display { get; set; }
+        public bool? Fordisplay {
+            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
+            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+        }
 
         /// <summary>
-        /// the ID of the health check policy
+        /// the ID of the healthcheck policy
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid LbRuleId { get; set; }
+        public Guid LbRuleId {
+            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
+            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>
-    /// Lists load balancer health check policies.
+    /// Lists load balancer HealthCheck policies.
     /// </summary>
     /// <summary>
-    /// Lists load balancer health check policies.
+    /// Lists load balancer HealthCheck policies.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

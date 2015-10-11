@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// blade id
         /// </summary>
-        public Guid BladeId { get; set; }
+        public Guid BladeId {
+            get { return (Guid) Parameters[nameof(BladeId).ToLower()]; }
+            set { Parameters[nameof(BladeId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// profile dn
         /// </summary>
-        public string ProfileDn { get; set; }
+        public string ProfileDn {
+            get { return (string) Parameters[nameof(ProfileDn).ToLower()]; }
+            set { Parameters[nameof(ProfileDn).ToLower()] = value; }
+        }
 
         /// <summary>
         /// ucs manager id
         /// </summary>
-        public Guid UcsManagerId { get; set; }
+        public Guid UcsManagerId {
+            get { return (Guid) Parameters[nameof(UcsManagerId).ToLower()]; }
+            set { Parameters[nameof(UcsManagerId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

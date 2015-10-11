@@ -12,7 +12,10 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the VM snapshot
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Vmsnapshotid {
+            get { return (Guid) Parameters[nameof(Vmsnapshotid).ToLower()]; }
+            set { Parameters[nameof(Vmsnapshotid).ToLower()] = value; }
+        }
 
     }
     /// <summary>

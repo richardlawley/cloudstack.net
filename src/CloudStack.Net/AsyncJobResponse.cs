@@ -68,7 +68,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the async job
         /// </summary>
-        public long jobid { get; set; }
+        public Guid jobid { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 

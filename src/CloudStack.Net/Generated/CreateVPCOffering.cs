@@ -12,32 +12,50 @@ namespace CloudStack.Net
         /// <summary>
         /// the display text of the vpc offering
         /// </summary>
-        public string DisplayText { get; set; }
+        public string DisplayText {
+            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
+            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the vpc offering
         /// </summary>
-        public string VpcOfferingName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
         /// <summary>
         /// services supported by the vpc offering
         /// </summary>
-        public IList<string> SupportedServices { get; set; }
+        public IList<string> SupportedServices {
+            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+        }
 
         /// <summary>
         /// desired service capabilities as part of vpc offering
         /// </summary>
-        public IDictionary<string, IDictionary<String, String>> ServiceCapabilitystList { get; set; }
+        public IDictionary<string, string> Servicecapabilitylist {
+            get { return (IDictionary<string, string>) Parameters[nameof(Servicecapabilitylist).ToLower()]; }
+            set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the service offering for the VPC router appliance
         /// </summary>
-        public Guid ServiceOfferingId { get; set; }
+        public Guid ServiceOfferingId {
+            get { return (Guid) Parameters[nameof(ServiceOfferingId).ToLower()]; }
+            set { Parameters[nameof(ServiceOfferingId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// provider to service mapping. If not specified, the provider for the service will be mapped to the default provider on the physical network
         /// </summary>
-        public IDictionary<string, List<String>> ServiceProviderList { get; set; }
+        public IDictionary<string, string> ServiceProviderList {
+            get { return (IDictionary<string, string>) Parameters[nameof(ServiceProviderList).ToLower()]; }
+            set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
+        }
 
     }
     /// <summary>

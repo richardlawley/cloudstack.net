@@ -12,31 +12,52 @@ namespace CloudStack.Net
         /// <summary>
         /// the name of the account associated with the host. Must be used with domainId.
         /// </summary>
-        public string AccountName { get; set; }
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
+        }
 
         /// <summary>
         /// list dedicated hosts by affinity group
         /// </summary>
-        public Guid AffinityGroupId { get; set; }
+        public Guid AffinityGroupId {
+            get { return (Guid) Parameters[nameof(AffinityGroupId).ToLower()]; }
+            set { Parameters[nameof(AffinityGroupId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the domain associated with the host
         /// </summary>
-        public Guid DomainId { get; set; }
+        public Guid DomainId {
+            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
+            set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the host
         /// </summary>
-        public Guid HostId { get; set; }
+        public Guid HostId {
+            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
+            set { Parameters[nameof(HostId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
     }
     /// <summary>

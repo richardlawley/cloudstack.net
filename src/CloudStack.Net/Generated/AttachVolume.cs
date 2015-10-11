@@ -12,17 +12,26 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         ///     the ID of the virtual machine
         /// </summary>
-        public Guid VirtualMachineId { get; set; }
+        public Guid VirtualMachineId {
+            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
+            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the device to map the volume to within the guest OS. If no deviceId is passed in, the next available deviceId will be chosen. Possible values for a Linux OS are:* 0 - /dev/xvda* 1 - /dev/xvdb* 2 - /dev/xvdc* 4 - /dev/xvde* 5 - /dev/xvdf* 6 - /dev/xvdg* 7 - /dev/xvdh* 8 - /dev/xvdi* 9 - /dev/xvdj
         /// </summary>
-        public long? DeviceId { get; set; }
+        public long? DeviceId {
+            get { return (long?) Parameters[nameof(DeviceId).ToLower()]; }
+            set { Parameters[nameof(DeviceId).ToLower()] = value; }
+        }
 
     }
     /// <summary>

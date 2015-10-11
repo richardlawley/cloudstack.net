@@ -12,12 +12,18 @@ namespace CloudStack.Net
         /// <summary>
         /// Guest IQN to which the LUN associate.
         /// </summary>
-        public string GuestIqn { get; set; }
+        public string Iqn {
+            get { return (string) Parameters[nameof(Iqn).ToLower()]; }
+            set { Parameters[nameof(Iqn).ToLower()] = value; }
+        }
 
         /// <summary>
         /// LUN name.
         /// </summary>
-        public string LunName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
     }
     /// <summary>

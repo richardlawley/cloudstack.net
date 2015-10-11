@@ -12,51 +12,84 @@ namespace CloudStack.Net
         /// <summary>
         /// the host ID of the system VM
         /// </summary>
-        public Guid HostId { get; set; }
+        public Guid HostId {
+            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
+            set { Parameters[nameof(HostId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the ID of the system VM
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id {
+            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
+            set { Parameters[nameof(Id).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
         /// </summary>
-        public string Keyword { get; set; }
+        public string Keyword {
+            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
+            set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the name of the system VM
         /// </summary>
-        public string SystemVmName { get; set; }
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
 
-        public int? Page { get; set; }
+        public int? Page {
+            get { return (int?) Parameters[nameof(Page).ToLower()]; }
+            set { Parameters[nameof(Page).ToLower()] = value; }
+        }
 
-        public int? PageSize { get; set; }
+        public int? PageSize {
+            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
+            set { Parameters[nameof(PageSize).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Pod ID of the system VM
         /// </summary>
-        public Guid PodId { get; set; }
+        public Guid PodId {
+            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
+            set { Parameters[nameof(PodId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the state of the system VM
         /// </summary>
-        public string State { get; set; }
+        public string State {
+            get { return (string) Parameters[nameof(State).ToLower()]; }
+            set { Parameters[nameof(State).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the storage ID where vm's volumes belong to
         /// </summary>
-        public Guid StorageId { get; set; }
+        public Guid StorageId {
+            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
+            set { Parameters[nameof(StorageId).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the system VM type. Possible types are "consoleproxy" and "secondarystoragevm".
         /// </summary>
-        public string SystemVmType { get; set; }
+        public string SystemVmType {
+            get { return (string) Parameters[nameof(SystemVmType).ToLower()]; }
+            set { Parameters[nameof(SystemVmType).ToLower()] = value; }
+        }
 
         /// <summary>
         /// the Zone ID of the system VM
         /// </summary>
-        public Guid ZoneId { get; set; }
+        public Guid ZoneId {
+            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
+            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+        }
 
     }
     /// <summary>
