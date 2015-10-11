@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -62,9 +64,11 @@ namespace CloudStack.Net
 
             byte[] secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
             HMACSHA1 hasher = new System.Security.Cryptography.HMACSHA1(secretKeyBytes);
-            byte[] bytesToSign = Encoding.UTF8.GetBytes(toSign);
+            byte[] bytesToSign = Encoding.UTF8.GetBytes(toSign.ToLower());
             byte[] signatureUTF8 = hasher.ComputeHash(bytesToSign);
-            return Convert.ToBase64String(signatureUTF8);
+            string signature = Convert.ToBase64String(signatureUTF8);
+            signature = Uri.EscapeDataString(signature);
+            return signature;
         }
 
         /// <summary>
@@ -80,14 +84,7 @@ namespace CloudStack.Net
         public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
         {
             StringBuilder query = new StringBuilder();
-            SortedList<string, string> sortedArgs = new SortedList<string, string>();
-            foreach (KeyValuePair<string, object> item in arguments)
-            {
-                if (item.Value != null)
-                {
-                    sortedArgs.Add(item.Key, SerialiseValue(item.Value));
-                }
-            }
+            SortedList<string, object> sortedArgs = new SortedList<string, object>(arguments, StringComparer.OrdinalIgnoreCase);
             if (!String.IsNullOrEmpty(apiKey))
             {
                 sortedArgs["apikey"] = apiKey;
@@ -95,16 +92,19 @@ namespace CloudStack.Net
 
             foreach (string key in sortedArgs.Keys)
             {
-                string nextArg = string.Format(CultureInfo.InvariantCulture, "{0}={1}&", key, Uri.EscapeDataString(sortedArgs[key]));
-                query.Append(nextArg);
+                string token = SerialiseValue(key, sortedArgs[key]);
+                if (!String.IsNullOrEmpty(token))
+                {
+                    query.Append(token);
+                    query.Append("&");
+                }
             }
             query.Remove(query.Length - 1, 1);
 
             if (secretKey != null)
             {
-                string signBase64 = CalcSignature(query.ToString().ToLowerInvariant(), secretKey);
-                string urlParamSignature = Uri.EscapeDataString(signBase64);
-                query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "signature", urlParamSignature));
+                string signature = CalcSignature(query.ToString().ToLowerInvariant(), secretKey);
+                query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "signature", signature));
             }
             else if (sessionKey != null)
             {
@@ -113,28 +113,49 @@ namespace CloudStack.Net
             return query.ToString();
         }
 
-        public static string SerialiseValue(object value)
+        public static string SerialiseValue(string name, object value)
         {
+            if (value == null) { return null; }
+            name = name.ToLower();
+
             var type = value.GetType();
-            if (type.IsValueType)
+            if (type.IsValueType || value is string)
             {
-                return value.ToString();
+                return $"{name}={Uri.EscapeDataString(value.ToString())}";
             }
-            else if (value is string)
+            else if (value is IDictionary)
             {
-                return value.ToString();
+                IDictionary dict = (IDictionary)value;
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < dict.Count; i++)
+                {
+                    object key = dict.Keys.OfType<object>().ElementAt(i);
+
+                    if (i > 0)
+                    {
+                        sb.Append("&");
+                    }
+                    sb.Append($"{name}[{i}].key={Uri.EscapeDataString(key.ToString())}&{name}[{i}].value={Uri.EscapeDataString(dict[key].ToString())}");
+                }
+                return sb.ToString();
+
             }
-            else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IList<>))
+            else if (value is IList)
             {
-                return "";
+                IList list = (IList)value;
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (i > 0)
+                    {
+                        sb.Append("&");
+                    }
+                    sb.Append($"{name}[{i}]={Uri.EscapeDataString(list[i].ToString())}");
+                }
+                return sb.ToString();
             }
-            else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(IDictionary<,>))
-            {
-                return "";
-            }
-            {
-                throw new NotImplementedException("Couldn't serialise object of type " + type.FullName);
-            }
+
+            throw new NotImplementedException("Couldn't serialise object of type " + type.FullName);
         }
 
         public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()
@@ -213,6 +234,12 @@ namespace CloudStack.Net
         /// </summary>
         private static void DecodeListResponse<TResponse>(ListResponse<TResponse> decodedResponse, JContainer responseContainer) where TResponse : new()
         {
+            if (responseContainer.Count == 0)
+            {
+                // empty list
+                decodedResponse.Results = new List<TResponse>();
+                return;
+            }
             if (responseContainer.Count < 2)
             {
                 throw new FormatException("Expected multiple elements for a list object");

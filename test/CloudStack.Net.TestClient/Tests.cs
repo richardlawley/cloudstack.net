@@ -280,10 +280,12 @@ namespace CloudStack.Net.TestClient
         {
             try
             {
-                ListVirtualMachinesRequest request = new ListVirtualMachinesRequest()
+                ListVirtualMachinesRequest request = new ListVirtualMachinesRequest();
+                if (!String.IsNullOrEmpty(_zoneId))
                 {
-                    ZoneId = Guid.Parse(_zoneId)
-                };
+                    request.ZoneId = Guid.Parse(_zoneId);
+                }
+
                 var response = _client.ListVirtualMachines(request);
                 _logWriter(response.ToString());
             }
