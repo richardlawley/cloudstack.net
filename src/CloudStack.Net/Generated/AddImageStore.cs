@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds backup image store.
     /// </summary>
-    /// <summary>
-    /// Adds backup image store.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse AddImageStore(AddImageStoreRequest request);

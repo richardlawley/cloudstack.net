@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Releases host reservation.
     /// </summary>
-    /// <summary>
-    /// Releases host reservation.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReleaseHostReservation(ReleaseHostReservationRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Dedicates a zones.
     /// </summary>
-    /// <summary>
-    /// Dedicates a zones.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DedicateZone(DedicateZoneRequest request);

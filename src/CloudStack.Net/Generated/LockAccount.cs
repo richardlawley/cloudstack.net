@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Locks an account
     /// </summary>
-    /// <summary>
-    /// Locks an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AccountResponse LockAccount(LockAccountRequest request);

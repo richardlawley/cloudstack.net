@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// deletes a range of portable public IP's associated with a region
     /// </summary>
-    /// <summary>
-    /// deletes a range of portable public IP's associated with a region
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeletePortableIpRange(DeletePortableIpRangeRequest request);

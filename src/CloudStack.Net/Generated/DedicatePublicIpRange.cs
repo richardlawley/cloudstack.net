@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Dedicates a Public IP range to an account
     /// </summary>
-    /// <summary>
-    /// Dedicates a Public IP range to an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         VlanIpRangeResponse DedicatePublicIpRange(DedicatePublicIpRangeRequest request);

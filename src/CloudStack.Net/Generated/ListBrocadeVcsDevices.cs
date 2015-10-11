@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Brocade VCS Switches
     /// </summary>
-    /// <summary>
-    /// Lists Brocade VCS Switches
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevices(ListBrocadeVcsDevicesRequest request);

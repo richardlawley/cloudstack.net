@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates the affinity/anti-affinity group associations of a virtual machine. The VM has to be stopped and restarted for the new properties to take effect.
     /// </summary>
-    /// <summary>
-    /// Updates the affinity/anti-affinity group associations of a virtual machine. The VM has to be stopped and restarted for the new properties to take effect.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Assigns virtual machine or a list of virtual machines to a load balancer rule.
     /// </summary>
-    /// <summary>
-    /// Assigns virtual machine or a list of virtual machines to a load balancer rule.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AssignToLoadBalancerRule(AssignToLoadBalancerRuleRequest request);

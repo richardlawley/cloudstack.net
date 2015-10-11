@@ -71,9 +71,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists secondary staging stores.
     /// </summary>
-    /// <summary>
-    /// Lists secondary staging stores.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ImageStoreResponse> ListSecondaryStagingStores(ListSecondaryStagingStoresRequest request);

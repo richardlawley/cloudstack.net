@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// lists network that are using a netscaler load balancer device
     /// </summary>
-    /// <summary>
-    /// lists network that are using a netscaler load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NetworkResponse> ListNetscalerLoadBalancerNetworks(ListNetscalerLoadBalancerNetworksRequest request);

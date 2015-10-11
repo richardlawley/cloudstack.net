@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Regions
     /// </summary>
-    /// <summary>
-    /// Lists Regions
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<RegionResponse> ListRegions(ListRegionsRequest request);

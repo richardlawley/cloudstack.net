@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List traffic monitor Hosts.
     /// </summary>
-    /// <summary>
-    /// List traffic monitor Hosts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<TrafficMonitorResponse> ListTrafficMonitors(ListTrafficMonitorsRequest request);

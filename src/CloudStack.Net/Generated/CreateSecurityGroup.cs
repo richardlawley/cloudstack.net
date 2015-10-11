@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a security group
     /// </summary>
-    /// <summary>
-    /// Creates a security group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request);

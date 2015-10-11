@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates VPC offering
     /// </summary>
-    /// <summary>
-    /// Creates VPC offering
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVPCOffering(CreateVPCOfferingRequest request);

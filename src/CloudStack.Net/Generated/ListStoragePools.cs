@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists storage pools.
     /// </summary>
-    /// <summary>
-    /// Lists storage pools.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StoragePoolResponse> ListStoragePools(ListStoragePoolsRequest request);

@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a physical network
     /// </summary>
-    /// <summary>
-    /// Creates a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreatePhysicalNetwork(CreatePhysicalNetworkRequest request);

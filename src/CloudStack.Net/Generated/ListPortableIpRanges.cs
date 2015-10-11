@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// list portable IP ranges
     /// </summary>
-    /// <summary>
-    /// list portable IP ranges
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<PortableIpRangeResponse> ListPortableIpRanges(ListPortableIpRangesRequest request);

@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Recalculate and update resource count for an account or domain.
     /// </summary>
-    /// <summary>
-    /// Recalculate and update resource count for an account or domain.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ResourceCountResponse UpdateResourceCount(UpdateResourceCountRequest request);

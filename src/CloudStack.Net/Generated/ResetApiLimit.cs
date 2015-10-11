@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Reset api count
     /// </summary>
-    /// <summary>
-    /// Reset api count
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiLimitResponse ResetApiLimit(ResetApiLimitRequest request);

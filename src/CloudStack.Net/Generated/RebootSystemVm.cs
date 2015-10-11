@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Reboots a system VM.
     /// </summary>
-    /// <summary>
-    /// Reboots a system VM.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RebootSystemVm(RebootSystemVmRequest request);

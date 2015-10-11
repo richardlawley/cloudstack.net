@@ -119,9 +119,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists autoscale vm groups.
     /// </summary>
-    /// <summary>
-    /// Lists autoscale vm groups.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroups(ListAutoScaleVmGroupsRequest request);

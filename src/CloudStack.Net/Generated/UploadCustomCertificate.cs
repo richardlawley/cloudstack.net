@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Uploads a custom certificate for the console proxy VMs to use for SSL. Can be used to upload a single certificate signed by a known CA. Can also be used, through multiple calls, to upload a chain of certificates from CA to the custom certificate itself.
     /// </summary>
-    /// <summary>
-    /// Uploads a custom certificate for the console proxy VMs to use for SSL. Can be used to upload a single certificate signed by a known CA. Can also be used, through multiple calls, to upload a chain of certificates from CA to the custom certificate itself.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UploadCustomCertificate(UploadCustomCertificateRequest request);

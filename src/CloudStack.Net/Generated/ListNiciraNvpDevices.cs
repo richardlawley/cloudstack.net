@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Nicira NVP devices
     /// </summary>
-    /// <summary>
-    /// Lists Nicira NVP devices
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NiciraNvpDeviceResponse> ListNiciraNvpDevices(ListNiciraNvpDevicesRequest request);

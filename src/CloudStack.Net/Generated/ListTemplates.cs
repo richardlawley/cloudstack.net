@@ -127,9 +127,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List all public, private, and privileged templates.
     /// </summary>
-    /// <summary>
-    /// List all public, private, and privileged templates.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<TemplateResponse> ListTemplates(ListTemplatesRequest request);

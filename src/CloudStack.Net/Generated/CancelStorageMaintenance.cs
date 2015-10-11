@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Cancels maintenance for primary storage
     /// </summary>
-    /// <summary>
-    /// Cancels maintenance for primary storage
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CancelStorageMaintenance(CancelStorageMaintenanceRequest request);

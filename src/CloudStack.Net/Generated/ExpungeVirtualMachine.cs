@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Expunge a virtual machine. Once expunged, it cannot be recoverd.
     /// </summary>
-    /// <summary>
-    /// Expunge a virtual machine. Once expunged, it cannot be recoverd.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ExpungeVirtualMachine(ExpungeVirtualMachineRequest request);

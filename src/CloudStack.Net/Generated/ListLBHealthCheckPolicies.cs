@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists load balancer HealthCheck policies.
     /// </summary>
-    /// <summary>
-    /// Lists load balancer HealthCheck policies.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LBHealthCheckResponse> ListLBHealthCheckPolicies(ListLBHealthCheckPoliciesRequest request);

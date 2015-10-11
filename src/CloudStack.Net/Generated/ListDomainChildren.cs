@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all children domains belonging to a specified domain
     /// </summary>
-    /// <summary>
-    /// Lists all children domains belonging to a specified domain
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DomainResponse> ListDomainChildren(ListDomainChildrenRequest request);

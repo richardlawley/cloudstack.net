@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// lists F5 load balancer devices
     /// </summary>
-    /// <summary>
-    /// lists F5 load balancer devices
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<F5LoadBalancerResponse> ListF5LoadBalancers(ListF5LoadBalancersRequest request);

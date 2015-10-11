@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroys a router.
     /// </summary>
-    /// <summary>
-    /// Destroys a router.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DestroyRouter(DestroyRouterRequest request);

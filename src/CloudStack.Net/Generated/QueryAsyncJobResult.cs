@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Retrieves the current status of asynchronous job.
     /// </summary>
-    /// <summary>
-    /// Retrieves the current status of asynchronous job.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse QueryAsyncJobResult(QueryAsyncJobResultRequest request);

@@ -79,9 +79,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all the system wide capacities.
     /// </summary>
-    /// <summary>
-    /// Lists all the system wide capacities.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<CapacityResponse> ListCapacity(ListCapacityRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates Network ACL list
     /// </summary>
-    /// <summary>
-    /// Updates Network ACL list
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateNetworkACLList(UpdateNetworkACLListRequest request);

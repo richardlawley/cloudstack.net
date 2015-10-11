@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Register a public key in a keypair under a certain name
     /// </summary>
-    /// <summary>
-    /// Register a public key in a keypair under a certain name
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SSHKeyPairResponse RegisterSSHKeyPair(RegisterSSHKeyPairRequest request);

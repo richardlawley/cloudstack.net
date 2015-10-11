@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Enables static nat for given ip address
     /// </summary>
-    /// <summary>
-    /// Enables static nat for given ip address
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse EnableStaticNat(EnableStaticNatRequest request);

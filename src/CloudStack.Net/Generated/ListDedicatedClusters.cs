@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists dedicated clusters.
     /// </summary>
-    /// <summary>
-    /// Lists dedicated clusters.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DedicateClusterResponse> ListDedicatedClusters(ListDedicatedClustersRequest request);

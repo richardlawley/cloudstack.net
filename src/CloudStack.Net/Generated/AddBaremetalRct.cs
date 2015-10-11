@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// adds baremetal rack configuration text
     /// </summary>
-    /// <summary>
-    /// adds baremetal rack configuration text
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBaremetalRct(AddBaremetalRctRequest request);

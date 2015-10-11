@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Physical Network.
     /// </summary>
-    /// <summary>
-    /// Deletes a Physical Network.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeletePhysicalNetwork(DeletePhysicalNetworkRequest request);

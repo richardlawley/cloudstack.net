@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// lists all available apis on the server, provided by the Api Discovery plugin
     /// </summary>
-    /// <summary>
-    /// lists all available apis on the server, provided by the Api Discovery plugin
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiDiscoveryResponse ListApis(ListApisRequest request);

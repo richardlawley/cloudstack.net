@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds Swift.
     /// </summary>
-    /// <summary>
-    /// Adds Swift.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse AddSwift(AddSwiftRequest request);

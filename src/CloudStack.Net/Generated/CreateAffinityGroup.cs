@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an affinity/anti-affinity group
     /// </summary>
-    /// <summary>
-    /// Creates an affinity/anti-affinity group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateAffinityGroup(CreateAffinityGroupRequest request);

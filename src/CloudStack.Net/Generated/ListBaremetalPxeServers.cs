@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// list baremetal pxe server
     /// </summary>
-    /// <summary>
-    /// list baremetal pxe server
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<BaremetalPxeResponse> ListBaremetalPxeServers(ListBaremetalPxeServersRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Copies a template from one zone to another.
     /// </summary>
-    /// <summary>
-    /// Copies a template from one zone to another.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CopyTemplate(CopyTemplateRequest request);

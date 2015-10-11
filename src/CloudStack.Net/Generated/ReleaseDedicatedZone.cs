@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Release dedication of zone
     /// </summary>
-    /// <summary>
-    /// Release dedication of zone
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request);

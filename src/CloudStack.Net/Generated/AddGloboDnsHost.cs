@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds the GloboDNS external host
     /// </summary>
-    /// <summary>
-    /// Adds the GloboDNS external host
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddGloboDnsHost(AddGloboDnsHostRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Detaches any ISO file (if any) currently attached to a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Detaches any ISO file (if any) currently attached to a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DetachIso(DetachIsoRequest request);

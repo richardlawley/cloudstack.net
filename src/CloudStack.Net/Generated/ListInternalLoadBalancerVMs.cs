@@ -143,9 +143,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List internal LB VMs.
     /// </summary>
-    /// <summary>
-    /// List internal LB VMs.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMs(ListInternalLoadBalancerVMsRequest request);

@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds S3
     /// </summary>
-    /// <summary>
-    /// Adds S3
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse AddS3(AddS3Request request);

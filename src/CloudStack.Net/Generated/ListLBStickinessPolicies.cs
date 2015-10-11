@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists LBStickiness policies.
     /// </summary>
-    /// <summary>
-    /// Lists LBStickiness policies.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LBStickinessResponse> ListLBStickinessPolicies(ListLBStickinessPoliciesRequest request);

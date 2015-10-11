@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists storage providers.
     /// </summary>
-    /// <summary>
-    /// Lists storage providers.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StorageProviderResponse> ListStorageProviders(ListStorageProvidersRequest request);

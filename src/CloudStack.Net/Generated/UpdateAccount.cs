@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates account information for the authenticated user
     /// </summary>
-    /// <summary>
-    /// Updates account information for the authenticated user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AccountResponse UpdateAccount(UpdateAccountRequest request);

@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists load balancer rules.
     /// </summary>
-    /// <summary>
-    /// Lists load balancer rules.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRules(ListGlobalLoadBalancerRulesRequest request);

@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Add a new Ldap Configuration
     /// </summary>
-    /// <summary>
-    /// Add a new Ldap Configuration
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         LdapConfigurationResponse AddLdapConfiguration(AddLdapConfigurationRequest request);

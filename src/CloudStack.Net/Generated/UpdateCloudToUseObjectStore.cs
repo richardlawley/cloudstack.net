@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Migrate current NFS secondary storages to use object store.
     /// </summary>
-    /// <summary>
-    /// Migrate current NFS secondary storages to use object store.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse UpdateCloudToUseObjectStore(UpdateCloudToUseObjectStoreRequest request);

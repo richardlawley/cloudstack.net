@@ -103,9 +103,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists projects and provides detailed information for listed projects
     /// </summary>
-    /// <summary>
-    /// Lists projects and provides detailed information for listed projects
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ProjectResponse> ListProjects(ListProjectsRequest request);

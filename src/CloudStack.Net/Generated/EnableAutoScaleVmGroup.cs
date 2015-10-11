@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Enables an AutoScale Vm Group
     /// </summary>
-    /// <summary>
-    /// Enables an AutoScale Vm Group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse EnableAutoScaleVmGroup(EnableAutoScaleVmGroupRequest request);

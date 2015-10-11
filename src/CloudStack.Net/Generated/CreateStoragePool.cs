@@ -117,9 +117,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a storage pool.
     /// </summary>
-    /// <summary>
-    /// Creates a storage pool.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         StoragePoolResponse CreateStoragePool(CreateStoragePoolRequest request);

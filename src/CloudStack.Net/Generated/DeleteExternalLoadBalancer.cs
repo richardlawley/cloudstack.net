@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a F5 external load balancer appliance added in a zone.
     /// </summary>
-    /// <summary>
-    /// Deletes a F5 external load balancer appliance added in a zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteExternalLoadBalancer(DeleteExternalLoadBalancerRequest request);

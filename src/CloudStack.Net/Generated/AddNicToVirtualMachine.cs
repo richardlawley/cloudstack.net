@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds VM to specified network by creating a NIC
     /// </summary>
-    /// <summary>
-    /// Adds VM to specified network by creating a NIC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddNicToVirtualMachine(AddNicToVirtualMachineRequest request);

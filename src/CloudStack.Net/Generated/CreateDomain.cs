@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a domain
     /// </summary>
-    /// <summary>
-    /// Creates a domain
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DomainResponse CreateDomain(CreateDomainRequest request);

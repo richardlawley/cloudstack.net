@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a netscaler load balancer device
     /// </summary>
-    /// <summary>
-    /// Adds a netscaler load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddNetscalerLoadBalancer(AddNetscalerLoadBalancerRequest request);

@@ -231,9 +231,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List the virtual machines owned by the account.
     /// </summary>
-    /// <summary>
-    /// List the virtual machines owned by the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<UserVmResponse> ListVirtualMachines(ListVirtualMachinesRequest request);

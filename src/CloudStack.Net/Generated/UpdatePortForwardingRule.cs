@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a port forwarding rule.  Only the private port and the virtual machine can be updated.
     /// </summary>
-    /// <summary>
-    /// Updates a port forwarding rule.  Only the private port and the virtual machine can be updated.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdatePortForwardingRule(UpdatePortForwardingRuleRequest request);

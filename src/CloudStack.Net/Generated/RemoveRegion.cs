@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes specified region
     /// </summary>
-    /// <summary>
-    /// Removes specified region
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse RemoveRegion(RemoveRegionRequest request);

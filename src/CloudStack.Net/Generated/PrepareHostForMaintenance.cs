@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Prepares a host for maintenance.
     /// </summary>
-    /// <summary>
-    /// Prepares a host for maintenance.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse PrepareHostForMaintenance(PrepareHostForMaintenanceRequest request);

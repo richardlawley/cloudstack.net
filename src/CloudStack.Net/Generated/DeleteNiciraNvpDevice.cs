@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a nicira nvp device
     /// </summary>
-    /// <summary>
-    ///  delete a nicira nvp device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteNiciraNvpDevice(DeleteNiciraNvpDeviceRequest request);

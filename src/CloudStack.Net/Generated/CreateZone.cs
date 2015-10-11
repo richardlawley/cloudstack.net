@@ -125,9 +125,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Zone.
     /// </summary>
-    /// <summary>
-    /// Creates a Zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ZoneResponse CreateZone(CreateZoneRequest request);

@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Stops a router.
     /// </summary>
-    /// <summary>
-    /// Stops a router.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StopRouter(StopRouterRequest request);

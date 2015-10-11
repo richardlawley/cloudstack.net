@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Nuage VSP device
     /// </summary>
-    /// <summary>
-    /// Adds a Nuage VSP device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddNuageVspDevice(AddNuageVspDeviceRequest request);

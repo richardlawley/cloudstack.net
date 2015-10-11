@@ -101,9 +101,6 @@ namespace CloudStack.Net
     /// <summary>
     /// add a baremetal host
     /// </summary>
-    /// <summary>
-    /// add a baremetal host
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         HostResponse AddBaremetalHost(AddBaremetalHostRequest request);

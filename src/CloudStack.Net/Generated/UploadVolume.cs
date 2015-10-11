@@ -93,9 +93,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Uploads a data disk.
     /// </summary>
-    /// <summary>
-    /// Uploads a data disk.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UploadVolume(UploadVolumeRequest request);

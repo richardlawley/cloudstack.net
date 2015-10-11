@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all LDAP configurations
     /// </summary>
-    /// <summary>
-    /// Lists all LDAP configurations
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LdapConfigurationResponse> ListLdapConfigurations(ListLdapConfigurationsRequest request);

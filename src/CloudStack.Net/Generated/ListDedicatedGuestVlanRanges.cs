@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists dedicated guest vlan ranges
     /// </summary>
-    /// <summary>
-    /// Lists dedicated guest vlan ranges
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRanges(ListDedicatedGuestVlanRangesRequest request);

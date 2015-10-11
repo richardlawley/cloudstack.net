@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates LB Stickiness policy
     /// </summary>
-    /// <summary>
-    /// Updates LB Stickiness policy
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateLBStickinessPolicy(UpdateLBStickinessPolicyRequest request);

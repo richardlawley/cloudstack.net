@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Allow or disallow a user to use SAML SSO
     /// </summary>
-    /// <summary>
-    /// Allow or disallow a user to use SAML SSO
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse AuthorizeSamlSso(AuthorizeSamlSsoRequest request);

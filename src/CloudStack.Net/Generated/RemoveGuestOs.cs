@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes a Guest OS from listing.
     /// </summary>
-    /// <summary>
-    /// Removes a Guest OS from listing.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveGuestOs(RemoveGuestOsRequest request);

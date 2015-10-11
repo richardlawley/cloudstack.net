@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists dedicated hosts.
     /// </summary>
-    /// <summary>
-    /// Lists dedicated hosts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DedicateHostResponse> ListDedicatedHosts(ListDedicatedHostsRequest request);

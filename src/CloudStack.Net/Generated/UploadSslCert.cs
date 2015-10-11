@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Upload a certificate to cloudstack
     /// </summary>
-    /// <summary>
-    /// Upload a certificate to cloudstack
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SslCertResponse UploadSslCert(UploadSslCertRequest request);

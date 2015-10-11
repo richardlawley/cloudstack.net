@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Extracts volume
     /// </summary>
-    /// <summary>
-    /// Extracts volume
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ExtractVolume(ExtractVolumeRequest request);

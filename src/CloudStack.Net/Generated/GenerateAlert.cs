@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Generates an alert
     /// </summary>
-    /// <summary>
-    /// Generates an alert
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse GenerateAlert(GenerateAlertRequest request);

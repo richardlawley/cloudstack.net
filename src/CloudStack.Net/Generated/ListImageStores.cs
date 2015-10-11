@@ -71,9 +71,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists image stores.
     /// </summary>
-    /// <summary>
-    /// Lists image stores.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ImageStoreResponse> ListImageStores(ListImageStoresRequest request);

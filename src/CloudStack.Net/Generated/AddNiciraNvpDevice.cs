@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Nicira NVP device
     /// </summary>
-    /// <summary>
-    /// Adds a Nicira NVP device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request);

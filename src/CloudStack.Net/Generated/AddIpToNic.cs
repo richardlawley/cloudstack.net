@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Assigns secondary IP to NIC
     /// </summary>
-    /// <summary>
-    /// Assigns secondary IP to NIC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddIpToNic(AddIpToNicRequest request);

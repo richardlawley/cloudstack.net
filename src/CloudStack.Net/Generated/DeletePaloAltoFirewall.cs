@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a Palo Alto firewall device
     /// </summary>
-    /// <summary>
-    ///  delete a Palo Alto firewall device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeletePaloAltoFirewall(DeletePaloAltoFirewallRequest request);

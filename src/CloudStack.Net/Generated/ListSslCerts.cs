@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists SSL certificates
     /// </summary>
-    /// <summary>
-    /// Lists SSL certificates
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SslCertResponse ListSslCerts(ListSslCertsRequest request);

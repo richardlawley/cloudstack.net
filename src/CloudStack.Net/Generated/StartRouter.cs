@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Starts a router.
     /// </summary>
-    /// <summary>
-    /// Starts a router.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StartRouter(StartRouterRequest request);

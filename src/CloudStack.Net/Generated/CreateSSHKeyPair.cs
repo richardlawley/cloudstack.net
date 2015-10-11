@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create a new keypair and returns the private key
     /// </summary>
-    /// <summary>
-    /// Create a new keypair and returns the private key
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CreateSSHKeyPairResponse CreateSSHKeyPair(CreateSSHKeyPairRequest request);

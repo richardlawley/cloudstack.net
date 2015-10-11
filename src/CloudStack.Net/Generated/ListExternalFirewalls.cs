@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List external firewall appliances.
     /// </summary>
-    /// <summary>
-    /// List external firewall appliances.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ExternalFirewallResponse> ListExternalFirewalls(ListExternalFirewallsRequest request);

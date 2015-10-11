@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a BigSwitch VNS device
     /// </summary>
-    /// <summary>
-    /// Adds a BigSwitch VNS device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBigSwitchVnsDevice(AddBigSwitchVnsDeviceRequest request);

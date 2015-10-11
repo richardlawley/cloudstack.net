@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a Brocade VCS Switch
     /// </summary>
-    /// <summary>
-    ///  delete a Brocade VCS Switch
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteBrocadeVcsDevice(DeleteBrocadeVcsDeviceRequest request);

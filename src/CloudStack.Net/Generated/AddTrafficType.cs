@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds traffic type to a physical network
     /// </summary>
-    /// <summary>
-    /// Adds traffic type to a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddTrafficType(AddTrafficTypeRequest request);

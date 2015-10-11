@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Dissociate a LUN
     /// </summary>
-    /// <summary>
-    /// Dissociate a LUN
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DissociateLunCmdResponse DissociateLun(DissociateLunRequest request);

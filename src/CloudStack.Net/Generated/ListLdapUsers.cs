@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all LDAP Users
     /// </summary>
-    /// <summary>
-    /// Lists all LDAP Users
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LdapUserResponse> ListLdapUsers(ListLdapUsersRequest request);

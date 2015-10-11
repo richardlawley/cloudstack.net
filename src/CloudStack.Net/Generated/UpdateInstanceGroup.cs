@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a vm group
     /// </summary>
-    /// <summary>
-    /// Updates a vm group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         InstanceGroupResponse UpdateInstanceGroup(UpdateInstanceGroupRequest request);

@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a SRX firewall device
     /// </summary>
-    /// <summary>
-    /// Adds a SRX firewall device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddSrxFirewall(AddSrxFirewallRequest request);

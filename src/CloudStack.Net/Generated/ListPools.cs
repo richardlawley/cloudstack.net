@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Pool
     /// </summary>
-    /// <summary>
-    /// List Pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListVolumePoolsCmdResponse ListPools(ListPoolsRequest request);

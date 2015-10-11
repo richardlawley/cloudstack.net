@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Remove a VMware datacenter from a zone.
     /// </summary>
-    /// <summary>
-    /// Remove a VMware datacenter from a zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse RemoveVmwareDc(RemoveVmwareDcRequest request);

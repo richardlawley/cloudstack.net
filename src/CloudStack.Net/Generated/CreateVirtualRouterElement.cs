@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create a virtual router element.
     /// </summary>
-    /// <summary>
-    /// Create a virtual router element.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVirtualRouterElement(CreateVirtualRouterElementRequest request);

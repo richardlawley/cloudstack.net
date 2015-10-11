@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a storage pool.
     /// </summary>
-    /// <summary>
-    /// Updates a storage pool.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         StoragePoolResponse UpdateStoragePool(UpdateStoragePoolRequest request);

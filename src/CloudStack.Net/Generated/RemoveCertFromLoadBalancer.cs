@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes a certificate from a Load Balancer Rule
     /// </summary>
-    /// <summary>
-    /// Removes a certificate from a Load Balancer Rule
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveCertFromLoadBalancer(RemoveCertFromLoadBalancerRequest request);

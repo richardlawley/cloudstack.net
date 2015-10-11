@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists and switches to other SAML accounts owned by the SAML user
     /// </summary>
-    /// <summary>
-    /// Lists and switches to other SAML accounts owned by the SAML user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse ListAndSwitchSamlAccount(ListAndSwitchSamlAccountRequest request);

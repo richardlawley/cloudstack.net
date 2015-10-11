@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates the information about Guest OS to Hypervisor specific name mapping
     /// </summary>
-    /// <summary>
-    /// Updates the information about Guest OS to Hypervisor specific name mapping
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateGuestOsMapping(UpdateGuestOsMappingRequest request);

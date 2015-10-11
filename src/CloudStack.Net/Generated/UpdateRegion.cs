@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a region
     /// </summary>
-    /// <summary>
-    /// Updates a region
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         RegionResponse UpdateRegion(UpdateRegionRequest request);

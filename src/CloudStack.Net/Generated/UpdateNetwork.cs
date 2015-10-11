@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a network
     /// </summary>
-    /// <summary>
-    /// Updates a network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateNetwork(UpdateNetworkRequest request);

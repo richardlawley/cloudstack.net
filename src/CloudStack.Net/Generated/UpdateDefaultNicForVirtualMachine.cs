@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Changes the default NIC on a VM
     /// </summary>
-    /// <summary>
-    /// Changes the default NIC on a VM
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateDefaultNicForVirtualMachine(UpdateDefaultNicForVirtualMachineRequest request);

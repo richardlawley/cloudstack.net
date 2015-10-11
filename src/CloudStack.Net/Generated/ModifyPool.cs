@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Modify pool
     /// </summary>
-    /// <summary>
-    /// Modify pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ModifyVolumePoolCmdResponse ModifyPool(ModifyPoolRequest request);

@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates resource limits for an account or domain.
     /// </summary>
-    /// <summary>
-    /// Updates resource limits for an account or domain.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ResourceLimitResponse UpdateResourceLimit(UpdateResourceLimitRequest request);

@@ -205,9 +205,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a network
     /// </summary>
-    /// <summary>
-    /// Creates a network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         NetworkResponse CreateNetwork(CreateNetworkRequest request);

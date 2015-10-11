@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Load Balancer healthcheck policy 
     /// </summary>
-    /// <summary>
-    /// Creates a Load Balancer healthcheck policy 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateLBHealthCheckPolicy(CreateLBHealthCheckPolicyRequest request);

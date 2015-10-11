@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List registered keypairs
     /// </summary>
-    /// <summary>
-    /// List registered keypairs
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Cisco Vnmc controller
     /// </summary>
-    /// <summary>
-    /// Deletes a Cisco Vnmc controller
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteCiscoVnmcResource(DeleteCiscoVnmcResourceRequest request);

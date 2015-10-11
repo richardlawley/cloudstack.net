@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Resets the SSH Key for virtual machine. The virtual machine must be in a "Stopped" state. [async]
     /// </summary>
-    /// <summary>
-    /// Resets the SSH Key for virtual machine. The virtual machine must be in a "Stopped" state. [async]
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ResetSSHKeyForVirtualMachine(ResetSSHKeyForVirtualMachineRequest request);

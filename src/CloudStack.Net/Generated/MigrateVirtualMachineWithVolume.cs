@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Attempts Migration of a VM with its volumes to a different host
     /// </summary>
-    /// <summary>
-    /// Attempts Migration of a VM with its volumes to a different host
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse MigrateVirtualMachineWithVolume(MigrateVirtualMachineWithVolumeRequest request);

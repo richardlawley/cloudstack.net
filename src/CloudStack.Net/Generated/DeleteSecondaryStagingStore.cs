@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a secondary staging store .
     /// </summary>
-    /// <summary>
-    /// Deletes a secondary staging store .
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteSecondaryStagingStore(DeleteSecondaryStagingStoreRequest request);

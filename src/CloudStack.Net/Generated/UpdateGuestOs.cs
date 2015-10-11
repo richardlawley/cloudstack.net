@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates the information about Guest OS
     /// </summary>
-    /// <summary>
-    /// Updates the information about Guest OS
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateGuestOs(UpdateGuestOsRequest request);

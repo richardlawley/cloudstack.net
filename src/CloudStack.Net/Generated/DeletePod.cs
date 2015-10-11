@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Pod.
     /// </summary>
-    /// <summary>
-    /// Deletes a Pod.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeletePod(DeletePodRequest request);

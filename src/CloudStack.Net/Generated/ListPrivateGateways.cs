@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List private gateways
     /// </summary>
-    /// <summary>
-    /// List private gateways
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<PrivateGatewayResponse> ListPrivateGateways(ListPrivateGatewaysRequest request);

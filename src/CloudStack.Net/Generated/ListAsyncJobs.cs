@@ -71,9 +71,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all pending asynchronous jobs for the account.
     /// </summary>
-    /// <summary>
-    /// Lists all pending asynchronous jobs for the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AsyncJobResponse> ListAsyncJobs(ListAsyncJobsRequest request);

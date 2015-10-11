@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Migrate volume
     /// </summary>
-    /// <summary>
-    /// Migrate volume
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse MigrateVolume(MigrateVolumeRequest request);

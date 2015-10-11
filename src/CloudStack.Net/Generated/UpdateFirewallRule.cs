@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates firewall rule 
     /// </summary>
-    /// <summary>
-    /// Updates firewall rule 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateFirewallRule(UpdateFirewallRuleRequest request);

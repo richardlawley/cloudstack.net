@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Restarts a VPC
     /// </summary>
-    /// <summary>
-    /// Restarts a VPC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RestartVPC(RestartVPCRequest request);

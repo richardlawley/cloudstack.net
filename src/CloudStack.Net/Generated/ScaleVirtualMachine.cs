@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Scales the virtual machine to a new service offering.
     /// </summary>
-    /// <summary>
-    /// Scales the virtual machine to a new service offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ScaleVirtualMachine(ScaleVirtualMachineRequest request);

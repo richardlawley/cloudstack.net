@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists vm groups
     /// </summary>
-    /// <summary>
-    /// Lists vm groups
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<InstanceGroupResponse> ListInstanceGroups(ListInstanceGroupsRequest request);

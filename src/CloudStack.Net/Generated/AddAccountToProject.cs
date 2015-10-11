@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds acoount to a project
     /// </summary>
-    /// <summary>
-    /// Adds acoount to a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddAccountToProject(AddAccountToProjectRequest request);

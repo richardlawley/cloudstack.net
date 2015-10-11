@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes an OpenDyalight controler
     /// </summary>
-    /// <summary>
-    /// Removes an OpenDyalight controler
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteOpenDaylightController(DeleteOpenDaylightControllerRequest request);

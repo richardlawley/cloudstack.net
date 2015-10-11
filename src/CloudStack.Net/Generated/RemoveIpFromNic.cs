@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes secondary IP from the NIC.
     /// </summary>
-    /// <summary>
-    /// Removes secondary IP from the NIC.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveIpFromNic(RemoveIpFromNicRequest request);

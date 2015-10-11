@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a firewall rule
     /// </summary>
-    /// <summary>
-    /// Deletes a firewall rule
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteFirewallRule(DeleteFirewallRuleRequest request);

@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a static route
     /// </summary>
-    /// <summary>
-    /// Creates a static route
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateStaticRoute(CreateStaticRouteRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a autoscale vm profile.
     /// </summary>
-    /// <summary>
-    /// Deletes a autoscale vm profile.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteAutoScaleVmProfile(DeleteAutoScaleVmProfileRequest request);

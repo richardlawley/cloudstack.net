@@ -159,9 +159,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List routers.
     /// </summary>
-    /// <summary>
-    /// List routers.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DomainRouterResponse> ListRouters(ListRoutersRequest request);

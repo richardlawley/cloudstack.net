@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create a volume
     /// </summary>
-    /// <summary>
-    /// Create a volume
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CreateVolumeOnFilerCmdResponse CreateVolumeOnFiler(CreateVolumeOnFilerRequest request);

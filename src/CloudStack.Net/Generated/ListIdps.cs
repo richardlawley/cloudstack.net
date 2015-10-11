@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Returns list of discovered SAML Identity Providers
     /// </summary>
-    /// <summary>
-    /// Returns list of discovered SAML Identity Providers
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         IdpResponse ListIdps(ListIdpsRequest request);

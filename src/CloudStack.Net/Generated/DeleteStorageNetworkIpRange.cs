@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a storage network IP Range.
     /// </summary>
-    /// <summary>
-    /// Deletes a storage network IP Range.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteStorageNetworkIpRange(DeleteStorageNetworkIpRangeRequest request);

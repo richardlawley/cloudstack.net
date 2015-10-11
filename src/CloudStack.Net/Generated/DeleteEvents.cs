@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete one or more events.
     /// </summary>
-    /// <summary>
-    /// Delete one or more events.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteEvents(DeleteEventsRequest request);

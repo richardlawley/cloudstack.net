@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Issues a Nuage VSP REST API resource request
     /// </summary>
-    /// <summary>
-    /// Issues a Nuage VSP REST API resource request
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         NuageVspResourceResponse IssueNuageVspResourceRequest(IssueNuageVspResourceRequestRequest request);

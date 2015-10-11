@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroy a Volume
     /// </summary>
-    /// <summary>
-    /// Destroy a Volume
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DeleteVolumeOnFilerCmdResponse DestroyVolumeOnFiler(DestroyVolumeOnFilerRequest request);

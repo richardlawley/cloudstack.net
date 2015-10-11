@@ -133,9 +133,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Registers an existing ISO into the CloudStack Cloud.
     /// </summary>
-    /// <summary>
-    /// Registers an existing ISO into the CloudStack Cloud.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplateResponse RegisterIso(RegisterIsoRequest request);

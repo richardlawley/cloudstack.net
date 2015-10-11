@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Accepts or declines project invitation
     /// </summary>
-    /// <summary>
-    /// Accepts or declines project invitation
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateProjectInvitation(UpdateProjectInvitationRequest request);

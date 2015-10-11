@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Reset site to site vpn connection
     /// </summary>
-    /// <summary>
-    /// Reset site to site vpn connection
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ResetVpnConnection(ResetVpnConnectionRequest request);

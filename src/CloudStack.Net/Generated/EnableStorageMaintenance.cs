@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Puts storage pool into maintenance state
     /// </summary>
-    /// <summary>
-    /// Puts storage pool into maintenance state
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse EnableStorageMaintenance(EnableStorageMaintenanceRequest request);

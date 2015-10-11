@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Cancels host maintenance.
     /// </summary>
-    /// <summary>
-    /// Cancels host maintenance.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CancelHostMaintenance(CancelHostMaintenanceRequest request);

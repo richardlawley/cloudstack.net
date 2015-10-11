@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// delete a nuage vsp device
     /// </summary>
-    /// <summary>
-    /// delete a nuage vsp device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteNuageVspDevice(DeleteNuageVspDeviceRequest request);

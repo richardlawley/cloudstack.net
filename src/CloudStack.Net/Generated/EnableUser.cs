@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Enables a user account
     /// </summary>
-    /// <summary>
-    /// Enables a user account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UserResponse EnableUser(EnableUserRequest request);

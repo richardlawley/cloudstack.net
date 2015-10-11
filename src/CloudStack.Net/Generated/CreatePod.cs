@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a new Pod.
     /// </summary>
-    /// <summary>
-    /// Creates a new Pod.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         PodResponse CreatePod(CreatePodRequest request);

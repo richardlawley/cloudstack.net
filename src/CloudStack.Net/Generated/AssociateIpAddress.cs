@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Acquires and associates a public IP to an account.
     /// </summary>
-    /// <summary>
-    /// Acquires and associates a public IP to an account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AssociateIpAddress(AssociateIpAddressRequest request);

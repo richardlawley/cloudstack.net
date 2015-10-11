@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Palo Alto firewall device
     /// </summary>
-    /// <summary>
-    /// Adds a Palo Alto firewall device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddPaloAltoFirewall(AddPaloAltoFirewallRequest request);

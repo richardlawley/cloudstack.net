@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes vpn user
     /// </summary>
-    /// <summary>
-    /// Removes vpn user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveVpnUser(RemoveVpnUserRequest request);

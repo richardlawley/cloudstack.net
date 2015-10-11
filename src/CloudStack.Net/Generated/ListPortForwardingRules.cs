@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all port forwarding rules for an IP address.
     /// </summary>
-    /// <summary>
-    /// Lists all port forwarding rules for an IP address.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<FirewallRuleResponse> ListPortForwardingRules(ListPortForwardingRulesRequest request);

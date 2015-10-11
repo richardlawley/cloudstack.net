@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates properties of a virtual machine. The VM has to be stopped and restarted for the new properties to take effect. UpdateVirtualMachine does not first check whether the VM is stopped. Therefore, stop the VM manually before issuing this call.
     /// </summary>
-    /// <summary>
-    /// Updates properties of a virtual machine. The VM has to be stopped and restarted for the new properties to take effect. UpdateVirtualMachine does not first check whether the VM is stopped. Therefore, stop the VM manually before issuing this call.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UserVmResponse UpdateVirtualMachine(UpdateVirtualMachineRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes a condition
     /// </summary>
-    /// <summary>
-    /// Removes a condition
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteCondition(DeleteConditionRequest request);

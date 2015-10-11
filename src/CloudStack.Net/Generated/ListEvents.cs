@@ -127,9 +127,6 @@ namespace CloudStack.Net
     /// <summary>
     /// A command to list events.
     /// </summary>
-    /// <summary>
-    /// A command to list events.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<EventResponse> ListEvents(ListEventsRequest request);

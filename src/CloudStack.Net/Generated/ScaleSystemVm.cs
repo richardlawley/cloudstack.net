@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Scale the service offering for a system vm (console proxy or secondary storage). The system vm must be in a "Stopped" state for this command to take effect.
     /// </summary>
-    /// <summary>
-    /// Scale the service offering for a system vm (console proxy or secondary storage). The system vm must be in a "Stopped" state for this command to take effect.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ScaleSystemVm(ScaleSystemVmRequest request);

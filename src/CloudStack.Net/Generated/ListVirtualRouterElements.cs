@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available virtual router elements.
     /// </summary>
-    /// <summary>
-    /// Lists all available virtual router elements.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElements(ListVirtualRouterElementsRequest request);

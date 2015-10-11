@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Retrieves a Cisco Nexus 1000v Virtual Switch Manager device associated with a Cluster
     /// </summary>
-    /// <summary>
-    /// Retrieves a Cisco Nexus 1000v Virtual Switch Manager device associated with a Cluster
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMs(ListCiscoNexusVSMsRequest request);

@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists vpn users
     /// </summary>
-    /// <summary>
-    /// Lists vpn users
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VpnUsersResponse> ListVpnUsers(ListVpnUsersRequest request);

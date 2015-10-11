@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists affinity group types available
     /// </summary>
-    /// <summary>
-    /// Lists affinity group types available
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypes(ListAffinityGroupTypesRequest request);

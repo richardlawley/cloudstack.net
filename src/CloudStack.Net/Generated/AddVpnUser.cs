@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds vpn users
     /// </summary>
-    /// <summary>
-    /// Adds vpn users
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddVpnUser(AddVpnUserRequest request);

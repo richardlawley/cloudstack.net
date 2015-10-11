@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Changes the service offering for a system vm (console proxy or secondary storage). The system vm must be in a "Stopped" state for this command to take effect.
     /// </summary>
-    /// <summary>
-    /// Changes the service offering for a system vm (console proxy or secondary storage). The system vm must be in a "Stopped" state for this command to take effect.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SystemVmResponse ChangeServiceForSystemVm(ChangeServiceForSystemVmRequest request);

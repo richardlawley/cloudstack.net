@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists affinity groups
     /// </summary>
-    /// <summary>
-    /// Lists affinity groups
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AffinityGroupResponse> ListAffinityGroups(ListAffinityGroupsRequest request);

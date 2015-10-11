@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes security group
     /// </summary>
-    /// <summary>
-    /// Deletes security group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request);

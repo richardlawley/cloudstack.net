@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates the snapshot policy.
     /// </summary>
-    /// <summary>
-    /// Updates the snapshot policy.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request);

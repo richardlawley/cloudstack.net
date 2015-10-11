@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List resource tag(s)
     /// </summary>
-    /// <summary>
-    /// List resource tag(s)
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ResourceTagResponse> ListTags(ListTagsRequest request);

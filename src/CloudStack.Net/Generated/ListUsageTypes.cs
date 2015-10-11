@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Usage Types
     /// </summary>
-    /// <summary>
-    /// List Usage Types
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UsageTypeResponse ListUsageTypes(ListUsageTypesRequest request);

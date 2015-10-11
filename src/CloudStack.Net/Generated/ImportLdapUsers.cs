@@ -79,9 +79,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Import LDAP users
     /// </summary>
-    /// <summary>
-    /// Import LDAP users
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LdapUserResponse> ImportLdapUsers(ImportLdapUsersRequest request);

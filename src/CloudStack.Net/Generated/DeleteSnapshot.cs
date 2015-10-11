@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a snapshot of a disk volume.
     /// </summary>
-    /// <summary>
-    /// Deletes a snapshot of a disk volume.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteSnapshot(DeleteSnapshotRequest request);

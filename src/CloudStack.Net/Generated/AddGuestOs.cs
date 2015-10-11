@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Add a new guest OS type
     /// </summary>
-    /// <summary>
-    /// Add a new guest OS type
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddGuestOs(AddGuestOsRequest request);

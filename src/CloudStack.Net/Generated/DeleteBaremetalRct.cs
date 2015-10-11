@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// deletes baremetal rack configuration text
     /// </summary>
-    /// <summary>
-    /// deletes baremetal rack configuration text
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteBaremetalRct(DeleteBaremetalRctRequest request);

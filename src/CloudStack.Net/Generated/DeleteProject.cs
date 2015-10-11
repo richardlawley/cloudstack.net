@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a project
     /// </summary>
-    /// <summary>
-    /// Deletes a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteProject(DeleteProjectRequest request);

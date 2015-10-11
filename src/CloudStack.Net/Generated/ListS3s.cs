@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists S3s
     /// </summary>
-    /// <summary>
-    /// Lists S3s
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ImageStoreResponse> ListS3s(ListS3sRequest request);

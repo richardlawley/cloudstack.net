@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List the ip forwarding rules
     /// </summary>
-    /// <summary>
-    /// List the ip forwarding rules
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<FirewallRuleResponse> ListIpForwardingRules(ListIpForwardingRulesRequest request);

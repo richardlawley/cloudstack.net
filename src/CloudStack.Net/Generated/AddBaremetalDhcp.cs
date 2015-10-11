@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// adds a baremetal dhcp server
     /// </summary>
-    /// <summary>
-    /// adds a baremetal dhcp server
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request);

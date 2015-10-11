@@ -141,9 +141,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a Zone.
     /// </summary>
-    /// <summary>
-    /// Updates a Zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ZoneResponse UpdateZone(UpdateZoneRequest request);

@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds stratosphere ssp server
     /// </summary>
-    /// <summary>
-    /// Adds stratosphere ssp server
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SspResponse AddStratosphereSsp(AddStratosphereSspRequest request);

@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists resource limits.
     /// </summary>
-    /// <summary>
-    /// Lists resource limits.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ResourceLimitResponse> ListResourceLimits(ListResourceLimitsRequest request);

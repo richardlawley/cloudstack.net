@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Get SolidFire Account ID
     /// </summary>
-    /// <summary>
-    /// Get SolidFire Account ID
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiSolidFireAccountIdResponse GetSolidFireAccountId(GetSolidFireAccountIdRequest request);

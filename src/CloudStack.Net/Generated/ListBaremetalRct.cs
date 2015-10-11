@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// list baremetal rack configuration
     /// </summary>
-    /// <summary>
-    /// list baremetal rack configuration
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<BaremetalRctResponse> ListBaremetalRct(ListBaremetalRctRequest request);

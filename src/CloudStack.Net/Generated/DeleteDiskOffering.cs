@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a disk offering.
     /// </summary>
-    /// <summary>
-    /// Updates a disk offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteDiskOffering(DeleteDiskOfferingRequest request);

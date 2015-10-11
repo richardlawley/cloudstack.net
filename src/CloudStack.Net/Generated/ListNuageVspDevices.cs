@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Nuage VSP devices
     /// </summary>
-    /// <summary>
-    /// Lists Nuage VSP devices
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NuageVspDeviceResponse> ListNuageVspDevices(ListNuageVspDevicesRequest request);

@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Dedicates a guest vlan range to an account
     /// </summary>
-    /// <summary>
-    /// Dedicates a guest vlan range to an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         GuestVlanRangeResponse DedicateGuestVlanRange(DedicateGuestVlanRangeRequest request);

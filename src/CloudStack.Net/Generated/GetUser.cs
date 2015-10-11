@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Find user account by API key
     /// </summary>
-    /// <summary>
-    /// Find user account by API key
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UserResponse GetUser(GetUserRequest request);

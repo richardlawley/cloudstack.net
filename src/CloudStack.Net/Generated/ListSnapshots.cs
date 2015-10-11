@@ -127,9 +127,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available snapshots for the account.
     /// </summary>
-    /// <summary>
-    /// Lists all available snapshots for the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SnapshotResponse> ListSnapshots(ListSnapshotsRequest request);

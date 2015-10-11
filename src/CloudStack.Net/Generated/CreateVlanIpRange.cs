@@ -149,9 +149,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a VLAN IP range.
     /// </summary>
-    /// <summary>
-    /// Creates a VLAN IP range.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         VlanIpRangeResponse CreateVlanIpRange(CreateVlanIpRangeRequest request);

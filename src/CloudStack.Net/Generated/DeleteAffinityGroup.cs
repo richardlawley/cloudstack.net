@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes affinity group
     /// </summary>
-    /// <summary>
-    /// Deletes affinity group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request);

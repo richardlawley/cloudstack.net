@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes VPC offering
     /// </summary>
-    /// <summary>
-    /// Deletes VPC offering
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteVPCOffering(DeleteVPCOfferingRequest request);

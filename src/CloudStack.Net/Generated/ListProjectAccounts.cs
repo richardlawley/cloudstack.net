@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists project's accounts
     /// </summary>
-    /// <summary>
-    /// Lists project's accounts
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ProjectResponse> ListProjectAccounts(ListProjectAccountsRequest request);

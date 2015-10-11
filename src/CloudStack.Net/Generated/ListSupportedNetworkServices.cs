@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all network services provided by CloudStack or for the given Provider.
     /// </summary>
-    /// <summary>
-    /// Lists all network services provided by CloudStack or for the given Provider.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ServiceResponse> ListSupportedNetworkServices(ListSupportedNetworkServicesRequest request);

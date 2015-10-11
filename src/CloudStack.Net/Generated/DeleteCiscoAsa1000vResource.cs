@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Cisco ASA 1000v appliance
     /// </summary>
-    /// <summary>
-    /// Deletes a Cisco ASA 1000v appliance
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteCiscoAsa1000vResource(DeleteCiscoAsa1000vResourceRequest request);

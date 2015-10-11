@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Restore a VM to original template/ISO or new template/ISO
     /// </summary>
-    /// <summary>
-    /// Restore a VM to original template/ISO or new template/ISO
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RestoreVirtualMachine(RestoreVirtualMachineRequest request);

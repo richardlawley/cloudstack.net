@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates remote access vpn
     /// </summary>
-    /// <summary>
-    /// Updates remote access vpn
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateRemoteAccessVpn(UpdateRemoteAccessVpnRequest request);

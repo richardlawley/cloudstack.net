@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes detail for the Resource.
     /// </summary>
-    /// <summary>
-    /// Removes detail for the Resource.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveResourceDetail(RemoveResourceDetailRequest request);

@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists supported methods of network isolation
     /// </summary>
-    /// <summary>
-    /// Lists supported methods of network isolation
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<IsolationMethodResponse> ListNetworkIsolationMethods(ListNetworkIsolationMethodsRequest request);

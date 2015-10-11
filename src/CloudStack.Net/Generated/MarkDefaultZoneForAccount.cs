@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Marks a default zone for this account
     /// </summary>
-    /// <summary>
-    /// Marks a default zone for this account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse MarkDefaultZoneForAccount(MarkDefaultZoneForAccountRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a detached disk volume.
     /// </summary>
-    /// <summary>
-    /// Deletes a detached disk volume.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteVolume(DeleteVolumeRequest request);

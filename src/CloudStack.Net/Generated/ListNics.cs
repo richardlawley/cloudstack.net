@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// list the vm nics  IP to NIC
     /// </summary>
-    /// <summary>
-    /// list the vm nics  IP to NIC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NicResponse> ListNics(ListNicsRequest request);

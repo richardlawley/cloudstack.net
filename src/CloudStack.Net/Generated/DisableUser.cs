@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Disables a user account
     /// </summary>
-    /// <summary>
-    /// Disables a user account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DisableUser(DisableUserRequest request);

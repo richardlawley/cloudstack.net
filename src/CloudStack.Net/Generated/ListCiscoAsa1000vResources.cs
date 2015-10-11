@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Cisco ASA 1000v appliances
     /// </summary>
-    /// <summary>
-    /// Lists Cisco ASA 1000v appliances
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResources(ListCiscoAsa1000vResourcesRequest request);

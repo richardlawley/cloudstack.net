@@ -101,9 +101,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a VPC
     /// </summary>
-    /// <summary>
-    /// Creates a VPC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVPC(CreateVPCRequest request);

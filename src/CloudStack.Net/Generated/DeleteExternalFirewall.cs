@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes an external firewall appliance.
     /// </summary>
-    /// <summary>
-    /// Deletes an external firewall appliance.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteExternalFirewall(DeleteExternalFirewallRequest request);

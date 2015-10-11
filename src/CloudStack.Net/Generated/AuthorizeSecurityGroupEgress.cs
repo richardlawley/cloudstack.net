@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Authorizes a particular egress rule for this security group
     /// </summary>
-    /// <summary>
-    /// Authorizes a particular egress rule for this security group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);

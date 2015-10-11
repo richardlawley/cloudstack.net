@@ -93,9 +93,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a new host.
     /// </summary>
-    /// <summary>
-    /// Adds a new host.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         HostResponse AddHost(AddHostRequest request);

@@ -71,9 +71,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all Pods.
     /// </summary>
-    /// <summary>
-    /// Lists all Pods.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<PodResponse> ListPods(ListPodsRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// SP initiated SAML Single Sign On
     /// </summary>
-    /// <summary>
-    /// SP initiated SAML Single Sign On
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         LoginCmdResponse SamlSso(SamlSsoRequest request);

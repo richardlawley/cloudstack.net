@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a network device of one of the following types: ExternalDhcp, ExternalFirewall, ExternalLoadBalancer, PxeServer
     /// </summary>
-    /// <summary>
-    /// Adds a network device of one of the following types: ExternalDhcp, ExternalFirewall, ExternalLoadBalancer, PxeServer
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         NetworkDeviceResponse AddNetworkDevice(AddNetworkDeviceRequest request);

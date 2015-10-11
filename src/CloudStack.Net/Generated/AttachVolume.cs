@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Attaches a disk volume to a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Attaches a disk volume to a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AttachVolume(AttachVolumeRequest request);

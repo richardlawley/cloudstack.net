@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Releases a Public IP range back to the system pool
     /// </summary>
-    /// <summary>
-    /// Releases a Public IP range back to the system pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse ReleasePublicIpRange(ReleasePublicIpRangeRequest request);

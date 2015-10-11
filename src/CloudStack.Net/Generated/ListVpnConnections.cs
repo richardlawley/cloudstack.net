@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists site to site vpn connection gateways
     /// </summary>
-    /// <summary>
-    /// Lists site to site vpn connection gateways
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<Site2SiteVpnConnectionResponse> ListVpnConnections(ListVpnConnectionsRequest request);

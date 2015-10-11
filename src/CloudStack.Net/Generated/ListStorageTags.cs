@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists storage tags
     /// </summary>
-    /// <summary>
-    /// Lists storage tags
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StorageTagResponse> ListStorageTags(ListStorageTagsRequest request);

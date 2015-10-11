@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists F5 external load balancer appliances added in a zone.
     /// </summary>
-    /// <summary>
-    /// Lists F5 external load balancer appliances added in a zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<HostResponse> ListExternalLoadBalancers(ListExternalLoadBalancersRequest request);

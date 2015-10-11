@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create site to site vpn connection
     /// </summary>
-    /// <summary>
-    /// Create site to site vpn connection
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVpnConnection(CreateVpnConnectionRequest request);

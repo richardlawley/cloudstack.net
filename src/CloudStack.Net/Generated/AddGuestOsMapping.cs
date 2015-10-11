@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a guest OS name to hypervisor OS name mapping
     /// </summary>
-    /// <summary>
-    /// Adds a guest OS name to hypervisor OS name mapping
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddGuestOsMapping(AddGuestOsMappingRequest request);

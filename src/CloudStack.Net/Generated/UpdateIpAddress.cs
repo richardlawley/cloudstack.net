@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates an ip address
     /// </summary>
-    /// <summary>
-    /// Updates an ip address
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateIpAddress(UpdateIpAddressRequest request);

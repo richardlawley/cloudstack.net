@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a user for an account that already exists
     /// </summary>
-    /// <summary>
-    /// Creates a user for an account that already exists
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UserResponse CreateUser(CreateUserRequest request);

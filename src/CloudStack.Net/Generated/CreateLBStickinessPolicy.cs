@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Load Balancer stickiness policy 
     /// </summary>
-    /// <summary>
-    /// Creates a Load Balancer stickiness policy 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateLBStickinessPolicy(CreateLBStickinessPolicyRequest request);

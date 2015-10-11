@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Extracts a template
     /// </summary>
-    /// <summary>
-    /// Extracts a template
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ExtractTemplate(ExtractTemplateRequest request);

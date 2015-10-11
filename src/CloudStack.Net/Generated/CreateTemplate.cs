@@ -133,9 +133,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a template of a virtual machine. The virtual machine must be in a STOPPED state. A template created from this command is automatically designated as a private template visible to the account that created it.
     /// </summary>
-    /// <summary>
-    /// Creates a template of a virtual machine. The virtual machine must be in a STOPPED state. A template created from this command is automatically designated as a private template visible to the account that created it.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateTemplate(CreateTemplateRequest request);

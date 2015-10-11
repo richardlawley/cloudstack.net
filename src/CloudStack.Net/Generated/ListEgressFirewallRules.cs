@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all egress firewall rules for network id.
     /// </summary>
-    /// <summary>
-    /// Lists all egress firewall rules for network id.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<FirewallResponse> ListEgressFirewallRules(ListEgressFirewallRulesRequest request);

@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a template from the system. All virtual machines using the deleted template will not be affected.
     /// </summary>
-    /// <summary>
-    /// Deletes a template from the system. All virtual machines using the deleted template will not be affected.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteTemplate(DeleteTemplateRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Revert VM from a vmsnapshot.
     /// </summary>
-    /// <summary>
-    /// Revert VM from a vmsnapshot.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RevertToVMSnapshot(RevertToVMSnapshotRequest request);

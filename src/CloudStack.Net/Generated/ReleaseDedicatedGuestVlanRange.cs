@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Releases a dedicated guest vlan range to the system
     /// </summary>
-    /// <summary>
-    /// Releases a dedicated guest vlan range to the system
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReleaseDedicatedGuestVlanRange(ReleaseDedicatedGuestVlanRangeRequest request);

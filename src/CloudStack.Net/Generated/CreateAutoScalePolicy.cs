@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an autoscale policy for a provision or deprovision action, the action is taken when the all the conditions evaluates to true for the specified duration. The policy is in effect once it is attached to a autscale vm group.
     /// </summary>
-    /// <summary>
-    /// Creates an autoscale policy for a provision or deprovision action, the action is taken when the all the conditions evaluates to true for the specified duration. The policy is in effect once it is attached to a autscale vm group.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request);

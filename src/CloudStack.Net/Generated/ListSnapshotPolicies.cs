@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists snapshot policies.
     /// </summary>
-    /// <summary>
-    /// Lists snapshot policies.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SnapshotPolicyResponse> ListSnapshotPolicies(ListSnapshotPoliciesRequest request);

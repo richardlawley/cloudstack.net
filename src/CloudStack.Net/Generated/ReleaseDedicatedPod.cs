@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Release the dedication for the pod
     /// </summary>
-    /// <summary>
-    /// Release the dedication for the pod
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReleaseDedicatedPod(ReleaseDedicatedPodRequest request);

@@ -79,9 +79,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists VPC offerings
     /// </summary>
-    /// <summary>
-    /// Lists VPC offerings
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VpcOfferingResponse> ListVPCOfferings(ListVPCOfferingsRequest request);

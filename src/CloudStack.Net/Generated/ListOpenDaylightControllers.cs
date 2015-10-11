@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists OpenDyalight controllers
     /// </summary>
-    /// <summary>
-    /// Lists OpenDyalight controllers
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         OpenDaylightControllerResponse ListOpenDaylightControllers(ListOpenDaylightControllersRequest request);

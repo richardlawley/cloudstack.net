@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List LUN
     /// </summary>
-    /// <summary>
-    /// List LUN
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListLunsCmdResponse ListLunsOnFiler(ListLunsOnFilerRequest request);

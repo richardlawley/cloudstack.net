@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a l2tp/ipsec remote access vpn
     /// </summary>
-    /// <summary>
-    /// Creates a l2tp/ipsec remote access vpn
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateRemoteAccessVpn(CreateRemoteAccessVpnRequest request);

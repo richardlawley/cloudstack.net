@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a network serviceProvider to a physical network
     /// </summary>
-    /// <summary>
-    /// Adds a network serviceProvider to a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddNetworkServiceProvider(AddNetworkServiceProviderRequest request);

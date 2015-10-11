@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Archive one or more events.
     /// </summary>
-    /// <summary>
-    /// Archive one or more events.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse ArchiveEvents(ArchiveEventsRequest request);

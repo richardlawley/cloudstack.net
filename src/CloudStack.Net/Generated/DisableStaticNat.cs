@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Disables static rule for given ip address
     /// </summary>
-    /// <summary>
-    /// Disables static rule for given ip address
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DisableStaticNat(DisableStaticNatRequest request);

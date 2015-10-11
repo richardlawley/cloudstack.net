@@ -221,9 +221,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a service offering.
     /// </summary>
-    /// <summary>
-    /// Creates a service offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ServiceOfferingResponse CreateServiceOffering(CreateServiceOfferingRequest request);

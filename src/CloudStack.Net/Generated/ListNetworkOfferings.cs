@@ -167,9 +167,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available network offerings.
     /// </summary>
-    /// <summary>
-    /// Lists all available network offerings.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NetworkOfferingResponse> ListNetworkOfferings(ListNetworkOfferingsRequest request);

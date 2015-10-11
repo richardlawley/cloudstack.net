@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Conditions for the specific user
     /// </summary>
-    /// <summary>
-    /// List Conditions for the specific user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ConditionResponse> ListConditions(ListConditionsRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a vmsnapshot.
     /// </summary>
-    /// <summary>
-    /// Deletes a vmsnapshot.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteVMSnapshot(DeleteVMSnapshotRequest request);

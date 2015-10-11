@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Archive one or more alerts.
     /// </summary>
-    /// <summary>
-    /// Archive one or more alerts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse ArchiveAlerts(ArchiveAlertsRequest request);

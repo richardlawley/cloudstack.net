@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists project invitations and provides detailed information for listed invitations
     /// </summary>
-    /// <summary>
-    /// Lists project invitations and provides detailed information for listed invitations
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ProjectInvitationResponse> ListProjectInvitations(ListProjectInvitationsRequest request);

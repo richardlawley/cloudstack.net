@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Ucs manager
     /// </summary>
-    /// <summary>
-    /// Adds a Ucs manager
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UcsManagerResponse AddUcsManager(AddUcsManagerRequest request);

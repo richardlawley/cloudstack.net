@@ -101,9 +101,6 @@ namespace CloudStack.Net
     /// <summary>
     /// add a baremetal ping pxe server
     /// </summary>
-    /// <summary>
-    /// add a baremetal ping pxe server
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBaremetalPxePingServer(AddBaremetalPxePingServerRequest request);

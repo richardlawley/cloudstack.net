@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a VPC
     /// </summary>
-    /// <summary>
-    /// Updates a VPC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateVPC(UpdateVPCRequest request);

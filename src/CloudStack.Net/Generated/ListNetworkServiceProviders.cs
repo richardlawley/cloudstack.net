@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists network serviceproviders for a given physical network.
     /// </summary>
-    /// <summary>
-    /// Lists network serviceproviders for a given physical network.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ProviderResponse> ListNetworkServiceProviders(ListNetworkServiceProvidersRequest request);

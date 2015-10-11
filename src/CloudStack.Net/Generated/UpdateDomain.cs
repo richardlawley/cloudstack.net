@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a domain with a new name
     /// </summary>
-    /// <summary>
-    /// Updates a domain with a new name
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DomainResponse UpdateDomain(UpdateDomainRequest request);

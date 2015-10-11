@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds an OpenDyalight controler
     /// </summary>
-    /// <summary>
-    /// Adds an OpenDyalight controler
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request);

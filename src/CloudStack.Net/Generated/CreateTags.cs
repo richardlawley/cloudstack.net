@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates resource tag(s)
     /// </summary>
-    /// <summary>
-    /// Creates resource tag(s)
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateTags(CreateTagsRequest request);

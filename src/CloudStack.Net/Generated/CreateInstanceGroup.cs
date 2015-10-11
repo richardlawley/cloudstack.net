@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a vm group
     /// </summary>
-    /// <summary>
-    /// Creates a vm group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         InstanceGroupResponse CreateInstanceGroup(CreateInstanceGroupRequest request);

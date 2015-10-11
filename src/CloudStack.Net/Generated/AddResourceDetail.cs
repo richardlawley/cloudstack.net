@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds detail for the Resource.
     /// </summary>
-    /// <summary>
-    /// Adds detail for the Resource.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddResourceDetail(AddResourceDetailRequest request);

@@ -159,9 +159,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all volumes.
     /// </summary>
-    /// <summary>
-    /// Lists all volumes.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VolumeResponse> ListVolumes(ListVolumesRequest request);

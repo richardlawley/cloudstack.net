@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Swift.
     /// </summary>
-    /// <summary>
-    /// List Swift.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ImageStoreResponse> ListSwifts(ListSwiftsRequest request);

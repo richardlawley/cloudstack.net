@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates an existing cluster
     /// </summary>
-    /// <summary>
-    /// Updates an existing cluster
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ClusterResponse UpdateCluster(UpdateClusterRequest request);

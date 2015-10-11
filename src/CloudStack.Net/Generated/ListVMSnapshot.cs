@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List virtual machine snapshot by conditions
     /// </summary>
-    /// <summary>
-    /// List virtual machine snapshot by conditions
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VMSnapshotResponse> ListVMSnapshot(ListVMSnapshotRequest request);

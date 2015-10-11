@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroys a virtual machine. Once destroyed, only the administrator can recover it.
     /// </summary>
-    /// <summary>
-    /// Destroys a virtual machine. Once destroyed, only the administrator can recover it.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DestroyVirtualMachine(DestroyVirtualMachineRequest request);

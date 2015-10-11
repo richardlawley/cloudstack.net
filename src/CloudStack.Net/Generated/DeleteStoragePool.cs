@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a storage pool.
     /// </summary>
-    /// <summary>
-    /// Deletes a storage pool.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteStoragePool(DeleteStoragePoolRequest request);

@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Cleanups VM reservations in the database.
     /// </summary>
-    /// <summary>
-    /// Cleanups VM reservations in the database.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CleanVMReservations(CleanVMReservationsRequest request);

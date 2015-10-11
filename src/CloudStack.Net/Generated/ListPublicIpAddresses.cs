@@ -191,9 +191,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all public ip addresses
     /// </summary>
-    /// <summary>
-    /// Lists all public ip addresses
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<IPAddressResponse> ListPublicIpAddresses(ListPublicIpAddressesRequest request);

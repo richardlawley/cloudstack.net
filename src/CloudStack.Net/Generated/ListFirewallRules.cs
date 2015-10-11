@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all firewall rules for an IP address.
     /// </summary>
-    /// <summary>
-    /// Lists all firewall rules for an IP address.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<FirewallResponse> ListFirewallRules(ListFirewallRulesRequest request);

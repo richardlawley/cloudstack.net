@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete site to site vpn customer gateway
     /// </summary>
-    /// <summary>
-    /// Delete site to site vpn customer gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteVpnCustomerGateway(DeleteVpnCustomerGatewayRequest request);

@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates attributes of a template.
     /// </summary>
-    /// <summary>
-    /// Updates attributes of a template.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplateResponse UpdateTemplate(UpdateTemplateRequest request);

@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a private gateway
     /// </summary>
-    /// <summary>
-    /// Creates a private gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreatePrivateGateway(CreatePrivateGatewayRequest request);

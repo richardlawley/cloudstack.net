@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates an existing autoscale vm profile.
     /// </summary>
-    /// <summary>
-    /// Updates an existing autoscale vm profile.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateAutoScaleVmProfile(UpdateAutoScaleVmProfileRequest request);

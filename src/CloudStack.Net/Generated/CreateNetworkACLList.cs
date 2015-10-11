@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Network ACL for the given VPC
     /// </summary>
-    /// <summary>
-    /// Creates a Network ACL for the given VPC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateNetworkACLList(CreateNetworkACLListRequest request);

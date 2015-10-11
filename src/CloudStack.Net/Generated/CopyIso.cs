@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Copies an iso from one zone to another.
     /// </summary>
-    /// <summary>
-    /// Copies an iso from one zone to another.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CopyIso(CopyIsoRequest request);

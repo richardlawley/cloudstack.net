@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists BigSwitch Vns devices
     /// </summary>
-    /// <summary>
-    /// Lists BigSwitch Vns devices
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<BigSwitchVnsDeviceResponse> ListBigSwitchVnsDevices(ListBigSwitchVnsDevicesRequest request);

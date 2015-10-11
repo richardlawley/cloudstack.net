@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists domains and provides detailed information for listed domains
     /// </summary>
-    /// <summary>
-    /// Lists domains and provides detailed information for listed domains
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DomainResponse> ListDomains(ListDomainsRequest request);

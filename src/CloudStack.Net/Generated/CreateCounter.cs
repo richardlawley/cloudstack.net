@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds metric counter
     /// </summary>
-    /// <summary>
-    /// Adds metric counter
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateCounter(CreateCounterRequest request);

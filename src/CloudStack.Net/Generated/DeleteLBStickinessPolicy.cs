@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a LB stickiness policy.
     /// </summary>
-    /// <summary>
-    /// Deletes a LB stickiness policy.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteLBStickinessPolicy(DeleteLBStickinessPolicyRequest request);

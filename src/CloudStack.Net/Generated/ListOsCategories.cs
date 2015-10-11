@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all supported OS categories for this cloud.
     /// </summary>
-    /// <summary>
-    /// Lists all supported OS categories for this cloud.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<GuestOSCategoryResponse> ListOsCategories(ListOsCategoriesRequest request);

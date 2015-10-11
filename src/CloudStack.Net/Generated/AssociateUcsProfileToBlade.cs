@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// associate a profile to a blade
     /// </summary>
-    /// <summary>
-    /// associate a profile to a blade
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AssociateUcsProfileToBlade(AssociateUcsProfileToBladeRequest request);

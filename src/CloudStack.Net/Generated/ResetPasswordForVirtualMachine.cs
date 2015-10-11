@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Resets the password for virtual machine. The virtual machine must be in a "Stopped" state and the template must already support this feature for this command to take effect. [async]
     /// </summary>
-    /// <summary>
-    /// Resets the password for virtual machine. The virtual machine must be in a "Stopped" state and the template must already support this feature for this command to take effect. [async]
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ResetPasswordForVirtualMachine(ResetPasswordForVirtualMachineRequest request);

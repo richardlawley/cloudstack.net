@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Get SolidFire Volume's Iscsi Name
     /// </summary>
-    /// <summary>
-    /// Get SolidFire Volume's Iscsi Name
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiSolidFireVolumeIscsiNameResponse GetSolidFireVolumeIscsiName(GetSolidFireVolumeIscsiNameRequest request);

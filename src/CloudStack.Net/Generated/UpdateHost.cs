@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a host.
     /// </summary>
-    /// <summary>
-    /// Updates a host.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         HostResponse UpdateHost(UpdateHostRequest request);

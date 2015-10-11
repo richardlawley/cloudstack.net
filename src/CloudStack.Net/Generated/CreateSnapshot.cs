@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an instant snapshot of a volume.
     /// </summary>
-    /// <summary>
-    /// Creates an instant snapshot of a volume.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateSnapshot(CreateSnapshotRequest request);

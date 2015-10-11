@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a particular egress rule from this security group
     /// </summary>
-    /// <summary>
-    /// Deletes a particular egress rule from this security group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request);

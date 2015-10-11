@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Configures an ovs element.
     /// </summary>
-    /// <summary>
-    /// Configures an ovs element.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ConfigureOvsElement(ConfigureOvsElementRequest request);

@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all network ACLs
     /// </summary>
-    /// <summary>
-    /// Lists all network ACLs
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NetworkACLResponse> ListNetworkACLLists(ListNetworkACLListsRequest request);

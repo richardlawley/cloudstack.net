@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Update password of a host/pool on management server.
     /// </summary>
-    /// <summary>
-    /// Update password of a host/pool on management server.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse UpdateHostPassword(UpdateHostPasswordRequest request);

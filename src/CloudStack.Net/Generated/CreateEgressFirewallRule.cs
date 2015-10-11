@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a egress firewall rule for a given network 
     /// </summary>
-    /// <summary>
-    /// Creates a egress firewall rule for a given network 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateEgressFirewallRule(CreateEgressFirewallRuleRequest request);

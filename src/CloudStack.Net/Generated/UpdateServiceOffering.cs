@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a service offering.
     /// </summary>
-    /// <summary>
-    /// Updates a service offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ServiceOfferingResponse UpdateServiceOffering(UpdateServiceOfferingRequest request);

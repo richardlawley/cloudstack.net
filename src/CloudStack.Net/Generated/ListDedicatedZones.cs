@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List dedicated zones.
     /// </summary>
-    /// <summary>
-    /// List dedicated zones.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DedicateZoneResponse> ListDedicatedZones(ListDedicatedZonesRequest request);

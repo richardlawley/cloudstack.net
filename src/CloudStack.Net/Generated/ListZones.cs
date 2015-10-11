@@ -87,9 +87,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists zones
     /// </summary>
-    /// <summary>
-    /// Lists zones
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ZoneResponse> ListZones(ListZonesRequest request);

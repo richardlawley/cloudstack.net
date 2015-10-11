@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List hypervisors
     /// </summary>
-    /// <summary>
-    /// List hypervisors
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         HypervisorResponse ListHypervisors(ListHypervisorsRequest request);

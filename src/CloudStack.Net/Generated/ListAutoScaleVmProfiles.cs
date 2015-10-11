@@ -119,9 +119,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists autoscale vm profiles.
     /// </summary>
-    /// <summary>
-    /// Lists autoscale vm profiles.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfiles(ListAutoScaleVmProfilesRequest request);

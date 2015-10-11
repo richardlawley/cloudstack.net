@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all alerts.
     /// </summary>
-    /// <summary>
-    /// Lists all alerts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AlertResponse> ListAlerts(ListAlertsRequest request);

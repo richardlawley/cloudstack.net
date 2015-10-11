@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes an ip forwarding rule
     /// </summary>
-    /// <summary>
-    /// Deletes an ip forwarding rule
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request);

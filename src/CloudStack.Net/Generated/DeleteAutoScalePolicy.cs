@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a autoscale policy.
     /// </summary>
-    /// <summary>
-    /// Deletes a autoscale policy.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteAutoScalePolicy(DeleteAutoScalePolicyRequest request);

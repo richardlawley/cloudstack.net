@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes an ISO file.
     /// </summary>
-    /// <summary>
-    /// Deletes an ISO file.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteIso(DeleteIsoRequest request);

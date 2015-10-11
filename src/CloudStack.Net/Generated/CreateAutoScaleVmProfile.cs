@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a profile that contains information about the virtual machine which will be provisioned automatically by autoscale feature.
     /// </summary>
-    /// <summary>
-    /// Creates a profile that contains information about the virtual machine which will be provisioned automatically by autoscale feature.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateAutoScaleVmProfile(CreateAutoScaleVmProfileRequest request);

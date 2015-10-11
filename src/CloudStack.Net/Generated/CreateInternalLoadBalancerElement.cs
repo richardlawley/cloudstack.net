@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create an Internal Load Balancer element.
     /// </summary>
-    /// <summary>
-    /// Create an Internal Load Balancer element.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateInternalLoadBalancerElement(CreateInternalLoadBalancerElementRequest request);

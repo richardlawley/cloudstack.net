@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List a storage network IP range.
     /// </summary>
-    /// <summary>
-    /// List a storage network IP range.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request);

@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// SAML Global Log Out API
     /// </summary>
-    /// <summary>
-    /// SAML Global Log Out API
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         LogoutCmdResponse SamlSlo(SamlSloRequest request);

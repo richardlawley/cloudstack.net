@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a snapshot policy for the account.
     /// </summary>
-    /// <summary>
-    /// Creates a snapshot policy for the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SnapshotPolicyResponse CreateSnapshotPolicy(CreateSnapshotPolicyRequest request);

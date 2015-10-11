@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a ACL rule in the given network (the network has to belong to VPC)
     /// </summary>
-    /// <summary>
-    /// Creates a ACL rule in the given network (the network has to belong to VPC)
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateNetworkACL(CreateNetworkACLRequest request);

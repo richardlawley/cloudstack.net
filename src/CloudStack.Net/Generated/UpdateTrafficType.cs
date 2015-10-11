@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates traffic type of a physical network
     /// </summary>
-    /// <summary>
-    /// Updates traffic type of a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateTrafficType(UpdateTrafficTypeRequest request);

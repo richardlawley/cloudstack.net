@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a static route
     /// </summary>
-    /// <summary>
-    /// Deletes a static route
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteStaticRoute(DeleteStaticRouteRequest request);

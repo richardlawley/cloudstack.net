@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a specified domain
     /// </summary>
-    /// <summary>
-    /// Deletes a specified domain
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteDomain(DeleteDomainRequest request);

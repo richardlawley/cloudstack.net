@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// add a baremetal pxe server
     /// </summary>
-    /// <summary>
-    /// add a baremetal pxe server
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBaremetalPxeKickStartServer(AddBaremetalPxeKickStartServerRequest request);

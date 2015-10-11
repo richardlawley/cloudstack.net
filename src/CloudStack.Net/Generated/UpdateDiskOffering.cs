@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a disk offering.
     /// </summary>
-    /// <summary>
-    /// Updates a disk offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DiskOfferingResponse UpdateDiskOffering(UpdateDiskOfferingRequest request);

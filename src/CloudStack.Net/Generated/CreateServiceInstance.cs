@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a system virtual-machine that implements network services
     /// </summary>
-    /// <summary>
-    /// Creates a system virtual-machine that implements network services
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateServiceInstance(CreateServiceInstanceRequest request);

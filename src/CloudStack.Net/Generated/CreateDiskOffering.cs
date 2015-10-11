@@ -149,9 +149,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a disk offering.
     /// </summary>
-    /// <summary>
-    /// Creates a disk offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DiskOfferingResponse CreateDiskOffering(CreateDiskOfferingRequest request);

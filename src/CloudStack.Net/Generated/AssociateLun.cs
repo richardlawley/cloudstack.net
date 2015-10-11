@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Associate a LUN with a guest IQN
     /// </summary>
-    /// <summary>
-    /// Associate a LUN with a guest IQN
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AssociateLunCmdResponse AssociateLun(AssociateLunRequest request);

@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists host tags
     /// </summary>
-    /// <summary>
-    /// Lists host tags
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<HostTagResponse> ListHostTags(ListHostTagsRequest request);

@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Update a Storage network IP range, only allowed when no IPs in this range have been allocated.
     /// </summary>
-    /// <summary>
-    /// Update a Storage network IP range, only allowed when no IPs in this range have been allocated.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateStorageNetworkIpRange(UpdateStorageNetworkIpRangeRequest request);

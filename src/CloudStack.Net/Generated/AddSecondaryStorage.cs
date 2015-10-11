@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds secondary storage.
     /// </summary>
-    /// <summary>
-    /// Adds secondary storage.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse AddSecondaryStorage(AddSecondaryStorageRequest request);

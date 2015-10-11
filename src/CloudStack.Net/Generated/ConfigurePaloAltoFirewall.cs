@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Configures a Palo Alto firewall device
     /// </summary>
-    /// <summary>
-    /// Configures a Palo Alto firewall device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ConfigurePaloAltoFirewall(ConfigurePaloAltoFirewallRequest request);

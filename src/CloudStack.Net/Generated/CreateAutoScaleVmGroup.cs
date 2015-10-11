@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates and automatically starts a virtual machine based on a service offering, disk offering, and template.
     /// </summary>
-    /// <summary>
-    /// Creates and automatically starts a virtual machine based on a service offering, disk offering, and template.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateAutoScaleVmGroup(CreateAutoScaleVmGroupRequest request);

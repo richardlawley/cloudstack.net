@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Detaches a disk volume from a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Detaches a disk volume from a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DetachVolume(DetachVolumeRequest request);

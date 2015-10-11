@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates an existing autoscale policy.
     /// </summary>
-    /// <summary>
-    /// Updates an existing autoscale policy.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateAutoScalePolicy(UpdateAutoScalePolicyRequest request);

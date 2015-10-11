@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a SRX firewall device
     /// </summary>
-    /// <summary>
-    ///  delete a SRX firewall device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteSrxFirewall(DeleteSrxFirewallRequest request);

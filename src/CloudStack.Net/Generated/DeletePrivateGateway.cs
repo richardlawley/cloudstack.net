@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Private gateway
     /// </summary>
-    /// <summary>
-    /// Deletes a Private gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeletePrivateGateway(DeletePrivateGatewayRequest request);

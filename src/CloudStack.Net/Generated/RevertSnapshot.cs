@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// revert a volume snapshot.
     /// </summary>
-    /// <summary>
-    /// revert a volume snapshot.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RevertSnapshot(RevertSnapshotRequest request);

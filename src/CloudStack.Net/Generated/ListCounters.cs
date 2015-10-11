@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List the counters
     /// </summary>
-    /// <summary>
-    /// List the counters
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<CounterResponse> ListCounters(ListCountersRequest request);

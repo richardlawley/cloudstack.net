@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Starts an existing internal lb vm.
     /// </summary>
-    /// <summary>
-    /// Starts an existing internal lb vm.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StartInternalLoadBalancerVM(StartInternalLoadBalancerVMRequest request);

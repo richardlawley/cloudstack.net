@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a load balancer HealthCheck policy.
     /// </summary>
-    /// <summary>
-    /// Deletes a load balancer HealthCheck policy.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteLBHealthCheckPolicy(DeleteLBHealthCheckPolicyRequest request);

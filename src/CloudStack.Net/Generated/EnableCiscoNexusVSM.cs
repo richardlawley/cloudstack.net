@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Enable a Cisco Nexus VSM device
     /// </summary>
-    /// <summary>
-    /// Enable a Cisco Nexus VSM device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse EnableCiscoNexusVSM(EnableCiscoNexusVSMRequest request);

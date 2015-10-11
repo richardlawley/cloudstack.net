@@ -43,6 +43,11 @@ namespace CloudStack.Net
         public string Vsmdevicestate { get; set; }
 
         /// <summary>
+        /// The Device State (Enabled/Disabled) of the VSM
+        /// </summary>
+        public string Vsmdevicestate { get; set; }
+
+        /// <summary>
         /// The VSM is a switch supervisor. This is the VSM's switch domain id
         /// </summary>
         public string Vsmdomainid { get; set; }

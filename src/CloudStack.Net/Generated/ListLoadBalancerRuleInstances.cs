@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List all virtual machine instances that are assigned to a load balancer rule.
     /// </summary>
-    /// <summary>
-    /// List all virtual machine instances that are assigned to a load balancer rule.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstances(ListLoadBalancerRuleInstancesRequest request);

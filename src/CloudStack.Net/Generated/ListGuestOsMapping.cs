@@ -63,9 +63,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available OS mappings for given hypervisor
     /// </summary>
-    /// <summary>
-    /// Lists all available OS mappings for given hypervisor
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<GuestOsMappingResponse> ListGuestOsMapping(ListGuestOsMappingRequest request);

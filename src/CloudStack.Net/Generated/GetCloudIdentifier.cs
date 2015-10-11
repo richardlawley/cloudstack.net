@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Retrieves a cloud identifier.
     /// </summary>
-    /// <summary>
-    /// Retrieves a cloud identifier.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CloudIdentifierResponse GetCloudIdentifier(GetCloudIdentifierRequest request);

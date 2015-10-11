@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroys a l2tp/ipsec remote access vpn
     /// </summary>
-    /// <summary>
-    /// Destroys a l2tp/ipsec remote access vpn
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteRemoteAccessVpn(DeleteRemoteAccessVpnRequest request);

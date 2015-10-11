@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Restarts the network; includes 1) restarting network elements - virtual routers, dhcp servers 2) reapplying all public ips 3) reapplying loadBalancing/portForwarding rules
     /// </summary>
-    /// <summary>
-    /// Restarts the network; includes 1) restarting network elements - virtual routers, dhcp servers 2) reapplying all public ips 3) reapplying loadBalancing/portForwarding rules
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RestartNetwork(RestartNetworkRequest request);

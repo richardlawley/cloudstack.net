@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a counter
     /// </summary>
-    /// <summary>
-    /// Deletes a counter
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteCounter(DeleteCounterRequest request);

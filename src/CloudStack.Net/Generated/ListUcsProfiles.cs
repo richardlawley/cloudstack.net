@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List profile in ucs manager
     /// </summary>
-    /// <summary>
-    /// List profile in ucs manager
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<UcsProfileResponse> ListUcsProfiles(ListUcsProfilesRequest request);

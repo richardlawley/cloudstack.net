@@ -103,9 +103,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists remote access vpns
     /// </summary>
-    /// <summary>
-    /// Lists remote access vpns
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpns(ListRemoteAccessVpnsRequest request);

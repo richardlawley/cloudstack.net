@@ -103,9 +103,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists security groups
     /// </summary>
-    /// <summary>
-    /// Lists security groups
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SecurityGroupResponse> ListSecurityGroups(ListSecurityGroupsRequest request);

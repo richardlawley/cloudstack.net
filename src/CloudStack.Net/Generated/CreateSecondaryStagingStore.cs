@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// create secondary staging store.
     /// </summary>
-    /// <summary>
-    /// create secondary staging store.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse CreateSecondaryStagingStore(CreateSecondaryStagingStoreRequest request);

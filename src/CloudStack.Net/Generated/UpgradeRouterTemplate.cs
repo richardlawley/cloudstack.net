@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Upgrades router to use newer template
     /// </summary>
-    /// <summary>
-    /// Upgrades router to use newer template
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         BaseResponse UpgradeRouterTemplate(UpgradeRouterTemplateRequest request);

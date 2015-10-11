@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a host.
     /// </summary>
-    /// <summary>
-    /// Deletes a host.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteHost(DeleteHostRequest request);

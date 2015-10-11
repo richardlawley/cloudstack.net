@@ -127,9 +127,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists hosts.
     /// </summary>
-    /// <summary>
-    /// Lists hosts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<HostResponse> ListHosts(ListHostsRequest request);

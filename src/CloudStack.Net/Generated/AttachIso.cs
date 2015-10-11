@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Attaches an ISO to a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Attaches an ISO to a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AttachIso(AttachIsoRequest request);

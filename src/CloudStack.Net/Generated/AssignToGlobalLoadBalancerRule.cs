@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Assign load balancer rule or list of load balancer rules to a global load balancer rules.
     /// </summary>
-    /// <summary>
-    /// Assign load balancer rule or list of load balancer rules to a global load balancer rules.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request);

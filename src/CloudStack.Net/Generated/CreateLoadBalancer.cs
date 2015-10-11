@@ -93,9 +93,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Load Balancer
     /// </summary>
-    /// <summary>
-    /// Creates a Load Balancer
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateLoadBalancer(CreateLoadBalancerRequest request);

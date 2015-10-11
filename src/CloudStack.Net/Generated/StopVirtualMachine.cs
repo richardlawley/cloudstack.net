@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Stops a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Stops a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StopVirtualMachine(StopVirtualMachineRequest request);

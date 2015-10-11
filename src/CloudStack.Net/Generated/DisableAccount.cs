@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Disables an account
     /// </summary>
-    /// <summary>
-    /// Disables an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DisableAccount(DisableAccountRequest request);

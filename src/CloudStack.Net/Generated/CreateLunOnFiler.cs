@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create a LUN from a pool
     /// </summary>
-    /// <summary>
-    /// Create a LUN from a pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CreateLunCmdResponse CreateLunOnFiler(CreateLunOnFilerRequest request);

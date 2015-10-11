@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a port forwarding rule
     /// </summary>
-    /// <summary>
-    /// Creates a port forwarding rule
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Replaces ACL associated with a Network or private gateway
     /// </summary>
-    /// <summary>
-    /// Replaces ACL associated with a Network or private gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReplaceNetworkACLList(ReplaceNetworkACLListRequest request);

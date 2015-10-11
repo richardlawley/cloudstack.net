@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a VMware datacenter to specified zone
     /// </summary>
-    /// <summary>
-    /// Adds a VMware datacenter to specified zone
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         VmwareDatacenterResponse AddVmwareDc(AddVmwareDcRequest request);

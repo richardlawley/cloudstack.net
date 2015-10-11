@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Event Types
     /// </summary>
-    /// <summary>
-    /// List Event Types
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         EventTypeResponse ListEventTypes(ListEventTypesRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a vm group
     /// </summary>
-    /// <summary>
-    /// Deletes a vm group
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteInstanceGroup(DeleteInstanceGroupRequest request);

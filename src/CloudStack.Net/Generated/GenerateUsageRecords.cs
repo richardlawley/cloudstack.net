@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Generates usage records. This will generate records only if there any records to be generated, i.e if the scheduled usage job was not run or failed
     /// </summary>
-    /// <summary>
-    /// Generates usage records. This will generate records only if there any records to be generated, i.e if the scheduled usage job was not run or failed
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse GenerateUsageRecords(GenerateUsageRecordsRequest request);

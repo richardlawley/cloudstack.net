@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a account, and all users associated with this account
     /// </summary>
-    /// <summary>
-    /// Deletes a account, and all users associated with this account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteAccount(DeleteAccountRequest request);

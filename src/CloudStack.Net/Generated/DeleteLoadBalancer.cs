@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a load balancer
     /// </summary>
-    /// <summary>
-    /// Deletes a load balancer
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);

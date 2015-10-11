@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Dedicate an existing cluster
     /// </summary>
-    /// <summary>
-    /// Dedicate an existing cluster
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DedicateCluster(DedicateClusterRequest request);

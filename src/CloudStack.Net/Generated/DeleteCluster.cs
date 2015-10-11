@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a cluster.
     /// </summary>
-    /// <summary>
-    /// Deletes a cluster.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteCluster(DeleteClusterRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Release the dedication for host
     /// </summary>
-    /// <summary>
-    /// Release the dedication for host
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReleaseDedicatedHost(ReleaseDedicatedHostRequest request);

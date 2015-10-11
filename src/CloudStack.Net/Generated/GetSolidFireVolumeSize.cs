@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Get the SF volume size including Hypervisor Snapshot Reserve
     /// </summary>
-    /// <summary>
-    /// Get the SF volume size including Hypervisor Snapshot Reserve
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiSolidFireVolumeSizeResponse GetSolidFireVolumeSize(GetSolidFireVolumeSizeRequest request);

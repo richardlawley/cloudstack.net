@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates egress firewall rule 
     /// </summary>
-    /// <summary>
-    /// Updates egress firewall rule 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateEgressFirewallRule(UpdateEgressFirewallRuleRequest request);

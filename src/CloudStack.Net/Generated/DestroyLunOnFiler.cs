@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroy a LUN
     /// </summary>
-    /// <summary>
-    /// Destroy a LUN
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DeleteLUNCmdResponse DestroyLunOnFiler(DestroyLunOnFilerRequest request);

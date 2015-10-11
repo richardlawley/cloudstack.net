@@ -103,9 +103,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all static routes
     /// </summary>
-    /// <summary>
-    /// Lists all static routes
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StaticRouteResponse> ListStaticRoutes(ListStaticRoutesRequest request);

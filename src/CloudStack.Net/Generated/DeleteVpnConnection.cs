@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete site to site vpn connection
     /// </summary>
-    /// <summary>
-    /// Delete site to site vpn connection
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteVpnConnection(DeleteVpnConnectionRequest request);

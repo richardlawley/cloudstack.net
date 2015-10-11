@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Stops an Internal LB vm.
     /// </summary>
-    /// <summary>
-    /// Stops an Internal LB vm.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request);

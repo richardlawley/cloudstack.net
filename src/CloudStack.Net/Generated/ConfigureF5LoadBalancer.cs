@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// configures a F5 load balancer device
     /// </summary>
-    /// <summary>
-    /// configures a F5 load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ConfigureF5LoadBalancer(ConfigureF5LoadBalancerRequest request);

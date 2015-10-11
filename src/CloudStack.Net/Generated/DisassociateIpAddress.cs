@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Disassociates an ip address from the account.
     /// </summary>
-    /// <summary>
-    /// Disassociates an ip address from the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DisassociateIpAddress(DisassociateIpAddressRequest request);

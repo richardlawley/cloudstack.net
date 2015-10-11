@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// lists SRX firewall devices in a physical network
     /// </summary>
-    /// <summary>
-    /// lists SRX firewall devices in a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SrxFirewallResponse> ListSrxFirewalls(ListSrxFirewallsRequest request);

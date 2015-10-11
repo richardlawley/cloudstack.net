@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a project
     /// </summary>
-    /// <summary>
-    /// Updates a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateProject(UpdateProjectRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes network device.
     /// </summary>
-    /// <summary>
-    /// Deletes network device.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteNetworkDevice(DeleteNetworkDeviceRequest request);

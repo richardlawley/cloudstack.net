@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Returns an encrypted password for the VM
     /// </summary>
-    /// <summary>
-    /// Returns an encrypted password for the VM
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         GetVMPasswordResponse GetVMPassword(GetVMPasswordRequest request);

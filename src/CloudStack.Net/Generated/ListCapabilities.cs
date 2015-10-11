@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists capabilities
     /// </summary>
-    /// <summary>
-    /// Lists capabilities
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request);

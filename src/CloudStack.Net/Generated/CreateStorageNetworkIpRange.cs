@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a Storage network IP range.
     /// </summary>
-    /// <summary>
-    /// Creates a Storage network IP range.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request);

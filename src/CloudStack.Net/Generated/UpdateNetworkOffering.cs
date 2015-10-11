@@ -77,9 +77,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a network offering.
     /// </summary>
-    /// <summary>
-    /// Updates a network offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         NetworkOfferingResponse UpdateNetworkOffering(UpdateNetworkOfferingRequest request);

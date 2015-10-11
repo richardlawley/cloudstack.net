@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Update site to site vpn customer gateway
     /// </summary>
-    /// <summary>
-    /// Update site to site vpn customer gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateVpnCustomerGateway(UpdateVpnCustomerGatewayRequest request);

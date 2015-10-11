@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes an traffic monitor host.
     /// </summary>
-    /// <summary>
-    /// Deletes an traffic monitor host.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteTrafficMonitor(DeleteTrafficMonitorRequest request);

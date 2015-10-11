@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a configuration.
     /// </summary>
-    /// <summary>
-    /// Updates a configuration.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request);

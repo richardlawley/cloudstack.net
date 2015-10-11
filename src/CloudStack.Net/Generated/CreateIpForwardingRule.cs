@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an ip forwarding rule
     /// </summary>
-    /// <summary>
-    /// Creates an ip forwarding rule
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request);

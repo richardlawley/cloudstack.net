@@ -79,9 +79,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all configurations.
     /// </summary>
-    /// <summary>
-    /// Lists all configurations.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ConfigurationResponse> ListConfigurations(ListConfigurationsRequest request);

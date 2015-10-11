@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes an image store .
     /// </summary>
-    /// <summary>
-    /// Deletes an image store .
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteImageStore(DeleteImageStoreRequest request);

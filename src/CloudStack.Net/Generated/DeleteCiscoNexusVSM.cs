@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a Cisco Nexus VSM device
     /// </summary>
-    /// <summary>
-    ///  delete a Cisco Nexus VSM device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteCiscoNexusVSM(DeleteCiscoNexusVSMRequest request);

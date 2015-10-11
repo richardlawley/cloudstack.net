@@ -141,9 +141,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a new cluster
     /// </summary>
-    /// <summary>
-    /// Adds a new cluster
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ClusterResponse AddCluster(AddClusterRequest request);

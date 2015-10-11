@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Brocade VCS Switch
     /// </summary>
-    /// <summary>
-    /// Adds a Brocade VCS Switch
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request);

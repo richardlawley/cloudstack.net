@@ -117,9 +117,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an account
     /// </summary>
-    /// <summary>
-    /// Creates an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AccountResponse CreateAccount(CreateAccountRequest request);

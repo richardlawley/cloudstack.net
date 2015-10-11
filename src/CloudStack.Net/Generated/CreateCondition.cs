@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a condition
     /// </summary>
-    /// <summary>
-    /// Creates a condition
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateCondition(CreateConditionRequest request);

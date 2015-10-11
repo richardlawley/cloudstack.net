@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete a certificate to cloudstack
     /// </summary>
-    /// <summary>
-    /// Delete a certificate to cloudstack
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteSslCert(DeleteSslCertRequest request);

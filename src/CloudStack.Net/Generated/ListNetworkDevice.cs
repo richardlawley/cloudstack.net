@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List network devices
     /// </summary>
-    /// <summary>
-    /// List network devices
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<NetworkDeviceResponse> ListNetworkDevice(ListNetworkDeviceRequest request);

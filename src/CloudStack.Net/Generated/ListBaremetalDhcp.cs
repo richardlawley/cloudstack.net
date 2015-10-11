@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// list baremetal dhcp servers
     /// </summary>
-    /// <summary>
-    /// list baremetal dhcp servers
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<BaremetalDhcpResponse> ListBaremetalDhcp(ListBaremetalDhcpRequest request);

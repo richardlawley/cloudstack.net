@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a F5 BigIP load balancer device
     /// </summary>
-    /// <summary>
-    /// Adds a F5 BigIP load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse AddF5LoadBalancer(AddF5LoadBalancerRequest request);

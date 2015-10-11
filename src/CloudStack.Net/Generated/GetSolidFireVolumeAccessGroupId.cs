@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Get the SF Volume Access Group ID
     /// </summary>
-    /// <summary>
-    /// Get the SF Volume Access Group ID
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiSolidFireVolumeAccessGroupIdResponse GetSolidFireVolumeAccessGroupId(GetSolidFireVolumeAccessGroupIdRequest request);

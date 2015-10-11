@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes snapshot policies for the account.
     /// </summary>
-    /// <summary>
-    /// Deletes snapshot policies for the account.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteSnapshotPolicies(DeleteSnapshotPoliciesRequest request);

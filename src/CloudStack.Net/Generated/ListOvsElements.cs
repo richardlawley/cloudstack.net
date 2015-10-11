@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available ovs elements.
     /// </summary>
-    /// <summary>
-    /// Lists all available ovs elements.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<OvsProviderResponse> ListOvsElements(ListOvsElementsRequest request);

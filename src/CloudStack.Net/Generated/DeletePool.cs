@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete a pool
     /// </summary>
-    /// <summary>
-    /// Delete a pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DeleteVolumePoolCmdResponse DeletePool(DeletePoolRequest request);

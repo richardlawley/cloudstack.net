@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates an ISO file.
     /// </summary>
-    /// <summary>
-    /// Updates an ISO file.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplateResponse UpdateIso(UpdateIsoRequest request);

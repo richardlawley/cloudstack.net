@@ -117,9 +117,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a disk volume from a disk offering. This disk volume must still be attached to a virtual machine to make use of it.
     /// </summary>
-    /// <summary>
-    /// Creates a disk volume from a disk offering. This disk volume must still be attached to a virtual machine to make use of it.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVolume(CreateVolumeRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Activates a project
     /// </summary>
-    /// <summary>
-    /// Activates a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ActivateProject(ActivateProjectRequest request);

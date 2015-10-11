@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List template visibility and all accounts that have permissions to view this template.
     /// </summary>
-    /// <summary>
-    /// List template visibility and all accounts that have permissions to view this template.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplatePermissionsResponse ListTemplatePermissions(ListTemplatePermissionsRequest request);

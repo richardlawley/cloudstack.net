@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Zone.
     /// </summary>
-    /// <summary>
-    /// Deletes a Zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteZone(DeleteZoneRequest request);

@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Logs out the user
     /// </summary>
-    /// <summary>
-    /// Logs out the user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         LogoutCmdResponse Logout(LogoutRequest request);

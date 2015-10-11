@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds Traffic Monitor Host for Direct Network Usage
     /// </summary>
-    /// <summary>
-    /// Adds Traffic Monitor Host for Direct Network Usage
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TrafficMonitorResponse AddTrafficMonitor(AddTrafficMonitorRequest request);

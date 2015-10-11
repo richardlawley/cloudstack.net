@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists implementors of implementor of a network traffic type or implementors of all network traffic types
     /// </summary>
-    /// <summary>
-    /// Lists implementors of implementor of a network traffic type or implementors of all network traffic types
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementors(ListTrafficTypeImplementorsRequest request);

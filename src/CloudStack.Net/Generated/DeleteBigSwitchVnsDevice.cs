@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a bigswitch vns device
     /// </summary>
-    /// <summary>
-    ///  delete a bigswitch vns device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteBigSwitchVnsDevice(DeleteBigSwitchVnsDeviceRequest request);

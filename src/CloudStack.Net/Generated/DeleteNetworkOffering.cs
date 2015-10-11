@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a network offering.
     /// </summary>
-    /// <summary>
-    /// Deletes a network offering.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteNetworkOffering(DeleteNetworkOfferingRequest request);

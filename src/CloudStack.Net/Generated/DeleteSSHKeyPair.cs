@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a keypair by name
     /// </summary>
-    /// <summary>
-    /// Deletes a keypair by name
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteSSHKeyPair(DeleteSSHKeyPairRequest request);

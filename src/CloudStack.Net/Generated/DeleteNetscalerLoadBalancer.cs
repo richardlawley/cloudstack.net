@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a netscaler load balancer device
     /// </summary>
-    /// <summary>
-    ///  delete a netscaler load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteNetscalerLoadBalancer(DeleteNetscalerLoadBalancerRequest request);

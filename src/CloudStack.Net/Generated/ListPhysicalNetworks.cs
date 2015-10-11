@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists physical networks
     /// </summary>
-    /// <summary>
-    /// Lists physical networks
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<PhysicalNetworkResponse> ListPhysicalNetworks(ListPhysicalNetworksRequest request);

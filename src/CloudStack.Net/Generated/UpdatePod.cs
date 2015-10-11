@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a Pod.
     /// </summary>
-    /// <summary>
-    /// Updates a Pod.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         PodResponse UpdatePod(UpdatePodRequest request);

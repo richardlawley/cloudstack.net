@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Starts a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Starts a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse StartVirtualMachine(StartVirtualMachineRequest request);

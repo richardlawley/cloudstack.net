@@ -31,9 +31,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all DeploymentPlanners available.
     /// </summary>
-    /// <summary>
-    /// Lists all DeploymentPlanners available.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DeploymentPlannersResponse> ListDeploymentPlanners(ListDeploymentPlannersRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deleting resource tag(s)
     /// </summary>
-    /// <summary>
-    /// Deleting resource tag(s)
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteTags(DeleteTagsRequest request);

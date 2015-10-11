@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a firewall rule for a given ip address
     /// </summary>
-    /// <summary>
-    /// Creates a firewall rule for a given ip address
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateFirewallRule(CreateFirewallRuleRequest request);

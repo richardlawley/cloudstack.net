@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a user for an account
     /// </summary>
-    /// <summary>
-    /// Deletes a user for an account
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteUser(DeleteUserRequest request);

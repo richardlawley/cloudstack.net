@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available Internal Load Balancer elements.
     /// </summary>
-    /// <summary>
-    /// Lists all available Internal Load Balancer elements.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElements(ListInternalLoadBalancerElementsRequest request);

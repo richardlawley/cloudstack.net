@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Retrieves VMware DC(s) associated with a zone.
     /// </summary>
-    /// <summary>
-    /// Retrieves VMware DC(s) associated with a zone.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VmwareDatacenterResponse> ListVmwareDcs(ListVmwareDcsRequest request);

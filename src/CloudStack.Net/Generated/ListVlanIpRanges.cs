@@ -111,9 +111,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all VLAN IP ranges.
     /// </summary>
-    /// <summary>
-    /// Lists all VLAN IP ranges.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VlanIpRangeResponse> ListVlanIpRanges(ListVlanIpRangesRequest request);

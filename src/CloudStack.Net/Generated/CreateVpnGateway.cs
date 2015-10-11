@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates site to site vpn local gateway
     /// </summary>
-    /// <summary>
-    /// Creates site to site vpn local gateway
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVpnGateway(CreateVpnGatewayRequest request);

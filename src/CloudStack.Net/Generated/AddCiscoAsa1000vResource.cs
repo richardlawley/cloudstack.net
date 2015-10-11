@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Adds a Cisco Asa 1000v appliance
     /// </summary>
-    /// <summary>
-    /// Adds a Cisco Asa 1000v appliance
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CiscoAsa1000vResourceResponse AddCiscoAsa1000vResource(AddCiscoAsa1000vResourceRequest request);

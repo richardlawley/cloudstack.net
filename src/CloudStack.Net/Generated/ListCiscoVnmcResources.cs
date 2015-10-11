@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists Cisco VNMC controllers
     /// </summary>
-    /// <summary>
-    /// Lists Cisco VNMC controllers
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<CiscoVnmcResourceResponse> ListCiscoVnmcResources(ListCiscoVnmcResourcesRequest request);

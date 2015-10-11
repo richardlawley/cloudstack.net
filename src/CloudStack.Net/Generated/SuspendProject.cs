@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Suspends a project
     /// </summary>
-    /// <summary>
-    /// Suspends a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse SuspendProject(SuspendProjectRequest request);

@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes VM from specified network by deleting a NIC
     /// </summary>
-    /// <summary>
-    /// Removes VM from specified network by deleting a NIC
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveNicFromVirtualMachine(RemoveNicFromVirtualMachineRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Recovers a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Recovers a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         UserVmResponse RecoverVirtualMachine(RecoverVirtualMachineRequest request);

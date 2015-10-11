@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Attempts Migration of a system virtual machine to the host specified.
     /// </summary>
-    /// <summary>
-    /// Attempts Migration of a system virtual machine to the host specified.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse MigrateSystemVm(MigrateSystemVmRequest request);

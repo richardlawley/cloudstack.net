@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Removes a virtual machine or a list of virtual machines from a load balancer rule.
     /// </summary>
-    /// <summary>
-    /// Removes a virtual machine or a list of virtual machines from a load balancer rule.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveFromLoadBalancerRule(RemoveFromLoadBalancerRuleRequest request);

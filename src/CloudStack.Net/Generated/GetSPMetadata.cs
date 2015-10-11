@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Returns SAML2 CloudStack Service Provider MetaData
     /// </summary>
-    /// <summary>
-    /// Returns SAML2 CloudStack Service Provider MetaData
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SAMLMetaDataResponse GetSPMetadata(GetSPMetadataRequest request);

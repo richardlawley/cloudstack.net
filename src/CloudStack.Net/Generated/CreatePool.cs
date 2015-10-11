@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Create a pool
     /// </summary>
-    /// <summary>
-    /// Create a pool
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         CreateVolumePoolCmdResponse CreatePool(CreatePoolRequest request);

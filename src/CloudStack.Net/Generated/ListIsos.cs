@@ -151,9 +151,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available ISO files.
     /// </summary>
-    /// <summary>
-    /// Lists all available ISO files.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<TemplateResponse> ListIsos(ListIsosRequest request);

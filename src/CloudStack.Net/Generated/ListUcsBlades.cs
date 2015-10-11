@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List ucs blades
     /// </summary>
-    /// <summary>
-    /// List ucs blades
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<UcsBladeResponse> ListUcsBlades(ListUcsBladesRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Returns user data associated with the VM
     /// </summary>
-    /// <summary>
-    /// Returns user data associated with the VM
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         VMUserDataResponse GetVirtualMachineUserData(GetVirtualMachineUserDataRequest request);

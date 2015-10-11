@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List system virtual machines.
     /// </summary>
-    /// <summary>
-    /// List system virtual machines.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SystemVmResponse> ListSystemVms(ListSystemVmsRequest request);

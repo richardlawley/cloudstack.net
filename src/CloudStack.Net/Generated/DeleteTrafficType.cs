@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes traffic type of a physical network
     /// </summary>
-    /// <summary>
-    /// Deletes traffic type of a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteTrafficType(DeleteTrafficTypeRequest request);

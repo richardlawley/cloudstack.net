@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// load template into primary storage
     /// </summary>
-    /// <summary>
-    /// load template into primary storage
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplateResponse PrepareTemplate(PrepareTemplateRequest request);

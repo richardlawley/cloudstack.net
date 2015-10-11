@@ -189,9 +189,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Registers an existing template into the CloudStack cloud. 
     /// </summary>
-    /// <summary>
-    /// Registers an existing template into the CloudStack cloud. 
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplateResponse RegisterTemplate(RegisterTemplateRequest request);

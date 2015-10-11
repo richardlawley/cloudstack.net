@@ -53,9 +53,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates snapshot for a vm.
     /// </summary>
-    /// <summary>
-    /// Creates snapshot for a vm.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateVMSnapshot(CreateVMSnapshotRequest request);

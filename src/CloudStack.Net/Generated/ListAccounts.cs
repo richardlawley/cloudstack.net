@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists accounts and provides detailed account information for listed accounts
     /// </summary>
-    /// <summary>
-    /// Lists accounts and provides detailed account information for listed accounts
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AccountResponse> ListAccounts(ListAccountsRequest request);

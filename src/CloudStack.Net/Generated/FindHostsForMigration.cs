@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Find hosts suitable for migrating a virtual machine.
     /// </summary>
-    /// <summary>
-    /// Find hosts suitable for migrating a virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<HostForMigrationResponse> FindHostsForMigration(FindHostsForMigrationRequest request);

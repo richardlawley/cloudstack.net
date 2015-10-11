@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Delete one or more alerts.
     /// </summary>
-    /// <summary>
-    /// Delete one or more alerts.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteAlerts(DeleteAlertsRequest request);

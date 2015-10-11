@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates LB HealthCheck policy
     /// </summary>
-    /// <summary>
-    /// Updates LB HealthCheck policy
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateLBHealthCheckPolicy(UpdateLBHealthCheckPolicyRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Reconnects a host.
     /// </summary>
-    /// <summary>
-    /// Reconnects a host.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ReconnectHost(ReconnectHostRequest request);

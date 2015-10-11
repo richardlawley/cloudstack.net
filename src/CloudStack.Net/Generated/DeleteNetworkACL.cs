@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Network ACL
     /// </summary>
-    /// <summary>
-    /// Deletes a Network ACL
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteNetworkACL(DeleteNetworkACLRequest request);

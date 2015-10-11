@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists storage pools available for migration of a volume.
     /// </summary>
-    /// <summary>
-    /// Lists storage pools available for migration of a volume.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request);

@@ -13,9 +13,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Get API limit count for the caller
     /// </summary>
-    /// <summary>
-    /// Get API limit count for the caller
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ApiLimitResponse GetApiLimit(GetApiLimitRequest request);

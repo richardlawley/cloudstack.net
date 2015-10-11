@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Deletes a Network Service Provider.
     /// </summary>
-    /// <summary>
-    /// Deletes a Network Service Provider.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteNetworkServiceProvider(DeleteNetworkServiceProviderRequest request);

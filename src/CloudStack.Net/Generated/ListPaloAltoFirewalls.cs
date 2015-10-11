@@ -47,9 +47,6 @@ namespace CloudStack.Net
     /// <summary>
     /// lists Palo Alto firewall devices in a physical network
     /// </summary>
-    /// <summary>
-    /// lists Palo Alto firewall devices in a physical network
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewalls(ListPaloAltoFirewallsRequest request);

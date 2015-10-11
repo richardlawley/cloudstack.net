@@ -109,9 +109,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates ACL Item with specified Id
     /// </summary>
-    /// <summary>
-    /// Updates ACL Item with specified Id
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateNetworkACLItem(UpdateNetworkACLItemRequest request);

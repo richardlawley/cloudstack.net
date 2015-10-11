@@ -39,9 +39,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists traffic types of a given physical network.
     /// </summary>
-    /// <summary>
-    /// Lists traffic types of a given physical network.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<ProviderResponse> ListTrafficTypes(ListTrafficTypesRequest request);

@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Destroyes a system virtual machine.
     /// </summary>
-    /// <summary>
-    /// Destroyes a system virtual machine.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DestroySystemVm(DestroySystemVmRequest request);

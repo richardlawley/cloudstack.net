@@ -85,9 +85,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates an account from an LDAP user
     /// </summary>
-    /// <summary>
-    /// Creates an account from an LDAP user
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AccountResponse LdapCreateAccount(LdapCreateAccountRequest request);

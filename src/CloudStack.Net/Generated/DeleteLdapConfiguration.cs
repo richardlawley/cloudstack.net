@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Remove an Ldap Configuration
     /// </summary>
-    /// <summary>
-    /// Remove an Ldap Configuration
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         LdapConfigurationResponse DeleteLdapConfiguration(DeleteLdapConfigurationRequest request);

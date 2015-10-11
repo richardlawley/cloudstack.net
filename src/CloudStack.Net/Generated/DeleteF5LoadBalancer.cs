@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     ///  delete a F5 load balancer device
     /// </summary>
-    /// <summary>
-    ///  delete a F5 load balancer device
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteF5LoadBalancer(DeleteF5LoadBalancerRequest request);

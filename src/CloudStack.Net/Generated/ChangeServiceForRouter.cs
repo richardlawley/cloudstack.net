@@ -29,9 +29,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Upgrades domain router to a new service offering
     /// </summary>
-    /// <summary>
-    /// Upgrades domain router to a new service offering
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         DomainRouterResponse ChangeServiceForRouter(ChangeServiceForRouterRequest request);

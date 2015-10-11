@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List iso visibility and all accounts that have permissions to view this iso.
     /// </summary>
-    /// <summary>
-    /// List iso visibility and all accounts that have permissions to view this iso.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         TemplatePermissionsResponse ListIsoPermissions(ListIsoPermissionsRequest request);

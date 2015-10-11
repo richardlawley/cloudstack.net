@@ -69,9 +69,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates the volume.
     /// </summary>
-    /// <summary>
-    /// Updates the volume.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse UpdateVolume(UpdateVolumeRequest request);

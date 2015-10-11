@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Extracts an ISO
     /// </summary>
-    /// <summary>
-    /// Extracts an ISO
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse ExtractIso(ExtractIsoRequest request);

@@ -37,9 +37,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Updates a hypervisor capabilities.
     /// </summary>
-    /// <summary>
-    /// Updates a hypervisor capabilities.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         HypervisorCapabilitiesResponse UpdateHypervisorCapabilities(UpdateHypervisorCapabilitiesRequest request);

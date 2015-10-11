@@ -55,9 +55,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists all available disk offerings.
     /// </summary>
-    /// <summary>
-    /// Lists all available disk offerings.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<DiskOfferingResponse> ListDiskOfferings(ListDiskOfferingsRequest request);

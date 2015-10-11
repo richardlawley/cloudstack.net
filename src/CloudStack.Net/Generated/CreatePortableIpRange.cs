@@ -61,9 +61,6 @@ namespace CloudStack.Net
     /// <summary>
     /// adds a range of portable public IP's to a region
     /// </summary>
-    /// <summary>
-    /// adds a range of portable public IP's to a region
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreatePortableIpRange(CreatePortableIpRangeRequest request);

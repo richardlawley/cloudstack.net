@@ -45,9 +45,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Creates a project
     /// </summary>
-    /// <summary>
-    /// Creates a project
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateProject(CreateProjectRequest request);

@@ -95,9 +95,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists autoscale policies.
     /// </summary>
-    /// <summary>
-    /// Lists autoscale policies.
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<AutoScalePolicyResponse> ListAutoScalePolicies(ListAutoScalePoliciesRequest request);

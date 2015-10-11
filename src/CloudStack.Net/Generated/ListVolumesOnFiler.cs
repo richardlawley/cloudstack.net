@@ -21,9 +21,6 @@ namespace CloudStack.Net
     /// <summary>
     /// List Volumes
     /// </summary>
-    /// <summary>
-    /// List Volumes
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListVolumesOnFilerCmdResponse ListVolumesOnFiler(ListVolumesOnFilerRequest request);

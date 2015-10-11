@@ -159,9 +159,6 @@ namespace CloudStack.Net
     /// <summary>
     /// Lists VPCs
     /// </summary>
-    /// <summary>
-    /// Lists VPCs
-    /// </summary>
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VpcResponse> ListVPCs(ListVPCsRequest request);
