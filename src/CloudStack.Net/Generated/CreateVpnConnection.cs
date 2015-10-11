@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        Site2SiteVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request);
+        AsyncJobResponse CreateVpnConnection(CreateVpnConnectionRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public Site2SiteVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request) => _proxy.Request<Site2SiteVpnConnectionResponse>(request);
+        public AsyncJobResponse CreateVpnConnection(CreateVpnConnectionRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

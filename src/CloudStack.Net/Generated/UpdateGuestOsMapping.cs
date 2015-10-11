@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        GuestOsMappingResponse UpdateGuestOsMapping(UpdateGuestOsMappingRequest request);
+        AsyncJobResponse UpdateGuestOsMapping(UpdateGuestOsMappingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public GuestOsMappingResponse UpdateGuestOsMapping(UpdateGuestOsMappingRequest request) => _proxy.Request<GuestOsMappingResponse>(request);
+        public AsyncJobResponse UpdateGuestOsMapping(UpdateGuestOsMappingRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

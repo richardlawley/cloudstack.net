@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        OvsProviderResponse ConfigureOvsElement(ConfigureOvsElementRequest request);
+        AsyncJobResponse ConfigureOvsElement(ConfigureOvsElementRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public OvsProviderResponse ConfigureOvsElement(ConfigureOvsElementRequest request) => _proxy.Request<OvsProviderResponse>(request);
+        public AsyncJobResponse ConfigureOvsElement(ConfigureOvsElementRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

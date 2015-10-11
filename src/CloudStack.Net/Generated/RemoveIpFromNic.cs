@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse RemoveIpFromNic(RemoveIpFromNicRequest request);
+        AsyncJobResponse RemoveIpFromNic(RemoveIpFromNicRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse RemoveIpFromNic(RemoveIpFromNicRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse RemoveIpFromNic(RemoveIpFromNicRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

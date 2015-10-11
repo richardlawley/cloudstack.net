@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse DetachIso(DetachIsoRequest request);
+        AsyncJobResponse DetachIso(DetachIsoRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse DetachIso(DetachIsoRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse DetachIso(DetachIsoRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

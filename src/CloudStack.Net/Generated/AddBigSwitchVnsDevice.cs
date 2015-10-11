@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        BigSwitchVnsDeviceResponse AddBigSwitchVnsDevice(AddBigSwitchVnsDeviceRequest request);
+        AsyncJobResponse AddBigSwitchVnsDevice(AddBigSwitchVnsDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public BigSwitchVnsDeviceResponse AddBigSwitchVnsDevice(AddBigSwitchVnsDeviceRequest request) => _proxy.Request<BigSwitchVnsDeviceResponse>(request);
+        public AsyncJobResponse AddBigSwitchVnsDevice(AddBigSwitchVnsDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

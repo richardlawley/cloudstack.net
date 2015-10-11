@@ -82,10 +82,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        LBHealthCheckResponse CreateLBHealthCheckPolicy(CreateLBHealthCheckPolicyRequest request);
+        AsyncJobResponse CreateLBHealthCheckPolicy(CreateLBHealthCheckPolicyRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LBHealthCheckResponse CreateLBHealthCheckPolicy(CreateLBHealthCheckPolicyRequest request) => _proxy.Request<LBHealthCheckResponse>(request);
+        public AsyncJobResponse CreateLBHealthCheckPolicy(CreateLBHealthCheckPolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -66,10 +66,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        PortableIpRangeResponse CreatePortableIpRange(CreatePortableIpRangeRequest request);
+        AsyncJobResponse CreatePortableIpRange(CreatePortableIpRangeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public PortableIpRangeResponse CreatePortableIpRange(CreatePortableIpRangeRequest request) => _proxy.Request<PortableIpRangeResponse>(request);
+        public AsyncJobResponse CreatePortableIpRange(CreatePortableIpRangeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

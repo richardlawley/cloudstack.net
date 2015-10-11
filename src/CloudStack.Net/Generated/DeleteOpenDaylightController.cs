@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        OpenDaylightControllerResponse DeleteOpenDaylightController(DeleteOpenDaylightControllerRequest request);
+        AsyncJobResponse DeleteOpenDaylightController(DeleteOpenDaylightControllerRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public OpenDaylightControllerResponse DeleteOpenDaylightController(DeleteOpenDaylightControllerRequest request) => _proxy.Request<OpenDaylightControllerResponse>(request);
+        public AsyncJobResponse DeleteOpenDaylightController(DeleteOpenDaylightControllerRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

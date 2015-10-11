@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        IPAddressResponse RestartNetwork(RestartNetworkRequest request);
+        AsyncJobResponse RestartNetwork(RestartNetworkRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public IPAddressResponse RestartNetwork(RestartNetworkRequest request) => _proxy.Request<IPAddressResponse>(request);
+        public AsyncJobResponse RestartNetwork(RestartNetworkRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

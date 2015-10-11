@@ -122,16 +122,6 @@ namespace CloudStack.Net
         /// </summary>
         public string ZoneName { get; set; }
 
-        /// <summary>
-        /// the ID of the latest async job acting on this object
-        /// </summary>
-        public Guid jobid { get; set; }
-
-        /// <summary>
-        /// the current status of the latest async job acting on this object
-        /// </summary>
-        public string jobstatus { get; set; }
-
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 }

@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        NetscalerLoadBalancerResponse ConfigureNetscalerLoadBalancer(ConfigureNetscalerLoadBalancerRequest request);
+        AsyncJobResponse ConfigureNetscalerLoadBalancer(ConfigureNetscalerLoadBalancerRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NetscalerLoadBalancerResponse ConfigureNetscalerLoadBalancer(ConfigureNetscalerLoadBalancerRequest request) => _proxy.Request<NetscalerLoadBalancerResponse>(request);
+        public AsyncJobResponse ConfigureNetscalerLoadBalancer(ConfigureNetscalerLoadBalancerRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

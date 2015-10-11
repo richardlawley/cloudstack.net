@@ -122,10 +122,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VolumeResponse CreateVolume(CreateVolumeRequest request);
+        AsyncJobResponse CreateVolume(CreateVolumeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VolumeResponse CreateVolume(CreateVolumeRequest request) => _proxy.Request<VolumeResponse>(request);
+        public AsyncJobResponse CreateVolume(CreateVolumeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

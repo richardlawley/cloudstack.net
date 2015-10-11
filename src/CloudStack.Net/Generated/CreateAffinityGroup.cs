@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        AffinityGroupResponse CreateAffinityGroup(CreateAffinityGroupRequest request);
+        AsyncJobResponse CreateAffinityGroup(CreateAffinityGroupRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AffinityGroupResponse CreateAffinityGroup(CreateAffinityGroupRequest request) => _proxy.Request<AffinityGroupResponse>(request);
+        public AsyncJobResponse CreateAffinityGroup(CreateAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

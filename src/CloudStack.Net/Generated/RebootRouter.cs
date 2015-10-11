@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        DomainRouterResponse RebootRouter(RebootRouterRequest request);
+        AsyncJobResponse RebootRouter(RebootRouterRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DomainRouterResponse RebootRouter(RebootRouterRequest request) => _proxy.Request<DomainRouterResponse>(request);
+        public AsyncJobResponse RebootRouter(RebootRouterRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

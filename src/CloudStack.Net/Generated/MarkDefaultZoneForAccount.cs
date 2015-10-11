@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        AccountResponse MarkDefaultZoneForAccount(MarkDefaultZoneForAccountRequest request);
+        AsyncJobResponse MarkDefaultZoneForAccount(MarkDefaultZoneForAccountRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AccountResponse MarkDefaultZoneForAccount(MarkDefaultZoneForAccountRequest request) => _proxy.Request<AccountResponse>(request);
+        public AsyncJobResponse MarkDefaultZoneForAccount(MarkDefaultZoneForAccountRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -258,10 +258,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse DeployVirtualMachine(DeployVirtualMachineRequest request);
+        AsyncJobResponse DeployVirtualMachine(DeployVirtualMachineRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse DeployVirtualMachine(DeployVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse DeployVirtualMachine(DeployVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

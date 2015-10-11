@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse UpdateDefaultNicForVirtualMachine(UpdateDefaultNicForVirtualMachineRequest request);
+        AsyncJobResponse UpdateDefaultNicForVirtualMachine(UpdateDefaultNicForVirtualMachineRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse UpdateDefaultNicForVirtualMachine(UpdateDefaultNicForVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse UpdateDefaultNicForVirtualMachine(UpdateDefaultNicForVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

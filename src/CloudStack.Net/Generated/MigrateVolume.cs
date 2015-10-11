@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VolumeResponse MigrateVolume(MigrateVolumeRequest request);
+        AsyncJobResponse MigrateVolume(MigrateVolumeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VolumeResponse MigrateVolume(MigrateVolumeRequest request) => _proxy.Request<VolumeResponse>(request);
+        public AsyncJobResponse MigrateVolume(MigrateVolumeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

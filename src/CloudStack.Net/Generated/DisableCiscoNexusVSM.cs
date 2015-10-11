@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        CiscoNexusVSMResponse DisableCiscoNexusVSM(DisableCiscoNexusVSMRequest request);
+        AsyncJobResponse DisableCiscoNexusVSM(DisableCiscoNexusVSMRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CiscoNexusVSMResponse DisableCiscoNexusVSM(DisableCiscoNexusVSMRequest request) => _proxy.Request<CiscoNexusVSMResponse>(request);
+        public AsyncJobResponse DisableCiscoNexusVSM(DisableCiscoNexusVSMRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

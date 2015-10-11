@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request);
+        AsyncJobResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

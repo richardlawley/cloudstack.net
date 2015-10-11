@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        CustomCertificateResponse UploadCustomCertificate(UploadCustomCertificateRequest request);
+        AsyncJobResponse UploadCustomCertificate(UploadCustomCertificateRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CustomCertificateResponse UploadCustomCertificate(UploadCustomCertificateRequest request) => _proxy.Request<CustomCertificateResponse>(request);
+        public AsyncJobResponse UploadCustomCertificate(UploadCustomCertificateRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

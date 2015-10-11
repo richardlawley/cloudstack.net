@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request);
+        AsyncJobResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

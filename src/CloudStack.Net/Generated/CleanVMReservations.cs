@@ -18,10 +18,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse CleanVMReservations(CleanVMReservationsRequest request);
+        AsyncJobResponse CleanVMReservations(CleanVMReservationsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse CleanVMReservations(CleanVMReservationsRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse CleanVMReservations(CleanVMReservationsRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

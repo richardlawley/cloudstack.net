@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        IPAddressResponse UpdateIpAddress(UpdateIpAddressRequest request);
+        AsyncJobResponse UpdateIpAddress(UpdateIpAddressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public IPAddressResponse UpdateIpAddress(UpdateIpAddressRequest request) => _proxy.Request<IPAddressResponse>(request);
+        public AsyncJobResponse UpdateIpAddress(UpdateIpAddressRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

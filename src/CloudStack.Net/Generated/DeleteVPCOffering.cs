@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteVPCOffering(DeleteVPCOfferingRequest request);
+        AsyncJobResponse DeleteVPCOffering(DeleteVPCOfferingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteVPCOffering(DeleteVPCOfferingRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteVPCOffering(DeleteVPCOfferingRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

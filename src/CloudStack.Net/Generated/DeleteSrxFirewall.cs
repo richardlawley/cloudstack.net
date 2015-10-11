@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteSrxFirewall(DeleteSrxFirewallRequest request);
+        AsyncJobResponse DeleteSrxFirewall(DeleteSrxFirewallRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteSrxFirewall(DeleteSrxFirewallRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteSrxFirewall(DeleteSrxFirewallRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        StaticRouteResponse CreateStaticRoute(CreateStaticRouteRequest request);
+        AsyncJobResponse CreateStaticRoute(CreateStaticRouteRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public StaticRouteResponse CreateStaticRoute(CreateStaticRouteRequest request) => _proxy.Request<StaticRouteResponse>(request);
+        public AsyncJobResponse CreateStaticRoute(CreateStaticRouteRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

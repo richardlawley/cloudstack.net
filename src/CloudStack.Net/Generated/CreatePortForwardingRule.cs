@@ -114,10 +114,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        FirewallRuleResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request);
+        AsyncJobResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public FirewallRuleResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request) => _proxy.Request<FirewallRuleResponse>(request);
+        public AsyncJobResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

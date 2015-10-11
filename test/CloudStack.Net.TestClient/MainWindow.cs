@@ -119,7 +119,12 @@ namespace CloudStack.Net.TestClient
         {
             SaveSettings();
             Tests tests = new Tests(this.WriteToLogBox);
-            tests.DeployVirtualMachine();
+            Guid jobid = tests.DeployVirtualMachine();
+            if (jobid != Guid.Empty)
+            {
+                TextBoxAsyncJob.Text = jobid.ToString();
+            }
+            
         }
 
         private void ButtonListServiceOfferings_Click(object sender, EventArgs e)
@@ -180,8 +185,11 @@ namespace CloudStack.Net.TestClient
         private void ButtonCreateVolume_Click(object sender, EventArgs e)
         {
             Tests tests = new Tests(this.WriteToLogBox);
-            string volumeId = tests.CreateVolume();
-            TextBoxVolId.Text = volumeId;
+            Guid jobid = tests.CreateVolume();
+            if (jobid != null)
+            {
+                TextBoxAsyncJob.Text = jobid.ToString();
+            }
         }
 
         private void ButtonAttachVolume_Click(object sender, EventArgs e)

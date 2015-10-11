@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SrxFirewallResponse ConfigureSrxFirewall(ConfigureSrxFirewallRequest request);
+        AsyncJobResponse ConfigureSrxFirewall(ConfigureSrxFirewallRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SrxFirewallResponse ConfigureSrxFirewall(ConfigureSrxFirewallRequest request) => _proxy.Request<SrxFirewallResponse>(request);
+        public AsyncJobResponse ConfigureSrxFirewall(ConfigureSrxFirewallRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

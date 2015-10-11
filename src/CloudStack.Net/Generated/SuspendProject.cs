@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ProjectResponse SuspendProject(SuspendProjectRequest request);
+        AsyncJobResponse SuspendProject(SuspendProjectRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ProjectResponse SuspendProject(SuspendProjectRequest request) => _proxy.Request<ProjectResponse>(request);
+        public AsyncJobResponse SuspendProject(SuspendProjectRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

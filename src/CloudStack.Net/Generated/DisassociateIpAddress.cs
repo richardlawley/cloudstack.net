@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DisassociateIpAddress(DisassociateIpAddressRequest request);
+        AsyncJobResponse DisassociateIpAddress(DisassociateIpAddressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DisassociateIpAddress(DisassociateIpAddressRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DisassociateIpAddress(DisassociateIpAddressRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

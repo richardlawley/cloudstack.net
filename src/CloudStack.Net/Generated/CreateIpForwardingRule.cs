@@ -66,10 +66,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        FirewallRuleResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request);
+        AsyncJobResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public FirewallRuleResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request) => _proxy.Request<FirewallRuleResponse>(request);
+        public AsyncJobResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

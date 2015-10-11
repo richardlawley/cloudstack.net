@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VpnUsersResponse AddVpnUser(AddVpnUserRequest request);
+        AsyncJobResponse AddVpnUser(AddVpnUserRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VpnUsersResponse AddVpnUser(AddVpnUserRequest request) => _proxy.Request<VpnUsersResponse>(request);
+        public AsyncJobResponse AddVpnUser(AddVpnUserRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VMSnapshotResponse CreateVMSnapshot(CreateVMSnapshotRequest request);
+        AsyncJobResponse CreateVMSnapshot(CreateVMSnapshotRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VMSnapshotResponse CreateVMSnapshot(CreateVMSnapshotRequest request) => _proxy.Request<VMSnapshotResponse>(request);
+        public AsyncJobResponse CreateVMSnapshot(CreateVMSnapshotRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

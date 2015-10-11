@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        AutoScalePolicyResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request);
+        AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AutoScalePolicyResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request) => _proxy.Request<AutoScalePolicyResponse>(request);
+        public AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

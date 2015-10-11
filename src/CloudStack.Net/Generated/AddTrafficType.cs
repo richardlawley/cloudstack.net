@@ -82,10 +82,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        TrafficTypeResponse AddTrafficType(AddTrafficTypeRequest request);
+        AsyncJobResponse AddTrafficType(AddTrafficTypeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TrafficTypeResponse AddTrafficType(AddTrafficTypeRequest request) => _proxy.Request<TrafficTypeResponse>(request);
+        public AsyncJobResponse AddTrafficType(AddTrafficTypeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

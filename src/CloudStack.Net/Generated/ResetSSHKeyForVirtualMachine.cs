@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse ResetSSHKeyForVirtualMachine(ResetSSHKeyForVirtualMachineRequest request);
+        AsyncJobResponse ResetSSHKeyForVirtualMachine(ResetSSHKeyForVirtualMachineRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse ResetSSHKeyForVirtualMachine(ResetSSHKeyForVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse ResetSSHKeyForVirtualMachine(ResetSSHKeyForVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

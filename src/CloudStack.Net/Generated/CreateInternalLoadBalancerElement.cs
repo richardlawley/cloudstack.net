@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        InternalLoadBalancerElementResponse CreateInternalLoadBalancerElement(CreateInternalLoadBalancerElementRequest request);
+        AsyncJobResponse CreateInternalLoadBalancerElement(CreateInternalLoadBalancerElementRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public InternalLoadBalancerElementResponse CreateInternalLoadBalancerElement(CreateInternalLoadBalancerElementRequest request) => _proxy.Request<InternalLoadBalancerElementResponse>(request);
+        public AsyncJobResponse CreateInternalLoadBalancerElement(CreateInternalLoadBalancerElementRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

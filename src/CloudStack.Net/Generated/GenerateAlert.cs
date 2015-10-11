@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse GenerateAlert(GenerateAlertRequest request);
+        AsyncJobResponse GenerateAlert(GenerateAlertRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse GenerateAlert(GenerateAlertRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse GenerateAlert(GenerateAlertRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

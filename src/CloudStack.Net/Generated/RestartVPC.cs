@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VpcResponse RestartVPC(RestartVPCRequest request);
+        AsyncJobResponse RestartVPC(RestartVPCRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VpcResponse RestartVPC(RestartVPCRequest request) => _proxy.Request<VpcResponse>(request);
+        public AsyncJobResponse RestartVPC(RestartVPCRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

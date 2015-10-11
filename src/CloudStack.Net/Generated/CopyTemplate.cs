@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        TemplateResponse CopyTemplate(CopyTemplateRequest request);
+        AsyncJobResponse CopyTemplate(CopyTemplateRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TemplateResponse CopyTemplate(CopyTemplateRequest request) => _proxy.Request<TemplateResponse>(request);
+        public AsyncJobResponse CopyTemplate(CopyTemplateRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -106,10 +106,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        Site2SiteCustomerGatewayResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request);
+        AsyncJobResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public Site2SiteCustomerGatewayResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request) => _proxy.Request<Site2SiteCustomerGatewayResponse>(request);
+        public AsyncJobResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

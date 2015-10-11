@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        StoragePoolResponse EnableStorageMaintenance(EnableStorageMaintenanceRequest request);
+        AsyncJobResponse EnableStorageMaintenance(EnableStorageMaintenanceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public StoragePoolResponse EnableStorageMaintenance(EnableStorageMaintenanceRequest request) => _proxy.Request<StoragePoolResponse>(request);
+        public AsyncJobResponse EnableStorageMaintenance(EnableStorageMaintenanceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse ReleaseDedicatedGuestVlanRange(ReleaseDedicatedGuestVlanRangeRequest request);
+        AsyncJobResponse ReleaseDedicatedGuestVlanRange(ReleaseDedicatedGuestVlanRangeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ReleaseDedicatedGuestVlanRange(ReleaseDedicatedGuestVlanRangeRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse ReleaseDedicatedGuestVlanRange(ReleaseDedicatedGuestVlanRangeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

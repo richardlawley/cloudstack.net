@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        CounterResponse CreateCounter(CreateCounterRequest request);
+        AsyncJobResponse CreateCounter(CreateCounterRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CounterResponse CreateCounter(CreateCounterRequest request) => _proxy.Request<CounterResponse>(request);
+        public AsyncJobResponse CreateCounter(CreateCounterRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse AddGloboDnsHost(AddGloboDnsHostRequest request);
+        AsyncJobResponse AddGloboDnsHost(AddGloboDnsHostRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse AddGloboDnsHost(AddGloboDnsHostRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse AddGloboDnsHost(AddGloboDnsHostRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

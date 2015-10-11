@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteNiciraNvpDevice(DeleteNiciraNvpDeviceRequest request);
+        AsyncJobResponse DeleteNiciraNvpDevice(DeleteNiciraNvpDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteNiciraNvpDevice(DeleteNiciraNvpDeviceRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteNiciraNvpDevice(DeleteNiciraNvpDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

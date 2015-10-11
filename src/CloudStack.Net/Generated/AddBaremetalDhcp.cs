@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        BaremetalDhcpResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request);
+        AsyncJobResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public BaremetalDhcpResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request) => _proxy.Request<BaremetalDhcpResponse>(request);
+        public AsyncJobResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

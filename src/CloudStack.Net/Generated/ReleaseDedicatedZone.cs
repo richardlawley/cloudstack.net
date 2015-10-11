@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request);
+        AsyncJobResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteStaticRoute(DeleteStaticRouteRequest request);
+        AsyncJobResponse DeleteStaticRoute(DeleteStaticRouteRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteStaticRoute(DeleteStaticRouteRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteStaticRoute(DeleteStaticRouteRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -90,10 +90,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        PrivateGatewayResponse CreatePrivateGateway(CreatePrivateGatewayRequest request);
+        AsyncJobResponse CreatePrivateGateway(CreatePrivateGatewayRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public PrivateGatewayResponse CreatePrivateGateway(CreatePrivateGatewayRequest request) => _proxy.Request<PrivateGatewayResponse>(request);
+        public AsyncJobResponse CreatePrivateGateway(CreatePrivateGatewayRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

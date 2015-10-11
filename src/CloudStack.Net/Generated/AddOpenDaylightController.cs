@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        OpenDaylightControllerResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request);
+        AsyncJobResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public OpenDaylightControllerResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request) => _proxy.Request<OpenDaylightControllerResponse>(request);
+        public AsyncJobResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

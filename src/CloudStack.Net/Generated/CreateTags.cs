@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse CreateTags(CreateTagsRequest request);
+        AsyncJobResponse CreateTags(CreateTagsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse CreateTags(CreateTagsRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse CreateTags(CreateTagsRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

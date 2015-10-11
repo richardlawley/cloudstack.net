@@ -90,10 +90,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request);
+        AsyncJobResponse CreateServiceInstance(CreateServiceInstanceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request) => _proxy.Request<ServiceInstanceResponse>(request);
+        public AsyncJobResponse CreateServiceInstance(CreateServiceInstanceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

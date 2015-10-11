@@ -114,10 +114,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        NetworkACLItemResponse CreateNetworkACL(CreateNetworkACLRequest request);
+        AsyncJobResponse CreateNetworkACL(CreateNetworkACLRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NetworkACLItemResponse CreateNetworkACL(CreateNetworkACLRequest request) => _proxy.Request<NetworkACLItemResponse>(request);
+        public AsyncJobResponse CreateNetworkACL(CreateNetworkACLRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

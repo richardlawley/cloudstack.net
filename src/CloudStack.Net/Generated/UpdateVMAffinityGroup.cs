@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request);
+        AsyncJobResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

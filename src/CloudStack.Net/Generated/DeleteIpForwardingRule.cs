@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request);
+        AsyncJobResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

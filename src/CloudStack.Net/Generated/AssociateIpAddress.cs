@@ -90,10 +90,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        IPAddressResponse AssociateIpAddress(AssociateIpAddressRequest request);
+        AsyncJobResponse AssociateIpAddress(AssociateIpAddressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public IPAddressResponse AssociateIpAddress(AssociateIpAddressRequest request) => _proxy.Request<IPAddressResponse>(request);
+        public AsyncJobResponse AssociateIpAddress(AssociateIpAddressRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteBigSwitchVnsDevice(DeleteBigSwitchVnsDeviceRequest request);
+        AsyncJobResponse DeleteBigSwitchVnsDevice(DeleteBigSwitchVnsDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteBigSwitchVnsDevice(DeleteBigSwitchVnsDeviceRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteBigSwitchVnsDevice(DeleteBigSwitchVnsDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

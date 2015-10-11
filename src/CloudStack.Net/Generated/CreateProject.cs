@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ProjectResponse CreateProject(CreateProjectRequest request);
+        AsyncJobResponse CreateProject(CreateProjectRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ProjectResponse CreateProject(CreateProjectRequest request) => _proxy.Request<ProjectResponse>(request);
+        public AsyncJobResponse CreateProject(CreateProjectRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

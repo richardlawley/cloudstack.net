@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteProjectInvitation(DeleteProjectInvitationRequest request);
+        AsyncJobResponse DeleteProjectInvitation(DeleteProjectInvitationRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteProjectInvitation(DeleteProjectInvitationRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteProjectInvitation(DeleteProjectInvitationRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

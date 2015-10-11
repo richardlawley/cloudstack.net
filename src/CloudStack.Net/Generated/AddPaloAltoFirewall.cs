@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        PaloAltoFirewallResponse AddPaloAltoFirewall(AddPaloAltoFirewallRequest request);
+        AsyncJobResponse AddPaloAltoFirewall(AddPaloAltoFirewallRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public PaloAltoFirewallResponse AddPaloAltoFirewall(AddPaloAltoFirewallRequest request) => _proxy.Request<PaloAltoFirewallResponse>(request);
+        public AsyncJobResponse AddPaloAltoFirewall(AddPaloAltoFirewallRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

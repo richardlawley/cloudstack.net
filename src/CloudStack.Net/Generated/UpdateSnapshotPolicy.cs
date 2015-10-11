@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SnapshotPolicyResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request);
+        AsyncJobResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SnapshotPolicyResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request) => _proxy.Request<SnapshotPolicyResponse>(request);
+        public AsyncJobResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -138,10 +138,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        TemplateResponse CreateTemplate(CreateTemplateRequest request);
+        AsyncJobResponse CreateTemplate(CreateTemplateRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TemplateResponse CreateTemplate(CreateTemplateRequest request) => _proxy.Request<TemplateResponse>(request);
+        public AsyncJobResponse CreateTemplate(CreateTemplateRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -66,10 +66,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        NiciraNvpDeviceResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request);
+        AsyncJobResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NiciraNvpDeviceResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request) => _proxy.Request<NiciraNvpDeviceResponse>(request);
+        public AsyncJobResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        DedicateHostResponse DedicateHost(DedicateHostRequest request);
+        AsyncJobResponse DedicateHost(DedicateHostRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DedicateHostResponse DedicateHost(DedicateHostRequest request) => _proxy.Request<DedicateHostResponse>(request);
+        public AsyncJobResponse DedicateHost(DedicateHostRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

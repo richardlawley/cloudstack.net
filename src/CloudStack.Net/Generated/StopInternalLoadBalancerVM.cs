@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        DomainRouterResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request);
+        AsyncJobResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DomainRouterResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request) => _proxy.Request<DomainRouterResponse>(request);
+        public AsyncJobResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -66,10 +66,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        StorageNetworkIpRangeResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request);
+        AsyncJobResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public StorageNetworkIpRangeResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request) => _proxy.Request<StorageNetworkIpRangeResponse>(request);
+        public AsyncJobResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

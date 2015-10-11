@@ -66,10 +66,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        VpcOfferingResponse CreateVPCOffering(CreateVPCOfferingRequest request);
+        AsyncJobResponse CreateVPCOffering(CreateVPCOfferingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VpcOfferingResponse CreateVPCOffering(CreateVPCOfferingRequest request) => _proxy.Request<VpcOfferingResponse>(request);
+        public AsyncJobResponse CreateVPCOffering(CreateVPCOfferingRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

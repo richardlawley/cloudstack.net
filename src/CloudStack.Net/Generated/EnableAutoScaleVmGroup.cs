@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        AutoScaleVmGroupResponse EnableAutoScaleVmGroup(EnableAutoScaleVmGroupRequest request);
+        AsyncJobResponse EnableAutoScaleVmGroup(EnableAutoScaleVmGroupRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AutoScaleVmGroupResponse EnableAutoScaleVmGroup(EnableAutoScaleVmGroupRequest request) => _proxy.Request<AutoScaleVmGroupResponse>(request);
+        public AsyncJobResponse EnableAutoScaleVmGroup(EnableAutoScaleVmGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

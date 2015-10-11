@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ExtractResponse ExtractTemplate(ExtractTemplateRequest request);
+        AsyncJobResponse ExtractTemplate(ExtractTemplateRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ExtractResponse ExtractTemplate(ExtractTemplateRequest request) => _proxy.Request<ExtractResponse>(request);
+        public AsyncJobResponse ExtractTemplate(ExtractTemplateRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

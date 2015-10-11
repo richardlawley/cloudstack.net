@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UcsBladeResponse AssociateUcsProfileToBlade(AssociateUcsProfileToBladeRequest request);
+        AsyncJobResponse AssociateUcsProfileToBlade(AssociateUcsProfileToBladeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UcsBladeResponse AssociateUcsProfileToBlade(AssociateUcsProfileToBladeRequest request) => _proxy.Request<UcsBladeResponse>(request);
+        public AsyncJobResponse AssociateUcsProfileToBlade(AssociateUcsProfileToBladeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

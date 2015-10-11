@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SnapshotResponse RevertSnapshot(RevertSnapshotRequest request);
+        AsyncJobResponse RevertSnapshot(RevertSnapshotRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SnapshotResponse RevertSnapshot(RevertSnapshotRequest request) => _proxy.Request<SnapshotResponse>(request);
+        public AsyncJobResponse RevertSnapshot(RevertSnapshotRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

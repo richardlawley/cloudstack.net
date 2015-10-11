@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ConditionResponse CreateCondition(CreateConditionRequest request);
+        AsyncJobResponse CreateCondition(CreateConditionRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ConditionResponse CreateCondition(CreateConditionRequest request) => _proxy.Request<ConditionResponse>(request);
+        public AsyncJobResponse CreateCondition(CreateConditionRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

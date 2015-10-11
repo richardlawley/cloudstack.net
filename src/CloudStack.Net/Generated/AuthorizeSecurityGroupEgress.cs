@@ -114,10 +114,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SecurityGroupRuleResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);
+        AsyncJobResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SecurityGroupRuleResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request) => _proxy.Request<SecurityGroupRuleResponse>(request);
+        public AsyncJobResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -247,9 +247,9 @@ namespace CloudStack.Net.TestClient
 
         #region Virtual Machine tests
 
-        internal string DeployVirtualMachine()
+        internal Guid DeployVirtualMachine()
         {
-            string id = string.Empty;
+            Guid id = Guid.Empty;
             try
             {
                 DeployVirtualMachineRequest request = new DeployVirtualMachineRequest()
@@ -265,8 +265,8 @@ namespace CloudStack.Net.TestClient
                 {
                     request.NetworkIds = new[] { Guid.Parse(_networkId) }.ToList();
                 }
-                id = _client.DeployVirtualMachine(request).Id;
-                _logWriter("Deployed new VM, id " + id);
+                id = _client.DeployVirtualMachine(request).jobid;
+                _logWriter("Deployed new VM, jobid " + id);
             }
             catch (System.Exception wex)
             {
@@ -325,9 +325,9 @@ namespace CloudStack.Net.TestClient
 
         #region Volume tests
 
-        internal string CreateVolume()
+        internal Guid CreateVolume()
         {
-            string volId = string.Empty;
+            Guid jobid = Guid.Empty;
 
             try
             {
@@ -351,15 +351,16 @@ namespace CloudStack.Net.TestClient
                     Name = "testVolume",
                     ZoneId = Guid.Parse(_zoneId)
                 };
-                volId = _client.CreateVolume(req).Id;
-                _logWriter("Created volume id is " + volId);
+                var response = _client.CreateVolume(req);
+                jobid = response.jobid;
+                _logWriter(response.ToString());
             }
             catch (System.Exception ex)
             {
                 System.Diagnostics.Debug.Fail("Not supposed to throw during create volume");
                 this._logWriter(ex.Message);
             }
-            return volId;
+            return jobid;
         }
 
         internal void AttachVolume(string volumeId, string vmId)

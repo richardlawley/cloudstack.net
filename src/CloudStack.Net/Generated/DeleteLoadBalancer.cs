@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
+        AsyncJobResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

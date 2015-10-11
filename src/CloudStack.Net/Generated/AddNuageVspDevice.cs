@@ -82,10 +82,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        NuageVspDeviceResponse AddNuageVspDevice(AddNuageVspDeviceRequest request);
+        AsyncJobResponse AddNuageVspDevice(AddNuageVspDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NuageVspDeviceResponse AddNuageVspDevice(AddNuageVspDeviceRequest request) => _proxy.Request<NuageVspDeviceResponse>(request);
+        public AsyncJobResponse AddNuageVspDevice(AddNuageVspDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

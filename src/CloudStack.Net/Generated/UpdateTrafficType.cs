@@ -58,10 +58,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        TrafficTypeResponse UpdateTrafficType(UpdateTrafficTypeRequest request);
+        AsyncJobResponse UpdateTrafficType(UpdateTrafficTypeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TrafficTypeResponse UpdateTrafficType(UpdateTrafficTypeRequest request) => _proxy.Request<TrafficTypeResponse>(request);
+        public AsyncJobResponse UpdateTrafficType(UpdateTrafficTypeRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

@@ -42,10 +42,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        FirewallResponse UpdateEgressFirewallRule(UpdateEgressFirewallRuleRequest request);
+        AsyncJobResponse UpdateEgressFirewallRule(UpdateEgressFirewallRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public FirewallResponse UpdateEgressFirewallRule(UpdateEgressFirewallRuleRequest request) => _proxy.Request<FirewallResponse>(request);
+        public AsyncJobResponse UpdateEgressFirewallRule(UpdateEgressFirewallRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

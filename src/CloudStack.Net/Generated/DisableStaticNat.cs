@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse DisableStaticNat(DisableStaticNatRequest request);
+        AsyncJobResponse DisableStaticNat(DisableStaticNatRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DisableStaticNat(DisableStaticNatRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse DisableStaticNat(DisableStaticNatRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

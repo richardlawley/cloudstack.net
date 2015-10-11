@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse ExpungeVirtualMachine(ExpungeVirtualMachineRequest request);
+        AsyncJobResponse ExpungeVirtualMachine(ExpungeVirtualMachineRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ExpungeVirtualMachine(ExpungeVirtualMachineRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse ExpungeVirtualMachine(ExpungeVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

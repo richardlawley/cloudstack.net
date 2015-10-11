@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse RemoveVpnUser(RemoveVpnUserRequest request);
+        AsyncJobResponse RemoveVpnUser(RemoveVpnUserRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse RemoveVpnUser(RemoveVpnUserRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse RemoveVpnUser(RemoveVpnUserRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

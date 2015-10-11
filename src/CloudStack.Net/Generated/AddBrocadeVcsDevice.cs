@@ -50,10 +50,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        BrocadeVcsDeviceResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request);
+        AsyncJobResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public BrocadeVcsDeviceResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request) => _proxy.Request<BrocadeVcsDeviceResponse>(request);
+        public AsyncJobResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

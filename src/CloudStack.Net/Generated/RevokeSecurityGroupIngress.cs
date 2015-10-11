@@ -26,10 +26,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        SuccessResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request);
+        AsyncJobResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request) => _proxy.Request<SuccessResponse>(request);
+        public AsyncJobResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }

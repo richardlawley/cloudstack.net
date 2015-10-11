@@ -34,10 +34,10 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        UserVmResponse RemoveNicFromVirtualMachine(RemoveNicFromVirtualMachineRequest request);
+        AsyncJobResponse RemoveNicFromVirtualMachine(RemoveNicFromVirtualMachineRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse RemoveNicFromVirtualMachine(RemoveNicFromVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
+        public AsyncJobResponse RemoveNicFromVirtualMachine(RemoveNicFromVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
     }
 }
