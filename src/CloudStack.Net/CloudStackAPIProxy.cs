@@ -144,13 +144,17 @@ namespace CloudStack.Net
             {
                 IList list = (IList)value;
                 StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < list.Count; i++)
+                if (list.Count > 0)
                 {
-                    if (i > 0)
+                    sb.Append($"{name}=");
+                    for (int i = 0; i < list.Count; i++)
                     {
-                        sb.Append("&");
+                        if (i > 0)
+                        {
+                            sb.Append(",");
+                        }
+                        sb.Append(Uri.EscapeDataString(list[i].ToString()));
                     }
-                    sb.Append($"{name}[{i}]={Uri.EscapeDataString(list[i].ToString())}");
                 }
                 return sb.ToString();
             }

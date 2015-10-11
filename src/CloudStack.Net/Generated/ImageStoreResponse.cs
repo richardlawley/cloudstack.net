@@ -12,10 +12,10 @@ namespace CloudStack.Net
         /// </summary>
         public string Id { get; set; }
 
-        /// <summary>
-        /// the details of the image store
-        /// </summary>
-        public IList<ImageStoreDetailResponse> Details { get; set; }
+        ///// <summary>
+        ///// the details of the image store
+        ///// </summary>
+        //public IList<ImageStoreDetailResponse> Details { get; set; }
 
         /// <summary>
         /// the name of the image store
