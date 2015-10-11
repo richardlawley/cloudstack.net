@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// Used when NetScaler device is provider of EIP service. This parameter represents the list of pod's, for which there exists a policy based route on datacenter L3 router to route pod's subnet IP to a NetScaler device.
         /// </summary>
         public IList<Guid> PodIds {
-            get { return (IList<Guid>) Parameters[nameof(PodIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(PodIds).ToLower()); }
             set { Parameters[nameof(PodIds).ToLower()] = value; }
         }
 

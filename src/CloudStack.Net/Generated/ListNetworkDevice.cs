@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// parameters for network device
         /// </summary>
         public IList<IDictionary<string, object>> Networkdeviceparameterlist {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Networkdeviceparameterlist).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Networkdeviceparameterlist).ToLower()); }
             set { Parameters[nameof(Networkdeviceparameterlist).ToLower()] = value; }
         }
 

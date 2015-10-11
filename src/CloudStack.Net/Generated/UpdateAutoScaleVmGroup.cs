@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// list of scaledown autoscale policies
         /// </summary>
         public IList<Guid> ScaleDownPolicyIds {
-            get { return (IList<Guid>) Parameters[nameof(ScaleDownPolicyIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(ScaleDownPolicyIds).ToLower()); }
             set { Parameters[nameof(ScaleDownPolicyIds).ToLower()] = value; }
         }
 
@@ -69,7 +69,7 @@ namespace CloudStack.Net
         /// list of scaleup autoscale policies
         /// </summary>
         public IList<Guid> ScaleUpPolicyIds {
-            get { return (IList<Guid>) Parameters[nameof(ScaleUpPolicyIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(ScaleUpPolicyIds).ToLower()); }
             set { Parameters[nameof(ScaleUpPolicyIds).ToLower()] = value; }
         }
 

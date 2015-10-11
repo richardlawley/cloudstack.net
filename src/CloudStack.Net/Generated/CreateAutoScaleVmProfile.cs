@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// counterparam list. Example: counterparam[0].name=snmpcommunity&counterparam[0].value=public&counterparam[1].name=snmpport&counterparam[1].value=161
         /// </summary>
         public IList<IDictionary<string, object>> Counterparam {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Counterparam).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Counterparam).ToLower()); }
             set { Parameters[nameof(Counterparam).ToLower()] = value; }
         }
 

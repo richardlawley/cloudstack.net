@@ -75,6 +75,23 @@ namespace CloudStack.Net.Tests
         }
 
         [TestMethod]
+        public void CreateQuery_IgnoresEmptyLists()
+        {
+            const string apiKey = "plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg";
+
+            Dictionary<string, object> arguments = new Dictionary<string, object>();
+            arguments.Add("response", "json");
+            arguments.Add("command", "listusers");
+            arguments.Add("list", new List<string>());
+
+            const string key = "VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ";
+            const string expected = "apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listusers&response=json&signature=TTpdDq%2F7j%2FJ58XCRHomKoQXEQds%3D";
+
+            string completeRequest = CloudStackAPIProxy.CreateQuery(arguments, apiKey, key, null);
+            completeRequest.ShouldBe(expected);
+        }
+
+        [TestMethod]
         public void CreateQuery_WithSessionKey_CorrectlyBuildsQuery()
         {
             var arguments = new Dictionary<string, object>();

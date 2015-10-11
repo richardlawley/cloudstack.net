@@ -37,7 +37,7 @@ namespace CloudStack.Net
         /// list of new network ids in which the moved VM will participate. In case no network ids are provided the VM will be part of the default network for that zone. In case there is no network yet created for the new account the default network will be created.
         /// </summary>
         public IList<Guid> NetworkIds {
-            get { return (IList<Guid>) Parameters[nameof(NetworkIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(NetworkIds).ToLower()); }
             set { Parameters[nameof(NetworkIds).ToLower()] = value; }
         }
 
@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// list of security group ids to be applied on the virtual machine. In case no security groups are provided the VM is part of the default security group.
         /// </summary>
         public IList<Guid> Securitygroupids {
-            get { return (IList<Guid>) Parameters[nameof(Securitygroupids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Securitygroupids).ToLower()); }
             set { Parameters[nameof(Securitygroupids).ToLower()] = value; }
         }
 

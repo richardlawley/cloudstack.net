@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the list of IDs of the conditions that are being evaluated on every interval
         /// </summary>
         public IList<Guid> ConditionIds {
-            get { return (IList<Guid>) Parameters[nameof(ConditionIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(ConditionIds).ToLower()); }
             set { Parameters[nameof(ConditionIds).ToLower()] = value; }
         }
 

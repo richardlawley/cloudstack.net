@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// list of snapshots policy IDs separated by comma
         /// </summary>
         public IList<Guid> Ids {
-            get { return (IList<Guid>) Parameters[nameof(Ids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Ids).ToLower()); }
             set { Parameters[nameof(Ids).ToLower()] = value; }
         }
 

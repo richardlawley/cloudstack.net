@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// Details in key/value pairs.
         /// </summary>
         public IList<IDictionary<string, object>> Details {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 

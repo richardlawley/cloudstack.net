@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// list of tags to be added to the host
         /// </summary>
         public IList<string> HostTags {
-            get { return (IList<string>) Parameters[nameof(HostTags).ToLower()]; }
+            get { return GetList<string>(nameof(HostTags).ToLower()); }
             set { Parameters[nameof(HostTags).ToLower()] = value; }
         }
 

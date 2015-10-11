@@ -79,7 +79,7 @@ namespace CloudStack.Net
         /// List zones by resource tags (key/value pairs)
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

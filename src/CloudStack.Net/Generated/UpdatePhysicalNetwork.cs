@@ -37,7 +37,7 @@ namespace CloudStack.Net
         /// Tag the physical network
         /// </summary>
         public IList<string> Tags {
-            get { return (IList<string>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<string>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

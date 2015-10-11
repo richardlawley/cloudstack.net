@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// the isolation method for the physical network[VLAN/L3/GRE]
         /// </summary>
         public IList<string> IsolationMethods {
-            get { return (IList<string>) Parameters[nameof(IsolationMethods).ToLower()]; }
+            get { return GetList<string>(nameof(IsolationMethods).ToLower()); }
             set { Parameters[nameof(IsolationMethods).ToLower()] = value; }
         }
 
@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// Tag the physical network
         /// </summary>
         public IList<string> Tags {
-            get { return (IList<string>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<string>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

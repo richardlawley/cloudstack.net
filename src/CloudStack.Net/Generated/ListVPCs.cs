@@ -127,7 +127,7 @@ namespace CloudStack.Net
         /// list VPC supporting certain services
         /// </summary>
         public IList<string> SupportedServices {
-            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            get { return GetList<string>(nameof(SupportedServices).ToLower()); }
             set { Parameters[nameof(SupportedServices).ToLower()] = value; }
         }
 
@@ -135,7 +135,7 @@ namespace CloudStack.Net
         /// List resources by tags (key/value pairs)
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the list load balancer rules that will be assigned to gloabal load balacner rule
         /// </summary>
         public IList<Guid> Loadbalancerrulelist {
-            get { return (IList<Guid>) Parameters[nameof(Loadbalancerrulelist).ToLower()]; }
+            get { return GetList<Guid>(nameof(Loadbalancerrulelist).ToLower()); }
             set { Parameters[nameof(Loadbalancerrulelist).ToLower()] = value; }
         }
 

@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// comma separated list of host details requested, value can be a list of [all, group, nics, stats, secgrp, tmpl, servoff, diskoff, iso, volume, min, affgrp]. If no parameter is passed in, the details will be defaulted to all
         /// </summary>
         public IList<string> Details {
-            get { return (IList<string>) Parameters[nameof(Details).ToLower()]; }
+            get { return GetList<string>(nameof(Details).ToLower()); }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 
@@ -93,7 +93,7 @@ namespace CloudStack.Net
         /// the IDs of the virtual machines, mutually exclusive with id
         /// </summary>
         public IList<Guid> Ids {
-            get { return (IList<Guid>) Parameters[nameof(Ids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Ids).ToLower()); }
             set { Parameters[nameof(Ids).ToLower()] = value; }
         }
 
@@ -199,7 +199,7 @@ namespace CloudStack.Net
         /// List resources by tags (key/value pairs)
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

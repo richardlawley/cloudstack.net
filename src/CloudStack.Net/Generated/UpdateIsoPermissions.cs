@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// a comma delimited list of accounts. If specified, "op" parameter has to be passed in.
         /// </summary>
         public IList<string> Accounts {
-            get { return (IList<string>) Parameters[nameof(Accounts).ToLower()]; }
+            get { return GetList<string>(nameof(Accounts).ToLower()); }
             set { Parameters[nameof(Accounts).ToLower()] = value; }
         }
 
@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// a comma delimited list of projects. If specified, "op" parameter has to be passed in.
         /// </summary>
         public IList<Guid> ProjectIds {
-            get { return (IList<Guid>) Parameters[nameof(ProjectIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(ProjectIds).ToLower()); }
             set { Parameters[nameof(ProjectIds).ToLower()] = value; }
         }
 

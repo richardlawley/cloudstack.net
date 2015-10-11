@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// services supported by the vpc offering
         /// </summary>
         public IList<string> SupportedServices {
-            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            get { return GetList<string>(nameof(SupportedServices).ToLower()); }
             set { Parameters[nameof(SupportedServices).ToLower()] = value; }
         }
 
@@ -37,7 +37,7 @@ namespace CloudStack.Net
         /// desired service capabilities as part of vpc offering
         /// </summary>
         public IList<IDictionary<string, object>> Servicecapabilitylist {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Servicecapabilitylist).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Servicecapabilitylist).ToLower()); }
             set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
         }
 
@@ -53,7 +53,7 @@ namespace CloudStack.Net
         /// provider to service mapping. If not specified, the provider for the service will be mapped to the default provider on the physical network
         /// </summary>
         public IList<IDictionary<string, object>> ServiceProviderList {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(ServiceProviderList).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(ServiceProviderList).ToLower()); }
             set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
         }
 

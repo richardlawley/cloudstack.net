@@ -45,7 +45,7 @@ namespace CloudStack.Net
         /// comma separated list of affinity groups id that are going to be applied to the virtual machine. Mutually exclusive with affinitygroupnames parameter
         /// </summary>
         public IList<Guid> Affinitygroupids {
-            get { return (IList<Guid>) Parameters[nameof(Affinitygroupids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Affinitygroupids).ToLower()); }
             set { Parameters[nameof(Affinitygroupids).ToLower()] = value; }
         }
 
@@ -53,7 +53,7 @@ namespace CloudStack.Net
         /// comma separated list of affinity groups names that are going to be applied to the virtual machine.Mutually exclusive with affinitygroupids parameter
         /// </summary>
         public IList<string> Affinitygroupnames {
-            get { return (IList<string>) Parameters[nameof(Affinitygroupnames).ToLower()]; }
+            get { return GetList<string>(nameof(Affinitygroupnames).ToLower()); }
             set { Parameters[nameof(Affinitygroupnames).ToLower()] = value; }
         }
 
@@ -77,7 +77,7 @@ namespace CloudStack.Net
         /// used to specify the custom parameters.
         /// </summary>
         public IList<IDictionary<string, object>> Details {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 
@@ -157,7 +157,7 @@ namespace CloudStack.Net
         /// ip to network mapping. Can't be specified with networkIds parameter. Example: iptonetworklist[0].ip=10.10.10.11&iptonetworklist[0].ipv6=fc00:1234:5678::abcd&iptonetworklist[0].networkid=uuid - requests to use ip 10.10.10.11 in network id=uuid
         /// </summary>
         public IList<IDictionary<string, object>> IpToNetworkList {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(IpToNetworkList).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(IpToNetworkList).ToLower()); }
             set { Parameters[nameof(IpToNetworkList).ToLower()] = value; }
         }
 
@@ -189,7 +189,7 @@ namespace CloudStack.Net
         /// list of network ids used by virtual machine. Can't be specified with ipToNetworkList parameter
         /// </summary>
         public IList<Guid> NetworkIds {
-            get { return (IList<Guid>) Parameters[nameof(NetworkIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(NetworkIds).ToLower()); }
             set { Parameters[nameof(NetworkIds).ToLower()] = value; }
         }
 
@@ -213,7 +213,7 @@ namespace CloudStack.Net
         /// comma separated list of security groups id that going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupnames parameter
         /// </summary>
         public IList<Guid> Securitygroupids {
-            get { return (IList<Guid>) Parameters[nameof(Securitygroupids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Securitygroupids).ToLower()); }
             set { Parameters[nameof(Securitygroupids).ToLower()] = value; }
         }
 
@@ -221,7 +221,7 @@ namespace CloudStack.Net
         /// comma separated list of security groups names that going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupids parameter
         /// </summary>
         public IList<string> Securitygroupnames {
-            get { return (IList<string>) Parameters[nameof(Securitygroupnames).ToLower()]; }
+            get { return GetList<string>(nameof(Securitygroupnames).ToLower()); }
             set { Parameters[nameof(Securitygroupnames).ToLower()] = value; }
         }
 

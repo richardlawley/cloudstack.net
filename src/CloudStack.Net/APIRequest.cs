@@ -27,11 +27,21 @@ namespace CloudStack.Net
         /// </summary>
         public IDictionary<string, object> Parameters { get; }
 
+        protected IList<T> GetList<T>(string name)
+        {
+            if (!Parameters.ContainsKey(name))
+            {
+                List<T> list = new List<T>();
+                Parameters[name] = list;
+            }
+            return (IList<T>)Parameters[name];
+        }
+
         public bool SupportsImpersonation { get; }
 
         /// <summary>
         /// Convenience property to return the API command.
         /// </summary>
-        public string Command => (string) Parameters[nameof(Command).ToLower()];
+        public string Command => (string)Parameters[nameof(Command).ToLower()];
     }
 }

@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the list load balancer rules that will be assigned to gloabal load balacner rule
         /// </summary>
         public IList<Guid> Loadbalancerrulelist {
-            get { return (IList<Guid>) Parameters[nameof(Loadbalancerrulelist).ToLower()]; }
+            get { return GetList<Guid>(nameof(Loadbalancerrulelist).ToLower()); }
             set { Parameters[nameof(Loadbalancerrulelist).ToLower()] = value; }
         }
 
@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// Map of LB rule id's and corresponding weights (between 1-100) in the GSLB rule, if not specified weight of a LB rule is defaulted to 1. Specified as 'gslblbruleweightsmap[0].loadbalancerid=UUID&gslblbruleweightsmap[0].weight=10'
         /// </summary>
         public IList<IDictionary<string, object>> Gslblbruleweightsmap {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Gslblbruleweightsmap).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Gslblbruleweightsmap).ToLower()); }
             set { Parameters[nameof(Gslblbruleweightsmap).ToLower()] = value; }
         }
 

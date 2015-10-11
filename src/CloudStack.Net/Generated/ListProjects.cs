@@ -95,7 +95,7 @@ namespace CloudStack.Net
         /// List projects by tags (key/value pairs)
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

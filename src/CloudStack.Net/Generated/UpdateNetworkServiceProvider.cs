@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the list of services to be enabled for this physical network service provider
         /// </summary>
         public IList<string> Servicelist {
-            get { return (IList<string>) Parameters[nameof(Servicelist).ToLower()]; }
+            get { return GetList<string>(nameof(Servicelist).ToLower()); }
             set { Parameters[nameof(Servicelist).ToLower()] = value; }
         }
 

@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the cidr list associated
         /// </summary>
         public IList<string> CidrList {
-            get { return (IList<string>) Parameters[nameof(CidrList).ToLower()]; }
+            get { return GetList<string>(nameof(CidrList).ToLower()); }
             set { Parameters[nameof(CidrList).ToLower()] = value; }
         }
 
@@ -101,7 +101,7 @@ namespace CloudStack.Net
         /// user to security group mapping
         /// </summary>
         public IList<IDictionary<string, object>> UserSecurityGroupList {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(UserSecurityGroupList).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(UserSecurityGroupList).ToLower()); }
             set { Parameters[nameof(UserSecurityGroupList).ToLower()] = value; }
         }
 

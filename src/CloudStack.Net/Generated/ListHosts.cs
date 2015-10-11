@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// comma separated list of host details requested, value can be a list of [ min, all, capacity, events, stats]
         /// </summary>
         public IList<string> Details {
-            get { return (IList<string>) Parameters[nameof(Details).ToLower()]; }
+            get { return GetList<string>(nameof(Details).ToLower()); }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 

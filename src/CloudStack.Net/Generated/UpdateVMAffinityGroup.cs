@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// comma separated list of affinity groups id that are going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupnames parameter
         /// </summary>
         public IList<Guid> Affinitygroupids {
-            get { return (IList<Guid>) Parameters[nameof(Affinitygroupids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Affinitygroupids).ToLower()); }
             set { Parameters[nameof(Affinitygroupids).ToLower()] = value; }
         }
 
@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// comma separated list of affinity groups names that are going to be applied to the virtual machine. Should be passed only when vm is created from a zone with Basic Network support. Mutually exclusive with securitygroupids parameter
         /// </summary>
         public IList<string> Affinitygroupnames {
-            get { return (IList<string>) Parameters[nameof(Affinitygroupnames).ToLower()]; }
+            get { return GetList<string>(nameof(Affinitygroupnames).ToLower()); }
             set { Parameters[nameof(Affinitygroupnames).ToLower()] = value; }
         }
 

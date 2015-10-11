@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the IDs of the events
         /// </summary>
         public IList<Guid> Ids {
-            get { return (IList<Guid>) Parameters[nameof(Ids).ToLower()]; }
+            get { return GetList<Guid>(nameof(Ids).ToLower()); }
             set { Parameters[nameof(Ids).ToLower()] = value; }
         }
 

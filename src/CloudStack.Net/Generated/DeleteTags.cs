@@ -13,7 +13,7 @@ namespace CloudStack.Net
         /// Delete tags for resource id(s)
         /// </summary>
         public IList<string> ResourceIds {
-            get { return (IList<string>) Parameters[nameof(ResourceIds).ToLower()]; }
+            get { return GetList<string>(nameof(ResourceIds).ToLower()); }
             set { Parameters[nameof(ResourceIds).ToLower()] = value; }
         }
 
@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// Delete tags matching key/value pairs
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Tags).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
             set { Parameters[nameof(Tags).ToLower()] = value; }
         }
 

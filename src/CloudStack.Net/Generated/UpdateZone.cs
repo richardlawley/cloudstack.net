@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// the details for the Zone
         /// </summary>
         public IList<IDictionary<string, object>> Details {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(Details).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
             set { Parameters[nameof(Details).ToLower()] = value; }
         }
 
@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// the dns search order list
         /// </summary>
         public IList<string> DnsSearchOrder {
-            get { return (IList<string>) Parameters[nameof(DnsSearchOrder).ToLower()]; }
+            get { return GetList<string>(nameof(DnsSearchOrder).ToLower()); }
             set { Parameters[nameof(DnsSearchOrder).ToLower()] = value; }
         }
 

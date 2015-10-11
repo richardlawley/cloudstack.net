@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// the list of IDs of the virtual machine that are being assigned to the load balancer rule(i.e. virtualMachineIds=1,2,3)
         /// </summary>
         public IList<Guid> VirtualMachineIds {
-            get { return (IList<Guid>) Parameters[nameof(VirtualMachineIds).ToLower()]; }
+            get { return GetList<Guid>(nameof(VirtualMachineIds).ToLower()); }
             set { Parameters[nameof(VirtualMachineIds).ToLower()] = value; }
         }
 
@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// VM ID and IP map, vmidipmap[0].vmid=1 vmidipmap[0].ip=10.1.1.75
         /// </summary>
         public IList<IDictionary<string, object>> VmIdIpMap {
-            get { return (IList<IDictionary<string, object>>) Parameters[nameof(VmIdIpMap).ToLower()]; }
+            get { return GetList<IDictionary<string, object>>(nameof(VmIdIpMap).ToLower()); }
             set { Parameters[nameof(VmIdIpMap).ToLower()] = value; }
         }
 

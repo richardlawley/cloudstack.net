@@ -29,7 +29,7 @@ namespace CloudStack.Net
         /// the cidr list to forward traffic from
         /// </summary>
         public IList<string> Cidrlist {
-            get { return (IList<string>) Parameters[nameof(Cidrlist).ToLower()]; }
+            get { return GetList<string>(nameof(Cidrlist).ToLower()); }
             set { Parameters[nameof(Cidrlist).ToLower()] = value; }
         }
 

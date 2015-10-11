@@ -71,7 +71,7 @@ namespace CloudStack.Net
         /// list VPC offerings supporting certain services
         /// </summary>
         public IList<string> SupportedServices {
-            get { return (IList<string>) Parameters[nameof(SupportedServices).ToLower()]; }
+            get { return GetList<string>(nameof(SupportedServices).ToLower()); }
             set { Parameters[nameof(SupportedServices).ToLower()] = value; }
         }
 
