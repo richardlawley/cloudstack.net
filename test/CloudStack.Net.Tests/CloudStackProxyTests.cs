@@ -148,10 +148,17 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void SerializeValue_CanSerializeMap()
         {
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            dict.Add("A", "B");
-            dict.Add("C", "D");
-            CloudStackAPIProxy.SerialiseValue("map", dict).ShouldBe("map[0].A=B&map[0].C=D");
+            IList<IDictionary<string, object>> map = new List<IDictionary<string, object>>();
+            var mapItem = new Dictionary<string, object>();
+            mapItem.Add("A", "C");
+            mapItem.Add("B", "D");
+            map.Add(mapItem);
+            mapItem = new Dictionary<string, object>();
+            mapItem.Add("A", "E");
+            mapItem.Add("B", "F");
+            map.Add(mapItem);
+
+            CloudStackAPIProxy.SerialiseValue("map", map).ShouldBe("map[0].A=C&map[0].B=D&map[1].A=E&map[1].B=F");
         }
 
         [TestMethod]

@@ -123,22 +123,27 @@ namespace CloudStack.Net
             {
                 return $"{name}={Uri.EscapeDataString(value.ToString())}";
             }
-            else if (value is IDictionary)
+            else if (value is IList<IDictionary<string, object>>)
             {
-                IDictionary dict = (IDictionary)value;
                 StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < dict.Count; i++)
+                IList<IDictionary<string, object>> map = (IList<IDictionary<string, object>>)value;
+                for (int i = 0; i < map.Count; i++)
                 {
-                    object key = dict.Keys.OfType<object>().ElementAt(i);
+                    IDictionary<string, object> mapEntry = map[i];
 
-                    if (i > 0)
+                    // Need to act on sorted keys...
+                    var sortedKeys = mapEntry.Keys.OrderBy(k => k.ToLower()).ToList();
+                    foreach (string key in sortedKeys)
                     {
-                        sb.Append("&");
-                    }
-                    sb.Append($"{name}[0].{Uri.EscapeDataString(key.ToString())}={Uri.EscapeDataString(dict[key].ToString())}");
-                }
-                return sb.ToString();
+                        sb.Append($"&{name}[{i}].{Uri.EscapeDataString(key)}={Uri.EscapeDataString(mapEntry[key].ToString())}");
 
+                    }
+
+
+                }
+
+                string result = sb.ToString();
+                return !String.IsNullOrEmpty(result) ? result.Substring(1) : null;
             }
             else if (value is IList)
             {
