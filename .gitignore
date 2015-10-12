@@ -194,3 +194,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/tools/cloudstack-dotnetsdk-generator/log
+/tools/cloudstack-dotnetsdk-generator/.settings
