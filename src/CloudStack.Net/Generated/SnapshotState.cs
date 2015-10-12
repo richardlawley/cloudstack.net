@@ -2,7 +2,7 @@ using System;
 
 namespace CloudStack.Net
 {
-    public enum State
+    public enum SnapshotState
     {
         Allocated,
         Creating,

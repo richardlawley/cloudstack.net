@@ -195,7 +195,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the state of the router
         /// </summary>
-        public State State { get; set; }
+        public VirtualMachineState State { get; set; }
 
         /// <summary>
         /// the template ID for the router

@@ -173,12 +173,11 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                                 typeDefinition.println("/// </summary>");
                             }
 
-                            typeDefinition.println("public %s %s { get; set; }", convertedDataType, arg.getNameWithCaps());
-                            typeDefinition.println();
-
                             if (arg.getJavaDataTypeName() != null && !arg.getJavaDataType().getName().startsWith("java.") && !_createdTypes.contains(arg.getJavaDataTypeName())) {
                                 if (arg.getJavaDataType().isEnum()) {
-                                    enumsToWrite.put(arg.getJavaDataTypeName(), arg.getJavaDataType());
+                                    String enumName = getEnumName(arg.getJavaDataType());
+                                    enumsToWrite.put(enumName, arg.getJavaDataType());
+                                    convertedDataType = enumName;
                                 } else {
                                     List<Argument> nestedArgs = arg.getArguments();
                                     if (nestedArgs != null) {
@@ -188,6 +187,9 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                                     }
                                 }
                             }
+                            
+                            typeDefinition.println("public %s %s { get; set; }", convertedDataType, arg.getNameWithCaps());
+                            typeDefinition.println();
                         }
 
                         typeDefinition.println("public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);");
@@ -225,6 +227,14 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+    
+    private String getEnumName(Class<?> enumClass) {
+        String enumName = enumClass.getSimpleName();
+        if (enumClass.getEnclosingClass() != null && !enumName.startsWith(enumClass.getEnclosingClass().getSimpleName())) {
+            enumName = enumClass.getEnclosingClass().getSimpleName() + enumName;
+        }
+        return enumName;
     }
 
     private String convertDataType(Argument field) {

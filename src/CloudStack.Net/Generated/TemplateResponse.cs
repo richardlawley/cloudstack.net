@@ -65,7 +65,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the format of the template.
         /// </summary>
-        public ImageFormat Format { get; set; }
+        public StorageImageFormat Format { get; set; }
 
         /// <summary>
         /// the ID of the secondary storage host for the template

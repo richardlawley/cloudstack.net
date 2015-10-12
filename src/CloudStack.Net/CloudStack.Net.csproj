@@ -58,6 +58,7 @@
     <Compile Include="Generated\AddBaremetalPxeKickStartServer.cs" />
     <Compile Include="Generated\AddBaremetalPxePingServer.cs" />
     <Compile Include="Generated\AddBaremetalRct.cs" />
+    <Compile Include="Generated\AddBigSwitchVnsDevice.cs" />
     <Compile Include="Generated\AddBrocadeVcsDevice.cs" />
     <Compile Include="Generated\AddCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\AddCiscoVnmcResource.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Generated\BaremetalPxeResponse.cs" />
     <Compile Include="Generated\BaremetalRctResponse.cs" />
     <Compile Include="Generated\BaseResponse.cs" />
+    <Compile Include="Generated\BigSwitchVnsDeviceResponse.cs" />
     <Compile Include="Generated\BrocadeVcsDeviceResponse.cs" />
     <Compile Include="Generated\CancelHostMaintenance.cs" />
     <Compile Include="Generated\CancelStorageMaintenance.cs" />
@@ -236,6 +238,7 @@
     <Compile Include="Generated\DeleteAutoScaleVmGroup.cs" />
     <Compile Include="Generated\DeleteAutoScaleVmProfile.cs" />
     <Compile Include="Generated\DeleteBaremetalRct.cs" />
+    <Compile Include="Generated\DeleteBigSwitchVnsDevice.cs" />
     <Compile Include="Generated\DeleteBrocadeVcsDevice.cs" />
     <Compile Include="Generated\DeleteCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\DeleteCiscoNexusVSM.cs" />
@@ -337,6 +340,7 @@
     <Compile Include="Generated\EnableStorageMaintenance.cs" />
     <Compile Include="Generated\EnableUser.cs" />
     <Compile Include="Generated\EventResponse.cs" />
+    <Compile Include="Generated\EventState.cs" />
     <Compile Include="Generated\EventTypeResponse.cs" />
     <Compile Include="Generated\ExpungeVirtualMachine.cs" />
     <Compile Include="Generated\ExternalFirewallResponse.cs" />
@@ -372,11 +376,11 @@
     <Compile Include="Generated\HostForMigrationResponse.cs" />
     <Compile Include="Generated\HostResponse.cs" />
     <Compile Include="Generated\HostTagResponse.cs" />
+    <Compile Include="Generated\HostType.cs" />
     <Compile Include="Generated\HypervisorCapabilitiesResponse.cs" />
     <Compile Include="Generated\HypervisorResponse.cs" />
     <Compile Include="Generated\HypervisorType.cs" />
     <Compile Include="Generated\IdpResponse.cs" />
-    <Compile Include="Generated\ImageFormat.cs" />
     <Compile Include="Generated\ImageStoreResponse.cs" />
     <Compile Include="Generated\ImportLdapUsers.cs" />
     <Compile Include="Generated\InstanceGroupResponse.cs" />
@@ -404,6 +408,7 @@
     <Compile Include="Generated\ListBaremetalDhcp.cs" />
     <Compile Include="Generated\ListBaremetalPxeServers.cs" />
     <Compile Include="Generated\ListBaremetalRct.cs" />
+    <Compile Include="Generated\ListBigSwitchVnsDevices.cs" />
     <Compile Include="Generated\ListBrocadeVcsDeviceNetworks.cs" />
     <Compile Include="Generated\ListBrocadeVcsDevices.cs" />
     <Compile Include="Generated\ListCapabilities.cs" />
@@ -639,6 +644,7 @@
     <Compile Include="Generated\Site2SiteVpnGatewayResponse.cs" />
     <Compile Include="Generated\SnapshotPolicyResponse.cs" />
     <Compile Include="Generated\SnapshotResponse.cs" />
+    <Compile Include="Generated\SnapshotState.cs" />
     <Compile Include="Generated\SrxFirewallResponse.cs" />
     <Compile Include="Generated\SSHKeyPairResponse.cs" />
     <Compile Include="Generated\SslCertResponse.cs" />
@@ -647,13 +653,13 @@
     <Compile Include="Generated\StartRouter.cs" />
     <Compile Include="Generated\StartSystemVm.cs" />
     <Compile Include="Generated\StartVirtualMachine.cs" />
-    <Compile Include="Generated\State.cs" />
     <Compile Include="Generated\StaticRouteResponse.cs" />
     <Compile Include="Generated\Status.cs" />
     <Compile Include="Generated\StopInternalLoadBalancerVM.cs" />
     <Compile Include="Generated\StopRouter.cs" />
     <Compile Include="Generated\StopSystemVm.cs" />
     <Compile Include="Generated\StopVirtualMachine.cs" />
+    <Compile Include="Generated\StorageImageFormat.cs" />
     <Compile Include="Generated\StorageNetworkIpRangeResponse.cs" />
     <Compile Include="Generated\StoragePoolResponse.cs" />
     <Compile Include="Generated\StoragePoolStatus.cs" />
@@ -667,7 +673,6 @@
     <Compile Include="Generated\TrafficMonitorResponse.cs" />
     <Compile Include="Generated\TrafficTypeImplementorResponse.cs" />
     <Compile Include="Generated\TrafficTypeResponse.cs" />
-    <Compile Include="Generated\Type.cs" />
     <Compile Include="Generated\UcsBladeResponse.cs" />
     <Compile Include="Generated\UcsManagerResponse.cs" />
     <Compile Include="Generated\UcsProfileResponse.cs" />
@@ -737,9 +742,11 @@
     <Compile Include="Generated\UserResponse.cs" />
     <Compile Include="Generated\UserVmResponse.cs" />
     <Compile Include="Generated\VgpuResponse.cs" />
+    <Compile Include="Generated\VirtualMachineState.cs" />
     <Compile Include="Generated\VirtualRouterProviderResponse.cs" />
     <Compile Include="Generated\VlanIpRangeResponse.cs" />
     <Compile Include="Generated\VMSnapshotResponse.cs" />
+    <Compile Include="Generated\VMSnapshotState.cs" />
     <Compile Include="Generated\VMUserDataResponse.cs" />
     <Compile Include="Generated\VmwareDatacenterResponse.cs" />
     <Compile Include="Generated\VolumeResponse.cs" />

@@ -70,7 +70,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the state of the snapshot. BackedUp means that snapshot is ready to be used; Creating - the snapshot is being allocated on the primary storage; BackingUp - the snapshot is being backed up on secondary storage
         /// </summary>
-        public State State { get; set; }
+        public SnapshotState State { get; set; }
 
         /// <summary>
         /// ID of the disk volume

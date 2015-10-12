@@ -210,7 +210,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the host type
         /// </summary>
-        public Type Type { get; set; }
+        public HostType Type { get; set; }
 
         /// <summary>
         /// the host version

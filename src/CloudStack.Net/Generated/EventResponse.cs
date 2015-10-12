@@ -60,7 +60,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the state of the event
         /// </summary>
-        public State State { get; set; }
+        public EventState State { get; set; }
 
         /// <summary>
         /// the type of the event (see event types)

@@ -75,7 +75,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the state of the vm snapshot
         /// </summary>
-        public State State { get; set; }
+        public VMSnapshotState State { get; set; }
 
         /// <summary>
         /// VM Snapshot type

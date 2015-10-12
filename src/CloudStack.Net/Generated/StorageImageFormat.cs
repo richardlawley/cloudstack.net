@@ -2,7 +2,7 @@ using System;
 
 namespace CloudStack.Net
 {
-    public enum ImageFormat
+    public enum StorageImageFormat
     {
         QCOW2,
         RAW,

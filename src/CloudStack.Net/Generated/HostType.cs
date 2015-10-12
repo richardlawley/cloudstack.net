@@ -2,7 +2,7 @@ using System;
 
 namespace CloudStack.Net
 {
-    public enum Type
+    public enum HostType
     {
         Storage,
         Routing,
