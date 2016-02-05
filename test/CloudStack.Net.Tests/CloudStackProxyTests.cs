@@ -79,7 +79,7 @@ namespace CloudStack.Net.Tests
         {
             const string apiKey = "plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg";
 
-            Dictionary<string, object> arguments = new Dictionary<string, object>();
+            var arguments = new Dictionary<string, object>();
             arguments.Add("response", "json");
             arguments.Add("command", "listusers");
             arguments.Add("list", new List<string>());
@@ -165,7 +165,7 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void SerializeValue_CanSerializeMap()
         {
-            IList<IDictionary<string, object>> map = new List<IDictionary<string, object>>();
+            var map = new List<IDictionary<string, object>>();
             var mapItem = new Dictionary<string, object>();
             mapItem.Add("A", "C");
             mapItem.Add("B", "D");
@@ -181,7 +181,7 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void SerializeValue_CanSerializeList()
         {
-            List<string> list = new List<string>();
+            var list = new List<string>();
             list.Add("A");
             list.Add("B");
             list.Add("C D");

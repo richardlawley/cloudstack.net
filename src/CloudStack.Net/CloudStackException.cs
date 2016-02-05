@@ -73,8 +73,8 @@ namespace CloudStack.Net
             : base(context, innerException)
         {
             this.Context = context;
-            this.Command = command == null ? string.Empty : command;
-            this.ErrorResult = new APIErrorResult()
+            this.Command = command ?? string.Empty;
+            this.ErrorResult = new APIErrorResult
             {
                 ErrorText = errorText,
                 ErrorCode = errorCode

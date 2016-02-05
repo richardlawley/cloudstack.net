@@ -63,7 +63,7 @@ namespace CloudStack.Net
             if (secretKey == null) { throw new ArgumentNullException(nameof(secretKey)); }
 
             byte[] secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
-            HMACSHA1 hasher = new System.Security.Cryptography.HMACSHA1(secretKeyBytes);
+            var hasher = new System.Security.Cryptography.HMACSHA1(secretKeyBytes);
             byte[] bytesToSign = Encoding.UTF8.GetBytes(toSign.ToLower());
             byte[] signatureUTF8 = hasher.ComputeHash(bytesToSign);
             string signature = Convert.ToBase64String(signatureUTF8);
@@ -83,8 +83,8 @@ namespace CloudStack.Net
         /// </remarks>
         public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
         {
-            StringBuilder query = new StringBuilder();
-            SortedList<string, object> sortedArgs = new SortedList<string, object>(arguments, StringComparer.OrdinalIgnoreCase);
+            var query = new StringBuilder();
+            var sortedArgs = new SortedList<string, object>(arguments, StringComparer.OrdinalIgnoreCase);
             if (!String.IsNullOrEmpty(apiKey))
             {
                 sortedArgs["apikey"] = apiKey;
@@ -125,8 +125,8 @@ namespace CloudStack.Net
             }
             else if (value is IList<IDictionary<string, object>>)
             {
-                StringBuilder sb = new StringBuilder();
-                IList<IDictionary<string, object>> map = (IList<IDictionary<string, object>>)value;
+                var sb = new StringBuilder();
+                var map = (IList<IDictionary<string, object>>)value;
                 for (int i = 0; i < map.Count; i++)
                 {
                     IDictionary<string, object> mapEntry = map[i];
@@ -144,8 +144,8 @@ namespace CloudStack.Net
             }
             else if (value is IList)
             {
-                IList list = (IList)value;
-                StringBuilder sb = new StringBuilder();
+                var list = (IList)value;
+                var sb = new StringBuilder();
                 if (list.Count > 0)
                 {
                     sb.Append($"{name}=");
@@ -161,7 +161,7 @@ namespace CloudStack.Net
                 return sb.ToString();
             }
 
-            throw new NotImplementedException("Couldn't serialise object of type " + type.FullName);
+            throw new NotSupportedException($"Couldn't serialise object of type {type.FullName}");
         }
 
         public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()
@@ -192,7 +192,7 @@ namespace CloudStack.Net
             useGet = true;
 
             string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
-            Uri fullUri = new Uri(ServiceUrl + (useGet ? $"?{queryString}" : ""));
+            var fullUri = new Uri(ServiceUrl + (useGet ? $"?{queryString}" : ""));
 
             HttpWebRequest webRequest = WebRequest.CreateHttp(fullUri);
             webRequest.Accept = "application/json;charset=UTF-8";
@@ -251,7 +251,7 @@ namespace CloudStack.Net
                 throw new FormatException("Expected multiple elements for a list object");
             }
 
-            JProperty resultElement = responseContainer.Children().OfType<JProperty>().Where(p => !p.Name.Equals("count", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            JProperty resultElement = responseContainer.Children().OfType<JProperty>().FirstOrDefault(p => !p.Name.Equals("count", StringComparison.OrdinalIgnoreCase));
             if (resultElement == null)
             {
                 throw new FormatException("Couldn't find a results element for a list command");
@@ -271,7 +271,7 @@ namespace CloudStack.Net
         {
             if (we.Status == WebExceptionStatus.ProtocolError)
             {
-                HttpWebResponse responseStream = (HttpWebResponse)we.Response;
+                var responseStream = (HttpWebResponse)we.Response;
                 try
                 {
                     using (StreamReader reader = new StreamReader(responseStream.GetResponseStream()))

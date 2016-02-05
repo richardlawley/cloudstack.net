@@ -10,7 +10,7 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void Constructor_SerialisesCommandNameProperly()
         {
-            TestRequest request = new TestRequest();
+            var request = new TestRequest();
             request.Command.ShouldBe(TestRequest.COMMANDNAME);
             request.Parameters["command"].ShouldBe(TestRequest.COMMANDNAME);
         }
@@ -18,7 +18,7 @@ namespace CloudStack.Net.Tests
         [TestMethod]
         public void GetList_CreatesListIfNotExisting()
         {
-            TestRequest request = new TestRequest();
+            var request = new TestRequest();
             request.Parameters.ShouldNotContainKey("TestList");
 
             var existingCount = request.TestList.Count;
@@ -33,7 +33,7 @@ namespace CloudStack.Net.Tests
             {
             }
 
-            public IList<object> TestList { get { return GetList<object>("TestList"); } }
+            public IList<object> TestList => GetList<object>("TestList");
         }
     }
 }

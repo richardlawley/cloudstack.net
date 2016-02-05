@@ -186,7 +186,7 @@ namespace CloudStack.Net.TestClient
         {
             Tests tests = new Tests(this.WriteToLogBox);
             Guid jobid = tests.CreateVolume();
-            if (jobid != null)
+            if (jobid != Guid.Empty)
             {
                 TextBoxAsyncJob.Text = jobid.ToString();
             }

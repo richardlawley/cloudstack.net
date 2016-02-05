@@ -18,9 +18,16 @@ Setting up the build environment for CloudStack under Windows is somewhat challe
 1.  Switch the code to the release tag you want to generate the SDK for: `cd /vagrant/cloudstack && git checkout tags/4.7.0`
 1.  Copy the dependencies locally: `cp /vagrant/deps/* /vagrant/cloudstack/deps/`
 1.  Install the non-OSS dependencies: `cd /vagrant/cloudstack/deps && ./install-non-oss.sh` 
-1.  Build Cloudstack: `cd /vagrant/cloudstack && mvn install -Pdeps,developer -Dnoredist -DskipTests=true`
-
+1.  Build Cloudstack: `cd /vagrant/cloudstack && mvn install -Pdeveloper -Dnoredist -DskipTests=true`
 
 ## Instructions
 
-1.  Build CloudStack
+1.  Build CloudStack (see above)
+2.  Open SDK Generator in Eclipse, repair classpath refs if CloudStack version has changed
+3.  Run SDK Generator from PowerShell (`.\Generate.ps1`)
+4.  Check for any missing/new files in the Generated folder and add/remove them from the project as appropriate
+5.  Check for any compilation errors 
+
+## Known Issues
+
+* The `ImageStoreDetailResponse` class does not get imported for some reason, so the Details property of `ImageStoreResponse` must be commented out for now. 

@@ -31,7 +31,7 @@ namespace CloudStack.Net
         {
             if (!Parameters.ContainsKey(name))
             {
-                List<T> list = new List<T>();
+                var list = new List<T>();
                 Parameters[name] = list;
             }
             return (IList<T>)Parameters[name];
