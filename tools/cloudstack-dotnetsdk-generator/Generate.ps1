@@ -1,4 +1,6 @@
-﻿$cloudstackbase = "C:\VMs\Cloudstackdev\cloudstack"
+﻿param (
+    [string]$cloudstackbase = "C:\VMs\Cloudstackdev\cloudstack"
+)
 
 $target = "$PSScriptRoot\..\..\src\CloudStack.Net\Generated"
 $builtbase = gci $cloudstackbase\client\target\cloud-client-ui-* -Directory | Select-Object -first 1

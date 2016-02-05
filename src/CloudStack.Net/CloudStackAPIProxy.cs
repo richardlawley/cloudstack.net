@@ -37,7 +37,7 @@ namespace CloudStack.Net
         private CloudStackAPIProxy(string serviceUrl)
         {
             if (String.IsNullOrEmpty(serviceUrl)) { throw new ArgumentNullException(nameof(serviceUrl)); }
-            if (!serviceUrl.EndsWith("/api")) { throw new ArgumentException(nameof(serviceUrl), $"Expected Service Url to end with /api - it is {serviceUrl}"); }
+            if (!serviceUrl.EndsWith("/api", StringComparison.Ordinal)) { throw new ArgumentException(nameof(serviceUrl), $"Expected Service Url to end with /api - it is {serviceUrl}"); }
 
             ServiceUrl = serviceUrl;
         }
@@ -136,10 +136,7 @@ namespace CloudStack.Net
                     foreach (string key in sortedKeys)
                     {
                         sb.Append($"&{name}[{i}].{Uri.EscapeDataString(key)}={Uri.EscapeDataString(mapEntry[key].ToString())}");
-
                     }
-
-
                 }
 
                 string result = sb.ToString();
