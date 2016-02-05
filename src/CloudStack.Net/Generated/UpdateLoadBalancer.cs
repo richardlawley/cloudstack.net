@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public UpdateLoadBalancerRequest() : base("updateLoadBalancer") {}
 
         /// <summary>
-        /// the ID of the Load Balancer
+        /// the ID of the load balancer
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates a Load Balancer
+    /// Updates a load balancer
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

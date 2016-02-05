@@ -34,43 +34,11 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the IP address id of the port forwarding rule
-        /// </summary>
-        public Guid Ipaddressid {
-            get { return (Guid) Parameters[nameof(Ipaddressid).ToLower()]; }
-            set { Parameters[nameof(Ipaddressid).ToLower()] = value; }
-        }
-
-        /// <summary>
-        /// the private IP address of the port forwarding rule
-        /// </summary>
-        public string PrivateIp {
-            get { return (string) Parameters[nameof(PrivateIp).ToLower()]; }
-            set { Parameters[nameof(PrivateIp).ToLower()] = value; }
-        }
-
-        /// <summary>
         /// the private port of the port forwarding rule
         /// </summary>
-        public string PrivatePort {
-            get { return (string) Parameters[nameof(PrivatePort).ToLower()]; }
+        public int? PrivatePort {
+            get { return (int?) Parameters[nameof(PrivatePort).ToLower()]; }
             set { Parameters[nameof(PrivatePort).ToLower()] = value; }
-        }
-
-        /// <summary>
-        /// the protocol for the port fowarding rule. Valid values are TCP or UDP.
-        /// </summary>
-        public string Protocol {
-            get { return (string) Parameters[nameof(Protocol).ToLower()]; }
-            set { Parameters[nameof(Protocol).ToLower()] = value; }
-        }
-
-        /// <summary>
-        /// the public port of the port forwarding rule
-        /// </summary>
-        public string PublicPort {
-            get { return (string) Parameters[nameof(PublicPort).ToLower()]; }
-            set { Parameters[nameof(PublicPort).ToLower()] = value; }
         }
 
         /// <summary>
@@ -81,9 +49,17 @@ namespace CloudStack.Net
             set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// VM guest nic Secondary ip address for the port forwarding rule
+        /// </summary>
+        public string VmGuestIp {
+            get { return (string) Parameters[nameof(VmGuestIp).ToLower()]; }
+            set { Parameters[nameof(VmGuestIp).ToLower()] = value; }
+        }
+
     }
     /// <summary>
-    /// Updates a port forwarding rule.  Only the private port and the virtual machine can be updated.
+    /// Updates a port forwarding rule. Only the private port and the virtual machine can be updated.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

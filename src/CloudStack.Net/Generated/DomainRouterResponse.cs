@@ -68,6 +68,11 @@ namespace CloudStack.Net
         public string GuestNetworkId { get; set; }
 
         /// <summary>
+        /// the name of the corresponding guest network
+        /// </summary>
+        public string GuestNetworkName { get; set; }
+
+        /// <summary>
         /// the host ID for the router
         /// </summary>
         public string HostId { get; set; }
@@ -211,6 +216,11 @@ namespace CloudStack.Net
         /// VPC the router belongs to
         /// </summary>
         public string VpcId { get; set; }
+
+        /// <summary>
+        /// the name of VPC the router belongs to
+        /// </summary>
+        public string VpcName { get; set; }
 
         /// <summary>
         /// the Zone ID for the router

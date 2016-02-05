@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public ListDiskOfferingsRequest() : base("listDiskOfferings") {}
 
         /// <summary>
-        /// the ID of the domain of the disk offering.
+        /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
             get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
@@ -26,11 +26,27 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
+        /// </summary>
+        public bool? Isrecursive {
+            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
+            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
+        /// </summary>
+        public bool? ListAll {
+            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
+            set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
         /// <summary>

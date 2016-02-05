@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates LB Stickiness policy
+    /// Updates load balancer stickiness policy
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// hypervisor type of the cluster: XenServer,KVM,VMware,Hyperv,BareMetal,Simulator
+        /// hypervisor type of the cluster: XenServer,KVM,VMware,Hyperv,BareMetal,Simulator,Ovm3
         /// </summary>
         public string Hypervisor {
             get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
@@ -71,6 +71,30 @@ namespace CloudStack.Net
         public string Guestvswitchtype {
             get { return (string) Parameters[nameof(Guestvswitchtype).ToLower()]; }
             set { Parameters[nameof(Guestvswitchtype).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// Ovm3 native OCFS2 clustering enabled for cluster
+        /// </summary>
+        public string Ovm3cluster {
+            get { return (string) Parameters[nameof(Ovm3cluster).ToLower()]; }
+            set { Parameters[nameof(Ovm3cluster).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// Ovm3 native pooling enabled for cluster
+        /// </summary>
+        public string Ovm3pool {
+            get { return (string) Parameters[nameof(Ovm3pool).ToLower()]; }
+            set { Parameters[nameof(Ovm3pool).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// Ovm3 vip to use for pool (and cluster)
+        /// </summary>
+        public string Ovm3vip {
+            get { return (string) Parameters[nameof(Ovm3vip).ToLower()]; }
+            set { Parameters[nameof(Ovm3vip).ToLower()] = value; }
         }
 
         /// <summary>

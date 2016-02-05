@@ -49,6 +49,14 @@ namespace CloudStack.Net
             set { Parameters[nameof(DomainId).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// create affinity group for project
+        /// </summary>
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
+
     }
     /// <summary>
     /// Creates an affinity/anti-affinity group

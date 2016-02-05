@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public ListNetworkOfferingsRequest() : base("listNetworkOfferings") {}
 
         /// <summary>
-        /// the availability of network offering. Default value is Required
+        /// the availability of network offering. Default value is required
         /// </summary>
         public string Availability {
             get { return (string) Parameters[nameof(Availability).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network offerings by guest type: Shared or Isolated
+        /// list network offerings by guest type: shared or isolated
         /// </summary>
         public string GuestIpType {
             get { return (string) Parameters[nameof(GuestIpType).ToLower()]; }
@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network offerings by id
+        /// list network offerings by ID
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -100,7 +100,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if need to list only netwok offerings where source nat is supported, false otherwise
+        /// true if need to list only netwok offerings where source NAT is supported, false otherwise
         /// </summary>
         public bool? SourceNatSupported {
             get { return (bool?) Parameters[nameof(SourceNatSupported).ToLower()]; }
@@ -156,7 +156,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list netowrk offerings available for network creation in specific zone
+        /// list network offerings available for network creation in specific zone
         /// </summary>
         public Guid ZoneId {
             get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }

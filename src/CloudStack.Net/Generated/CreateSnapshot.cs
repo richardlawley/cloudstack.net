@@ -34,6 +34,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// the name of the snapshot
+        /// </summary>
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// policy id of the snapshot, if this is null, then use MANUAL_POLICY.
         /// </summary>
         public Guid PolicyId {

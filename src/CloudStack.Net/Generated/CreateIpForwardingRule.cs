@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public CreateIpForwardingRuleRequest() : base("createIpForwardingRule") {}
 
         /// <summary>
-        /// the public IP address id of the forwarding rule, already associated via associateIp
+        /// the public IP address ID of the forwarding rule, already associated via associateIp
         /// </summary>
         public Guid IpAddressId {
             get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the cidr list to forward traffic from
+        /// the CIDR list to forward traffic from
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// if true, firewall rule for source/end pubic port is automatically created; if false - firewall rule has to be created explicitely. Has value true by default
+        /// if true, firewall rule for source/end public port is automatically created; if false - firewall rule has to be created explicitly. Has value true by default
         /// </summary>
         public bool? OpenFirewall {
             get { return (bool?) Parameters[nameof(OpenFirewall).ToLower()]; }
@@ -59,7 +59,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Creates an ip forwarding rule
+    /// Creates an IP forwarding rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public ListSslCertsRequest() : base("listSslCerts") {}
 
         /// <summary>
-        /// Account Id
+        /// Account ID
         /// </summary>
         public Guid AccountId {
             get { return (Guid) Parameters[nameof(AccountId).ToLower()]; }
@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Id of SSL certificate
+        /// ID of SSL certificate
         /// </summary>
         public Guid CertId {
             get { return (Guid) Parameters[nameof(CertId).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Loadbalancer Rule Id
+        /// Load balancer rule ID
         /// </summary>
         public Guid Lbruleid {
             get { return (Guid) Parameters[nameof(Lbruleid).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// project who owns the ssl cert
+        /// Project that owns the SSL certificate
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }

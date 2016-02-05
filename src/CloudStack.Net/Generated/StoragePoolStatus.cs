@@ -13,6 +13,7 @@ namespace CloudStack.Net
         ErrorInMaintenance,
         CancelMaintenance,
         Maintenance,
+        Disabled,
         Removed,
     }
 }

@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public DeleteLBHealthCheckPolicyRequest() : base("deleteLBHealthCheckPolicy") {}
 
         /// <summary>
-        /// the ID of the load balancer HealthCheck policy
+        /// the ID of the load balancer health check policy
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Deletes a load balancer HealthCheck policy.
+    /// Deletes a load balancer health check policy.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates Network ACL list
+    /// Updates network ACL list
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

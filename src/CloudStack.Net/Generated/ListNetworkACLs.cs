@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACL Items by ACL Id
+        /// list network ACL items by ACL ID
         /// </summary>
         public Guid AclId {
             get { return (Guid) Parameters[nameof(AclId).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACL Items by Action
+        /// list network ACL items by action
         /// </summary>
         public string Action {
             get { return (string) Parameters[nameof(Action).ToLower()]; }
@@ -82,7 +82,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACL Items by network Id
+        /// list network ACL items by network ID
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -108,7 +108,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACL Items by Protocol
+        /// list network ACL items by protocol
         /// </summary>
         public string Protocol {
             get { return (string) Parameters[nameof(Protocol).ToLower()]; }
@@ -124,7 +124,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACL Items by traffic type - Ingress or Egress
+        /// list network ACL items by traffic type - ingress or egress
         /// </summary>
         public string TrafficType {
             get { return (string) Parameters[nameof(TrafficType).ToLower()]; }

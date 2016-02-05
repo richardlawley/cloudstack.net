@@ -38,12 +38,22 @@ namespace CloudStack.Net
         public string Name { get; set; }
 
         /// <summary>
+        /// the project name of the affinity group
+        /// </summary>
+        public string Project { get; set; }
+
+        /// <summary>
+        /// the project ID of the affinity group
+        /// </summary>
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// the type of the affinity group
         /// </summary>
         public string Type { get; set; }
 
         /// <summary>
-        /// virtual machine Ids associated with this affinity group 
+        /// virtual machine IDs associated with this affinity group
         /// </summary>
         public IList<string> VirtualmachineIds { get; set; }
 

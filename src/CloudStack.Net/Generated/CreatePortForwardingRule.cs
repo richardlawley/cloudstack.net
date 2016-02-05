@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the protocol for the port fowarding rule. Valid values are TCP or UDP.
+        /// the protocol for the port forwarding rule. Valid values are TCP or UDP.
         /// </summary>
         public string Protocol {
             get { return (string) Parameters[nameof(Protocol).ToLower()]; }

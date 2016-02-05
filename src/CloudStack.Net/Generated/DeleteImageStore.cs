@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public DeleteImageStoreRequest() : base("deleteImageStore") {}
 
         /// <summary>
-        /// the image store ID
+        /// The image store ID or Secondary Storage ID.
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Deletes an image store .
+    /// Deletes an image store or Secondary Storage.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

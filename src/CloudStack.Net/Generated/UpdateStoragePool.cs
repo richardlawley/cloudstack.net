@@ -34,6 +34,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// false to disable the pool for allocation of new volumes, true to enable it back.
+        /// </summary>
+        public bool? Enabled {
+            get { return (bool?) Parameters[nameof(Enabled).ToLower()]; }
+            set { Parameters[nameof(Enabled).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// comma-separated list of tags for the storage pool
         /// </summary>
         public IList<string> Tags {

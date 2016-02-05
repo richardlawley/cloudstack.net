@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Deletes a Network ACL
+    /// Deletes a network ACL
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

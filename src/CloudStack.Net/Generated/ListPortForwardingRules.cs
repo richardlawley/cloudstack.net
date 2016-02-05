@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the id of IP address of the port forwarding services
+        /// the ID of IP address of the port forwarding services
         /// </summary>
         public Guid IpAddressId {
             get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }

@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public EnableStaticNatRequest() : base("enableStaticNat") {}
 
         /// <summary>
-        /// the public IP address id for which static nat feature is being enabled
+        /// the public IP address ID for which static NAT feature is being enabled
         /// </summary>
         public Guid IpAddressId {
             get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the ID of the virtual machine for enabling static nat feature
+        /// the ID of the virtual machine for enabling static NAT feature
         /// </summary>
         public Guid VirtualMachineId {
             get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The network of the vm the static nat will be enabled for. Required when public Ip address is not associated with any Guest network yet (VPC case)
+        /// The network of the VM the static NAT will be enabled for. Required when public IP address is not associated with any guest network yet (VPC case)
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// VM guest nic Secondary ip address for the port forwarding rule
+        /// VM guest NIC secondary IP address for the port forwarding rule
         /// </summary>
         public string Vmguestip {
             get { return (string) Parameters[nameof(Vmguestip).ToLower()]; }
@@ -43,7 +43,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Enables static nat for given ip address
+    /// Enables static NAT for given IP address
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

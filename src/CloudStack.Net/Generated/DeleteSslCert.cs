@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Delete a certificate to cloudstack
+    /// Delete a certificate to CloudStack
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// name of the LB Stickiness policy method, possible values can be obtained from ListNetworks API 
+        /// name of the load balancer stickiness policy method, possible values can be obtained from listNetworks API
         /// </summary>
         public string Methodname {
             get { return (string) Parameters[nameof(Methodname).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// name of the LB Stickiness policy
+        /// name of the load balancer stickiness policy
         /// </summary>
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the description of the LB Stickiness policy
+        /// the description of the load balancer stickiness policy
         /// </summary>
         public string Description {
             get { return (string) Parameters[nameof(Description).ToLower()]; }
@@ -59,7 +59,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Creates a Load Balancer stickiness policy 
+    /// Creates a load balancer stickiness policy 
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

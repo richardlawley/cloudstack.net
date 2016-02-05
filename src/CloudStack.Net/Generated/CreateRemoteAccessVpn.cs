@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// if true, firewall rule for source/end pubic port is automatically created; if false - firewall rule has to be created explicitely. Has value true by default
+        /// if true, firewall rule for source/end public port is automatically created; if false - firewall rule has to be created explicitely. Has value true by default
         /// </summary>
         public bool? OpenFirewall {
             get { return (bool?) Parameters[nameof(OpenFirewall).ToLower()]; }

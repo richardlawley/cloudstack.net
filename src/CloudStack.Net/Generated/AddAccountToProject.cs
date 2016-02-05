@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public AddAccountToProjectRequest() : base("addAccountToProject") {}
 
         /// <summary>
-        /// id of the project to add the account to
+        /// ID of the project to add the account to
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Adds acoount to a project
+    /// Adds account to a project
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

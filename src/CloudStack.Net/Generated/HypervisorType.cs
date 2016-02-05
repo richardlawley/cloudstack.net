@@ -14,6 +14,7 @@ namespace CloudStack.Net
         BareMetal,
         Simulator,
         Ovm,
+        Ovm3,
         LXC,
         Any,
     }

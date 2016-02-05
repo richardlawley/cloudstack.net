@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list networks by ACL (access control list) type. Supported values are Account and Domain
+        /// list networks by ACL (access control list) type. Supported values are account and domain
         /// </summary>
         public string AclType {
             get { return (string) Parameters[nameof(AclType).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list networks available for vm deployment
+        /// list networks available for VM deployment
         /// </summary>
         public bool? CanUseForDeploy {
             get { return (bool?) Parameters[nameof(CanUseForDeploy).ToLower()]; }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the network belongs to vpc
+        /// the network belongs to VPC
         /// </summary>
         public bool? ForVpc {
             get { return (bool?) Parameters[nameof(ForVpc).ToLower()]; }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list networks by id
+        /// list networks by ID
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -132,7 +132,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if need to list only networks which support specifying ip ranges
+        /// true if need to list only networks which support specifying IP ranges
         /// </summary>
         public bool? SpecifyIpRanges {
             get { return (bool?) Parameters[nameof(SpecifyIpRanges).ToLower()]; }
@@ -164,7 +164,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the type of the network. Supported values are: Isolated and Shared
+        /// the type of the network. Supported values are: isolated and shared
         /// </summary>
         public string Type {
             get { return (string) Parameters[nameof(Type).ToLower()]; }
@@ -180,7 +180,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the Zone ID of the network
+        /// the zone ID of the network
         /// </summary>
         public Guid ZoneId {
             get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }

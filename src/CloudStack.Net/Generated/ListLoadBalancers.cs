@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the ID of the Load Balancer
+        /// the ID of the load balancer
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the name of the Load Balancer
+        /// the name of the load balancer
         /// </summary>
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the network id of the Load Balancer
+        /// the network ID of the load balancer
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -100,7 +100,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the scheme of the Load Balancer. Supported value is Internal in the current release
+        /// the scheme of the load balancer. Supported value is internal in the current release
         /// </summary>
         public string Scheme {
             get { return (string) Parameters[nameof(Scheme).ToLower()]; }
@@ -108,7 +108,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the source ip address of the Load Balancer
+        /// the source IP address of the load balancer
         /// </summary>
         public string Sourceipaddress {
             get { return (string) Parameters[nameof(Sourceipaddress).ToLower()]; }
@@ -116,7 +116,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the network id of the source ip address
+        /// the network ID of the source IP address
         /// </summary>
         public Guid Sourceipaddressnetworkid {
             get { return (Guid) Parameters[nameof(Sourceipaddressnetworkid).ToLower()]; }
@@ -133,7 +133,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Lists Load Balancers
+    /// Lists load balancers
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

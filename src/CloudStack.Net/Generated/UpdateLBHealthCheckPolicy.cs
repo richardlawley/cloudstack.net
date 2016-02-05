@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public UpdateLBHealthCheckPolicyRequest() : base("updateLBHealthCheckPolicy") {}
 
         /// <summary>
-        /// id of lb healthcheck policy
+        /// ID of load balancer health check policy
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates LB HealthCheck policy
+    /// Updates load balancer health check policy
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

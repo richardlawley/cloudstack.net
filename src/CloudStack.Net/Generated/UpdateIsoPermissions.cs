@@ -67,7 +67,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates iso permissions
+    /// Updates ISO permissions
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

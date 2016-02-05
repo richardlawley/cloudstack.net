@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Template details in key/value pairs.
+        /// Template details in key/value pairs using format details[i].keyname=keyvalue. Example: details[0].hypervisortoolsversion=xenserver61
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
@@ -79,6 +79,14 @@ namespace CloudStack.Net
         public bool? PasswordEnabled {
             get { return (bool?) Parameters[nameof(PasswordEnabled).ToLower()]; }
             set { Parameters[nameof(PasswordEnabled).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// create template for the project
+        /// </summary>
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
         }
 
         /// <summary>

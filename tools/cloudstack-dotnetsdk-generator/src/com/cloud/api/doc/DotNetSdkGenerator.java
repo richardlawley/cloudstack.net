@@ -308,6 +308,10 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
             return isRequired ? "DateTime" : "DateTime?";
         case "tzdate":
             return isRequired ? "DateTimeOffset" : "DateTimeOffset?";
+        case "bigdecimal":
+            return isRequired ? "decimal" : "decimal?";
+        case "url":
+            return "string";
         }
 
         return null;

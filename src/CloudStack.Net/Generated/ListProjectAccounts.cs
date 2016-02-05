@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public ListProjectAccountsRequest() : base("listProjectAccounts") {}
 
         /// <summary>
-        /// id of the project
+        /// ID of the project
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }

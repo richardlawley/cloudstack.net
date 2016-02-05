@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public UpdateIpAddressRequest() : base("updateIpAddress") {}
 
         /// <summary>
-        /// the id of the public ip address to update
+        /// the ID of the public IP address to update
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// an optional field, whether to the display the ip to the end user or not
+        /// an optional field, whether to the display the IP to the end user or not
         /// </summary>
         public bool? Fordisplay {
             get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates an ip address
+    /// Updates an IP address
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

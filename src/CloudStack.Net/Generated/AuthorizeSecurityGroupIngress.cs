@@ -82,7 +82,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The name of the security group. Mutually exclusive with securityGroupName parameter
+        /// The name of the security group. Mutually exclusive with securityGroupId parameter
         /// </summary>
         public string SecurityGroupName {
             get { return (string) Parameters[nameof(SecurityGroupName).ToLower()]; }

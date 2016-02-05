@@ -34,6 +34,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// The network name of the physical device dedicated to this traffic on an OVM3 host
+        /// </summary>
+        public string Ovm3networklabel {
+            get { return (string) Parameters[nameof(Ovm3networklabel).ToLower()]; }
+            set { Parameters[nameof(Ovm3networklabel).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a VMware host
         /// </summary>
         public string Vmwarenetworklabel {

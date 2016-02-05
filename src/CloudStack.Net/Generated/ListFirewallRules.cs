@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the id of IP address of the firwall services
+        /// the ID of IP address of the firewall services
         /// </summary>
         public Guid IpAddressId {
             get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list firewall rules for ceratin network
+        /// list firewall rules for certain network
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }

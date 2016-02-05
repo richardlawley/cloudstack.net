@@ -5,9 +5,9 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class AddS3Request : APIRequest
+    public class AddImageStoreS3Request : APIRequest
     {
-        public AddS3Request() : base("addS3") {}
+        public AddImageStoreS3Request() : base("addImageStoreS3") {}
 
         /// <summary>
         /// S3 access key
@@ -18,11 +18,19 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// name of the template storage bucket
+        /// Name of the storage bucket
         /// </summary>
         public string Bucket {
             get { return (string) Parameters[nameof(Bucket).ToLower()]; }
             set { Parameters[nameof(Bucket).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// S3 endpoint
+        /// </summary>
+        public string EndPoint {
+            get { return (string) Parameters[nameof(EndPoint).ToLower()]; }
+            set { Parameters[nameof(EndPoint).ToLower()] = value; }
         }
 
         /// <summary>
@@ -34,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// connection timeout (milliseconds)
+        /// Connection timeout (milliseconds)
         /// </summary>
         public int? ConnectionTimeout {
             get { return (int?) Parameters[nameof(ConnectionTimeout).ToLower()]; }
@@ -42,15 +50,15 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// S3 host name
+        /// Connection TTL (milliseconds)
         /// </summary>
-        public string EndPoint {
-            get { return (string) Parameters[nameof(EndPoint).ToLower()]; }
-            set { Parameters[nameof(EndPoint).ToLower()] = value; }
+        public int? ConnectionTtl {
+            get { return (int?) Parameters[nameof(ConnectionTtl).ToLower()]; }
+            set { Parameters[nameof(ConnectionTtl).ToLower()] = value; }
         }
 
         /// <summary>
-        /// maximum number of times to retry on error
+        /// Maximum number of times to retry on error
         /// </summary>
         public int? MaxErrorRetry {
             get { return (int?) Parameters[nameof(MaxErrorRetry).ToLower()]; }
@@ -58,7 +66,15 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// socket timeout (milliseconds)
+        /// Signer Algorithm to use, either S3SignerType or AWSS3V4SignerType
+        /// </summary>
+        public string S3signer {
+            get { return (string) Parameters[nameof(S3signer).ToLower()]; }
+            set { Parameters[nameof(S3signer).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// Socket timeout (milliseconds)
         /// </summary>
         public int? SocketTimeout {
             get { return (int?) Parameters[nameof(SocketTimeout).ToLower()]; }
@@ -66,23 +82,31 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// connect to the S3 endpoint via HTTPS?
+        /// Use HTTPS instead of HTTP
         /// </summary>
         public bool? Usehttps {
             get { return (bool?) Parameters[nameof(Usehttps).ToLower()]; }
             set { Parameters[nameof(Usehttps).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// Whether TCP keep-alive is used
+        /// </summary>
+        public bool? UseTCPKeepAlive {
+            get { return (bool?) Parameters[nameof(UseTCPKeepAlive).ToLower()]; }
+            set { Parameters[nameof(UseTCPKeepAlive).ToLower()] = value; }
+        }
+
     }
     /// <summary>
-    /// Adds S3
+    /// Adds S3 Image Store
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ImageStoreResponse AddS3(AddS3Request request);
+        ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ImageStoreResponse AddS3(AddS3Request request) => _proxy.Request<ImageStoreResponse>(request);
+        public ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request) => _proxy.Request<ImageStoreResponse>(request);
     }
 }

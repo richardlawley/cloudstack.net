@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Deletes a LB stickiness policy.
+    /// Deletes a load balancer stickiness policy.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

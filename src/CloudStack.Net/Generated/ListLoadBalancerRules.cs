@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list by network id the rule belongs to
+        /// list by network ID the rule belongs to
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -100,7 +100,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the public IP address id of the load balancer rule 
+        /// the public IP address ID of the load balancer rule
         /// </summary>
         public Guid PublicIpId {
             get { return (Guid) Parameters[nameof(PublicIpId).ToLower()]; }

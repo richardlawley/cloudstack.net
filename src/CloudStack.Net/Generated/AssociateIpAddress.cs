@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// an optional field, whether to the display the ip to the end user or not
+        /// an optional field, whether to the display the IP to the end user or not
         /// </summary>
         public bool? Fordisplay {
             get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The network this ip address should be associated to.
+        /// The network this IP address should be associated to.
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Deploy vm for the project
+        /// Deploy VM for the project
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// region ID from where portable ip is to be associated.
+        /// region ID from where portable IP is to be associated.
         /// </summary>
         public int? RegionId {
             get { return (int?) Parameters[nameof(RegionId).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the VPC you want the ip address to be associated with
+        /// the VPC you want the IP address to be associated with
         /// </summary>
         public Guid VpcId {
             get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }

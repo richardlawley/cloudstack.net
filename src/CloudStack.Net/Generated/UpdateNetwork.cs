@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Force update even if cidr type is different
+        /// Force update even if CIDR type is different
         /// </summary>
         public bool? ChangeCidr {
             get { return (bool?) Parameters[nameof(ChangeCidr).ToLower()]; }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// CIDR for Guest VMs,Cloudstack allocates IPs to Guest VMs only from this CIDR
+        /// CIDR for guest VMs, CloudStack allocates IPs to guest VMs only from this CIDR
         /// </summary>
         public string GuestVmCidr {
             get { return (string) Parameters[nameof(GuestVmCidr).ToLower()]; }

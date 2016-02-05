@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Removes a certificate from a Load Balancer Rule
+    /// Removes a certificate from a load balancer rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

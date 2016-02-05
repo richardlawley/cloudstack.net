@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// id of the project to remove the account from
+        /// ID of the project to remove the account from
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }

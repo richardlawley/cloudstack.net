@@ -19,7 +19,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Deletes an ggress firewall rule
+    /// Deletes an egress firewall rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

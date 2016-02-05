@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if lb rule vm ip information to be included; default is false
+        /// true if load balancer rule VM IP information to be included; default is false
         /// </summary>
         public bool? Lbvmips {
             get { return (bool?) Parameters[nameof(Lbvmips).ToLower()]; }

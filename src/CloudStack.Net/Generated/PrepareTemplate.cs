@@ -25,6 +25,14 @@ namespace CloudStack.Net
             set { Parameters[nameof(ZoneId).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// storage pool ID of the primary storage pool to which the template should be prepared. If it is not provided the template is prepared on all the available primary storage pools.
+        /// </summary>
+        public Guid StorageId {
+            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
+            set { Parameters[nameof(StorageId).ToLower()] = value; }
+        }
+
     }
     /// <summary>
     /// load template into primary storage

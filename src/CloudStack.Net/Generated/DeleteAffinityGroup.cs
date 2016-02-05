@@ -34,11 +34,19 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The name of the affinity group. Mutually exclusive with id parameter
+        /// The name of the affinity group. Mutually exclusive with ID parameter
         /// </summary>
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
             set { Parameters[nameof(Name).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// the project of the affinity group
+        /// </summary>
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
         }
 
     }

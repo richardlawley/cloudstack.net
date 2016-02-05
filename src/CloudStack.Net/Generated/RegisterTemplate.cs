@@ -90,7 +90,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Template details in key/value pairs.
+        /// Template details in key/value pairs using format details[i].keyname=keyvalue. Example: details[0].hypervisortoolsversion=xenserver61
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
@@ -187,7 +187,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Registers an existing template into the CloudStack cloud. 
+    /// Registers an existing template into the CloudStack cloud.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

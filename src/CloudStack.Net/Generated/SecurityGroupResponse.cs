@@ -48,6 +48,16 @@ namespace CloudStack.Net
         public string ProjectId { get; set; }
 
         /// <summary>
+        /// the number of virtualmachines associated with this securitygroup
+        /// </summary>
+        public int VirtualMachineCount { get; set; }
+
+        /// <summary>
+        /// the list of virtualmachine ids associated with this securitygroup
+        /// </summary>
+        public IList<string> VirtualMachineIds { get; set; }
+
+        /// <summary>
         /// the list of egress rules associated with the security group
         /// </summary>
         public IList<SecurityGroupRuleResponse> Egressrule { get; set; }

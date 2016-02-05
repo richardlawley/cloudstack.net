@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the url to which the ISO would be extracted
+        /// the URL to which the ISO would be extracted
         /// </summary>
         public string Url {
             get { return (string) Parameters[nameof(Url).ToLower()]; }

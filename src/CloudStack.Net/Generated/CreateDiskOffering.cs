@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// size of the disk offering in GB
+        /// size of the disk offering in GB (1GB = 1,073,741,824 bytes)
         /// </summary>
         public long? DiskSize {
             get { return (long?) Parameters[nameof(DiskSize).ToLower()]; }

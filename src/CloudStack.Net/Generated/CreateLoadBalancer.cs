@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// name of the Load Balancer
+        /// name of the load balancer
         /// </summary>
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The guest network the Load Balancer will be created for
+        /// The guest network the load balancer will be created for
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the description of the Load Balancer
+        /// the description of the load balancer
         /// </summary>
         public string Description {
             get { return (string) Parameters[nameof(Description).ToLower()]; }
@@ -82,7 +82,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the source ip address the network traffic will be load balanced from
+        /// the source IP address the network traffic will be load balanced from
         /// </summary>
         public string Sourceipaddress {
             get { return (string) Parameters[nameof(Sourceipaddress).ToLower()]; }
@@ -91,7 +91,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Creates a Load Balancer
+    /// Creates a load balancer
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

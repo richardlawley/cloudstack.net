@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list accounts by cleanuprequred attribute (values are true or false)
+        /// list accounts by cleanuprequired attribute (values are true or false)
         /// </summary>
         public bool? Iscleanuprequired {
             get { return (bool?) Parameters[nameof(Iscleanuprequired).ToLower()]; }

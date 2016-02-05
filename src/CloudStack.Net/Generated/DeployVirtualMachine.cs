@@ -234,7 +234,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if network offering supports specifying ip ranges; defaulted to true if not specified
+        /// true if start vm after creating; defaulted to true if not specified
         /// </summary>
         public bool? StartVm {
             get { return (bool?) Parameters[nameof(StartVm).ToLower()]; }

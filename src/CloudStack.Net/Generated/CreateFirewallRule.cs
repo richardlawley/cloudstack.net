@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the cidr list to forward traffic from
+        /// the CIDR list to forward traffic from
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// type of the icmp message being sent
+        /// type of the ICMP message being sent
         /// </summary>
         public int? IcmpType {
             get { return (int?) Parameters[nameof(IcmpType).ToLower()]; }
@@ -83,7 +83,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Creates a firewall rule for a given ip address
+    /// Creates a firewall rule for a given IP address
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

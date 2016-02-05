@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the private port of the private ip address/virtual machine where the network traffic will be load balanced to
+        /// the private port of the private IP address/virtual machine where the network traffic will be load balanced to
         /// </summary>
         public int PrivatePort {
             get { return (int) Parameters[nameof(PrivatePort).ToLower()]; }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the cidr list to forward traffic from
+        /// the CIDR list to forward traffic from
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
@@ -90,7 +90,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// if true, firewall rule for source/end pubic port is automatically created; if false - firewall rule has to be created explicitely. If not specified 1) defaulted to false when LB rule is being created for VPC guest network 2) in all other cases defaulted to true
+        /// if true, firewall rule for source/end public port is automatically created; if false - firewall rule has to be created explicitely. If not specified 1) defaulted to false when LB rule is being created for VPC guest network 2) in all other cases defaulted to true
         /// </summary>
         public bool? OpenFirewall {
             get { return (bool?) Parameters[nameof(OpenFirewall).ToLower()]; }
@@ -106,7 +106,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// public ip address id from where the network traffic will be load balanced from
+        /// public IP address ID from where the network traffic will be load balanced from
         /// </summary>
         public Guid PublicIpId {
             get { return (Guid) Parameters[nameof(PublicIpId).ToLower()]; }

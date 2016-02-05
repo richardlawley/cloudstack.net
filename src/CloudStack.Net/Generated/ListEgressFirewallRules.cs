@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the id of IP address of the firwall services
+        /// the ID of IP address of the firewall services
         /// </summary>
         public Guid IpAddressId {
             get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the id network network for the egress firwall services
+        /// the network ID for the egress firewall services
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -109,7 +109,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Lists all egress firewall rules for network id.
+    /// Lists all egress firewall rules for network ID.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

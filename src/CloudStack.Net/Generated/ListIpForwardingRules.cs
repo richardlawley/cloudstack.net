@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list the rule belonging to this public ip address
+        /// list the rule belonging to this public IP address
         /// </summary>
         public Guid Ipaddressid {
             get { return (Guid) Parameters[nameof(Ipaddressid).ToLower()]; }
@@ -84,7 +84,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Lists all rules applied to the specified Vm.
+        /// Lists all rules applied to the specified VM.
         /// </summary>
         public Guid Virtualmachineid {
             get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
@@ -93,7 +93,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// List the ip forwarding rules
+    /// List the IP forwarding rules
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

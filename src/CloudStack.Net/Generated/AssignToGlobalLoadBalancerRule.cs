@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the list load balancer rules that will be assigned to gloabal load balacner rule
+        /// the list load balancer rules that will be assigned to global load balancer rule
         /// </summary>
         public IList<Guid> Loadbalancerrulelist {
             get { return GetList<Guid>(nameof(Loadbalancerrulelist).ToLower()); }

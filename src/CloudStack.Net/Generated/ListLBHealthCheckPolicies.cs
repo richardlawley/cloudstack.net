@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the ID of the healthcheck policy
+        /// the ID of the health check policy
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -53,7 +53,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Lists load balancer HealthCheck policies.
+    /// Lists load balancer health check policies.
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

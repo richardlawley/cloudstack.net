@@ -48,6 +48,11 @@ namespace CloudStack.Net
         public string Name { get; set; }
 
         /// <summary>
+        /// Ovm3 VIP to use for pooling and/or clustering
+        /// </summary>
+        public string Ovm3vip { get; set; }
+
+        /// <summary>
         /// the Pod ID of the cluster
         /// </summary>
         public string PodId { get; set; }

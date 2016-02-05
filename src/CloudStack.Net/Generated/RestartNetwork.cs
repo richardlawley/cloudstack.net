@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public RestartNetworkRequest() : base("restartNetwork") {}
 
         /// <summary>
-        /// The id of the network to restart.
+        /// The ID of the network to restart.
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -27,7 +27,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Restarts the network; includes 1) restarting network elements - virtual routers, dhcp servers 2) reapplying all public ips 3) reapplying loadBalancing/portForwarding rules
+    /// Restarts the network; includes 1) restarting network elements - virtual routers, DHCP servers 2) reapplying all public IPs 3) reapplying loadBalancing/portForwarding rules
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

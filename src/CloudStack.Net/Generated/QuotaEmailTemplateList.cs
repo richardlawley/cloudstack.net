@@ -5,9 +5,9 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListS3sRequest : APIRequest
+    public class QuotaEmailTemplateListRequest : APIRequest
     {
-        public ListS3sRequest() : base("listS3s") {}
+        public QuotaEmailTemplateListRequest() : base("quotaEmailTemplateList") {}
 
         /// <summary>
         /// List by keyword
@@ -27,16 +27,24 @@ namespace CloudStack.Net
             set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// List by type of the quota email template, allowed types: QUOTA_LOW, QUOTA_EMPTY
+        /// </summary>
+        public string Templatetype {
+            get { return (string) Parameters[nameof(Templatetype).ToLower()]; }
+            set { Parameters[nameof(Templatetype).ToLower()] = value; }
+        }
+
     }
     /// <summary>
-    /// Lists S3s
+    /// Lists all quota email templates
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ListResponse<ImageStoreResponse> ListS3s(ListS3sRequest request);
+        ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateList(QuotaEmailTemplateListRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<ImageStoreResponse> ListS3s(ListS3sRequest request) => _proxy.Request<ListResponse<ImageStoreResponse>>(request);
+        public ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateList(QuotaEmailTemplateListRequest request) => _proxy.Request<ListResponse<QuotaEmailTemplateResponse>>(request);
     }
 }

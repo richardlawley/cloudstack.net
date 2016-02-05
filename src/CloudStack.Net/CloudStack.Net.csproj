@@ -51,6 +51,7 @@
     <Compile Include="CloudStackAPIProxy.cs" />
     <Compile Include="CloudStackException.cs" />
     <Compile Include="Generated\AccountResponse.cs" />
+    <Compile Include="Generated\AccountState.cs" />
     <Compile Include="Generated\ActivateProject.cs" />
     <Compile Include="Generated\AddAccountToProject.cs" />
     <Compile Include="Generated\AddBaremetalDhcp.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="Generated\AddBaremetalPxeKickStartServer.cs" />
     <Compile Include="Generated\AddBaremetalPxePingServer.cs" />
     <Compile Include="Generated\AddBaremetalRct.cs" />
-    <Compile Include="Generated\AddBigSwitchVnsDevice.cs" />
+    <Compile Include="Generated\AddBigSwitchBcfDevice.cs" />
     <Compile Include="Generated\AddBrocadeVcsDevice.cs" />
     <Compile Include="Generated\AddCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\AddCiscoVnmcResource.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Generated\AddGuestOsMapping.cs" />
     <Compile Include="Generated\AddHost.cs" />
     <Compile Include="Generated\AddImageStore.cs" />
+    <Compile Include="Generated\AddImageStoreS3.cs" />
     <Compile Include="Generated\AddIpToNic.cs" />
     <Compile Include="Generated\AddLdapConfiguration.cs" />
     <Compile Include="Generated\AddNetscalerLoadBalancer.cs" />
@@ -83,7 +85,6 @@
     <Compile Include="Generated\AddPaloAltoFirewall.cs" />
     <Compile Include="Generated\AddRegion.cs" />
     <Compile Include="Generated\AddResourceDetail.cs" />
-    <Compile Include="Generated\AddS3.cs" />
     <Compile Include="Generated\AddSecondaryStorage.cs" />
     <Compile Include="Generated\AddSrxFirewall.cs" />
     <Compile Include="Generated\AddStratosphereSsp.cs" />
@@ -131,7 +132,7 @@
     <Compile Include="Generated\BaremetalPxeResponse.cs" />
     <Compile Include="Generated\BaremetalRctResponse.cs" />
     <Compile Include="Generated\BaseResponse.cs" />
-    <Compile Include="Generated\BigSwitchVnsDeviceResponse.cs" />
+    <Compile Include="Generated\BigSwitchBcfDeviceResponse.cs" />
     <Compile Include="Generated\BrocadeVcsDeviceResponse.cs" />
     <Compile Include="Generated\CancelHostMaintenance.cs" />
     <Compile Include="Generated\CancelStorageMaintenance.cs" />
@@ -238,7 +239,7 @@
     <Compile Include="Generated\DeleteAutoScaleVmGroup.cs" />
     <Compile Include="Generated\DeleteAutoScaleVmProfile.cs" />
     <Compile Include="Generated\DeleteBaremetalRct.cs" />
-    <Compile Include="Generated\DeleteBigSwitchVnsDevice.cs" />
+    <Compile Include="Generated\DeleteBigSwitchBcfDevice.cs" />
     <Compile Include="Generated\DeleteBrocadeVcsDevice.cs" />
     <Compile Include="Generated\DeleteCiscoAsa1000vResource.cs" />
     <Compile Include="Generated\DeleteCiscoNexusVSM.cs" />
@@ -363,6 +364,9 @@
     <Compile Include="Generated\GetSolidFireVolumeIscsiName.cs" />
     <Compile Include="Generated\GetSolidFireVolumeSize.cs" />
     <Compile Include="Generated\GetSPMetadata.cs" />
+    <Compile Include="Generated\GetUploadParamsForTemplate.cs" />
+    <Compile Include="Generated\GetUploadParamsForVolume.cs" />
+    <Compile Include="Generated\GetUploadParamsResponse.cs" />
     <Compile Include="Generated\GetUser.cs" />
     <Compile Include="Generated\GetVirtualMachineUserData.cs" />
     <Compile Include="Generated\GetVMPassword.cs" />
@@ -395,6 +399,8 @@
     <Compile Include="Generated\LdapConfigurationResponse.cs" />
     <Compile Include="Generated\LdapCreateAccount.cs" />
     <Compile Include="Generated\LdapUserResponse.cs" />
+    <Compile Include="Generated\LinkDomainToLdap.cs" />
+    <Compile Include="Generated\LinkDomainToLdapResponse.cs" />
     <Compile Include="Generated\ListAccounts.cs" />
     <Compile Include="Generated\ListAffinityGroups.cs" />
     <Compile Include="Generated\ListAffinityGroupTypes.cs" />
@@ -408,7 +414,7 @@
     <Compile Include="Generated\ListBaremetalDhcp.cs" />
     <Compile Include="Generated\ListBaremetalPxeServers.cs" />
     <Compile Include="Generated\ListBaremetalRct.cs" />
-    <Compile Include="Generated\ListBigSwitchVnsDevices.cs" />
+    <Compile Include="Generated\ListBigSwitchBcfDevices.cs" />
     <Compile Include="Generated\ListBrocadeVcsDeviceNetworks.cs" />
     <Compile Include="Generated\ListBrocadeVcsDevices.cs" />
     <Compile Include="Generated\ListCapabilities.cs" />
@@ -494,7 +500,6 @@
     <Compile Include="Generated\ListResourceDetails.cs" />
     <Compile Include="Generated\ListResourceLimits.cs" />
     <Compile Include="Generated\ListRouters.cs" />
-    <Compile Include="Generated\ListS3s.cs" />
     <Compile Include="Generated\ListSamlAuthorization.cs" />
     <Compile Include="Generated\ListSecondaryStagingStores.cs" />
     <Compile Include="Generated\ListSecurityGroups.cs" />
@@ -581,6 +586,23 @@
     <Compile Include="Generated\ProjectResponse.cs" />
     <Compile Include="Generated\ProviderResponse.cs" />
     <Compile Include="Generated\QueryAsyncJobResult.cs" />
+    <Compile Include="Generated\QuotaBalance.cs" />
+    <Compile Include="Generated\QuotaCredits.cs" />
+    <Compile Include="Generated\QuotaCreditsResponse.cs" />
+    <Compile Include="Generated\QuotaEmailTemplateList.cs" />
+    <Compile Include="Generated\QuotaEmailTemplateResponse.cs" />
+    <Compile Include="Generated\QuotaEmailTemplateUpdate.cs" />
+    <Compile Include="Generated\QuotaEnabledResponse.cs" />
+    <Compile Include="Generated\QuotaIsEnabled.cs" />
+    <Compile Include="Generated\QuotaStatement.cs" />
+    <Compile Include="Generated\QuotaStatementItemResponse.cs" />
+    <Compile Include="Generated\QuotaSummary.cs" />
+    <Compile Include="Generated\QuotaSummaryResponse.cs" />
+    <Compile Include="Generated\QuotaTariffList.cs" />
+    <Compile Include="Generated\QuotaTariffResponse.cs" />
+    <Compile Include="Generated\QuotaTariffUpdate.cs" />
+    <Compile Include="Generated\QuotaUpdate.cs" />
+    <Compile Include="Generated\QuotaUpdateResponse.cs" />
     <Compile Include="Generated\RebootRouter.cs" />
     <Compile Include="Generated\RebootSystemVm.cs" />
     <Compile Include="Generated\RebootVirtualMachine.cs" />
@@ -607,6 +629,7 @@
     <Compile Include="Generated\RemoveGuestOsMapping.cs" />
     <Compile Include="Generated\RemoveIpFromNic.cs" />
     <Compile Include="Generated\RemoveNicFromVirtualMachine.cs" />
+    <Compile Include="Generated\RemoveRawUsageRecords.cs" />
     <Compile Include="Generated\RemoveRegion.cs" />
     <Compile Include="Generated\RemoveResourceDetail.cs" />
     <Compile Include="Generated\RemoveVmwareDc.cs" />
@@ -707,6 +730,7 @@
     <Compile Include="Generated\UpdateNetworkACLList.cs" />
     <Compile Include="Generated\UpdateNetworkOffering.cs" />
     <Compile Include="Generated\UpdateNetworkServiceProvider.cs" />
+    <Compile Include="Generated\UpdateNuageVspDevice.cs" />
     <Compile Include="Generated\UpdatePhysicalNetwork.cs" />
     <Compile Include="Generated\UpdatePod.cs" />
     <Compile Include="Generated\UpdatePortForwardingRule.cs" />
@@ -726,6 +750,7 @@
     <Compile Include="Generated\UpdateUser.cs" />
     <Compile Include="Generated\UpdateVirtualMachine.cs" />
     <Compile Include="Generated\UpdateVMAffinityGroup.cs" />
+    <Compile Include="Generated\UpdateVmNicIp.cs" />
     <Compile Include="Generated\UpdateVolume.cs" />
     <Compile Include="Generated\UpdateVPC.cs" />
     <Compile Include="Generated\UpdateVPCOffering.cs" />

@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list only ips used for load balancing
+        /// list only IPs used for load balancing
         /// </summary>
         public bool? ForLoadBalancing {
             get { return (bool?) Parameters[nameof(ForLoadBalancing).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// lists ip address by id
+        /// lists IP address by ID
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -90,7 +90,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list only source nat ip addresses
+        /// list only source NAT IP addresses
         /// </summary>
         public bool? IsSourceNat {
             get { return (bool?) Parameters[nameof(IsSourceNat).ToLower()]; }
@@ -98,7 +98,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list only static nat ip addresses
+        /// list only static NAT IP addresses
         /// </summary>
         public bool? IsStaticNat {
             get { return (bool?) Parameters[nameof(IsStaticNat).ToLower()]; }
@@ -132,7 +132,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// lists all public IP addresses by physical network id
+        /// lists all public IP addresses by physical network ID
         /// </summary>
         public Guid PhysicalNetworkId {
             get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
@@ -172,7 +172,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// List ips belonging to the VPC
+        /// List IPs belonging to the VPC
         /// </summary>
         public Guid VpcId {
             get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
@@ -180,7 +180,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// lists all public IP addresses by Zone ID
+        /// lists all public IP addresses by zone ID
         /// </summary>
         public Guid ZoneId {
             get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }

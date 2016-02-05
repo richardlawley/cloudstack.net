@@ -20,7 +20,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the ending port of firewall rule's port range
         /// </summary>
-        public string EndPort { get; set; }
+        public int EndPort { get; set; }
 
         /// <summary>
         /// is rule for display to the regular user
@@ -60,7 +60,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the starting port of firewall rule's port range
         /// </summary>
-        public string StartPort { get; set; }
+        public int StartPort { get; set; }
 
         /// <summary>
         /// the state of the rule

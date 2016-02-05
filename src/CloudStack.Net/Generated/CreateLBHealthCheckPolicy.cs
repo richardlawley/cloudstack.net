@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the description of the load balancer HealthCheck policy
+        /// the description of the load balancer health check policy
         /// </summary>
         public string Description {
             get { return (string) Parameters[nameof(Description).ToLower()]; }
@@ -50,7 +50,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// HTTP Ping Path
+        /// HTTP ping path
         /// </summary>
         public string PingPath {
             get { return (string) Parameters[nameof(PingPath).ToLower()]; }
@@ -75,7 +75,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Creates a Load Balancer healthcheck policy 
+    /// Creates a load balancer health check policy
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -13,6 +13,16 @@ namespace CloudStack.Net
         public bool Allowusercreateprojects { get; set; }
 
         /// <summary>
+        /// true if the user can recover and expunge virtualmachines, false otherwise
+        /// </summary>
+        public bool AllowUserExpungeRecoverVM { get; set; }
+
+        /// <summary>
+        /// true if the user is allowed to view destroyed virtualmachines, false otherwise
+        /// </summary>
+        public bool AllowUserViewDestroyedVM { get; set; }
+
+        /// <summary>
         /// time interval (in seconds) to reset api count
         /// </summary>
         public int ApiLimitInterval { get; set; }

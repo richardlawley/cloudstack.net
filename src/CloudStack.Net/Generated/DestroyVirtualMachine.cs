@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// If true is passed, the vm is expunged immediately. False by default. Parameter can be passed to the call by ROOT/Domain admin only
+        /// If true is passed, the vm is expunged immediately. False by default.
         /// </summary>
         public bool? Expunge {
             get { return (bool?) Parameters[nameof(Expunge).ToLower()]; }

@@ -18,19 +18,19 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// account who will own the VLAN
-        /// </summary>
-        public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
-        }
-
-        /// <summary>
         /// domain ID of the account owning a VLAN
         /// </summary>
         public Guid DomainId {
             get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
             set { Parameters[nameof(DomainId).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// account who will own the VLAN
+        /// </summary>
+        public string Account {
+            get { return (string) Parameters[nameof(Account).ToLower()]; }
+            set { Parameters[nameof(Account).ToLower()] = value; }
         }
 
         /// <summary>

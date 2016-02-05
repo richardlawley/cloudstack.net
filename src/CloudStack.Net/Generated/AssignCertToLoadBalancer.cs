@@ -27,7 +27,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Assigns a certificate to a Load Balancer Rule
+    /// Assigns a certificate to a load balancer rule
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

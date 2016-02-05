@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list ISO by id
+        /// list ISO by ID
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -98,7 +98,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list all isos by name
+        /// list all ISOs by name
         /// </summary>
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }

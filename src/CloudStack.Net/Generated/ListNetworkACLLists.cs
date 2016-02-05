@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACLs by network Id
+        /// list network ACLs by network ID
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -100,7 +100,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list network ACLs by Vpc Id
+        /// list network ACLs by VPC ID
         /// </summary>
         public Guid VpcId {
             get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }

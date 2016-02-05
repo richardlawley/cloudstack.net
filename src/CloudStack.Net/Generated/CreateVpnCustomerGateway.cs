@@ -97,6 +97,14 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// create site-to-site VPN customer gateway for the project
+        /// </summary>
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
+
     }
     /// <summary>
     /// Creates site to site vpn customer gateway

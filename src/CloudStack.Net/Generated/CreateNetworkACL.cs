@@ -18,7 +18,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The network of the vm the ACL will be created for
+        /// The network of the VM the ACL will be created for
         /// </summary>
         public Guid AclId {
             get { return (Guid) Parameters[nameof(AclId).ToLower()]; }
@@ -34,7 +34,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the cidr list to allow traffic from/to
+        /// the CIDR list to allow traffic from/to
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// error code for this icmp message
+        /// error code for this ICMP message
         /// </summary>
         public int? IcmpCode {
             get { return (int?) Parameters[nameof(IcmpCode).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// type of the icmp message being sent
+        /// type of the ICMP message being sent
         /// </summary>
         public int? IcmpType {
             get { return (int?) Parameters[nameof(IcmpType).ToLower()]; }
@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The network of the vm the ACL will be created for
+        /// The network of the VM the ACL will be created for
         /// </summary>
         public Guid NetworkId {
             get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
@@ -82,7 +82,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// The network of the vm the ACL will be created for
+        /// The network of the VM the ACL will be created for
         /// </summary>
         public int? Number {
             get { return (int?) Parameters[nameof(Number).ToLower()]; }
@@ -98,7 +98,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the traffic type for the ACL,can be Ingress or Egress, defaulted to Ingress if not specified
+        /// the traffic type for the ACL,can be ingress or egress, defaulted to ingress if not specified
         /// </summary>
         public string TrafficType {
             get { return (string) Parameters[nameof(TrafficType).ToLower()]; }

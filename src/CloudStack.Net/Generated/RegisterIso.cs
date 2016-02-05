@@ -74,7 +74,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Image store uuid
+        /// Image store UUID
         /// </summary>
         public string ImageStoreUuid {
             get { return (string) Parameters[nameof(ImageStoreUuid).ToLower()]; }
@@ -82,7 +82,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if iso contains XS/VMWare tools inorder to support dynamic scaling of VM cpu/memory
+        /// true if ISO contains XS/VMWare tools inorder to support dynamic scaling of VM CPU/memory
         /// </summary>
         public bool? IsDynamicallyScalable {
             get { return (bool?) Parameters[nameof(IsDynamicallyScalable).ToLower()]; }
@@ -90,7 +90,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// true if the iso or its derivatives are extractable; default is false
+        /// true if the ISO or its derivatives are extractable; default is false
         /// </summary>
         public bool? Isextractable {
             get { return (bool?) Parameters[nameof(Isextractable).ToLower()]; }
@@ -114,7 +114,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// the ID of the OS Type that best represents the OS of this ISO. If the iso is bootable this parameter needs to be passed
+        /// the ID of the OS type that best represents the OS of this ISO. If the ISO is bootable this parameter needs to be passed
         /// </summary>
         public Guid OsTypeId {
             get { return (Guid) Parameters[nameof(OsTypeId).ToLower()]; }
@@ -122,7 +122,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Register iso for the project
+        /// Register ISO for the project
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }

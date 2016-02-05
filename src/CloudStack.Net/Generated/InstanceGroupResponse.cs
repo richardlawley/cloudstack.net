@@ -8,7 +8,7 @@ namespace CloudStack.Net
     public class InstanceGroupResponse
     {
         /// <summary>
-        /// the id of the instance group
+        /// the ID of the instance group
         /// </summary>
         public string Id { get; set; }
 
@@ -38,12 +38,12 @@ namespace CloudStack.Net
         public string Name { get; set; }
 
         /// <summary>
-        /// the project name of the group
+        /// the project name of the instance group
         /// </summary>
         public string Project { get; set; }
 
         /// <summary>
-        /// the project id of the group
+        /// the project ID of the instance group
         /// </summary>
         public string ProjectId { get; set; }
 

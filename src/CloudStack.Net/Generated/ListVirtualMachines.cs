@@ -114,6 +114,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// list vms by ssh keypair name
+        /// </summary>
+        public string Keypair {
+            get { return (string) Parameters[nameof(Keypair).ToLower()]; }
+            set { Parameters[nameof(Keypair).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
@@ -180,7 +188,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// state of the virtual machine
+        /// state of the virtual machine. Possible values are: Running, Stopped, Present, Destroyed, Expunged. Present is used for the state equal not destroyed.
         /// </summary>
         public string State {
             get { return (string) Parameters[nameof(State).ToLower()]; }
@@ -209,6 +217,14 @@ namespace CloudStack.Net
         public Guid TemplateId {
             get { return (Guid) Parameters[nameof(TemplateId).ToLower()]; }
             set { Parameters[nameof(TemplateId).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// the user ID that created the VM and is under the account that owns the VM
+        /// </summary>
+        public Guid UserId {
+            get { return (Guid) Parameters[nameof(UserId).ToLower()]; }
+            set { Parameters[nameof(UserId).ToLower()] = value; }
         }
 
         /// <summary>

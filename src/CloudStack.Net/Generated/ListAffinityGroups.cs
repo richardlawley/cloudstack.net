@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// list the affinity group by the id provided
+        /// list the affinity group by the ID provided
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -76,6 +76,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// list objects by project
+        /// </summary>
+        public Guid ProjectId {
+            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
+            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// lists affinity groups by type
         /// </summary>
         public string Type {
@@ -84,7 +92,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// lists affinity groups by virtual machine id
+        /// lists affinity groups by virtual machine ID
         /// </summary>
         public Guid VirtualMachineId {
             get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }

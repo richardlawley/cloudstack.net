@@ -10,7 +10,7 @@ namespace CloudStack.Net
         public UpdateNetworkACLItemRequest() : base("updateNetworkACLItem") {}
 
         /// <summary>
-        /// the ID of the network ACL Item
+        /// the ID of the network ACL item
         /// </summary>
         public Guid Id {
             get { return (Guid) Parameters[nameof(Id).ToLower()]; }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// error code for this icmp message
+        /// error code for this ICMP message
         /// </summary>
         public int? IcmpCode {
             get { return (int?) Parameters[nameof(IcmpCode).ToLower()]; }
@@ -66,7 +66,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// type of the icmp message being sent
+        /// type of the ICMP message being sent
         /// </summary>
         public int? IcmpType {
             get { return (int?) Parameters[nameof(IcmpType).ToLower()]; }
@@ -107,7 +107,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Updates ACL Item with specified Id
+    /// Updates ACL item with specified ID
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

@@ -5,8 +5,13 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class BigSwitchVnsDeviceResponse
+    public class BigSwitchBcfDeviceResponse
     {
+        /// <summary>
+        /// device id of the BigSwitch BCF Controller
+        /// </summary>
+        public string Bcfdeviceid { get; set; }
+
         /// <summary>
         /// device name
         /// </summary>
@@ -18,7 +23,17 @@ namespace CloudStack.Net
         public string HostName { get; set; }
 
         /// <summary>
-        /// the physical network to which this BigSwitch Vns belongs to
+        /// NAT support
+        /// </summary>
+        public bool Nat { get; set; }
+
+        /// <summary>
+        /// the controller password
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// the physical network to which this BigSwitch BCF segment belongs to
         /// </summary>
         public string PhysicalNetworkId { get; set; }
 
@@ -28,9 +43,9 @@ namespace CloudStack.Net
         public string Provider { get; set; }
 
         /// <summary>
-        /// device id of the BigSwitch Vns
+        /// the controller username
         /// </summary>
-        public string Vnsdeviceid { get; set; }
+        public string Username { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

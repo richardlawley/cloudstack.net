@@ -41,6 +41,14 @@ namespace CloudStack.Net
             set { Parameters[nameof(HostId).ToLower()] = value; }
         }
 
+        /// <summary>
+        /// if the password should also be updated on the hosts
+        /// </summary>
+        public bool? Update_passwd_on_host {
+            get { return (bool?) Parameters[nameof(Update_passwd_on_host).ToLower()]; }
+            set { Parameters[nameof(Update_passwd_on_host).ToLower()] = value; }
+        }
+
     }
     /// <summary>
     /// Update password of a host/pool on management server.

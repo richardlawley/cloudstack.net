@@ -26,7 +26,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// account who will own the ssl cert
+        /// account that will own the SSL certificate
         /// </summary>
         public string Account {
             get { return (string) Parameters[nameof(Account).ToLower()]; }
@@ -42,7 +42,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// domain ID of the account owning the ssl cert
+        /// domain ID of the account owning the SSL certificate
         /// </summary>
         public Guid DomainId {
             get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
@@ -58,7 +58,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// an optional project for the ssl cert
+        /// an optional project for the SSL certificate
         /// </summary>
         public Guid ProjectId {
             get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
@@ -67,7 +67,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Upload a certificate to cloudstack
+    /// Upload a certificate to CloudStack
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

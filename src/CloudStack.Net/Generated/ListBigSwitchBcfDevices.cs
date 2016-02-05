@@ -5,9 +5,17 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBigSwitchVnsDevicesRequest : APIRequest
+    public class ListBigSwitchBcfDevicesRequest : APIRequest
     {
-        public ListBigSwitchVnsDevicesRequest() : base("listBigSwitchVnsDevices") {}
+        public ListBigSwitchBcfDevicesRequest() : base("listBigSwitchBcfDevices") {}
+
+        /// <summary>
+        /// bigswitch BCF controller device ID
+        /// </summary>
+        public Guid Bcfdeviceid {
+            get { return (Guid) Parameters[nameof(Bcfdeviceid).ToLower()]; }
+            set { Parameters[nameof(Bcfdeviceid).ToLower()] = value; }
+        }
 
         /// <summary>
         /// List by keyword
@@ -35,24 +43,16 @@ namespace CloudStack.Net
             set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
         }
 
-        /// <summary>
-        /// bigswitch vns device ID
-        /// </summary>
-        public Guid Vnsdeviceid {
-            get { return (Guid) Parameters[nameof(Vnsdeviceid).ToLower()]; }
-            set { Parameters[nameof(Vnsdeviceid).ToLower()] = value; }
-        }
-
     }
     /// <summary>
-    /// Lists BigSwitch Vns devices
+    /// Lists BigSwitch BCF Controller devices
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        ListResponse<BigSwitchVnsDeviceResponse> ListBigSwitchVnsDevices(ListBigSwitchVnsDevicesRequest request);
+        ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<BigSwitchVnsDeviceResponse> ListBigSwitchVnsDevices(ListBigSwitchVnsDevicesRequest request) => _proxy.Request<ListResponse<BigSwitchVnsDeviceResponse>>(request);
+        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request) => _proxy.Request<ListResponse<BigSwitchBcfDeviceResponse>>(request);
     }
 }

@@ -35,7 +35,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Replaces ACL associated with a Network or private gateway
+    /// Replaces ACL associated with a network or private gateway
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
