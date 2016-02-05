@@ -1,23 +1,23 @@
 param(
-    [String] $majorMinor = "0.0",  # 1.4
-    [String] $patch = "0",         # $env:APPVEYOR_BUILD_VERSION
-    [String] $branch = "private",  # $env:APPVEYOR_REPO_BRANCH
-    [String] $customLogger = "",   # C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
+    [String] $majorMinor = "4.7.0", # 1.4
+    [String] $patch = "0",          # $env:APPVEYOR_BUILD_VERSION
+    [String] $branch = "master",    # $env:APPVEYOR_REPO_BRANCH
+    [String] $customLogger = "",    # C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
     [Switch] $notouch
 )
 
 function Set-AssemblyVersions($informational, $file, $assembly)
 {
     (Get-Content assets/CommonAssemblyInfo.cs) |
-        ForEach-Object { $_ -replace """1.0.0.0""", """$assembly""" } |
-        ForEach-Object { $_ -replace """1.0.0""", """$informational""" } |
-        ForEach-Object { $_ -replace """1.1.1.1""", """$file""" } |
+        ForEach-Object { $_ -replace "AssemblyVersion\(""(.*?)""\)", "AssemblyVersion(""$assembly"")" } |
+        ForEach-Object { $_ -replace "AssemblyInformationalVersion\(""(.*?)""\)", "AssemblyInformationalVersion(""$informational"")" } |
+        ForEach-Object { $_ -replace "AssemblyFileVersion\(""(.*?)""\)", "AssemblyFileVersion(""$file"")" } |
         Set-Content assets/CommonAssemblyInfo.cs
 }
 
 function Install-NuGetPackages()
 {
-    nuget restore Serilog.sln
+    nuget restore CloudStack.Net.sln
 }
 
 function Invoke-MSBuild($solution, $customLogger)
@@ -44,12 +44,7 @@ function Invoke-NuGetPackSpec($nuspec, $version)
 
 function Invoke-NuGetPack($version)
 {
-    ls src/**/*.csproj |
-        Where-Object { -not ($_.Name -like "*net40*") } |
-        Where-Object { -not ($_.Name -like "*FullNetFx*") } |
-        Where-Object { -not ($_.Name -eq "Serilog.csproj") } |
-        ForEach-Object { Invoke-NuGetPackProj $_ }
-
+    Invoke-NuGetPackProj src\CloudStack.Net\CloudStack.Net.csproj
     pushd .\src\CloudStack.Net
     Invoke-NuGetPackSpec "CloudStack.Net.nuspec" $version
     popd
@@ -57,7 +52,7 @@ function Invoke-NuGetPack($version)
 
 function Invoke-Build($majorMinor, $patch, $branch, $customLogger, $notouch)
 {
-    $target = (Get-Content ./CHANGES.md -First 1).Trim()
+    $target = "$majorMinor"
     $file = "$target.$patch"
     $package = $target
     if ($branch -ne "master")
@@ -65,11 +60,11 @@ function Invoke-Build($majorMinor, $patch, $branch, $customLogger, $notouch)
         $package = "$target-pre-$patch"
     }
 
-    Write-Output "Building Nuget $package"
+    Write-Output "Building CloudStack.Net $package"
 
     if (-not $notouch)
     {
-        $assembly = "$majorMinor.0.0"
+        $assembly = "$majorMinor.0"
 
         Write-Output "Assembly version will be set to $assembly"
         Set-AssemblyVersions $package $file $assembly
