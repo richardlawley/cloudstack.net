@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DeleteF5LoadBalancer(DeleteF5LoadBalancerRequest request);
+        Task<AsyncJobResponse> DeleteF5LoadBalancerAsync(DeleteF5LoadBalancerRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse DeleteF5LoadBalancer(DeleteF5LoadBalancerRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteF5LoadBalancerAsync(DeleteF5LoadBalancerRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

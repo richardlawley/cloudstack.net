@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -32,9 +33,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ApiSolidFireVolumeSizeResponse GetSolidFireVolumeSize(GetSolidFireVolumeSizeRequest request);
+        Task<ApiSolidFireVolumeSizeResponse> GetSolidFireVolumeSizeAsync(GetSolidFireVolumeSizeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ApiSolidFireVolumeSizeResponse GetSolidFireVolumeSize(GetSolidFireVolumeSizeRequest request) => _proxy.Request<ApiSolidFireVolumeSizeResponse>(request);
+        public Task<ApiSolidFireVolumeSizeResponse> GetSolidFireVolumeSizeAsync(GetSolidFireVolumeSizeRequest request) => _proxy.RequestAsync<ApiSolidFireVolumeSizeResponse>(request);
     }
 }

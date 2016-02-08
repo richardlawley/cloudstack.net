@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         DeleteVolumePoolCmdResponse DeletePool(DeletePoolRequest request);
+        Task<DeleteVolumePoolCmdResponse> DeletePoolAsync(DeletePoolRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public DeleteVolumePoolCmdResponse DeletePool(DeletePoolRequest request) => _proxy.Request<DeleteVolumePoolCmdResponse>(request);
+        public Task<DeleteVolumePoolCmdResponse> DeletePoolAsync(DeletePoolRequest request) => _proxy.RequestAsync<DeleteVolumePoolCmdResponse>(request);
     }
 }

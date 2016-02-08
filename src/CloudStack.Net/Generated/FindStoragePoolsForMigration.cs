@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -42,9 +43,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request);
+        Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request) => _proxy.Request<ListResponse<StoragePoolResponse>>(request);
+        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -58,9 +59,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request);
+        Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request) => _proxy.Request<ListResponse<StorageNetworkIpRangeResponse>>(request);
+        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAsync<ListResponse<StorageNetworkIpRangeResponse>>(request);
     }
 }

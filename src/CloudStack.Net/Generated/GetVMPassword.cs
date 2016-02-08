@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         GetVMPasswordResponse GetVMPassword(GetVMPasswordRequest request);
+        Task<GetVMPasswordResponse> GetVMPasswordAsync(GetVMPasswordRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public GetVMPasswordResponse GetVMPassword(GetVMPasswordRequest request) => _proxy.Request<GetVMPasswordResponse>(request);
+        public Task<GetVMPasswordResponse> GetVMPasswordAsync(GetVMPasswordRequest request) => _proxy.RequestAsync<GetVMPasswordResponse>(request);
     }
 }

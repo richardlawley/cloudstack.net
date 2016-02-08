@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -32,9 +33,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         OpenDaylightControllerResponse ListOpenDaylightControllers(ListOpenDaylightControllersRequest request);
+        Task<OpenDaylightControllerResponse> ListOpenDaylightControllersAsync(ListOpenDaylightControllersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public OpenDaylightControllerResponse ListOpenDaylightControllers(ListOpenDaylightControllersRequest request) => _proxy.Request<OpenDaylightControllerResponse>(request);
+        public Task<OpenDaylightControllerResponse> ListOpenDaylightControllersAsync(ListOpenDaylightControllersRequest request) => _proxy.RequestAsync<OpenDaylightControllerResponse>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -80,9 +81,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         NuageVspResourceResponse IssueNuageVspResourceRequest(IssueNuageVspResourceRequestRequest request);
+        Task<NuageVspResourceResponse> IssueNuageVspResourceRequestAsync(IssueNuageVspResourceRequestRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public NuageVspResourceResponse IssueNuageVspResourceRequest(IssueNuageVspResourceRequestRequest request) => _proxy.Request<NuageVspResourceResponse>(request);
+        public Task<NuageVspResourceResponse> IssueNuageVspResourceRequestAsync(IssueNuageVspResourceRequestRequest request) => _proxy.RequestAsync<NuageVspResourceResponse>(request);
     }
 }

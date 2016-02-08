@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -48,9 +49,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ServiceOfferingResponse UpdateServiceOffering(UpdateServiceOfferingRequest request);
+        Task<ServiceOfferingResponse> UpdateServiceOfferingAsync(UpdateServiceOfferingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ServiceOfferingResponse UpdateServiceOffering(UpdateServiceOfferingRequest request) => _proxy.Request<ServiceOfferingResponse>(request);
+        public Task<ServiceOfferingResponse> UpdateServiceOfferingAsync(UpdateServiceOfferingRequest request) => _proxy.RequestAsync<ServiceOfferingResponse>(request);
     }
 }

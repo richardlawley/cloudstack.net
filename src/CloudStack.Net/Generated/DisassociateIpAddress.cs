@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse DisassociateIpAddress(DisassociateIpAddressRequest request);
+        Task<AsyncJobResponse> DisassociateIpAddressAsync(DisassociateIpAddressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse DisassociateIpAddress(DisassociateIpAddressRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DisassociateIpAddressAsync(DisassociateIpAddressRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -16,9 +17,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         LogoutCmdResponse SamlSlo(SamlSloRequest request);
+        Task<LogoutCmdResponse> SamlSloAsync(SamlSloRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public LogoutCmdResponse SamlSlo(SamlSloRequest request) => _proxy.Request<LogoutCmdResponse>(request);
+        public Task<LogoutCmdResponse> SamlSloAsync(SamlSloRequest request) => _proxy.RequestAsync<LogoutCmdResponse>(request);
     }
 }

@@ -9,6 +9,7 @@ using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -113,6 +114,28 @@ namespace CloudStack.Net
             return query.ToString();
         }
 
+        public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()
+        {
+            JObject root = JsonConvert.DeserializeObject<JObject>(response);
+            if (root.Count != 1)
+            {
+                throw new FormatException($"Expected root to contain a single object - it contains {root.Count}");
+            }
+
+            JToken listElement = ((JProperty)root.First).Value;
+            TResponse decodedResponse = listElement.ToObject<TResponse>();
+
+            if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(ListResponse<>))
+            {
+                if (listElement is JContainer)        // An empty list will be null
+                {
+                    MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
+                    decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)listElement });
+                }
+            }
+            return decodedResponse;
+        }
+
         public static string SerialiseValue(string name, object value)
         {
             if (value == null) { return null; }
@@ -163,48 +186,9 @@ namespace CloudStack.Net
 
             throw new NotSupportedException($"Couldn't serialise object of type {type.FullName}");
         }
-
-        public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()
-        {
-            JObject root = JsonConvert.DeserializeObject<JObject>(response);
-            if (root.Count != 1)
-            {
-                throw new FormatException($"Expected root to contain a single object - it contains {root.Count}");
-            }
-
-            JToken listElement = ((JProperty)root.First).Value;
-            TResponse decodedResponse = listElement.ToObject<TResponse>();
-
-            if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(ListResponse<>))
-            {
-                if (listElement is JContainer)        // An empty list will be null
-                {
-                    MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
-                    decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)listElement });
-                }
-            }
-            return decodedResponse;
-        }
-
         public TResponse Request<TResponse>(APIRequest request) where TResponse : new()
         {
-            bool useGet = request.Command.StartsWith("list", StringComparison.OrdinalIgnoreCase) || request.Command.StartsWith("get", StringComparison.OrdinalIgnoreCase);
-            useGet = true;
-
-            string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
-            var fullUri = new Uri(ServiceUrl + (useGet ? $"?{queryString}" : ""));
-
-            HttpWebRequest webRequest = WebRequest.CreateHttp(fullUri);
-            webRequest.Accept = "application/json;charset=UTF-8";
-            webRequest.Method = useGet ? "GET" : "POST";
-
-            if (!useGet)
-            {
-                using (StreamWriter sw = new StreamWriter(webRequest.GetRequestStream()))
-                {
-                    sw.WriteLine(queryString);
-                }
-            }
+            HttpWebRequest webRequest = CreateRequest(request);
 
             try
             {
@@ -230,7 +214,39 @@ namespace CloudStack.Net
             }
             catch (WebException e)
             {
-                throw CreateCloudStackException(e, fullUri);
+                throw CreateCloudStackException(e, webRequest.RequestUri);
+            }
+        }
+
+        public async Task<TResponse> RequestAsync<TResponse>(APIRequest request) where TResponse : new()
+        {
+            HttpWebRequest webRequest = CreateRequest(request);
+
+            try
+            {
+                using (HttpWebResponse httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse)
+                {
+                    using (Stream respStrm = httpWebResponse.GetResponseStream())
+                    {
+                        respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
+                        using (StreamReader streamReader = new StreamReader(respStrm, Encoding.UTF8))
+                        {
+                            string responseText = await streamReader.ReadToEndAsync().ConfigureAwait(false);
+                            try
+                            {
+                                return DecodeResponse<TResponse>(responseText);
+                            }
+                            catch (FormatException ex)
+                            {
+                                throw new FormatException("Could not decode CloudStack API Response", ex);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (WebException e)
+            {
+                throw CreateCloudStackException(e, webRequest.RequestUri);
             }
         }
 
@@ -297,6 +313,18 @@ namespace CloudStack.Net
                 we.Status.ToString(),
                 we.Message,
                     we);
+        }
+
+        private HttpWebRequest CreateRequest(APIRequest request)
+        {
+            string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
+            var fullUri = new Uri(ServiceUrl + queryString);
+
+            HttpWebRequest webRequest = WebRequest.CreateHttp(fullUri);
+            webRequest.Accept = "application/json;charset=UTF-8";
+            webRequest.Method = "GET";
+
+            return webRequest;
         }
     }
 }

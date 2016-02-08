@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -138,9 +139,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request);
+        Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request) => _proxy.Request<ListResponse<LoadBalancerResponse>>(request);
+        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request) => _proxy.RequestAsync<ListResponse<LoadBalancerResponse>>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -114,9 +115,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ListResponse<VlanIpRangeResponse> ListVlanIpRanges(ListVlanIpRangesRequest request);
+        Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAsync(ListVlanIpRangesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VlanIpRangeResponse> ListVlanIpRanges(ListVlanIpRangesRequest request) => _proxy.Request<ListResponse<VlanIpRangeResponse>>(request);
+        public Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAsync(ListVlanIpRangesRequest request) => _proxy.RequestAsync<ListResponse<VlanIpRangeResponse>>(request);
     }
 }

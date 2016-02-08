@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -104,9 +105,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request);
+        Task<ImageStoreResponse> AddImageStoreS3Async(AddImageStoreS3Request request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request) => _proxy.Request<ImageStoreResponse>(request);
+        public Task<ImageStoreResponse> AddImageStoreS3Async(AddImageStoreS3Request request) => _proxy.RequestAsync<ImageStoreResponse>(request);
     }
 }

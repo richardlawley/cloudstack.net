@@ -42,7 +42,7 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
         String interfaceName = "ICloudStackAPIClient";
         String implementationName = "CloudStackAPIClient";
         String requestBase = "APIRequest";
-        String[] standardImports = { "System.Collections.Generic", "System.Collections.Specialized", "Newtonsoft.Json" };
+        String[] standardImports = { "System.Collections.Generic", "System.Collections.Specialized", "System.Threading.Tasks", "Newtonsoft.Json" };
 
         try {
 
@@ -137,10 +137,12 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                         }
                         implementation.addType(interfaceName, "partial interface");
                         implementation.println("%1$s %2$s(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
+                        implementation.println("Task<%1$s> %2$sAsync(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
                         implementation.closeTypeDef();
 
                         implementation.addType(implementationName + " : " + interfaceName, "partial class");
                         implementation.println("public %1$s %2$s(%3$s request) => _proxy.Request<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
+                        implementation.println("public Task<%1$s> %2$sAsync(%3$s request) => _proxy.RequestAsync<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
 
                         implementation.closeTypeDef();
                     }

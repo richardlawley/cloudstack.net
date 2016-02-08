@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -40,9 +41,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         SuccessResponse DeleteHost(DeleteHostRequest request);
+        Task<SuccessResponse> DeleteHostAsync(DeleteHostRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public SuccessResponse DeleteHost(DeleteHostRequest request) => _proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteHostAsync(DeleteHostRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
     }
 }

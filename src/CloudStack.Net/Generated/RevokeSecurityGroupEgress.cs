@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request);
+        Task<AsyncJobResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

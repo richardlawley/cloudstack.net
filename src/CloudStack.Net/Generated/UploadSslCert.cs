@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -72,9 +73,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         SslCertResponse UploadSslCert(UploadSslCertRequest request);
+        Task<SslCertResponse> UploadSslCertAsync(UploadSslCertRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public SslCertResponse UploadSslCert(UploadSslCertRequest request) => _proxy.Request<SslCertResponse>(request);
+        public Task<SslCertResponse> UploadSslCertAsync(UploadSslCertRequest request) => _proxy.RequestAsync<SslCertResponse>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -56,9 +57,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         QuotaStatementItemResponse QuotaBalance(QuotaBalanceRequest request);
+        Task<QuotaStatementItemResponse> QuotaBalanceAsync(QuotaBalanceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public QuotaStatementItemResponse QuotaBalance(QuotaBalanceRequest request) => _proxy.Request<QuotaStatementItemResponse>(request);
+        public Task<QuotaStatementItemResponse> QuotaBalanceAsync(QuotaBalanceRequest request) => _proxy.RequestAsync<QuotaStatementItemResponse>(request);
     }
 }

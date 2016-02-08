@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -112,9 +113,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request);
+        Task<AsyncJobResponse> CreatePortForwardingRuleAsync(CreatePortForwardingRuleRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse CreatePortForwardingRule(CreatePortForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreatePortForwardingRuleAsync(CreatePortForwardingRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

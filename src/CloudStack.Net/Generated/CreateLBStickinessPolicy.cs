@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -64,9 +65,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateLBStickinessPolicy(CreateLBStickinessPolicyRequest request);
+        Task<AsyncJobResponse> CreateLBStickinessPolicyAsync(CreateLBStickinessPolicyRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse CreateLBStickinessPolicy(CreateLBStickinessPolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateLBStickinessPolicyAsync(CreateLBStickinessPolicyRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

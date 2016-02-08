@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -48,9 +49,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request);
+        Task<AsyncJobResponse> CreateAutoScalePolicyAsync(CreateAutoScalePolicyRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateAutoScalePolicyAsync(CreateAutoScalePolicyRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

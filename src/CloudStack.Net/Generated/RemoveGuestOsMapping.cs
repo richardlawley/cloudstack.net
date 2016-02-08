@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -24,9 +25,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         AsyncJobResponse RemoveGuestOsMapping(RemoveGuestOsMappingRequest request);
+        Task<AsyncJobResponse> RemoveGuestOsMappingAsync(RemoveGuestOsMappingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public AsyncJobResponse RemoveGuestOsMapping(RemoveGuestOsMappingRequest request) => _proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> RemoveGuestOsMappingAsync(RemoveGuestOsMappingRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

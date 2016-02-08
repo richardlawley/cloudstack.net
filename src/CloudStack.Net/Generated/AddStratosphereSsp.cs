@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -64,9 +65,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         SspResponse AddStratosphereSsp(AddStratosphereSspRequest request);
+        Task<SspResponse> AddStratosphereSspAsync(AddStratosphereSspRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public SspResponse AddStratosphereSsp(AddStratosphereSspRequest request) => _proxy.Request<SspResponse>(request);
+        public Task<SspResponse> AddStratosphereSspAsync(AddStratosphereSspRequest request) => _proxy.RequestAsync<SspResponse>(request);
     }
 }

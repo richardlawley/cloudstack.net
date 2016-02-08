@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -168,9 +169,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ClusterResponse AddCluster(AddClusterRequest request);
+        Task<ClusterResponse> AddClusterAsync(AddClusterRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ClusterResponse AddCluster(AddClusterRequest request) => _proxy.Request<ClusterResponse>(request);
+        public Task<ClusterResponse> AddClusterAsync(AddClusterRequest request) => _proxy.RequestAsync<ClusterResponse>(request);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace CloudStack.Net
@@ -90,9 +91,11 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request);
+        Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request) => _proxy.Request<ListResponse<SSHKeyPairResponse>>(request);
+        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request) => _proxy.RequestAsync<ListResponse<SSHKeyPairResponse>>(request);
     }
 }
