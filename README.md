@@ -10,12 +10,11 @@ easy to update the SDK without needing to go through the extensive [CloudStack A
 
 ## Installation
 
-(Will be on nuget once further testing has completed)
+    Install-Package CloudStack.Net
 
 ## TODO:
 
   * Impersonation
-  * Async/await Requests
   * Request expiration
 
 ## Usage
@@ -51,6 +50,10 @@ easy to update the SDK without needing to go through the extensive [CloudStack A
 			}
 		}
 	}
+
+There are also async/await versions of the requests:
+
+    var job = await apiClient.DeployVirtualMachine(deployRequest);
 
 Please see the [CloudStack API documentation](https://cloudstack.apache.org/api.html) for a list of all API functions.
 
