@@ -49,6 +49,11 @@ namespace CloudStack.Net
         public string EspPolicy { get; set; }
 
         /// <summary>
+        /// if Force NAT Encapsulation is enabled for customer gateway
+        /// </summary>
+        public bool Forceencap { get; set; }
+
+        /// <summary>
         /// public ip address id of the customer gateway
         /// </summary>
         public string Gateway { get; set; }

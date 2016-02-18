@@ -79,6 +79,16 @@ namespace CloudStack.Net
         public string NetworkName { get; set; }
 
         /// <summary>
+        /// Id of the NSX Logical Switch (if NSX based), null otherwise
+        /// </summary>
+        public string NsxLogicalSwitch { get; set; }
+
+        /// <summary>
+        /// Id of the NSX Logical Switch Port (if NSX based), null otherwise
+        /// </summary>
+        public string NsxLogicalSwitchPort { get; set; }
+
+        /// <summary>
         /// the Secondary ipv4 addr of nic
         /// </summary>
         public IList<NicSecondaryIpResponse> Secondaryip { get; set; }

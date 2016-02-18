@@ -11,14 +11,6 @@ namespace CloudStack.Net
         public CreateVolumeRequest() : base("createVolume") {}
 
         /// <summary>
-        /// the name of the disk volume
-        /// </summary>
-        public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
-        }
-
-        /// <summary>
         /// the account associated with the disk volume. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
@@ -72,6 +64,14 @@ namespace CloudStack.Net
         public long? MinIops {
             get { return (long?) Parameters[nameof(MinIops).ToLower()]; }
             set { Parameters[nameof(MinIops).ToLower()] = value; }
+        }
+
+        /// <summary>
+        /// the name of the disk volume
+        /// </summary>
+        public string Name {
+            get { return (string) Parameters[nameof(Name).ToLower()]; }
+            set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
         /// <summary>

@@ -91,6 +91,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// Force encapsulation for Nat Traversal
+        /// </summary>
+        public bool? Forceencap {
+            get { return (bool?) Parameters[nameof(Forceencap).ToLower()]; }
+            set { Parameters[nameof(Forceencap).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// Lifetime of phase 1 VPN connection to the customer gateway, in seconds
         /// </summary>
         public long? IkeLifetime {

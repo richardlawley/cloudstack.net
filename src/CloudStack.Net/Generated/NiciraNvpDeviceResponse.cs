@@ -14,6 +14,11 @@ namespace CloudStack.Net
         public string HostName { get; set; }
 
         /// <summary>
+        /// this L2 gateway service Uuid
+        /// </summary>
+        public string L2GatewayServiceUuid { get; set; }
+
+        /// <summary>
         /// this L3 gateway service Uuid
         /// </summary>
         public string L3GatewayServiceUuid { get; set; }

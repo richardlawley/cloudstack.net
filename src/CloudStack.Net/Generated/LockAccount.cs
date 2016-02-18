@@ -28,7 +28,7 @@ namespace CloudStack.Net
 
     }
     /// <summary>
-    /// Locks an account
+    /// This deprecated function used to locks an account. Look for the API DisableAccount instead
     /// </summary>
     public partial interface ICloudStackAPIClient
     {

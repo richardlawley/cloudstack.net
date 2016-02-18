@@ -51,6 +51,14 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// The L2 Gateway Service UUID configured on the Nicira Controller
+        /// </summary>
+        public string L2gatewayserviceuuid {
+            get { return (string) Parameters[nameof(L2gatewayserviceuuid).ToLower()]; }
+            set { Parameters[nameof(L2gatewayserviceuuid).ToLower()] = value; }
+        }
+
+        /// <summary>
         /// The L3 Gateway Service UUID configured on the Nicira Controller
         /// </summary>
         public string L3gatewayserviceuuid {
