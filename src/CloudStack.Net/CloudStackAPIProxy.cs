@@ -318,7 +318,7 @@ namespace CloudStack.Net
         private HttpWebRequest CreateRequest(APIRequest request)
         {
             string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
-            var fullUri = new Uri(ServiceUrl + queryString);
+            var fullUri = new Uri(ServiceUrl + "?" + queryString);
 
             HttpWebRequest webRequest = WebRequest.CreateHttp(fullUri);
             webRequest.Accept = "application/json;charset=UTF-8";

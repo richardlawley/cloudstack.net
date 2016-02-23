@@ -1,6 +1,6 @@
 param(
     [String] $majorMinor = "4.8.0", # 1.4
-    [String] $patch = "0",          # $env:APPVEYOR_BUILD_VERSION
+    [String] $patch = "1",          # $env:APPVEYOR_BUILD_VERSION
     [String] $branch = "master",    # $env:APPVEYOR_REPO_BRANCH
     [String] $customLogger = "",    # C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
     [Switch] $notouch
@@ -54,7 +54,7 @@ function Invoke-Build($majorMinor, $patch, $branch, $customLogger, $notouch)
 {
     $target = "$majorMinor"
     $file = "$target.$patch"
-    $package = $target
+    $package = "$target.$patch"
     if ($branch -ne "master")
     {
         $package = "$target-pre-$patch"
@@ -64,7 +64,7 @@ function Invoke-Build($majorMinor, $patch, $branch, $customLogger, $notouch)
 
     if (-not $notouch)
     {
-        $assembly = "$majorMinor.0"
+        $assembly = "$majorMinor.$patch"
 
         Write-Output "Assembly version will be set to $assembly"
         Set-AssemblyVersions $package $file $assembly
