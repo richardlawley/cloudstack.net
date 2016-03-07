@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class FindHostsForMigrationRequest : APIRequest
+    public class FindHostsForMigrationRequest : APIListRequest
     {
         public FindHostsForMigrationRequest() : base("findHostsForMigration") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Find hosts suitable for migrating a virtual machine.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<HostForMigrationResponse> FindHostsForMigration(FindHostsForMigrationRequest request);
         Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAsync(FindHostsForMigrationRequest request);
+        ListResponse<HostForMigrationResponse> FindHostsForMigrationAllPages(FindHostsForMigrationRequest request);
+        Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAllPagesAsync(FindHostsForMigrationRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<HostForMigrationResponse> FindHostsForMigration(FindHostsForMigrationRequest request) => _proxy.Request<ListResponse<HostForMigrationResponse>>(request);
         public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAsync(FindHostsForMigrationRequest request) => _proxy.RequestAsync<ListResponse<HostForMigrationResponse>>(request);
+        public ListResponse<HostForMigrationResponse> FindHostsForMigrationAllPages(FindHostsForMigrationRequest request) => _proxy.RequestAllPages<HostForMigrationResponse>(request);
+        public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAllPagesAsync(FindHostsForMigrationRequest request) => _proxy.RequestAllPagesAsync<HostForMigrationResponse>(request);
     }
 }

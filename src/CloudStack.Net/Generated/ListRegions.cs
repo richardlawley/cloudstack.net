@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListRegionsRequest : APIRequest
+    public class ListRegionsRequest : APIListRequest
     {
         public ListRegionsRequest() : base("listRegions") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists Regions
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<RegionResponse> ListRegions(ListRegionsRequest request);
         Task<ListResponse<RegionResponse>> ListRegionsAsync(ListRegionsRequest request);
+        ListResponse<RegionResponse> ListRegionsAllPages(ListRegionsRequest request);
+        Task<ListResponse<RegionResponse>> ListRegionsAllPagesAsync(ListRegionsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<RegionResponse> ListRegions(ListRegionsRequest request) => _proxy.Request<ListResponse<RegionResponse>>(request);
         public Task<ListResponse<RegionResponse>> ListRegionsAsync(ListRegionsRequest request) => _proxy.RequestAsync<ListResponse<RegionResponse>>(request);
+        public ListResponse<RegionResponse> ListRegionsAllPages(ListRegionsRequest request) => _proxy.RequestAllPages<RegionResponse>(request);
+        public Task<ListResponse<RegionResponse>> ListRegionsAllPagesAsync(ListRegionsRequest request) => _proxy.RequestAllPagesAsync<RegionResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDedicatedClustersRequest : APIRequest
+    public class ListDedicatedClustersRequest : APIListRequest
     {
         public ListDedicatedClustersRequest() : base("listDedicatedClusters") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists dedicated clusters.
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<DedicateClusterResponse> ListDedicatedClusters(ListDedicatedClustersRequest request);
         Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAsync(ListDedicatedClustersRequest request);
+        ListResponse<DedicateClusterResponse> ListDedicatedClustersAllPages(ListDedicatedClustersRequest request);
+        Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAllPagesAsync(ListDedicatedClustersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DedicateClusterResponse> ListDedicatedClusters(ListDedicatedClustersRequest request) => _proxy.Request<ListResponse<DedicateClusterResponse>>(request);
         public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAsync(ListDedicatedClustersRequest request) => _proxy.RequestAsync<ListResponse<DedicateClusterResponse>>(request);
+        public ListResponse<DedicateClusterResponse> ListDedicatedClustersAllPages(ListDedicatedClustersRequest request) => _proxy.RequestAllPages<DedicateClusterResponse>(request);
+        public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAllPagesAsync(ListDedicatedClustersRequest request) => _proxy.RequestAllPagesAsync<DedicateClusterResponse>(request);
     }
 }

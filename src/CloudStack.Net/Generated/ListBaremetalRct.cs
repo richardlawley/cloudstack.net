@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBaremetalRctRequest : APIRequest
+    public class ListBaremetalRctRequest : APIListRequest
     {
         public ListBaremetalRctRequest() : base("listBaremetalRct") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// list baremetal rack configuration
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<BaremetalRctResponse> ListBaremetalRct(ListBaremetalRctRequest request);
         Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAsync(ListBaremetalRctRequest request);
+        ListResponse<BaremetalRctResponse> ListBaremetalRctAllPages(ListBaremetalRctRequest request);
+        Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAllPagesAsync(ListBaremetalRctRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<BaremetalRctResponse> ListBaremetalRct(ListBaremetalRctRequest request) => _proxy.Request<ListResponse<BaremetalRctResponse>>(request);
         public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAsync(ListBaremetalRctRequest request) => _proxy.RequestAsync<ListResponse<BaremetalRctResponse>>(request);
+        public ListResponse<BaremetalRctResponse> ListBaremetalRctAllPages(ListBaremetalRctRequest request) => _proxy.RequestAllPages<BaremetalRctResponse>(request);
+        public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAllPagesAsync(ListBaremetalRctRequest request) => _proxy.RequestAllPagesAsync<BaremetalRctResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListInternalLoadBalancerVMsRequest : APIRequest
+    public class ListInternalLoadBalancerVMsRequest : APIListRequest
     {
         public ListInternalLoadBalancerVMsRequest() : base("listInternalLoadBalancerVMs") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Pod ID of the Internal LB VM
         /// </summary>
@@ -148,10 +138,14 @@ namespace CloudStack.Net
     {
         ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMs(ListInternalLoadBalancerVMsRequest request);
         Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAsync(ListInternalLoadBalancerVMsRequest request);
+        ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMsAllPages(ListInternalLoadBalancerVMsRequest request);
+        Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAllPagesAsync(ListInternalLoadBalancerVMsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMs(ListInternalLoadBalancerVMsRequest request) => _proxy.Request<ListResponse<DomainRouterResponse>>(request);
         public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAsync(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAsync<ListResponse<DomainRouterResponse>>(request);
+        public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMsAllPages(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAllPages<DomainRouterResponse>(request);
+        public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAllPagesAsync(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAllPagesAsync<DomainRouterResponse>(request);
     }
 }

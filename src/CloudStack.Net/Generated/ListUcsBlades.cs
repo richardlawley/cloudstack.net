@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListUcsBladesRequest : APIRequest
+    public class ListUcsBladesRequest : APIListRequest
     {
         public ListUcsBladesRequest() : base("listUcsBlades") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List ucs blades
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<UcsBladeResponse> ListUcsBlades(ListUcsBladesRequest request);
         Task<ListResponse<UcsBladeResponse>> ListUcsBladesAsync(ListUcsBladesRequest request);
+        ListResponse<UcsBladeResponse> ListUcsBladesAllPages(ListUcsBladesRequest request);
+        Task<ListResponse<UcsBladeResponse>> ListUcsBladesAllPagesAsync(ListUcsBladesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UcsBladeResponse> ListUcsBlades(ListUcsBladesRequest request) => _proxy.Request<ListResponse<UcsBladeResponse>>(request);
         public Task<ListResponse<UcsBladeResponse>> ListUcsBladesAsync(ListUcsBladesRequest request) => _proxy.RequestAsync<ListResponse<UcsBladeResponse>>(request);
+        public ListResponse<UcsBladeResponse> ListUcsBladesAllPages(ListUcsBladesRequest request) => _proxy.RequestAllPages<UcsBladeResponse>(request);
+        public Task<ListResponse<UcsBladeResponse>> ListUcsBladesAllPagesAsync(ListUcsBladesRequest request) => _proxy.RequestAllPagesAsync<UcsBladeResponse>(request);
     }
 }

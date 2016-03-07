@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSecurityGroupsRequest : APIRequest
+    public class ListSecurityGroupsRequest : APIListRequest
     {
         public ListSecurityGroupsRequest() : base("listSecurityGroups") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<SecurityGroupResponse> ListSecurityGroups(ListSecurityGroupsRequest request);
         Task<ListResponse<SecurityGroupResponse>> ListSecurityGroupsAsync(ListSecurityGroupsRequest request);
+        ListResponse<SecurityGroupResponse> ListSecurityGroupsAllPages(ListSecurityGroupsRequest request);
+        Task<ListResponse<SecurityGroupResponse>> ListSecurityGroupsAllPagesAsync(ListSecurityGroupsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SecurityGroupResponse> ListSecurityGroups(ListSecurityGroupsRequest request) => _proxy.Request<ListResponse<SecurityGroupResponse>>(request);
         public Task<ListResponse<SecurityGroupResponse>> ListSecurityGroupsAsync(ListSecurityGroupsRequest request) => _proxy.RequestAsync<ListResponse<SecurityGroupResponse>>(request);
+        public ListResponse<SecurityGroupResponse> ListSecurityGroupsAllPages(ListSecurityGroupsRequest request) => _proxy.RequestAllPages<SecurityGroupResponse>(request);
+        public Task<ListResponse<SecurityGroupResponse>> ListSecurityGroupsAllPagesAsync(ListSecurityGroupsRequest request) => _proxy.RequestAllPagesAsync<SecurityGroupResponse>(request);
     }
 }

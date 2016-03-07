@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetscalerLoadBalancersRequest : APIRequest
+    public class ListNetscalerLoadBalancersRequest : APIListRequest
     {
         public ListNetscalerLoadBalancersRequest() : base("listNetscalerLoadBalancers") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Physical Network ID
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancers(ListNetscalerLoadBalancersRequest request);
         Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAsync(ListNetscalerLoadBalancersRequest request);
+        ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancersAllPages(ListNetscalerLoadBalancersRequest request);
+        Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAllPagesAsync(ListNetscalerLoadBalancersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancers(ListNetscalerLoadBalancersRequest request) => _proxy.Request<ListResponse<NetscalerLoadBalancerResponse>>(request);
         public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAsync(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAsync<ListResponse<NetscalerLoadBalancerResponse>>(request);
+        public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancersAllPages(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAllPages<NetscalerLoadBalancerResponse>(request);
+        public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAllPagesAsync(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAllPagesAsync<NetscalerLoadBalancerResponse>(request);
     }
 }

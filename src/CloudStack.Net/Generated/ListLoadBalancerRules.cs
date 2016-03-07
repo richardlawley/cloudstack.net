@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLoadBalancerRulesRequest : APIRequest
+    public class ListLoadBalancerRulesRequest : APIListRequest
     {
         public ListLoadBalancerRulesRequest() : base("listLoadBalancerRules") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -140,10 +130,14 @@ namespace CloudStack.Net
     {
         ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request);
         Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request);
+        ListResponse<LoadBalancerResponse> ListLoadBalancerRulesAllPages(ListLoadBalancerRulesRequest request);
+        Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAllPagesAsync(ListLoadBalancerRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request) => _proxy.Request<ListResponse<LoadBalancerResponse>>(request);
         public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request) => _proxy.RequestAsync<ListResponse<LoadBalancerResponse>>(request);
+        public ListResponse<LoadBalancerResponse> ListLoadBalancerRulesAllPages(ListLoadBalancerRulesRequest request) => _proxy.RequestAllPages<LoadBalancerResponse>(request);
+        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAllPagesAsync(ListLoadBalancerRulesRequest request) => _proxy.RequestAllPagesAsync<LoadBalancerResponse>(request);
     }
 }

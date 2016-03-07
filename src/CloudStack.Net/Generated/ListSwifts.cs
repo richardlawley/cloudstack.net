@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSwiftsRequest : APIRequest
+    public class ListSwiftsRequest : APIListRequest
     {
         public ListSwiftsRequest() : base("listSwifts") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List Swift.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<ImageStoreResponse> ListSwifts(ListSwiftsRequest request);
         Task<ListResponse<ImageStoreResponse>> ListSwiftsAsync(ListSwiftsRequest request);
+        ListResponse<ImageStoreResponse> ListSwiftsAllPages(ListSwiftsRequest request);
+        Task<ListResponse<ImageStoreResponse>> ListSwiftsAllPagesAsync(ListSwiftsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ImageStoreResponse> ListSwifts(ListSwiftsRequest request) => _proxy.Request<ListResponse<ImageStoreResponse>>(request);
         public Task<ListResponse<ImageStoreResponse>> ListSwiftsAsync(ListSwiftsRequest request) => _proxy.RequestAsync<ListResponse<ImageStoreResponse>>(request);
+        public ListResponse<ImageStoreResponse> ListSwiftsAllPages(ListSwiftsRequest request) => _proxy.RequestAllPages<ImageStoreResponse>(request);
+        public Task<ListResponse<ImageStoreResponse>> ListSwiftsAllPagesAsync(ListSwiftsRequest request) => _proxy.RequestAllPagesAsync<ImageStoreResponse>(request);
     }
 }

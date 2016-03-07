@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSrxFirewallsRequest : APIRequest
+    public class ListSrxFirewallsRequest : APIListRequest
     {
         public ListSrxFirewallsRequest() : base("listSrxFirewalls") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Physical Network ID
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<SrxFirewallResponse> ListSrxFirewalls(ListSrxFirewallsRequest request);
         Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAsync(ListSrxFirewallsRequest request);
+        ListResponse<SrxFirewallResponse> ListSrxFirewallsAllPages(ListSrxFirewallsRequest request);
+        Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAllPagesAsync(ListSrxFirewallsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SrxFirewallResponse> ListSrxFirewalls(ListSrxFirewallsRequest request) => _proxy.Request<ListResponse<SrxFirewallResponse>>(request);
         public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAsync(ListSrxFirewallsRequest request) => _proxy.RequestAsync<ListResponse<SrxFirewallResponse>>(request);
+        public ListResponse<SrxFirewallResponse> ListSrxFirewallsAllPages(ListSrxFirewallsRequest request) => _proxy.RequestAllPages<SrxFirewallResponse>(request);
+        public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAllPagesAsync(ListSrxFirewallsRequest request) => _proxy.RequestAllPagesAsync<SrxFirewallResponse>(request);
     }
 }

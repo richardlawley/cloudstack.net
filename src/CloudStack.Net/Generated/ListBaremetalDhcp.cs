@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBaremetalDhcpRequest : APIRequest
+    public class ListBaremetalDhcpRequest : APIListRequest
     {
         public ListBaremetalDhcpRequest() : base("listBaremetalDhcp") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// list baremetal dhcp servers
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<BaremetalDhcpResponse> ListBaremetalDhcp(ListBaremetalDhcpRequest request);
         Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAsync(ListBaremetalDhcpRequest request);
+        ListResponse<BaremetalDhcpResponse> ListBaremetalDhcpAllPages(ListBaremetalDhcpRequest request);
+        Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAllPagesAsync(ListBaremetalDhcpRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcp(ListBaremetalDhcpRequest request) => _proxy.Request<ListResponse<BaremetalDhcpResponse>>(request);
         public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAsync(ListBaremetalDhcpRequest request) => _proxy.RequestAsync<ListResponse<BaremetalDhcpResponse>>(request);
+        public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcpAllPages(ListBaremetalDhcpRequest request) => _proxy.RequestAllPages<BaremetalDhcpResponse>(request);
+        public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAllPagesAsync(ListBaremetalDhcpRequest request) => _proxy.RequestAllPagesAsync<BaremetalDhcpResponse>(request);
     }
 }

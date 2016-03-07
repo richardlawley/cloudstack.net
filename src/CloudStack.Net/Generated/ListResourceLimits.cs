@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListResourceLimitsRequest : APIRequest
+    public class ListResourceLimitsRequest : APIListRequest
     {
         public ListResourceLimitsRequest() : base("listResourceLimits") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<ResourceLimitResponse> ListResourceLimits(ListResourceLimitsRequest request);
         Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAsync(ListResourceLimitsRequest request);
+        ListResponse<ResourceLimitResponse> ListResourceLimitsAllPages(ListResourceLimitsRequest request);
+        Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAllPagesAsync(ListResourceLimitsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ResourceLimitResponse> ListResourceLimits(ListResourceLimitsRequest request) => _proxy.Request<ListResponse<ResourceLimitResponse>>(request);
         public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAsync(ListResourceLimitsRequest request) => _proxy.RequestAsync<ListResponse<ResourceLimitResponse>>(request);
+        public ListResponse<ResourceLimitResponse> ListResourceLimitsAllPages(ListResourceLimitsRequest request) => _proxy.RequestAllPages<ResourceLimitResponse>(request);
+        public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAllPagesAsync(ListResourceLimitsRequest request) => _proxy.RequestAllPagesAsync<ResourceLimitResponse>(request);
     }
 }

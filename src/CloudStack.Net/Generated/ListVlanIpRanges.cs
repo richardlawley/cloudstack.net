@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVlanIpRangesRequest : APIRequest
+    public class ListVlanIpRangesRequest : APIListRequest
     {
         public ListVlanIpRangesRequest() : base("listVlanIpRanges") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// physical network id of the VLAN IP range
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<VlanIpRangeResponse> ListVlanIpRanges(ListVlanIpRangesRequest request);
         Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAsync(ListVlanIpRangesRequest request);
+        ListResponse<VlanIpRangeResponse> ListVlanIpRangesAllPages(ListVlanIpRangesRequest request);
+        Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAllPagesAsync(ListVlanIpRangesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VlanIpRangeResponse> ListVlanIpRanges(ListVlanIpRangesRequest request) => _proxy.Request<ListResponse<VlanIpRangeResponse>>(request);
         public Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAsync(ListVlanIpRangesRequest request) => _proxy.RequestAsync<ListResponse<VlanIpRangeResponse>>(request);
+        public ListResponse<VlanIpRangeResponse> ListVlanIpRangesAllPages(ListVlanIpRangesRequest request) => _proxy.RequestAllPages<VlanIpRangeResponse>(request);
+        public Task<ListResponse<VlanIpRangeResponse>> ListVlanIpRangesAllPagesAsync(ListVlanIpRangesRequest request) => _proxy.RequestAllPagesAsync<VlanIpRangeResponse>(request);
     }
 }

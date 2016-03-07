@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListZonesRequest : APIRequest
+    public class ListZonesRequest : APIListRequest
     {
         public ListZonesRequest() : base("listZones") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkType).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// flag to display the capacity of the zones
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<ZoneResponse> ListZones(ListZonesRequest request);
         Task<ListResponse<ZoneResponse>> ListZonesAsync(ListZonesRequest request);
+        ListResponse<ZoneResponse> ListZonesAllPages(ListZonesRequest request);
+        Task<ListResponse<ZoneResponse>> ListZonesAllPagesAsync(ListZonesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ZoneResponse> ListZones(ListZonesRequest request) => _proxy.Request<ListResponse<ZoneResponse>>(request);
         public Task<ListResponse<ZoneResponse>> ListZonesAsync(ListZonesRequest request) => _proxy.RequestAsync<ListResponse<ZoneResponse>>(request);
+        public ListResponse<ZoneResponse> ListZonesAllPages(ListZonesRequest request) => _proxy.RequestAllPages<ZoneResponse>(request);
+        public Task<ListResponse<ZoneResponse>> ListZonesAllPagesAsync(ListZonesRequest request) => _proxy.RequestAllPagesAsync<ZoneResponse>(request);
     }
 }

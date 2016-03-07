@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkDeviceRequest : APIRequest
+    public class ListNetworkDeviceRequest : APIListRequest
     {
         public ListNetworkDeviceRequest() : base("listNetworkDevice") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Networkdevicetype).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List network devices
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkDeviceResponse> ListNetworkDevice(ListNetworkDeviceRequest request);
         Task<ListResponse<NetworkDeviceResponse>> ListNetworkDeviceAsync(ListNetworkDeviceRequest request);
+        ListResponse<NetworkDeviceResponse> ListNetworkDeviceAllPages(ListNetworkDeviceRequest request);
+        Task<ListResponse<NetworkDeviceResponse>> ListNetworkDeviceAllPagesAsync(ListNetworkDeviceRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkDeviceResponse> ListNetworkDevice(ListNetworkDeviceRequest request) => _proxy.Request<ListResponse<NetworkDeviceResponse>>(request);
         public Task<ListResponse<NetworkDeviceResponse>> ListNetworkDeviceAsync(ListNetworkDeviceRequest request) => _proxy.RequestAsync<ListResponse<NetworkDeviceResponse>>(request);
+        public ListResponse<NetworkDeviceResponse> ListNetworkDeviceAllPages(ListNetworkDeviceRequest request) => _proxy.RequestAllPages<NetworkDeviceResponse>(request);
+        public Task<ListResponse<NetworkDeviceResponse>> ListNetworkDeviceAllPagesAsync(ListNetworkDeviceRequest request) => _proxy.RequestAllPagesAsync<NetworkDeviceResponse>(request);
     }
 }

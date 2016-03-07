@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkACLsRequest : APIRequest
+    public class ListNetworkACLsRequest : APIListRequest
     {
         public ListNetworkACLsRequest() : base("listNetworkACLs") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -140,10 +130,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkACLItemResponse> ListNetworkACLs(ListNetworkACLsRequest request);
         Task<ListResponse<NetworkACLItemResponse>> ListNetworkACLsAsync(ListNetworkACLsRequest request);
+        ListResponse<NetworkACLItemResponse> ListNetworkACLsAllPages(ListNetworkACLsRequest request);
+        Task<ListResponse<NetworkACLItemResponse>> ListNetworkACLsAllPagesAsync(ListNetworkACLsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkACLItemResponse> ListNetworkACLs(ListNetworkACLsRequest request) => _proxy.Request<ListResponse<NetworkACLItemResponse>>(request);
         public Task<ListResponse<NetworkACLItemResponse>> ListNetworkACLsAsync(ListNetworkACLsRequest request) => _proxy.RequestAsync<ListResponse<NetworkACLItemResponse>>(request);
+        public ListResponse<NetworkACLItemResponse> ListNetworkACLsAllPages(ListNetworkACLsRequest request) => _proxy.RequestAllPages<NetworkACLItemResponse>(request);
+        public Task<ListResponse<NetworkACLItemResponse>> ListNetworkACLsAllPagesAsync(ListNetworkACLsRequest request) => _proxy.RequestAllPagesAsync<NetworkACLItemResponse>(request);
     }
 }

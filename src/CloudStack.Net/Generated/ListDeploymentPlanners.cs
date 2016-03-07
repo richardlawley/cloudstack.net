@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDeploymentPlannersRequest : APIRequest
+    public class ListDeploymentPlannersRequest : APIListRequest
     {
         public ListDeploymentPlannersRequest() : base("listDeploymentPlanners") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all DeploymentPlanners available.
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<DeploymentPlannersResponse> ListDeploymentPlanners(ListDeploymentPlannersRequest request);
         Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAsync(ListDeploymentPlannersRequest request);
+        ListResponse<DeploymentPlannersResponse> ListDeploymentPlannersAllPages(ListDeploymentPlannersRequest request);
+        Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAllPagesAsync(ListDeploymentPlannersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DeploymentPlannersResponse> ListDeploymentPlanners(ListDeploymentPlannersRequest request) => _proxy.Request<ListResponse<DeploymentPlannersResponse>>(request);
         public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAsync(ListDeploymentPlannersRequest request) => _proxy.RequestAsync<ListResponse<DeploymentPlannersResponse>>(request);
+        public ListResponse<DeploymentPlannersResponse> ListDeploymentPlannersAllPages(ListDeploymentPlannersRequest request) => _proxy.RequestAllPages<DeploymentPlannersResponse>(request);
+        public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAllPagesAsync(ListDeploymentPlannersRequest request) => _proxy.RequestAllPagesAsync<DeploymentPlannersResponse>(request);
     }
 }

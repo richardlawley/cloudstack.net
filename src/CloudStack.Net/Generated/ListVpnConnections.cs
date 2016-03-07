@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVpnConnectionsRequest : APIRequest
+    public class ListVpnConnectionsRequest : APIListRequest
     {
         public ListVpnConnectionsRequest() : base("listVpnConnections") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<Site2SiteVpnConnectionResponse> ListVpnConnections(ListVpnConnectionsRequest request);
         Task<ListResponse<Site2SiteVpnConnectionResponse>> ListVpnConnectionsAsync(ListVpnConnectionsRequest request);
+        ListResponse<Site2SiteVpnConnectionResponse> ListVpnConnectionsAllPages(ListVpnConnectionsRequest request);
+        Task<ListResponse<Site2SiteVpnConnectionResponse>> ListVpnConnectionsAllPagesAsync(ListVpnConnectionsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<Site2SiteVpnConnectionResponse> ListVpnConnections(ListVpnConnectionsRequest request) => _proxy.Request<ListResponse<Site2SiteVpnConnectionResponse>>(request);
         public Task<ListResponse<Site2SiteVpnConnectionResponse>> ListVpnConnectionsAsync(ListVpnConnectionsRequest request) => _proxy.RequestAsync<ListResponse<Site2SiteVpnConnectionResponse>>(request);
+        public ListResponse<Site2SiteVpnConnectionResponse> ListVpnConnectionsAllPages(ListVpnConnectionsRequest request) => _proxy.RequestAllPages<Site2SiteVpnConnectionResponse>(request);
+        public Task<ListResponse<Site2SiteVpnConnectionResponse>> ListVpnConnectionsAllPagesAsync(ListVpnConnectionsRequest request) => _proxy.RequestAllPagesAsync<Site2SiteVpnConnectionResponse>(request);
     }
 }

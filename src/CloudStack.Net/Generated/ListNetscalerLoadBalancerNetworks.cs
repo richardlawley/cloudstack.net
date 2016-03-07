@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetscalerLoadBalancerNetworksRequest : APIRequest
+    public class ListNetscalerLoadBalancerNetworksRequest : APIListRequest
     {
         public ListNetscalerLoadBalancerNetworksRequest() : base("listNetscalerLoadBalancerNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using a netscaler load balancer device
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListNetscalerLoadBalancerNetworks(ListNetscalerLoadBalancerNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListNetscalerLoadBalancerNetworksAsync(ListNetscalerLoadBalancerNetworksRequest request);
+        ListResponse<NetworkResponse> ListNetscalerLoadBalancerNetworksAllPages(ListNetscalerLoadBalancerNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListNetscalerLoadBalancerNetworksAllPagesAsync(ListNetscalerLoadBalancerNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListNetscalerLoadBalancerNetworks(ListNetscalerLoadBalancerNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListNetscalerLoadBalancerNetworksAsync(ListNetscalerLoadBalancerNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListNetscalerLoadBalancerNetworksAllPages(ListNetscalerLoadBalancerNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListNetscalerLoadBalancerNetworksAllPagesAsync(ListNetscalerLoadBalancerNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

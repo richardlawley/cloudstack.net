@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class QuotaEmailTemplateListRequest : APIRequest
+    public class QuotaEmailTemplateListRequest : APIListRequest
     {
         public QuotaEmailTemplateListRequest() : base("quotaEmailTemplateList") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateList(QuotaEmailTemplateListRequest request);
         Task<ListResponse<QuotaEmailTemplateResponse>> QuotaEmailTemplateListAsync(QuotaEmailTemplateListRequest request);
+        ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateListAllPages(QuotaEmailTemplateListRequest request);
+        Task<ListResponse<QuotaEmailTemplateResponse>> QuotaEmailTemplateListAllPagesAsync(QuotaEmailTemplateListRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateList(QuotaEmailTemplateListRequest request) => _proxy.Request<ListResponse<QuotaEmailTemplateResponse>>(request);
         public Task<ListResponse<QuotaEmailTemplateResponse>> QuotaEmailTemplateListAsync(QuotaEmailTemplateListRequest request) => _proxy.RequestAsync<ListResponse<QuotaEmailTemplateResponse>>(request);
+        public ListResponse<QuotaEmailTemplateResponse> QuotaEmailTemplateListAllPages(QuotaEmailTemplateListRequest request) => _proxy.RequestAllPages<QuotaEmailTemplateResponse>(request);
+        public Task<ListResponse<QuotaEmailTemplateResponse>> QuotaEmailTemplateListAllPagesAsync(QuotaEmailTemplateListRequest request) => _proxy.RequestAllPagesAsync<QuotaEmailTemplateResponse>(request);
     }
 }

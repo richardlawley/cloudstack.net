@@ -56,9 +56,9 @@ namespace CloudStack.Net
         public string JobResultType { get; set; }
 
         /// <summary>
-        /// the current job status-should be 0 for PENDING
+        /// the current job status
         /// </summary>
-        public int JobStatus { get; set; }
+        public JobStatus JobStatus { get; set; }
 
         /// <summary>
         /// the user that executed the async command

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVpnGatewaysRequest : APIRequest
+    public class ListVpnGatewaysRequest : APIListRequest
     {
         public ListVpnGatewaysRequest() : base("listVpnGateways") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<Site2SiteVpnGatewayResponse> ListVpnGateways(ListVpnGatewaysRequest request);
         Task<ListResponse<Site2SiteVpnGatewayResponse>> ListVpnGatewaysAsync(ListVpnGatewaysRequest request);
+        ListResponse<Site2SiteVpnGatewayResponse> ListVpnGatewaysAllPages(ListVpnGatewaysRequest request);
+        Task<ListResponse<Site2SiteVpnGatewayResponse>> ListVpnGatewaysAllPagesAsync(ListVpnGatewaysRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<Site2SiteVpnGatewayResponse> ListVpnGateways(ListVpnGatewaysRequest request) => _proxy.Request<ListResponse<Site2SiteVpnGatewayResponse>>(request);
         public Task<ListResponse<Site2SiteVpnGatewayResponse>> ListVpnGatewaysAsync(ListVpnGatewaysRequest request) => _proxy.RequestAsync<ListResponse<Site2SiteVpnGatewayResponse>>(request);
+        public ListResponse<Site2SiteVpnGatewayResponse> ListVpnGatewaysAllPages(ListVpnGatewaysRequest request) => _proxy.RequestAllPages<Site2SiteVpnGatewayResponse>(request);
+        public Task<ListResponse<Site2SiteVpnGatewayResponse>> ListVpnGatewaysAllPagesAsync(ListVpnGatewaysRequest request) => _proxy.RequestAllPagesAsync<Site2SiteVpnGatewayResponse>(request);
     }
 }

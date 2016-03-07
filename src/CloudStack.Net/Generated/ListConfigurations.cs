@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListConfigurationsRequest : APIRequest
+    public class ListConfigurationsRequest : APIListRequest
     {
         public ListConfigurationsRequest() : base("listConfigurations") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the Storage pool to update the parameter value for corresponding storage pool
         /// </summary>
@@ -84,10 +74,14 @@ namespace CloudStack.Net
     {
         ListResponse<ConfigurationResponse> ListConfigurations(ListConfigurationsRequest request);
         Task<ListResponse<ConfigurationResponse>> ListConfigurationsAsync(ListConfigurationsRequest request);
+        ListResponse<ConfigurationResponse> ListConfigurationsAllPages(ListConfigurationsRequest request);
+        Task<ListResponse<ConfigurationResponse>> ListConfigurationsAllPagesAsync(ListConfigurationsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ConfigurationResponse> ListConfigurations(ListConfigurationsRequest request) => _proxy.Request<ListResponse<ConfigurationResponse>>(request);
         public Task<ListResponse<ConfigurationResponse>> ListConfigurationsAsync(ListConfigurationsRequest request) => _proxy.RequestAsync<ListResponse<ConfigurationResponse>>(request);
+        public ListResponse<ConfigurationResponse> ListConfigurationsAllPages(ListConfigurationsRequest request) => _proxy.RequestAllPages<ConfigurationResponse>(request);
+        public Task<ListResponse<ConfigurationResponse>> ListConfigurationsAllPagesAsync(ListConfigurationsRequest request) => _proxy.RequestAllPagesAsync<ConfigurationResponse>(request);
     }
 }

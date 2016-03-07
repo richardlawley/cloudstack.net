@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListClustersRequest : APIRequest
+    public class ListClustersRequest : APIListRequest
     {
         public ListClustersRequest() : base("listClusters") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// lists clusters by Pod ID
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<ClusterResponse> ListClusters(ListClustersRequest request);
         Task<ListResponse<ClusterResponse>> ListClustersAsync(ListClustersRequest request);
+        ListResponse<ClusterResponse> ListClustersAllPages(ListClustersRequest request);
+        Task<ListResponse<ClusterResponse>> ListClustersAllPagesAsync(ListClustersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ClusterResponse> ListClusters(ListClustersRequest request) => _proxy.Request<ListResponse<ClusterResponse>>(request);
         public Task<ListResponse<ClusterResponse>> ListClustersAsync(ListClustersRequest request) => _proxy.RequestAsync<ListResponse<ClusterResponse>>(request);
+        public ListResponse<ClusterResponse> ListClustersAllPages(ListClustersRequest request) => _proxy.RequestAllPages<ClusterResponse>(request);
+        public Task<ListResponse<ClusterResponse>> ListClustersAllPagesAsync(ListClustersRequest request) => _proxy.RequestAllPagesAsync<ClusterResponse>(request);
     }
 }

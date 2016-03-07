@@ -42,6 +42,7 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
         String interfaceName = "ICloudStackAPIClient";
         String implementationName = "CloudStackAPIClient";
         String requestBase = "APIRequest";
+        String requestListBase = "APIListRequest";
         String[] standardImports = { "System.Collections.Generic", "System.Collections.Specialized", "System.Threading.Tasks", "Newtonsoft.Json" };
 
         try {
@@ -74,38 +75,42 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                     // Create a file for this command's classes
                     try (DotNetFileWriter implementation = new DotNetFileWriter(new File(baseDirectory, actualCommandName + ".cs"), namespace, standardImports)) {
 
+                        String requestBaseType = command.isList() ? requestListBase : requestBase;
+                        
                         // Request Class
-                        implementation.addType(requestTypeName + " : " + requestBase);
+                        implementation.addType(requestTypeName + " : " + requestBaseType);
                         implementation.println("public %s() : base(\"%s\") {}", requestTypeName, command.getName());
                         implementation.println();
 
                         for (Argument arg : command.getRequest()) {
-
-                            String convertedDataType = convertDataType(arg);
-                            String convertedName = arg.getName();
-                            convertedName = convertedName.substring(0, 1).toUpperCase() + convertedName.substring(1);
-
-                            if (arg.getDescription() != null) {
-                                implementation.println("/// <summary>");
-                                implementation.println("/// " + arg.getDescription().replace("\n", "\n        /// "));
-                                implementation.println("/// </summary>");
+                            
+                            if (!command.isList() || !(arg.getName().equalsIgnoreCase("page") || arg.getName().equalsIgnoreCase("pagesize"))) {
+                                String convertedDataType = convertDataType(arg);
+                                String convertedName = arg.getName();
+                                convertedName = convertedName.substring(0, 1).toUpperCase() + convertedName.substring(1);
+    
+                                if (arg.getDescription() != null) {
+                                    implementation.println("/// <summary>");
+                                    implementation.println("/// " + arg.getDescription().replace("\n", "\n        /// "));
+                                    implementation.println("/// </summary>");
+                                }
+    
+                                String propertyName = arg.getNameWithCaps();
+                                implementation.println("public %s %s {", convertedDataType, propertyName);
+                                implementation.incrementIndent();
+                                if (convertedDataType.startsWith("IList<")) {
+                                    implementation.println("get { return GetList<%3$s>(nameof(%2$s).ToLower()); }", convertedDataType, propertyName,
+                                            convertedDataType.substring("IList<".length(), convertedDataType.length() - 1));
+                                } else {
+                                    implementation.println("get { return (%s) Parameters[nameof(%s).ToLower()]; }", convertedDataType, propertyName);
+                                }
+                                implementation.println("set { Parameters[nameof(%s).ToLower()] = value; }", propertyName);
+                                implementation.decrementIndent();
+                                implementation.println("}");
+    
+                                // implementation.println("public %s %s { get; set; }", convertedDataType, arg.getNameWithCaps());
+                                implementation.println();
                             }
-
-                            String propertyName = arg.getNameWithCaps();
-                            implementation.println("public %s %s {", convertedDataType, propertyName);
-                            implementation.incrementIndent();
-                            if (convertedDataType.startsWith("IList<")) {
-                                implementation.println("get { return GetList<%3$s>(nameof(%2$s).ToLower()); }", convertedDataType, propertyName,
-                                        convertedDataType.substring("IList<".length(), convertedDataType.length() - 1));
-                            } else {
-                                implementation.println("get { return (%s) Parameters[nameof(%s).ToLower()]; }", convertedDataType, propertyName);
-                            }
-                            implementation.println("set { Parameters[nameof(%s).ToLower()] = value; }", propertyName);
-                            implementation.decrementIndent();
-                            implementation.println("}");
-
-                            // implementation.println("public %s %s { get; set; }", convertedDataType, arg.getNameWithCaps());
-                            implementation.println();
                         }
                         implementation.closeTypeDef();
 
@@ -138,12 +143,19 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                         implementation.addType(interfaceName, "partial interface");
                         implementation.println("%1$s %2$s(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
                         implementation.println("Task<%1$s> %2$sAsync(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
+                        if (command.isList()) {
+                            implementation.println("%1$s %2$sAllPages(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
+                            implementation.println("Task<%1$s> %2$sAllPagesAsync(%3$s request);", actualReturnType, actualCommandName, requestTypeName);
+                        }
                         implementation.closeTypeDef();
 
                         implementation.addType(implementationName + " : " + interfaceName, "partial class");
                         implementation.println("public %1$s %2$s(%3$s request) => _proxy.Request<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
                         implementation.println("public Task<%1$s> %2$sAsync(%3$s request) => _proxy.RequestAsync<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
-
+                        if (command.isList()) {
+                            implementation.println("public %1$s %2$sAllPages(%3$s request) => _proxy.RequestAllPages<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
+                            implementation.println("public Task<%1$s> %2$sAllPagesAsync(%3$s request) => _proxy.RequestAllPagesAsync<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
+                        }
                         implementation.closeTypeDef();
                     }
                 }

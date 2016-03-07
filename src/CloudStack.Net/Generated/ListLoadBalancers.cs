@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLoadBalancersRequest : APIRequest
+    public class ListLoadBalancersRequest : APIListRequest
     {
         public ListLoadBalancersRequest() : base("listLoadBalancers") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -140,10 +130,14 @@ namespace CloudStack.Net
     {
         ListResponse<ApplicationLoadBalancerResponse> ListLoadBalancers(ListLoadBalancersRequest request);
         Task<ListResponse<ApplicationLoadBalancerResponse>> ListLoadBalancersAsync(ListLoadBalancersRequest request);
+        ListResponse<ApplicationLoadBalancerResponse> ListLoadBalancersAllPages(ListLoadBalancersRequest request);
+        Task<ListResponse<ApplicationLoadBalancerResponse>> ListLoadBalancersAllPagesAsync(ListLoadBalancersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ApplicationLoadBalancerResponse> ListLoadBalancers(ListLoadBalancersRequest request) => _proxy.Request<ListResponse<ApplicationLoadBalancerResponse>>(request);
         public Task<ListResponse<ApplicationLoadBalancerResponse>> ListLoadBalancersAsync(ListLoadBalancersRequest request) => _proxy.RequestAsync<ListResponse<ApplicationLoadBalancerResponse>>(request);
+        public ListResponse<ApplicationLoadBalancerResponse> ListLoadBalancersAllPages(ListLoadBalancersRequest request) => _proxy.RequestAllPages<ApplicationLoadBalancerResponse>(request);
+        public Task<ListResponse<ApplicationLoadBalancerResponse>> ListLoadBalancersAllPagesAsync(ListLoadBalancersRequest request) => _proxy.RequestAllPagesAsync<ApplicationLoadBalancerResponse>(request);
     }
 }

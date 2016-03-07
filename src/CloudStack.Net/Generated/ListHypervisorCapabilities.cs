@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListHypervisorCapabilitiesRequest : APIRequest
+    public class ListHypervisorCapabilitiesRequest : APIListRequest
     {
         public ListHypervisorCapabilitiesRequest() : base("listHypervisorCapabilities") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all hypervisor capabilities.
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilities(ListHypervisorCapabilitiesRequest request);
         Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAsync(ListHypervisorCapabilitiesRequest request);
+        ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilitiesAllPages(ListHypervisorCapabilitiesRequest request);
+        Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAllPagesAsync(ListHypervisorCapabilitiesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilities(ListHypervisorCapabilitiesRequest request) => _proxy.Request<ListResponse<HypervisorCapabilitiesResponse>>(request);
         public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAsync(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAsync<ListResponse<HypervisorCapabilitiesResponse>>(request);
+        public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilitiesAllPages(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAllPages<HypervisorCapabilitiesResponse>(request);
+        public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAllPagesAsync(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAllPagesAsync<HypervisorCapabilitiesResponse>(request);
     }
 }

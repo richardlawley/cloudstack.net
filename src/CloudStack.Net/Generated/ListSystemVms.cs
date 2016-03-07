@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSystemVmsRequest : APIRequest
+    public class ListSystemVmsRequest : APIListRequest
     {
         public ListSystemVmsRequest() : base("listSystemVms") {}
 
@@ -40,16 +40,6 @@ namespace CloudStack.Net
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
             set { Parameters[nameof(Name).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<SystemVmResponse> ListSystemVms(ListSystemVmsRequest request);
         Task<ListResponse<SystemVmResponse>> ListSystemVmsAsync(ListSystemVmsRequest request);
+        ListResponse<SystemVmResponse> ListSystemVmsAllPages(ListSystemVmsRequest request);
+        Task<ListResponse<SystemVmResponse>> ListSystemVmsAllPagesAsync(ListSystemVmsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SystemVmResponse> ListSystemVms(ListSystemVmsRequest request) => _proxy.Request<ListResponse<SystemVmResponse>>(request);
         public Task<ListResponse<SystemVmResponse>> ListSystemVmsAsync(ListSystemVmsRequest request) => _proxy.RequestAsync<ListResponse<SystemVmResponse>>(request);
+        public ListResponse<SystemVmResponse> ListSystemVmsAllPages(ListSystemVmsRequest request) => _proxy.RequestAllPages<SystemVmResponse>(request);
+        public Task<ListResponse<SystemVmResponse>> ListSystemVmsAllPagesAsync(ListSystemVmsRequest request) => _proxy.RequestAllPagesAsync<SystemVmResponse>(request);
     }
 }

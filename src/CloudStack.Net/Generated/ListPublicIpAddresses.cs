@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPublicIpAddressesRequest : APIRequest
+    public class ListPublicIpAddressesRequest : APIListRequest
     {
         public ListPublicIpAddressesRequest() : base("listPublicIpAddresses") {}
 
@@ -122,16 +122,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// lists all public IP addresses by physical network ID
         /// </summary>
@@ -196,10 +186,14 @@ namespace CloudStack.Net
     {
         ListResponse<IPAddressResponse> ListPublicIpAddresses(ListPublicIpAddressesRequest request);
         Task<ListResponse<IPAddressResponse>> ListPublicIpAddressesAsync(ListPublicIpAddressesRequest request);
+        ListResponse<IPAddressResponse> ListPublicIpAddressesAllPages(ListPublicIpAddressesRequest request);
+        Task<ListResponse<IPAddressResponse>> ListPublicIpAddressesAllPagesAsync(ListPublicIpAddressesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<IPAddressResponse> ListPublicIpAddresses(ListPublicIpAddressesRequest request) => _proxy.Request<ListResponse<IPAddressResponse>>(request);
         public Task<ListResponse<IPAddressResponse>> ListPublicIpAddressesAsync(ListPublicIpAddressesRequest request) => _proxy.RequestAsync<ListResponse<IPAddressResponse>>(request);
+        public ListResponse<IPAddressResponse> ListPublicIpAddressesAllPages(ListPublicIpAddressesRequest request) => _proxy.RequestAllPages<IPAddressResponse>(request);
+        public Task<ListResponse<IPAddressResponse>> ListPublicIpAddressesAllPagesAsync(ListPublicIpAddressesRequest request) => _proxy.RequestAllPagesAsync<IPAddressResponse>(request);
     }
 }

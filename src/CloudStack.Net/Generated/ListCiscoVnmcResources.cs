@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListCiscoVnmcResourcesRequest : APIRequest
+    public class ListCiscoVnmcResourcesRequest : APIListRequest
     {
         public ListCiscoVnmcResourcesRequest() : base("listCiscoVnmcResources") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<CiscoVnmcResourceResponse> ListCiscoVnmcResources(ListCiscoVnmcResourcesRequest request);
         Task<ListResponse<CiscoVnmcResourceResponse>> ListCiscoVnmcResourcesAsync(ListCiscoVnmcResourcesRequest request);
+        ListResponse<CiscoVnmcResourceResponse> ListCiscoVnmcResourcesAllPages(ListCiscoVnmcResourcesRequest request);
+        Task<ListResponse<CiscoVnmcResourceResponse>> ListCiscoVnmcResourcesAllPagesAsync(ListCiscoVnmcResourcesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<CiscoVnmcResourceResponse> ListCiscoVnmcResources(ListCiscoVnmcResourcesRequest request) => _proxy.Request<ListResponse<CiscoVnmcResourceResponse>>(request);
         public Task<ListResponse<CiscoVnmcResourceResponse>> ListCiscoVnmcResourcesAsync(ListCiscoVnmcResourcesRequest request) => _proxy.RequestAsync<ListResponse<CiscoVnmcResourceResponse>>(request);
+        public ListResponse<CiscoVnmcResourceResponse> ListCiscoVnmcResourcesAllPages(ListCiscoVnmcResourcesRequest request) => _proxy.RequestAllPages<CiscoVnmcResourceResponse>(request);
+        public Task<ListResponse<CiscoVnmcResourceResponse>> ListCiscoVnmcResourcesAllPagesAsync(ListCiscoVnmcResourcesRequest request) => _proxy.RequestAllPagesAsync<CiscoVnmcResourceResponse>(request);
     }
 }

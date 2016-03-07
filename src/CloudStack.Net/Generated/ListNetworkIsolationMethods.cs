@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkIsolationMethodsRequest : APIRequest
+    public class ListNetworkIsolationMethodsRequest : APIListRequest
     {
         public ListNetworkIsolationMethodsRequest() : base("listNetworkIsolationMethods") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists supported methods of network isolation
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<IsolationMethodResponse> ListNetworkIsolationMethods(ListNetworkIsolationMethodsRequest request);
         Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAsync(ListNetworkIsolationMethodsRequest request);
+        ListResponse<IsolationMethodResponse> ListNetworkIsolationMethodsAllPages(ListNetworkIsolationMethodsRequest request);
+        Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAllPagesAsync(ListNetworkIsolationMethodsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethods(ListNetworkIsolationMethodsRequest request) => _proxy.Request<ListResponse<IsolationMethodResponse>>(request);
         public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAsync(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAsync<ListResponse<IsolationMethodResponse>>(request);
+        public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethodsAllPages(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAllPages<IsolationMethodResponse>(request);
+        public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAllPagesAsync(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAllPagesAsync<IsolationMethodResponse>(request);
     }
 }

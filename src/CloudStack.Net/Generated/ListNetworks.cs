@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworksRequest : APIRequest
+    public class ListNetworksRequest : APIListRequest
     {
         public ListNetworksRequest() : base("listNetworks") {}
 
@@ -98,16 +98,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list networks by physical network id
         /// </summary>
@@ -196,10 +186,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListNetworks(ListNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListNetworksAsync(ListNetworksRequest request);
+        ListResponse<NetworkResponse> ListNetworksAllPages(ListNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListNetworksAllPagesAsync(ListNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListNetworks(ListNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListNetworksAsync(ListNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListNetworksAllPages(ListNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListNetworksAllPagesAsync(ListNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

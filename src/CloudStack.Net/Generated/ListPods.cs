@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPodsRequest : APIRequest
+    public class ListPodsRequest : APIListRequest
     {
         public ListPodsRequest() : base("listPods") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// flag to display the capacity of the pods
         /// </summary>
@@ -76,10 +66,14 @@ namespace CloudStack.Net
     {
         ListResponse<PodResponse> ListPods(ListPodsRequest request);
         Task<ListResponse<PodResponse>> ListPodsAsync(ListPodsRequest request);
+        ListResponse<PodResponse> ListPodsAllPages(ListPodsRequest request);
+        Task<ListResponse<PodResponse>> ListPodsAllPagesAsync(ListPodsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<PodResponse> ListPods(ListPodsRequest request) => _proxy.Request<ListResponse<PodResponse>>(request);
         public Task<ListResponse<PodResponse>> ListPodsAsync(ListPodsRequest request) => _proxy.RequestAsync<ListResponse<PodResponse>>(request);
+        public ListResponse<PodResponse> ListPodsAllPages(ListPodsRequest request) => _proxy.RequestAllPages<PodResponse>(request);
+        public Task<ListResponse<PodResponse>> ListPodsAllPagesAsync(ListPodsRequest request) => _proxy.RequestAllPagesAsync<PodResponse>(request);
     }
 }

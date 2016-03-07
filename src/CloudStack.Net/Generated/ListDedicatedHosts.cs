@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDedicatedHostsRequest : APIRequest
+    public class ListDedicatedHostsRequest : APIListRequest
     {
         public ListDedicatedHostsRequest() : base("listDedicatedHosts") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists dedicated hosts.
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<DedicateHostResponse> ListDedicatedHosts(ListDedicatedHostsRequest request);
         Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAsync(ListDedicatedHostsRequest request);
+        ListResponse<DedicateHostResponse> ListDedicatedHostsAllPages(ListDedicatedHostsRequest request);
+        Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAllPagesAsync(ListDedicatedHostsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DedicateHostResponse> ListDedicatedHosts(ListDedicatedHostsRequest request) => _proxy.Request<ListResponse<DedicateHostResponse>>(request);
         public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAsync(ListDedicatedHostsRequest request) => _proxy.RequestAsync<ListResponse<DedicateHostResponse>>(request);
+        public ListResponse<DedicateHostResponse> ListDedicatedHostsAllPages(ListDedicatedHostsRequest request) => _proxy.RequestAllPages<DedicateHostResponse>(request);
+        public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAllPagesAsync(ListDedicatedHostsRequest request) => _proxy.RequestAllPagesAsync<DedicateHostResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVPCOfferingsRequest : APIRequest
+    public class ListVPCOfferingsRequest : APIListRequest
     {
         public ListVPCOfferingsRequest() : base("listVPCOfferings") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list VPC offerings by state
         /// </summary>
@@ -84,10 +74,14 @@ namespace CloudStack.Net
     {
         ListResponse<VpcOfferingResponse> ListVPCOfferings(ListVPCOfferingsRequest request);
         Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAsync(ListVPCOfferingsRequest request);
+        ListResponse<VpcOfferingResponse> ListVPCOfferingsAllPages(ListVPCOfferingsRequest request);
+        Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAllPagesAsync(ListVPCOfferingsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VpcOfferingResponse> ListVPCOfferings(ListVPCOfferingsRequest request) => _proxy.Request<ListResponse<VpcOfferingResponse>>(request);
         public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAsync(ListVPCOfferingsRequest request) => _proxy.RequestAsync<ListResponse<VpcOfferingResponse>>(request);
+        public ListResponse<VpcOfferingResponse> ListVPCOfferingsAllPages(ListVPCOfferingsRequest request) => _proxy.RequestAllPages<VpcOfferingResponse>(request);
+        public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAllPagesAsync(ListVPCOfferingsRequest request) => _proxy.RequestAllPagesAsync<VpcOfferingResponse>(request);
     }
 }

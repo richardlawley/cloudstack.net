@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDomainChildrenRequest : APIRequest
+    public class ListDomainChildrenRequest : APIListRequest
     {
         public ListDomainChildrenRequest() : base("listDomainChildren") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all children domains belonging to a specified domain
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<DomainResponse> ListDomainChildren(ListDomainChildrenRequest request);
         Task<ListResponse<DomainResponse>> ListDomainChildrenAsync(ListDomainChildrenRequest request);
+        ListResponse<DomainResponse> ListDomainChildrenAllPages(ListDomainChildrenRequest request);
+        Task<ListResponse<DomainResponse>> ListDomainChildrenAllPagesAsync(ListDomainChildrenRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DomainResponse> ListDomainChildren(ListDomainChildrenRequest request) => _proxy.Request<ListResponse<DomainResponse>>(request);
         public Task<ListResponse<DomainResponse>> ListDomainChildrenAsync(ListDomainChildrenRequest request) => _proxy.RequestAsync<ListResponse<DomainResponse>>(request);
+        public ListResponse<DomainResponse> ListDomainChildrenAllPages(ListDomainChildrenRequest request) => _proxy.RequestAllPages<DomainResponse>(request);
+        public Task<ListResponse<DomainResponse>> ListDomainChildrenAllPagesAsync(ListDomainChildrenRequest request) => _proxy.RequestAllPagesAsync<DomainResponse>(request);
     }
 }

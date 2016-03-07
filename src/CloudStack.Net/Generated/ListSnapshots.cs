@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSnapshotsRequest : APIRequest
+    public class ListSnapshotsRequest : APIListRequest
     {
         public ListSnapshotsRequest() : base("listSnapshots") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -132,10 +122,14 @@ namespace CloudStack.Net
     {
         ListResponse<SnapshotResponse> ListSnapshots(ListSnapshotsRequest request);
         Task<ListResponse<SnapshotResponse>> ListSnapshotsAsync(ListSnapshotsRequest request);
+        ListResponse<SnapshotResponse> ListSnapshotsAllPages(ListSnapshotsRequest request);
+        Task<ListResponse<SnapshotResponse>> ListSnapshotsAllPagesAsync(ListSnapshotsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SnapshotResponse> ListSnapshots(ListSnapshotsRequest request) => _proxy.Request<ListResponse<SnapshotResponse>>(request);
         public Task<ListResponse<SnapshotResponse>> ListSnapshotsAsync(ListSnapshotsRequest request) => _proxy.RequestAsync<ListResponse<SnapshotResponse>>(request);
+        public ListResponse<SnapshotResponse> ListSnapshotsAllPages(ListSnapshotsRequest request) => _proxy.RequestAllPages<SnapshotResponse>(request);
+        public Task<ListResponse<SnapshotResponse>> ListSnapshotsAllPagesAsync(ListSnapshotsRequest request) => _proxy.RequestAllPagesAsync<SnapshotResponse>(request);
     }
 }

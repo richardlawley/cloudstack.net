@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDomainsRequest : APIRequest
+    public class ListDomainsRequest : APIListRequest
     {
         public ListDomainsRequest() : base("listDomains") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists domains and provides detailed information for listed domains
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<DomainResponse> ListDomains(ListDomainsRequest request);
         Task<ListResponse<DomainResponse>> ListDomainsAsync(ListDomainsRequest request);
+        ListResponse<DomainResponse> ListDomainsAllPages(ListDomainsRequest request);
+        Task<ListResponse<DomainResponse>> ListDomainsAllPagesAsync(ListDomainsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DomainResponse> ListDomains(ListDomainsRequest request) => _proxy.Request<ListResponse<DomainResponse>>(request);
         public Task<ListResponse<DomainResponse>> ListDomainsAsync(ListDomainsRequest request) => _proxy.RequestAsync<ListResponse<DomainResponse>>(request);
+        public ListResponse<DomainResponse> ListDomainsAllPages(ListDomainsRequest request) => _proxy.RequestAllPages<DomainResponse>(request);
+        public Task<ListResponse<DomainResponse>> ListDomainsAllPagesAsync(ListDomainsRequest request) => _proxy.RequestAllPagesAsync<DomainResponse>(request);
     }
 }

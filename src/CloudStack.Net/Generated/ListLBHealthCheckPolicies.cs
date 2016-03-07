@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLBHealthCheckPoliciesRequest : APIRequest
+    public class ListLBHealthCheckPoliciesRequest : APIListRequest
     {
         public ListLBHealthCheckPoliciesRequest() : base("listLBHealthCheckPolicies") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(LbRuleId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists load balancer health check policies.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<LBHealthCheckResponse> ListLBHealthCheckPolicies(ListLBHealthCheckPoliciesRequest request);
         Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAsync(ListLBHealthCheckPoliciesRequest request);
+        ListResponse<LBHealthCheckResponse> ListLBHealthCheckPoliciesAllPages(ListLBHealthCheckPoliciesRequest request);
+        Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAllPagesAsync(ListLBHealthCheckPoliciesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPolicies(ListLBHealthCheckPoliciesRequest request) => _proxy.Request<ListResponse<LBHealthCheckResponse>>(request);
         public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAsync(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAsync<ListResponse<LBHealthCheckResponse>>(request);
+        public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPoliciesAllPages(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAllPages<LBHealthCheckResponse>(request);
+        public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAllPagesAsync(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAllPagesAsync<LBHealthCheckResponse>(request);
     }
 }

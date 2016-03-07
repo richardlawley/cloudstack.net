@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSnapshotPoliciesRequest : APIRequest
+    public class ListSnapshotPoliciesRequest : APIListRequest
     {
         public ListSnapshotPoliciesRequest() : base("listSnapshotPolicies") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<SnapshotPolicyResponse> ListSnapshotPolicies(ListSnapshotPoliciesRequest request);
         Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAsync(ListSnapshotPoliciesRequest request);
+        ListResponse<SnapshotPolicyResponse> ListSnapshotPoliciesAllPages(ListSnapshotPoliciesRequest request);
+        Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAllPagesAsync(ListSnapshotPoliciesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SnapshotPolicyResponse> ListSnapshotPolicies(ListSnapshotPoliciesRequest request) => _proxy.Request<ListResponse<SnapshotPolicyResponse>>(request);
         public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAsync(ListSnapshotPoliciesRequest request) => _proxy.RequestAsync<ListResponse<SnapshotPolicyResponse>>(request);
+        public ListResponse<SnapshotPolicyResponse> ListSnapshotPoliciesAllPages(ListSnapshotPoliciesRequest request) => _proxy.RequestAllPages<SnapshotPolicyResponse>(request);
+        public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAllPagesAsync(ListSnapshotPoliciesRequest request) => _proxy.RequestAllPagesAsync<SnapshotPolicyResponse>(request);
     }
 }

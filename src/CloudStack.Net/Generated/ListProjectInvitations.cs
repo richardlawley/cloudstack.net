@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListProjectInvitationsRequest : APIRequest
+    public class ListProjectInvitationsRequest : APIListRequest
     {
         public ListProjectInvitationsRequest() : base("listProjectInvitations") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list by project id
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<ProjectInvitationResponse> ListProjectInvitations(ListProjectInvitationsRequest request);
         Task<ListResponse<ProjectInvitationResponse>> ListProjectInvitationsAsync(ListProjectInvitationsRequest request);
+        ListResponse<ProjectInvitationResponse> ListProjectInvitationsAllPages(ListProjectInvitationsRequest request);
+        Task<ListResponse<ProjectInvitationResponse>> ListProjectInvitationsAllPagesAsync(ListProjectInvitationsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ProjectInvitationResponse> ListProjectInvitations(ListProjectInvitationsRequest request) => _proxy.Request<ListResponse<ProjectInvitationResponse>>(request);
         public Task<ListResponse<ProjectInvitationResponse>> ListProjectInvitationsAsync(ListProjectInvitationsRequest request) => _proxy.RequestAsync<ListResponse<ProjectInvitationResponse>>(request);
+        public ListResponse<ProjectInvitationResponse> ListProjectInvitationsAllPages(ListProjectInvitationsRequest request) => _proxy.RequestAllPages<ProjectInvitationResponse>(request);
+        public Task<ListResponse<ProjectInvitationResponse>> ListProjectInvitationsAllPagesAsync(ListProjectInvitationsRequest request) => _proxy.RequestAllPagesAsync<ProjectInvitationResponse>(request);
     }
 }

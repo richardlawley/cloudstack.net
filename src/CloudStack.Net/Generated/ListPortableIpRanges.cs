@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPortableIpRangesRequest : APIRequest
+    public class ListPortableIpRangesRequest : APIListRequest
     {
         public ListPortableIpRangesRequest() : base("listPortableIpRanges") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// Id of a Region
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<PortableIpRangeResponse> ListPortableIpRanges(ListPortableIpRangesRequest request);
         Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAsync(ListPortableIpRangesRequest request);
+        ListResponse<PortableIpRangeResponse> ListPortableIpRangesAllPages(ListPortableIpRangesRequest request);
+        Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAllPagesAsync(ListPortableIpRangesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<PortableIpRangeResponse> ListPortableIpRanges(ListPortableIpRangesRequest request) => _proxy.Request<ListResponse<PortableIpRangeResponse>>(request);
         public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAsync(ListPortableIpRangesRequest request) => _proxy.RequestAsync<ListResponse<PortableIpRangeResponse>>(request);
+        public ListResponse<PortableIpRangeResponse> ListPortableIpRangesAllPages(ListPortableIpRangesRequest request) => _proxy.RequestAllPages<PortableIpRangeResponse>(request);
+        public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAllPagesAsync(ListPortableIpRangesRequest request) => _proxy.RequestAllPagesAsync<PortableIpRangeResponse>(request);
     }
 }

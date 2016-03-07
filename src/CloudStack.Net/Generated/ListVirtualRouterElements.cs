@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVirtualRouterElementsRequest : APIRequest
+    public class ListVirtualRouterElementsRequest : APIListRequest
     {
         public ListVirtualRouterElementsRequest() : base("listVirtualRouterElements") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NspId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all available virtual router elements.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElements(ListVirtualRouterElementsRequest request);
         Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAsync(ListVirtualRouterElementsRequest request);
+        ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElementsAllPages(ListVirtualRouterElementsRequest request);
+        Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAllPagesAsync(ListVirtualRouterElementsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElements(ListVirtualRouterElementsRequest request) => _proxy.Request<ListResponse<VirtualRouterProviderResponse>>(request);
         public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAsync(ListVirtualRouterElementsRequest request) => _proxy.RequestAsync<ListResponse<VirtualRouterProviderResponse>>(request);
+        public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElementsAllPages(ListVirtualRouterElementsRequest request) => _proxy.RequestAllPages<VirtualRouterProviderResponse>(request);
+        public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAllPagesAsync(ListVirtualRouterElementsRequest request) => _proxy.RequestAllPagesAsync<VirtualRouterProviderResponse>(request);
     }
 }

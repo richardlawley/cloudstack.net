@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListProjectAccountsRequest : APIRequest
+    public class ListProjectAccountsRequest : APIListRequest
     {
         public ListProjectAccountsRequest() : base("listProjectAccounts") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list accounts of the project by role
         /// </summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<ProjectResponse> ListProjectAccounts(ListProjectAccountsRequest request);
         Task<ListResponse<ProjectResponse>> ListProjectAccountsAsync(ListProjectAccountsRequest request);
+        ListResponse<ProjectResponse> ListProjectAccountsAllPages(ListProjectAccountsRequest request);
+        Task<ListResponse<ProjectResponse>> ListProjectAccountsAllPagesAsync(ListProjectAccountsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ProjectResponse> ListProjectAccounts(ListProjectAccountsRequest request) => _proxy.Request<ListResponse<ProjectResponse>>(request);
         public Task<ListResponse<ProjectResponse>> ListProjectAccountsAsync(ListProjectAccountsRequest request) => _proxy.RequestAsync<ListResponse<ProjectResponse>>(request);
+        public ListResponse<ProjectResponse> ListProjectAccountsAllPages(ListProjectAccountsRequest request) => _proxy.RequestAllPages<ProjectResponse>(request);
+        public Task<ListResponse<ProjectResponse>> ListProjectAccountsAllPagesAsync(ListProjectAccountsRequest request) => _proxy.RequestAllPagesAsync<ProjectResponse>(request);
     }
 }

@@ -28,5 +28,20 @@ namespace CloudStack.Net
         /// <returns></returns>
         Task<TResponse> RequestAsync<TResponse>(APIRequest request) where TResponse : new();
 
+        /// <summary>
+        /// Returns the entire list response from the CloudStack API, detecting paging in use and issuing multiple
+        /// requests where necessary
+        /// </summary>
+        /// <typeparam name="TResponse">Type of item response expected</typeparam>
+        /// <param name="request">Request Details</param>
+        ListResponse<TResponse> RequestAllPages<TResponse>(APIListRequest request) where TResponse : new();
+
+        /// <summary>
+        /// Returns the entire list response from the CloudStack API, detecting paging in use and issuing multiple
+        /// requests where necessary
+        /// </summary>
+        /// <typeparam name="TResponse">Type of item response expected</typeparam>
+        /// <param name="request">Request Details</param>
+        Task<ListResponse<TResponse>> RequestAllPagesAsync<TResponse>(APIListRequest request) where TResponse : new();
     }
 }

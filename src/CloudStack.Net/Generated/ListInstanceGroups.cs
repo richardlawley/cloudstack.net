@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListInstanceGroupsRequest : APIRequest
+    public class ListInstanceGroupsRequest : APIListRequest
     {
         public ListInstanceGroupsRequest() : base("listInstanceGroups") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<InstanceGroupResponse> ListInstanceGroups(ListInstanceGroupsRequest request);
         Task<ListResponse<InstanceGroupResponse>> ListInstanceGroupsAsync(ListInstanceGroupsRequest request);
+        ListResponse<InstanceGroupResponse> ListInstanceGroupsAllPages(ListInstanceGroupsRequest request);
+        Task<ListResponse<InstanceGroupResponse>> ListInstanceGroupsAllPagesAsync(ListInstanceGroupsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<InstanceGroupResponse> ListInstanceGroups(ListInstanceGroupsRequest request) => _proxy.Request<ListResponse<InstanceGroupResponse>>(request);
         public Task<ListResponse<InstanceGroupResponse>> ListInstanceGroupsAsync(ListInstanceGroupsRequest request) => _proxy.RequestAsync<ListResponse<InstanceGroupResponse>>(request);
+        public ListResponse<InstanceGroupResponse> ListInstanceGroupsAllPages(ListInstanceGroupsRequest request) => _proxy.RequestAllPages<InstanceGroupResponse>(request);
+        public Task<ListResponse<InstanceGroupResponse>> ListInstanceGroupsAllPagesAsync(ListInstanceGroupsRequest request) => _proxy.RequestAllPagesAsync<InstanceGroupResponse>(request);
     }
 }

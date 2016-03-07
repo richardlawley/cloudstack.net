@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAsyncJobsRequest : APIRequest
+    public class ListAsyncJobsRequest : APIListRequest
     {
         public ListAsyncJobsRequest() : base("listAsyncJobs") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the start date of the async job
         /// </summary>
@@ -76,10 +66,14 @@ namespace CloudStack.Net
     {
         ListResponse<AsyncJobResponse> ListAsyncJobs(ListAsyncJobsRequest request);
         Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAsync(ListAsyncJobsRequest request);
+        ListResponse<AsyncJobResponse> ListAsyncJobsAllPages(ListAsyncJobsRequest request);
+        Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAllPagesAsync(ListAsyncJobsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AsyncJobResponse> ListAsyncJobs(ListAsyncJobsRequest request) => _proxy.Request<ListResponse<AsyncJobResponse>>(request);
         public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAsync(ListAsyncJobsRequest request) => _proxy.RequestAsync<ListResponse<AsyncJobResponse>>(request);
+        public ListResponse<AsyncJobResponse> ListAsyncJobsAllPages(ListAsyncJobsRequest request) => _proxy.RequestAllPages<AsyncJobResponse>(request);
+        public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAllPagesAsync(ListAsyncJobsRequest request) => _proxy.RequestAllPagesAsync<AsyncJobResponse>(request);
     }
 }

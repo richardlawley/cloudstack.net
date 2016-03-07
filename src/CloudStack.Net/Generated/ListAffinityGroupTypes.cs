@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAffinityGroupTypesRequest : APIRequest
+    public class ListAffinityGroupTypesRequest : APIListRequest
     {
         public ListAffinityGroupTypesRequest() : base("listAffinityGroupTypes") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists affinity group types available
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypes(ListAffinityGroupTypesRequest request);
         Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAsync(ListAffinityGroupTypesRequest request);
+        ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypesAllPages(ListAffinityGroupTypesRequest request);
+        Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAllPagesAsync(ListAffinityGroupTypesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypes(ListAffinityGroupTypesRequest request) => _proxy.Request<ListResponse<AffinityGroupTypeResponse>>(request);
         public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAsync(ListAffinityGroupTypesRequest request) => _proxy.RequestAsync<ListResponse<AffinityGroupTypeResponse>>(request);
+        public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypesAllPages(ListAffinityGroupTypesRequest request) => _proxy.RequestAllPages<AffinityGroupTypeResponse>(request);
+        public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAllPagesAsync(ListAffinityGroupTypesRequest request) => _proxy.RequestAllPagesAsync<AffinityGroupTypeResponse>(request);
     }
 }

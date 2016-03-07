@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBaremetalPxeServersRequest : APIRequest
+    public class ListBaremetalPxeServersRequest : APIListRequest
     {
         public ListBaremetalPxeServersRequest() : base("listBaremetalPxeServers") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// list baremetal pxe server
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<BaremetalPxeResponse> ListBaremetalPxeServers(ListBaremetalPxeServersRequest request);
         Task<ListResponse<BaremetalPxeResponse>> ListBaremetalPxeServersAsync(ListBaremetalPxeServersRequest request);
+        ListResponse<BaremetalPxeResponse> ListBaremetalPxeServersAllPages(ListBaremetalPxeServersRequest request);
+        Task<ListResponse<BaremetalPxeResponse>> ListBaremetalPxeServersAllPagesAsync(ListBaremetalPxeServersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<BaremetalPxeResponse> ListBaremetalPxeServers(ListBaremetalPxeServersRequest request) => _proxy.Request<ListResponse<BaremetalPxeResponse>>(request);
         public Task<ListResponse<BaremetalPxeResponse>> ListBaremetalPxeServersAsync(ListBaremetalPxeServersRequest request) => _proxy.RequestAsync<ListResponse<BaremetalPxeResponse>>(request);
+        public ListResponse<BaremetalPxeResponse> ListBaremetalPxeServersAllPages(ListBaremetalPxeServersRequest request) => _proxy.RequestAllPages<BaremetalPxeResponse>(request);
+        public Task<ListResponse<BaremetalPxeResponse>> ListBaremetalPxeServersAllPagesAsync(ListBaremetalPxeServersRequest request) => _proxy.RequestAllPagesAsync<BaremetalPxeResponse>(request);
     }
 }

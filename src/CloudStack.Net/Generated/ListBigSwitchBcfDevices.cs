@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBigSwitchBcfDevicesRequest : APIRequest
+    public class ListBigSwitchBcfDevicesRequest : APIListRequest
     {
         public ListBigSwitchBcfDevicesRequest() : base("listBigSwitchBcfDevices") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Physical Network ID
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request);
         Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAsync(ListBigSwitchBcfDevicesRequest request);
+        ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevicesAllPages(ListBigSwitchBcfDevicesRequest request);
+        Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAllPagesAsync(ListBigSwitchBcfDevicesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request) => _proxy.Request<ListResponse<BigSwitchBcfDeviceResponse>>(request);
         public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAsync(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAsync<ListResponse<BigSwitchBcfDeviceResponse>>(request);
+        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevicesAllPages(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAllPages<BigSwitchBcfDeviceResponse>(request);
+        public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAllPagesAsync(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAllPagesAsync<BigSwitchBcfDeviceResponse>(request);
     }
 }

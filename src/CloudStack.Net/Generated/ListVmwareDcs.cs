@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVmwareDcsRequest : APIRequest
+    public class ListVmwareDcsRequest : APIListRequest
     {
         public ListVmwareDcsRequest() : base("listVmwareDcs") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Retrieves VMware DC(s) associated with a zone.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<VmwareDatacenterResponse> ListVmwareDcs(ListVmwareDcsRequest request);
         Task<ListResponse<VmwareDatacenterResponse>> ListVmwareDcsAsync(ListVmwareDcsRequest request);
+        ListResponse<VmwareDatacenterResponse> ListVmwareDcsAllPages(ListVmwareDcsRequest request);
+        Task<ListResponse<VmwareDatacenterResponse>> ListVmwareDcsAllPagesAsync(ListVmwareDcsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VmwareDatacenterResponse> ListVmwareDcs(ListVmwareDcsRequest request) => _proxy.Request<ListResponse<VmwareDatacenterResponse>>(request);
         public Task<ListResponse<VmwareDatacenterResponse>> ListVmwareDcsAsync(ListVmwareDcsRequest request) => _proxy.RequestAsync<ListResponse<VmwareDatacenterResponse>>(request);
+        public ListResponse<VmwareDatacenterResponse> ListVmwareDcsAllPages(ListVmwareDcsRequest request) => _proxy.RequestAllPages<VmwareDatacenterResponse>(request);
+        public Task<ListResponse<VmwareDatacenterResponse>> ListVmwareDcsAllPagesAsync(ListVmwareDcsRequest request) => _proxy.RequestAllPagesAsync<VmwareDatacenterResponse>(request);
     }
 }

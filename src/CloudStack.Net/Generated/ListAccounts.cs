@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAccountsRequest : APIRequest
+    public class ListAccountsRequest : APIListRequest
     {
         public ListAccountsRequest() : base("listAccounts") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list accounts by state. Valid states are enabled, disabled, and locked.
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<AccountResponse> ListAccounts(ListAccountsRequest request);
         Task<ListResponse<AccountResponse>> ListAccountsAsync(ListAccountsRequest request);
+        ListResponse<AccountResponse> ListAccountsAllPages(ListAccountsRequest request);
+        Task<ListResponse<AccountResponse>> ListAccountsAllPagesAsync(ListAccountsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AccountResponse> ListAccounts(ListAccountsRequest request) => _proxy.Request<ListResponse<AccountResponse>>(request);
         public Task<ListResponse<AccountResponse>> ListAccountsAsync(ListAccountsRequest request) => _proxy.RequestAsync<ListResponse<AccountResponse>>(request);
+        public ListResponse<AccountResponse> ListAccountsAllPages(ListAccountsRequest request) => _proxy.RequestAllPages<AccountResponse>(request);
+        public Task<ListResponse<AccountResponse>> ListAccountsAllPagesAsync(ListAccountsRequest request) => _proxy.RequestAllPagesAsync<AccountResponse>(request);
     }
 }

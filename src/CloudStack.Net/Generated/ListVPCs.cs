@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVPCsRequest : APIRequest
+    public class ListVPCsRequest : APIListRequest
     {
         public ListVPCsRequest() : base("listVPCs") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -164,10 +154,14 @@ namespace CloudStack.Net
     {
         ListResponse<VpcResponse> ListVPCs(ListVPCsRequest request);
         Task<ListResponse<VpcResponse>> ListVPCsAsync(ListVPCsRequest request);
+        ListResponse<VpcResponse> ListVPCsAllPages(ListVPCsRequest request);
+        Task<ListResponse<VpcResponse>> ListVPCsAllPagesAsync(ListVPCsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VpcResponse> ListVPCs(ListVPCsRequest request) => _proxy.Request<ListResponse<VpcResponse>>(request);
         public Task<ListResponse<VpcResponse>> ListVPCsAsync(ListVPCsRequest request) => _proxy.RequestAsync<ListResponse<VpcResponse>>(request);
+        public ListResponse<VpcResponse> ListVPCsAllPages(ListVPCsRequest request) => _proxy.RequestAllPages<VpcResponse>(request);
+        public Task<ListResponse<VpcResponse>> ListVPCsAllPagesAsync(ListVPCsRequest request) => _proxy.RequestAllPagesAsync<VpcResponse>(request);
     }
 }

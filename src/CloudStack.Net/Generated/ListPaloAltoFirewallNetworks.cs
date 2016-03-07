@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPaloAltoFirewallNetworksRequest : APIRequest
+    public class ListPaloAltoFirewallNetworksRequest : APIListRequest
     {
         public ListPaloAltoFirewallNetworksRequest() : base("listPaloAltoFirewallNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using Palo Alto firewall device
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListPaloAltoFirewallNetworks(ListPaloAltoFirewallNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListPaloAltoFirewallNetworksAsync(ListPaloAltoFirewallNetworksRequest request);
+        ListResponse<NetworkResponse> ListPaloAltoFirewallNetworksAllPages(ListPaloAltoFirewallNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListPaloAltoFirewallNetworksAllPagesAsync(ListPaloAltoFirewallNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListPaloAltoFirewallNetworks(ListPaloAltoFirewallNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListPaloAltoFirewallNetworksAsync(ListPaloAltoFirewallNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListPaloAltoFirewallNetworksAllPages(ListPaloAltoFirewallNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListPaloAltoFirewallNetworksAllPagesAsync(ListPaloAltoFirewallNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

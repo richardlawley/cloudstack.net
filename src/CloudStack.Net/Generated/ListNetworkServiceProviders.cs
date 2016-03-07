@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkServiceProvidersRequest : APIRequest
+    public class ListNetworkServiceProvidersRequest : APIListRequest
     {
         public ListNetworkServiceProvidersRequest() : base("listNetworkServiceProviders") {}
 
@@ -24,16 +24,6 @@ namespace CloudStack.Net
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
             set { Parameters[nameof(Name).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<ProviderResponse> ListNetworkServiceProviders(ListNetworkServiceProvidersRequest request);
         Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAsync(ListNetworkServiceProvidersRequest request);
+        ListResponse<ProviderResponse> ListNetworkServiceProvidersAllPages(ListNetworkServiceProvidersRequest request);
+        Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAllPagesAsync(ListNetworkServiceProvidersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ProviderResponse> ListNetworkServiceProviders(ListNetworkServiceProvidersRequest request) => _proxy.Request<ListResponse<ProviderResponse>>(request);
         public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAsync(ListNetworkServiceProvidersRequest request) => _proxy.RequestAsync<ListResponse<ProviderResponse>>(request);
+        public ListResponse<ProviderResponse> ListNetworkServiceProvidersAllPages(ListNetworkServiceProvidersRequest request) => _proxy.RequestAllPages<ProviderResponse>(request);
+        public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAllPagesAsync(ListNetworkServiceProvidersRequest request) => _proxy.RequestAllPagesAsync<ProviderResponse>(request);
     }
 }

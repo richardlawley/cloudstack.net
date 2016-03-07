@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkOfferingsRequest : APIRequest
+    public class ListNetworkOfferingsRequest : APIListRequest
     {
         public ListNetworkOfferingsRequest() : base("listNetworkOfferings") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// true if need to list only netwok offerings where source NAT is supported, false otherwise
         /// </summary>
@@ -172,10 +162,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkOfferingResponse> ListNetworkOfferings(ListNetworkOfferingsRequest request);
         Task<ListResponse<NetworkOfferingResponse>> ListNetworkOfferingsAsync(ListNetworkOfferingsRequest request);
+        ListResponse<NetworkOfferingResponse> ListNetworkOfferingsAllPages(ListNetworkOfferingsRequest request);
+        Task<ListResponse<NetworkOfferingResponse>> ListNetworkOfferingsAllPagesAsync(ListNetworkOfferingsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkOfferingResponse> ListNetworkOfferings(ListNetworkOfferingsRequest request) => _proxy.Request<ListResponse<NetworkOfferingResponse>>(request);
         public Task<ListResponse<NetworkOfferingResponse>> ListNetworkOfferingsAsync(ListNetworkOfferingsRequest request) => _proxy.RequestAsync<ListResponse<NetworkOfferingResponse>>(request);
+        public ListResponse<NetworkOfferingResponse> ListNetworkOfferingsAllPages(ListNetworkOfferingsRequest request) => _proxy.RequestAllPages<NetworkOfferingResponse>(request);
+        public Task<ListResponse<NetworkOfferingResponse>> ListNetworkOfferingsAllPagesAsync(ListNetworkOfferingsRequest request) => _proxy.RequestAllPagesAsync<NetworkOfferingResponse>(request);
     }
 }

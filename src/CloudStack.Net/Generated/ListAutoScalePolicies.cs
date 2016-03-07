@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAutoScalePoliciesRequest : APIRequest
+    public class ListAutoScalePoliciesRequest : APIListRequest
     {
         public ListAutoScalePoliciesRequest() : base("listAutoScalePolicies") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the autoscale vm group
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<AutoScalePolicyResponse> ListAutoScalePolicies(ListAutoScalePoliciesRequest request);
         Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAsync(ListAutoScalePoliciesRequest request);
+        ListResponse<AutoScalePolicyResponse> ListAutoScalePoliciesAllPages(ListAutoScalePoliciesRequest request);
+        Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAllPagesAsync(ListAutoScalePoliciesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AutoScalePolicyResponse> ListAutoScalePolicies(ListAutoScalePoliciesRequest request) => _proxy.Request<ListResponse<AutoScalePolicyResponse>>(request);
         public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAsync(ListAutoScalePoliciesRequest request) => _proxy.RequestAsync<ListResponse<AutoScalePolicyResponse>>(request);
+        public ListResponse<AutoScalePolicyResponse> ListAutoScalePoliciesAllPages(ListAutoScalePoliciesRequest request) => _proxy.RequestAllPages<AutoScalePolicyResponse>(request);
+        public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAllPagesAsync(ListAutoScalePoliciesRequest request) => _proxy.RequestAllPagesAsync<AutoScalePolicyResponse>(request);
     }
 }

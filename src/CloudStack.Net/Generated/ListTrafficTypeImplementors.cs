@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListTrafficTypeImplementorsRequest : APIRequest
+    public class ListTrafficTypeImplementorsRequest : APIListRequest
     {
         public ListTrafficTypeImplementorsRequest() : base("listTrafficTypeImplementors") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementors(ListTrafficTypeImplementorsRequest request);
         Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAsync(ListTrafficTypeImplementorsRequest request);
+        ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementorsAllPages(ListTrafficTypeImplementorsRequest request);
+        Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAllPagesAsync(ListTrafficTypeImplementorsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementors(ListTrafficTypeImplementorsRequest request) => _proxy.Request<ListResponse<TrafficTypeImplementorResponse>>(request);
         public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAsync(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAsync<ListResponse<TrafficTypeImplementorResponse>>(request);
+        public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementorsAllPages(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAllPages<TrafficTypeImplementorResponse>(request);
+        public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAllPagesAsync(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAllPagesAsync<TrafficTypeImplementorResponse>(request);
     }
 }

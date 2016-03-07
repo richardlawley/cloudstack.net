@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class FindStoragePoolsForMigrationRequest : APIRequest
+    public class FindStoragePoolsForMigrationRequest : APIListRequest
     {
         public FindStoragePoolsForMigrationRequest() : base("findStoragePoolsForMigration") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists storage pools available for migration of a volume.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request);
         Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request);
+        ListResponse<StoragePoolResponse> FindStoragePoolsForMigrationAllPages(FindStoragePoolsForMigrationRequest request);
+        Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAllPagesAsync(FindStoragePoolsForMigrationRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request) => _proxy.Request<ListResponse<StoragePoolResponse>>(request);
         public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
+        public ListResponse<StoragePoolResponse> FindStoragePoolsForMigrationAllPages(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAllPages<StoragePoolResponse>(request);
+        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAllPagesAsync(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListCountersRequest : APIRequest
+    public class ListCountersRequest : APIListRequest
     {
         public ListCountersRequest() : base("listCounters") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// Source of the counter.
         /// </summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<CounterResponse> ListCounters(ListCountersRequest request);
         Task<ListResponse<CounterResponse>> ListCountersAsync(ListCountersRequest request);
+        ListResponse<CounterResponse> ListCountersAllPages(ListCountersRequest request);
+        Task<ListResponse<CounterResponse>> ListCountersAllPagesAsync(ListCountersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<CounterResponse> ListCounters(ListCountersRequest request) => _proxy.Request<ListResponse<CounterResponse>>(request);
         public Task<ListResponse<CounterResponse>> ListCountersAsync(ListCountersRequest request) => _proxy.RequestAsync<ListResponse<CounterResponse>>(request);
+        public ListResponse<CounterResponse> ListCountersAllPages(ListCountersRequest request) => _proxy.RequestAllPages<CounterResponse>(request);
+        public Task<ListResponse<CounterResponse>> ListCountersAllPagesAsync(ListCountersRequest request) => _proxy.RequestAllPagesAsync<CounterResponse>(request);
     }
 }

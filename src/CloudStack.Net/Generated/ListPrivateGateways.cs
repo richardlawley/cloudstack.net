@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPrivateGatewaysRequest : APIRequest
+    public class ListPrivateGatewaysRequest : APIListRequest
     {
         public ListPrivateGatewaysRequest() : base("listPrivateGateways") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<PrivateGatewayResponse> ListPrivateGateways(ListPrivateGatewaysRequest request);
         Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAsync(ListPrivateGatewaysRequest request);
+        ListResponse<PrivateGatewayResponse> ListPrivateGatewaysAllPages(ListPrivateGatewaysRequest request);
+        Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAllPagesAsync(ListPrivateGatewaysRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<PrivateGatewayResponse> ListPrivateGateways(ListPrivateGatewaysRequest request) => _proxy.Request<ListResponse<PrivateGatewayResponse>>(request);
         public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAsync(ListPrivateGatewaysRequest request) => _proxy.RequestAsync<ListResponse<PrivateGatewayResponse>>(request);
+        public ListResponse<PrivateGatewayResponse> ListPrivateGatewaysAllPages(ListPrivateGatewaysRequest request) => _proxy.RequestAllPages<PrivateGatewayResponse>(request);
+        public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAllPagesAsync(ListPrivateGatewaysRequest request) => _proxy.RequestAllPagesAsync<PrivateGatewayResponse>(request);
     }
 }

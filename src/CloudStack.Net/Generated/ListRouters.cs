@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListRoutersRequest : APIRequest
+    public class ListRoutersRequest : APIListRequest
     {
         public ListRoutersRequest() : base("listRouters") {}
 
@@ -98,16 +98,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Pod ID of the router
         /// </summary>
@@ -164,10 +154,14 @@ namespace CloudStack.Net
     {
         ListResponse<DomainRouterResponse> ListRouters(ListRoutersRequest request);
         Task<ListResponse<DomainRouterResponse>> ListRoutersAsync(ListRoutersRequest request);
+        ListResponse<DomainRouterResponse> ListRoutersAllPages(ListRoutersRequest request);
+        Task<ListResponse<DomainRouterResponse>> ListRoutersAllPagesAsync(ListRoutersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DomainRouterResponse> ListRouters(ListRoutersRequest request) => _proxy.Request<ListResponse<DomainRouterResponse>>(request);
         public Task<ListResponse<DomainRouterResponse>> ListRoutersAsync(ListRoutersRequest request) => _proxy.RequestAsync<ListResponse<DomainRouterResponse>>(request);
+        public ListResponse<DomainRouterResponse> ListRoutersAllPages(ListRoutersRequest request) => _proxy.RequestAllPages<DomainRouterResponse>(request);
+        public Task<ListResponse<DomainRouterResponse>> ListRoutersAllPagesAsync(ListRoutersRequest request) => _proxy.RequestAllPagesAsync<DomainRouterResponse>(request);
     }
 }

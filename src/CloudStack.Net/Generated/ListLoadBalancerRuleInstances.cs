@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLoadBalancerRuleInstancesRequest : APIRequest
+    public class ListLoadBalancerRuleInstancesRequest : APIListRequest
     {
         public ListLoadBalancerRuleInstancesRequest() : base("listLoadBalancerRuleInstances") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Lbvmips).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List all virtual machine instances that are assigned to a load balancer rule.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstances(ListLoadBalancerRuleInstancesRequest request);
         Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAsync(ListLoadBalancerRuleInstancesRequest request);
+        ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstancesAllPages(ListLoadBalancerRuleInstancesRequest request);
+        Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAllPagesAsync(ListLoadBalancerRuleInstancesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstances(ListLoadBalancerRuleInstancesRequest request) => _proxy.Request<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
         public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAsync(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAsync<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
+        public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstancesAllPages(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAllPages<LoadBalancerRuleVmMapResponse>(request);
+        public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAllPagesAsync(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAllPagesAsync<LoadBalancerRuleVmMapResponse>(request);
     }
 }

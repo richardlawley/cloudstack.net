@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAffinityGroupsRequest : APIRequest
+    public class ListAffinityGroupsRequest : APIListRequest
     {
         public ListAffinityGroupsRequest() : base("listAffinityGroups") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<AffinityGroupResponse> ListAffinityGroups(ListAffinityGroupsRequest request);
         Task<ListResponse<AffinityGroupResponse>> ListAffinityGroupsAsync(ListAffinityGroupsRequest request);
+        ListResponse<AffinityGroupResponse> ListAffinityGroupsAllPages(ListAffinityGroupsRequest request);
+        Task<ListResponse<AffinityGroupResponse>> ListAffinityGroupsAllPagesAsync(ListAffinityGroupsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AffinityGroupResponse> ListAffinityGroups(ListAffinityGroupsRequest request) => _proxy.Request<ListResponse<AffinityGroupResponse>>(request);
         public Task<ListResponse<AffinityGroupResponse>> ListAffinityGroupsAsync(ListAffinityGroupsRequest request) => _proxy.RequestAsync<ListResponse<AffinityGroupResponse>>(request);
+        public ListResponse<AffinityGroupResponse> ListAffinityGroupsAllPages(ListAffinityGroupsRequest request) => _proxy.RequestAllPages<AffinityGroupResponse>(request);
+        public Task<ListResponse<AffinityGroupResponse>> ListAffinityGroupsAllPagesAsync(ListAffinityGroupsRequest request) => _proxy.RequestAllPagesAsync<AffinityGroupResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListProjectsRequest : APIRequest
+    public class ListProjectsRequest : APIListRequest
     {
         public ListProjectsRequest() : base("listProjects") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list projects by state
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<ProjectResponse> ListProjects(ListProjectsRequest request);
         Task<ListResponse<ProjectResponse>> ListProjectsAsync(ListProjectsRequest request);
+        ListResponse<ProjectResponse> ListProjectsAllPages(ListProjectsRequest request);
+        Task<ListResponse<ProjectResponse>> ListProjectsAllPagesAsync(ListProjectsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ProjectResponse> ListProjects(ListProjectsRequest request) => _proxy.Request<ListResponse<ProjectResponse>>(request);
         public Task<ListResponse<ProjectResponse>> ListProjectsAsync(ListProjectsRequest request) => _proxy.RequestAsync<ListResponse<ProjectResponse>>(request);
+        public ListResponse<ProjectResponse> ListProjectsAllPages(ListProjectsRequest request) => _proxy.RequestAllPages<ProjectResponse>(request);
+        public Task<ListResponse<ProjectResponse>> ListProjectsAllPagesAsync(ListProjectsRequest request) => _proxy.RequestAllPagesAsync<ProjectResponse>(request);
     }
 }

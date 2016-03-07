@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListResourceDetailsRequest : APIRequest
+    public class ListResourceDetailsRequest : APIListRequest
     {
         public ListResourceDetailsRequest() : base("listResourceDetails") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<ResourceTagResponse> ListResourceDetails(ListResourceDetailsRequest request);
         Task<ListResponse<ResourceTagResponse>> ListResourceDetailsAsync(ListResourceDetailsRequest request);
+        ListResponse<ResourceTagResponse> ListResourceDetailsAllPages(ListResourceDetailsRequest request);
+        Task<ListResponse<ResourceTagResponse>> ListResourceDetailsAllPagesAsync(ListResourceDetailsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ResourceTagResponse> ListResourceDetails(ListResourceDetailsRequest request) => _proxy.Request<ListResponse<ResourceTagResponse>>(request);
         public Task<ListResponse<ResourceTagResponse>> ListResourceDetailsAsync(ListResourceDetailsRequest request) => _proxy.RequestAsync<ListResponse<ResourceTagResponse>>(request);
+        public ListResponse<ResourceTagResponse> ListResourceDetailsAllPages(ListResourceDetailsRequest request) => _proxy.RequestAllPages<ResourceTagResponse>(request);
+        public Task<ListResponse<ResourceTagResponse>> ListResourceDetailsAllPagesAsync(ListResourceDetailsRequest request) => _proxy.RequestAllPagesAsync<ResourceTagResponse>(request);
     }
 }

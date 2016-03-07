@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListStorageTagsRequest : APIRequest
+    public class ListStorageTagsRequest : APIListRequest
     {
         public ListStorageTagsRequest() : base("listStorageTags") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists storage tags
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<StorageTagResponse> ListStorageTags(ListStorageTagsRequest request);
         Task<ListResponse<StorageTagResponse>> ListStorageTagsAsync(ListStorageTagsRequest request);
+        ListResponse<StorageTagResponse> ListStorageTagsAllPages(ListStorageTagsRequest request);
+        Task<ListResponse<StorageTagResponse>> ListStorageTagsAllPagesAsync(ListStorageTagsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StorageTagResponse> ListStorageTags(ListStorageTagsRequest request) => _proxy.Request<ListResponse<StorageTagResponse>>(request);
         public Task<ListResponse<StorageTagResponse>> ListStorageTagsAsync(ListStorageTagsRequest request) => _proxy.RequestAsync<ListResponse<StorageTagResponse>>(request);
+        public ListResponse<StorageTagResponse> ListStorageTagsAllPages(ListStorageTagsRequest request) => _proxy.RequestAllPages<StorageTagResponse>(request);
+        public Task<ListResponse<StorageTagResponse>> ListStorageTagsAllPagesAsync(ListStorageTagsRequest request) => _proxy.RequestAllPagesAsync<StorageTagResponse>(request);
     }
 }

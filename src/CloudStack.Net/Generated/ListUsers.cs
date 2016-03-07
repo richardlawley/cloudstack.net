@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListUsersRequest : APIRequest
+    public class ListUsersRequest : APIListRequest
     {
         public ListUsersRequest() : base("listUsers") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// List users by state of the user account.
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<UserResponse> ListUsers(ListUsersRequest request);
         Task<ListResponse<UserResponse>> ListUsersAsync(ListUsersRequest request);
+        ListResponse<UserResponse> ListUsersAllPages(ListUsersRequest request);
+        Task<ListResponse<UserResponse>> ListUsersAllPagesAsync(ListUsersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UserResponse> ListUsers(ListUsersRequest request) => _proxy.Request<ListResponse<UserResponse>>(request);
         public Task<ListResponse<UserResponse>> ListUsersAsync(ListUsersRequest request) => _proxy.RequestAsync<ListResponse<UserResponse>>(request);
+        public ListResponse<UserResponse> ListUsersAllPages(ListUsersRequest request) => _proxy.RequestAllPages<UserResponse>(request);
+        public Task<ListResponse<UserResponse>> ListUsersAllPagesAsync(ListUsersRequest request) => _proxy.RequestAllPagesAsync<UserResponse>(request);
     }
 }

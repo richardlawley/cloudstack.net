@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListEgressFirewallRulesRequest : APIRequest
+    public class ListEgressFirewallRulesRequest : APIListRequest
     {
         public ListEgressFirewallRulesRequest() : base("listEgressFirewallRules") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<FirewallResponse> ListEgressFirewallRules(ListEgressFirewallRulesRequest request);
         Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAsync(ListEgressFirewallRulesRequest request);
+        ListResponse<FirewallResponse> ListEgressFirewallRulesAllPages(ListEgressFirewallRulesRequest request);
+        Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAllPagesAsync(ListEgressFirewallRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<FirewallResponse> ListEgressFirewallRules(ListEgressFirewallRulesRequest request) => _proxy.Request<ListResponse<FirewallResponse>>(request);
         public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAsync(ListEgressFirewallRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallResponse>>(request);
+        public ListResponse<FirewallResponse> ListEgressFirewallRulesAllPages(ListEgressFirewallRulesRequest request) => _proxy.RequestAllPages<FirewallResponse>(request);
+        public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAllPagesAsync(ListEgressFirewallRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallResponse>(request);
     }
 }

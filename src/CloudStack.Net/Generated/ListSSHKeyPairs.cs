@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSSHKeyPairsRequest : APIRequest
+    public class ListSSHKeyPairsRequest : APIListRequest
     {
         public ListSSHKeyPairsRequest() : base("listSSHKeyPairs") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request);
         Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request);
+        ListResponse<SSHKeyPairResponse> ListSSHKeyPairsAllPages(ListSSHKeyPairsRequest request);
+        Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAllPagesAsync(ListSSHKeyPairsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request) => _proxy.Request<ListResponse<SSHKeyPairResponse>>(request);
         public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request) => _proxy.RequestAsync<ListResponse<SSHKeyPairResponse>>(request);
+        public ListResponse<SSHKeyPairResponse> ListSSHKeyPairsAllPages(ListSSHKeyPairsRequest request) => _proxy.RequestAllPages<SSHKeyPairResponse>(request);
+        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAllPagesAsync(ListSSHKeyPairsRequest request) => _proxy.RequestAllPagesAsync<SSHKeyPairResponse>(request);
     }
 }

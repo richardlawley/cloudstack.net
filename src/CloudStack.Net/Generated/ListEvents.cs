@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListEventsRequest : APIRequest
+    public class ListEventsRequest : APIListRequest
     {
         public ListEventsRequest() : base("listEvents") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -132,10 +122,14 @@ namespace CloudStack.Net
     {
         ListResponse<EventResponse> ListEvents(ListEventsRequest request);
         Task<ListResponse<EventResponse>> ListEventsAsync(ListEventsRequest request);
+        ListResponse<EventResponse> ListEventsAllPages(ListEventsRequest request);
+        Task<ListResponse<EventResponse>> ListEventsAllPagesAsync(ListEventsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<EventResponse> ListEvents(ListEventsRequest request) => _proxy.Request<ListResponse<EventResponse>>(request);
         public Task<ListResponse<EventResponse>> ListEventsAsync(ListEventsRequest request) => _proxy.RequestAsync<ListResponse<EventResponse>>(request);
+        public ListResponse<EventResponse> ListEventsAllPages(ListEventsRequest request) => _proxy.RequestAllPages<EventResponse>(request);
+        public Task<ListResponse<EventResponse>> ListEventsAllPagesAsync(ListEventsRequest request) => _proxy.RequestAllPagesAsync<EventResponse>(request);
     }
 }

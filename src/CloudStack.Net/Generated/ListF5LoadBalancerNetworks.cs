@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListF5LoadBalancerNetworksRequest : APIRequest
+    public class ListF5LoadBalancerNetworksRequest : APIListRequest
     {
         public ListF5LoadBalancerNetworksRequest() : base("listF5LoadBalancerNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using a F5 load balancer device
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListF5LoadBalancerNetworks(ListF5LoadBalancerNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListF5LoadBalancerNetworksAsync(ListF5LoadBalancerNetworksRequest request);
+        ListResponse<NetworkResponse> ListF5LoadBalancerNetworksAllPages(ListF5LoadBalancerNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListF5LoadBalancerNetworksAllPagesAsync(ListF5LoadBalancerNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListF5LoadBalancerNetworks(ListF5LoadBalancerNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListF5LoadBalancerNetworksAsync(ListF5LoadBalancerNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListF5LoadBalancerNetworksAllPages(ListF5LoadBalancerNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListF5LoadBalancerNetworksAllPagesAsync(ListF5LoadBalancerNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

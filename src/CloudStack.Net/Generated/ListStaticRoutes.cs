@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListStaticRoutesRequest : APIRequest
+    public class ListStaticRoutesRequest : APIListRequest
     {
         public ListStaticRoutesRequest() : base("listStaticRoutes") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<StaticRouteResponse> ListStaticRoutes(ListStaticRoutesRequest request);
         Task<ListResponse<StaticRouteResponse>> ListStaticRoutesAsync(ListStaticRoutesRequest request);
+        ListResponse<StaticRouteResponse> ListStaticRoutesAllPages(ListStaticRoutesRequest request);
+        Task<ListResponse<StaticRouteResponse>> ListStaticRoutesAllPagesAsync(ListStaticRoutesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StaticRouteResponse> ListStaticRoutes(ListStaticRoutesRequest request) => _proxy.Request<ListResponse<StaticRouteResponse>>(request);
         public Task<ListResponse<StaticRouteResponse>> ListStaticRoutesAsync(ListStaticRoutesRequest request) => _proxy.RequestAsync<ListResponse<StaticRouteResponse>>(request);
+        public ListResponse<StaticRouteResponse> ListStaticRoutesAllPages(ListStaticRoutesRequest request) => _proxy.RequestAllPages<StaticRouteResponse>(request);
+        public Task<ListResponse<StaticRouteResponse>> ListStaticRoutesAllPagesAsync(ListStaticRoutesRequest request) => _proxy.RequestAllPagesAsync<StaticRouteResponse>(request);
     }
 }

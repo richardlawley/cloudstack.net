@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListTagsRequest : APIRequest
+    public class ListTagsRequest : APIListRequest
     {
         public ListTagsRequest() : base("listTags") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<ResourceTagResponse> ListTags(ListTagsRequest request);
         Task<ListResponse<ResourceTagResponse>> ListTagsAsync(ListTagsRequest request);
+        ListResponse<ResourceTagResponse> ListTagsAllPages(ListTagsRequest request);
+        Task<ListResponse<ResourceTagResponse>> ListTagsAllPagesAsync(ListTagsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ResourceTagResponse> ListTags(ListTagsRequest request) => _proxy.Request<ListResponse<ResourceTagResponse>>(request);
         public Task<ListResponse<ResourceTagResponse>> ListTagsAsync(ListTagsRequest request) => _proxy.RequestAsync<ListResponse<ResourceTagResponse>>(request);
+        public ListResponse<ResourceTagResponse> ListTagsAllPages(ListTagsRequest request) => _proxy.RequestAllPages<ResourceTagResponse>(request);
+        public Task<ListResponse<ResourceTagResponse>> ListTagsAllPagesAsync(ListTagsRequest request) => _proxy.RequestAllPagesAsync<ResourceTagResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListExternalFirewallsRequest : APIRequest
+    public class ListExternalFirewallsRequest : APIListRequest
     {
         public ListExternalFirewallsRequest() : base("listExternalFirewalls") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List external firewall appliances.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<ExternalFirewallResponse> ListExternalFirewalls(ListExternalFirewallsRequest request);
         Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAsync(ListExternalFirewallsRequest request);
+        ListResponse<ExternalFirewallResponse> ListExternalFirewallsAllPages(ListExternalFirewallsRequest request);
+        Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAllPagesAsync(ListExternalFirewallsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ExternalFirewallResponse> ListExternalFirewalls(ListExternalFirewallsRequest request) => _proxy.Request<ListResponse<ExternalFirewallResponse>>(request);
         public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAsync(ListExternalFirewallsRequest request) => _proxy.RequestAsync<ListResponse<ExternalFirewallResponse>>(request);
+        public ListResponse<ExternalFirewallResponse> ListExternalFirewallsAllPages(ListExternalFirewallsRequest request) => _proxy.RequestAllPages<ExternalFirewallResponse>(request);
+        public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAllPagesAsync(ListExternalFirewallsRequest request) => _proxy.RequestAllPagesAsync<ExternalFirewallResponse>(request);
     }
 }

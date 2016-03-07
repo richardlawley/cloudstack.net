@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDiskOfferingsRequest : APIRequest
+    public class ListDiskOfferingsRequest : APIListRequest
     {
         public ListDiskOfferingsRequest() : base("listDiskOfferings") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all available disk offerings.
@@ -76,10 +66,14 @@ namespace CloudStack.Net
     {
         ListResponse<DiskOfferingResponse> ListDiskOfferings(ListDiskOfferingsRequest request);
         Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAsync(ListDiskOfferingsRequest request);
+        ListResponse<DiskOfferingResponse> ListDiskOfferingsAllPages(ListDiskOfferingsRequest request);
+        Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAllPagesAsync(ListDiskOfferingsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DiskOfferingResponse> ListDiskOfferings(ListDiskOfferingsRequest request) => _proxy.Request<ListResponse<DiskOfferingResponse>>(request);
         public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAsync(ListDiskOfferingsRequest request) => _proxy.RequestAsync<ListResponse<DiskOfferingResponse>>(request);
+        public ListResponse<DiskOfferingResponse> ListDiskOfferingsAllPages(ListDiskOfferingsRequest request) => _proxy.RequestAllPages<DiskOfferingResponse>(request);
+        public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAllPagesAsync(ListDiskOfferingsRequest request) => _proxy.RequestAllPagesAsync<DiskOfferingResponse>(request);
     }
 }

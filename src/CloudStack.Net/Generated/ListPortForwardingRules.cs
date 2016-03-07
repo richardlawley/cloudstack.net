@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPortForwardingRulesRequest : APIRequest
+    public class ListPortForwardingRulesRequest : APIListRequest
     {
         public ListPortForwardingRulesRequest() : base("listPortForwardingRules") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<FirewallRuleResponse> ListPortForwardingRules(ListPortForwardingRulesRequest request);
         Task<ListResponse<FirewallRuleResponse>> ListPortForwardingRulesAsync(ListPortForwardingRulesRequest request);
+        ListResponse<FirewallRuleResponse> ListPortForwardingRulesAllPages(ListPortForwardingRulesRequest request);
+        Task<ListResponse<FirewallRuleResponse>> ListPortForwardingRulesAllPagesAsync(ListPortForwardingRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<FirewallRuleResponse> ListPortForwardingRules(ListPortForwardingRulesRequest request) => _proxy.Request<ListResponse<FirewallRuleResponse>>(request);
         public Task<ListResponse<FirewallRuleResponse>> ListPortForwardingRulesAsync(ListPortForwardingRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallRuleResponse>>(request);
+        public ListResponse<FirewallRuleResponse> ListPortForwardingRulesAllPages(ListPortForwardingRulesRequest request) => _proxy.RequestAllPages<FirewallRuleResponse>(request);
+        public Task<ListResponse<FirewallRuleResponse>> ListPortForwardingRulesAllPagesAsync(ListPortForwardingRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallRuleResponse>(request);
     }
 }

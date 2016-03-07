@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListUcsManagersRequest : APIRequest
+    public class ListUcsManagersRequest : APIListRequest
     {
         public ListUcsManagersRequest() : base("listUcsManagers") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the zone id
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<UcsManagerResponse> ListUcsManagers(ListUcsManagersRequest request);
         Task<ListResponse<UcsManagerResponse>> ListUcsManagersAsync(ListUcsManagersRequest request);
+        ListResponse<UcsManagerResponse> ListUcsManagersAllPages(ListUcsManagersRequest request);
+        Task<ListResponse<UcsManagerResponse>> ListUcsManagersAllPagesAsync(ListUcsManagersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UcsManagerResponse> ListUcsManagers(ListUcsManagersRequest request) => _proxy.Request<ListResponse<UcsManagerResponse>>(request);
         public Task<ListResponse<UcsManagerResponse>> ListUcsManagersAsync(ListUcsManagersRequest request) => _proxy.RequestAsync<ListResponse<UcsManagerResponse>>(request);
+        public ListResponse<UcsManagerResponse> ListUcsManagersAllPages(ListUcsManagersRequest request) => _proxy.RequestAllPages<UcsManagerResponse>(request);
+        public Task<ListResponse<UcsManagerResponse>> ListUcsManagersAllPagesAsync(ListUcsManagersRequest request) => _proxy.RequestAllPagesAsync<UcsManagerResponse>(request);
     }
 }

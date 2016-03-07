@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListConditionsRequest : APIRequest
+    public class ListConditionsRequest : APIListRequest
     {
         public ListConditionsRequest() : base("listConditions") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the policy
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<ConditionResponse> ListConditions(ListConditionsRequest request);
         Task<ListResponse<ConditionResponse>> ListConditionsAsync(ListConditionsRequest request);
+        ListResponse<ConditionResponse> ListConditionsAllPages(ListConditionsRequest request);
+        Task<ListResponse<ConditionResponse>> ListConditionsAllPagesAsync(ListConditionsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ConditionResponse> ListConditions(ListConditionsRequest request) => _proxy.Request<ListResponse<ConditionResponse>>(request);
         public Task<ListResponse<ConditionResponse>> ListConditionsAsync(ListConditionsRequest request) => _proxy.RequestAsync<ListResponse<ConditionResponse>>(request);
+        public ListResponse<ConditionResponse> ListConditionsAllPages(ListConditionsRequest request) => _proxy.RequestAllPages<ConditionResponse>(request);
+        public Task<ListResponse<ConditionResponse>> ListConditionsAllPagesAsync(ListConditionsRequest request) => _proxy.RequestAllPagesAsync<ConditionResponse>(request);
     }
 }

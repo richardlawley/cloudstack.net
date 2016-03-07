@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListOsCategoriesRequest : APIRequest
+    public class ListOsCategoriesRequest : APIListRequest
     {
         public ListOsCategoriesRequest() : base("listOsCategories") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all supported OS categories for this cloud.
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<GuestOSCategoryResponse> ListOsCategories(ListOsCategoriesRequest request);
         Task<ListResponse<GuestOSCategoryResponse>> ListOsCategoriesAsync(ListOsCategoriesRequest request);
+        ListResponse<GuestOSCategoryResponse> ListOsCategoriesAllPages(ListOsCategoriesRequest request);
+        Task<ListResponse<GuestOSCategoryResponse>> ListOsCategoriesAllPagesAsync(ListOsCategoriesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<GuestOSCategoryResponse> ListOsCategories(ListOsCategoriesRequest request) => _proxy.Request<ListResponse<GuestOSCategoryResponse>>(request);
         public Task<ListResponse<GuestOSCategoryResponse>> ListOsCategoriesAsync(ListOsCategoriesRequest request) => _proxy.RequestAsync<ListResponse<GuestOSCategoryResponse>>(request);
+        public ListResponse<GuestOSCategoryResponse> ListOsCategoriesAllPages(ListOsCategoriesRequest request) => _proxy.RequestAllPages<GuestOSCategoryResponse>(request);
+        public Task<ListResponse<GuestOSCategoryResponse>> ListOsCategoriesAllPagesAsync(ListOsCategoriesRequest request) => _proxy.RequestAllPagesAsync<GuestOSCategoryResponse>(request);
     }
 }

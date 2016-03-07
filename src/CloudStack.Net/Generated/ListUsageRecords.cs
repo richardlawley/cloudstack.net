@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListUsageRecordsRequest : APIRequest
+    public class ListUsageRecordsRequest : APIListRequest
     {
         public ListUsageRecordsRequest() : base("listUsageRecords") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// List usage records for specified project
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<UsageRecordResponse> ListUsageRecords(ListUsageRecordsRequest request);
         Task<ListResponse<UsageRecordResponse>> ListUsageRecordsAsync(ListUsageRecordsRequest request);
+        ListResponse<UsageRecordResponse> ListUsageRecordsAllPages(ListUsageRecordsRequest request);
+        Task<ListResponse<UsageRecordResponse>> ListUsageRecordsAllPagesAsync(ListUsageRecordsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UsageRecordResponse> ListUsageRecords(ListUsageRecordsRequest request) => _proxy.Request<ListResponse<UsageRecordResponse>>(request);
         public Task<ListResponse<UsageRecordResponse>> ListUsageRecordsAsync(ListUsageRecordsRequest request) => _proxy.RequestAsync<ListResponse<UsageRecordResponse>>(request);
+        public ListResponse<UsageRecordResponse> ListUsageRecordsAllPages(ListUsageRecordsRequest request) => _proxy.RequestAllPages<UsageRecordResponse>(request);
+        public Task<ListResponse<UsageRecordResponse>> ListUsageRecordsAllPagesAsync(ListUsageRecordsRequest request) => _proxy.RequestAllPagesAsync<UsageRecordResponse>(request);
     }
 }

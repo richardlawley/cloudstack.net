@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListStorageNetworkIpRangeRequest : APIRequest
+    public class ListStorageNetworkIpRangeRequest : APIListRequest
     {
         public ListStorageNetworkIpRangeRequest() : base("listStorageNetworkIpRange") {}
 
@@ -24,16 +24,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request);
         Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request);
+        ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRangeAllPages(ListStorageNetworkIpRangeRequest request);
+        Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAllPagesAsync(ListStorageNetworkIpRangeRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request) => _proxy.Request<ListResponse<StorageNetworkIpRangeResponse>>(request);
         public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAsync<ListResponse<StorageNetworkIpRangeResponse>>(request);
+        public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRangeAllPages(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAllPages<StorageNetworkIpRangeResponse>(request);
+        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAllPagesAsync(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAllPagesAsync<StorageNetworkIpRangeResponse>(request);
     }
 }

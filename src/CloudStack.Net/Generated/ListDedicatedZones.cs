@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDedicatedZonesRequest : APIRequest
+    public class ListDedicatedZonesRequest : APIListRequest
     {
         public ListDedicatedZonesRequest() : base("listDedicatedZones") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the Zone
         /// </summary>
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<DedicateZoneResponse> ListDedicatedZones(ListDedicatedZonesRequest request);
         Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAsync(ListDedicatedZonesRequest request);
+        ListResponse<DedicateZoneResponse> ListDedicatedZonesAllPages(ListDedicatedZonesRequest request);
+        Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAllPagesAsync(ListDedicatedZonesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<DedicateZoneResponse> ListDedicatedZones(ListDedicatedZonesRequest request) => _proxy.Request<ListResponse<DedicateZoneResponse>>(request);
         public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAsync(ListDedicatedZonesRequest request) => _proxy.RequestAsync<ListResponse<DedicateZoneResponse>>(request);
+        public ListResponse<DedicateZoneResponse> ListDedicatedZonesAllPages(ListDedicatedZonesRequest request) => _proxy.RequestAllPages<DedicateZoneResponse>(request);
+        public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAllPagesAsync(ListDedicatedZonesRequest request) => _proxy.RequestAllPagesAsync<DedicateZoneResponse>(request);
     }
 }

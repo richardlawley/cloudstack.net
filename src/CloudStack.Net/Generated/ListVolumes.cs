@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVolumesRequest : APIRequest
+    public class ListVolumesRequest : APIListRequest
     {
         public ListVolumesRequest() : base("listVolumes") {}
 
@@ -90,16 +90,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the pod id the disk volume belongs to
         /// </summary>
@@ -164,10 +154,14 @@ namespace CloudStack.Net
     {
         ListResponse<VolumeResponse> ListVolumes(ListVolumesRequest request);
         Task<ListResponse<VolumeResponse>> ListVolumesAsync(ListVolumesRequest request);
+        ListResponse<VolumeResponse> ListVolumesAllPages(ListVolumesRequest request);
+        Task<ListResponse<VolumeResponse>> ListVolumesAllPagesAsync(ListVolumesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VolumeResponse> ListVolumes(ListVolumesRequest request) => _proxy.Request<ListResponse<VolumeResponse>>(request);
         public Task<ListResponse<VolumeResponse>> ListVolumesAsync(ListVolumesRequest request) => _proxy.RequestAsync<ListResponse<VolumeResponse>>(request);
+        public ListResponse<VolumeResponse> ListVolumesAllPages(ListVolumesRequest request) => _proxy.RequestAllPages<VolumeResponse>(request);
+        public Task<ListResponse<VolumeResponse>> ListVolumesAllPagesAsync(ListVolumesRequest request) => _proxy.RequestAllPagesAsync<VolumeResponse>(request);
     }
 }

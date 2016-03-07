@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class QuotaTariffListRequest : APIRequest
+    public class QuotaTariffListRequest : APIListRequest
     {
         public QuotaTariffListRequest() : base("quotaTariffList") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<QuotaTariffResponse> QuotaTariffList(QuotaTariffListRequest request);
         Task<ListResponse<QuotaTariffResponse>> QuotaTariffListAsync(QuotaTariffListRequest request);
+        ListResponse<QuotaTariffResponse> QuotaTariffListAllPages(QuotaTariffListRequest request);
+        Task<ListResponse<QuotaTariffResponse>> QuotaTariffListAllPagesAsync(QuotaTariffListRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<QuotaTariffResponse> QuotaTariffList(QuotaTariffListRequest request) => _proxy.Request<ListResponse<QuotaTariffResponse>>(request);
         public Task<ListResponse<QuotaTariffResponse>> QuotaTariffListAsync(QuotaTariffListRequest request) => _proxy.RequestAsync<ListResponse<QuotaTariffResponse>>(request);
+        public ListResponse<QuotaTariffResponse> QuotaTariffListAllPages(QuotaTariffListRequest request) => _proxy.RequestAllPages<QuotaTariffResponse>(request);
+        public Task<ListResponse<QuotaTariffResponse>> QuotaTariffListAllPagesAsync(QuotaTariffListRequest request) => _proxy.RequestAllPagesAsync<QuotaTariffResponse>(request);
     }
 }

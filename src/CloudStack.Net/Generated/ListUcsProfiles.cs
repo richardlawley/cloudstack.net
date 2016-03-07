@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListUcsProfilesRequest : APIRequest
+    public class ListUcsProfilesRequest : APIListRequest
     {
         public ListUcsProfilesRequest() : base("listUcsProfiles") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List profile in ucs manager
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<UcsProfileResponse> ListUcsProfiles(ListUcsProfilesRequest request);
         Task<ListResponse<UcsProfileResponse>> ListUcsProfilesAsync(ListUcsProfilesRequest request);
+        ListResponse<UcsProfileResponse> ListUcsProfilesAllPages(ListUcsProfilesRequest request);
+        Task<ListResponse<UcsProfileResponse>> ListUcsProfilesAllPagesAsync(ListUcsProfilesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UcsProfileResponse> ListUcsProfiles(ListUcsProfilesRequest request) => _proxy.Request<ListResponse<UcsProfileResponse>>(request);
         public Task<ListResponse<UcsProfileResponse>> ListUcsProfilesAsync(ListUcsProfilesRequest request) => _proxy.RequestAsync<ListResponse<UcsProfileResponse>>(request);
+        public ListResponse<UcsProfileResponse> ListUcsProfilesAllPages(ListUcsProfilesRequest request) => _proxy.RequestAllPages<UcsProfileResponse>(request);
+        public Task<ListResponse<UcsProfileResponse>> ListUcsProfilesAllPagesAsync(ListUcsProfilesRequest request) => _proxy.RequestAllPagesAsync<UcsProfileResponse>(request);
     }
 }

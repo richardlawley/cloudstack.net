@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListOsTypesRequest : APIRequest
+    public class ListOsTypesRequest : APIListRequest
     {
         public ListOsTypesRequest() : base("listOsTypes") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(OsCategoryId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all supported OS types for this cloud.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<GuestOSResponse> ListOsTypes(ListOsTypesRequest request);
         Task<ListResponse<GuestOSResponse>> ListOsTypesAsync(ListOsTypesRequest request);
+        ListResponse<GuestOSResponse> ListOsTypesAllPages(ListOsTypesRequest request);
+        Task<ListResponse<GuestOSResponse>> ListOsTypesAllPagesAsync(ListOsTypesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<GuestOSResponse> ListOsTypes(ListOsTypesRequest request) => _proxy.Request<ListResponse<GuestOSResponse>>(request);
         public Task<ListResponse<GuestOSResponse>> ListOsTypesAsync(ListOsTypesRequest request) => _proxy.RequestAsync<ListResponse<GuestOSResponse>>(request);
+        public ListResponse<GuestOSResponse> ListOsTypesAllPages(ListOsTypesRequest request) => _proxy.RequestAllPages<GuestOSResponse>(request);
+        public Task<ListResponse<GuestOSResponse>> ListOsTypesAllPagesAsync(ListOsTypesRequest request) => _proxy.RequestAllPagesAsync<GuestOSResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNetworkACLListsRequest : APIRequest
+    public class ListNetworkACLListsRequest : APIListRequest
     {
         public ListNetworkACLListsRequest() : base("listNetworkACLLists") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkACLResponse> ListNetworkACLLists(ListNetworkACLListsRequest request);
         Task<ListResponse<NetworkACLResponse>> ListNetworkACLListsAsync(ListNetworkACLListsRequest request);
+        ListResponse<NetworkACLResponse> ListNetworkACLListsAllPages(ListNetworkACLListsRequest request);
+        Task<ListResponse<NetworkACLResponse>> ListNetworkACLListsAllPagesAsync(ListNetworkACLListsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkACLResponse> ListNetworkACLLists(ListNetworkACLListsRequest request) => _proxy.Request<ListResponse<NetworkACLResponse>>(request);
         public Task<ListResponse<NetworkACLResponse>> ListNetworkACLListsAsync(ListNetworkACLListsRequest request) => _proxy.RequestAsync<ListResponse<NetworkACLResponse>>(request);
+        public ListResponse<NetworkACLResponse> ListNetworkACLListsAllPages(ListNetworkACLListsRequest request) => _proxy.RequestAllPages<NetworkACLResponse>(request);
+        public Task<ListResponse<NetworkACLResponse>> ListNetworkACLListsAllPagesAsync(ListNetworkACLListsRequest request) => _proxy.RequestAllPagesAsync<NetworkACLResponse>(request);
     }
 }

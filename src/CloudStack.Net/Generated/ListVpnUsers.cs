@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVpnUsersRequest : APIRequest
+    public class ListVpnUsersRequest : APIListRequest
     {
         public ListVpnUsersRequest() : base("listVpnUsers") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<VpnUsersResponse> ListVpnUsers(ListVpnUsersRequest request);
         Task<ListResponse<VpnUsersResponse>> ListVpnUsersAsync(ListVpnUsersRequest request);
+        ListResponse<VpnUsersResponse> ListVpnUsersAllPages(ListVpnUsersRequest request);
+        Task<ListResponse<VpnUsersResponse>> ListVpnUsersAllPagesAsync(ListVpnUsersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<VpnUsersResponse> ListVpnUsers(ListVpnUsersRequest request) => _proxy.Request<ListResponse<VpnUsersResponse>>(request);
         public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAsync(ListVpnUsersRequest request) => _proxy.RequestAsync<ListResponse<VpnUsersResponse>>(request);
+        public ListResponse<VpnUsersResponse> ListVpnUsersAllPages(ListVpnUsersRequest request) => _proxy.RequestAllPages<VpnUsersResponse>(request);
+        public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAllPagesAsync(ListVpnUsersRequest request) => _proxy.RequestAllPagesAsync<VpnUsersResponse>(request);
     }
 }

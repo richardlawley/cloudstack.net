@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListDedicatedGuestVlanRangesRequest : APIRequest
+    public class ListDedicatedGuestVlanRangesRequest : APIListRequest
     {
         public ListDedicatedGuestVlanRangesRequest() : base("listDedicatedGuestVlanRanges") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// physical network id of the guest VLAN range
         /// </summary>
@@ -92,10 +82,14 @@ namespace CloudStack.Net
     {
         ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRanges(ListDedicatedGuestVlanRangesRequest request);
         Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAsync(ListDedicatedGuestVlanRangesRequest request);
+        ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRangesAllPages(ListDedicatedGuestVlanRangesRequest request);
+        Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAllPagesAsync(ListDedicatedGuestVlanRangesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRanges(ListDedicatedGuestVlanRangesRequest request) => _proxy.Request<ListResponse<GuestVlanRangeResponse>>(request);
         public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAsync(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAsync<ListResponse<GuestVlanRangeResponse>>(request);
+        public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRangesAllPages(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAllPages<GuestVlanRangeResponse>(request);
+        public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAllPagesAsync(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAllPagesAsync<GuestVlanRangeResponse>(request);
     }
 }

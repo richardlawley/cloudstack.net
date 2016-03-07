@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLdapUsersRequest : APIRequest
+    public class ListLdapUsersRequest : APIListRequest
     {
         public ListLdapUsersRequest() : base("listLdapUsers") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListType).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all LDAP Users
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<LdapUserResponse> ListLdapUsers(ListLdapUsersRequest request);
         Task<ListResponse<LdapUserResponse>> ListLdapUsersAsync(ListLdapUsersRequest request);
+        ListResponse<LdapUserResponse> ListLdapUsersAllPages(ListLdapUsersRequest request);
+        Task<ListResponse<LdapUserResponse>> ListLdapUsersAllPagesAsync(ListLdapUsersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LdapUserResponse> ListLdapUsers(ListLdapUsersRequest request) => _proxy.Request<ListResponse<LdapUserResponse>>(request);
         public Task<ListResponse<LdapUserResponse>> ListLdapUsersAsync(ListLdapUsersRequest request) => _proxy.RequestAsync<ListResponse<LdapUserResponse>>(request);
+        public ListResponse<LdapUserResponse> ListLdapUsersAllPages(ListLdapUsersRequest request) => _proxy.RequestAllPages<LdapUserResponse>(request);
+        public Task<ListResponse<LdapUserResponse>> ListLdapUsersAllPagesAsync(ListLdapUsersRequest request) => _proxy.RequestAllPagesAsync<LdapUserResponse>(request);
     }
 }

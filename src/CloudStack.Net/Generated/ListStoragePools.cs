@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListStoragePoolsRequest : APIRequest
+    public class ListStoragePoolsRequest : APIListRequest
     {
         public ListStoragePoolsRequest() : base("listStoragePools") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the storage pool path
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<StoragePoolResponse> ListStoragePools(ListStoragePoolsRequest request);
         Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAsync(ListStoragePoolsRequest request);
+        ListResponse<StoragePoolResponse> ListStoragePoolsAllPages(ListStoragePoolsRequest request);
+        Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAllPagesAsync(ListStoragePoolsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StoragePoolResponse> ListStoragePools(ListStoragePoolsRequest request) => _proxy.Request<ListResponse<StoragePoolResponse>>(request);
         public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAsync(ListStoragePoolsRequest request) => _proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
+        public ListResponse<StoragePoolResponse> ListStoragePoolsAllPages(ListStoragePoolsRequest request) => _proxy.RequestAllPages<StoragePoolResponse>(request);
+        public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAllPagesAsync(ListStoragePoolsRequest request) => _proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
     }
 }

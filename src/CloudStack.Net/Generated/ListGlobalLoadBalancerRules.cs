@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListGlobalLoadBalancerRulesRequest : APIRequest
+    public class ListGlobalLoadBalancerRulesRequest : APIListRequest
     {
         public ListGlobalLoadBalancerRulesRequest() : base("listGlobalLoadBalancerRules") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRules(ListGlobalLoadBalancerRulesRequest request);
         Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAsync(ListGlobalLoadBalancerRulesRequest request);
+        ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRulesAllPages(ListGlobalLoadBalancerRulesRequest request);
+        Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAllPagesAsync(ListGlobalLoadBalancerRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRules(ListGlobalLoadBalancerRulesRequest request) => _proxy.Request<ListResponse<GlobalLoadBalancerResponse>>(request);
         public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAsync(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAsync<ListResponse<GlobalLoadBalancerResponse>>(request);
+        public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRulesAllPages(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAllPages<GlobalLoadBalancerResponse>(request);
+        public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAllPagesAsync(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAllPagesAsync<GlobalLoadBalancerResponse>(request);
     }
 }

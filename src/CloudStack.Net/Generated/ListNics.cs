@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNicsRequest : APIRequest
+    public class ListNicsRequest : APIListRequest
     {
         public ListNicsRequest() : base("listNics") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NicId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// list the vm nics  IP to NIC
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<NicResponse> ListNics(ListNicsRequest request);
         Task<ListResponse<NicResponse>> ListNicsAsync(ListNicsRequest request);
+        ListResponse<NicResponse> ListNicsAllPages(ListNicsRequest request);
+        Task<ListResponse<NicResponse>> ListNicsAllPagesAsync(ListNicsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NicResponse> ListNics(ListNicsRequest request) => _proxy.Request<ListResponse<NicResponse>>(request);
         public Task<ListResponse<NicResponse>> ListNicsAsync(ListNicsRequest request) => _proxy.RequestAsync<ListResponse<NicResponse>>(request);
+        public ListResponse<NicResponse> ListNicsAllPages(ListNicsRequest request) => _proxy.RequestAllPages<NicResponse>(request);
+        public Task<ListResponse<NicResponse>> ListNicsAllPagesAsync(ListNicsRequest request) => _proxy.RequestAllPagesAsync<NicResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListGuestOsMappingRequest : APIRequest
+    public class ListGuestOsMappingRequest : APIListRequest
     {
         public ListGuestOsMappingRequest() : base("listGuestOsMapping") {}
 
@@ -50,16 +50,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(OsTypeId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all available OS mappings for given hypervisor
@@ -68,10 +58,14 @@ namespace CloudStack.Net
     {
         ListResponse<GuestOsMappingResponse> ListGuestOsMapping(ListGuestOsMappingRequest request);
         Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAsync(ListGuestOsMappingRequest request);
+        ListResponse<GuestOsMappingResponse> ListGuestOsMappingAllPages(ListGuestOsMappingRequest request);
+        Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAllPagesAsync(ListGuestOsMappingRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<GuestOsMappingResponse> ListGuestOsMapping(ListGuestOsMappingRequest request) => _proxy.Request<ListResponse<GuestOsMappingResponse>>(request);
         public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAsync(ListGuestOsMappingRequest request) => _proxy.RequestAsync<ListResponse<GuestOsMappingResponse>>(request);
+        public ListResponse<GuestOsMappingResponse> ListGuestOsMappingAllPages(ListGuestOsMappingRequest request) => _proxy.RequestAllPages<GuestOsMappingResponse>(request);
+        public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAllPagesAsync(ListGuestOsMappingRequest request) => _proxy.RequestAllPagesAsync<GuestOsMappingResponse>(request);
     }
 }

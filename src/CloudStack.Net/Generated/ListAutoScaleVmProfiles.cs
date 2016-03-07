@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAutoScaleVmProfilesRequest : APIRequest
+    public class ListAutoScaleVmProfilesRequest : APIListRequest
     {
         public ListAutoScaleVmProfilesRequest() : base("listAutoScaleVmProfiles") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(OtherDeployParams).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -124,10 +114,14 @@ namespace CloudStack.Net
     {
         ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfiles(ListAutoScaleVmProfilesRequest request);
         Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAsync(ListAutoScaleVmProfilesRequest request);
+        ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfilesAllPages(ListAutoScaleVmProfilesRequest request);
+        Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAllPagesAsync(ListAutoScaleVmProfilesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfiles(ListAutoScaleVmProfilesRequest request) => _proxy.Request<ListResponse<AutoScaleVmProfileResponse>>(request);
         public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAsync(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAsync<ListResponse<AutoScaleVmProfileResponse>>(request);
+        public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfilesAllPages(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAllPages<AutoScaleVmProfileResponse>(request);
+        public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAllPagesAsync(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAllPagesAsync<AutoScaleVmProfileResponse>(request);
     }
 }

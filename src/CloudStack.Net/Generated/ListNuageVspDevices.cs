@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNuageVspDevicesRequest : APIRequest
+    public class ListNuageVspDevicesRequest : APIListRequest
     {
         public ListNuageVspDevicesRequest() : base("listNuageVspDevices") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<NuageVspDeviceResponse> ListNuageVspDevices(ListNuageVspDevicesRequest request);
         Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAsync(ListNuageVspDevicesRequest request);
+        ListResponse<NuageVspDeviceResponse> ListNuageVspDevicesAllPages(ListNuageVspDevicesRequest request);
+        Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAllPagesAsync(ListNuageVspDevicesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NuageVspDeviceResponse> ListNuageVspDevices(ListNuageVspDevicesRequest request) => _proxy.Request<ListResponse<NuageVspDeviceResponse>>(request);
         public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAsync(ListNuageVspDevicesRequest request) => _proxy.RequestAsync<ListResponse<NuageVspDeviceResponse>>(request);
+        public ListResponse<NuageVspDeviceResponse> ListNuageVspDevicesAllPages(ListNuageVspDevicesRequest request) => _proxy.RequestAllPages<NuageVspDeviceResponse>(request);
+        public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAllPagesAsync(ListNuageVspDevicesRequest request) => _proxy.RequestAllPagesAsync<NuageVspDeviceResponse>(request);
     }
 }

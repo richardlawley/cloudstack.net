@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListCiscoNexusVSMsRequest : APIRequest
+    public class ListCiscoNexusVSMsRequest : APIListRequest
     {
         public ListCiscoNexusVSMsRequest() : base("listCiscoNexusVSMs") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// Id of the CloudStack cluster in which the Cisco Nexus 1000v VSM appliance.
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMs(ListCiscoNexusVSMsRequest request);
         Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAsync(ListCiscoNexusVSMsRequest request);
+        ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMsAllPages(ListCiscoNexusVSMsRequest request);
+        Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAllPagesAsync(ListCiscoNexusVSMsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMs(ListCiscoNexusVSMsRequest request) => _proxy.Request<ListResponse<CiscoNexusVSMResponse>>(request);
         public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAsync(ListCiscoNexusVSMsRequest request) => _proxy.RequestAsync<ListResponse<CiscoNexusVSMResponse>>(request);
+        public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMsAllPages(ListCiscoNexusVSMsRequest request) => _proxy.RequestAllPages<CiscoNexusVSMResponse>(request);
+        public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAllPagesAsync(ListCiscoNexusVSMsRequest request) => _proxy.RequestAllPagesAsync<CiscoNexusVSMResponse>(request);
     }
 }

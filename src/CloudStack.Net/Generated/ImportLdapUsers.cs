@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ImportLdapUsersRequest : APIRequest
+    public class ImportLdapUsersRequest : APIListRequest
     {
         public ImportLdapUsersRequest() : base("importLdapUsers") {}
 
@@ -58,16 +58,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// Specifies a timezone for this command. For more information on the timezone parameter, see Time Zone Format.
         /// </summary>
@@ -84,10 +74,14 @@ namespace CloudStack.Net
     {
         ListResponse<LdapUserResponse> ImportLdapUsers(ImportLdapUsersRequest request);
         Task<ListResponse<LdapUserResponse>> ImportLdapUsersAsync(ImportLdapUsersRequest request);
+        ListResponse<LdapUserResponse> ImportLdapUsersAllPages(ImportLdapUsersRequest request);
+        Task<ListResponse<LdapUserResponse>> ImportLdapUsersAllPagesAsync(ImportLdapUsersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LdapUserResponse> ImportLdapUsers(ImportLdapUsersRequest request) => _proxy.Request<ListResponse<LdapUserResponse>>(request);
         public Task<ListResponse<LdapUserResponse>> ImportLdapUsersAsync(ImportLdapUsersRequest request) => _proxy.RequestAsync<ListResponse<LdapUserResponse>>(request);
+        public ListResponse<LdapUserResponse> ImportLdapUsersAllPages(ImportLdapUsersRequest request) => _proxy.RequestAllPages<LdapUserResponse>(request);
+        public Task<ListResponse<LdapUserResponse>> ImportLdapUsersAllPagesAsync(ImportLdapUsersRequest request) => _proxy.RequestAllPagesAsync<LdapUserResponse>(request);
     }
 }

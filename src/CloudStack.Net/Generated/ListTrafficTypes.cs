@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListTrafficTypesRequest : APIRequest
+    public class ListTrafficTypesRequest : APIListRequest
     {
         public ListTrafficTypesRequest() : base("listTrafficTypes") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists traffic types of a given physical network.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<ProviderResponse> ListTrafficTypes(ListTrafficTypesRequest request);
         Task<ListResponse<ProviderResponse>> ListTrafficTypesAsync(ListTrafficTypesRequest request);
+        ListResponse<ProviderResponse> ListTrafficTypesAllPages(ListTrafficTypesRequest request);
+        Task<ListResponse<ProviderResponse>> ListTrafficTypesAllPagesAsync(ListTrafficTypesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ProviderResponse> ListTrafficTypes(ListTrafficTypesRequest request) => _proxy.Request<ListResponse<ProviderResponse>>(request);
         public Task<ListResponse<ProviderResponse>> ListTrafficTypesAsync(ListTrafficTypesRequest request) => _proxy.RequestAsync<ListResponse<ProviderResponse>>(request);
+        public ListResponse<ProviderResponse> ListTrafficTypesAllPages(ListTrafficTypesRequest request) => _proxy.RequestAllPages<ProviderResponse>(request);
+        public Task<ListResponse<ProviderResponse>> ListTrafficTypesAllPagesAsync(ListTrafficTypesRequest request) => _proxy.RequestAllPagesAsync<ProviderResponse>(request);
     }
 }

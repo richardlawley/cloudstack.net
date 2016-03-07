@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListNiciraNvpDeviceNetworksRequest : APIRequest
+    public class ListNiciraNvpDeviceNetworksRequest : APIListRequest
     {
         public ListNiciraNvpDeviceNetworksRequest() : base("listNiciraNvpDeviceNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using a nicira nvp device
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworks(ListNiciraNvpDeviceNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAsync(ListNiciraNvpDeviceNetworksRequest request);
+        ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworksAllPages(ListNiciraNvpDeviceNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAllPagesAsync(ListNiciraNvpDeviceNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworks(ListNiciraNvpDeviceNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAsync(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworksAllPages(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAllPagesAsync(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

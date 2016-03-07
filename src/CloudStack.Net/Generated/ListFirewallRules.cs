@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListFirewallRulesRequest : APIRequest
+    public class ListFirewallRulesRequest : APIListRequest
     {
         public ListFirewallRulesRequest() : base("listFirewallRules") {}
 
@@ -82,16 +82,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -116,10 +106,14 @@ namespace CloudStack.Net
     {
         ListResponse<FirewallResponse> ListFirewallRules(ListFirewallRulesRequest request);
         Task<ListResponse<FirewallResponse>> ListFirewallRulesAsync(ListFirewallRulesRequest request);
+        ListResponse<FirewallResponse> ListFirewallRulesAllPages(ListFirewallRulesRequest request);
+        Task<ListResponse<FirewallResponse>> ListFirewallRulesAllPagesAsync(ListFirewallRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<FirewallResponse> ListFirewallRules(ListFirewallRulesRequest request) => _proxy.Request<ListResponse<FirewallResponse>>(request);
         public Task<ListResponse<FirewallResponse>> ListFirewallRulesAsync(ListFirewallRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallResponse>>(request);
+        public ListResponse<FirewallResponse> ListFirewallRulesAllPages(ListFirewallRulesRequest request) => _proxy.RequestAllPages<FirewallResponse>(request);
+        public Task<ListResponse<FirewallResponse>> ListFirewallRulesAllPagesAsync(ListFirewallRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallResponse>(request);
     }
 }

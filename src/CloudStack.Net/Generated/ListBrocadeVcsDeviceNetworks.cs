@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBrocadeVcsDeviceNetworksRequest : APIRequest
+    public class ListBrocadeVcsDeviceNetworksRequest : APIListRequest
     {
         public ListBrocadeVcsDeviceNetworksRequest() : base("listBrocadeVcsDeviceNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using a brocade vcs switch
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListBrocadeVcsDeviceNetworks(ListBrocadeVcsDeviceNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListBrocadeVcsDeviceNetworksAsync(ListBrocadeVcsDeviceNetworksRequest request);
+        ListResponse<NetworkResponse> ListBrocadeVcsDeviceNetworksAllPages(ListBrocadeVcsDeviceNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListBrocadeVcsDeviceNetworksAllPagesAsync(ListBrocadeVcsDeviceNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListBrocadeVcsDeviceNetworks(ListBrocadeVcsDeviceNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListBrocadeVcsDeviceNetworksAsync(ListBrocadeVcsDeviceNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListBrocadeVcsDeviceNetworksAllPages(ListBrocadeVcsDeviceNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListBrocadeVcsDeviceNetworksAllPagesAsync(ListBrocadeVcsDeviceNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

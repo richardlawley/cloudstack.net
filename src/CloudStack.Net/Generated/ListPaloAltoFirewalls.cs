@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPaloAltoFirewallsRequest : APIRequest
+    public class ListPaloAltoFirewallsRequest : APIListRequest
     {
         public ListPaloAltoFirewallsRequest() : base("listPaloAltoFirewalls") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Physical Network ID
         /// </summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewalls(ListPaloAltoFirewallsRequest request);
         Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAsync(ListPaloAltoFirewallsRequest request);
+        ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewallsAllPages(ListPaloAltoFirewallsRequest request);
+        Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAllPagesAsync(ListPaloAltoFirewallsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewalls(ListPaloAltoFirewallsRequest request) => _proxy.Request<ListResponse<PaloAltoFirewallResponse>>(request);
         public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAsync(ListPaloAltoFirewallsRequest request) => _proxy.RequestAsync<ListResponse<PaloAltoFirewallResponse>>(request);
+        public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewallsAllPages(ListPaloAltoFirewallsRequest request) => _proxy.RequestAllPages<PaloAltoFirewallResponse>(request);
+        public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAllPagesAsync(ListPaloAltoFirewallsRequest request) => _proxy.RequestAllPagesAsync<PaloAltoFirewallResponse>(request);
     }
 }

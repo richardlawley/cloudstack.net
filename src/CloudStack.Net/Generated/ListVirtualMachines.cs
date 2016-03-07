@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListVirtualMachinesRequest : APIRequest
+    public class ListVirtualMachinesRequest : APIListRequest
     {
         public ListVirtualMachinesRequest() : base("listVirtualMachines") {}
 
@@ -154,16 +154,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the pod ID
         /// </summary>
@@ -252,10 +242,14 @@ namespace CloudStack.Net
     {
         ListResponse<UserVmResponse> ListVirtualMachines(ListVirtualMachinesRequest request);
         Task<ListResponse<UserVmResponse>> ListVirtualMachinesAsync(ListVirtualMachinesRequest request);
+        ListResponse<UserVmResponse> ListVirtualMachinesAllPages(ListVirtualMachinesRequest request);
+        Task<ListResponse<UserVmResponse>> ListVirtualMachinesAllPagesAsync(ListVirtualMachinesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<UserVmResponse> ListVirtualMachines(ListVirtualMachinesRequest request) => _proxy.Request<ListResponse<UserVmResponse>>(request);
         public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAsync(ListVirtualMachinesRequest request) => _proxy.RequestAsync<ListResponse<UserVmResponse>>(request);
+        public ListResponse<UserVmResponse> ListVirtualMachinesAllPages(ListVirtualMachinesRequest request) => _proxy.RequestAllPages<UserVmResponse>(request);
+        public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAllPagesAsync(ListVirtualMachinesRequest request) => _proxy.RequestAllPagesAsync<UserVmResponse>(request);
     }
 }

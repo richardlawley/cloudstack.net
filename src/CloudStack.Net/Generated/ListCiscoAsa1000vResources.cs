@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListCiscoAsa1000vResourcesRequest : APIRequest
+    public class ListCiscoAsa1000vResourcesRequest : APIListRequest
     {
         public ListCiscoAsa1000vResourcesRequest() : base("listCiscoAsa1000vResources") {}
 
@@ -24,16 +24,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResources(ListCiscoAsa1000vResourcesRequest request);
         Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAsync(ListCiscoAsa1000vResourcesRequest request);
+        ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResourcesAllPages(ListCiscoAsa1000vResourcesRequest request);
+        Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAllPagesAsync(ListCiscoAsa1000vResourcesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResources(ListCiscoAsa1000vResourcesRequest request) => _proxy.Request<ListResponse<CiscoAsa1000vResourceResponse>>(request);
         public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAsync(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAsync<ListResponse<CiscoAsa1000vResourceResponse>>(request);
+        public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResourcesAllPages(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAllPages<CiscoAsa1000vResourceResponse>(request);
+        public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAllPagesAsync(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAllPagesAsync<CiscoAsa1000vResourceResponse>(request);
     }
 }

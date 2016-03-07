@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListLBStickinessPoliciesRequest : APIRequest
+    public class ListLBStickinessPoliciesRequest : APIListRequest
     {
         public ListLBStickinessPoliciesRequest() : base("listLBStickinessPolicies") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(LbRuleId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists load balancer stickiness policies.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<LBStickinessResponse> ListLBStickinessPolicies(ListLBStickinessPoliciesRequest request);
         Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAsync(ListLBStickinessPoliciesRequest request);
+        ListResponse<LBStickinessResponse> ListLBStickinessPoliciesAllPages(ListLBStickinessPoliciesRequest request);
+        Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAllPagesAsync(ListLBStickinessPoliciesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<LBStickinessResponse> ListLBStickinessPolicies(ListLBStickinessPoliciesRequest request) => _proxy.Request<ListResponse<LBStickinessResponse>>(request);
         public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAsync(ListLBStickinessPoliciesRequest request) => _proxy.RequestAsync<ListResponse<LBStickinessResponse>>(request);
+        public ListResponse<LBStickinessResponse> ListLBStickinessPoliciesAllPages(ListLBStickinessPoliciesRequest request) => _proxy.RequestAllPages<LBStickinessResponse>(request);
+        public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAllPagesAsync(ListLBStickinessPoliciesRequest request) => _proxy.RequestAllPagesAsync<LBStickinessResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class QuotaSummaryRequest : APIRequest
+    public class QuotaSummaryRequest : APIListRequest
     {
         public QuotaSummaryRequest() : base("quotaSummary") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists balance and quota usage for all accounts
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<QuotaSummaryResponse> QuotaSummary(QuotaSummaryRequest request);
         Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAsync(QuotaSummaryRequest request);
+        ListResponse<QuotaSummaryResponse> QuotaSummaryAllPages(QuotaSummaryRequest request);
+        Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAllPagesAsync(QuotaSummaryRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<QuotaSummaryResponse> QuotaSummary(QuotaSummaryRequest request) => _proxy.Request<ListResponse<QuotaSummaryResponse>>(request);
         public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAsync(QuotaSummaryRequest request) => _proxy.RequestAsync<ListResponse<QuotaSummaryResponse>>(request);
+        public ListResponse<QuotaSummaryResponse> QuotaSummaryAllPages(QuotaSummaryRequest request) => _proxy.RequestAllPages<QuotaSummaryResponse>(request);
+        public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAllPagesAsync(QuotaSummaryRequest request) => _proxy.RequestAllPagesAsync<QuotaSummaryResponse>(request);
     }
 }

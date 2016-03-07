@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListAutoScaleVmGroupsRequest : APIRequest
+    public class ListAutoScaleVmGroupsRequest : APIListRequest
     {
         public ListAutoScaleVmGroupsRequest() : base("listAutoScaleVmGroups") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the ID of the policy
         /// </summary>
@@ -124,10 +114,14 @@ namespace CloudStack.Net
     {
         ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroups(ListAutoScaleVmGroupsRequest request);
         Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAsync(ListAutoScaleVmGroupsRequest request);
+        ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroupsAllPages(ListAutoScaleVmGroupsRequest request);
+        Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAllPagesAsync(ListAutoScaleVmGroupsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroups(ListAutoScaleVmGroupsRequest request) => _proxy.Request<ListResponse<AutoScaleVmGroupResponse>>(request);
         public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAsync(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAsync<ListResponse<AutoScaleVmGroupResponse>>(request);
+        public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroupsAllPages(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAllPages<AutoScaleVmGroupResponse>(request);
+        public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAllPagesAsync(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAllPagesAsync<AutoScaleVmGroupResponse>(request);
     }
 }

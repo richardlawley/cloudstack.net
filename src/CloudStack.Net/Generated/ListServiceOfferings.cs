@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListServiceOfferingsRequest : APIRequest
+    public class ListServiceOfferingsRequest : APIListRequest
     {
         public ListServiceOfferingsRequest() : base("listServiceOfferings") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the system VM type. Possible types are "consoleproxy", "secondarystoragevm" or "domainrouter".
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<ServiceOfferingResponse> ListServiceOfferings(ListServiceOfferingsRequest request);
         Task<ListResponse<ServiceOfferingResponse>> ListServiceOfferingsAsync(ListServiceOfferingsRequest request);
+        ListResponse<ServiceOfferingResponse> ListServiceOfferingsAllPages(ListServiceOfferingsRequest request);
+        Task<ListResponse<ServiceOfferingResponse>> ListServiceOfferingsAllPagesAsync(ListServiceOfferingsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ServiceOfferingResponse> ListServiceOfferings(ListServiceOfferingsRequest request) => _proxy.Request<ListResponse<ServiceOfferingResponse>>(request);
         public Task<ListResponse<ServiceOfferingResponse>> ListServiceOfferingsAsync(ListServiceOfferingsRequest request) => _proxy.RequestAsync<ListResponse<ServiceOfferingResponse>>(request);
+        public ListResponse<ServiceOfferingResponse> ListServiceOfferingsAllPages(ListServiceOfferingsRequest request) => _proxy.RequestAllPages<ServiceOfferingResponse>(request);
+        public Task<ListResponse<ServiceOfferingResponse>> ListServiceOfferingsAllPagesAsync(ListServiceOfferingsRequest request) => _proxy.RequestAllPagesAsync<ServiceOfferingResponse>(request);
     }
 }

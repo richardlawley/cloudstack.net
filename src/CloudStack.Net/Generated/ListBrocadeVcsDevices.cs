@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListBrocadeVcsDevicesRequest : APIRequest
+    public class ListBrocadeVcsDevicesRequest : APIListRequest
     {
         public ListBrocadeVcsDevicesRequest() : base("listBrocadeVcsDevices") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -52,10 +42,14 @@ namespace CloudStack.Net
     {
         ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevices(ListBrocadeVcsDevicesRequest request);
         Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAsync(ListBrocadeVcsDevicesRequest request);
+        ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevicesAllPages(ListBrocadeVcsDevicesRequest request);
+        Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAllPagesAsync(ListBrocadeVcsDevicesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevices(ListBrocadeVcsDevicesRequest request) => _proxy.Request<ListResponse<BrocadeVcsDeviceResponse>>(request);
         public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAsync(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAsync<ListResponse<BrocadeVcsDeviceResponse>>(request);
+        public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevicesAllPages(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAllPages<BrocadeVcsDeviceResponse>(request);
+        public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAllPagesAsync(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAllPagesAsync<BrocadeVcsDeviceResponse>(request);
     }
 }

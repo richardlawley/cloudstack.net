@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSamlAuthorizationRequest : APIRequest
+    public class ListSamlAuthorizationRequest : APIListRequest
     {
         public ListSamlAuthorizationRequest() : base("listSamlAuthorization") {}
 
@@ -16,16 +16,6 @@ namespace CloudStack.Net
         public string Keyword {
             get { return (string) Parameters[nameof(Keyword).ToLower()]; }
             set { Parameters[nameof(Keyword).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<SamlAuthorizationResponse> ListSamlAuthorization(ListSamlAuthorizationRequest request);
         Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAsync(ListSamlAuthorizationRequest request);
+        ListResponse<SamlAuthorizationResponse> ListSamlAuthorizationAllPages(ListSamlAuthorizationRequest request);
+        Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAllPagesAsync(ListSamlAuthorizationRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<SamlAuthorizationResponse> ListSamlAuthorization(ListSamlAuthorizationRequest request) => _proxy.Request<ListResponse<SamlAuthorizationResponse>>(request);
         public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAsync(ListSamlAuthorizationRequest request) => _proxy.RequestAsync<ListResponse<SamlAuthorizationResponse>>(request);
+        public ListResponse<SamlAuthorizationResponse> ListSamlAuthorizationAllPages(ListSamlAuthorizationRequest request) => _proxy.RequestAllPages<SamlAuthorizationResponse>(request);
+        public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAllPagesAsync(ListSamlAuthorizationRequest request) => _proxy.RequestAllPagesAsync<SamlAuthorizationResponse>(request);
     }
 }

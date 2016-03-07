@@ -137,6 +137,7 @@
     <Compile Include="Generated\BaremetalPxePingResponse.cs" />
     <Compile Include="Generated\BaremetalPxeResponse.cs" />
     <Compile Include="Generated\BaremetalRctResponse.cs" />
+    <Compile Include="APIListRequest.cs" />
     <Compile Include="Generated\BaseResponse.cs" />
     <Compile Include="Generated\BigSwitchBcfDeviceResponse.cs" />
     <Compile Include="Generated\BrocadeVcsDeviceResponse.cs" />
@@ -787,6 +788,7 @@
     <Compile Include="Generated\ZoneResponse.cs" />
     <Compile Include="ICloudStackAPIClient.cs" />
     <Compile Include="ICloudStackAPIProxy.cs" />
+    <Compile Include="JobStatus.cs" />
     <Compile Include="ListResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

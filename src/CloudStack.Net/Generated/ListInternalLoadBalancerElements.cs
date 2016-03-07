@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListInternalLoadBalancerElementsRequest : APIRequest
+    public class ListInternalLoadBalancerElementsRequest : APIListRequest
     {
         public ListInternalLoadBalancerElementsRequest() : base("listInternalLoadBalancerElements") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NspId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all available Internal Load Balancer elements.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElements(ListInternalLoadBalancerElementsRequest request);
         Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAsync(ListInternalLoadBalancerElementsRequest request);
+        ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElementsAllPages(ListInternalLoadBalancerElementsRequest request);
+        Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAllPagesAsync(ListInternalLoadBalancerElementsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElements(ListInternalLoadBalancerElementsRequest request) => _proxy.Request<ListResponse<InternalLoadBalancerElementResponse>>(request);
         public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAsync(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAsync<ListResponse<InternalLoadBalancerElementResponse>>(request);
+        public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElementsAllPages(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAllPages<InternalLoadBalancerElementResponse>(request);
+        public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAllPagesAsync(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAllPagesAsync<InternalLoadBalancerElementResponse>(request);
     }
 }

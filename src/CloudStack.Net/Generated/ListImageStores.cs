@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListImageStoresRequest : APIRequest
+    public class ListImageStoresRequest : APIListRequest
     {
         public ListImageStoresRequest() : base("listImageStores") {}
 
@@ -32,16 +32,6 @@ namespace CloudStack.Net
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
             set { Parameters[nameof(Name).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -76,10 +66,14 @@ namespace CloudStack.Net
     {
         ListResponse<ImageStoreResponse> ListImageStores(ListImageStoresRequest request);
         Task<ListResponse<ImageStoreResponse>> ListImageStoresAsync(ListImageStoresRequest request);
+        ListResponse<ImageStoreResponse> ListImageStoresAllPages(ListImageStoresRequest request);
+        Task<ListResponse<ImageStoreResponse>> ListImageStoresAllPagesAsync(ListImageStoresRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ImageStoreResponse> ListImageStores(ListImageStoresRequest request) => _proxy.Request<ListResponse<ImageStoreResponse>>(request);
         public Task<ListResponse<ImageStoreResponse>> ListImageStoresAsync(ListImageStoresRequest request) => _proxy.RequestAsync<ListResponse<ImageStoreResponse>>(request);
+        public ListResponse<ImageStoreResponse> ListImageStoresAllPages(ListImageStoresRequest request) => _proxy.RequestAllPages<ImageStoreResponse>(request);
+        public Task<ListResponse<ImageStoreResponse>> ListImageStoresAllPagesAsync(ListImageStoresRequest request) => _proxy.RequestAllPagesAsync<ImageStoreResponse>(request);
     }
 }

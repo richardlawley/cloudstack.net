@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSrxFirewallNetworksRequest : APIRequest
+    public class ListSrxFirewallNetworksRequest : APIListRequest
     {
         public ListSrxFirewallNetworksRequest() : base("listSrxFirewallNetworks") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// lists network that are using SRX firewall device
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<NetworkResponse> ListSrxFirewallNetworks(ListSrxFirewallNetworksRequest request);
         Task<ListResponse<NetworkResponse>> ListSrxFirewallNetworksAsync(ListSrxFirewallNetworksRequest request);
+        ListResponse<NetworkResponse> ListSrxFirewallNetworksAllPages(ListSrxFirewallNetworksRequest request);
+        Task<ListResponse<NetworkResponse>> ListSrxFirewallNetworksAllPagesAsync(ListSrxFirewallNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<NetworkResponse> ListSrxFirewallNetworks(ListSrxFirewallNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
         public Task<ListResponse<NetworkResponse>> ListSrxFirewallNetworksAsync(ListSrxFirewallNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListSrxFirewallNetworksAllPages(ListSrxFirewallNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListSrxFirewallNetworksAllPagesAsync(ListSrxFirewallNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

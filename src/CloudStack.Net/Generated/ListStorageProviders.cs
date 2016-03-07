@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListStorageProvidersRequest : APIRequest
+    public class ListStorageProvidersRequest : APIListRequest
     {
         public ListStorageProvidersRequest() : base("listStorageProviders") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists storage providers.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<StorageProviderResponse> ListStorageProviders(ListStorageProvidersRequest request);
         Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAsync(ListStorageProvidersRequest request);
+        ListResponse<StorageProviderResponse> ListStorageProvidersAllPages(ListStorageProvidersRequest request);
+        Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAllPagesAsync(ListStorageProvidersRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<StorageProviderResponse> ListStorageProviders(ListStorageProvidersRequest request) => _proxy.Request<ListResponse<StorageProviderResponse>>(request);
         public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAsync(ListStorageProvidersRequest request) => _proxy.RequestAsync<ListResponse<StorageProviderResponse>>(request);
+        public ListResponse<StorageProviderResponse> ListStorageProvidersAllPages(ListStorageProvidersRequest request) => _proxy.RequestAllPages<StorageProviderResponse>(request);
+        public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAllPagesAsync(ListStorageProvidersRequest request) => _proxy.RequestAllPagesAsync<StorageProviderResponse>(request);
     }
 }

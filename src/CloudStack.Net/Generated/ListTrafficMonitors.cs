@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListTrafficMonitorsRequest : APIRequest
+    public class ListTrafficMonitorsRequest : APIListRequest
     {
         public ListTrafficMonitorsRequest() : base("listTrafficMonitors") {}
 
@@ -26,16 +26,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// List traffic monitor Hosts.
@@ -44,10 +34,14 @@ namespace CloudStack.Net
     {
         ListResponse<TrafficMonitorResponse> ListTrafficMonitors(ListTrafficMonitorsRequest request);
         Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAsync(ListTrafficMonitorsRequest request);
+        ListResponse<TrafficMonitorResponse> ListTrafficMonitorsAllPages(ListTrafficMonitorsRequest request);
+        Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAllPagesAsync(ListTrafficMonitorsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<TrafficMonitorResponse> ListTrafficMonitors(ListTrafficMonitorsRequest request) => _proxy.Request<ListResponse<TrafficMonitorResponse>>(request);
         public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAsync(ListTrafficMonitorsRequest request) => _proxy.RequestAsync<ListResponse<TrafficMonitorResponse>>(request);
+        public ListResponse<TrafficMonitorResponse> ListTrafficMonitorsAllPages(ListTrafficMonitorsRequest request) => _proxy.RequestAllPages<TrafficMonitorResponse>(request);
+        public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAllPagesAsync(ListTrafficMonitorsRequest request) => _proxy.RequestAllPagesAsync<TrafficMonitorResponse>(request);
     }
 }

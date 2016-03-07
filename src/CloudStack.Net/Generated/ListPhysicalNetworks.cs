@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListPhysicalNetworksRequest : APIRequest
+    public class ListPhysicalNetworksRequest : APIListRequest
     {
         public ListPhysicalNetworksRequest() : base("listPhysicalNetworks") {}
 
@@ -34,16 +34,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Name).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// the Zone ID for the physical network
         /// </summary>
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<PhysicalNetworkResponse> ListPhysicalNetworks(ListPhysicalNetworksRequest request);
         Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAsync(ListPhysicalNetworksRequest request);
+        ListResponse<PhysicalNetworkResponse> ListPhysicalNetworksAllPages(ListPhysicalNetworksRequest request);
+        Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAllPagesAsync(ListPhysicalNetworksRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworks(ListPhysicalNetworksRequest request) => _proxy.Request<ListResponse<PhysicalNetworkResponse>>(request);
         public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAsync(ListPhysicalNetworksRequest request) => _proxy.RequestAsync<ListResponse<PhysicalNetworkResponse>>(request);
+        public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworksAllPages(ListPhysicalNetworksRequest request) => _proxy.RequestAllPages<PhysicalNetworkResponse>(request);
+        public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAllPagesAsync(ListPhysicalNetworksRequest request) => _proxy.RequestAllPagesAsync<PhysicalNetworkResponse>(request);
     }
 }

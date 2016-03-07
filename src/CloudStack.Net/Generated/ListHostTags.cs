@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListHostTagsRequest : APIRequest
+    public class ListHostTagsRequest : APIListRequest
     {
         public ListHostTagsRequest() : base("listHostTags") {}
 
@@ -18,16 +18,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(Keyword).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists host tags
@@ -36,10 +26,14 @@ namespace CloudStack.Net
     {
         ListResponse<HostTagResponse> ListHostTags(ListHostTagsRequest request);
         Task<ListResponse<HostTagResponse>> ListHostTagsAsync(ListHostTagsRequest request);
+        ListResponse<HostTagResponse> ListHostTagsAllPages(ListHostTagsRequest request);
+        Task<ListResponse<HostTagResponse>> ListHostTagsAllPagesAsync(ListHostTagsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<HostTagResponse> ListHostTags(ListHostTagsRequest request) => _proxy.Request<ListResponse<HostTagResponse>>(request);
         public Task<ListResponse<HostTagResponse>> ListHostTagsAsync(ListHostTagsRequest request) => _proxy.RequestAsync<ListResponse<HostTagResponse>>(request);
+        public ListResponse<HostTagResponse> ListHostTagsAllPages(ListHostTagsRequest request) => _proxy.RequestAllPages<HostTagResponse>(request);
+        public Task<ListResponse<HostTagResponse>> ListHostTagsAllPagesAsync(ListHostTagsRequest request) => _proxy.RequestAllPagesAsync<HostTagResponse>(request);
     }
 }

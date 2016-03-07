@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListRemoteAccessVpnsRequest : APIRequest
+    public class ListRemoteAccessVpnsRequest : APIListRequest
     {
         public ListRemoteAccessVpnsRequest() : base("listRemoteAccessVpns") {}
 
@@ -74,16 +74,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NetworkId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -108,10 +98,14 @@ namespace CloudStack.Net
     {
         ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpns(ListRemoteAccessVpnsRequest request);
         Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAsync(ListRemoteAccessVpnsRequest request);
+        ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpnsAllPages(ListRemoteAccessVpnsRequest request);
+        Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAllPagesAsync(ListRemoteAccessVpnsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpns(ListRemoteAccessVpnsRequest request) => _proxy.Request<ListResponse<RemoteAccessVpnResponse>>(request);
         public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAsync(ListRemoteAccessVpnsRequest request) => _proxy.RequestAsync<ListResponse<RemoteAccessVpnResponse>>(request);
+        public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpnsAllPages(ListRemoteAccessVpnsRequest request) => _proxy.RequestAllPages<RemoteAccessVpnResponse>(request);
+        public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAllPagesAsync(ListRemoteAccessVpnsRequest request) => _proxy.RequestAllPagesAsync<RemoteAccessVpnResponse>(request);
     }
 }

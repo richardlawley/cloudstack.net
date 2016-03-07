@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListOvsElementsRequest : APIRequest
+    public class ListOvsElementsRequest : APIListRequest
     {
         public ListOvsElementsRequest() : base("listOvsElements") {}
 
@@ -42,16 +42,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(NspId).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
     }
     /// <summary>
     /// Lists all available ovs elements.
@@ -60,10 +50,14 @@ namespace CloudStack.Net
     {
         ListResponse<OvsProviderResponse> ListOvsElements(ListOvsElementsRequest request);
         Task<ListResponse<OvsProviderResponse>> ListOvsElementsAsync(ListOvsElementsRequest request);
+        ListResponse<OvsProviderResponse> ListOvsElementsAllPages(ListOvsElementsRequest request);
+        Task<ListResponse<OvsProviderResponse>> ListOvsElementsAllPagesAsync(ListOvsElementsRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<OvsProviderResponse> ListOvsElements(ListOvsElementsRequest request) => _proxy.Request<ListResponse<OvsProviderResponse>>(request);
         public Task<ListResponse<OvsProviderResponse>> ListOvsElementsAsync(ListOvsElementsRequest request) => _proxy.RequestAsync<ListResponse<OvsProviderResponse>>(request);
+        public ListResponse<OvsProviderResponse> ListOvsElementsAllPages(ListOvsElementsRequest request) => _proxy.RequestAllPages<OvsProviderResponse>(request);
+        public Task<ListResponse<OvsProviderResponse>> ListOvsElementsAllPagesAsync(ListOvsElementsRequest request) => _proxy.RequestAllPagesAsync<OvsProviderResponse>(request);
     }
 }

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListIpForwardingRulesRequest : APIRequest
+    public class ListIpForwardingRulesRequest : APIListRequest
     {
         public ListIpForwardingRulesRequest() : base("listIpForwardingRules") {}
 
@@ -66,16 +66,6 @@ namespace CloudStack.Net
             set { Parameters[nameof(ListAll).ToLower()] = value; }
         }
 
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
-        }
-
         /// <summary>
         /// list objects by project
         /// </summary>
@@ -100,10 +90,14 @@ namespace CloudStack.Net
     {
         ListResponse<FirewallRuleResponse> ListIpForwardingRules(ListIpForwardingRulesRequest request);
         Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAsync(ListIpForwardingRulesRequest request);
+        ListResponse<FirewallRuleResponse> ListIpForwardingRulesAllPages(ListIpForwardingRulesRequest request);
+        Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAllPagesAsync(ListIpForwardingRulesRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<FirewallRuleResponse> ListIpForwardingRules(ListIpForwardingRulesRequest request) => _proxy.Request<ListResponse<FirewallRuleResponse>>(request);
         public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAsync(ListIpForwardingRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallRuleResponse>>(request);
+        public ListResponse<FirewallRuleResponse> ListIpForwardingRulesAllPages(ListIpForwardingRulesRequest request) => _proxy.RequestAllPages<FirewallRuleResponse>(request);
+        public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAllPagesAsync(ListIpForwardingRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallRuleResponse>(request);
     }
 }

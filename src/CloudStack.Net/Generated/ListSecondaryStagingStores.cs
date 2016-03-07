@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class ListSecondaryStagingStoresRequest : APIRequest
+    public class ListSecondaryStagingStoresRequest : APIListRequest
     {
         public ListSecondaryStagingStoresRequest() : base("listSecondaryStagingStores") {}
 
@@ -32,16 +32,6 @@ namespace CloudStack.Net
         public string Name {
             get { return (string) Parameters[nameof(Name).ToLower()]; }
             set { Parameters[nameof(Name).ToLower()] = value; }
-        }
-
-        public int? Page {
-            get { return (int?) Parameters[nameof(Page).ToLower()]; }
-            set { Parameters[nameof(Page).ToLower()] = value; }
-        }
-
-        public int? PageSize {
-            get { return (int?) Parameters[nameof(PageSize).ToLower()]; }
-            set { Parameters[nameof(PageSize).ToLower()] = value; }
         }
 
         /// <summary>
@@ -76,10 +66,14 @@ namespace CloudStack.Net
     {
         ListResponse<ImageStoreResponse> ListSecondaryStagingStores(ListSecondaryStagingStoresRequest request);
         Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAsync(ListSecondaryStagingStoresRequest request);
+        ListResponse<ImageStoreResponse> ListSecondaryStagingStoresAllPages(ListSecondaryStagingStoresRequest request);
+        Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAllPagesAsync(ListSecondaryStagingStoresRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ListResponse<ImageStoreResponse> ListSecondaryStagingStores(ListSecondaryStagingStoresRequest request) => _proxy.Request<ListResponse<ImageStoreResponse>>(request);
         public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAsync(ListSecondaryStagingStoresRequest request) => _proxy.RequestAsync<ListResponse<ImageStoreResponse>>(request);
+        public ListResponse<ImageStoreResponse> ListSecondaryStagingStoresAllPages(ListSecondaryStagingStoresRequest request) => _proxy.RequestAllPages<ImageStoreResponse>(request);
+        public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAllPagesAsync(ListSecondaryStagingStoresRequest request) => _proxy.RequestAllPagesAsync<ImageStoreResponse>(request);
     }
 }
