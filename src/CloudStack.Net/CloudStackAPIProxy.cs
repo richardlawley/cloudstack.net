@@ -120,16 +120,20 @@ namespace CloudStack.Net
                 throw new FormatException($"Expected root to contain a single object - it contains {root.Count}");
             }
 
-            JToken listElement = ((JProperty)root.First).Value;
-            TResponse decodedResponse = listElement.ToObject<TResponse>();
-
+            TResponse decodedResponse;
             if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(ListResponse<>))
             {
+                JToken listElement = ((JProperty)root.First).Value;
+                decodedResponse = listElement.ToObject<TResponse>();
                 if (listElement is JContainer)        // An empty list will be null
                 {
                     MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
                     decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)listElement });
                 }
+            } else
+            {
+                JToken singleElement = ((JProperty)((JProperty)root.First).Value.First).Value;
+                decodedResponse = singleElement.ToObject<TResponse>();
             }
             return decodedResponse;
         }

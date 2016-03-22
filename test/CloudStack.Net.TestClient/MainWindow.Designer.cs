@@ -46,6 +46,7 @@ namespace CloudStack.Net.TestClient
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ButtonDetachVolume = new System.Windows.Forms.Button();
             this.ButtonListSecurityGroups = new System.Windows.Forms.Button();
             this.ButtonCreateSecurityGroup = new System.Windows.Forms.Button();
             this.TextBoxVMId = new System.Windows.Forms.TextBox();
@@ -90,7 +91,8 @@ namespace CloudStack.Net.TestClient
             this.SecretKey = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.loggingText = new System.Windows.Forms.RichTextBox();
-            this.ButtonDetachVolume = new System.Windows.Forms.Button();
+            this.ButtonListDomains = new System.Windows.Forms.Button();
+            this.ButtonCreateDomain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -109,6 +111,8 @@ namespace CloudStack.Net.TestClient
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.ButtonCreateDomain);
+            this.splitContainer1.Panel1.Controls.Add(this.ButtonListDomains);
             this.splitContainer1.Panel1.Controls.Add(this.ButtonDetachVolume);
             this.splitContainer1.Panel1.Controls.Add(this.ButtonListSecurityGroups);
             this.splitContainer1.Panel1.Controls.Add(this.ButtonCreateSecurityGroup);
@@ -142,9 +146,19 @@ namespace CloudStack.Net.TestClient
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.loggingText);
-            this.splitContainer1.Size = new System.Drawing.Size(992, 592);
-            this.splitContainer1.SplitterDistance = 360;
+            this.splitContainer1.Size = new System.Drawing.Size(1091, 647);
+            this.splitContainer1.SplitterDistance = 396;
             this.splitContainer1.TabIndex = 23;
+            // 
+            // ButtonDetachVolume
+            // 
+            this.ButtonDetachVolume.Location = new System.Drawing.Point(496, 87);
+            this.ButtonDetachVolume.Name = "ButtonDetachVolume";
+            this.ButtonDetachVolume.Size = new System.Drawing.Size(119, 23);
+            this.ButtonDetachVolume.TabIndex = 48;
+            this.ButtonDetachVolume.Text = "Detach Volume";
+            this.ButtonDetachVolume.UseVisualStyleBackColor = true;
+            this.ButtonDetachVolume.Click += new System.EventHandler(this.ButtonDetachVolume_Click);
             // 
             // ButtonListSecurityGroups
             // 
@@ -583,25 +597,35 @@ namespace CloudStack.Net.TestClient
             this.loggingText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loggingText.Location = new System.Drawing.Point(0, 0);
             this.loggingText.Name = "loggingText";
-            this.loggingText.Size = new System.Drawing.Size(992, 228);
+            this.loggingText.Size = new System.Drawing.Size(1091, 247);
             this.loggingText.TabIndex = 23;
             this.loggingText.Text = "";
             // 
-            // ButtonDetachVolume
+            // ButtonListDomains
             // 
-            this.ButtonDetachVolume.Location = new System.Drawing.Point(496, 87);
-            this.ButtonDetachVolume.Name = "ButtonDetachVolume";
-            this.ButtonDetachVolume.Size = new System.Drawing.Size(119, 23);
-            this.ButtonDetachVolume.TabIndex = 48;
-            this.ButtonDetachVolume.Text = "Detach Volume";
-            this.ButtonDetachVolume.UseVisualStyleBackColor = true;
-            this.ButtonDetachVolume.Click += new System.EventHandler(this.ButtonDetachVolume_Click);
+            this.ButtonListDomains.Location = new System.Drawing.Point(803, 356);
+            this.ButtonListDomains.Name = "ButtonListDomains";
+            this.ButtonListDomains.Size = new System.Drawing.Size(119, 23);
+            this.ButtonListDomains.TabIndex = 49;
+            this.ButtonListDomains.Text = "List Domains";
+            this.ButtonListDomains.UseVisualStyleBackColor = true;
+            this.ButtonListDomains.Click += new System.EventHandler(this.ButtonListDomains_Click);
+            // 
+            // ButtonCreateDomain
+            // 
+            this.ButtonCreateDomain.Location = new System.Drawing.Point(928, 356);
+            this.ButtonCreateDomain.Name = "ButtonCreateDomain";
+            this.ButtonCreateDomain.Size = new System.Drawing.Size(119, 23);
+            this.ButtonCreateDomain.TabIndex = 50;
+            this.ButtonCreateDomain.Text = "Create Domain";
+            this.ButtonCreateDomain.UseVisualStyleBackColor = true;
+            this.ButtonCreateDomain.Click += new System.EventHandler(this.ButtonCreateDomain_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 592);
+            this.ClientSize = new System.Drawing.Size(1091, 647);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainWindow";
             this.Text = "CloudStack SDK Test";
@@ -666,6 +690,8 @@ namespace CloudStack.Net.TestClient
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxDeployStopped;
         private System.Windows.Forms.Button ButtonDetachVolume;
+		private System.Windows.Forms.Button ButtonListDomains;
+        private System.Windows.Forms.Button ButtonCreateDomain;
     }
 }
 

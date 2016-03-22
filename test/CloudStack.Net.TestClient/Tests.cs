@@ -25,7 +25,7 @@ namespace CloudStack.Net.TestClient
         private string _zoneId;
         private ICloudStackAPIProxy _proxy;
         private ICloudStackAPIClient _client;
-        
+
         public Tests(Action<string> log)
         {
             _logWriter = log;
@@ -463,6 +463,31 @@ namespace CloudStack.Net.TestClient
 
         #endregion
 
+        #region Domain test 
+
+        internal void ListDomains()
+        {
+            RunTest(() =>
+            {
+                ListDomainsRequest request = new ListDomainsRequest();
+                var response = _client.ListDomains(request);
+                return response.ToString();
+            });
+        }
+
+        internal void CreateDomain(string domainName)
+        {
+            RunTest(() =>
+            {
+                // Get root domain...
+                var rootDomain = Guid.Parse(_client.ListDomains(new ListDomainsRequest { Level = 0 }).Results.Single().Id);
+                var response = _client.CreateDomain(new CreateDomainRequest { Name = domainName, ParentDomainId = rootDomain });
+                return response.ToString();
+            });
+        }
+
+        #endregion
+
         #region Private Methods
 
         /// <summary>
@@ -488,6 +513,19 @@ namespace CloudStack.Net.TestClient
         private void WriteLog(string format, params object[] args)
         {
             _logWriter(string.Format(CultureInfo.InvariantCulture, format, args));
+        }
+
+        private void RunTest(Func<string> action)
+        {
+            try
+            {
+                var result = action();
+                _logWriter(result);
+            }
+            catch (Exception ex)
+            {
+                _logWriter(ex.Message);
+            }
         }
 
         #endregion

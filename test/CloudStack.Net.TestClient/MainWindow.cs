@@ -250,6 +250,22 @@ namespace CloudStack.Net.TestClient
         {
             Tests tests = new Tests(this.WriteToLogBox);
             tests.ListZones();
-        }  
+        }
+
+        private void ButtonListDomains_Click(object sender, EventArgs e)
+        {
+            Tests tests = new Tests(this.WriteToLogBox);
+            tests.ListDomains();
+        }
+
+        private void ButtonCreateDomain_Click(object sender, EventArgs e)
+        {
+            string domainName = Prompt.ShowDialog("Name of the domain to create?", "Create Domain");
+            if (!String.IsNullOrEmpty(domainName))
+            {
+                Tests tests = new Tests(this.WriteToLogBox);
+                tests.CreateDomain(domainName);
+            }
+        }
     }
 }

@@ -54,6 +54,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Prompt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests.cs" />
     <EmbeddedResource Include="MainWindow.resx">
