@@ -98,7 +98,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Summary of exception details
         /// </summary>
-        public override string Message => $"{this.ErrorResult.ToString()} Command: {Command} Context: {Context}";
+        public override string Message => $"{this.ErrorResult.ToString()}\n\nCommand: {Command}\nContext: {Context}";
 
         /// <summary>
         /// Stores fragment of command called.
