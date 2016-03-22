@@ -481,8 +481,20 @@ namespace CloudStack.Net.TestClient
             {
                 // Get root domain...
                 var rootDomain = Guid.Parse(_client.ListDomains(new ListDomainsRequest { Level = 0 }).Results.Single().Id);
-                var response = _client.CreateDomain(new CreateDomainRequest { Name = domainName, ParentDomainId = rootDomain });
-                return response.ToString();
+                var domainResponse = _client.CreateDomain(new CreateDomainRequest { Name = domainName, ParentDomainId = rootDomain });
+
+                AccountResponse accountResponse = _client.CreateAccount(new CreateAccountRequest
+                {
+                    DomainId = Guid.Parse(domainResponse.Id),
+                    UserName = domainName,
+                    FirstName = domainName,
+                    LastName = "(Test)",
+                    Email = "test@domain.com",
+                    AccountType = 0
+                });
+                Guid userId = Guid.Parse(accountResponse.User.Single().Id);
+
+                return domainResponse.ToString();
             });
         }
 

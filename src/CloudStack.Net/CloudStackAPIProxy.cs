@@ -119,21 +119,31 @@ namespace CloudStack.Net
             {
                 throw new FormatException($"Expected root to contain a single object - it contains {root.Count}");
             }
-
             TResponse decodedResponse;
+
+            // Top should always be a JProperty, normally with the name of the response
+            JProperty rootProperty = (JProperty)root.First;
+            JObject rootObject = (JObject)rootProperty.Value;
+
             if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(ListResponse<>))
             {
-                JToken listElement = ((JProperty)root.First).Value;
-                decodedResponse = listElement.ToObject<TResponse>();
-                if (listElement is JContainer)        // An empty list will be null
+                // When expecting a list response, we should be getting a JProperty with an array
+                decodedResponse = rootObject.ToObject<TResponse>();
+                if (rootObject is JContainer)        // An empty list will be null
                 {
                     MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
-                    decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)listElement });
+                    decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)rootObject });
                 }
-            } else
+            }
+            else if (rootObject.Count == 1 && rootObject.First is JProperty && ((JProperty)rootObject.First).Value is JObject)
             {
-                JToken singleElement = ((JProperty)((JProperty)root.First).Value.First).Value;
-                decodedResponse = singleElement.ToObject<TResponse>();
+                // e.g. { "createdomainresponse" : { "domain" : { ...
+                decodedResponse = ((JProperty)rootObject.First).Value.ToObject<TResponse>();
+            }
+            else
+            {
+                // e.g. { "createdomainresponse" : { "errorCode" : "1", "errorText": "blah"
+                decodedResponse = rootProperty.Value.ToObject<TResponse>();
             }
             return decodedResponse;
         }
