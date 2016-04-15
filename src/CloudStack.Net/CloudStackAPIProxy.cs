@@ -263,52 +263,6 @@ namespace CloudStack.Net
             }
         }
 
-        public async Task<ListResponse<TResponse>> RequestAllPagesAsync<TResponse>(APIListRequest request) where TResponse : new()
-        {
-            int page = 0;
-            ListResponse<TResponse> response = await RequestAsync<ListResponse<TResponse>>(request);
-
-            while (response.Count < response.Results.Count)
-            {
-                page++;
-
-                request.Page = page;
-                ListResponse<TResponse> pageReponse = await RequestAsync<ListResponse<TResponse>>(request);
-                foreach (TResponse item in pageReponse.Results)
-                {
-                    response.Results.Add(item);
-                }
-            }
-
-            return response;
-        }
-
-        public ListResponse<TResponse> RequestAllPages<TResponse>(APIListRequest request) where TResponse : new()
-        {
-            int page = 1;
-            ListResponse<TResponse> response = Request<ListResponse<TResponse>>(request);
-
-            while (response.Results.Count < response.Count)
-            {
-                page++;
-
-                request.Page = page;
-                if (!request.PageSize.HasValue)
-                {
-                    request.PageSize = response.Results.Count;
-                }
-
-                ListResponse<TResponse> pageResponse = Request<ListResponse<TResponse>>(request);
-                foreach (TResponse item in pageResponse.Results)
-                {
-                    response.Results.Add(item);
-                }
-                response.Count = pageResponse.Count;        // In case it changed while we pulled results
-            }
-
-            return response;
-        }
-
         /// <summary>
         /// Decodes the list result of a List Response.  We don't know the name of this in advance, so we look for the
         /// one which is not count.  This is how CloudStack do it in their own code too.

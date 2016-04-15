@@ -1,16 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CloudStack.Net
 {
     public abstract class APIListRequest : APIRequest
     {
-        public APIListRequest(string command) : base(command) { }
+        public APIListRequest(string command) : this(command, false)
+        {
+        }
 
-        public APIListRequest(string command, bool supportsImpersonation) : base(command, supportsImpersonation) { }
+        public APIListRequest(string command, bool supportsImpersonation)
+            : base(command, supportsImpersonation)
+        {
+            Page = null;
+            PageSize = null;
+        }
 
         public int? Page
         {

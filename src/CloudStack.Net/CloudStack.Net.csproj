@@ -791,6 +791,7 @@
     <Compile Include="JobStatus.cs" />
     <Compile Include="ListResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CloudStack.Net.nuspec" />
