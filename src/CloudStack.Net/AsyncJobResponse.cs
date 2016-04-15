@@ -26,6 +26,11 @@ namespace CloudStack.Net
         public DateTime Created { get; set; }
 
         /// <summary>
+        ///   Id of the created element (for create commands)
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
         /// the unique ID of the instance/entity object related to the job
         /// </summary>
         public string JobInstanceId { get; set; }
