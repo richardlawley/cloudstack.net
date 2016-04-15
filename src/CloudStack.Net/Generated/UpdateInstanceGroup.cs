@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// Instance group ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// new instance group name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
     }

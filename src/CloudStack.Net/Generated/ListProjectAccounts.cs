@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// ID of the project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// list accounts of the project by account name
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list accounts of the project by role
         /// </summary>
         public string Role {
-            get { return (string) Parameters[nameof(Role).ToLower()]; }
-            set { Parameters[nameof(Role).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Role).ToLower()); }
+            set { SetParameterValue(nameof(Role).ToLower(), value); }
         }
 
     }

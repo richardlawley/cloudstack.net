@@ -14,112 +14,112 @@ namespace CloudStack.Net
         /// the availability of network offering. Default value is required
         /// </summary>
         public string Availability {
-            get { return (string) Parameters[nameof(Availability).ToLower()]; }
-            set { Parameters[nameof(Availability).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Availability).ToLower()); }
+            set { SetParameterValue(nameof(Availability).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by display text
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// the network offering can be used only for network creation inside the VPC
         /// </summary>
         public bool? ForVpc {
-            get { return (bool?) Parameters[nameof(ForVpc).ToLower()]; }
-            set { Parameters[nameof(ForVpc).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ForVpc).ToLower()); }
+            set { SetParameterValue(nameof(ForVpc).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by guest type: shared or isolated
         /// </summary>
         public string GuestIpType {
-            get { return (string) Parameters[nameof(GuestIpType).ToLower()]; }
-            set { Parameters[nameof(GuestIpType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(GuestIpType).ToLower()); }
+            set { SetParameterValue(nameof(GuestIpType).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// true if need to list only default network offerings. Default value is false
         /// </summary>
         public bool? IsDefault {
-            get { return (bool?) Parameters[nameof(IsDefault).ToLower()]; }
-            set { Parameters[nameof(IsDefault).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsDefault).ToLower()); }
+            set { SetParameterValue(nameof(IsDefault).ToLower(), value); }
         }
 
         /// <summary>
         /// true if offering has tags specified
         /// </summary>
         public bool? IsTagged {
-            get { return (bool?) Parameters[nameof(IsTagged).ToLower()]; }
-            set { Parameters[nameof(IsTagged).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsTagged).ToLower()); }
+            set { SetParameterValue(nameof(IsTagged).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the network. Pass this in if you want to see the available network offering that a network can be changed to.
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// true if need to list only netwok offerings where source NAT is supported, false otherwise
         /// </summary>
         public bool? SourceNatSupported {
-            get { return (bool?) Parameters[nameof(SourceNatSupported).ToLower()]; }
-            set { Parameters[nameof(SourceNatSupported).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SourceNatSupported).ToLower()); }
+            set { SetParameterValue(nameof(SourceNatSupported).ToLower(), value); }
         }
 
         /// <summary>
         /// true if need to list only network offerings which support specifying ip ranges
         /// </summary>
         public bool? SpecifyIpRanges {
-            get { return (bool?) Parameters[nameof(SpecifyIpRanges).ToLower()]; }
-            set { Parameters[nameof(SpecifyIpRanges).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SpecifyIpRanges).ToLower()); }
+            set { SetParameterValue(nameof(SpecifyIpRanges).ToLower(), value); }
         }
 
         /// <summary>
         /// the tags for the network offering.
         /// </summary>
         public bool? SpecifyVlan {
-            get { return (bool?) Parameters[nameof(SpecifyVlan).ToLower()]; }
-            set { Parameters[nameof(SpecifyVlan).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SpecifyVlan).ToLower()); }
+            set { SetParameterValue(nameof(SpecifyVlan).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by state
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
         /// <summary>
@@ -127,31 +127,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> SupportedServices {
             get { return GetList<string>(nameof(SupportedServices).ToLower()); }
-            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+            set { SetParameterValue(nameof(SupportedServices).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings by tags
         /// </summary>
         public string Tags {
-            get { return (string) Parameters[nameof(Tags).ToLower()]; }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Tags).ToLower()); }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// list by traffic type
         /// </summary>
         public string TrafficType {
-            get { return (string) Parameters[nameof(TrafficType).ToLower()]; }
-            set { Parameters[nameof(TrafficType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TrafficType).ToLower()); }
+            set { SetParameterValue(nameof(TrafficType).ToLower(), value); }
         }
 
         /// <summary>
         /// list network offerings available for network creation in specific zone
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

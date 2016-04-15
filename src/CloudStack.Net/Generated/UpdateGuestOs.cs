@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// UUID of the Guest OS
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Unique display name for Guest OS
         /// </summary>
         public string OsDisplayName {
-            get { return (string) Parameters[nameof(OsDisplayName).ToLower()]; }
-            set { Parameters[nameof(OsDisplayName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(OsDisplayName).ToLower()); }
+            set { SetParameterValue(nameof(OsDisplayName).ToLower(), value); }
         }
 
     }

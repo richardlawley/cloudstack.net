@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// Netscaler load balancer device ID
         /// </summary>
         public Guid LbDeviceId {
-            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
-            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbDeviceId).ToLower()); }
+            set { SetParameterValue(nameof(LbDeviceId).ToLower(), value); }
         }
 
         /// <summary>
         /// true if netscaler load balancer is intended to be used in in-line with firewall, false if netscaler load balancer will side-by-side with firewall
         /// </summary>
         public bool? Inline {
-            get { return (bool?) Parameters[nameof(Inline).ToLower()]; }
-            set { Parameters[nameof(Inline).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Inline).ToLower()); }
+            set { SetParameterValue(nameof(Inline).ToLower(), value); }
         }
 
         /// <summary>
         /// capacity of the device, Capacity will be interpreted as number of networks device can handle
         /// </summary>
         public long? Lbdevicecapacity {
-            get { return (long?) Parameters[nameof(Lbdevicecapacity).ToLower()]; }
-            set { Parameters[nameof(Lbdevicecapacity).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(Lbdevicecapacity).ToLower()); }
+            set { SetParameterValue(nameof(Lbdevicecapacity).ToLower(), value); }
         }
 
         /// <summary>
         /// true if this netscaler device to dedicated for a account, false if the netscaler device will be shared by multiple accounts
         /// </summary>
         public bool? Lbdevicededicated {
-            get { return (bool?) Parameters[nameof(Lbdevicededicated).ToLower()]; }
-            set { Parameters[nameof(Lbdevicededicated).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Lbdevicededicated).ToLower()); }
+            set { SetParameterValue(nameof(Lbdevicededicated).ToLower(), value); }
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> PodIds {
             get { return GetList<Guid>(nameof(PodIds).ToLower()); }
-            set { Parameters[nameof(PodIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(PodIds).ToLower(), value); }
         }
 
     }

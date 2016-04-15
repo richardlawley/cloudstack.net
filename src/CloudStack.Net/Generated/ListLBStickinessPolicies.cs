@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the load balancer stickiness policy
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
         public Guid LbRuleId {
-            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
-            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbRuleId).ToLower()); }
+            set { SetParameterValue(nameof(LbRuleId).ToLower(), value); }
         }
 
     }

@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// list resources by account. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by affinity group
         /// </summary>
         public Guid AffinityGroupId {
-            get { return (Guid) Parameters[nameof(AffinityGroupId).ToLower()]; }
-            set { Parameters[nameof(AffinityGroupId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+            set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,63 +31,63 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Details {
             get { return GetList<string>(nameof(Details).ToLower()); }
-            set { Parameters[nameof(Details).ToLower()] = value; }
+            set { SetParameterValue(nameof(Details).ToLower(), value); }
         }
 
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
         public bool? Displayvm {
-            get { return (bool?) Parameters[nameof(Displayvm).ToLower()]; }
-            set { Parameters[nameof(Displayvm).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Displayvm).ToLower()); }
+            set { SetParameterValue(nameof(Displayvm).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// list by network type; true if need to list vms using Virtual Network, false otherwise
         /// </summary>
         public bool? ForVirtualNetwork {
-            get { return (bool?) Parameters[nameof(ForVirtualNetwork).ToLower()]; }
-            set { Parameters[nameof(ForVirtualNetwork).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ForVirtualNetwork).ToLower()); }
+            set { SetParameterValue(nameof(ForVirtualNetwork).ToLower(), value); }
         }
 
         /// <summary>
         /// the group ID
         /// </summary>
         public Guid GroupId {
-            get { return (Guid) Parameters[nameof(GroupId).ToLower()]; }
-            set { Parameters[nameof(GroupId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(GroupId).ToLower()); }
+            set { SetParameterValue(nameof(GroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the host ID
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
         /// <summary>
         /// the target hypervisor for the template
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -95,103 +95,103 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Ids {
             get { return GetList<Guid>(nameof(Ids).ToLower()); }
-            set { Parameters[nameof(Ids).ToLower()] = value; }
+            set { SetParameterValue(nameof(Ids).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by iso
         /// </summary>
         public Guid IsoId {
-            get { return (Guid) Parameters[nameof(IsoId).ToLower()]; }
-            set { Parameters[nameof(IsoId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(IsoId).ToLower()); }
+            set { SetParameterValue(nameof(IsoId).ToLower(), value); }
         }
 
         /// <summary>
         /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
         /// </summary>
         public bool? Isrecursive {
-            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
-            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isrecursive).ToLower()); }
+            set { SetParameterValue(nameof(Isrecursive).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by ssh keypair name
         /// </summary>
         public string Keypair {
-            get { return (string) Parameters[nameof(Keypair).ToLower()]; }
-            set { Parameters[nameof(Keypair).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keypair).ToLower()); }
+            set { SetParameterValue(nameof(Keypair).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the virtual machine (a substring match is made against the parameter value, data for all matching VMs will be returned)
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// list by network id
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the pod ID
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// list by the service offering
         /// </summary>
         public Guid Serviceofferingid {
-            get { return (Guid) Parameters[nameof(Serviceofferingid).ToLower()]; }
-            set { Parameters[nameof(Serviceofferingid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Serviceofferingid).ToLower()); }
+            set { SetParameterValue(nameof(Serviceofferingid).ToLower(), value); }
         }
 
         /// <summary>
         /// state of the virtual machine. Possible values are: Running, Stopped, Present, Destroyed, Expunged. Present is used for the state equal not destroyed.
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
         /// <summary>
         /// the storage ID where vm's volumes belong to
         /// </summary>
         public Guid StorageId {
-            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
-            set { Parameters[nameof(StorageId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+            set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 
         /// <summary>
@@ -199,39 +199,39 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by template
         /// </summary>
         public Guid TemplateId {
-            get { return (Guid) Parameters[nameof(TemplateId).ToLower()]; }
-            set { Parameters[nameof(TemplateId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(TemplateId).ToLower()); }
+            set { SetParameterValue(nameof(TemplateId).ToLower(), value); }
         }
 
         /// <summary>
         /// the user ID that created the VM and is under the account that owns the VM
         /// </summary>
         public Guid UserId {
-            get { return (Guid) Parameters[nameof(UserId).ToLower()]; }
-            set { Parameters[nameof(UserId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(UserId).ToLower()); }
+            set { SetParameterValue(nameof(UserId).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by vpc
         /// </summary>
         public Guid VpcId {
-            get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
-            set { Parameters[nameof(VpcId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+            set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// the availability zone ID
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

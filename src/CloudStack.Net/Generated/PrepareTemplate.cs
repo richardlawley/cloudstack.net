@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// template ID of the template to be prepared in primary storage(s).
         /// </summary>
         public Guid TemplateId {
-            get { return (Guid) Parameters[nameof(TemplateId).ToLower()]; }
-            set { Parameters[nameof(TemplateId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(TemplateId).ToLower()); }
+            set { SetParameterValue(nameof(TemplateId).ToLower(), value); }
         }
 
         /// <summary>
         /// zone ID of the template to be prepared in primary storage(s).
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// storage pool ID of the primary storage pool to which the template should be prepared. If it is not provided the template is prepared on all the available primary storage pools.
         /// </summary>
         public Guid StorageId {
-            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
-            set { Parameters[nameof(StorageId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+            set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 
     }

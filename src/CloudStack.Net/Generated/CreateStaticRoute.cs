@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// static route cidr
         /// </summary>
         public string Cidr {
-            get { return (string) Parameters[nameof(Cidr).ToLower()]; }
-            set { Parameters[nameof(Cidr).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Cidr).ToLower()); }
+            set { SetParameterValue(nameof(Cidr).ToLower(), value); }
         }
 
         /// <summary>
         /// the gateway id we are creating static route for
         /// </summary>
         public Guid GatewayId {
-            get { return (Guid) Parameters[nameof(GatewayId).ToLower()]; }
-            set { Parameters[nameof(GatewayId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(GatewayId).ToLower()); }
+            set { SetParameterValue(nameof(GatewayId).ToLower(), value); }
         }
 
     }

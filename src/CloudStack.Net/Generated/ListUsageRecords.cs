@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// End date range for usage record query (use format "yyyy-MM-dd" or the new format "yyyy-MM-dd HH:mm:ss", e.g. startDate=2015-01-01 or startdate=2015-01-01 10:30:00).
         /// </summary>
         public DateTime EndDate {
-            get { return (DateTime) Parameters[nameof(EndDate).ToLower()]; }
-            set { Parameters[nameof(EndDate).ToLower()] = value; }
+            get { return GetParameterValue<DateTime>(nameof(EndDate).ToLower()); }
+            set { SetParameterValue(nameof(EndDate).ToLower(), value); }
         }
 
         /// <summary>
         /// Start date range for usage record query (use format "yyyy-MM-dd" or the new format "yyyy-MM-dd HH:mm:ss", e.g. startDate=2015-01-01 or startdate=2015-01-01 11:00:00).
         /// </summary>
         public DateTime StartDate {
-            get { return (DateTime) Parameters[nameof(StartDate).ToLower()]; }
-            set { Parameters[nameof(StartDate).ToLower()] = value; }
+            get { return GetParameterValue<DateTime>(nameof(StartDate).ToLower()); }
+            set { SetParameterValue(nameof(StartDate).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified user.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified account
         /// </summary>
         public Guid AccountId {
-            get { return (Guid) Parameters[nameof(AccountId).ToLower()]; }
-            set { Parameters[nameof(AccountId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AccountId).ToLower()); }
+            set { SetParameterValue(nameof(AccountId).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified domain.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for specified project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified usage type
         /// </summary>
         public long? Type {
-            get { return (long?) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified usage UUID. Can be used only together with TYPE parameter.
         /// </summary>
         public string UsageId {
-            get { return (string) Parameters[nameof(UsageId).ToLower()]; }
-            set { Parameters[nameof(UsageId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(UsageId).ToLower()); }
+            set { SetParameterValue(nameof(UsageId).ToLower(), value); }
         }
 
     }

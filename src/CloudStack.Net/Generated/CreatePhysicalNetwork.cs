@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the name of the physical network
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the physical network
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// the broadcast domain range for the physical network[Pod or Zone]. In Acton release it can be Zone only in Advance zone, and Pod in Basic
         /// </summary>
         public string BroadcastDomainRange {
-            get { return (string) Parameters[nameof(BroadcastDomainRange).ToLower()]; }
-            set { Parameters[nameof(BroadcastDomainRange).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(BroadcastDomainRange).ToLower()); }
+            set { SetParameterValue(nameof(BroadcastDomainRange).ToLower(), value); }
         }
 
         /// <summary>
         /// domain ID of the account owning a physical network
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
@@ -47,15 +47,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> IsolationMethods {
             get { return GetList<string>(nameof(IsolationMethods).ToLower()); }
-            set { Parameters[nameof(IsolationMethods).ToLower()] = value; }
+            set { SetParameterValue(nameof(IsolationMethods).ToLower(), value); }
         }
 
         /// <summary>
         /// the speed for the physical network[1G/10G]
         /// </summary>
         public string Networkspeed {
-            get { return (string) Parameters[nameof(Networkspeed).ToLower()]; }
-            set { Parameters[nameof(Networkspeed).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Networkspeed).ToLower()); }
+            set { SetParameterValue(nameof(Networkspeed).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,15 +63,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Tags {
             get { return GetList<string>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// the VLAN for the physical network
         /// </summary>
         public string Vlan {
-            get { return (string) Parameters[nameof(Vlan).ToLower()]; }
-            set { Parameters[nameof(Vlan).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vlan).ToLower()); }
+            set { SetParameterValue(nameof(Vlan).ToLower(), value); }
         }
 
     }

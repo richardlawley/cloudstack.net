@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// The ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Force stop the VM (vm is marked as Stopped even when command fails to be send to the backend).  The caller knows the VM is stopped.
         /// </summary>
         public bool? Forced {
-            get { return (bool?) Parameters[nameof(Forced).ToLower()]; }
-            set { Parameters[nameof(Forced).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Forced).ToLower()); }
+            set { SetParameterValue(nameof(Forced).ToLower(), value); }
         }
 
     }

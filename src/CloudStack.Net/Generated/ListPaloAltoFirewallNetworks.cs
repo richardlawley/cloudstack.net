@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// palo alto balancer device ID
         /// </summary>
         public Guid Lbdeviceid {
-            get { return (Guid) Parameters[nameof(Lbdeviceid).ToLower()]; }
-            set { Parameters[nameof(Lbdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Lbdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Lbdeviceid).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
     }

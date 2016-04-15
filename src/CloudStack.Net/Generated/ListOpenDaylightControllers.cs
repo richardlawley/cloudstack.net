@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of a OpenDaylight Controller
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
     }

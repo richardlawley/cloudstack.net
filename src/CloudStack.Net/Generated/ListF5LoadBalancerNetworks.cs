@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// f5 load balancer device ID
         /// </summary>
         public Guid LbDeviceId {
-            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
-            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbDeviceId).ToLower()); }
+            set { SetParameterValue(nameof(LbDeviceId).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
     }

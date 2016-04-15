@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of the template
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of zone of the template
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

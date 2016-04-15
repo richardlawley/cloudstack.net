@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the URL for the staging store
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,31 +23,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
-            set { Parameters[nameof(Details).ToLower()] = value; }
+            set { SetParameterValue(nameof(Details).ToLower(), value); }
         }
 
         /// <summary>
         /// the staging store provider name
         /// </summary>
         public string Provider {
-            get { return (string) Parameters[nameof(Provider).ToLower()]; }
-            set { Parameters[nameof(Provider).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Provider).ToLower()); }
+            set { SetParameterValue(nameof(Provider).ToLower(), value); }
         }
 
         /// <summary>
         /// the scope of the staging store: zone only for now
         /// </summary>
         public string Scope {
-            get { return (string) Parameters[nameof(Scope).ToLower()]; }
-            set { Parameters[nameof(Scope).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Scope).ToLower()); }
+            set { SetParameterValue(nameof(Scope).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the staging store
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

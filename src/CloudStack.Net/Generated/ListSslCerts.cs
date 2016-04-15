@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// Account ID
         /// </summary>
         public Guid AccountId {
-            get { return (Guid) Parameters[nameof(AccountId).ToLower()]; }
-            set { Parameters[nameof(AccountId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AccountId).ToLower()); }
+            set { SetParameterValue(nameof(AccountId).ToLower(), value); }
         }
 
         /// <summary>
         /// ID of SSL certificate
         /// </summary>
         public Guid CertId {
-            get { return (Guid) Parameters[nameof(CertId).ToLower()]; }
-            set { Parameters[nameof(CertId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(CertId).ToLower()); }
+            set { SetParameterValue(nameof(CertId).ToLower(), value); }
         }
 
         /// <summary>
         /// Load balancer rule ID
         /// </summary>
         public Guid Lbruleid {
-            get { return (Guid) Parameters[nameof(Lbruleid).ToLower()]; }
-            set { Parameters[nameof(Lbruleid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Lbruleid).ToLower()); }
+            set { SetParameterValue(nameof(Lbruleid).ToLower(), value); }
         }
 
         /// <summary>
         /// Project that owns the SSL certificate
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
     }

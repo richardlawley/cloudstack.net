@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// The ID of the disk volume
         /// </summary>
         public Guid VolumeId {
-            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
-            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VolumeId).ToLower()); }
+            set { SetParameterValue(nameof(VolumeId).ToLower(), value); }
         }
 
         /// <summary>
         /// The account of the snapshot. The account parameter must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// The domain ID of the snapshot. If used with the account parameter, specifies a domain for the account associated with the disk volume.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the snapshot
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// policy id of the snapshot, if this is null, then use MANUAL_POLICY.
         /// </summary>
         public Guid PolicyId {
-            get { return (Guid) Parameters[nameof(PolicyId).ToLower()]; }
-            set { Parameters[nameof(PolicyId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PolicyId).ToLower()); }
+            set { SetParameterValue(nameof(PolicyId).ToLower(), value); }
         }
 
         /// <summary>
         /// quiesce vm if true
         /// </summary>
         public bool? Quiescevm {
-            get { return (bool?) Parameters[nameof(Quiescevm).ToLower()]; }
-            set { Parameters[nameof(Quiescevm).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Quiescevm).ToLower()); }
+            set { SetParameterValue(nameof(Quiescevm).ToLower(), value); }
         }
 
     }

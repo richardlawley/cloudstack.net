@@ -14,120 +14,120 @@ namespace CloudStack.Net
         /// list resources by account. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list networks by ACL (access control list) type. Supported values are account and domain
         /// </summary>
         public string AclType {
-            get { return (string) Parameters[nameof(AclType).ToLower()]; }
-            set { Parameters[nameof(AclType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AclType).ToLower()); }
+            set { SetParameterValue(nameof(AclType).ToLower(), value); }
         }
 
         /// <summary>
         /// list networks available for VM deployment
         /// </summary>
         public bool? CanUseForDeploy {
-            get { return (bool?) Parameters[nameof(CanUseForDeploy).ToLower()]; }
-            set { Parameters[nameof(CanUseForDeploy).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(CanUseForDeploy).ToLower()); }
+            set { SetParameterValue(nameof(CanUseForDeploy).ToLower(), value); }
         }
 
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
         public bool? Displaynetwork {
-            get { return (bool?) Parameters[nameof(Displaynetwork).ToLower()]; }
-            set { Parameters[nameof(Displaynetwork).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Displaynetwork).ToLower()); }
+            set { SetParameterValue(nameof(Displaynetwork).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// the network belongs to VPC
         /// </summary>
         public bool? ForVpc {
-            get { return (bool?) Parameters[nameof(ForVpc).ToLower()]; }
-            set { Parameters[nameof(ForVpc).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ForVpc).ToLower()); }
+            set { SetParameterValue(nameof(ForVpc).ToLower(), value); }
         }
 
         /// <summary>
         /// list networks by ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
         /// </summary>
         public bool? Isrecursive {
-            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
-            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isrecursive).ToLower()); }
+            set { SetParameterValue(nameof(Isrecursive).ToLower(), value); }
         }
 
         /// <summary>
         /// true if network is system, false otherwise
         /// </summary>
         public bool? IsSystem {
-            get { return (bool?) Parameters[nameof(IsSystem).ToLower()]; }
-            set { Parameters[nameof(IsSystem).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsSystem).ToLower()); }
+            set { SetParameterValue(nameof(IsSystem).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
         /// <summary>
         /// list networks by physical network id
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// list networks by restartRequired
         /// </summary>
         public bool? RestartRequired {
-            get { return (bool?) Parameters[nameof(RestartRequired).ToLower()]; }
-            set { Parameters[nameof(RestartRequired).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(RestartRequired).ToLower()); }
+            set { SetParameterValue(nameof(RestartRequired).ToLower(), value); }
         }
 
         /// <summary>
         /// true if need to list only networks which support specifying IP ranges
         /// </summary>
         public bool? SpecifyIpRanges {
-            get { return (bool?) Parameters[nameof(SpecifyIpRanges).ToLower()]; }
-            set { Parameters[nameof(SpecifyIpRanges).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SpecifyIpRanges).ToLower()); }
+            set { SetParameterValue(nameof(SpecifyIpRanges).ToLower(), value); }
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> SupportedServices {
             get { return GetList<string>(nameof(SupportedServices).ToLower()); }
-            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+            set { SetParameterValue(nameof(SupportedServices).ToLower(), value); }
         }
 
         /// <summary>
@@ -143,39 +143,39 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// type of the traffic
         /// </summary>
         public string TrafficType {
-            get { return (string) Parameters[nameof(TrafficType).ToLower()]; }
-            set { Parameters[nameof(TrafficType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TrafficType).ToLower()); }
+            set { SetParameterValue(nameof(TrafficType).ToLower(), value); }
         }
 
         /// <summary>
         /// the type of the network. Supported values are: isolated and shared
         /// </summary>
         public string Type {
-            get { return (string) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
         /// <summary>
         /// List networks by VPC
         /// </summary>
         public Guid VpcId {
-            get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
-            set { Parameters[nameof(VpcId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+            set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// the zone ID of the network
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

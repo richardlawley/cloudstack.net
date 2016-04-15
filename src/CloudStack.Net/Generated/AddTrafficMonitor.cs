@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// URL of the traffic monitor Host
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// Zone in which to add the external firewall appliance.
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// Traffic going into the listed zones will not be metered
         /// </summary>
         public string Excludezones {
-            get { return (string) Parameters[nameof(Excludezones).ToLower()]; }
-            set { Parameters[nameof(Excludezones).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Excludezones).ToLower()); }
+            set { SetParameterValue(nameof(Excludezones).ToLower(), value); }
         }
 
         /// <summary>
         /// Traffic going into the listed zones will be metered
         /// </summary>
         public string Includezones {
-            get { return (string) Parameters[nameof(Includezones).ToLower()]; }
-            set { Parameters[nameof(Includezones).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Includezones).ToLower()); }
+            set { SetParameterValue(nameof(Includezones).ToLower(), value); }
         }
 
     }

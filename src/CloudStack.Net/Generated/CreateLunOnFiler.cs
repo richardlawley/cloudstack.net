@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// pool name.
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// LUN size.
         /// </summary>
         public long Size {
-            get { return (long) Parameters[nameof(Size).ToLower()]; }
-            set { Parameters[nameof(Size).ToLower()] = value; }
+            get { return GetParameterValue<long>(nameof(Size).ToLower()); }
+            set { SetParameterValue(nameof(Size).ToLower(), value); }
         }
 
     }

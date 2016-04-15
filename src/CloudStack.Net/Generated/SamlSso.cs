@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Identity Provider Entity ID
         /// </summary>
         public string IdpId {
-            get { return (string) Parameters[nameof(IdpId).ToLower()]; }
-            set { Parameters[nameof(IdpId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IdpId).ToLower()); }
+            set { SetParameterValue(nameof(IdpId).ToLower(), value); }
         }
 
     }

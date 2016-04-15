@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the public IP address ID for which static NAT feature is being enabled
         /// </summary>
         public Guid IpAddressId {
-            get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
-            set { Parameters[nameof(IpAddressId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(IpAddressId).ToLower()); }
+            set { SetParameterValue(nameof(IpAddressId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine for enabling static NAT feature
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// The network of the VM the static NAT will be enabled for. Required when public IP address is not associated with any guest network yet (VPC case)
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// VM guest NIC secondary IP address for the port forwarding rule
         /// </summary>
         public string Vmguestip {
-            get { return (string) Parameters[nameof(Vmguestip).ToLower()]; }
-            set { Parameters[nameof(Vmguestip).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vmguestip).ToLower()); }
+            set { SetParameterValue(nameof(Vmguestip).ToLower(), value); }
         }
 
     }

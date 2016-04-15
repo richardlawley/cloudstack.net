@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// creates domain with this name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// Domain UUID, required for adding domain from another Region
         /// </summary>
         public string Domainid {
-            get { return (string) Parameters[nameof(Domainid).ToLower()]; }
-            set { Parameters[nameof(Domainid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Domainid).ToLower()); }
+            set { SetParameterValue(nameof(Domainid).ToLower(), value); }
         }
 
         /// <summary>
         /// Network domain for networks in the domain
         /// </summary>
         public string NetworkDomain {
-            get { return (string) Parameters[nameof(NetworkDomain).ToLower()]; }
-            set { Parameters[nameof(NetworkDomain).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(NetworkDomain).ToLower()); }
+            set { SetParameterValue(nameof(NetworkDomain).ToLower(), value); }
         }
 
         /// <summary>
         /// assigns new domain a parent domain by domain ID of the parent.  If no parent domain is specied, the ROOT domain is assumed.
         /// </summary>
         public Guid ParentDomainId {
-            get { return (Guid) Parameters[nameof(ParentDomainId).ToLower()]; }
-            set { Parameters[nameof(ParentDomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ParentDomainId).ToLower()); }
+            set { SetParameterValue(nameof(ParentDomainId).ToLower(), value); }
         }
 
     }

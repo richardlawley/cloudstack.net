@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// Account Id for which quota credits need to be added
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// Domain for which quota credits need to be added
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// Value of the credits to be added+, subtracted-
         /// </summary>
         public Double Value {
-            get { return (Double) Parameters[nameof(Value).ToLower()]; }
-            set { Parameters[nameof(Value).ToLower()] = value; }
+            get { return GetParameterValue<Double>(nameof(Value).ToLower()); }
+            set { SetParameterValue(nameof(Value).ToLower(), value); }
         }
 
         /// <summary>
         /// Minimum balance threshold of the account
         /// </summary>
         public Double Min_balance {
-            get { return (Double) Parameters[nameof(Min_balance).ToLower()]; }
-            set { Parameters[nameof(Min_balance).ToLower()] = value; }
+            get { return GetParameterValue<Double>(nameof(Min_balance).ToLower()); }
+            set { SetParameterValue(nameof(Min_balance).ToLower(), value); }
         }
 
         /// <summary>
         /// Account for which quota enforce is set to false will not be locked when there is no credit balance
         /// </summary>
         public bool? Quota_enforce {
-            get { return (bool?) Parameters[nameof(Quota_enforce).ToLower()]; }
-            set { Parameters[nameof(Quota_enforce).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Quota_enforce).ToLower()); }
+            set { SetParameterValue(nameof(Quota_enforce).ToLower(), value); }
         }
 
     }

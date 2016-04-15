@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// Determines whether all ldap users are returned or just non-cloudstack users
         /// </summary>
         public string ListType {
-            get { return (string) Parameters[nameof(ListType).ToLower()]; }
-            set { Parameters[nameof(ListType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ListType).ToLower()); }
+            set { SetParameterValue(nameof(ListType).ToLower(), value); }
         }
 
     }

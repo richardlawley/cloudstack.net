@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the ID of the load balancer rule
         /// </summary>
         public Guid LbRuleId {
-            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
-            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbRuleId).ToLower()); }
+            set { SetParameterValue(nameof(LbRuleId).ToLower(), value); }
         }
 
     }

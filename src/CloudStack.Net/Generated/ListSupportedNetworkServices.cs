@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// network service provider name
         /// </summary>
         public string Provider {
-            get { return (string) Parameters[nameof(Provider).ToLower()]; }
-            set { Parameters[nameof(Provider).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Provider).ToLower()); }
+            set { SetParameterValue(nameof(Provider).ToLower(), value); }
         }
 
         /// <summary>
         /// network service name to list providers and capabilities of
         /// </summary>
         public string Service {
-            get { return (string) Parameters[nameof(Service).ToLower()]; }
-            set { Parameters[nameof(Service).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Service).ToLower()); }
+            set { SetParameterValue(nameof(Service).ToLower(), value); }
         }
 
     }

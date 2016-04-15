@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// list pods by allocation state
         /// </summary>
         public string AllocationState {
-            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
-            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AllocationState).ToLower()); }
+            set { SetParameterValue(nameof(AllocationState).ToLower(), value); }
         }
 
         /// <summary>
         /// list Pods by ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list Pods by name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// flag to display the capacity of the pods
         /// </summary>
         public bool? ShowCapacities {
-            get { return (bool?) Parameters[nameof(ShowCapacities).ToLower()]; }
-            set { Parameters[nameof(ShowCapacities).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ShowCapacities).ToLower()); }
+            set { SetParameterValue(nameof(ShowCapacities).ToLower(), value); }
         }
 
         /// <summary>
         /// list Pods by Zone ID
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

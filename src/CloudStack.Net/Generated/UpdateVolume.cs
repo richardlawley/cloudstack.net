@@ -14,56 +14,56 @@ namespace CloudStack.Net
         /// The chain info of the volume
         /// </summary>
         public string ChainInfo {
-            get { return (string) Parameters[nameof(ChainInfo).ToLower()]; }
-            set { Parameters[nameof(ChainInfo).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ChainInfo).ToLower()); }
+            set { SetParameterValue(nameof(ChainInfo).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
         public string CustomId {
-            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
-            set { Parameters[nameof(CustomId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(CustomId).ToLower()); }
+            set { SetParameterValue(nameof(CustomId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the volume to the end user or not.
         /// </summary>
         public bool? DisplayVolume {
-            get { return (bool?) Parameters[nameof(DisplayVolume).ToLower()]; }
-            set { Parameters[nameof(DisplayVolume).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(DisplayVolume).ToLower()); }
+            set { SetParameterValue(nameof(DisplayVolume).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// The path of the volume
         /// </summary>
         public string Path {
-            get { return (string) Parameters[nameof(Path).ToLower()]; }
-            set { Parameters[nameof(Path).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Path).ToLower()); }
+            set { SetParameterValue(nameof(Path).ToLower(), value); }
         }
 
         /// <summary>
         /// The state of the volume
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
         /// <summary>
         /// Destination storage pool UUID for the volume
         /// </summary>
         public Guid StorageId {
-            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
-            set { Parameters[nameof(StorageId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+            set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 
     }

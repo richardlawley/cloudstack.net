@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// id of the customer gateway
         /// </summary>
         public Guid S2scustomergatewayid {
-            get { return (Guid) Parameters[nameof(S2scustomergatewayid).ToLower()]; }
-            set { Parameters[nameof(S2scustomergatewayid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(S2scustomergatewayid).ToLower()); }
+            set { SetParameterValue(nameof(S2scustomergatewayid).ToLower(), value); }
         }
 
         /// <summary>
         /// id of the vpn gateway
         /// </summary>
         public Guid S2svpngatewayid {
-            get { return (Guid) Parameters[nameof(S2svpngatewayid).ToLower()]; }
-            set { Parameters[nameof(S2svpngatewayid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(S2svpngatewayid).ToLower()); }
+            set { SetParameterValue(nameof(S2svpngatewayid).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the vpn to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// connection is passive or not
         /// </summary>
         public bool? Passive {
-            get { return (bool?) Parameters[nameof(Passive).ToLower()]; }
-            set { Parameters[nameof(Passive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Passive).ToLower()); }
+            set { SetParameterValue(nameof(Passive).ToLower(), value); }
         }
 
     }

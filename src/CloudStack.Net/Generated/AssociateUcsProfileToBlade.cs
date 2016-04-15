@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// blade id
         /// </summary>
         public Guid BladeId {
-            get { return (Guid) Parameters[nameof(BladeId).ToLower()]; }
-            set { Parameters[nameof(BladeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(BladeId).ToLower()); }
+            set { SetParameterValue(nameof(BladeId).ToLower(), value); }
         }
 
         /// <summary>
         /// profile dn
         /// </summary>
         public string ProfileDn {
-            get { return (string) Parameters[nameof(ProfileDn).ToLower()]; }
-            set { Parameters[nameof(ProfileDn).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ProfileDn).ToLower()); }
+            set { SetParameterValue(nameof(ProfileDn).ToLower(), value); }
         }
 
         /// <summary>
         /// ucs manager id
         /// </summary>
         public Guid UcsManagerId {
-            get { return (Guid) Parameters[nameof(UcsManagerId).ToLower()]; }
-            set { Parameters[nameof(UcsManagerId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(UcsManagerId).ToLower()); }
+            set { SetParameterValue(nameof(UcsManagerId).ToLower(), value); }
         }
 
     }

@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// find hosts to which this VM can be migrated and flag the hosts with enough CPU/RAM to host the VM
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
     }

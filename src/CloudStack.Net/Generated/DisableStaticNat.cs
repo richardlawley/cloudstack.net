@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the public IP address ID for which static NAT feature is being disabled
         /// </summary>
         public Guid IpAddressId {
-            get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
-            set { Parameters[nameof(IpAddressId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(IpAddressId).ToLower()); }
+            set { SetParameterValue(nameof(IpAddressId).ToLower(), value); }
         }
 
     }

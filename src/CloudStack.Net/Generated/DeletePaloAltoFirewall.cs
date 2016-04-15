@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Palo Alto firewall device ID
         /// </summary>
         public Guid FwDeviceId {
-            get { return (Guid) Parameters[nameof(FwDeviceId).ToLower()]; }
-            set { Parameters[nameof(FwDeviceId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(FwDeviceId).ToLower()); }
+            set { SetParameterValue(nameof(FwDeviceId).ToLower(), value); }
         }
 
     }

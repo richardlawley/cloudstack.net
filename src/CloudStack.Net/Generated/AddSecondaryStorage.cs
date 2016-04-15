@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the URL for the secondary storage
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the secondary storage
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

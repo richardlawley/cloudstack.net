@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// domain name for the GSLB service.
         /// </summary>
         public string Gslbdomainname {
-            get { return (string) Parameters[nameof(Gslbdomainname).ToLower()]; }
-            set { Parameters[nameof(Gslbdomainname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbdomainname).ToLower()); }
+            set { SetParameterValue(nameof(Gslbdomainname).ToLower(), value); }
         }
 
         /// <summary>
         /// GSLB service type (tcp, udp, http)
         /// </summary>
         public string Gslbservicetype {
-            get { return (string) Parameters[nameof(Gslbservicetype).ToLower()]; }
-            set { Parameters[nameof(Gslbservicetype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbservicetype).ToLower()); }
+            set { SetParameterValue(nameof(Gslbservicetype).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the load balancer rule
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// region where the global load balancer is going to be created.
         /// </summary>
         public int RegionId {
-            get { return (int) Parameters[nameof(RegionId).ToLower()]; }
-            set { Parameters[nameof(RegionId).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(RegionId).ToLower()); }
+            set { SetParameterValue(nameof(RegionId).ToLower(), value); }
         }
 
         /// <summary>
         /// the account associated with the global load balancer. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// the description of the load balancer rule
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// the domain ID associated with the load balancer
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// load balancer algorithm (roundrobin, leastconn, proximity) that method is used to distribute traffic across the zones participating in global server load balancing, if not specified defaults to 'round robin'
         /// </summary>
         public string Gslblbmethod {
-            get { return (string) Parameters[nameof(Gslblbmethod).ToLower()]; }
-            set { Parameters[nameof(Gslblbmethod).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslblbmethod).ToLower()); }
+            set { SetParameterValue(nameof(Gslblbmethod).ToLower(), value); }
         }
 
         /// <summary>
         /// session sticky method (sourceip) if not specified defaults to sourceip
         /// </summary>
         public string Gslbstickysessionmethodname {
-            get { return (string) Parameters[nameof(Gslbstickysessionmethodname).ToLower()]; }
-            set { Parameters[nameof(Gslbstickysessionmethodname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbstickysessionmethodname).ToLower()); }
+            set { SetParameterValue(nameof(Gslbstickysessionmethodname).ToLower(), value); }
         }
 
     }

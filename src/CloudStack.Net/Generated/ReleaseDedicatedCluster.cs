@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the ID of the Cluster
         /// </summary>
         public Guid ClusterId {
-            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
-            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+            set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
     }

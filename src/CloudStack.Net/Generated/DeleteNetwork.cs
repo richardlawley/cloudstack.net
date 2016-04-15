@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of the network
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Force delete a network. Network will be marked as 'Destroy' even when commands to shutdown and cleanup to the backend fails.
         /// </summary>
         public bool? Forced {
-            get { return (bool?) Parameters[nameof(Forced).ToLower()]; }
-            set { Parameters[nameof(Forced).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Forced).ToLower()); }
+            set { SetParameterValue(nameof(Forced).ToLower(), value); }
         }
 
     }

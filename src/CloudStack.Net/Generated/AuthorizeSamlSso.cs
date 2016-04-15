@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// If true, authorizes user to be able to use SAML for Single Sign. If False, disable user to user SAML SSO.
         /// </summary>
         public bool Enable {
-            get { return (bool) Parameters[nameof(Enable).ToLower()]; }
-            set { Parameters[nameof(Enable).ToLower()] = value; }
+            get { return GetParameterValue<bool>(nameof(Enable).ToLower()); }
+            set { SetParameterValue(nameof(Enable).ToLower(), value); }
         }
 
         /// <summary>
         /// User uuid
         /// </summary>
         public Guid Userid {
-            get { return (Guid) Parameters[nameof(Userid).ToLower()]; }
-            set { Parameters[nameof(Userid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Userid).ToLower()); }
+            set { SetParameterValue(nameof(Userid).ToLower(), value); }
         }
 
         /// <summary>
         /// The Identity Provider ID the user is allowed to get single signed on from
         /// </summary>
         public string EntityId {
-            get { return (string) Parameters[nameof(EntityId).ToLower()]; }
-            set { Parameters[nameof(EntityId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(EntityId).ToLower()); }
+            set { SetParameterValue(nameof(EntityId).ToLower(), value); }
         }
 
     }

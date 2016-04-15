@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// Hypervisor type. One of : XenServer, KVM, VMWare
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// Hypervisor version to create the mapping for. Use 'default' for default versions
         /// </summary>
         public string HypervisorVersion {
-            get { return (string) Parameters[nameof(HypervisorVersion).ToLower()]; }
-            set { Parameters[nameof(HypervisorVersion).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(HypervisorVersion).ToLower()); }
+            set { SetParameterValue(nameof(HypervisorVersion).ToLower(), value); }
         }
 
         /// <summary>
         /// OS name specific to the hypervisor
         /// </summary>
         public string OsNameForHypervisor {
-            get { return (string) Parameters[nameof(OsNameForHypervisor).ToLower()]; }
-            set { Parameters[nameof(OsNameForHypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(OsNameForHypervisor).ToLower()); }
+            set { SetParameterValue(nameof(OsNameForHypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// Display Name of Guest OS standard type. Either Display Name or UUID must be passed
         /// </summary>
         public string Osdisplayname {
-            get { return (string) Parameters[nameof(Osdisplayname).ToLower()]; }
-            set { Parameters[nameof(Osdisplayname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Osdisplayname).ToLower()); }
+            set { SetParameterValue(nameof(Osdisplayname).ToLower(), value); }
         }
 
         /// <summary>
         /// UUID of Guest OS type. Either the UUID or Display Name must be passed
         /// </summary>
         public Guid OsTypeId {
-            get { return (Guid) Parameters[nameof(OsTypeId).ToLower()]; }
-            set { Parameters[nameof(OsTypeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+            set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 
     }

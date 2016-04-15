@@ -14,56 +14,56 @@ namespace CloudStack.Net
         /// true if you want to retrieve all available Zones. False if you only want to return the Zones from which you have at least one VM. Default is false.
         /// </summary>
         public bool? Available {
-            get { return (bool?) Parameters[nameof(Available).ToLower()]; }
-            set { Parameters[nameof(Available).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Available).ToLower()); }
+            set { SetParameterValue(nameof(Available).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain associated with the zone
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the zone
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the zone
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the network type of the zone that the virtual machine belongs to
         /// </summary>
         public string NetworkType {
-            get { return (string) Parameters[nameof(NetworkType).ToLower()]; }
-            set { Parameters[nameof(NetworkType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(NetworkType).ToLower()); }
+            set { SetParameterValue(nameof(NetworkType).ToLower(), value); }
         }
 
         /// <summary>
         /// flag to display the capacity of the zones
         /// </summary>
         public bool? ShowCapacities {
-            get { return (bool?) Parameters[nameof(ShowCapacities).ToLower()]; }
-            set { Parameters[nameof(ShowCapacities).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ShowCapacities).ToLower()); }
+            set { SetParameterValue(nameof(ShowCapacities).ToLower(), value); }
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
     }

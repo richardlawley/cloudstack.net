@@ -14,56 +14,56 @@ namespace CloudStack.Net
         /// the ID of the Pod
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Allocation state of this cluster for allocation of new resources
         /// </summary>
         public string AllocationState {
-            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
-            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AllocationState).ToLower()); }
+            set { SetParameterValue(nameof(AllocationState).ToLower(), value); }
         }
 
         /// <summary>
         /// the ending IP address for the Pod
         /// </summary>
         public string EndIp {
-            get { return (string) Parameters[nameof(EndIp).ToLower()]; }
-            set { Parameters[nameof(EndIp).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(EndIp).ToLower()); }
+            set { SetParameterValue(nameof(EndIp).ToLower(), value); }
         }
 
         /// <summary>
         /// the gateway for the Pod
         /// </summary>
         public string Gateway {
-            get { return (string) Parameters[nameof(Gateway).ToLower()]; }
-            set { Parameters[nameof(Gateway).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gateway).ToLower()); }
+            set { SetParameterValue(nameof(Gateway).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the Pod
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the netmask of the Pod
         /// </summary>
         public string Netmask {
-            get { return (string) Parameters[nameof(Netmask).ToLower()]; }
-            set { Parameters[nameof(Netmask).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Netmask).ToLower()); }
+            set { SetParameterValue(nameof(Netmask).ToLower(), value); }
         }
 
         /// <summary>
         /// the starting IP address for the Pod
         /// </summary>
         public string StartIp {
-            get { return (string) Parameters[nameof(StartIp).ToLower()]; }
-            set { Parameters[nameof(StartIp).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(StartIp).ToLower()); }
+            set { SetParameterValue(nameof(StartIp).ToLower(), value); }
         }
 
     }

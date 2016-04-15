@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the public IP address ID of the forwarding rule, already associated via associateIp
         /// </summary>
         public Guid IpAddressId {
-            get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
-            set { Parameters[nameof(IpAddressId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(IpAddressId).ToLower()); }
+            set { SetParameterValue(nameof(IpAddressId).ToLower(), value); }
         }
 
         /// <summary>
         /// the protocol for the rule. Valid values are TCP or UDP.
         /// </summary>
         public string Protocol {
-            get { return (string) Parameters[nameof(Protocol).ToLower()]; }
-            set { Parameters[nameof(Protocol).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Protocol).ToLower()); }
+            set { SetParameterValue(nameof(Protocol).ToLower(), value); }
         }
 
         /// <summary>
         /// the start port for the rule
         /// </summary>
         public int StartPort {
-            get { return (int) Parameters[nameof(StartPort).ToLower()]; }
-            set { Parameters[nameof(StartPort).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(StartPort).ToLower()); }
+            set { SetParameterValue(nameof(StartPort).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,23 +39,23 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
-            set { Parameters[nameof(Cidrlist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Cidrlist).ToLower(), value); }
         }
 
         /// <summary>
         /// the end port for the rule
         /// </summary>
         public int? EndPort {
-            get { return (int?) Parameters[nameof(EndPort).ToLower()]; }
-            set { Parameters[nameof(EndPort).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(EndPort).ToLower()); }
+            set { SetParameterValue(nameof(EndPort).ToLower(), value); }
         }
 
         /// <summary>
         /// if true, firewall rule for source/end public port is automatically created; if false - firewall rule has to be created explicitly. Has value true by default
         /// </summary>
         public bool? OpenFirewall {
-            get { return (bool?) Parameters[nameof(OpenFirewall).ToLower()]; }
-            set { Parameters[nameof(OpenFirewall).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(OpenFirewall).ToLower()); }
+            set { SetParameterValue(nameof(OpenFirewall).ToLower(), value); }
         }
 
     }

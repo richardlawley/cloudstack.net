@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the id of the VPC offering
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the display text of the VPC offering
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the VPC offering
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// update state for the VPC offering; supported states - Enabled/Disabled
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
     }

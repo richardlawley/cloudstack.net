@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// the ID of the autoscale group
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
         public string CustomId {
-            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
-            set { Parameters[nameof(CustomId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(CustomId).ToLower()); }
+            set { SetParameterValue(nameof(CustomId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the group to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// the frequency at which the conditions have to be evaluated
         /// </summary>
         public int? Interval {
-            get { return (int?) Parameters[nameof(Interval).ToLower()]; }
-            set { Parameters[nameof(Interval).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Interval).ToLower()); }
+            set { SetParameterValue(nameof(Interval).ToLower(), value); }
         }
 
         /// <summary>
         /// the maximum number of members in the vmgroup, The number of instances in the vm group will be equal to or less than this number.
         /// </summary>
         public int? MaxMembers {
-            get { return (int?) Parameters[nameof(MaxMembers).ToLower()]; }
-            set { Parameters[nameof(MaxMembers).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(MaxMembers).ToLower()); }
+            set { SetParameterValue(nameof(MaxMembers).ToLower(), value); }
         }
 
         /// <summary>
         /// the minimum number of members in the vmgroup, the number of instances in the vm group will be equal to or more than this number.
         /// </summary>
         public int? MinMembers {
-            get { return (int?) Parameters[nameof(MinMembers).ToLower()]; }
-            set { Parameters[nameof(MinMembers).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(MinMembers).ToLower()); }
+            set { SetParameterValue(nameof(MinMembers).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> ScaleDownPolicyIds {
             get { return GetList<Guid>(nameof(ScaleDownPolicyIds).ToLower()); }
-            set { Parameters[nameof(ScaleDownPolicyIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(ScaleDownPolicyIds).ToLower(), value); }
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> ScaleUpPolicyIds {
             get { return GetList<Guid>(nameof(ScaleUpPolicyIds).ToLower()); }
-            set { Parameters[nameof(ScaleUpPolicyIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(ScaleUpPolicyIds).ToLower(), value); }
         }
 
     }

@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// Destination Host ID to migrate VM to.
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Migrateto {
             get { return GetList<IDictionary<string, object>>(nameof(Migrateto).ToLower()); }
-            set { Parameters[nameof(Migrateto).ToLower()] = value; }
+            set { SetParameterValue(nameof(Migrateto).ToLower(), value); }
         }
 
     }

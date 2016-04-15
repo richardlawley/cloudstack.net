@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// valid values are HOURLY, DAILY, WEEKLY, and MONTHLY
         /// </summary>
         public string IntervalType {
-            get { return (string) Parameters[nameof(IntervalType).ToLower()]; }
-            set { Parameters[nameof(IntervalType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IntervalType).ToLower()); }
+            set { SetParameterValue(nameof(IntervalType).ToLower(), value); }
         }
 
         /// <summary>
         /// maximum number of snapshots to retain
         /// </summary>
         public int MaxSnaps {
-            get { return (int) Parameters[nameof(MaxSnaps).ToLower()]; }
-            set { Parameters[nameof(MaxSnaps).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(MaxSnaps).ToLower()); }
+            set { SetParameterValue(nameof(MaxSnaps).ToLower(), value); }
         }
 
         /// <summary>
         /// time the snapshot is scheduled to be taken. Format is:* if HOURLY, MM* if DAILY, MM:HH* if WEEKLY, MM:HH:DD (1-7)* if MONTHLY, MM:HH:DD (1-28)
         /// </summary>
         public string Schedule {
-            get { return (string) Parameters[nameof(Schedule).ToLower()]; }
-            set { Parameters[nameof(Schedule).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Schedule).ToLower()); }
+            set { SetParameterValue(nameof(Schedule).ToLower(), value); }
         }
 
         /// <summary>
         /// Specifies a timezone for this command. For more information on the timezone parameter, see Time Zone Format.
         /// </summary>
         public string Timezone {
-            get { return (string) Parameters[nameof(Timezone).ToLower()]; }
-            set { Parameters[nameof(Timezone).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Timezone).ToLower()); }
+            set { SetParameterValue(nameof(Timezone).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
         public Guid VolumeId {
-            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
-            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VolumeId).ToLower()); }
+            set { SetParameterValue(nameof(VolumeId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the policy to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
     }

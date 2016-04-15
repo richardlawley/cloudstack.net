@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// CloudStack Volume UUID
         /// </summary>
         public string Volumeid {
-            get { return (string) Parameters[nameof(Volumeid).ToLower()]; }
-            set { Parameters[nameof(Volumeid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Volumeid).ToLower()); }
+            set { SetParameterValue(nameof(Volumeid).ToLower(), value); }
         }
 
     }

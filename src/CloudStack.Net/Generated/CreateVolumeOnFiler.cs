@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// aggregate name.
         /// </summary>
         public string Aggregatename {
-            get { return (string) Parameters[nameof(Aggregatename).ToLower()]; }
-            set { Parameters[nameof(Aggregatename).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Aggregatename).ToLower()); }
+            set { SetParameterValue(nameof(Aggregatename).ToLower(), value); }
         }
 
         /// <summary>
         /// ip address.
         /// </summary>
         public string IpAddress {
-            get { return (string) Parameters[nameof(IpAddress).ToLower()]; }
-            set { Parameters[nameof(IpAddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IpAddress).ToLower()); }
+            set { SetParameterValue(nameof(IpAddress).ToLower(), value); }
         }
 
         /// <summary>
         /// password.
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// pool name.
         /// </summary>
         public string PoolName {
-            get { return (string) Parameters[nameof(PoolName).ToLower()]; }
-            set { Parameters[nameof(PoolName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(PoolName).ToLower()); }
+            set { SetParameterValue(nameof(PoolName).ToLower(), value); }
         }
 
         /// <summary>
         /// volume size.
         /// </summary>
         public int Size {
-            get { return (int) Parameters[nameof(Size).ToLower()]; }
-            set { Parameters[nameof(Size).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(Size).ToLower()); }
+            set { SetParameterValue(nameof(Size).ToLower(), value); }
         }
 
         /// <summary>
         /// user name.
         /// </summary>
         public string UserName {
-            get { return (string) Parameters[nameof(UserName).ToLower()]; }
-            set { Parameters[nameof(UserName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(UserName).ToLower()); }
+            set { SetParameterValue(nameof(UserName).ToLower(), value); }
         }
 
         /// <summary>
         /// volume name.
         /// </summary>
         public string Volumename {
-            get { return (string) Parameters[nameof(Volumename).ToLower()]; }
-            set { Parameters[nameof(Volumename).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Volumename).ToLower()); }
+            set { SetParameterValue(nameof(Volumename).ToLower(), value); }
         }
 
         /// <summary>
         /// snapshot policy.
         /// </summary>
         public string SnapshotPolicy {
-            get { return (string) Parameters[nameof(SnapshotPolicy).ToLower()]; }
-            set { Parameters[nameof(SnapshotPolicy).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(SnapshotPolicy).ToLower()); }
+            set { SetParameterValue(nameof(SnapshotPolicy).ToLower(), value); }
         }
 
         /// <summary>
         /// snapshot reservation.
         /// </summary>
         public int? SnapshotReservation {
-            get { return (int?) Parameters[nameof(SnapshotReservation).ToLower()]; }
-            set { Parameters[nameof(SnapshotReservation).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(SnapshotReservation).ToLower()); }
+            set { SetParameterValue(nameof(SnapshotReservation).ToLower(), value); }
         }
 
     }

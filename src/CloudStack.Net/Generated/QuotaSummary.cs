@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// Optional, Account Id for which statement needs to be generated
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// Optional, If domain Id is given and the caller is domain admin then the statement is generated for domain.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// Optional, to list all accounts irrespective of the quota activity
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
     }

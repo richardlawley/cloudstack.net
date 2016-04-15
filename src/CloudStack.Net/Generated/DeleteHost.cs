@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the host ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Force delete the host. All HA enabled vms running on the host will be put to HA; HA disabled ones will be stopped
         /// </summary>
         public bool? Forced {
-            get { return (bool?) Parameters[nameof(Forced).ToLower()]; }
-            set { Parameters[nameof(Forced).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Forced).ToLower()); }
+            set { SetParameterValue(nameof(Forced).ToLower(), value); }
         }
 
         /// <summary>
         /// Force destroy local storage on this host. All VMs created on this local storage will be destroyed
         /// </summary>
         public bool? ForceDestroyLocalStorage {
-            get { return (bool?) Parameters[nameof(ForceDestroyLocalStorage).ToLower()]; }
-            set { Parameters[nameof(ForceDestroyLocalStorage).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ForceDestroyLocalStorage).ToLower()); }
+            set { SetParameterValue(nameof(ForceDestroyLocalStorage).ToLower(), value); }
         }
 
     }

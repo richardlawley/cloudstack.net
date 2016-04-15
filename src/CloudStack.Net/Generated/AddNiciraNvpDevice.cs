@@ -14,56 +14,56 @@ namespace CloudStack.Net
         /// Hostname of ip address of the Nicira NVP Controller.
         /// </summary>
         public string Hostname {
-            get { return (string) Parameters[nameof(Hostname).ToLower()]; }
-            set { Parameters[nameof(Hostname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hostname).ToLower()); }
+            set { SetParameterValue(nameof(Hostname).ToLower(), value); }
         }
 
         /// <summary>
         /// Credentials to access the Nicira Controller API
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// The Transportzone UUID configured on the Nicira Controller
         /// </summary>
         public string Transportzoneuuid {
-            get { return (string) Parameters[nameof(Transportzoneuuid).ToLower()]; }
-            set { Parameters[nameof(Transportzoneuuid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Transportzoneuuid).ToLower()); }
+            set { SetParameterValue(nameof(Transportzoneuuid).ToLower(), value); }
         }
 
         /// <summary>
         /// Credentials to access the Nicira Controller API
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
         /// <summary>
         /// The L2 Gateway Service UUID configured on the Nicira Controller
         /// </summary>
         public string L2gatewayserviceuuid {
-            get { return (string) Parameters[nameof(L2gatewayserviceuuid).ToLower()]; }
-            set { Parameters[nameof(L2gatewayserviceuuid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(L2gatewayserviceuuid).ToLower()); }
+            set { SetParameterValue(nameof(L2gatewayserviceuuid).ToLower(), value); }
         }
 
         /// <summary>
         /// The L3 Gateway Service UUID configured on the Nicira Controller
         /// </summary>
         public string L3gatewayserviceuuid {
-            get { return (string) Parameters[nameof(L3gatewayserviceuuid).ToLower()]; }
-            set { Parameters[nameof(L3gatewayserviceuuid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(L3gatewayserviceuuid).ToLower()); }
+            set { SetParameterValue(nameof(L3gatewayserviceuuid).ToLower(), value); }
         }
 
     }

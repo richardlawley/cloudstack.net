@@ -14,64 +14,64 @@ namespace CloudStack.Net
         /// the ID of the physical network in to which Nuage VSP is added
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the version of the API to use to communicate to Nuage VSD
         /// </summary>
         public string ApiVersion {
-            get { return (string) Parameters[nameof(ApiVersion).ToLower()]; }
-            set { Parameters[nameof(ApiVersion).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ApiVersion).ToLower()); }
+            set { SetParameterValue(nameof(ApiVersion).ToLower(), value); }
         }
 
         /// <summary>
         /// the hostname of the Nuage VSD
         /// </summary>
         public string HostName {
-            get { return (string) Parameters[nameof(HostName).ToLower()]; }
-            set { Parameters[nameof(HostName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(HostName).ToLower()); }
+            set { SetParameterValue(nameof(HostName).ToLower(), value); }
         }
 
         /// <summary>
         /// the password of CMS user in Nuage VSD
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the port to communicate to Nuage VSD
         /// </summary>
         public int? Port {
-            get { return (int?) Parameters[nameof(Port).ToLower()]; }
-            set { Parameters[nameof(Port).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Port).ToLower()); }
+            set { SetParameterValue(nameof(Port).ToLower(), value); }
         }
 
         /// <summary>
         /// the number of retries on failure to communicate to Nuage VSD
         /// </summary>
         public int? Retrycount {
-            get { return (int?) Parameters[nameof(Retrycount).ToLower()]; }
-            set { Parameters[nameof(Retrycount).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Retrycount).ToLower()); }
+            set { SetParameterValue(nameof(Retrycount).ToLower(), value); }
         }
 
         /// <summary>
         /// the time to wait after failure before retrying to communicate to Nuage VSD
         /// </summary>
         public long? Retryinterval {
-            get { return (long?) Parameters[nameof(Retryinterval).ToLower()]; }
-            set { Parameters[nameof(Retryinterval).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(Retryinterval).ToLower()); }
+            set { SetParameterValue(nameof(Retryinterval).ToLower(), value); }
         }
 
         /// <summary>
         /// the user name of the CMS user in Nuage VSD
         /// </summary>
         public string UserName {
-            get { return (string) Parameters[nameof(UserName).ToLower()]; }
-            set { Parameters[nameof(UserName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(UserName).ToLower()); }
+            set { SetParameterValue(nameof(UserName).ToLower(), value); }
         }
 
     }

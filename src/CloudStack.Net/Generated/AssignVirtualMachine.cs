@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// account name of the new VM owner.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// domain id of the new VM owner.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// id of the VM to be moved
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> NetworkIds {
             get { return GetList<Guid>(nameof(NetworkIds).ToLower()); }
-            set { Parameters[nameof(NetworkIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(NetworkIds).ToLower(), value); }
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Securitygroupids {
             get { return GetList<Guid>(nameof(Securitygroupids).ToLower()); }
-            set { Parameters[nameof(Securitygroupids).ToLower()] = value; }
+            set { SetParameterValue(nameof(Securitygroupids).ToLower(), value); }
         }
 
     }

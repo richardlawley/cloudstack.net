@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// The certificate to be uploaded.
         /// </summary>
         public string Certificate {
-            get { return (string) Parameters[nameof(Certificate).ToLower()]; }
-            set { Parameters[nameof(Certificate).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Certificate).ToLower()); }
+            set { SetParameterValue(nameof(Certificate).ToLower(), value); }
         }
 
         /// <summary>
         /// DNS domain suffix that the certificate is granted for.
         /// </summary>
         public string DomainSuffix {
-            get { return (string) Parameters[nameof(DomainSuffix).ToLower()]; }
-            set { Parameters[nameof(DomainSuffix).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DomainSuffix).ToLower()); }
+            set { SetParameterValue(nameof(DomainSuffix).ToLower(), value); }
         }
 
         /// <summary>
         /// An integer providing the location in a chain that the certificate will hold. Usually, this can be left empty. When creating a chain, the top level certificate should have an ID of 1, with each step in the chain incrementing by one. Example, CA with id = 1, Intermediate CA with id = 2, Site certificate with ID = 3
         /// </summary>
         public int? Id {
-            get { return (int?) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// A name / alias for the certificate.
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// The private key for the attached certificate.
         /// </summary>
         public string PrivateKey {
-            get { return (string) Parameters[nameof(PrivateKey).ToLower()]; }
-            set { Parameters[nameof(PrivateKey).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(PrivateKey).ToLower()); }
+            set { SetParameterValue(nameof(PrivateKey).ToLower(), value); }
         }
 
     }

@@ -15,15 +15,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Networkdeviceparameterlist {
             get { return GetList<IDictionary<string, object>>(nameof(Networkdeviceparameterlist).ToLower()); }
-            set { Parameters[nameof(Networkdeviceparameterlist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Networkdeviceparameterlist).ToLower(), value); }
         }
 
         /// <summary>
         /// Network device type, now supports ExternalDhcp, PxeServer, NetscalerMPXLoadBalancer, NetscalerVPXLoadBalancer, NetscalerSDXLoadBalancer, F5BigIpLoadBalancer, JuniperSRXFirewall, PaloAltoFirewall
         /// </summary>
         public string Networkdevicetype {
-            get { return (string) Parameters[nameof(Networkdevicetype).ToLower()]; }
-            set { Parameters[nameof(Networkdevicetype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Networkdevicetype).ToLower()); }
+            set { SetParameterValue(nameof(Networkdevicetype).ToLower(), value); }
         }
 
     }

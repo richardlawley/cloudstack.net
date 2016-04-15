@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// List by type of the quota email template, allowed types: QUOTA_LOW, QUOTA_EMPTY
         /// </summary>
         public string Templatetype {
-            get { return (string) Parameters[nameof(Templatetype).ToLower()]; }
-            set { Parameters[nameof(Templatetype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Templatetype).ToLower()); }
+            set { SetParameterValue(nameof(Templatetype).ToLower(), value); }
         }
 
     }

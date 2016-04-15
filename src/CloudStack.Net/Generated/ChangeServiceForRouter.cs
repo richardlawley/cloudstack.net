@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// The ID of the router
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the service offering ID to apply to the domain router
         /// </summary>
         public Guid ServiceOfferingId {
-            get { return (Guid) Parameters[nameof(ServiceOfferingId).ToLower()]; }
-            set { Parameters[nameof(ServiceOfferingId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ServiceOfferingId).ToLower()); }
+            set { SetParameterValue(nameof(ServiceOfferingId).ToLower(), value); }
         }
 
     }

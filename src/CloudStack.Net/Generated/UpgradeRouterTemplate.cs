@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// upgrades all routers owned by the specified account
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// upgrades all routers within the specified cluster
         /// </summary>
         public Guid ClusterId {
-            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
-            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+            set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// upgrades all routers owned by the specified domain
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// upgrades router with the specified Id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// upgrades all routers within the specified pod
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// upgrades all routers within the specified zone
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

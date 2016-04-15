@@ -15,15 +15,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> ResourceIds {
             get { return GetList<string>(nameof(ResourceIds).ToLower()); }
-            set { Parameters[nameof(ResourceIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(ResourceIds).ToLower(), value); }
         }
 
         /// <summary>
         /// type of the resource
         /// </summary>
         public string ResourceType {
-            get { return (string) Parameters[nameof(ResourceType).ToLower()]; }
-            set { Parameters[nameof(ResourceType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceType).ToLower()); }
+            set { SetParameterValue(nameof(ResourceType).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,15 +31,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// identifies client specific tag. When the value is not null, the tag can't be used by cloudStack code internally
         /// </summary>
         public string Customer {
-            get { return (string) Parameters[nameof(Customer).ToLower()]; }
-            set { Parameters[nameof(Customer).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Customer).ToLower()); }
+            set { SetParameterValue(nameof(Customer).ToLower(), value); }
         }
 
     }

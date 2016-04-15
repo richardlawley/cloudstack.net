@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// http url to baremetal RCT configuration
         /// </summary>
         public String Baremetalrcturl {
-            get { return (String) Parameters[nameof(Baremetalrcturl).ToLower()]; }
-            set { Parameters[nameof(Baremetalrcturl).ToLower()] = value; }
+            get { return GetParameterValue<String>(nameof(Baremetalrcturl).ToLower()); }
+            set { SetParameterValue(nameof(Baremetalrcturl).ToLower(), value); }
         }
 
     }

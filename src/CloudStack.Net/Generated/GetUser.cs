@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// API key of the user
         /// </summary>
         public string Userapikey {
-            get { return (string) Parameters[nameof(Userapikey).ToLower()]; }
-            set { Parameters[nameof(Userapikey).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Userapikey).ToLower()); }
+            set { SetParameterValue(nameof(Userapikey).ToLower(), value); }
         }
 
     }

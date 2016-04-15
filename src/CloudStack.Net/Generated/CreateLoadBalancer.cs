@@ -14,80 +14,80 @@ namespace CloudStack.Net
         /// load balancer algorithm (source, roundrobin, leastconn)
         /// </summary>
         public string Algorithm {
-            get { return (string) Parameters[nameof(Algorithm).ToLower()]; }
-            set { Parameters[nameof(Algorithm).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Algorithm).ToLower()); }
+            set { SetParameterValue(nameof(Algorithm).ToLower(), value); }
         }
 
         /// <summary>
         /// the TCP port of the virtual machine where the network traffic will be load balanced to
         /// </summary>
         public int InstancePort {
-            get { return (int) Parameters[nameof(InstancePort).ToLower()]; }
-            set { Parameters[nameof(InstancePort).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(InstancePort).ToLower()); }
+            set { SetParameterValue(nameof(InstancePort).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the load balancer
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// The guest network the load balancer will be created for
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the load balancer scheme. Supported value in this release is Internal
         /// </summary>
         public string Scheme {
-            get { return (string) Parameters[nameof(Scheme).ToLower()]; }
-            set { Parameters[nameof(Scheme).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Scheme).ToLower()); }
+            set { SetParameterValue(nameof(Scheme).ToLower(), value); }
         }
 
         /// <summary>
         /// the network id of the source ip address
         /// </summary>
         public Guid Sourceipaddressnetworkid {
-            get { return (Guid) Parameters[nameof(Sourceipaddressnetworkid).ToLower()]; }
-            set { Parameters[nameof(Sourceipaddressnetworkid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Sourceipaddressnetworkid).ToLower()); }
+            set { SetParameterValue(nameof(Sourceipaddressnetworkid).ToLower(), value); }
         }
 
         /// <summary>
         /// the source port the network traffic will be load balanced from
         /// </summary>
         public int SourcePort {
-            get { return (int) Parameters[nameof(SourcePort).ToLower()]; }
-            set { Parameters[nameof(SourcePort).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(SourcePort).ToLower()); }
+            set { SetParameterValue(nameof(SourcePort).ToLower(), value); }
         }
 
         /// <summary>
         /// the description of the load balancer
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// the source IP address the network traffic will be load balanced from
         /// </summary>
         public string Sourceipaddress {
-            get { return (string) Parameters[nameof(Sourceipaddress).ToLower()]; }
-            set { Parameters[nameof(Sourceipaddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Sourceipaddress).ToLower()); }
+            set { SetParameterValue(nameof(Sourceipaddress).ToLower(), value); }
         }
 
     }

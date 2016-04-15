@@ -14,104 +14,104 @@ namespace CloudStack.Net
         /// list resources by account. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list volumes by disk offering
         /// </summary>
         public Guid DiskOfferingId {
-            get { return (Guid) Parameters[nameof(DiskOfferingId).ToLower()]; }
-            set { Parameters[nameof(DiskOfferingId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DiskOfferingId).ToLower()); }
+            set { SetParameterValue(nameof(DiskOfferingId).ToLower(), value); }
         }
 
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
         public bool? Displayvolume {
-            get { return (bool?) Parameters[nameof(Displayvolume).ToLower()]; }
-            set { Parameters[nameof(Displayvolume).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Displayvolume).ToLower()); }
+            set { SetParameterValue(nameof(Displayvolume).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// list volumes on specified host
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
         /// </summary>
         public bool? Isrecursive {
-            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
-            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isrecursive).ToLower()); }
+            set { SetParameterValue(nameof(Isrecursive).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the disk volume
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the pod id the disk volume belongs to
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the storage pool, available to ROOT admin only
         /// </summary>
         public Guid StorageId {
-            get { return (Guid) Parameters[nameof(StorageId).ToLower()]; }
-            set { Parameters[nameof(StorageId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+            set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 
         /// <summary>
@@ -119,31 +119,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// the type of disk volume
         /// </summary>
         public string Type {
-            get { return (string) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the availability zone
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

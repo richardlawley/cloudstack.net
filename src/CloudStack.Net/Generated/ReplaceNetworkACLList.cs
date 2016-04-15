@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the ID of the network ACL
         /// </summary>
         public Guid AclId {
-            get { return (Guid) Parameters[nameof(AclId).ToLower()]; }
-            set { Parameters[nameof(AclId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AclId).ToLower()); }
+            set { SetParameterValue(nameof(AclId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the private gateway
         /// </summary>
         public Guid Gatewayid {
-            get { return (Guid) Parameters[nameof(Gatewayid).ToLower()]; }
-            set { Parameters[nameof(Gatewayid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Gatewayid).ToLower()); }
+            set { SetParameterValue(nameof(Gatewayid).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the network
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
     }

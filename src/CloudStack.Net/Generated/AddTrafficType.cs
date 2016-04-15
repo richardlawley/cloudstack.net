@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the trafficType to be added to the physical network
         /// </summary>
         public string TrafficType {
-            get { return (string) Parameters[nameof(TrafficType).ToLower()]; }
-            set { Parameters[nameof(TrafficType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TrafficType).ToLower()); }
+            set { SetParameterValue(nameof(TrafficType).ToLower(), value); }
         }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a Hyperv host
         /// </summary>
         public string Hypervnetworklabel {
-            get { return (string) Parameters[nameof(Hypervnetworklabel).ToLower()]; }
-            set { Parameters[nameof(Hypervnetworklabel).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervnetworklabel).ToLower()); }
+            set { SetParameterValue(nameof(Hypervnetworklabel).ToLower(), value); }
         }
 
         /// <summary>
         /// Used if physical network has multiple isolation types and traffic type is public. Choose which isolation method. Valid options currently 'vlan' or 'vxlan', defaults to 'vlan'.
         /// </summary>
         public string IsolationMethod {
-            get { return (string) Parameters[nameof(IsolationMethod).ToLower()]; }
-            set { Parameters[nameof(IsolationMethod).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IsolationMethod).ToLower()); }
+            set { SetParameterValue(nameof(IsolationMethod).ToLower(), value); }
         }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a KVM host
         /// </summary>
         public string Kvmnetworklabel {
-            get { return (string) Parameters[nameof(Kvmnetworklabel).ToLower()]; }
-            set { Parameters[nameof(Kvmnetworklabel).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Kvmnetworklabel).ToLower()); }
+            set { SetParameterValue(nameof(Kvmnetworklabel).ToLower(), value); }
         }
 
         /// <summary>
         /// The network name of the physical device dedicated to this traffic on an OVM3 host
         /// </summary>
         public string Ovm3networklabel {
-            get { return (string) Parameters[nameof(Ovm3networklabel).ToLower()]; }
-            set { Parameters[nameof(Ovm3networklabel).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ovm3networklabel).ToLower()); }
+            set { SetParameterValue(nameof(Ovm3networklabel).ToLower(), value); }
         }
 
         /// <summary>
         /// The VLAN id to be used for Management traffic by VMware host
         /// </summary>
         public string Vlan {
-            get { return (string) Parameters[nameof(Vlan).ToLower()]; }
-            set { Parameters[nameof(Vlan).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vlan).ToLower()); }
+            set { SetParameterValue(nameof(Vlan).ToLower(), value); }
         }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a VMware host
         /// </summary>
         public string Vmwarenetworklabel {
-            get { return (string) Parameters[nameof(Vmwarenetworklabel).ToLower()]; }
-            set { Parameters[nameof(Vmwarenetworklabel).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vmwarenetworklabel).ToLower()); }
+            set { SetParameterValue(nameof(Vmwarenetworklabel).ToLower(), value); }
         }
 
         /// <summary>
         /// The network name label of the physical device dedicated to this traffic on a XenServer host
         /// </summary>
         public string Xennetworklabel {
-            get { return (string) Parameters[nameof(Xennetworklabel).ToLower()]; }
-            set { Parameters[nameof(Xennetworklabel).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Xennetworklabel).ToLower()); }
+            set { SetParameterValue(nameof(Xennetworklabel).ToLower(), value); }
         }
 
     }

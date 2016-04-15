@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// id of the project to be modified
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// new Admin account for the project
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// display text of the project
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
     }

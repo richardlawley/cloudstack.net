@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// the ID of the vm
         /// </summary>
         public Guid Virtualmachineid {
-            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
-            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+            set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 
         /// <summary>
         /// list resources by display flag; only ROOT admin is eligible to pass this parameter
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list nic of the specific vm's network
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the nic to to list IPs
         /// </summary>
         public Guid NicId {
-            get { return (Guid) Parameters[nameof(NicId).ToLower()]; }
-            set { Parameters[nameof(NicId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NicId).ToLower()); }
+            set { SetParameterValue(nameof(NicId).ToLower(), value); }
         }
 
     }

@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// id of the project to join
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// if true, accept the invitation, decline if false. True by default
         /// </summary>
         public bool? Accept {
-            get { return (bool?) Parameters[nameof(Accept).ToLower()]; }
-            set { Parameters[nameof(Accept).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Accept).ToLower()); }
+            set { SetParameterValue(nameof(Accept).ToLower(), value); }
         }
 
         /// <summary>
         /// account that is joining the project
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list invitations for specified account; this parameter has to be specified with domainId
         /// </summary>
         public string Token {
-            get { return (string) Parameters[nameof(Token).ToLower()]; }
-            set { Parameters[nameof(Token).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Token).ToLower()); }
+            set { SetParameterValue(nameof(Token).ToLower(), value); }
         }
 
     }

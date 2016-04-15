@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// ID of the region to delete
         /// </summary>
         public int Id {
-            get { return (int) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
     }

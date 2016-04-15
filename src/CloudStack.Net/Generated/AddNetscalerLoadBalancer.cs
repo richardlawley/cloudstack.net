@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// Netscaler device type supports NetscalerMPXLoadBalancer, NetscalerVPXLoadBalancer, NetscalerSDXLoadBalancer
         /// </summary>
         public string Networkdevicetype {
-            get { return (string) Parameters[nameof(Networkdevicetype).ToLower()]; }
-            set { Parameters[nameof(Networkdevicetype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Networkdevicetype).ToLower()); }
+            set { SetParameterValue(nameof(Networkdevicetype).ToLower(), value); }
         }
 
         /// <summary>
         /// Credentials to reach netscaler load balancer device
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// URL of the netscaler load balancer appliance.
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// Credentials to reach netscaler load balancer device
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
         /// <summary>
         /// true if NetScaler device being added is for providing GSLB service
         /// </summary>
         public bool? Gslbprovider {
-            get { return (bool?) Parameters[nameof(Gslbprovider).ToLower()]; }
-            set { Parameters[nameof(Gslbprovider).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Gslbprovider).ToLower()); }
+            set { SetParameterValue(nameof(Gslbprovider).ToLower(), value); }
         }
 
         /// <summary>
         /// public IP of the site
         /// </summary>
         public string Gslbproviderprivateip {
-            get { return (string) Parameters[nameof(Gslbproviderprivateip).ToLower()]; }
-            set { Parameters[nameof(Gslbproviderprivateip).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbproviderprivateip).ToLower()); }
+            set { SetParameterValue(nameof(Gslbproviderprivateip).ToLower(), value); }
         }
 
         /// <summary>
         /// public IP of the site
         /// </summary>
         public string Gslbproviderpublicip {
-            get { return (string) Parameters[nameof(Gslbproviderpublicip).ToLower()]; }
-            set { Parameters[nameof(Gslbproviderpublicip).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbproviderpublicip).ToLower()); }
+            set { SetParameterValue(nameof(Gslbproviderpublicip).ToLower(), value); }
         }
 
         /// <summary>
         /// true if NetScaler device being added is for providing GSLB service exclusively and can not be used for LB
         /// </summary>
         public bool? IsExclusiveGslbProvider {
-            get { return (bool?) Parameters[nameof(IsExclusiveGslbProvider).ToLower()]; }
-            set { Parameters[nameof(IsExclusiveGslbProvider).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsExclusiveGslbProvider).ToLower()); }
+            set { SetParameterValue(nameof(IsExclusiveGslbProvider).ToLower(), value); }
         }
 
     }

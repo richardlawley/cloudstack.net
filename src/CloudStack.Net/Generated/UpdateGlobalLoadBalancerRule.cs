@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the ID of the global load balancer rule
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the description of the load balancer rule
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// load balancer algorithm (roundrobin, leastconn, proximity) that is used to distributed traffic across the zones participating in global server load balancing, if not specified defaults to 'round robin'
         /// </summary>
         public string Gslblbmethod {
-            get { return (string) Parameters[nameof(Gslblbmethod).ToLower()]; }
-            set { Parameters[nameof(Gslblbmethod).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslblbmethod).ToLower()); }
+            set { SetParameterValue(nameof(Gslblbmethod).ToLower(), value); }
         }
 
         /// <summary>
         /// session sticky method (sourceip) if not specified defaults to sourceip
         /// </summary>
         public string Gslbstickysessionmethodname {
-            get { return (string) Parameters[nameof(Gslbstickysessionmethodname).ToLower()]; }
-            set { Parameters[nameof(Gslbstickysessionmethodname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gslbstickysessionmethodname).ToLower()); }
+            set { SetParameterValue(nameof(Gslbstickysessionmethodname).ToLower(), value); }
         }
 
     }

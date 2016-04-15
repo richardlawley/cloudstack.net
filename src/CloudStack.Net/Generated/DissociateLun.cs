@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// Guest IQN.
         /// </summary>
         public string Iqn {
-            get { return (string) Parameters[nameof(Iqn).ToLower()]; }
-            set { Parameters[nameof(Iqn).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Iqn).ToLower()); }
+            set { SetParameterValue(nameof(Iqn).ToLower(), value); }
         }
 
         /// <summary>
         /// LUN path.
         /// </summary>
         public string Path {
-            get { return (string) Parameters[nameof(Path).ToLower()]; }
-            set { Parameters[nameof(Path).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Path).ToLower()); }
+            set { SetParameterValue(nameof(Path).ToLower(), value); }
         }
 
     }

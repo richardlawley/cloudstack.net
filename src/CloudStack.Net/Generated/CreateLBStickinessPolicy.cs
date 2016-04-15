@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// the ID of the load balancer rule
         /// </summary>
         public Guid LbRuleId {
-            get { return (Guid) Parameters[nameof(LbRuleId).ToLower()]; }
-            set { Parameters[nameof(LbRuleId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbRuleId).ToLower()); }
+            set { SetParameterValue(nameof(LbRuleId).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the load balancer stickiness policy method, possible values can be obtained from listNetworks API
         /// </summary>
         public string Methodname {
-            get { return (string) Parameters[nameof(Methodname).ToLower()]; }
-            set { Parameters[nameof(Methodname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Methodname).ToLower()); }
+            set { SetParameterValue(nameof(Methodname).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the load balancer stickiness policy
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the description of the load balancer stickiness policy
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Param {
             get { return GetList<IDictionary<string, object>>(nameof(Param).ToLower()); }
-            set { Parameters[nameof(Param).ToLower()] = value; }
+            set { SetParameterValue(nameof(Param).ToLower(), value); }
         }
 
     }

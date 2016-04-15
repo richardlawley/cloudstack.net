@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// load balancer algorithm (source, roundrobin, leastconn)
         /// </summary>
         public string Algorithm {
-            get { return (string) Parameters[nameof(Algorithm).ToLower()]; }
-            set { Parameters[nameof(Algorithm).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Algorithm).ToLower()); }
+            set { SetParameterValue(nameof(Algorithm).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the load balancer rule
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the private port of the private IP address/virtual machine where the network traffic will be load balanced to
         /// </summary>
         public int PrivatePort {
-            get { return (int) Parameters[nameof(PrivatePort).ToLower()]; }
-            set { Parameters[nameof(PrivatePort).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(PrivatePort).ToLower()); }
+            set { SetParameterValue(nameof(PrivatePort).ToLower(), value); }
         }
 
         /// <summary>
         /// the public port from where the network traffic will be load balanced from
         /// </summary>
         public int PublicPort {
-            get { return (int) Parameters[nameof(PublicPort).ToLower()]; }
-            set { Parameters[nameof(PublicPort).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(PublicPort).ToLower()); }
+            set { SetParameterValue(nameof(PublicPort).ToLower(), value); }
         }
 
         /// <summary>
         /// the account associated with the load balancer. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
@@ -55,71 +55,71 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
-            set { Parameters[nameof(Cidrlist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Cidrlist).ToLower(), value); }
         }
 
         /// <summary>
         /// the description of the load balancer rule
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// the domain ID associated with the load balancer
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// The guest network this rule will be created for. Required when public Ip address is not associated with any Guest network yet (VPC case)
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// if true, firewall rule for source/end public port is automatically created; if false - firewall rule has to be created explicitely. If not specified 1) defaulted to false when LB rule is being created for VPC guest network 2) in all other cases defaulted to true
         /// </summary>
         public bool? OpenFirewall {
-            get { return (bool?) Parameters[nameof(OpenFirewall).ToLower()]; }
-            set { Parameters[nameof(OpenFirewall).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(OpenFirewall).ToLower()); }
+            set { SetParameterValue(nameof(OpenFirewall).ToLower(), value); }
         }
 
         /// <summary>
         /// The protocol for the LB
         /// </summary>
         public string Protocol {
-            get { return (string) Parameters[nameof(Protocol).ToLower()]; }
-            set { Parameters[nameof(Protocol).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Protocol).ToLower()); }
+            set { SetParameterValue(nameof(Protocol).ToLower(), value); }
         }
 
         /// <summary>
         /// public IP address ID from where the network traffic will be load balanced from
         /// </summary>
         public Guid PublicIpId {
-            get { return (Guid) Parameters[nameof(PublicIpId).ToLower()]; }
-            set { Parameters[nameof(PublicIpId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PublicIpId).ToLower()); }
+            set { SetParameterValue(nameof(PublicIpId).ToLower(), value); }
         }
 
         /// <summary>
         /// zone where the load balancer is going to be created. This parameter is required when LB service provider is ElasticLoadBalancerVm
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

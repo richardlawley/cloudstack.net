@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// the name for the storage pool
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the URL of the storage pool
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the storage pool
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// bytes CloudStack can provision from this storage pool
         /// </summary>
         public long? CapacityBytes {
-            get { return (long?) Parameters[nameof(CapacityBytes).ToLower()]; }
-            set { Parameters[nameof(CapacityBytes).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(CapacityBytes).ToLower()); }
+            set { SetParameterValue(nameof(CapacityBytes).ToLower(), value); }
         }
 
         /// <summary>
         /// IOPS CloudStack can provision from this storage pool
         /// </summary>
         public long? CapacityIops {
-            get { return (long?) Parameters[nameof(CapacityIops).ToLower()]; }
-            set { Parameters[nameof(CapacityIops).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(CapacityIops).ToLower()); }
+            set { SetParameterValue(nameof(CapacityIops).ToLower(), value); }
         }
 
         /// <summary>
         /// the cluster ID for the storage pool
         /// </summary>
         public Guid ClusterId {
-            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
-            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+            set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,55 +63,55 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
-            set { Parameters[nameof(Details).ToLower()] = value; }
+            set { SetParameterValue(nameof(Details).ToLower(), value); }
         }
 
         /// <summary>
         /// hypervisor type of the hosts in zone that will be attached to this storage pool. KVM, VMware supported as of now.
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// whether the storage should be managed by CloudStack
         /// </summary>
         public bool? Managed {
-            get { return (bool?) Parameters[nameof(Managed).ToLower()]; }
-            set { Parameters[nameof(Managed).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Managed).ToLower()); }
+            set { SetParameterValue(nameof(Managed).ToLower(), value); }
         }
 
         /// <summary>
         /// the Pod ID for the storage pool
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// the storage provider name
         /// </summary>
         public string Provider {
-            get { return (string) Parameters[nameof(Provider).ToLower()]; }
-            set { Parameters[nameof(Provider).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Provider).ToLower()); }
+            set { SetParameterValue(nameof(Provider).ToLower(), value); }
         }
 
         /// <summary>
         /// the scope of the storage: cluster or zone
         /// </summary>
         public string Scope {
-            get { return (string) Parameters[nameof(Scope).ToLower()]; }
-            set { Parameters[nameof(Scope).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Scope).ToLower()); }
+            set { SetParameterValue(nameof(Scope).ToLower(), value); }
         }
 
         /// <summary>
         /// the tags for the storage pool
         /// </summary>
         public string Tags {
-            get { return (string) Parameters[nameof(Tags).ToLower()]; }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Tags).ToLower()); }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
     }

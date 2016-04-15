@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// The ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Affinitygroupids {
             get { return GetList<Guid>(nameof(Affinitygroupids).ToLower()); }
-            set { Parameters[nameof(Affinitygroupids).ToLower()] = value; }
+            set { SetParameterValue(nameof(Affinitygroupids).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Affinitygroupnames {
             get { return GetList<string>(nameof(Affinitygroupnames).ToLower()); }
-            set { Parameters[nameof(Affinitygroupnames).ToLower()] = value; }
+            set { SetParameterValue(nameof(Affinitygroupnames).ToLower(), value); }
         }
 
     }

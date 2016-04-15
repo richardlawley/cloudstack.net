@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// Hostname of ip address of the BigSwitch BCF Controller.
         /// </summary>
         public string Hostname {
-            get { return (string) Parameters[nameof(Hostname).ToLower()]; }
-            set { Parameters[nameof(Hostname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hostname).ToLower()); }
+            set { SetParameterValue(nameof(Hostname).ToLower(), value); }
         }
 
         /// <summary>
         /// NAT support of the BigSwitch BCF Controller.
         /// </summary>
         public bool Nat {
-            get { return (bool) Parameters[nameof(Nat).ToLower()]; }
-            set { Parameters[nameof(Nat).ToLower()] = value; }
+            get { return GetParameterValue<bool>(nameof(Nat).ToLower()); }
+            set { SetParameterValue(nameof(Nat).ToLower(), value); }
         }
 
         /// <summary>
         /// Password of the BigSwitch BCF Controller.
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Username of the BigSwitch BCF Controller.
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
     }

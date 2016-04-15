@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// hypervisor type of the host
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// the password for the host
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the Pod ID for the host
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// the host URL
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// the username for the host
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the host
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// Allocation state of this Host for allocation of new resources
         /// </summary>
         public string AllocationState {
-            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
-            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AllocationState).ToLower()); }
+            set { SetParameterValue(nameof(AllocationState).ToLower(), value); }
         }
 
         /// <summary>
         /// the cluster ID for the host
         /// </summary>
         public Guid ClusterId {
-            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
-            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+            set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// the cluster name for the host
         /// </summary>
         public string ClusterName {
-            get { return (string) Parameters[nameof(ClusterName).ToLower()]; }
-            set { Parameters[nameof(ClusterName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ClusterName).ToLower()); }
+            set { SetParameterValue(nameof(ClusterName).ToLower(), value); }
         }
 
         /// <summary>
@@ -87,15 +87,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> HostTags {
             get { return GetList<string>(nameof(HostTags).ToLower()); }
-            set { Parameters[nameof(HostTags).ToLower()] = value; }
+            set { SetParameterValue(nameof(HostTags).ToLower(), value); }
         }
 
         /// <summary>
         /// ip address intentionally allocated to this host after provisioning
         /// </summary>
         public string Ipaddress {
-            get { return (string) Parameters[nameof(Ipaddress).ToLower()]; }
-            set { Parameters[nameof(Ipaddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ipaddress).ToLower()); }
+            set { SetParameterValue(nameof(Ipaddress).ToLower(), value); }
         }
 
     }

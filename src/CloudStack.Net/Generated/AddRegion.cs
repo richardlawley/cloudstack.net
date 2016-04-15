@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// Id of the Region
         /// </summary>
         public int Id {
-            get { return (int) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Region service endpoint
         /// </summary>
         public string EndPoint {
-            get { return (string) Parameters[nameof(EndPoint).ToLower()]; }
-            set { Parameters[nameof(EndPoint).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(EndPoint).ToLower()); }
+            set { SetParameterValue(nameof(EndPoint).ToLower(), value); }
         }
 
         /// <summary>
         /// Name of the region
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
     }

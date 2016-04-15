@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the ID of the load balancer rule
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// true if listing all virtual machines currently applied to the load balancer rule; default is true
         /// </summary>
         public bool? Applied {
-            get { return (bool?) Parameters[nameof(Applied).ToLower()]; }
-            set { Parameters[nameof(Applied).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Applied).ToLower()); }
+            set { SetParameterValue(nameof(Applied).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// true if load balancer rule VM IP information to be included; default is false
         /// </summary>
         public bool? Lbvmips {
-            get { return (bool?) Parameters[nameof(Lbvmips).ToLower()]; }
-            set { Parameters[nameof(Lbvmips).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Lbvmips).ToLower()); }
+            set { SetParameterValue(nameof(Lbvmips).ToLower(), value); }
         }
 
     }

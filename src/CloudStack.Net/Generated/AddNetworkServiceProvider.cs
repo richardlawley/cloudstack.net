@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the name for the physical network service provider
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID to add the provider to
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the destination Physical Network ID to bridge to
         /// </summary>
         public Guid DestinationPhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(DestinationPhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(DestinationPhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DestinationPhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(DestinationPhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Servicelist {
             get { return GetList<string>(nameof(Servicelist).ToLower()); }
-            set { Parameters[nameof(Servicelist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Servicelist).ToLower(), value); }
         }
 
     }

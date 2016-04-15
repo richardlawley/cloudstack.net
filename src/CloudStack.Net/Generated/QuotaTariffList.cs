@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// The effective start date on/after which the quota tariff is effective and older tariffs are no longer used for the usage type. Use yyyy-MM-dd as the date format, e.g. startDate=2009-06-03.
         /// </summary>
         public DateTime? Startdate {
-            get { return (DateTime?) Parameters[nameof(Startdate).ToLower()]; }
-            set { Parameters[nameof(Startdate).ToLower()] = value; }
+            get { return GetParameterValue<DateTime?>(nameof(Startdate).ToLower()); }
+            set { SetParameterValue(nameof(Startdate).ToLower(), value); }
         }
 
         /// <summary>
         /// Usage type of the resource
         /// </summary>
         public int? UsageType {
-            get { return (int?) Parameters[nameof(UsageType).ToLower()]; }
-            set { Parameters[nameof(UsageType).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(UsageType).ToLower()); }
+            set { SetParameterValue(nameof(UsageType).ToLower(), value); }
         }
 
     }

@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// The ID of the vm
         /// </summary>
         public Guid Virtualmachineid {
-            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
-            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+            set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 
         /// <summary>
         /// The description of the snapshot
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// The display name of the snapshot
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// quiesce vm if true
         /// </summary>
         public bool? Quiescevm {
-            get { return (bool?) Parameters[nameof(Quiescevm).ToLower()]; }
-            set { Parameters[nameof(Quiescevm).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Quiescevm).ToLower()); }
+            set { SetParameterValue(nameof(Quiescevm).ToLower(), value); }
         }
 
         /// <summary>
         /// snapshot memory if true
         /// </summary>
         public bool? SnapshotMemory {
-            get { return (bool?) Parameters[nameof(SnapshotMemory).ToLower()]; }
-            set { Parameters[nameof(SnapshotMemory).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SnapshotMemory).ToLower()); }
+            set { SetParameterValue(nameof(SnapshotMemory).ToLower(), value); }
         }
 
     }

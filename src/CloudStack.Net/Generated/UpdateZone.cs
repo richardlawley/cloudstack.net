@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of the Zone
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Allocation state of this cluster for allocation of new resources
         /// </summary>
         public string AllocationState {
-            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
-            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AllocationState).ToLower()); }
+            set { SetParameterValue(nameof(AllocationState).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,31 +31,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
-            set { Parameters[nameof(Details).ToLower()] = value; }
+            set { SetParameterValue(nameof(Details).ToLower(), value); }
         }
 
         /// <summary>
         /// the dhcp Provider for the Zone
         /// </summary>
         public string DhcpProvider {
-            get { return (string) Parameters[nameof(DhcpProvider).ToLower()]; }
-            set { Parameters[nameof(DhcpProvider).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DhcpProvider).ToLower()); }
+            set { SetParameterValue(nameof(DhcpProvider).ToLower(), value); }
         }
 
         /// <summary>
         /// the first DNS for the Zone
         /// </summary>
         public string Dns1 {
-            get { return (string) Parameters[nameof(Dns1).ToLower()]; }
-            set { Parameters[nameof(Dns1).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Dns1).ToLower()); }
+            set { SetParameterValue(nameof(Dns1).ToLower(), value); }
         }
 
         /// <summary>
         /// the second DNS for the Zone
         /// </summary>
         public string Dns2 {
-            get { return (string) Parameters[nameof(Dns2).ToLower()]; }
-            set { Parameters[nameof(Dns2).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Dns2).ToLower()); }
+            set { SetParameterValue(nameof(Dns2).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,79 +63,79 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> DnsSearchOrder {
             get { return GetList<string>(nameof(DnsSearchOrder).ToLower()); }
-            set { Parameters[nameof(DnsSearchOrder).ToLower()] = value; }
+            set { SetParameterValue(nameof(DnsSearchOrder).ToLower(), value); }
         }
 
         /// <summary>
         /// Network domain name for the networks in the zone; empty string will update domain with NULL value
         /// </summary>
         public string Domain {
-            get { return (string) Parameters[nameof(Domain).ToLower()]; }
-            set { Parameters[nameof(Domain).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Domain).ToLower()); }
+            set { SetParameterValue(nameof(Domain).ToLower(), value); }
         }
 
         /// <summary>
         /// the guest CIDR address for the Zone
         /// </summary>
         public string GuestCidrAddress {
-            get { return (string) Parameters[nameof(GuestCidrAddress).ToLower()]; }
-            set { Parameters[nameof(GuestCidrAddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(GuestCidrAddress).ToLower()); }
+            set { SetParameterValue(nameof(GuestCidrAddress).ToLower(), value); }
         }
 
         /// <summary>
         /// the first internal DNS for the Zone
         /// </summary>
         public string InternalDns1 {
-            get { return (string) Parameters[nameof(InternalDns1).ToLower()]; }
-            set { Parameters[nameof(InternalDns1).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(InternalDns1).ToLower()); }
+            set { SetParameterValue(nameof(InternalDns1).ToLower(), value); }
         }
 
         /// <summary>
         /// the second internal DNS for the Zone
         /// </summary>
         public string InternalDns2 {
-            get { return (string) Parameters[nameof(InternalDns2).ToLower()]; }
-            set { Parameters[nameof(InternalDns2).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(InternalDns2).ToLower()); }
+            set { SetParameterValue(nameof(InternalDns2).ToLower(), value); }
         }
 
         /// <summary>
         /// the first DNS for IPv6 network in the Zone
         /// </summary>
         public string Ip6Dns1 {
-            get { return (string) Parameters[nameof(Ip6Dns1).ToLower()]; }
-            set { Parameters[nameof(Ip6Dns1).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ip6Dns1).ToLower()); }
+            set { SetParameterValue(nameof(Ip6Dns1).ToLower(), value); }
         }
 
         /// <summary>
         /// the second DNS for IPv6 network in the Zone
         /// </summary>
         public string Ip6Dns2 {
-            get { return (string) Parameters[nameof(Ip6Dns2).ToLower()]; }
-            set { Parameters[nameof(Ip6Dns2).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ip6Dns2).ToLower()); }
+            set { SetParameterValue(nameof(Ip6Dns2).ToLower(), value); }
         }
 
         /// <summary>
         /// updates a private zone to public if set, but not vice-versa
         /// </summary>
         public bool? IsPublic {
-            get { return (bool?) Parameters[nameof(IsPublic).ToLower()]; }
-            set { Parameters[nameof(IsPublic).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsPublic).ToLower()); }
+            set { SetParameterValue(nameof(IsPublic).ToLower(), value); }
         }
 
         /// <summary>
         /// true if local storage offering enabled, false otherwise
         /// </summary>
         public bool? LocalStorageEnabled {
-            get { return (bool?) Parameters[nameof(LocalStorageEnabled).ToLower()]; }
-            set { Parameters[nameof(LocalStorageEnabled).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(LocalStorageEnabled).ToLower()); }
+            set { SetParameterValue(nameof(LocalStorageEnabled).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the Zone
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
     }

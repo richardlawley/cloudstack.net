@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// aggregate name.
         /// </summary>
         public string Aggregatename {
-            get { return (string) Parameters[nameof(Aggregatename).ToLower()]; }
-            set { Parameters[nameof(Aggregatename).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Aggregatename).ToLower()); }
+            set { SetParameterValue(nameof(Aggregatename).ToLower(), value); }
         }
 
         /// <summary>
         /// ip address.
         /// </summary>
         public string Ipaddress {
-            get { return (string) Parameters[nameof(Ipaddress).ToLower()]; }
-            set { Parameters[nameof(Ipaddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ipaddress).ToLower()); }
+            set { SetParameterValue(nameof(Ipaddress).ToLower(), value); }
         }
 
         /// <summary>
         /// volume name.
         /// </summary>
         public string VolumeName {
-            get { return (string) Parameters[nameof(VolumeName).ToLower()]; }
-            set { Parameters[nameof(VolumeName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(VolumeName).ToLower()); }
+            set { SetParameterValue(nameof(VolumeName).ToLower(), value); }
         }
 
     }

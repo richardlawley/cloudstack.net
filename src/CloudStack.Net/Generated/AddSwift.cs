@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the URL for swift
         /// </summary>
         public string Url {
-            get { return (string) Parameters[nameof(Url).ToLower()]; }
-            set { Parameters[nameof(Url).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Url).ToLower()); }
+            set { SetParameterValue(nameof(Url).ToLower(), value); }
         }
 
         /// <summary>
         /// the account for swift
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         ///  key for the user for swift
         /// </summary>
         public string Key {
-            get { return (string) Parameters[nameof(Key).ToLower()]; }
-            set { Parameters[nameof(Key).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Key).ToLower()); }
+            set { SetParameterValue(nameof(Key).ToLower(), value); }
         }
 
         /// <summary>
         /// the username for swift
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
     }

@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// Name of the account that is to be marked.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// Marks the account that belongs to the specified domain.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// The Zone ID with which the account is to be marked.
         /// </summary>
         public Guid Zoneid {
-            get { return (Guid) Parameters[nameof(Zoneid).ToLower()]; }
-            set { Parameters[nameof(Zoneid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Zoneid).ToLower()); }
+            set { SetParameterValue(nameof(Zoneid).ToLower(), value); }
         }
 
     }

@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// the new password for the host/cluster
         /// </summary>
         public string Password {
-            get { return (string) Parameters[nameof(Password).ToLower()]; }
-            set { Parameters[nameof(Password).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Password).ToLower()); }
+            set { SetParameterValue(nameof(Password).ToLower(), value); }
         }
 
         /// <summary>
         /// the username for the host/cluster
         /// </summary>
         public string Username {
-            get { return (string) Parameters[nameof(Username).ToLower()]; }
-            set { Parameters[nameof(Username).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Username).ToLower()); }
+            set { SetParameterValue(nameof(Username).ToLower(), value); }
         }
 
         /// <summary>
         /// the cluster ID
         /// </summary>
         public Guid ClusterId {
-            get { return (Guid) Parameters[nameof(ClusterId).ToLower()]; }
-            set { Parameters[nameof(ClusterId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+            set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// the host ID
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
         /// <summary>
         /// if the password should also be updated on the hosts
         /// </summary>
         public bool? Update_passwd_on_host {
-            get { return (bool?) Parameters[nameof(Update_passwd_on_host).ToLower()]; }
-            set { Parameters[nameof(Update_passwd_on_host).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Update_passwd_on_host).ToLower()); }
+            set { SetParameterValue(nameof(Update_passwd_on_host).ToLower(), value); }
         }
 
     }

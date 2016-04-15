@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the id of the VPC
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// If cleanup old network elements
         /// </summary>
         public bool? Cleanup {
-            get { return (bool?) Parameters[nameof(Cleanup).ToLower()]; }
-            set { Parameters[nameof(Cleanup).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Cleanup).ToLower()); }
+            set { SetParameterValue(nameof(Cleanup).ToLower(), value); }
         }
 
         /// <summary>
         /// Turn a single VPC into a redundant one.
         /// </summary>
         public bool? Makeredundant {
-            get { return (bool?) Parameters[nameof(Makeredundant).ToLower()]; }
-            set { Parameters[nameof(Makeredundant).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Makeredundant).ToLower()); }
+            set { SetParameterValue(nameof(Makeredundant).ToLower(), value); }
         }
 
     }

@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// the ending IP address in the portable IP range
         /// </summary>
         public string EndIp {
-            get { return (string) Parameters[nameof(EndIp).ToLower()]; }
-            set { Parameters[nameof(EndIp).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(EndIp).ToLower()); }
+            set { SetParameterValue(nameof(EndIp).ToLower(), value); }
         }
 
         /// <summary>
         /// the gateway for the portable IP range
         /// </summary>
         public string Gateway {
-            get { return (string) Parameters[nameof(Gateway).ToLower()]; }
-            set { Parameters[nameof(Gateway).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Gateway).ToLower()); }
+            set { SetParameterValue(nameof(Gateway).ToLower(), value); }
         }
 
         /// <summary>
         /// the netmask of the portable IP range
         /// </summary>
         public string Netmask {
-            get { return (string) Parameters[nameof(Netmask).ToLower()]; }
-            set { Parameters[nameof(Netmask).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Netmask).ToLower()); }
+            set { SetParameterValue(nameof(Netmask).ToLower(), value); }
         }
 
         /// <summary>
         /// Id of the Region
         /// </summary>
         public int RegionId {
-            get { return (int) Parameters[nameof(RegionId).ToLower()]; }
-            set { Parameters[nameof(RegionId).ToLower()] = value; }
+            get { return GetParameterValue<int>(nameof(RegionId).ToLower()); }
+            set { SetParameterValue(nameof(RegionId).ToLower(), value); }
         }
 
         /// <summary>
         /// the beginning IP address in the portable IP range
         /// </summary>
         public string StartIp {
-            get { return (string) Parameters[nameof(StartIp).ToLower()]; }
-            set { Parameters[nameof(StartIp).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(StartIp).ToLower()); }
+            set { SetParameterValue(nameof(StartIp).ToLower(), value); }
         }
 
         /// <summary>
         /// VLAN id, if not specified defaulted to untagged
         /// </summary>
         public string Vlan {
-            get { return (string) Parameters[nameof(Vlan).ToLower()]; }
-            set { Parameters[nameof(Vlan).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vlan).ToLower()); }
+            set { SetParameterValue(nameof(Vlan).ToLower(), value); }
         }
 
     }

@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// Optional. The network traffic type, if specified, return its implementor. Otherwise, return all traffic types with their implementor
         /// </summary>
         public string TrafficType {
-            get { return (string) Parameters[nameof(TrafficType).ToLower()]; }
-            set { Parameters[nameof(TrafficType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TrafficType).ToLower()); }
+            set { SetParameterValue(nameof(TrafficType).ToLower(), value); }
         }
 
     }

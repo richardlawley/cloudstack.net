@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the ID of the global load balancer rule
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Loadbalancerrulelist {
             get { return GetList<Guid>(nameof(Loadbalancerrulelist).ToLower()); }
-            set { Parameters[nameof(Loadbalancerrulelist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Loadbalancerrulelist).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Gslblbruleweightsmap {
             get { return GetList<IDictionary<string, object>>(nameof(Gslblbruleweightsmap).ToLower()); }
-            set { Parameters[nameof(Gslblbruleweightsmap).ToLower()] = value; }
+            set { SetParameterValue(nameof(Gslblbruleweightsmap).ToLower(), value); }
         }
 
     }

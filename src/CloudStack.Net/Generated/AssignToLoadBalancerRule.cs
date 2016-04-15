@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the ID of the load balancer rule
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> VirtualMachineIds {
             get { return GetList<Guid>(nameof(VirtualMachineIds).ToLower()); }
-            set { Parameters[nameof(VirtualMachineIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(VirtualMachineIds).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> VmIdIpMap {
             get { return GetList<IDictionary<string, object>>(nameof(VmIdIpMap).ToLower()); }
-            set { Parameters[nameof(VmIdIpMap).ToLower()] = value; }
+            set { SetParameterValue(nameof(VmIdIpMap).ToLower(), value); }
         }
 
     }

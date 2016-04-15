@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// id of lb stickiness policy
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
         public string CustomId {
-            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
-            set { Parameters[nameof(CustomId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(CustomId).ToLower()); }
+            set { SetParameterValue(nameof(CustomId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the policy to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
     }

@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Brocade Switch ID
         /// </summary>
         public Guid Vcsdeviceid {
-            get { return (Guid) Parameters[nameof(Vcsdeviceid).ToLower()]; }
-            set { Parameters[nameof(Vcsdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Vcsdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Vcsdeviceid).ToLower(), value); }
         }
 
     }

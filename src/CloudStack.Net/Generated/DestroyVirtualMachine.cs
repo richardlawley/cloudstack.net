@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// The ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// If true is passed, the vm is expunged immediately. False by default.
         /// </summary>
         public bool? Expunge {
-            get { return (bool?) Parameters[nameof(Expunge).ToLower()]; }
-            set { Parameters[nameof(Expunge).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Expunge).ToLower()); }
+            set { SetParameterValue(nameof(Expunge).ToLower(), value); }
         }
 
     }

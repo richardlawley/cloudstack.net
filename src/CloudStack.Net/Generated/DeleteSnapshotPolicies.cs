@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the Id of the snapshot policy
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Ids {
             get { return GetList<Guid>(nameof(Ids).ToLower()); }
-            set { Parameters[nameof(Ids).ToLower()] = value; }
+            set { SetParameterValue(nameof(Ids).ToLower(), value); }
         }
 
     }

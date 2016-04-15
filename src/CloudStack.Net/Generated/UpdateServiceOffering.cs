@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the ID of the service offering to be updated
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the display text of the service offering to be updated
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the service offering to be updated
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// sort key of the service offering, integer
         /// </summary>
         public int? SortKey {
-            get { return (int?) Parameters[nameof(SortKey).ToLower()]; }
-            set { Parameters[nameof(SortKey).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(SortKey).ToLower()); }
+            set { SetParameterValue(nameof(SortKey).ToLower(), value); }
         }
 
     }

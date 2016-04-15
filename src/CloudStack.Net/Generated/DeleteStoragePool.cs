@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// Storage pool id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Force destroy storage pool (force expunge volumes in Destroyed state as a part of pool removal)
         /// </summary>
         public bool? Forced {
-            get { return (bool?) Parameters[nameof(Forced).ToLower()]; }
-            set { Parameters[nameof(Forced).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Forced).ToLower()); }
+            set { SetParameterValue(nameof(Forced).ToLower(), value); }
         }
 
     }

@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Hostname
         /// </summary>
         public string Hostname {
-            get { return (string) Parameters[nameof(Hostname).ToLower()]; }
-            set { Parameters[nameof(Hostname).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hostname).ToLower()); }
+            set { SetParameterValue(nameof(Hostname).ToLower(), value); }
         }
 
     }

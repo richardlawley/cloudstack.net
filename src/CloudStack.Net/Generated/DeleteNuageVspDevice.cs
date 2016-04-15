@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Nuage device ID
         /// </summary>
         public Guid Vspdeviceid {
-            get { return (Guid) Parameters[nameof(Vspdeviceid).ToLower()]; }
-            set { Parameters[nameof(Vspdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Vspdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Vspdeviceid).ToLower(), value); }
         }
 
     }

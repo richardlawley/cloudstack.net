@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the template ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,39 +23,39 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Accounts {
             get { return GetList<string>(nameof(Accounts).ToLower()); }
-            set { Parameters[nameof(Accounts).ToLower()] = value; }
+            set { SetParameterValue(nameof(Accounts).ToLower(), value); }
         }
 
         /// <summary>
         /// true if the template/iso is extractable, false other wise. Can be set only by root admin
         /// </summary>
         public bool? IsExtractable {
-            get { return (bool?) Parameters[nameof(IsExtractable).ToLower()]; }
-            set { Parameters[nameof(IsExtractable).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsExtractable).ToLower()); }
+            set { SetParameterValue(nameof(IsExtractable).ToLower(), value); }
         }
 
         /// <summary>
         /// true for featured template/iso, false otherwise
         /// </summary>
         public bool? Isfeatured {
-            get { return (bool?) Parameters[nameof(Isfeatured).ToLower()]; }
-            set { Parameters[nameof(Isfeatured).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isfeatured).ToLower()); }
+            set { SetParameterValue(nameof(Isfeatured).ToLower(), value); }
         }
 
         /// <summary>
         /// true for public template/iso, false for private templates/isos
         /// </summary>
         public bool? IsPublic {
-            get { return (bool?) Parameters[nameof(IsPublic).ToLower()]; }
-            set { Parameters[nameof(IsPublic).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsPublic).ToLower()); }
+            set { SetParameterValue(nameof(IsPublic).ToLower(), value); }
         }
 
         /// <summary>
         /// permission operator (add, remove, reset)
         /// </summary>
         public string Op {
-            get { return (string) Parameters[nameof(Op).ToLower()]; }
-            set { Parameters[nameof(Op).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Op).ToLower()); }
+            set { SetParameterValue(nameof(Op).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> ProjectIds {
             get { return GetList<Guid>(nameof(ProjectIds).ToLower()); }
-            set { Parameters[nameof(ProjectIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(ProjectIds).ToLower(), value); }
         }
 
     }

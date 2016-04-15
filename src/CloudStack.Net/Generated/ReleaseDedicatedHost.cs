@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the ID of the host
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
     }

@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// Template ID.
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// ID of the zone the template is being copied to.
         /// </summary>
         public Guid DestZoneId {
-            get { return (Guid) Parameters[nameof(DestZoneId).ToLower()]; }
-            set { Parameters[nameof(DestZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DestZoneId).ToLower()); }
+            set { SetParameterValue(nameof(DestZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// ID of the zone the template is currently hosted on. If not specified and template is cross-zone, then we will sync this template to region wide image store.
         /// </summary>
         public Guid SourceZoneId {
-            get { return (Guid) Parameters[nameof(SourceZoneId).ToLower()]; }
-            set { Parameters[nameof(SourceZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(SourceZoneId).ToLower()); }
+            set { SetParameterValue(nameof(SourceZoneId).ToLower(), value); }
         }
 
     }

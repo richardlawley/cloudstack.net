@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// list VPC offerings by display text
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// list VPC offerings by id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// true if need to list only default VPC offerings. Default value is false
         /// </summary>
         public bool? IsDefault {
-            get { return (bool?) Parameters[nameof(IsDefault).ToLower()]; }
-            set { Parameters[nameof(IsDefault).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsDefault).ToLower()); }
+            set { SetParameterValue(nameof(IsDefault).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list VPC offerings by name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// list VPC offerings by state
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> SupportedServices {
             get { return GetList<string>(nameof(SupportedServices).ToLower()); }
-            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+            set { SetParameterValue(nameof(SupportedServices).ToLower(), value); }
         }
 
     }

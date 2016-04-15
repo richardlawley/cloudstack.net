@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// public ip address id of the vpn server
         /// </summary>
         public Guid PublicIpId {
-            get { return (Guid) Parameters[nameof(PublicIpId).ToLower()]; }
-            set { Parameters[nameof(PublicIpId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PublicIpId).ToLower()); }
+            set { SetParameterValue(nameof(PublicIpId).ToLower(), value); }
         }
 
     }

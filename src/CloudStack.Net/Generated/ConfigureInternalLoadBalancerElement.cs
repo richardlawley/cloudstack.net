@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of the internal lb provider
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Enables/Disables the Internal Load Balancer element
         /// </summary>
         public bool Enabled {
-            get { return (bool) Parameters[nameof(Enabled).ToLower()]; }
-            set { Parameters[nameof(Enabled).ToLower()] = value; }
+            get { return GetParameterValue<bool>(nameof(Enabled).ToLower()); }
+            set { SetParameterValue(nameof(Enabled).ToLower(), value); }
         }
 
     }

@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// pool name.
         /// </summary>
         public string PoolName {
-            get { return (string) Parameters[nameof(PoolName).ToLower()]; }
-            set { Parameters[nameof(PoolName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(PoolName).ToLower()); }
+            set { SetParameterValue(nameof(PoolName).ToLower(), value); }
         }
 
     }

@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// CloudStack Account UUID
         /// </summary>
         public string Accountid {
-            get { return (string) Parameters[nameof(Accountid).ToLower()]; }
-            set { Parameters[nameof(Accountid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Accountid).ToLower()); }
+            set { SetParameterValue(nameof(Accountid).ToLower(), value); }
         }
 
         /// <summary>
         /// Storage Pool UUID
         /// </summary>
         public string Storageid {
-            get { return (string) Parameters[nameof(Storageid).ToLower()]; }
-            set { Parameters[nameof(Storageid).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Storageid).ToLower()); }
+            set { SetParameterValue(nameof(Storageid).ToLower(), value); }
         }
 
     }

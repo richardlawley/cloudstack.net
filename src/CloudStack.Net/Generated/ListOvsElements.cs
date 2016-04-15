@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// list network offerings by enabled state
         /// </summary>
         public bool? Enabled {
-            get { return (bool?) Parameters[nameof(Enabled).ToLower()]; }
-            set { Parameters[nameof(Enabled).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Enabled).ToLower()); }
+            set { SetParameterValue(nameof(Enabled).ToLower(), value); }
         }
 
         /// <summary>
         /// list ovs elements by id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list ovs elements by network service provider id
         /// </summary>
         public Guid NspId {
-            get { return (Guid) Parameters[nameof(NspId).ToLower()]; }
-            set { Parameters[nameof(NspId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NspId).ToLower()); }
+            set { SetParameterValue(nameof(NspId).ToLower(), value); }
         }
 
     }

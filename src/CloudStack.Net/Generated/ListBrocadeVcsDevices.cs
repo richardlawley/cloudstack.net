@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Brocade VCS switch ID
         /// </summary>
         public Guid Vcsdeviceid {
-            get { return (Guid) Parameters[nameof(Vcsdeviceid).ToLower()]; }
-            set { Parameters[nameof(Vcsdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Vcsdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Vcsdeviceid).ToLower(), value); }
         }
 
     }

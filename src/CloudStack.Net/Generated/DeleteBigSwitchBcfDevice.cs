@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// BigSwitch device ID
         /// </summary>
         public Guid Bcfdeviceid {
-            get { return (Guid) Parameters[nameof(Bcfdeviceid).ToLower()]; }
-            set { Parameters[nameof(Bcfdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Bcfdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Bcfdeviceid).ToLower(), value); }
         }
 
     }

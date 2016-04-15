@@ -14,112 +14,112 @@ namespace CloudStack.Net
         /// list resources by account. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// true if the ISO is bootable, false otherwise
         /// </summary>
         public bool? Bootable {
-            get { return (bool?) Parameters[nameof(Bootable).ToLower()]; }
-            set { Parameters[nameof(Bootable).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Bootable).ToLower()); }
+            set { SetParameterValue(nameof(Bootable).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// the hypervisor for which to restrict the search
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// list ISO by ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// possible values are "featured", "self", "selfexecutable","sharedexecutable","executable", and "community". * featured : templates that have been marked as featured and public. * self : templates that have been registered or created by the calling user. * selfexecutable : same as self, but only returns templates that can be used to deploy a new VM. * sharedexecutable : templates ready to be deployed that have been granted to the calling user by another user. * executable : templates that are owned by the calling user, or public templates, that can be used to deploy a VM. * community : templates that have been marked as public but not featured. * all : all templates (only usable by admins).
         /// </summary>
         public string IsoFilter {
-            get { return (string) Parameters[nameof(IsoFilter).ToLower()]; }
-            set { Parameters[nameof(IsoFilter).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IsoFilter).ToLower()); }
+            set { SetParameterValue(nameof(IsoFilter).ToLower(), value); }
         }
 
         /// <summary>
         /// true if the ISO is publicly available to all users, false otherwise.
         /// </summary>
         public bool? Ispublic {
-            get { return (bool?) Parameters[nameof(Ispublic).ToLower()]; }
-            set { Parameters[nameof(Ispublic).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Ispublic).ToLower()); }
+            set { SetParameterValue(nameof(Ispublic).ToLower(), value); }
         }
 
         /// <summary>
         /// true if this ISO is ready to be deployed
         /// </summary>
         public bool? Isready {
-            get { return (bool?) Parameters[nameof(Isready).ToLower()]; }
-            set { Parameters[nameof(Isready).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isready).ToLower()); }
+            set { SetParameterValue(nameof(Isready).ToLower(), value); }
         }
 
         /// <summary>
         /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
         /// </summary>
         public bool? Isrecursive {
-            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
-            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isrecursive).ToLower()); }
+            set { SetParameterValue(nameof(Isrecursive).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
         /// <summary>
         /// list all ISOs by name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// show removed ISOs as well
         /// </summary>
         public bool? ShowRemoved {
-            get { return (bool?) Parameters[nameof(ShowRemoved).ToLower()]; }
-            set { Parameters[nameof(ShowRemoved).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ShowRemoved).ToLower()); }
+            set { SetParameterValue(nameof(ShowRemoved).ToLower(), value); }
         }
 
         /// <summary>
@@ -127,15 +127,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the zone
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// end date range to delete alerts (including) this date (use format "yyyy-MM-dd" or the new format "yyyy-MM-ddThh:mm:ss")
         /// </summary>
         public DateTime? EndDate {
-            get { return (DateTime?) Parameters[nameof(EndDate).ToLower()]; }
-            set { Parameters[nameof(EndDate).ToLower()] = value; }
+            get { return GetParameterValue<DateTime?>(nameof(EndDate).ToLower()); }
+            set { SetParameterValue(nameof(EndDate).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,23 +23,23 @@ namespace CloudStack.Net
         /// </summary>
         public IList<Guid> Ids {
             get { return GetList<Guid>(nameof(Ids).ToLower()); }
-            set { Parameters[nameof(Ids).ToLower()] = value; }
+            set { SetParameterValue(nameof(Ids).ToLower(), value); }
         }
 
         /// <summary>
         /// start date range to delete alerts (including) this date (use format "yyyy-MM-dd" or the new format "yyyy-MM-ddThh:mm:ss")
         /// </summary>
         public DateTime? StartDate {
-            get { return (DateTime?) Parameters[nameof(StartDate).ToLower()]; }
-            set { Parameters[nameof(StartDate).ToLower()] = value; }
+            get { return GetParameterValue<DateTime?>(nameof(StartDate).ToLower()); }
+            set { SetParameterValue(nameof(StartDate).ToLower(), value); }
         }
 
         /// <summary>
         /// delete by alert type
         /// </summary>
         public string Type {
-            get { return (string) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
     }

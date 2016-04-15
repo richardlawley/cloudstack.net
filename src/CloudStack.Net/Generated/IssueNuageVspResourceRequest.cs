@@ -14,64 +14,64 @@ namespace CloudStack.Net
         /// the Nuage VSP REST API method type
         /// </summary>
         public string Method {
-            get { return (string) Parameters[nameof(Method).ToLower()]; }
-            set { Parameters[nameof(Method).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Method).ToLower()); }
+            set { SetParameterValue(nameof(Method).ToLower(), value); }
         }
 
         /// <summary>
         /// the network offering id
         /// </summary>
         public Guid NetworkOfferingId {
-            get { return (Guid) Parameters[nameof(NetworkOfferingId).ToLower()]; }
-            set { Parameters[nameof(NetworkOfferingId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkOfferingId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkOfferingId).ToLower(), value); }
         }
 
         /// <summary>
         /// the resource in Nuage VSP
         /// </summary>
         public string Resource {
-            get { return (string) Parameters[nameof(Resource).ToLower()]; }
-            set { Parameters[nameof(Resource).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Resource).ToLower()); }
+            set { SetParameterValue(nameof(Resource).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the network
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
         /// <summary>
         /// the child resource in Nuage VSP
         /// </summary>
         public string ChildResource {
-            get { return (string) Parameters[nameof(ChildResource).ToLower()]; }
-            set { Parameters[nameof(ChildResource).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ChildResource).ToLower()); }
+            set { SetParameterValue(nameof(ChildResource).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the physical network in to which Nuage VSP Controller is added
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the resource filter in Nuage VSP
         /// </summary>
         public string ResourceFilter {
-            get { return (string) Parameters[nameof(ResourceFilter).ToLower()]; }
-            set { Parameters[nameof(ResourceFilter).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceFilter).ToLower()); }
+            set { SetParameterValue(nameof(ResourceFilter).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the resource in Nuage VSP
         /// </summary>
         public string ResourceId {
-            get { return (string) Parameters[nameof(ResourceId).ToLower()]; }
-            set { Parameters[nameof(ResourceId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceId).ToLower()); }
+            set { SetParameterValue(nameof(ResourceId).ToLower(), value); }
         }
 
     }

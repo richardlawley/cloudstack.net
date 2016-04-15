@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// The ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the ssh key pair used to login to the virtual machine
         /// </summary>
         public string Keypair {
-            get { return (string) Parameters[nameof(Keypair).ToLower()]; }
-            set { Parameters[nameof(Keypair).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keypair).ToLower()); }
+            set { SetParameterValue(nameof(Keypair).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional account for the ssh key. Must be used with domainId.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional domainId for the virtual machine. If the account parameter is used, domainId must also be used.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional project for the ssh key
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
     }

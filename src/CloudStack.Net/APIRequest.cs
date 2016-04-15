@@ -23,9 +23,16 @@ namespace CloudStack.Net
         }
 
         /// <summary>
+        /// Convenience property to return the API command.
+        /// </summary>
+        public string Command => (string)Parameters[nameof(Command).ToLower()];
+
+        /// <summary>
         /// Request parameters.
         /// </summary>
         public IDictionary<string, object> Parameters { get; }
+
+        public bool SupportsImpersonation { get; }
 
         protected IList<T> GetList<T>(string name)
         {
@@ -37,11 +44,19 @@ namespace CloudStack.Net
             return (IList<T>)Parameters[name];
         }
 
-        public bool SupportsImpersonation { get; }
+        protected T GetParameterValue<T>(string key)
+        {
+            if (!Parameters.ContainsKey(key))
+            {
+                return default(T);
+            }
 
-        /// <summary>
-        /// Convenience property to return the API command.
-        /// </summary>
-        public string Command => (string)Parameters[nameof(Command).ToLower()];
+            return (T)Parameters[key];
+        }
+
+        protected void SetParameterValue<T>(string key, T value)
+        {
+            Parameters[key] = value;
+        }
     }
 }

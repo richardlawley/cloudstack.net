@@ -14,72 +14,72 @@ namespace CloudStack.Net
         /// the account to associate with this IP address
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain to associate with this IP address
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the IP to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// should be set to true if public IP is required to be transferable across zones, if not specified defaults to false
         /// </summary>
         public bool? IsPortable {
-            get { return (bool?) Parameters[nameof(IsPortable).ToLower()]; }
-            set { Parameters[nameof(IsPortable).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsPortable).ToLower()); }
+            set { SetParameterValue(nameof(IsPortable).ToLower(), value); }
         }
 
         /// <summary>
         /// The network this IP address should be associated to.
         /// </summary>
         public Guid NetworkId {
-            get { return (Guid) Parameters[nameof(NetworkId).ToLower()]; }
-            set { Parameters[nameof(NetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+            set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Deploy VM for the project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// region ID from where portable IP is to be associated.
         /// </summary>
         public int? RegionId {
-            get { return (int?) Parameters[nameof(RegionId).ToLower()]; }
-            set { Parameters[nameof(RegionId).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(RegionId).ToLower()); }
+            set { SetParameterValue(nameof(RegionId).ToLower(), value); }
         }
 
         /// <summary>
         /// the VPC you want the IP address to be associated with
         /// </summary>
         public Guid VpcId {
-            get { return (Guid) Parameters[nameof(VpcId).ToLower()]; }
-            set { Parameters[nameof(VpcId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+            set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the availability zone you want to acquire an public IP address from
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

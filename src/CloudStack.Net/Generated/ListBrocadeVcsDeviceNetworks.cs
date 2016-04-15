@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// brocade vcs switch ID
         /// </summary>
         public Guid Vcsdeviceid {
-            get { return (Guid) Parameters[nameof(Vcsdeviceid).ToLower()]; }
-            set { Parameters[nameof(Vcsdeviceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Vcsdeviceid).ToLower()); }
+            set { SetParameterValue(nameof(Vcsdeviceid).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
     }

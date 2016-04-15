@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// The quota email template body, max: 500k characters
         /// </summary>
         public string TemplateBody {
-            get { return (string) Parameters[nameof(TemplateBody).ToLower()]; }
-            set { Parameters[nameof(TemplateBody).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TemplateBody).ToLower()); }
+            set { SetParameterValue(nameof(TemplateBody).ToLower(), value); }
         }
 
         /// <summary>
         /// The quota email template subject, max: 77 characters
         /// </summary>
         public string TemplateSubject {
-            get { return (string) Parameters[nameof(TemplateSubject).ToLower()]; }
-            set { Parameters[nameof(TemplateSubject).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(TemplateSubject).ToLower()); }
+            set { SetParameterValue(nameof(TemplateSubject).ToLower(), value); }
         }
 
         /// <summary>
         /// Type of the quota email template, allowed types: QUOTA_LOW, QUOTA_EMPTY
         /// </summary>
         public string Templatetype {
-            get { return (string) Parameters[nameof(Templatetype).ToLower()]; }
-            set { Parameters[nameof(Templatetype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Templatetype).ToLower()); }
+            set { SetParameterValue(nameof(Templatetype).ToLower(), value); }
         }
 
         /// <summary>
         /// The locale of the email text
         /// </summary>
         public string Locale {
-            get { return (string) Parameters[nameof(Locale).ToLower()]; }
-            set { Parameters[nameof(Locale).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Locale).ToLower()); }
+            set { SetParameterValue(nameof(Locale).ToLower(), value); }
         }
 
     }

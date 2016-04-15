@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// list os by description
         /// </summary>
         public string Description {
-            get { return (string) Parameters[nameof(Description).ToLower()]; }
-            set { Parameters[nameof(Description).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Description).ToLower()); }
+            set { SetParameterValue(nameof(Description).ToLower(), value); }
         }
 
         /// <summary>
         /// list by Os type Id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list by Os Category id
         /// </summary>
         public Guid OsCategoryId {
-            get { return (Guid) Parameters[nameof(OsCategoryId).ToLower()]; }
-            set { Parameters[nameof(OsCategoryId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(OsCategoryId).ToLower()); }
+            set { SetParameterValue(nameof(OsCategoryId).ToLower(), value); }
         }
 
     }

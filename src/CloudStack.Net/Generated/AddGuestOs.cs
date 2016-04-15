@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// ID of Guest OS category
         /// </summary>
         public Guid OsCategoryId {
-            get { return (Guid) Parameters[nameof(OsCategoryId).ToLower()]; }
-            set { Parameters[nameof(OsCategoryId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(OsCategoryId).ToLower()); }
+            set { SetParameterValue(nameof(OsCategoryId).ToLower(), value); }
         }
 
         /// <summary>
         /// Unique display name for Guest OS
         /// </summary>
         public string OsDisplayName {
-            get { return (string) Parameters[nameof(OsDisplayName).ToLower()]; }
-            set { Parameters[nameof(OsDisplayName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(OsDisplayName).ToLower()); }
+            set { SetParameterValue(nameof(OsDisplayName).ToLower(), value); }
         }
 
         /// <summary>
         /// Optional name for Guest OS
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
     }

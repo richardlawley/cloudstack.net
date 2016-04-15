@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// the display text of the network offering
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// guest type of the network offering: Shared or Isolated
         /// </summary>
         public string GuestIptype {
-            get { return (string) Parameters[nameof(GuestIptype).ToLower()]; }
-            set { Parameters[nameof(GuestIptype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(GuestIptype).ToLower()); }
+            set { SetParameterValue(nameof(GuestIptype).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the network offering
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,31 +39,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> SupportedServices {
             get { return GetList<string>(nameof(SupportedServices).ToLower()); }
-            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+            set { SetParameterValue(nameof(SupportedServices).ToLower(), value); }
         }
 
         /// <summary>
         /// the traffic type for the network offering. Supported type in current release is GUEST only
         /// </summary>
         public string Traffictype {
-            get { return (string) Parameters[nameof(Traffictype).ToLower()]; }
-            set { Parameters[nameof(Traffictype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Traffictype).ToLower()); }
+            set { SetParameterValue(nameof(Traffictype).ToLower(), value); }
         }
 
         /// <summary>
         /// the availability of network offering. Default value is Optional
         /// </summary>
         public string Availability {
-            get { return (string) Parameters[nameof(Availability).ToLower()]; }
-            set { Parameters[nameof(Availability).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Availability).ToLower()); }
+            set { SetParameterValue(nameof(Availability).ToLower(), value); }
         }
 
         /// <summary>
         /// true if the network offering is IP conserve mode enabled
         /// </summary>
         public bool? ConserveMode {
-            get { return (bool?) Parameters[nameof(ConserveMode).ToLower()]; }
-            set { Parameters[nameof(ConserveMode).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ConserveMode).ToLower()); }
+            set { SetParameterValue(nameof(ConserveMode).ToLower(), value); }
         }
 
         /// <summary>
@@ -71,47 +71,47 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Details {
             get { return GetList<IDictionary<string, object>>(nameof(Details).ToLower()); }
-            set { Parameters[nameof(Details).ToLower()] = value; }
+            set { SetParameterValue(nameof(Details).ToLower(), value); }
         }
 
         /// <summary>
         /// true if guest network default egress policy is allow; false if default egress policy is deny
         /// </summary>
         public bool? EgressDefaultPolicy {
-            get { return (bool?) Parameters[nameof(EgressDefaultPolicy).ToLower()]; }
-            set { Parameters[nameof(EgressDefaultPolicy).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(EgressDefaultPolicy).ToLower()); }
+            set { SetParameterValue(nameof(EgressDefaultPolicy).ToLower(), value); }
         }
 
         /// <summary>
         /// true if network offering supports persistent networks; defaulted to false if not specified
         /// </summary>
         public bool? IsPersistent {
-            get { return (bool?) Parameters[nameof(IsPersistent).ToLower()]; }
-            set { Parameters[nameof(IsPersistent).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(IsPersistent).ToLower()); }
+            set { SetParameterValue(nameof(IsPersistent).ToLower(), value); }
         }
 
         /// <summary>
         /// if true keepalive will be turned on in the loadbalancer. At the time of writing this has only an effect on haproxy; the mode http and httpclose options are unset in the haproxy conf file.
         /// </summary>
         public bool? KeepAliveEnabled {
-            get { return (bool?) Parameters[nameof(KeepAliveEnabled).ToLower()]; }
-            set { Parameters[nameof(KeepAliveEnabled).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(KeepAliveEnabled).ToLower()); }
+            set { SetParameterValue(nameof(KeepAliveEnabled).ToLower(), value); }
         }
 
         /// <summary>
         /// maximum number of concurrent connections supported by the network offering
         /// </summary>
         public int? MaxConnections {
-            get { return (int?) Parameters[nameof(MaxConnections).ToLower()]; }
-            set { Parameters[nameof(MaxConnections).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(MaxConnections).ToLower()); }
+            set { SetParameterValue(nameof(MaxConnections).ToLower(), value); }
         }
 
         /// <summary>
         /// data transfer rate in megabits per second allowed
         /// </summary>
         public int? NetworkRate {
-            get { return (int?) Parameters[nameof(NetworkRate).ToLower()]; }
-            set { Parameters[nameof(NetworkRate).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(NetworkRate).ToLower()); }
+            set { SetParameterValue(nameof(NetworkRate).ToLower(), value); }
         }
 
         /// <summary>
@@ -119,15 +119,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Servicecapabilitylist {
             get { return GetList<IDictionary<string, object>>(nameof(Servicecapabilitylist).ToLower()); }
-            set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Servicecapabilitylist).ToLower(), value); }
         }
 
         /// <summary>
         /// the service offering ID used by virtual router provider
         /// </summary>
         public Guid ServiceOfferingId {
-            get { return (Guid) Parameters[nameof(ServiceOfferingId).ToLower()]; }
-            set { Parameters[nameof(ServiceOfferingId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ServiceOfferingId).ToLower()); }
+            set { SetParameterValue(nameof(ServiceOfferingId).ToLower(), value); }
         }
 
         /// <summary>
@@ -135,31 +135,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> ServiceProviderList {
             get { return GetList<IDictionary<string, object>>(nameof(ServiceProviderList).ToLower()); }
-            set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
+            set { SetParameterValue(nameof(ServiceProviderList).ToLower(), value); }
         }
 
         /// <summary>
         /// true if network offering supports specifying ip ranges; defaulted to false if not specified
         /// </summary>
         public bool? SpecifyIpRanges {
-            get { return (bool?) Parameters[nameof(SpecifyIpRanges).ToLower()]; }
-            set { Parameters[nameof(SpecifyIpRanges).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SpecifyIpRanges).ToLower()); }
+            set { SetParameterValue(nameof(SpecifyIpRanges).ToLower(), value); }
         }
 
         /// <summary>
         /// true if network offering supports vlans
         /// </summary>
         public bool? SpecifyVlan {
-            get { return (bool?) Parameters[nameof(SpecifyVlan).ToLower()]; }
-            set { Parameters[nameof(SpecifyVlan).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SpecifyVlan).ToLower()); }
+            set { SetParameterValue(nameof(SpecifyVlan).ToLower(), value); }
         }
 
         /// <summary>
         /// the tags for the network offering.
         /// </summary>
         public string Tags {
-            get { return (string) Parameters[nameof(Tags).ToLower()]; }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Tags).ToLower()); }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
     }

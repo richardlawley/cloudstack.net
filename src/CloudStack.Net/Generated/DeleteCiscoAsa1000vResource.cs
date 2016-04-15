@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// Cisco ASA 1000v resource ID
         /// </summary>
         public Guid Resourceid {
-            get { return (Guid) Parameters[nameof(Resourceid).ToLower()]; }
-            set { Parameters[nameof(Resourceid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Resourceid).ToLower()); }
+            set { SetParameterValue(nameof(Resourceid).ToLower(), value); }
         }
 
     }

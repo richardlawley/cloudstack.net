@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the IP address id of the port forwarding rule
         /// </summary>
         public Guid IpAddressId {
-            get { return (Guid) Parameters[nameof(IpAddressId).ToLower()]; }
-            set { Parameters[nameof(IpAddressId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(IpAddressId).ToLower()); }
+            set { SetParameterValue(nameof(IpAddressId).ToLower(), value); }
         }
 
         /// <summary>
         /// the protocol for the firewall rule. Valid values are TCP/UDP/ICMP.
         /// </summary>
         public string Protocol {
-            get { return (string) Parameters[nameof(Protocol).ToLower()]; }
-            set { Parameters[nameof(Protocol).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Protocol).ToLower()); }
+            set { SetParameterValue(nameof(Protocol).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,55 +31,55 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Cidrlist {
             get { return GetList<string>(nameof(Cidrlist).ToLower()); }
-            set { Parameters[nameof(Cidrlist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Cidrlist).ToLower(), value); }
         }
 
         /// <summary>
         /// the ending port of firewall rule
         /// </summary>
         public int? Endport {
-            get { return (int?) Parameters[nameof(Endport).ToLower()]; }
-            set { Parameters[nameof(Endport).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Endport).ToLower()); }
+            set { SetParameterValue(nameof(Endport).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// error code for this icmp message
         /// </summary>
         public int? IcmpCode {
-            get { return (int?) Parameters[nameof(IcmpCode).ToLower()]; }
-            set { Parameters[nameof(IcmpCode).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(IcmpCode).ToLower()); }
+            set { SetParameterValue(nameof(IcmpCode).ToLower(), value); }
         }
 
         /// <summary>
         /// type of the ICMP message being sent
         /// </summary>
         public int? IcmpType {
-            get { return (int?) Parameters[nameof(IcmpType).ToLower()]; }
-            set { Parameters[nameof(IcmpType).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(IcmpType).ToLower()); }
+            set { SetParameterValue(nameof(IcmpType).ToLower(), value); }
         }
 
         /// <summary>
         /// the starting port of firewall rule
         /// </summary>
         public int? Startport {
-            get { return (int?) Parameters[nameof(Startport).ToLower()]; }
-            set { Parameters[nameof(Startport).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(Startport).ToLower()); }
+            set { SetParameterValue(nameof(Startport).ToLower(), value); }
         }
 
         /// <summary>
         /// type of firewallrule: system/user
         /// </summary>
         public string Type {
-            get { return (string) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
     }

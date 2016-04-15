@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the display text of the vpc offering
         /// </summary>
         public string DisplayText {
-            get { return (string) Parameters[nameof(DisplayText).ToLower()]; }
-            set { Parameters[nameof(DisplayText).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DisplayText).ToLower()); }
+            set { SetParameterValue(nameof(DisplayText).ToLower(), value); }
         }
 
         /// <summary>
         /// the name of the vpc offering
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> SupportedServices {
             get { return GetList<string>(nameof(SupportedServices).ToLower()); }
-            set { Parameters[nameof(SupportedServices).ToLower()] = value; }
+            set { SetParameterValue(nameof(SupportedServices).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,15 +39,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Servicecapabilitylist {
             get { return GetList<IDictionary<string, object>>(nameof(Servicecapabilitylist).ToLower()); }
-            set { Parameters[nameof(Servicecapabilitylist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Servicecapabilitylist).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the service offering for the VPC router appliance
         /// </summary>
         public Guid ServiceOfferingId {
-            get { return (Guid) Parameters[nameof(ServiceOfferingId).ToLower()]; }
-            set { Parameters[nameof(ServiceOfferingId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ServiceOfferingId).ToLower()); }
+            set { SetParameterValue(nameof(ServiceOfferingId).ToLower(), value); }
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> ServiceProviderList {
             get { return GetList<IDictionary<string, object>>(nameof(ServiceProviderList).ToLower()); }
-            set { Parameters[nameof(ServiceProviderList).ToLower()] = value; }
+            set { SetParameterValue(nameof(ServiceProviderList).ToLower(), value); }
         }
 
     }

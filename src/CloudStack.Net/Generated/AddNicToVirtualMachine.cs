@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// Network ID
         /// </summary>
         public Guid Networkid {
-            get { return (Guid) Parameters[nameof(Networkid).ToLower()]; }
-            set { Parameters[nameof(Networkid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Networkid).ToLower()); }
+            set { SetParameterValue(nameof(Networkid).ToLower(), value); }
         }
 
         /// <summary>
         /// Virtual Machine ID
         /// </summary>
         public Guid Virtualmachineid {
-            get { return (Guid) Parameters[nameof(Virtualmachineid).ToLower()]; }
-            set { Parameters[nameof(Virtualmachineid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+            set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 
         /// <summary>
         /// IP Address for the new network
         /// </summary>
         public string Ipaddress {
-            get { return (string) Parameters[nameof(Ipaddress).ToLower()]; }
-            set { Parameters[nameof(Ipaddress).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Ipaddress).ToLower()); }
+            set { SetParameterValue(nameof(Ipaddress).ToLower(), value); }
         }
 
     }

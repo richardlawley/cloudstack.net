@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// list Guest OS mapping by hypervisor
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// list Guest OS mapping by hypervisor version. Must be used with hypervisor parameter
         /// </summary>
         public string HypervisorVersion {
-            get { return (string) Parameters[nameof(HypervisorVersion).ToLower()]; }
-            set { Parameters[nameof(HypervisorVersion).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(HypervisorVersion).ToLower()); }
+            set { SetParameterValue(nameof(HypervisorVersion).ToLower(), value); }
         }
 
         /// <summary>
         /// list mapping by its UUID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// list mapping by Guest OS Type UUID
         /// </summary>
         public Guid OsTypeId {
-            get { return (Guid) Parameters[nameof(OsTypeId).ToLower()]; }
-            set { Parameters[nameof(OsTypeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+            set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 
     }

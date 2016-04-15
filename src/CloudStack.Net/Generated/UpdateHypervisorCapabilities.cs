@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// ID of the hypervisor capability
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the max number of Guest VMs per host for this hypervisor.
         /// </summary>
         public long? MaxGuestsLimit {
-            get { return (long?) Parameters[nameof(MaxGuestsLimit).ToLower()]; }
-            set { Parameters[nameof(MaxGuestsLimit).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(MaxGuestsLimit).ToLower()); }
+            set { SetParameterValue(nameof(MaxGuestsLimit).ToLower(), value); }
         }
 
         /// <summary>
         /// set true to enable security group for this hypervisor.
         /// </summary>
         public bool? SecurityGroupEnabled {
-            get { return (bool?) Parameters[nameof(SecurityGroupEnabled).ToLower()]; }
-            set { Parameters[nameof(SecurityGroupEnabled).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(SecurityGroupEnabled).ToLower()); }
+            set { SetParameterValue(nameof(SecurityGroupEnabled).ToLower(), value); }
         }
 
     }

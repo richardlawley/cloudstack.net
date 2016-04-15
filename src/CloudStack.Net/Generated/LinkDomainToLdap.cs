@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// Type of the account to auto import. Specify 0 for user and 2 for domain admin
         /// </summary>
         public short AccountType {
-            get { return (short) Parameters[nameof(AccountType).ToLower()]; }
-            set { Parameters[nameof(AccountType).ToLower()] = value; }
+            get { return GetParameterValue<short>(nameof(AccountType).ToLower()); }
+            set { SetParameterValue(nameof(AccountType).ToLower(), value); }
         }
 
         /// <summary>
         /// The id of the domain which has to be linked to LDAP.
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// name of the group or OU in LDAP
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// type of the ldap name. GROUP or OU
         /// </summary>
         public string Type {
-            get { return (string) Parameters[nameof(Type).ToLower()]; }
-            set { Parameters[nameof(Type).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Type).ToLower()); }
+            set { SetParameterValue(nameof(Type).ToLower(), value); }
         }
 
         /// <summary>
         /// domain admin username in LDAP 
         /// </summary>
         public string Admin {
-            get { return (string) Parameters[nameof(Admin).ToLower()]; }
-            set { Parameters[nameof(Admin).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Admin).ToLower()); }
+            set { SetParameterValue(nameof(Admin).ToLower(), value); }
         }
 
     }

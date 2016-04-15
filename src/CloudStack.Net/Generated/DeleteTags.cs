@@ -15,15 +15,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> ResourceIds {
             get { return GetList<string>(nameof(ResourceIds).ToLower()); }
-            set { Parameters[nameof(ResourceIds).ToLower()] = value; }
+            set { SetParameterValue(nameof(ResourceIds).ToLower(), value); }
         }
 
         /// <summary>
         /// Delete tag by resource type
         /// </summary>
         public string ResourceType {
-            get { return (string) Parameters[nameof(ResourceType).ToLower()]; }
-            set { Parameters[nameof(ResourceType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceType).ToLower()); }
+            set { SetParameterValue(nameof(ResourceType).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
     }

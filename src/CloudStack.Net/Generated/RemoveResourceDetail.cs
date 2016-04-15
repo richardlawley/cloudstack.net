@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// Delete details for resource id
         /// </summary>
         public string ResourceId {
-            get { return (string) Parameters[nameof(ResourceId).ToLower()]; }
-            set { Parameters[nameof(ResourceId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceId).ToLower()); }
+            set { SetParameterValue(nameof(ResourceId).ToLower(), value); }
         }
 
         /// <summary>
         /// Delete detail by resource type
         /// </summary>
         public string ResourceType {
-            get { return (string) Parameters[nameof(ResourceType).ToLower()]; }
-            set { Parameters[nameof(ResourceType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ResourceType).ToLower()); }
+            set { SetParameterValue(nameof(ResourceType).ToLower(), value); }
         }
 
         /// <summary>
         /// Delete details matching key/value pairs
         /// </summary>
         public string Key {
-            get { return (string) Parameters[nameof(Key).ToLower()]; }
-            set { Parameters[nameof(Key).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Key).ToLower()); }
+            set { SetParameterValue(nameof(Key).ToLower(), value); }
         }
 
     }

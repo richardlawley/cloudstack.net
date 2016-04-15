@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// The ID of the virtual machine
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Deployment planner to use for vm allocation. Available to ROOT admin only
         /// </summary>
         public string DeploymentPlanner {
-            get { return (string) Parameters[nameof(DeploymentPlanner).ToLower()]; }
-            set { Parameters[nameof(DeploymentPlanner).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(DeploymentPlanner).ToLower()); }
+            set { SetParameterValue(nameof(DeploymentPlanner).ToLower(), value); }
         }
 
         /// <summary>
         /// destination Host ID to deploy the VM to - parameter available for root admin only
         /// </summary>
         public Guid HostId {
-            get { return (Guid) Parameters[nameof(HostId).ToLower()]; }
-            set { Parameters[nameof(HostId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+            set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
     }

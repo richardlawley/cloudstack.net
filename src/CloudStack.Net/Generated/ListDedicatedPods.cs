@@ -14,40 +14,40 @@ namespace CloudStack.Net
         /// the name of the account associated with the pod. Must be used with domainId.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list dedicated pods by affinity group
         /// </summary>
         public Guid AffinityGroupId {
-            get { return (Guid) Parameters[nameof(AffinityGroupId).ToLower()]; }
-            set { Parameters[nameof(AffinityGroupId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+            set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain associated with the pod
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the pod
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
     }

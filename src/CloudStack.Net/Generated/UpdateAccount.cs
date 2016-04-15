@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// new name for the account
         /// </summary>
         public string NewName {
-            get { return (string) Parameters[nameof(NewName).ToLower()]; }
-            set { Parameters[nameof(NewName).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(NewName).ToLower()); }
+            set { SetParameterValue(nameof(NewName).ToLower(), value); }
         }
 
         /// <summary>
         /// the current account name
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,31 +31,31 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Accountdetails {
             get { return GetList<IDictionary<string, object>>(nameof(Accountdetails).ToLower()); }
-            set { Parameters[nameof(Accountdetails).ToLower()] = value; }
+            set { SetParameterValue(nameof(Accountdetails).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain where the account exists
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// Account id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Network domain for the account's networks; empty string will update domainName with NULL value
         /// </summary>
         public string NetworkDomain {
-            get { return (string) Parameters[nameof(NetworkDomain).ToLower()]; }
-            set { Parameters[nameof(NetworkDomain).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(NetworkDomain).ToLower()); }
+            set { SetParameterValue(nameof(NetworkDomain).ToLower(), value); }
         }
 
     }

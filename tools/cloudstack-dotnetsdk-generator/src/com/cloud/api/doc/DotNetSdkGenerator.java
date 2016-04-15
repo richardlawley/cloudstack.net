@@ -102,9 +102,9 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                                     implementation.println("get { return GetList<%3$s>(nameof(%2$s).ToLower()); }", convertedDataType, propertyName,
                                             convertedDataType.substring("IList<".length(), convertedDataType.length() - 1));
                                 } else {
-                                    implementation.println("get { return (%s) Parameters[nameof(%s).ToLower()]; }", convertedDataType, propertyName);
+                                    implementation.println("get { return GetParameterValue<%s>(nameof(%s).ToLower()); }", convertedDataType, propertyName);
                                 }
-                                implementation.println("set { Parameters[nameof(%s).ToLower()] = value; }", propertyName);
+                                implementation.println("set { SetParameterValue(nameof(%s).ToLower(), value); }", propertyName);
                                 implementation.decrementIndent();
                                 implementation.println("}");
     

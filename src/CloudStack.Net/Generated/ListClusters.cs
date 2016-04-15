@@ -14,80 +14,80 @@ namespace CloudStack.Net
         /// lists clusters by allocation state
         /// </summary>
         public string AllocationState {
-            get { return (string) Parameters[nameof(AllocationState).ToLower()]; }
-            set { Parameters[nameof(AllocationState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(AllocationState).ToLower()); }
+            set { SetParameterValue(nameof(AllocationState).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by cluster type
         /// </summary>
         public string ClusterType {
-            get { return (string) Parameters[nameof(ClusterType).ToLower()]; }
-            set { Parameters[nameof(ClusterType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ClusterType).ToLower()); }
+            set { SetParameterValue(nameof(ClusterType).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by hypervisor type
         /// </summary>
         public string Hypervisor {
-            get { return (string) Parameters[nameof(Hypervisor).ToLower()]; }
-            set { Parameters[nameof(Hypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Hypervisor).ToLower()); }
+            set { SetParameterValue(nameof(Hypervisor).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by the cluster ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// whether this cluster is managed by cloudstack
         /// </summary>
         public string ManagedState {
-            get { return (string) Parameters[nameof(ManagedState).ToLower()]; }
-            set { Parameters[nameof(ManagedState).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(ManagedState).ToLower()); }
+            set { SetParameterValue(nameof(ManagedState).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by the cluster name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by Pod ID
         /// </summary>
         public Guid PodId {
-            get { return (Guid) Parameters[nameof(PodId).ToLower()]; }
-            set { Parameters[nameof(PodId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+            set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// flag to display the capacity of the clusters
         /// </summary>
         public bool? ShowCapacities {
-            get { return (bool?) Parameters[nameof(ShowCapacities).ToLower()]; }
-            set { Parameters[nameof(ShowCapacities).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ShowCapacities).ToLower()); }
+            set { SetParameterValue(nameof(ShowCapacities).ToLower(), value); }
         }
 
         /// <summary>
         /// lists clusters by Zone ID
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// netscaler load balancer device ID
         /// </summary>
         public Guid LbDeviceId {
-            get { return (Guid) Parameters[nameof(LbDeviceId).ToLower()]; }
-            set { Parameters[nameof(LbDeviceId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(LbDeviceId).ToLower()); }
+            set { SetParameterValue(nameof(LbDeviceId).ToLower(), value); }
         }
 
     }

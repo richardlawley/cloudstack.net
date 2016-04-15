@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// UUID of the Guest OS to hypervisor name Mapping
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// Hypervisor specific name for this Guest OS
         /// </summary>
         public string OsNameForHypervisor {
-            get { return (string) Parameters[nameof(OsNameForHypervisor).ToLower()]; }
-            set { Parameters[nameof(OsNameForHypervisor).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(OsNameForHypervisor).ToLower()); }
+            set { SetParameterValue(nameof(OsNameForHypervisor).ToLower(), value); }
         }
 
     }

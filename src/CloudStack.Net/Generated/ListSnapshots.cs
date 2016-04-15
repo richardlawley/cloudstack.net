@@ -14,80 +14,80 @@ namespace CloudStack.Net
         /// list resources by account. Must be used with the domainId parameter.
         /// </summary>
         public string Account {
-            get { return (string) Parameters[nameof(Account).ToLower()]; }
-            set { Parameters[nameof(Account).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Account).ToLower()); }
+            set { SetParameterValue(nameof(Account).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
         public Guid DomainId {
-            get { return (Guid) Parameters[nameof(DomainId).ToLower()]; }
-            set { Parameters[nameof(DomainId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+            set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// lists snapshot by snapshot ID
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// valid values are HOURLY, DAILY, WEEKLY, and MONTHLY.
         /// </summary>
         public string IntervalType {
-            get { return (string) Parameters[nameof(IntervalType).ToLower()]; }
-            set { Parameters[nameof(IntervalType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(IntervalType).ToLower()); }
+            set { SetParameterValue(nameof(IntervalType).ToLower(), value); }
         }
 
         /// <summary>
         /// defaults to false, but if true, lists all resources from the parent specified by the domainId till leaves.
         /// </summary>
         public bool? Isrecursive {
-            get { return (bool?) Parameters[nameof(Isrecursive).ToLower()]; }
-            set { Parameters[nameof(Isrecursive).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Isrecursive).ToLower()); }
+            set { SetParameterValue(nameof(Isrecursive).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
         /// <summary>
         /// If set to false, list only resources belonging to the command's caller; if set to true - list resources that the caller is authorized to see. Default value is false
         /// </summary>
         public bool? ListAll {
-            get { return (bool?) Parameters[nameof(ListAll).ToLower()]; }
-            set { Parameters[nameof(ListAll).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(ListAll).ToLower()); }
+            set { SetParameterValue(nameof(ListAll).ToLower(), value); }
         }
 
         /// <summary>
         /// lists snapshot by snapshot name
         /// </summary>
         public string Name {
-            get { return (string) Parameters[nameof(Name).ToLower()]; }
-            set { Parameters[nameof(Name).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Name).ToLower()); }
+            set { SetParameterValue(nameof(Name).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
         public Guid ProjectId {
-            get { return (Guid) Parameters[nameof(ProjectId).ToLower()]; }
-            set { Parameters[nameof(ProjectId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+            set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// valid values are MANUAL or RECURRING.
         /// </summary>
         public string SnapshotType {
-            get { return (string) Parameters[nameof(SnapshotType).ToLower()]; }
-            set { Parameters[nameof(SnapshotType).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(SnapshotType).ToLower()); }
+            set { SetParameterValue(nameof(SnapshotType).ToLower(), value); }
         }
 
         /// <summary>
@@ -95,23 +95,23 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Tags {
             get { return GetList<IDictionary<string, object>>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
         public Guid VolumeId {
-            get { return (Guid) Parameters[nameof(VolumeId).ToLower()]; }
-            set { Parameters[nameof(VolumeId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VolumeId).ToLower()); }
+            set { SetParameterValue(nameof(VolumeId).ToLower(), value); }
         }
 
         /// <summary>
         /// list snapshots by zone id
         /// </summary>
         public Guid ZoneId {
-            get { return (Guid) Parameters[nameof(ZoneId).ToLower()]; }
-            set { Parameters[nameof(ZoneId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+            set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 
     }

@@ -14,48 +14,48 @@ namespace CloudStack.Net
         /// the ID of the port forwarding rule
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
         public string CustomId {
-            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
-            set { Parameters[nameof(CustomId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(CustomId).ToLower()); }
+            set { SetParameterValue(nameof(CustomId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the rule to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// the private port of the port forwarding rule
         /// </summary>
         public int? PrivatePort {
-            get { return (int?) Parameters[nameof(PrivatePort).ToLower()]; }
-            set { Parameters[nameof(PrivatePort).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(PrivatePort).ToLower()); }
+            set { SetParameterValue(nameof(PrivatePort).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine for the port forwarding rule
         /// </summary>
         public Guid VirtualMachineId {
-            get { return (Guid) Parameters[nameof(VirtualMachineId).ToLower()]; }
-            set { Parameters[nameof(VirtualMachineId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+            set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// VM guest nic Secondary ip address for the port forwarding rule
         /// </summary>
         public string VmGuestIp {
-            get { return (string) Parameters[nameof(VmGuestIp).ToLower()]; }
-            set { Parameters[nameof(VmGuestIp).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(VmGuestIp).ToLower()); }
+            set { SetParameterValue(nameof(VmGuestIp).ToLower(), value); }
         }
 
     }

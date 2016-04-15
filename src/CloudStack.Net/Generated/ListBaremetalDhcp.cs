@@ -14,32 +14,32 @@ namespace CloudStack.Net
         /// the Physical Network ID
         /// </summary>
         public Guid PhysicalNetworkId {
-            get { return (Guid) Parameters[nameof(PhysicalNetworkId).ToLower()]; }
-            set { Parameters[nameof(PhysicalNetworkId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+            set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Type of DHCP device
         /// </summary>
         public string Dhcpservertype {
-            get { return (string) Parameters[nameof(Dhcpservertype).ToLower()]; }
-            set { Parameters[nameof(Dhcpservertype).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Dhcpservertype).ToLower()); }
+            set { SetParameterValue(nameof(Dhcpservertype).ToLower(), value); }
         }
 
         /// <summary>
         /// DHCP server device ID
         /// </summary>
         public long? Id {
-            get { return (long?) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<long?>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// List by keyword
         /// </summary>
         public string Keyword {
-            get { return (string) Parameters[nameof(Keyword).ToLower()]; }
-            set { Parameters[nameof(Keyword).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Keyword).ToLower()); }
+            set { SetParameterValue(nameof(Keyword).ToLower(), value); }
         }
 
     }

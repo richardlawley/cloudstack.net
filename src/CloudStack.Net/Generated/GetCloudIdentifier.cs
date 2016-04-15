@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// the user ID for the cloud identifier
         /// </summary>
         public Guid Userid {
-            get { return (Guid) Parameters[nameof(Userid).ToLower()]; }
-            set { Parameters[nameof(Userid).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Userid).ToLower()); }
+            set { SetParameterValue(nameof(Userid).ToLower(), value); }
         }
 
     }

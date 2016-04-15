@@ -14,24 +14,24 @@ namespace CloudStack.Net
         /// physical network id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the speed for the physical network[1G/10G]
         /// </summary>
         public string Networkspeed {
-            get { return (string) Parameters[nameof(Networkspeed).ToLower()]; }
-            set { Parameters[nameof(Networkspeed).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Networkspeed).ToLower()); }
+            set { SetParameterValue(nameof(Networkspeed).ToLower(), value); }
         }
 
         /// <summary>
         /// Enabled/Disabled
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
         /// <summary>
@@ -39,15 +39,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Tags {
             get { return GetList<string>(nameof(Tags).ToLower()); }
-            set { Parameters[nameof(Tags).ToLower()] = value; }
+            set { SetParameterValue(nameof(Tags).ToLower(), value); }
         }
 
         /// <summary>
         /// the VLAN for the physical network
         /// </summary>
         public string Vlan {
-            get { return (string) Parameters[nameof(Vlan).ToLower()]; }
-            set { Parameters[nameof(Vlan).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(Vlan).ToLower()); }
+            set { SetParameterValue(nameof(Vlan).ToLower(), value); }
         }
 
     }

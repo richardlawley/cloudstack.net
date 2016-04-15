@@ -14,8 +14,8 @@ namespace CloudStack.Net
         /// network service provider id
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
@@ -23,15 +23,15 @@ namespace CloudStack.Net
         /// </summary>
         public IList<string> Servicelist {
             get { return GetList<string>(nameof(Servicelist).ToLower()); }
-            set { Parameters[nameof(Servicelist).ToLower()] = value; }
+            set { SetParameterValue(nameof(Servicelist).ToLower(), value); }
         }
 
         /// <summary>
         /// Enabled/Disabled/Shutdown the physical network service provider
         /// </summary>
         public string State {
-            get { return (string) Parameters[nameof(State).ToLower()]; }
-            set { Parameters[nameof(State).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(State).ToLower()); }
+            set { SetParameterValue(nameof(State).ToLower(), value); }
         }
 
     }

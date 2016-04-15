@@ -14,16 +14,16 @@ namespace CloudStack.Net
         /// the ID of the autoscale vm profile
         /// </summary>
         public Guid Id {
-            get { return (Guid) Parameters[nameof(Id).ToLower()]; }
-            set { Parameters[nameof(Id).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+            set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the user used to launch and destroy the VMs
         /// </summary>
         public Guid AutoscaleUserId {
-            get { return (Guid) Parameters[nameof(AutoscaleUserId).ToLower()]; }
-            set { Parameters[nameof(AutoscaleUserId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(AutoscaleUserId).ToLower()); }
+            set { SetParameterValue(nameof(AutoscaleUserId).ToLower(), value); }
         }
 
         /// <summary>
@@ -31,39 +31,39 @@ namespace CloudStack.Net
         /// </summary>
         public IList<IDictionary<string, object>> Counterparam {
             get { return GetList<IDictionary<string, object>>(nameof(Counterparam).ToLower()); }
-            set { Parameters[nameof(Counterparam).ToLower()] = value; }
+            set { SetParameterValue(nameof(Counterparam).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, in case you want to set a custom id to the resource. Allowed to Root Admins only
         /// </summary>
         public string CustomId {
-            get { return (string) Parameters[nameof(CustomId).ToLower()]; }
-            set { Parameters[nameof(CustomId).ToLower()] = value; }
+            get { return GetParameterValue<string>(nameof(CustomId).ToLower()); }
+            set { SetParameterValue(nameof(CustomId).ToLower(), value); }
         }
 
         /// <summary>
         /// the time allowed for existing connections to get closed before a vm is destroyed
         /// </summary>
         public int? DestroyVmGraceperiod {
-            get { return (int?) Parameters[nameof(DestroyVmGraceperiod).ToLower()]; }
-            set { Parameters[nameof(DestroyVmGraceperiod).ToLower()] = value; }
+            get { return GetParameterValue<int?>(nameof(DestroyVmGraceperiod).ToLower()); }
+            set { SetParameterValue(nameof(DestroyVmGraceperiod).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional field, whether to the display the profile to the end user or not
         /// </summary>
         public bool? Fordisplay {
-            get { return (bool?) Parameters[nameof(Fordisplay).ToLower()]; }
-            set { Parameters[nameof(Fordisplay).ToLower()] = value; }
+            get { return GetParameterValue<bool?>(nameof(Fordisplay).ToLower()); }
+            set { SetParameterValue(nameof(Fordisplay).ToLower(), value); }
         }
 
         /// <summary>
         /// the template of the auto deployed virtual machine
         /// </summary>
         public Guid TemplateId {
-            get { return (Guid) Parameters[nameof(TemplateId).ToLower()]; }
-            set { Parameters[nameof(TemplateId).ToLower()] = value; }
+            get { return GetParameterValue<Guid>(nameof(TemplateId).ToLower()); }
+            set { SetParameterValue(nameof(TemplateId).ToLower(), value); }
         }
 
     }
