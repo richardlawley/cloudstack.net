@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The domain ID of the snapshot. If used with the account parameter, specifies a domain for the account associated with the disk volume.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// policy id of the snapshot, if this is null, then use MANUAL_POLICY.
         /// </summary>
-        public Guid PolicyId {
-            get { return GetParameterValue<Guid>(nameof(PolicyId).ToLower()); }
+        public Guid? PolicyId {
+            get { return GetParameterValue<Guid?>(nameof(PolicyId).ToLower()); }
             set { SetParameterValue(nameof(PolicyId).ToLower(), value); }
         }
 

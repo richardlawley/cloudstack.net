@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Lists network ACL with the specified ID.
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -77,24 +77,24 @@ namespace CloudStack.Net
         /// <summary>
         /// list network ACLs by network ID
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// list network ACLs by VPC ID
         /// </summary>
-        public Guid VpcId {
-            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+        public Guid? VpcId {
+            get { return GetParameterValue<Guid?>(nameof(VpcId).ToLower()); }
             set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 

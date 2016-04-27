@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of the hypervisor capability
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 

@@ -125,8 +125,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the service offering ID used by virtual router provider
         /// </summary>
-        public Guid ServiceOfferingId {
-            get { return GetParameterValue<Guid>(nameof(ServiceOfferingId).ToLower()); }
+        public Guid? ServiceOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(ServiceOfferingId).ToLower()); }
             set { SetParameterValue(nameof(ServiceOfferingId).ToLower(), value); }
         }
 

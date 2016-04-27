@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// optional parameter. Storaget network IP range uuid, if specicied, using it to search the range.
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -29,16 +29,16 @@ namespace CloudStack.Net
         /// <summary>
         /// optional parameter. Pod uuid, if specicied and range uuid is absent, using it to search the range.
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// optional parameter. Zone uuid, if specicied and both pod uuid and range uuid are absent, using it to search the range.
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

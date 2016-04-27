@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk offering. Either diskOfferingId or snapshotId must be passed in.
         /// </summary>
-        public Guid DiskOfferingId {
-            get { return GetParameterValue<Guid>(nameof(DiskOfferingId).ToLower()); }
+        public Guid? DiskOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(DiskOfferingId).ToLower()); }
             set { SetParameterValue(nameof(DiskOfferingId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the domain ID associated with the disk offering. If used with the account parameter returns the disk volume associated with the account for the specified domain.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the project associated with the volume. Mutually exclusive with account parameter
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -93,24 +93,24 @@ namespace CloudStack.Net
         /// <summary>
         /// the snapshot ID for the disk volume. Either diskOfferingId or snapshotId must be passed in.
         /// </summary>
-        public Guid SnapshotId {
-            get { return GetParameterValue<Guid>(nameof(SnapshotId).ToLower()); }
+        public Guid? SnapshotId {
+            get { return GetParameterValue<Guid?>(nameof(SnapshotId).ToLower()); }
             set { SetParameterValue(nameof(SnapshotId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine; to be used with snapshot Id, VM to which the volume gets attached after creation
         /// </summary>
-        public Guid VirtualMachineId {
-            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+        public Guid? VirtualMachineId {
+            get { return GetParameterValue<Guid?>(nameof(VirtualMachineId).ToLower()); }
             set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the availability zone
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

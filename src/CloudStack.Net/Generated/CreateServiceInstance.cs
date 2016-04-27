@@ -69,16 +69,16 @@ namespace CloudStack.Net
         /// <summary>
         /// An optional domainId for the virtual machine. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// Project ID for the service instance
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

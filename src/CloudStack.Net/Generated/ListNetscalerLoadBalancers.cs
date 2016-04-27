@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// netscaler load balancer device ID
         /// </summary>
-        public Guid LbDeviceId {
-            get { return GetParameterValue<Guid>(nameof(LbDeviceId).ToLower()); }
+        public Guid? LbDeviceId {
+            get { return GetParameterValue<Guid?>(nameof(LbDeviceId).ToLower()); }
             set { SetParameterValue(nameof(LbDeviceId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 

@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the domain ID with which the guest VLAN range is associated.  If used with the account parameter, returns all guest VLAN ranges for that account in the specified domain.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list dedicated guest vlan ranges by id
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -53,24 +53,24 @@ namespace CloudStack.Net
         /// <summary>
         /// physical network id of the guest VLAN range
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// project who will own the guest VLAN range
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// zone of the guest VLAN range
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

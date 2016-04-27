@@ -45,16 +45,16 @@ namespace CloudStack.Net
         /// <summary>
         /// domainId of the account owning the affinity group
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// create affinity group for project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

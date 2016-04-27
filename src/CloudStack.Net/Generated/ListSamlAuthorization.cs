@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// User uuid
         /// </summary>
-        public Guid UserId {
-            get { return GetParameterValue<Guid>(nameof(UserId).ToLower()); }
+        public Guid? UserId {
+            get { return GetParameterValue<Guid?>(nameof(UserId).ToLower()); }
             set { SetParameterValue(nameof(UserId).ToLower(), value); }
         }
 

@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -85,16 +85,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the vm
         /// </summary>
-        public Guid Virtualmachineid {
-            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+        public Guid? Virtualmachineid {
+            get { return GetParameterValue<Guid?>(nameof(Virtualmachineid).ToLower()); }
             set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 
         /// <summary>
         /// The ID of the VM snapshot
         /// </summary>
-        public Guid Vmsnapshotid {
-            get { return GetParameterValue<Guid>(nameof(Vmsnapshotid).ToLower()); }
+        public Guid? Vmsnapshotid {
+            get { return GetParameterValue<Guid?>(nameof(Vmsnapshotid).ToLower()); }
             set { SetParameterValue(nameof(Vmsnapshotid).ToLower(), value); }
         }
 

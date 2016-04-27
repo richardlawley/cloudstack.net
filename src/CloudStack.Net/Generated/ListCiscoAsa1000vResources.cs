@@ -29,16 +29,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Cisco ASA 1000v resource ID
         /// </summary>
-        public Guid Resourceid {
-            get { return GetParameterValue<Guid>(nameof(Resourceid).ToLower()); }
+        public Guid? Resourceid {
+            get { return GetParameterValue<Guid?>(nameof(Resourceid).ToLower()); }
             set { SetParameterValue(nameof(Resourceid).ToLower(), value); }
         }
 

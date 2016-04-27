@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the id of the network offering
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 

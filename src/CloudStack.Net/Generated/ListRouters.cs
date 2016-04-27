@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the cluster ID of the router
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -45,16 +45,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the host ID of the router
         /// </summary>
-        public Guid HostId {
-            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+        public Guid? HostId {
+            get { return GetParameterValue<Guid?>(nameof(HostId).ToLower()); }
             set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk router
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -93,24 +93,24 @@ namespace CloudStack.Net
         /// <summary>
         /// list by network id
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Pod ID of the router
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -133,16 +133,16 @@ namespace CloudStack.Net
         /// <summary>
         /// List networks by VPC
         /// </summary>
-        public Guid VpcId {
-            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+        public Guid? VpcId {
+            get { return GetParameterValue<Guid?>(nameof(VpcId).ToLower()); }
             set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID of the router
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

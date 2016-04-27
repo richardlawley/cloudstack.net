@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the id of Os category to update the host with
         /// </summary>
-        public Guid OsCategoryId {
-            get { return GetParameterValue<Guid>(nameof(OsCategoryId).ToLower()); }
+        public Guid? OsCategoryId {
+            get { return GetParameterValue<Guid?>(nameof(OsCategoryId).ToLower()); }
             set { SetParameterValue(nameof(OsCategoryId).ToLower(), value); }
         }
 

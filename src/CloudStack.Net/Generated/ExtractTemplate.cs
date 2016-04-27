@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the zone where the ISO is originally located
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

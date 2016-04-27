@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the virtual machine where the volume is detached from
         /// </summary>
-        public Guid VirtualMachineId {
-            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+        public Guid? VirtualMachineId {
+            get { return GetParameterValue<Guid?>(nameof(VirtualMachineId).ToLower()); }
             set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 

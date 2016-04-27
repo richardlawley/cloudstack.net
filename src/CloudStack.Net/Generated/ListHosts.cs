@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// lists hosts existing in particular cluster
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the id of the host
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the Pod ID for the host
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
@@ -101,16 +101,16 @@ namespace CloudStack.Net
         /// <summary>
         /// lists hosts in the same cluster as this VM and flag hosts with enough CPU/RAm to host this VM
         /// </summary>
-        public Guid VirtualMachineId {
-            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+        public Guid? VirtualMachineId {
+            get { return GetParameterValue<Guid?>(nameof(VirtualMachineId).ToLower()); }
             set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Zone ID for the host
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

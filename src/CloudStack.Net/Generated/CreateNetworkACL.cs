@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The network of the VM the ACL will be created for
         /// </summary>
-        public Guid AclId {
-            get { return GetParameterValue<Guid>(nameof(AclId).ToLower()); }
+        public Guid? AclId {
+            get { return GetParameterValue<Guid?>(nameof(AclId).ToLower()); }
             set { SetParameterValue(nameof(AclId).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The network of the VM the ACL will be created for
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 

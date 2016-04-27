@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// an optional domainId for the security group. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// an optional project of the security group
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The ID of the security group. Mutually exclusive with securityGroupName parameter
         /// </summary>
-        public Guid SecurityGroupId {
-            get { return GetParameterValue<Guid>(nameof(SecurityGroupId).ToLower()); }
+        public Guid? SecurityGroupId {
+            get { return GetParameterValue<Guid?>(nameof(SecurityGroupId).ToLower()); }
             set { SetParameterValue(nameof(SecurityGroupId).ToLower(), value); }
         }
 

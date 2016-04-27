@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the destination Physical Network ID to bridge to
         /// </summary>
-        public Guid DestinationPhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(DestinationPhysicalNetworkId).ToLower()); }
+        public Guid? DestinationPhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(DestinationPhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(DestinationPhysicalNetworkId).ToLower(), value); }
         }
 

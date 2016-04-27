@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the zone of the ISO file. If not specified, the ISO will be deleted from all the zones
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

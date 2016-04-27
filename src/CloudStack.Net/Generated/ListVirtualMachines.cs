@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list vms by affinity group
         /// </summary>
-        public Guid AffinityGroupId {
-            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+        public Guid? AffinityGroupId {
+            get { return GetParameterValue<Guid?>(nameof(AffinityGroupId).ToLower()); }
             set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -61,16 +61,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the group ID
         /// </summary>
-        public Guid GroupId {
-            get { return GetParameterValue<Guid>(nameof(GroupId).ToLower()); }
+        public Guid? GroupId {
+            get { return GetParameterValue<Guid?>(nameof(GroupId).ToLower()); }
             set { SetParameterValue(nameof(GroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the host ID
         /// </summary>
-        public Guid HostId {
-            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+        public Guid? HostId {
+            get { return GetParameterValue<Guid?>(nameof(HostId).ToLower()); }
             set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
@@ -85,8 +85,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the virtual machine
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -101,8 +101,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list vms by iso
         /// </summary>
-        public Guid IsoId {
-            get { return GetParameterValue<Guid>(nameof(IsoId).ToLower()); }
+        public Guid? IsoId {
+            get { return GetParameterValue<Guid?>(nameof(IsoId).ToLower()); }
             set { SetParameterValue(nameof(IsoId).ToLower(), value); }
         }
 
@@ -149,32 +149,32 @@ namespace CloudStack.Net
         /// <summary>
         /// list by network id
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the pod ID
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// list by the service offering
         /// </summary>
-        public Guid Serviceofferingid {
-            get { return GetParameterValue<Guid>(nameof(Serviceofferingid).ToLower()); }
+        public Guid? Serviceofferingid {
+            get { return GetParameterValue<Guid?>(nameof(Serviceofferingid).ToLower()); }
             set { SetParameterValue(nameof(Serviceofferingid).ToLower(), value); }
         }
 
@@ -189,8 +189,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the storage ID where vm's volumes belong to
         /// </summary>
-        public Guid StorageId {
-            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+        public Guid? StorageId {
+            get { return GetParameterValue<Guid?>(nameof(StorageId).ToLower()); }
             set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 
@@ -205,32 +205,32 @@ namespace CloudStack.Net
         /// <summary>
         /// list vms by template
         /// </summary>
-        public Guid TemplateId {
-            get { return GetParameterValue<Guid>(nameof(TemplateId).ToLower()); }
+        public Guid? TemplateId {
+            get { return GetParameterValue<Guid?>(nameof(TemplateId).ToLower()); }
             set { SetParameterValue(nameof(TemplateId).ToLower(), value); }
         }
 
         /// <summary>
         /// the user ID that created the VM and is under the account that owns the VM
         /// </summary>
-        public Guid UserId {
-            get { return GetParameterValue<Guid>(nameof(UserId).ToLower()); }
+        public Guid? UserId {
+            get { return GetParameterValue<Guid?>(nameof(UserId).ToLower()); }
             set { SetParameterValue(nameof(UserId).ToLower(), value); }
         }
 
         /// <summary>
         /// list vms by vpc
         /// </summary>
-        public Guid VpcId {
-            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+        public Guid? VpcId {
+            get { return GetParameterValue<Guid?>(nameof(VpcId).ToLower()); }
             set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// the availability zone ID
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

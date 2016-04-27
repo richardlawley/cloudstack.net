@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the virtual machine for the port forwarding rule
         /// </summary>
-        public Guid VirtualMachineId {
-            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+        public Guid? VirtualMachineId {
+            get { return GetParameterValue<Guid?>(nameof(VirtualMachineId).ToLower()); }
             set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 

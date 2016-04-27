@@ -309,7 +309,7 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
         case "string":
             return "string";
         case "uuid":
-            return "Guid";
+            return isRequired ? "Guid" : "Guid?";
         case "long":
         case "short":
             return isRequired ? commandType : (commandType + "?");

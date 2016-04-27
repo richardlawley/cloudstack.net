@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Nuage VSP device ID
         /// </summary>
-        public Guid Vspdeviceid {
-            get { return GetParameterValue<Guid>(nameof(Vspdeviceid).ToLower()); }
+        public Guid? Vspdeviceid {
+            get { return GetParameterValue<Guid?>(nameof(Vspdeviceid).ToLower()); }
             set { SetParameterValue(nameof(Vspdeviceid).ToLower(), value); }
         }
 

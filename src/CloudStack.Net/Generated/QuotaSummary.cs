@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Optional, If domain Id is given and the caller is domain admin then the statement is generated for domain.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 

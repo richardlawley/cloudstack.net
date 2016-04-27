@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the private gateway
         /// </summary>
-        public Guid Gatewayid {
-            get { return GetParameterValue<Guid>(nameof(Gatewayid).ToLower()); }
+        public Guid? Gatewayid {
+            get { return GetParameterValue<Guid?>(nameof(Gatewayid).ToLower()); }
             set { SetParameterValue(nameof(Gatewayid).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the network
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 

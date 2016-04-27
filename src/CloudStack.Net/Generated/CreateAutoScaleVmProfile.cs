@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the user used to launch and destroy the VMs
         /// </summary>
-        public Guid AutoscaleUserId {
-            get { return GetParameterValue<Guid>(nameof(AutoscaleUserId).ToLower()); }
+        public Guid? AutoscaleUserId {
+            get { return GetParameterValue<Guid?>(nameof(AutoscaleUserId).ToLower()); }
             set { SetParameterValue(nameof(AutoscaleUserId).ToLower(), value); }
         }
 

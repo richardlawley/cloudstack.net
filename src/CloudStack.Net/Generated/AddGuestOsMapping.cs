@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// UUID of Guest OS type. Either the UUID or Display Name must be passed
         /// </summary>
-        public Guid OsTypeId {
-            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+        public Guid? OsTypeId {
+            get { return GetParameterValue<Guid?>(nameof(OsTypeId).ToLower()); }
             set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 

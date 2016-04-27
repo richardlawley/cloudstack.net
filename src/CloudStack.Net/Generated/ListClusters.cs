@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// lists clusters by the cluster ID
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// lists clusters by Pod ID
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
@@ -85,8 +85,8 @@ namespace CloudStack.Net
         /// <summary>
         /// lists clusters by Zone ID
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

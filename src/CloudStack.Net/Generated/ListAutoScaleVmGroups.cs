@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the autoscale vm group
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the loadbalancer
         /// </summary>
-        public Guid Lbruleid {
-            get { return GetParameterValue<Guid>(nameof(Lbruleid).ToLower()); }
+        public Guid? Lbruleid {
+            get { return GetParameterValue<Guid?>(nameof(Lbruleid).ToLower()); }
             set { SetParameterValue(nameof(Lbruleid).ToLower(), value); }
         }
 
@@ -77,32 +77,32 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the policy
         /// </summary>
-        public Guid PolicyId {
-            get { return GetParameterValue<Guid>(nameof(PolicyId).ToLower()); }
+        public Guid? PolicyId {
+            get { return GetParameterValue<Guid?>(nameof(PolicyId).ToLower()); }
             set { SetParameterValue(nameof(PolicyId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the profile
         /// </summary>
-        public Guid Vmprofileid {
-            get { return GetParameterValue<Guid>(nameof(Vmprofileid).ToLower()); }
+        public Guid? Vmprofileid {
+            get { return GetParameterValue<Guid?>(nameof(Vmprofileid).ToLower()); }
             set { SetParameterValue(nameof(Vmprofileid).ToLower(), value); }
         }
 
         /// <summary>
         /// the availability zone ID
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

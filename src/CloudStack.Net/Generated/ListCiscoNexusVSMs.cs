@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of the CloudStack cluster in which the Cisco Nexus 1000v VSM appliance.
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of the CloudStack cluster in which the Cisco Nexus 1000v VSM appliance.
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

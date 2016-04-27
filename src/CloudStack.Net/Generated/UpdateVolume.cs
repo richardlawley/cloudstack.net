@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Destination storage pool UUID for the volume
         /// </summary>
-        public Guid StorageId {
-            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+        public Guid? StorageId {
+            get { return GetParameterValue<Guid?>(nameof(StorageId).ToLower()); }
             set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 

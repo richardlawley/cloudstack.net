@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list internal load balancer elements by id
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list internal load balancer elements by network service provider id
         /// </summary>
-        public Guid NspId {
-            get { return GetParameterValue<Guid>(nameof(NspId).ToLower()); }
+        public Guid? NspId {
+            get { return GetParameterValue<Guid?>(nameof(NspId).ToLower()); }
             set { SetParameterValue(nameof(NspId).ToLower(), value); }
         }
 

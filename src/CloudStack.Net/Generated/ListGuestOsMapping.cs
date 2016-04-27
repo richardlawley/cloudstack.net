@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list mapping by its UUID
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list mapping by Guest OS Type UUID
         /// </summary>
-        public Guid OsTypeId {
-            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+        public Guid? OsTypeId {
+            get { return GetParameterValue<Guid?>(nameof(OsTypeId).ToLower()); }
             set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 

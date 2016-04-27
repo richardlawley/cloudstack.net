@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list by Os type Id
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// list by Os Category id
         /// </summary>
-        public Guid OsCategoryId {
-            get { return GetParameterValue<Guid>(nameof(OsCategoryId).ToLower()); }
+        public Guid? OsCategoryId {
+            get { return GetParameterValue<Guid?>(nameof(OsCategoryId).ToLower()); }
             set { SetParameterValue(nameof(OsCategoryId).ToLower(), value); }
         }
 

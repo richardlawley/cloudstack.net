@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the snapshot policy
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk volume
         /// </summary>
-        public Guid VolumeId {
-            get { return GetParameterValue<Guid>(nameof(VolumeId).ToLower()); }
+        public Guid? VolumeId {
+            get { return GetParameterValue<Guid?>(nameof(VolumeId).ToLower()); }
             set { SetParameterValue(nameof(VolumeId).ToLower(), value); }
         }
 

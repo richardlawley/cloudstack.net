@@ -93,8 +93,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the OS type that best represents this VM.
         /// </summary>
-        public Guid OsTypeId {
-            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+        public Guid? OsTypeId {
+            get { return GetParameterValue<Guid?>(nameof(OsTypeId).ToLower()); }
             set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 

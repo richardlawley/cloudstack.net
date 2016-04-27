@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// list dedicated pods by affinity group
         /// </summary>
-        public Guid AffinityGroupId {
-            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+        public Guid? AffinityGroupId {
+            get { return GetParameterValue<Guid?>(nameof(AffinityGroupId).ToLower()); }
             set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain associated with the pod
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the pod
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 

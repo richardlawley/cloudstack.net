@@ -29,16 +29,16 @@ namespace CloudStack.Net
         /// <summary>
         /// lists all public IP addresses associated to the network specified
         /// </summary>
-        public Guid AssociatedNetworkId {
-            get { return GetParameterValue<Guid>(nameof(AssociatedNetworkId).ToLower()); }
+        public Guid? AssociatedNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(AssociatedNetworkId).ToLower()); }
             set { SetParameterValue(nameof(AssociatedNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// lists IP address by ID
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -125,16 +125,16 @@ namespace CloudStack.Net
         /// <summary>
         /// lists all public IP addresses by physical network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -157,24 +157,24 @@ namespace CloudStack.Net
         /// <summary>
         /// lists all public IP addresses by VLAN ID
         /// </summary>
-        public Guid VlanId {
-            get { return GetParameterValue<Guid>(nameof(VlanId).ToLower()); }
+        public Guid? VlanId {
+            get { return GetParameterValue<Guid?>(nameof(VlanId).ToLower()); }
             set { SetParameterValue(nameof(VlanId).ToLower(), value); }
         }
 
         /// <summary>
         /// List IPs belonging to the VPC
         /// </summary>
-        public Guid VpcId {
-            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+        public Guid? VpcId {
+            get { return GetParameterValue<Guid?>(nameof(VpcId).ToLower()); }
             set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 
         /// <summary>
         /// lists all public IP addresses by zone ID
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

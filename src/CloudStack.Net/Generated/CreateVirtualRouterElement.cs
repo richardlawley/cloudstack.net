@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The provider type. Supported types are VirtualRouter (default) and VPCVirtualRouter
         /// </summary>
-        public Guid ProviderType {
-            get { return GetParameterValue<Guid>(nameof(ProviderType).ToLower()); }
+        public Guid? ProviderType {
+            get { return GetParameterValue<Guid?>(nameof(ProviderType).ToLower()); }
             set { SetParameterValue(nameof(ProviderType).ToLower(), value); }
         }
 

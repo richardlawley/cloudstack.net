@@ -13,16 +13,16 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// ID of the service offering
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the virtual machine. Pass this in if you want to see the available service offering that a virtual machine can be changed to.
         /// </summary>
-        public Guid VirtualMachineId {
-            get { return GetParameterValue<Guid>(nameof(VirtualMachineId).ToLower()); }
+        public Guid? VirtualMachineId {
+            get { return GetParameterValue<Guid?>(nameof(VirtualMachineId).ToLower()); }
             set { SetParameterValue(nameof(VirtualMachineId).ToLower(), value); }
         }
 

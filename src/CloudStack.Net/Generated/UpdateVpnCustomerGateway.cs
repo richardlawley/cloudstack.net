@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the domain ID associated with the gateway. If used with the account parameter returns the gateway associated with the account for the specified domain.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 

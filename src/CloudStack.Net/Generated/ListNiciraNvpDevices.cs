@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// nicira nvp device ID
         /// </summary>
-        public Guid Nvpdeviceid {
-            get { return GetParameterValue<Guid>(nameof(Nvpdeviceid).ToLower()); }
+        public Guid? Nvpdeviceid {
+            get { return GetParameterValue<Guid?>(nameof(Nvpdeviceid).ToLower()); }
             set { SetParameterValue(nameof(Nvpdeviceid).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 

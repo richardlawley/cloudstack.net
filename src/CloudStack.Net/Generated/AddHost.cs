@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the cluster ID for the host
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 

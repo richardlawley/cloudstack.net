@@ -21,24 +21,24 @@ namespace CloudStack.Net
         /// <summary>
         /// Counter-id of the condition.
         /// </summary>
-        public Guid CounterId {
-            get { return GetParameterValue<Guid>(nameof(CounterId).ToLower()); }
+        public Guid? CounterId {
+            get { return GetParameterValue<Guid?>(nameof(CounterId).ToLower()); }
             set { SetParameterValue(nameof(CounterId).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// ID of the Condition.
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the policy
         /// </summary>
-        public Guid PolicyId {
-            get { return GetParameterValue<Guid>(nameof(PolicyId).ToLower()); }
+        public Guid? PolicyId {
+            get { return GetParameterValue<Guid?>(nameof(PolicyId).ToLower()); }
             set { SetParameterValue(nameof(PolicyId).ToLower(), value); }
         }
 

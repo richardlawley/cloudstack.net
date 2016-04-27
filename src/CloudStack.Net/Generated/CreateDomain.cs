@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// assigns new domain a parent domain by domain ID of the parent.  If no parent domain is specied, the ROOT domain is assumed.
         /// </summary>
-        public Guid ParentDomainId {
-            get { return GetParameterValue<Guid>(nameof(ParentDomainId).ToLower()); }
+        public Guid? ParentDomainId {
+            get { return GetParameterValue<Guid?>(nameof(ParentDomainId).ToLower()); }
             set { SetParameterValue(nameof(ParentDomainId).ToLower(), value); }
         }
 

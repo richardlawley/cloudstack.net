@@ -53,24 +53,24 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the network ACL
         /// </summary>
-        public Guid AclId {
-            get { return GetParameterValue<Guid>(nameof(AclId).ToLower()); }
+        public Guid? AclId {
+            get { return GetParameterValue<Guid?>(nameof(AclId).ToLower()); }
             set { SetParameterValue(nameof(AclId).ToLower(), value); }
         }
 
         /// <summary>
         /// the uuid of the network offering to use for the private gateways network connection
         /// </summary>
-        public Guid NetworkOfferingId {
-            get { return GetParameterValue<Guid>(nameof(NetworkOfferingId).ToLower()); }
+        public Guid? NetworkOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkOfferingId).ToLower()); }
             set { SetParameterValue(nameof(NetworkOfferingId).ToLower(), value); }
         }
 
         /// <summary>
         /// the Physical Network ID the network belongs to
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 

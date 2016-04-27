@@ -29,16 +29,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the cluster ID
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// the host ID
         /// </summary>
-        public Guid HostId {
-            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+        public Guid? HostId {
+            get { return GetParameterValue<Guid?>(nameof(HostId).ToLower()); }
             set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 

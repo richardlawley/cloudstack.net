@@ -21,24 +21,24 @@ namespace CloudStack.Net
         /// <summary>
         /// list dedicated clusters by affinity group
         /// </summary>
-        public Guid AffinityGroupId {
-            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+        public Guid? AffinityGroupId {
+            get { return GetParameterValue<Guid?>(nameof(AffinityGroupId).ToLower()); }
             set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the cluster
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain associated with the cluster
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 

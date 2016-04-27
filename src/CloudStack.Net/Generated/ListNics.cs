@@ -37,16 +37,16 @@ namespace CloudStack.Net
         /// <summary>
         /// list nic of the specific vm's network
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the nic to to list IPs
         /// </summary>
-        public Guid NicId {
-            get { return GetParameterValue<Guid>(nameof(NicId).ToLower()); }
+        public Guid? NicId {
+            get { return GetParameterValue<Guid?>(nameof(NicId).ToLower()); }
             set { SetParameterValue(nameof(NicId).ToLower(), value); }
         }
 

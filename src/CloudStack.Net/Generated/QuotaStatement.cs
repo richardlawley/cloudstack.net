@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// List usage records for the specified account
         /// </summary>
-        public Guid AccountId {
-            get { return GetParameterValue<Guid>(nameof(AccountId).ToLower()); }
+        public Guid? AccountId {
+            get { return GetParameterValue<Guid?>(nameof(AccountId).ToLower()); }
             set { SetParameterValue(nameof(AccountId).ToLower(), value); }
         }
 

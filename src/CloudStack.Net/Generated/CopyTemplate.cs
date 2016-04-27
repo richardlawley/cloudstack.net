@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// ID of the zone the template is currently hosted on. If not specified and template is cross-zone, then we will sync this template to region wide image store.
         /// </summary>
-        public Guid SourceZoneId {
-            get { return GetParameterValue<Guid>(nameof(SourceZoneId).ToLower()); }
+        public Guid? SourceZoneId {
+            get { return GetParameterValue<Guid?>(nameof(SourceZoneId).ToLower()); }
             set { SetParameterValue(nameof(SourceZoneId).ToLower(), value); }
         }
 

@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// storage pool ID of the primary storage pool to which the template should be prepared. If it is not provided the template is prepared on all the available primary storage pools.
         /// </summary>
-        public Guid StorageId {
-            get { return GetParameterValue<Guid>(nameof(StorageId).ToLower()); }
+        public Guid? StorageId {
+            get { return GetParameterValue<Guid?>(nameof(StorageId).ToLower()); }
             set { SetParameterValue(nameof(StorageId).ToLower(), value); }
         }
 

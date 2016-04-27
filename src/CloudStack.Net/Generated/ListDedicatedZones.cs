@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// list dedicated zones by affinity group
         /// </summary>
-        public Guid AffinityGroupId {
-            get { return GetParameterValue<Guid>(nameof(AffinityGroupId).ToLower()); }
+        public Guid? AffinityGroupId {
+            get { return GetParameterValue<Guid?>(nameof(AffinityGroupId).ToLower()); }
             set { SetParameterValue(nameof(AffinityGroupId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the domain associated with the zone
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Zone
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

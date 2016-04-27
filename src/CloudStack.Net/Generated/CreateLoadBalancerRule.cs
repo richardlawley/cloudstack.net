@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the domain ID associated with the load balancer
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -85,8 +85,8 @@ namespace CloudStack.Net
         /// <summary>
         /// The guest network this rule will be created for. Required when public Ip address is not associated with any Guest network yet (VPC case)
         /// </summary>
-        public Guid NetworkId {
-            get { return GetParameterValue<Guid>(nameof(NetworkId).ToLower()); }
+        public Guid? NetworkId {
+            get { return GetParameterValue<Guid?>(nameof(NetworkId).ToLower()); }
             set { SetParameterValue(nameof(NetworkId).ToLower(), value); }
         }
 
@@ -109,16 +109,16 @@ namespace CloudStack.Net
         /// <summary>
         /// public IP address ID from where the network traffic will be load balanced from
         /// </summary>
-        public Guid PublicIpId {
-            get { return GetParameterValue<Guid>(nameof(PublicIpId).ToLower()); }
+        public Guid? PublicIpId {
+            get { return GetParameterValue<Guid?>(nameof(PublicIpId).ToLower()); }
             set { SetParameterValue(nameof(PublicIpId).ToLower(), value); }
         }
 
         /// <summary>
         /// zone where the load balancer is going to be created. This parameter is required when LB service provider is ElasticLoadBalancerVm
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

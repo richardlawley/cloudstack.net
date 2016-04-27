@@ -37,16 +37,16 @@ namespace CloudStack.Net
         /// <summary>
         /// List usage records for the specified account
         /// </summary>
-        public Guid AccountId {
-            get { return GetParameterValue<Guid>(nameof(AccountId).ToLower()); }
+        public Guid? AccountId {
+            get { return GetParameterValue<Guid?>(nameof(AccountId).ToLower()); }
             set { SetParameterValue(nameof(AccountId).ToLower(), value); }
         }
 
         /// <summary>
         /// List usage records for the specified domain.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// List usage records for specified project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

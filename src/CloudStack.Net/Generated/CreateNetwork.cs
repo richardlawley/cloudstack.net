@@ -53,8 +53,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Network ACL ID associated for the network
         /// </summary>
-        public Guid AclId {
-            get { return GetParameterValue<Guid>(nameof(AclId).ToLower()); }
+        public Guid? AclId {
+            get { return GetParameterValue<Guid?>(nameof(AclId).ToLower()); }
             set { SetParameterValue(nameof(AclId).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// domain ID of the account owning a network
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -149,16 +149,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the physical network ID the network belongs to
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional project for the SSH key
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -197,8 +197,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the VPC network belongs to
         /// </summary>
-        public Guid VpcId {
-            get { return GetParameterValue<Guid>(nameof(VpcId).ToLower()); }
+        public Guid? VpcId {
+            get { return GetParameterValue<Guid?>(nameof(VpcId).ToLower()); }
             set { SetParameterValue(nameof(VpcId).ToLower(), value); }
         }
 

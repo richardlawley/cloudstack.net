@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the load balancer stickiness policy
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the load balancer rule
         /// </summary>
-        public Guid LbRuleId {
-            get { return GetParameterValue<Guid>(nameof(LbRuleId).ToLower()); }
+        public Guid? LbRuleId {
+            get { return GetParameterValue<Guid?>(nameof(LbRuleId).ToLower()); }
             set { SetParameterValue(nameof(LbRuleId).ToLower(), value); }
         }
 

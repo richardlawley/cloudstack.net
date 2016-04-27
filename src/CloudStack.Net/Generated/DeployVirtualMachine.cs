@@ -85,8 +85,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk offering for the virtual machine. If the template is of ISO format, the diskOfferingId is for the root disk volume. Otherwise this parameter is used to indicate the offering for the data disk volume. If the templateId parameter passed is from a Template object, the diskOfferingId refers to a DATA Disk Volume created. If the templateId parameter passed is from an ISO object, the diskOfferingId refers to a ROOT Disk Volume created.
         /// </summary>
-        public Guid DiskOfferingId {
-            get { return GetParameterValue<Guid>(nameof(DiskOfferingId).ToLower()); }
+        public Guid? DiskOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(DiskOfferingId).ToLower()); }
             set { SetParameterValue(nameof(DiskOfferingId).ToLower(), value); }
         }
 
@@ -109,8 +109,8 @@ namespace CloudStack.Net
         /// <summary>
         /// an optional domainId for the virtual machine. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -125,8 +125,8 @@ namespace CloudStack.Net
         /// <summary>
         /// destination Host ID to deploy the VM to - parameter available for root admin only
         /// </summary>
-        public Guid HostId {
-            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+        public Guid? HostId {
+            get { return GetParameterValue<Guid?>(nameof(HostId).ToLower()); }
             set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
@@ -197,8 +197,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Deploy vm for the project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

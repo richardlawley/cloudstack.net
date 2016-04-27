@@ -85,8 +85,8 @@ namespace CloudStack.Net
         /// <summary>
         /// create template for the project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -101,8 +101,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the snapshot the template is being created from. Either this parameter, or volumeId has to be passed in
         /// </summary>
-        public Guid SnapshotId {
-            get { return GetParameterValue<Guid>(nameof(SnapshotId).ToLower()); }
+        public Guid? SnapshotId {
+            get { return GetParameterValue<Guid?>(nameof(SnapshotId).ToLower()); }
             set { SetParameterValue(nameof(SnapshotId).ToLower(), value); }
         }
 
@@ -125,16 +125,16 @@ namespace CloudStack.Net
         /// <summary>
         /// Optional, VM ID. If this presents, it is going to create a baremetal template for VM this ID refers to. This is only for VM whose hypervisor type is BareMetal
         /// </summary>
-        public Guid Virtualmachineid {
-            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+        public Guid? Virtualmachineid {
+            get { return GetParameterValue<Guid?>(nameof(Virtualmachineid).ToLower()); }
             set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the disk volume the template is being created from. Either this parameter, or snapshotId has to be passed in
         /// </summary>
-        public Guid VolumeId {
-            get { return GetParameterValue<Guid>(nameof(VolumeId).ToLower()); }
+        public Guid? VolumeId {
+            get { return GetParameterValue<Guid?>(nameof(VolumeId).ToLower()); }
             set { SetParameterValue(nameof(VolumeId).ToLower(), value); }
         }
 

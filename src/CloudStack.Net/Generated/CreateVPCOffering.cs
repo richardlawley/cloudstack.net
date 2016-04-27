@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the service offering for the VPC router appliance
         /// </summary>
-        public Guid ServiceOfferingId {
-            get { return GetParameterValue<Guid>(nameof(ServiceOfferingId).ToLower()); }
+        public Guid? ServiceOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(ServiceOfferingId).ToLower()); }
             set { SetParameterValue(nameof(ServiceOfferingId).ToLower(), value); }
         }
 

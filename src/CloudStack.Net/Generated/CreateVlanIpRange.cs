@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// domain ID of the account owning a VLAN
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -85,32 +85,32 @@ namespace CloudStack.Net
         /// <summary>
         /// the network id
         /// </summary>
-        public Guid NetworkID {
-            get { return GetParameterValue<Guid>(nameof(NetworkID).ToLower()); }
+        public Guid? NetworkID {
+            get { return GetParameterValue<Guid?>(nameof(NetworkID).ToLower()); }
             set { SetParameterValue(nameof(NetworkID).ToLower(), value); }
         }
 
         /// <summary>
         /// the physical network id
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// optional parameter. Have to be specified for Direct Untagged vlan only.
         /// </summary>
-        public Guid PodId {
-            get { return GetParameterValue<Guid>(nameof(PodId).ToLower()); }
+        public Guid? PodId {
+            get { return GetParameterValue<Guid?>(nameof(PodId).ToLower()); }
             set { SetParameterValue(nameof(PodId).ToLower(), value); }
         }
 
         /// <summary>
         /// project who will own the VLAN. If VLAN is Zone wide, this parameter should be ommited
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
@@ -141,8 +141,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the Zone ID of the VLAN IP range
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

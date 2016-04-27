@@ -29,24 +29,24 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the condition of the policy
         /// </summary>
-        public Guid ConditionId {
-            get { return GetParameterValue<Guid>(nameof(ConditionId).ToLower()); }
+        public Guid? ConditionId {
+            get { return GetParameterValue<Guid?>(nameof(ConditionId).ToLower()); }
             set { SetParameterValue(nameof(ConditionId).ToLower(), value); }
         }
 
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the autoscale policy
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the autoscale vm group
         /// </summary>
-        public Guid VmGroupId {
-            get { return GetParameterValue<Guid>(nameof(VmGroupId).ToLower()); }
+        public Guid? VmGroupId {
+            get { return GetParameterValue<Guid?>(nameof(VmGroupId).ToLower()); }
             set { SetParameterValue(nameof(VmGroupId).ToLower(), value); }
         }
 

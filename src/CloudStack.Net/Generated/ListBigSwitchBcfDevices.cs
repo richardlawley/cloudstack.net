@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// bigswitch BCF controller device ID
         /// </summary>
-        public Guid Bcfdeviceid {
-            get { return GetParameterValue<Guid>(nameof(Bcfdeviceid).ToLower()); }
+        public Guid? Bcfdeviceid {
+            get { return GetParameterValue<Guid?>(nameof(Bcfdeviceid).ToLower()); }
             set { SetParameterValue(nameof(Bcfdeviceid).ToLower(), value); }
         }
 
@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 

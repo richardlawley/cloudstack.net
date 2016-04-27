@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 
         /// <summary>
         /// Brocade VCS switch ID
         /// </summary>
-        public Guid Vcsdeviceid {
-            get { return GetParameterValue<Guid>(nameof(Vcsdeviceid).ToLower()); }
+        public Guid? Vcsdeviceid {
+            get { return GetParameterValue<Guid?>(nameof(Vcsdeviceid).ToLower()); }
             set { SetParameterValue(nameof(Vcsdeviceid).ToLower(), value); }
         }
 

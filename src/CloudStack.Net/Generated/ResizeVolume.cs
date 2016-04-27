@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// new disk offering id
         /// </summary>
-        public Guid Diskofferingid {
-            get { return GetParameterValue<Guid>(nameof(Diskofferingid).ToLower()); }
+        public Guid? Diskofferingid {
+            get { return GetParameterValue<Guid?>(nameof(Diskofferingid).ToLower()); }
             set { SetParameterValue(nameof(Diskofferingid).ToLower(), value); }
         }
 

@@ -21,24 +21,24 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Account to update the parameter value for corresponding account
         /// </summary>
-        public Guid AccountId {
-            get { return GetParameterValue<Guid>(nameof(AccountId).ToLower()); }
+        public Guid? AccountId {
+            get { return GetParameterValue<Guid?>(nameof(AccountId).ToLower()); }
             set { SetParameterValue(nameof(AccountId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the Cluster to update the parameter value for corresponding cluster
         /// </summary>
-        public Guid ClusterId {
-            get { return GetParameterValue<Guid>(nameof(ClusterId).ToLower()); }
+        public Guid? ClusterId {
+            get { return GetParameterValue<Guid?>(nameof(ClusterId).ToLower()); }
             set { SetParameterValue(nameof(ClusterId).ToLower(), value); }
         }
 
         /// <summary>
         /// the ID of the Storage pool to update the parameter value for corresponding storage pool
         /// </summary>
-        public Guid Storageid {
-            get { return GetParameterValue<Guid>(nameof(Storageid).ToLower()); }
+        public Guid? Storageid {
+            get { return GetParameterValue<Guid?>(nameof(Storageid).ToLower()); }
             set { SetParameterValue(nameof(Storageid).ToLower(), value); }
         }
 
@@ -53,8 +53,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the Zone to update the parameter value for corresponding zone
         /// </summary>
-        public Guid ZoneId {
-            get { return GetParameterValue<Guid>(nameof(ZoneId).ToLower()); }
+        public Guid? ZoneId {
+            get { return GetParameterValue<Guid?>(nameof(ZoneId).ToLower()); }
             set { SetParameterValue(nameof(ZoneId).ToLower(), value); }
         }
 

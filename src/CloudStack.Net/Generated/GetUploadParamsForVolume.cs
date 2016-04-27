@@ -53,16 +53,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the disk offering. This must be a custom sized offering since during upload of volume/template size is unknown.
         /// </summary>
-        public Guid DiskOfferingId {
-            get { return GetParameterValue<Guid>(nameof(DiskOfferingId).ToLower()); }
+        public Guid? DiskOfferingId {
+            get { return GetParameterValue<Guid?>(nameof(DiskOfferingId).ToLower()); }
             set { SetParameterValue(nameof(DiskOfferingId).ToLower(), value); }
         }
 
         /// <summary>
         /// an optional domainId. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -77,8 +77,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Upload volume/template for the project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

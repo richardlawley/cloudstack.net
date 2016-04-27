@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the user used to launch and destroy the VMs
         /// </summary>
-        public Guid AutoscaleUserId {
-            get { return GetParameterValue<Guid>(nameof(AutoscaleUserId).ToLower()); }
+        public Guid? AutoscaleUserId {
+            get { return GetParameterValue<Guid?>(nameof(AutoscaleUserId).ToLower()); }
             set { SetParameterValue(nameof(AutoscaleUserId).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the template of the auto deployed virtual machine
         /// </summary>
-        public Guid TemplateId {
-            get { return GetParameterValue<Guid>(nameof(TemplateId).ToLower()); }
+        public Guid? TemplateId {
+            get { return GetParameterValue<Guid?>(nameof(TemplateId).ToLower()); }
             set { SetParameterValue(nameof(TemplateId).ToLower(), value); }
         }
 

@@ -69,8 +69,8 @@ namespace CloudStack.Net
         /// <summary>
         /// an optional domainId. If the account parameter is used, domainId must also be used.
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
@@ -117,16 +117,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the OS type that best represents the OS of this ISO. If the ISO is bootable this parameter needs to be passed
         /// </summary>
-        public Guid OsTypeId {
-            get { return GetParameterValue<Guid>(nameof(OsTypeId).ToLower()); }
+        public Guid? OsTypeId {
+            get { return GetParameterValue<Guid?>(nameof(OsTypeId).ToLower()); }
             set { SetParameterValue(nameof(OsTypeId).ToLower(), value); }
         }
 
         /// <summary>
         /// Register ISO for the project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 

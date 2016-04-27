@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Palo Alto firewall device ID
         /// </summary>
-        public Guid FwDeviceId {
-            get { return GetParameterValue<Guid>(nameof(FwDeviceId).ToLower()); }
+        public Guid? FwDeviceId {
+            get { return GetParameterValue<Guid?>(nameof(FwDeviceId).ToLower()); }
             set { SetParameterValue(nameof(FwDeviceId).ToLower(), value); }
         }
 
@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the Physical Network ID
         /// </summary>
-        public Guid PhysicalNetworkId {
-            get { return GetParameterValue<Guid>(nameof(PhysicalNetworkId).ToLower()); }
+        public Guid? PhysicalNetworkId {
+            get { return GetParameterValue<Guid?>(nameof(PhysicalNetworkId).ToLower()); }
             set { SetParameterValue(nameof(PhysicalNetworkId).ToLower(), value); }
         }
 

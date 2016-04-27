@@ -21,24 +21,24 @@ namespace CloudStack.Net
         /// <summary>
         /// list only resources belonging to the domain specified
         /// </summary>
-        public Guid DomainId {
-            get { return GetParameterValue<Guid>(nameof(DomainId).ToLower()); }
+        public Guid? DomainId {
+            get { return GetParameterValue<Guid?>(nameof(DomainId).ToLower()); }
             set { SetParameterValue(nameof(DomainId).ToLower(), value); }
         }
 
         /// <summary>
         /// Lists rule with the specified ID.
         /// </summary>
-        public Guid Id {
-            get { return GetParameterValue<Guid>(nameof(Id).ToLower()); }
+        public Guid? Id {
+            get { return GetParameterValue<Guid?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 
         /// <summary>
         /// list the rule belonging to this public IP address
         /// </summary>
-        public Guid Ipaddressid {
-            get { return GetParameterValue<Guid>(nameof(Ipaddressid).ToLower()); }
+        public Guid? Ipaddressid {
+            get { return GetParameterValue<Guid?>(nameof(Ipaddressid).ToLower()); }
             set { SetParameterValue(nameof(Ipaddressid).ToLower(), value); }
         }
 
@@ -69,16 +69,16 @@ namespace CloudStack.Net
         /// <summary>
         /// list objects by project
         /// </summary>
-        public Guid ProjectId {
-            get { return GetParameterValue<Guid>(nameof(ProjectId).ToLower()); }
+        public Guid? ProjectId {
+            get { return GetParameterValue<Guid?>(nameof(ProjectId).ToLower()); }
             set { SetParameterValue(nameof(ProjectId).ToLower(), value); }
         }
 
         /// <summary>
         /// Lists all rules applied to the specified VM.
         /// </summary>
-        public Guid Virtualmachineid {
-            get { return GetParameterValue<Guid>(nameof(Virtualmachineid).ToLower()); }
+        public Guid? Virtualmachineid {
+            get { return GetParameterValue<Guid?>(nameof(Virtualmachineid).ToLower()); }
             set { SetParameterValue(nameof(Virtualmachineid).ToLower(), value); }
         }
 

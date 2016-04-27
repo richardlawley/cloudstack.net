@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// destination Host ID to deploy the VM to - parameter available for root admin only
         /// </summary>
-        public Guid HostId {
-            get { return GetParameterValue<Guid>(nameof(HostId).ToLower()); }
+        public Guid? HostId {
+            get { return GetParameterValue<Guid?>(nameof(HostId).ToLower()); }
             set { SetParameterValue(nameof(HostId).ToLower(), value); }
         }
 
