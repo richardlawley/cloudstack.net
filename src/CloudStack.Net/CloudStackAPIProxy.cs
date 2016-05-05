@@ -119,6 +119,11 @@ namespace CloudStack.Net
             {
                 throw new FormatException($"Expected root to contain a single object - it contains {root.Count}");
             }
+            return DecodeResponse<TResponse>(root);
+        }
+
+        public static TResponse DecodeResponse<TResponse>(JObject root) where TResponse : new()
+        {
             TResponse decodedResponse;
 
             // Top should always be a JProperty, normally with the name of the response

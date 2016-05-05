@@ -162,6 +162,17 @@ namespace CloudStack.Net.Tests
         }
 
         [TestMethod]
+        public void DecodeAsyncResponse_WithBody_CorrectlyDeserializesInner()
+        {
+            const string input = "{\"queryasyncjobresultresponse\":{\"accountid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"userid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"cmd\":\"org.apache.cloudstack.api.command.admin.vm.DeployVMCmdByAdmin\",\"jobstatus\":1,\"jobprocstatus\":0,\"jobresultcode\":0,\"jobresulttype\":\"object\",\"jobresult\":{\"virtualmachine\":{\"id\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"name\":\"VM-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"displayname\":\"VM-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"account\":\"testaccount\",\"userid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"username\":\"testaccount\",\"domainid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"domain\":\"ROOT\",\"created\":\"2016-04-29T14:28:36+0100\",\"state\":\"Running\",\"haenable\":true,\"zoneid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"zonename\":\"testzone\",\"hostid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"hostname\":\"testhostname\",\"templateid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"templatename\":\"CentOS\",\"templatedisplaytext\":\"CentOS\",\"passwordenabled\":true,\"serviceofferingid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"serviceofferingname\":\"testso\",\"cpunumber\":1,\"cpuspeed\":2000,\"memory\":512,\"guestosid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"rootdeviceid\":0,\"rootdevicetype\":\"ROOT\",\"securitygroup\":[],\"password\":\"xxxxxxxx\",\"nic\":[{\"id\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"networkid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"networkname\":\"test-net\",\"netmask\":\"255.255.255.0\",\"gateway\":\"10.1.1.1\",\"ipaddress\":\"10.1.1.88\",\"isolationuri\":\"vlan://1590\",\"broadcasturi\":\"vlan://1590\",\"traffictype\":\"Guest\",\"type\":\"Isolated\",\"isdefault\":true,\"macaddress\":\"02:00:7f:d7:00:01\",\"secondaryip\":[]}],\"hypervisor\":\"XenServer\",\"instancename\":\"i-11-1111-VM\",\"tags\":[],\"details\":{\"hypervisortoolsversion\":\"xenserver61\"},\"affinitygroup\":[],\"displayvm\":true,\"isdynamicallyscalable\":false,\"ostypeid\":123,\"jobid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"jobstatus\":0}},\"jobinstancetype\":\"VirtualMachine\",\"jobinstanceid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\",\"created\":\"2016-04-29T14:28:37+0100\",\"jobid\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\"}}";
+            var response = CloudStackAPIProxy.DecodeResponse<AsyncJobResponse>(input);
+            UserVmResponse resp = response.DecodeJobResult<UserVmResponse>();
+            resp.ShouldNotBeNull();
+            resp.UserName.ShouldBe("testaccount");
+            resp.Password.ShouldBe("xxxxxxxx");
+        }
+
+        [TestMethod]
         public void SerializeValue_Null_ReturnsNull()
         {
             CloudStackAPIProxy.SerialiseValue("foo", null).ShouldBe(null);

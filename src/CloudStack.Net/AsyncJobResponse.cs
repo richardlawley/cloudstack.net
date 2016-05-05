@@ -77,6 +77,19 @@ namespace CloudStack.Net
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
-        public T DecodeJobResult<T>() => JobResult.ToObject<T>();
+        public T DecodeJobResult<T>()
+            where T : new()
+        {
+            return CloudStackAPIProxy.DecodeResponse<T>(JobResult);
+        }
+
+        public void StoreJobResult<T>(T result) where T : new()
+        {
+            JObject obj = new JObject();
+            JObject inner = JObject.FromObject(result);
+            obj.Add(new JProperty(typeof(T).Name, inner));
+            JobResult = obj;
+            JobResultType = "object";
+        }
     }
 }
