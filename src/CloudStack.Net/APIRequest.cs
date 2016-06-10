@@ -34,6 +34,12 @@ namespace CloudStack.Net
 
         public bool SupportsImpersonation { get; }
 
+        /// <summary>
+        /// If non-null, /api will be removed from the endpoint and this value will be appended
+        /// </summary>
+        internal virtual string OverrideEndpoint => null;
+        internal virtual bool OverrideDecodeResponse => false;
+
         protected IList<T> GetList<T>(string name)
         {
             if (!Parameters.ContainsKey(name))

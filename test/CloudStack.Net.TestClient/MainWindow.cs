@@ -267,5 +267,11 @@ namespace CloudStack.Net.TestClient
                 tests.CreateDomain(domainName);
             }
         }
+
+        private void ButtonViewConsole_Click(object sender, EventArgs e)
+        {
+            Tests tests = new Tests(this.WriteToLogBox);
+            tests.ViewConsole(this.TextBoxVMId.Text);
+        }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="CloudStackAPIClient.cs" />
     <Compile Include="CloudStackAPIProxy.cs" />
     <Compile Include="CloudStackException.cs" />
+    <Compile Include="CustomResponse.cs" />
     <Compile Include="Generated\AccountResponse.cs" />
     <Compile Include="Generated\AccountState.cs" />
     <Compile Include="Generated\ActivateProject.cs" />
@@ -792,6 +793,7 @@
     <Compile Include="ListResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxyExtensions.cs" />
+    <Compile Include="ViewConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CloudStack.Net.nuspec" />

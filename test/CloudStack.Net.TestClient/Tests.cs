@@ -321,6 +321,19 @@ namespace CloudStack.Net.TestClient
             }
         }
 
+        internal void ViewConsole(string id)
+        {
+            try
+            {
+                var result = _client.ViewConsole(new ViewConsoleRequest { VirtualMachineId = Guid.Parse(id) });
+                _logWriter($"Console for {result.Name} is available at {result.Url}");
+            }
+            catch (System.Exception ex)
+            {
+                _logWriter("Error viewing console:" + ex.Message);
+            }
+        }
+
         #endregion
 
         #region Volume tests

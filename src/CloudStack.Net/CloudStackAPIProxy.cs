@@ -55,7 +55,7 @@ namespace CloudStack.Net
         /// Calculates a HMAC SHA-1 hash of the supplied string.
         /// </summary>
         /// <param name="toSign">String to sign</param>
-        /// <param name="ssoKey">Signing private key</param>
+        /// <param name="secretKey">Signing private key</param>
         /// <returns>HMAC SHA-1 signature</returns>
         public static string CalcSignature(string toSign, string secretKey)
         {
@@ -74,7 +74,7 @@ namespace CloudStack.Net
         /// Produces a query string with an optional signature from arguments in key/value string form.
         /// </summary>
         /// <param name="arguments">Command in terms of key/value pairs</param>
-        /// <param name="ssoKey">Optional secret key if the query is to be signed</param>
+        /// <param name="secretKey">Optional secret key if the query is to be signed</param>
         /// <returns>Http query string including the signature.</returns>
         /// <remarks>
         /// Reference:
@@ -207,6 +207,8 @@ namespace CloudStack.Net
         public TResponse Request<TResponse>(APIRequest request) where TResponse : new()
         {
             HttpWebRequest webRequest = CreateRequest(request);
+            webRequest.Timeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
+            webRequest.ReadWriteTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
 
             try
             {
@@ -218,14 +220,30 @@ namespace CloudStack.Net
                         using (StreamReader streamReader = new StreamReader(respStrm, Encoding.UTF8))
                         {
                             string responseText = streamReader.ReadToEnd();
-                            try
+                            TResponse response;
+                            if (request.OverrideDecodeResponse)
                             {
-                                return DecodeResponse<TResponse>(responseText);
+                                response = new TResponse();
+                                CustomResponse customResponse = response as CustomResponse;
+                                if (customResponse == null)
+                                {
+                                    throw new InvalidOperationException($"{nameof(request.OverrideDecodeResponse)} has been selected, but result does not derive from {nameof(CustomResponse)}");
+                                }
+                                customResponse.DecodeResponse(responseText);
                             }
-                            catch (FormatException ex)
+                            else
                             {
-                                throw new FormatException("Could not decode CloudStack API Response", ex);
+                                try
+                                {
+                                    response = DecodeResponse<TResponse>(responseText);
+                                }
+                                catch (FormatException ex)
+                                {
+                                    throw new FormatException("Could not decode CloudStack API Response", ex);
+                                }
                             }
+
+                            return response;
                         }
                     }
                 }
@@ -336,7 +354,12 @@ namespace CloudStack.Net
         private HttpWebRequest CreateRequest(APIRequest request)
         {
             string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
-            var fullUri = new Uri(ServiceUrl + "?" + queryString);
+            string serviceUrlBase = ServiceUrl;
+            if (!String.IsNullOrEmpty(request.OverrideEndpoint))
+            {
+                serviceUrlBase = serviceUrlBase.Substring(0, serviceUrlBase.Length - "api".Length) + request.OverrideEndpoint;
+            }
+            var fullUri = new Uri(serviceUrlBase + "?" + queryString);
 
             HttpWebRequest webRequest = WebRequest.CreateHttp(fullUri);
             webRequest.Accept = "application/json;charset=UTF-8";
