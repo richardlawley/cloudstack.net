@@ -26,7 +26,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the time allowed for existing connections to get closed before a vm is destroyed
         /// </summary>
-        public int DestroyVmGraceperiod { get; set; }
+        public int? DestroyVmGraceperiod { get; set; }
 
         /// <summary>
         /// the domain name of the vm profile

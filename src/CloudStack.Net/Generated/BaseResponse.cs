@@ -16,7 +16,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the current status of the latest async job acting on this object
         /// </summary>
-        public int JobStatus { get; set; }
+        public int? JobStatus { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

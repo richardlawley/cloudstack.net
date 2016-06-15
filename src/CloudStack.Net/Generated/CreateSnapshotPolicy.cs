@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// maximum number of snapshots to retain
         /// </summary>
-        public int MaxSnaps {
-            get { return GetParameterValue<int>(nameof(MaxSnaps).ToLower()); }
+        public int? MaxSnaps {
+            get { return GetParameterValue<int?>(nameof(MaxSnaps).ToLower()); }
             set { SetParameterValue(nameof(MaxSnaps).ToLower(), value); }
         }
 

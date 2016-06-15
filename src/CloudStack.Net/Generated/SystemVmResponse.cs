@@ -16,7 +16,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the number of active console sessions for the console proxy system vm
         /// </summary>
-        public int ActiveViewerSessions { get; set; }
+        public int? ActiveViewerSessions { get; set; }
 
         /// <summary>
         /// the date and time the system VM was created
@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the job status associated with the system VM.  This is only displayed if the router listed is part of a currently running asynchronous job.
         /// </summary>
-        public int JobStatus { get; set; }
+        public int? JobStatus { get; set; }
 
         /// <summary>
         /// the link local IP address for the system vm

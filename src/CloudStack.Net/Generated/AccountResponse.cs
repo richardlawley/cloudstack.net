@@ -226,12 +226,12 @@ namespace CloudStack.Net
         /// <summary>
         /// the total number of virtual machines running for this account
         /// </summary>
-        public int VmRunning { get; set; }
+        public int? VmRunning { get; set; }
 
         /// <summary>
         /// the total number of virtual machines stopped for this account
         /// </summary>
-        public int VmStopped { get; set; }
+        public int? VmStopped { get; set; }
 
         /// <summary>
         /// the total number of virtual machines deployed by this account

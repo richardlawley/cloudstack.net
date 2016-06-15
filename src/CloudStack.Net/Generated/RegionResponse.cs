@@ -11,7 +11,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID of the region
         /// </summary>
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         /// <summary>
         /// the end point of the region

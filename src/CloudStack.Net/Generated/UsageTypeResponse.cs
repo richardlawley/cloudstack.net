@@ -16,7 +16,7 @@ namespace CloudStack.Net
         /// <summary>
         /// usage type
         /// </summary>
-        public int Usagetypeid { get; set; }
+        public int? Usagetypeid { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

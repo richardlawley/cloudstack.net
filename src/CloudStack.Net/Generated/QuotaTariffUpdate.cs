@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Integer value for the usage type of the resource
         /// </summary>
-        public int UsageType {
-            get { return GetParameterValue<int>(nameof(UsageType).ToLower()); }
+        public int? UsageType {
+            get { return GetParameterValue<int?>(nameof(UsageType).ToLower()); }
             set { SetParameterValue(nameof(UsageType).ToLower(), value); }
         }
 

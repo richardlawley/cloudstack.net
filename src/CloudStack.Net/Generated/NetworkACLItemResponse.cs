@@ -41,17 +41,17 @@ namespace CloudStack.Net
         /// <summary>
         /// error code for this icmp message
         /// </summary>
-        public int IcmpCode { get; set; }
+        public int? IcmpCode { get; set; }
 
         /// <summary>
         /// type of the icmp message being sent
         /// </summary>
-        public int IcmpType { get; set; }
+        public int? IcmpType { get; set; }
 
         /// <summary>
         /// Number of the ACL Item
         /// </summary>
-        public int Number { get; set; }
+        public int? Number { get; set; }
 
         /// <summary>
         /// the protocol of the ACL

@@ -29,16 +29,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the private port of the private IP address/virtual machine where the network traffic will be load balanced to
         /// </summary>
-        public int PrivatePort {
-            get { return GetParameterValue<int>(nameof(PrivatePort).ToLower()); }
+        public int? PrivatePort {
+            get { return GetParameterValue<int?>(nameof(PrivatePort).ToLower()); }
             set { SetParameterValue(nameof(PrivatePort).ToLower(), value); }
         }
 
         /// <summary>
         /// the public port from where the network traffic will be load balanced from
         /// </summary>
-        public int PublicPort {
-            get { return GetParameterValue<int>(nameof(PublicPort).ToLower()); }
+        public int? PublicPort {
+            get { return GetParameterValue<int?>(nameof(PublicPort).ToLower()); }
             set { SetParameterValue(nameof(PublicPort).ToLower(), value); }
         }
 

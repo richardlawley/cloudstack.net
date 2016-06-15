@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// region where the global load balancer is going to be created.
         /// </summary>
-        public int RegionId {
-            get { return GetParameterValue<int>(nameof(RegionId).ToLower()); }
+        public int? RegionId {
+            get { return GetParameterValue<int?>(nameof(RegionId).ToLower()); }
             set { SetParameterValue(nameof(RegionId).ToLower(), value); }
         }
 

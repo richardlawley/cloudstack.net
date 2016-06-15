@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the starting port of port forwarding rule's private port range
         /// </summary>
-        public int Privateport {
-            get { return GetParameterValue<int>(nameof(Privateport).ToLower()); }
+        public int? Privateport {
+            get { return GetParameterValue<int?>(nameof(Privateport).ToLower()); }
             set { SetParameterValue(nameof(Privateport).ToLower(), value); }
         }
 
@@ -37,8 +37,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the starting port of port forwarding rule's public port range
         /// </summary>
-        public int Publicport {
-            get { return GetParameterValue<int>(nameof(Publicport).ToLower()); }
+        public int? Publicport {
+            get { return GetParameterValue<int?>(nameof(Publicport).ToLower()); }
             set { SetParameterValue(nameof(Publicport).ToLower(), value); }
         }
 

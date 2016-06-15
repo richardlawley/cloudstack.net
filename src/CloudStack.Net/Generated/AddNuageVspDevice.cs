@@ -45,16 +45,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the port to communicate to Nuage VSD
         /// </summary>
-        public int Port {
-            get { return GetParameterValue<int>(nameof(Port).ToLower()); }
+        public int? Port {
+            get { return GetParameterValue<int?>(nameof(Port).ToLower()); }
             set { SetParameterValue(nameof(Port).ToLower(), value); }
         }
 
         /// <summary>
         /// the number of retries on failure to communicate to Nuage VSD
         /// </summary>
-        public int Retrycount {
-            get { return GetParameterValue<int>(nameof(Retrycount).ToLower()); }
+        public int? Retrycount {
+            get { return GetParameterValue<int?>(nameof(Retrycount).ToLower()); }
             set { SetParameterValue(nameof(Retrycount).ToLower(), value); }
         }
 

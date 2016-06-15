@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Port
         /// </summary>
-        public int Port {
-            get { return GetParameterValue<int>(nameof(Port).ToLower()); }
+        public int? Port {
+            get { return GetParameterValue<int?>(nameof(Port).ToLower()); }
             set { SetParameterValue(nameof(Port).ToLower(), value); }
         }
 

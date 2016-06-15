@@ -46,12 +46,12 @@ namespace CloudStack.Net
         /// <summary>
         /// the CPU number of the host
         /// </summary>
-        public int CpuNumber { get; set; }
+        public int? CpuNumber { get; set; }
 
         /// <summary>
         /// the number of CPU sockets on the host
         /// </summary>
-        public int CpuSockets { get; set; }
+        public int? CpuSockets { get; set; }
 
         /// <summary>
         /// the CPU speed of the host

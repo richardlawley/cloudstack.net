@@ -56,7 +56,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the percentage of the entity uploaded to the specified location
         /// </summary>
-        public int Uploadpercentage { get; set; }
+        public int? Uploadpercentage { get; set; }
 
         /// <summary>
         /// if mode = upload then url of the uploaded entity. if mode = download the url from which the entity can be downloaded

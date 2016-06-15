@@ -71,7 +71,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Hypervisor snapshot reserve space as a percent of a volume (for managed storage using Xen or VMware)
         /// </summary>
-        public int HypervisorSnapshotReserve { get; set; }
+        public int? HypervisorSnapshotReserve { get; set; }
 
         /// <summary>
         /// true if disk offering uses custom size, false otherwise

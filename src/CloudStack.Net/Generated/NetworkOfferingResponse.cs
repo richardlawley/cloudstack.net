@@ -66,7 +66,7 @@ namespace CloudStack.Net
         /// <summary>
         /// maximum number of concurrents connections to be handled by lb
         /// </summary>
-        public int Maxconnections { get; set; }
+        public int? Maxconnections { get; set; }
 
         /// <summary>
         /// the name of the network offering
@@ -76,7 +76,7 @@ namespace CloudStack.Net
         /// <summary>
         /// data transfer rate in megabits per second allowed.
         /// </summary>
-        public int NetworkRate { get; set; }
+        public int? NetworkRate { get; set; }
 
         /// <summary>
         /// the ID of the service offering used by virtual router provider

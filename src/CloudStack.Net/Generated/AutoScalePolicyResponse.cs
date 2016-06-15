@@ -41,7 +41,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the duration for which the conditions have to be true before action is taken
         /// </summary>
-        public int Duration { get; set; }
+        public int? Duration { get; set; }
 
         /// <summary>
         /// the project name of the autoscale policy
@@ -56,7 +56,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the cool down period for which the policy should not be evaluated after the action has been taken
         /// </summary>
-        public int QuietTime { get; set; }
+        public int? QuietTime { get; set; }
 
         public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
     }

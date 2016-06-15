@@ -41,7 +41,7 @@ namespace CloudStack.Net
         /// <summary>
         /// snapshot reservation
         /// </summary>
-        public int SnapshotReservation { get; set; }
+        public int? SnapshotReservation { get; set; }
 
         /// <summary>
         /// Volume name

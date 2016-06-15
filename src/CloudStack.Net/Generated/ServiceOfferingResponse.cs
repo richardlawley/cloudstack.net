@@ -16,12 +16,12 @@ namespace CloudStack.Net
         /// <summary>
         /// the number of CPU
         /// </summary>
-        public int CpuNumber { get; set; }
+        public int? CpuNumber { get; set; }
 
         /// <summary>
         /// the clock rate CPU speed in Mhz
         /// </summary>
-        public int CpuSpeed { get; set; }
+        public int? CpuSpeed { get; set; }
 
         /// <summary>
         /// the date this service offering was created
@@ -81,7 +81,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Hypervisor snapshot reserve space as a percent of a volume (for managed storage using Xen or VMware)
         /// </summary>
-        public int HypervisorSnapshotReserve { get; set; }
+        public int? HypervisorSnapshotReserve { get; set; }
 
         /// <summary>
         /// is true if the offering is customized
@@ -116,7 +116,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the memory in MB
         /// </summary>
-        public int Memory { get; set; }
+        public int? Memory { get; set; }
 
         /// <summary>
         /// the min iops of the disk offering
@@ -131,7 +131,7 @@ namespace CloudStack.Net
         /// <summary>
         /// data transfer rate in megabits per second allowed.
         /// </summary>
-        public int NetworkRate { get; set; }
+        public int? NetworkRate { get; set; }
 
         /// <summary>
         /// the ha support in the service offering

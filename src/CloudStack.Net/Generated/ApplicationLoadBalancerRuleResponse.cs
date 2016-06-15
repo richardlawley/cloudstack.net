@@ -11,12 +11,12 @@ namespace CloudStack.Net
         /// <summary>
         /// instance port of the load balancer rule
         /// </summary>
-        public int InstancePort { get; set; }
+        public int? InstancePort { get; set; }
 
         /// <summary>
         /// source port of the load balancer rule
         /// </summary>
-        public int SourcePort { get; set; }
+        public int? SourcePort { get; set; }
 
         /// <summary>
         /// the state of the load balancer rule

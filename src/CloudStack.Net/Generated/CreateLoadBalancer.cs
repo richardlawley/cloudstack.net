@@ -21,8 +21,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the TCP port of the virtual machine where the network traffic will be load balanced to
         /// </summary>
-        public int InstancePort {
-            get { return GetParameterValue<int>(nameof(InstancePort).ToLower()); }
+        public int? InstancePort {
+            get { return GetParameterValue<int?>(nameof(InstancePort).ToLower()); }
             set { SetParameterValue(nameof(InstancePort).ToLower(), value); }
         }
 
@@ -61,8 +61,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the source port the network traffic will be load balanced from
         /// </summary>
-        public int SourcePort {
-            get { return GetParameterValue<int>(nameof(SourcePort).ToLower()); }
+        public int? SourcePort {
+            get { return GetParameterValue<int?>(nameof(SourcePort).ToLower()); }
             set { SetParameterValue(nameof(SourcePort).ToLower(), value); }
         }
 

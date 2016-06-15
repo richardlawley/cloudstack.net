@@ -31,7 +31,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Region Id in which portable ip range is provisioned
         /// </summary>
-        public int RegionId { get; set; }
+        public int? RegionId { get; set; }
 
         /// <summary>
         /// the start ip of the portable IP range

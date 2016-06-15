@@ -21,12 +21,12 @@ namespace CloudStack.Net
         /// <summary>
         /// the number of cpu this virtual machine is running with
         /// </summary>
-        public int CpuNumber { get; set; }
+        public int? CpuNumber { get; set; }
 
         /// <summary>
         /// the speed of each cpu
         /// </summary>
-        public int CpuSpeed { get; set; }
+        public int? CpuSpeed { get; set; }
 
         /// <summary>
         /// the amount of the vm's CPU currently used
@@ -166,7 +166,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the memory allocated for the virtual machine
         /// </summary>
-        public int Memory { get; set; }
+        public int? Memory { get; set; }
 
         /// <summary>
         /// the name of the virtual machine

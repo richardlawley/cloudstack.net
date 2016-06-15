@@ -26,12 +26,12 @@ namespace CloudStack.Net
         /// <summary>
         /// time interval (in seconds) to reset api count
         /// </summary>
-        public int ApiLimitInterval { get; set; }
+        public int? ApiLimitInterval { get; set; }
 
         /// <summary>
         /// Max allowed number of api requests within the specified interval
         /// </summary>
-        public int ApiLimitMax { get; set; }
+        public int? ApiLimitMax { get; set; }
 
         /// <summary>
         /// version of the cloud stack

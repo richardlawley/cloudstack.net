@@ -21,17 +21,17 @@ namespace CloudStack.Net
         /// <summary>
         /// the ending IP of the security group rule 
         /// </summary>
-        public int EndPort { get; set; }
+        public int? EndPort { get; set; }
 
         /// <summary>
         /// the code for the ICMP message response
         /// </summary>
-        public int IcmpCode { get; set; }
+        public int? IcmpCode { get; set; }
 
         /// <summary>
         /// the type of the ICMP message response
         /// </summary>
-        public int IcmpType { get; set; }
+        public int? IcmpType { get; set; }
 
         /// <summary>
         /// the protocol of the security group rule
@@ -51,7 +51,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the starting IP of the security group rule
         /// </summary>
-        public int StartPort { get; set; }
+        public int? StartPort { get; set; }
 
         /// <summary>
         /// the list of resource tags associated with the rule

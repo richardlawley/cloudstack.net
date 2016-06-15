@@ -21,7 +21,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the ending port of firewall rule's port range
         /// </summary>
-        public int EndPort { get; set; }
+        public int? EndPort { get; set; }
 
         /// <summary>
         /// is rule for display to the regular user
@@ -31,12 +31,12 @@ namespace CloudStack.Net
         /// <summary>
         /// error code for this icmp message
         /// </summary>
-        public int IcmpCode { get; set; }
+        public int? IcmpCode { get; set; }
 
         /// <summary>
         /// type of the icmp message being sent
         /// </summary>
-        public int IcmpType { get; set; }
+        public int? IcmpType { get; set; }
 
         /// <summary>
         /// the public ip address for the firewall rule
@@ -61,7 +61,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the starting port of firewall rule's port range
         /// </summary>
-        public int StartPort { get; set; }
+        public int? StartPort { get; set; }
 
         /// <summary>
         /// the state of the rule

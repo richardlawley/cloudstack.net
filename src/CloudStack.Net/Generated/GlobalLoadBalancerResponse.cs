@@ -71,7 +71,7 @@ namespace CloudStack.Net
         /// <summary>
         /// Region Id in which global load balancer is created
         /// </summary>
-        public int RegionId { get; set; }
+        public int? RegionId { get; set; }
 
         /// <summary>
         /// List of load balancer rules that are part of GSLB rule

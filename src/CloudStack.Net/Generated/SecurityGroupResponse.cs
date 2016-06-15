@@ -51,7 +51,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the number of virtualmachines associated with this securitygroup
         /// </summary>
-        public int VirtualMachineCount { get; set; }
+        public int? VirtualMachineCount { get; set; }
 
         /// <summary>
         /// the list of virtualmachine ids associated with this securitygroup

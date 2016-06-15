@@ -26,7 +26,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the maximum number of Data Volumes that can be attached for this hypervisor
         /// </summary>
-        public int MaxDataVolumesLimit { get; set; }
+        public int? MaxDataVolumesLimit { get; set; }
 
         /// <summary>
         /// the maximum number of guest vms recommended for this hypervisor
@@ -36,7 +36,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the maximum number of Hosts per cluster for this hypervisor
         /// </summary>
-        public int MaxHostsPerCluster { get; set; }
+        public int? MaxHostsPerCluster { get; set; }
 
         /// <summary>
         /// true if security group is supported

@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Id of region to update
         /// </summary>
-        public int Id {
-            get { return GetParameterValue<int>(nameof(Id).ToLower()); }
+        public int? Id {
+            get { return GetParameterValue<int?>(nameof(Id).ToLower()); }
             set { SetParameterValue(nameof(Id).ToLower(), value); }
         }
 

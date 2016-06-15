@@ -41,7 +41,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the time period before the session has expired
         /// </summary>
-        public int Timeout { get; set; }
+        public int? Timeout { get; set; }
 
         /// <summary>
         /// user time zone

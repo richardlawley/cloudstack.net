@@ -51,7 +51,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the level of the domain
         /// </summary>
-        public int Level { get; set; }
+        public int? Level { get; set; }
 
         /// <summary>
         /// the total memory (in MB) available to be created for this domain

@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the start port for the rule
         /// </summary>
-        public int StartPort {
-            get { return GetParameterValue<int>(nameof(StartPort).ToLower()); }
+        public int? StartPort {
+            get { return GetParameterValue<int?>(nameof(StartPort).ToLower()); }
             set { SetParameterValue(nameof(StartPort).ToLower(), value); }
         }
 

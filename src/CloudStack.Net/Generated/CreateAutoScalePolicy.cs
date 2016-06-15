@@ -29,8 +29,8 @@ namespace CloudStack.Net
         /// <summary>
         /// the duration for which the conditions have to be true before action is taken
         /// </summary>
-        public int Duration {
-            get { return GetParameterValue<int>(nameof(Duration).ToLower()); }
+        public int? Duration {
+            get { return GetParameterValue<int?>(nameof(Duration).ToLower()); }
             set { SetParameterValue(nameof(Duration).ToLower(), value); }
         }
 

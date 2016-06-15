@@ -13,8 +13,8 @@ namespace CloudStack.Net
         /// <summary>
         /// Specify the number of days (greater than zero) to remove records that are older than those number of days from today. For example, specifying 10 would result in removing all the records created before 10 days from today
         /// </summary>
-        public int Interval {
-            get { return GetParameterValue<int>(nameof(Interval).ToLower()); }
+        public int? Interval {
+            get { return GetParameterValue<int?>(nameof(Interval).ToLower()); }
             set { SetParameterValue(nameof(Interval).ToLower(), value); }
         }
 

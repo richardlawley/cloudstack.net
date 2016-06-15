@@ -45,8 +45,8 @@ namespace CloudStack.Net
         /// <summary>
         /// volume size.
         /// </summary>
-        public int Size {
-            get { return GetParameterValue<int>(nameof(Size).ToLower()); }
+        public int? Size {
+            get { return GetParameterValue<int?>(nameof(Size).ToLower()); }
             set { SetParameterValue(nameof(Size).ToLower(), value); }
         }
 

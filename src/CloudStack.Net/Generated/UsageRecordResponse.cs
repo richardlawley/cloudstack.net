@@ -131,7 +131,7 @@ namespace CloudStack.Net
         /// <summary>
         /// usage type ID
         /// </summary>
-        public int UsageType { get; set; }
+        public int? UsageType { get; set; }
 
         /// <summary>
         /// virtual machine ID

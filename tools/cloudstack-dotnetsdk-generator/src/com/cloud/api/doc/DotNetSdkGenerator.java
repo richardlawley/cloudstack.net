@@ -108,7 +108,6 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                                 implementation.decrementIndent();
                                 implementation.println("}");
     
-                                // implementation.println("public %s %s { get; set; }", convertedDataType, arg.getNameWithCaps());
                                 implementation.println();
                             }
                         }
@@ -119,20 +118,6 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                             actualReturnType = "AsyncJobResponse";
                         } else if (command.isList()) {
                             actualReturnType = String.format("ListResponse<%s>", returnType);
-                            // String listContainerName = command.getListContainerName();
-                            // if (listContainerName == null || listContainerName.isEmpty()) {
-                            // listContainerName = getFallbackListName(commandName);
-                            // }
-                            //
-                            // actualReturnType = actualCommandName + "Response";
-                            // implementation.addType(actualReturnType);
-                            // implementation.println("public int Count { get; set; }");
-                            // implementation.println();
-                            // implementation.println("[JsonProperty(\"%s\")]", listContainerName.toLowerCase());
-                            // implementation.println("public IList<%s> %s { get; set; }", returnType, listContainerName + "s");
-                            // implementation.println("public override string ToString() => JsonConvert.SerializeObject(this,
-                            // Formatting.Indented);");
-                            // implementation.closeTypeDef();
                         }
 
                         if (command.getDescription() != null) {
@@ -316,6 +301,7 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
         case "boolean":
             return isRequired ? "bool" : "bool?";
         case "integer":
+            return "int?";
         case "int":
             return isRequired ? "int" : "int?";
         case "date":

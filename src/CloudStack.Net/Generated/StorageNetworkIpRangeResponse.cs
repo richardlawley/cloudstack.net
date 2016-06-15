@@ -46,7 +46,7 @@ namespace CloudStack.Net
         /// <summary>
         /// the ID or VID of the VLAN.
         /// </summary>
-        public int Vlan { get; set; }
+        public int? Vlan { get; set; }
 
         /// <summary>
         /// the Zone uuid of the storage network IP range

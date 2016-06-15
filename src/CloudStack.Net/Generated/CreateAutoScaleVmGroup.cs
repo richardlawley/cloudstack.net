@@ -21,16 +21,16 @@ namespace CloudStack.Net
         /// <summary>
         /// the maximum number of members in the vmgroup, The number of instances in the vm group will be equal to or less than this number.
         /// </summary>
-        public int MaxMembers {
-            get { return GetParameterValue<int>(nameof(MaxMembers).ToLower()); }
+        public int? MaxMembers {
+            get { return GetParameterValue<int?>(nameof(MaxMembers).ToLower()); }
             set { SetParameterValue(nameof(MaxMembers).ToLower(), value); }
         }
 
         /// <summary>
         /// the minimum number of members in the vmgroup, the number of instances in the vm group will be equal to or more than this number.
         /// </summary>
-        public int MinMembers {
-            get { return GetParameterValue<int>(nameof(MinMembers).ToLower()); }
+        public int? MinMembers {
+            get { return GetParameterValue<int?>(nameof(MinMembers).ToLower()); }
             set { SetParameterValue(nameof(MinMembers).ToLower(), value); }
         }
 
