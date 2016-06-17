@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -319,9 +320,13 @@ namespace CloudStack.Net
         /// <param name="we">The WebException</param>
         /// <param name="fullUri">URI of the server</param>
         /// <returns>a CloudStackException</returns>
-        private CloudStackException CreateCloudStackException(WebException we, Uri fullUri)
+        private CloudStackBaseException CreateCloudStackException(WebException we, Uri fullUri)
         {
-            if (we.Status == WebExceptionStatus.ProtocolError)
+            if (we.InnerException is SocketException)
+            {
+                return new CloudStackUnavailableException($"The CloudStack API Endpoint at {ServiceUrl} was unavailable", we.InnerException);
+            }
+            else if (we.Status == WebExceptionStatus.ProtocolError)
             {
                 var responseStream = (HttpWebResponse)we.Response;
                 try

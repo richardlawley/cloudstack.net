@@ -8,11 +8,23 @@ using System.Threading.Tasks;
 
 namespace CloudStack.Net
 {
+
+    [Serializable]
+    public abstract class CloudStackBaseException : Exception
+    {
+        public CloudStackBaseException() { }
+        public CloudStackBaseException(string message) : base(message) { }
+        public CloudStackBaseException(string message, Exception inner) : base(message, inner) { }
+        protected CloudStackBaseException(
+          SerializationInfo info,
+          StreamingContext context) : base(info, context) { }
+    }
+
     /// <summary>
     /// Exception type thrown by SDK.
     /// </summary>
     [Serializable]
-    public class CloudStackException : System.Exception
+    public class CloudStackException : CloudStackBaseException
     {
         /// <summary>
         /// Initializes a new instance of the CloudStackException class.
@@ -126,5 +138,17 @@ namespace CloudStack.Net
             get { return (APIErrorResult)this.Data[nameof(ErrorResult)]; }
             set { this.Data[nameof(ErrorResult)] = value; }
         }
+    }
+
+
+    [Serializable]
+    public class CloudStackUnavailableException : CloudStackBaseException
+    {
+        public CloudStackUnavailableException() : base("The CloudStack Server was unavailable") { }
+        public CloudStackUnavailableException(string message) : base(message) { }
+        public CloudStackUnavailableException(string message, Exception inner) : base(message, inner) { }
+        protected CloudStackUnavailableException(
+          SerializationInfo info,
+          StreamingContext context) : base(info, context) { }
     }
 }
