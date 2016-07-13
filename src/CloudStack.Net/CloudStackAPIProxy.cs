@@ -140,7 +140,7 @@ namespace CloudStack.Net
                     MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
                     decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)rootObject });
                 }
-            }
+            } 
             else if (rootObject.Count == 1 && rootObject.First is JProperty && ((JProperty)rootObject.First).Value is JObject)
             {
                 // e.g. { "createdomainresponse" : { "domain" : { ...

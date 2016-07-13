@@ -80,6 +80,10 @@ namespace CloudStack.Net
         public T DecodeJobResult<T>()
             where T : new()
         {
+            if (typeof(T) == typeof(SuccessResponse))
+            {
+                return JobResult.ToObject<T>();
+            }
             return CloudStackAPIProxy.DecodeResponse<T>(JobResult);
         }
 
