@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
@@ -34,9 +35,17 @@ namespace CloudStack.Net
         public string ErrorText { get; set; }
 
         /// <summary>
+        /// CloudStack Error Code
+        /// </summary>
+        [JsonProperty("cserrorcode")]
+        public int? CloudStackErrorCode { get; set; }
+
+        public Guid[] UuidList { get; set; }
+
+        /// <summary>
         /// Create string corresponding to object.
         /// </summary>
         /// <returns>String providing error details held by object.</returns>
-        public override string ToString() => $"Error: ({ErrorCode}) {ErrorText}";
+        public override string ToString() => $"Error: ({CloudStackErrorCode}) {ErrorText}";
     }
 }

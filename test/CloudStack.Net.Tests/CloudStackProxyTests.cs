@@ -123,6 +123,7 @@ namespace CloudStack.Net.Tests
 
             response.ErrorText.ShouldBe("Unable to execute API command createaccount due to missing parameter password");
             response.ErrorCode.ShouldBe("431");
+            response.CloudStackErrorCode.ShouldBe(9999);
         }
 
         [TestMethod]
