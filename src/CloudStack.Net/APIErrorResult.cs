@@ -40,7 +40,7 @@ namespace CloudStack.Net
         [JsonProperty("cserrorcode")]
         public int? CloudStackErrorCode { get; set; }
 
-        public Guid[] UuidList { get; set; }
+        public dynamic UuidList { get; set; }
 
         /// <summary>
         /// Create string corresponding to object.
