@@ -1,20 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CloudStack.Net
 {
-
     [Serializable]
     public abstract class CloudStackBaseException : Exception
     {
-        public CloudStackBaseException() { }
-        public CloudStackBaseException(string message) : base(message) { }
-        public CloudStackBaseException(string message, Exception inner) : base(message, inner) { }
+        public CloudStackBaseException()
+        {
+        }
+
+        public CloudStackBaseException(string message) : base(message)
+        {
+        }
+
+        public CloudStackBaseException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
         protected CloudStackBaseException(
           SerializationInfo info,
           StreamingContext context) : base(info, context) { }
@@ -30,6 +35,16 @@ namespace CloudStack.Net
         /// Initializes a new instance of the CloudStackException class.
         /// </summary>
         public CloudStackException()
+        {
+        }
+
+        /// <summary>
+        /// For remote use only
+        /// </summary>
+        /// <param name="message"></param>
+        [Obsolete("For remote use only")]
+        public CloudStackException(string message)
+            : base(message)
         {
         }
 
@@ -65,7 +80,7 @@ namespace CloudStack.Net
         ///// <param name="innerException">Exception causing problem.</param>
         //[SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Justification = "Need property to access underlying member variable")]
         public CloudStackException(string context, string command, APIErrorResult result, Exception innerException)
-            : base(context, innerException)
+            : base(result.ErrorText, innerException)
         {
             this.Context = context;
             this.Command = string.IsNullOrEmpty(command) ? string.Empty : command;
@@ -82,7 +97,7 @@ namespace CloudStack.Net
         /// <param name="innerException">Exception causing problem.</param>
         [SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Justification = "Need property to access underlying member variable")]
         public CloudStackException(string context, string command, string errorCode, string errorText, Exception innerException)
-            : base(context, innerException)
+            : base(errorText, innerException)
         {
             this.Context = context;
             this.Command = command ?? string.Empty;
@@ -94,7 +109,7 @@ namespace CloudStack.Net
         }
 
         /// <summary>
-        /// Initializes a new instance of the CloudStackException class. 
+        /// Initializes a new instance of the CloudStackException class.
         /// </summary>
         /// <param name="info">
         /// Serialized data.
@@ -106,11 +121,6 @@ namespace CloudStack.Net
             : base(info, context)
         {
         }
-
-        /// <summary>
-        /// Summary of exception details
-        /// </summary>
-        public override string Message => $"{this.ErrorResult.ToString()}\n\nCommand: {Command}\nContext: {Context}";
 
         /// <summary>
         /// Stores fragment of command called.
@@ -140,13 +150,21 @@ namespace CloudStack.Net
         }
     }
 
-
     [Serializable]
     public class CloudStackUnavailableException : CloudStackBaseException
     {
-        public CloudStackUnavailableException() : base("The CloudStack Server was unavailable") { }
-        public CloudStackUnavailableException(string message) : base(message) { }
-        public CloudStackUnavailableException(string message, Exception inner) : base(message, inner) { }
+        public CloudStackUnavailableException() : base("The CloudStack Server was unavailable")
+        {
+        }
+
+        public CloudStackUnavailableException(string message) : base(message)
+        {
+        }
+
+        public CloudStackUnavailableException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
         protected CloudStackUnavailableException(
           SerializationInfo info,
           StreamingContext context) : base(info, context) { }

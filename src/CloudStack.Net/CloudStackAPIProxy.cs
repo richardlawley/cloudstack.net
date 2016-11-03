@@ -341,7 +341,7 @@ namespace CloudStack.Net
                 catch
                 {
                     return new CloudStackException(
-                        "Error on API call (cannot read response stream)",
+                        "Error on API call (cannot parse result)",
                         fullUri.ToString(),
                         responseStream.StatusCode.ToString(),
                         responseStream.StatusDescription,
