@@ -37,6 +37,7 @@ namespace CloudStack.Net
         private CloudStackAPIProxy(string serviceUrl)
         {
             if (String.IsNullOrEmpty(serviceUrl)) { throw new ArgumentNullException(nameof(serviceUrl)); }
+            if (serviceUrl.EndsWith("/clients", StringComparison.Ordinal)) { throw new ArgumentException(nameof(serviceUrl), $"Please specify the URL to the API endpoint, not the management UI.  URL specified is {serviceUrl}"); }
 
             ServiceUrl = serviceUrl;
         }
