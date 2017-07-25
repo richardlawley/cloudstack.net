@@ -102,6 +102,9 @@ public class Command implements Serializable {
                         _listContainerName = entityAnnotation.value()[0].getSimpleName();
                     }
                 }
+            } else if (name.equals("registerTemplate")) {
+                _isList = true;
+                _listContainerName = "templates";
             }
         } catch (InstantiationException | IllegalAccessException e) {
             // TODO Auto-generated catch block

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CloudStack.Net
 {
-    public class RegisterTemplateRequest : APIRequest
+    public class RegisterTemplateRequest : APIListRequest
     {
         public RegisterTemplateRequest() : base("registerTemplate") {}
 
@@ -192,12 +192,16 @@ namespace CloudStack.Net
     /// </summary>
     public partial interface ICloudStackAPIClient
     {
-        TemplateResponse RegisterTemplate(RegisterTemplateRequest request);
-        Task<TemplateResponse> RegisterTemplateAsync(RegisterTemplateRequest request);
+        ListResponse<TemplateResponse> RegisterTemplate(RegisterTemplateRequest request);
+        Task<ListResponse<TemplateResponse>> RegisterTemplateAsync(RegisterTemplateRequest request);
+        ListResponse<TemplateResponse> RegisterTemplateAllPages(RegisterTemplateRequest request);
+        Task<ListResponse<TemplateResponse>> RegisterTemplateAllPagesAsync(RegisterTemplateRequest request);
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TemplateResponse RegisterTemplate(RegisterTemplateRequest request) => _proxy.Request<TemplateResponse>(request);
-        public Task<TemplateResponse> RegisterTemplateAsync(RegisterTemplateRequest request) => _proxy.RequestAsync<TemplateResponse>(request);
+        public ListResponse<TemplateResponse> RegisterTemplate(RegisterTemplateRequest request) => _proxy.Request<ListResponse<TemplateResponse>>(request);
+        public Task<ListResponse<TemplateResponse>> RegisterTemplateAsync(RegisterTemplateRequest request) => _proxy.RequestAsync<ListResponse<TemplateResponse>>(request);
+        public ListResponse<TemplateResponse> RegisterTemplateAllPages(RegisterTemplateRequest request) => _proxy.RequestAllPages<TemplateResponse>(request);
+        public Task<ListResponse<TemplateResponse>> RegisterTemplateAllPagesAsync(RegisterTemplateRequest request) => _proxy.RequestAllPagesAsync<TemplateResponse>(request);
     }
 }
