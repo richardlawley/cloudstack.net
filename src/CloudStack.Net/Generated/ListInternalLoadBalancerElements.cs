@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElements(ListInternalLoadBalancerElementsRequest request) => _proxy.Request<ListResponse<InternalLoadBalancerElementResponse>>(request);
-        public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAsync(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAsync<ListResponse<InternalLoadBalancerElementResponse>>(request);
-        public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElementsAllPages(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAllPages<InternalLoadBalancerElementResponse>(request);
-        public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAllPagesAsync(ListInternalLoadBalancerElementsRequest request) => _proxy.RequestAllPagesAsync<InternalLoadBalancerElementResponse>(request);
+        public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElements(ListInternalLoadBalancerElementsRequest request) => Proxy.Request<ListResponse<InternalLoadBalancerElementResponse>>(request);
+        public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAsync(ListInternalLoadBalancerElementsRequest request) => Proxy.RequestAsync<ListResponse<InternalLoadBalancerElementResponse>>(request);
+        public ListResponse<InternalLoadBalancerElementResponse> ListInternalLoadBalancerElementsAllPages(ListInternalLoadBalancerElementsRequest request) => Proxy.RequestAllPages<InternalLoadBalancerElementResponse>(request);
+        public Task<ListResponse<InternalLoadBalancerElementResponse>> ListInternalLoadBalancerElementsAllPagesAsync(ListInternalLoadBalancerElementsRequest request) => Proxy.RequestAllPagesAsync<InternalLoadBalancerElementResponse>(request);
     }
 }

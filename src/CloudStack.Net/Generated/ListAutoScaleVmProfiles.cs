@@ -119,9 +119,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfiles(ListAutoScaleVmProfilesRequest request) => _proxy.Request<ListResponse<AutoScaleVmProfileResponse>>(request);
-        public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAsync(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAsync<ListResponse<AutoScaleVmProfileResponse>>(request);
-        public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfilesAllPages(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAllPages<AutoScaleVmProfileResponse>(request);
-        public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAllPagesAsync(ListAutoScaleVmProfilesRequest request) => _proxy.RequestAllPagesAsync<AutoScaleVmProfileResponse>(request);
+        public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfiles(ListAutoScaleVmProfilesRequest request) => Proxy.Request<ListResponse<AutoScaleVmProfileResponse>>(request);
+        public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAsync(ListAutoScaleVmProfilesRequest request) => Proxy.RequestAsync<ListResponse<AutoScaleVmProfileResponse>>(request);
+        public ListResponse<AutoScaleVmProfileResponse> ListAutoScaleVmProfilesAllPages(ListAutoScaleVmProfilesRequest request) => Proxy.RequestAllPages<AutoScaleVmProfileResponse>(request);
+        public Task<ListResponse<AutoScaleVmProfileResponse>> ListAutoScaleVmProfilesAllPagesAsync(ListAutoScaleVmProfilesRequest request) => Proxy.RequestAllPagesAsync<AutoScaleVmProfileResponse>(request);
     }
 }

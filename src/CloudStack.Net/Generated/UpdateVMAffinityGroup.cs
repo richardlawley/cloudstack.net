@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> UpdateVMAffinityGroupAsync(UpdateVMAffinityGroupRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse UpdateVMAffinityGroup(UpdateVMAffinityGroupRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> UpdateVMAffinityGroupAsync(UpdateVMAffinityGroupRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -31,9 +31,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<BaremetalRctResponse> ListBaremetalRct(ListBaremetalRctRequest request) => _proxy.Request<ListResponse<BaremetalRctResponse>>(request);
-        public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAsync(ListBaremetalRctRequest request) => _proxy.RequestAsync<ListResponse<BaremetalRctResponse>>(request);
-        public ListResponse<BaremetalRctResponse> ListBaremetalRctAllPages(ListBaremetalRctRequest request) => _proxy.RequestAllPages<BaremetalRctResponse>(request);
-        public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAllPagesAsync(ListBaremetalRctRequest request) => _proxy.RequestAllPagesAsync<BaremetalRctResponse>(request);
+        public ListResponse<BaremetalRctResponse> ListBaremetalRct(ListBaremetalRctRequest request) => Proxy.Request<ListResponse<BaremetalRctResponse>>(request);
+        public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAsync(ListBaremetalRctRequest request) => Proxy.RequestAsync<ListResponse<BaremetalRctResponse>>(request);
+        public ListResponse<BaremetalRctResponse> ListBaremetalRctAllPages(ListBaremetalRctRequest request) => Proxy.RequestAllPages<BaremetalRctResponse>(request);
+        public Task<ListResponse<BaremetalRctResponse>> ListBaremetalRctAllPagesAsync(ListBaremetalRctRequest request) => Proxy.RequestAllPagesAsync<BaremetalRctResponse>(request);
     }
 }

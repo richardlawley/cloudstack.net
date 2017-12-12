@@ -93,7 +93,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CreateVolumeOnFilerCmdResponse CreateVolumeOnFiler(CreateVolumeOnFilerRequest request) => _proxy.Request<CreateVolumeOnFilerCmdResponse>(request);
-        public Task<CreateVolumeOnFilerCmdResponse> CreateVolumeOnFilerAsync(CreateVolumeOnFilerRequest request) => _proxy.RequestAsync<CreateVolumeOnFilerCmdResponse>(request);
+        public CreateVolumeOnFilerCmdResponse CreateVolumeOnFiler(CreateVolumeOnFilerRequest request) => Proxy.Request<CreateVolumeOnFilerCmdResponse>(request);
+        public Task<CreateVolumeOnFilerCmdResponse> CreateVolumeOnFilerAsync(CreateVolumeOnFilerRequest request) => Proxy.RequestAsync<CreateVolumeOnFilerCmdResponse>(request);
     }
 }

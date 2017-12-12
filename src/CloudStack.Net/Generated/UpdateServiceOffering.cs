@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ServiceOfferingResponse UpdateServiceOffering(UpdateServiceOfferingRequest request) => _proxy.Request<ServiceOfferingResponse>(request);
-        public Task<ServiceOfferingResponse> UpdateServiceOfferingAsync(UpdateServiceOfferingRequest request) => _proxy.RequestAsync<ServiceOfferingResponse>(request);
+        public ServiceOfferingResponse UpdateServiceOffering(UpdateServiceOfferingRequest request) => Proxy.Request<ServiceOfferingResponse>(request);
+        public Task<ServiceOfferingResponse> UpdateServiceOfferingAsync(UpdateServiceOfferingRequest request) => Proxy.RequestAsync<ServiceOfferingResponse>(request);
     }
 }

@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request) => _proxy.Request<SecurityGroupResponse>(request);
-        public Task<SecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest request) => _proxy.RequestAsync<SecurityGroupResponse>(request);
+        public SecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request) => Proxy.Request<SecurityGroupResponse>(request);
+        public Task<SecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest request) => Proxy.RequestAsync<SecurityGroupResponse>(request);
     }
 }

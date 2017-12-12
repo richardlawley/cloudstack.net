@@ -87,9 +87,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<ResourceLimitResponse> ListResourceLimits(ListResourceLimitsRequest request) => _proxy.Request<ListResponse<ResourceLimitResponse>>(request);
-        public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAsync(ListResourceLimitsRequest request) => _proxy.RequestAsync<ListResponse<ResourceLimitResponse>>(request);
-        public ListResponse<ResourceLimitResponse> ListResourceLimitsAllPages(ListResourceLimitsRequest request) => _proxy.RequestAllPages<ResourceLimitResponse>(request);
-        public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAllPagesAsync(ListResourceLimitsRequest request) => _proxy.RequestAllPagesAsync<ResourceLimitResponse>(request);
+        public ListResponse<ResourceLimitResponse> ListResourceLimits(ListResourceLimitsRequest request) => Proxy.Request<ListResponse<ResourceLimitResponse>>(request);
+        public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAsync(ListResourceLimitsRequest request) => Proxy.RequestAsync<ListResponse<ResourceLimitResponse>>(request);
+        public ListResponse<ResourceLimitResponse> ListResourceLimitsAllPages(ListResourceLimitsRequest request) => Proxy.RequestAllPages<ResourceLimitResponse>(request);
+        public Task<ListResponse<ResourceLimitResponse>> ListResourceLimitsAllPagesAsync(ListResourceLimitsRequest request) => Proxy.RequestAllPagesAsync<ResourceLimitResponse>(request);
     }
 }

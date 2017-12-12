@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AssociateLunCmdResponse AssociateLun(AssociateLunRequest request) => _proxy.Request<AssociateLunCmdResponse>(request);
-        public Task<AssociateLunCmdResponse> AssociateLunAsync(AssociateLunRequest request) => _proxy.RequestAsync<AssociateLunCmdResponse>(request);
+        public AssociateLunCmdResponse AssociateLun(AssociateLunRequest request) => Proxy.Request<AssociateLunCmdResponse>(request);
+        public Task<AssociateLunCmdResponse> AssociateLunAsync(AssociateLunRequest request) => Proxy.RequestAsync<AssociateLunCmdResponse>(request);
     }
 }

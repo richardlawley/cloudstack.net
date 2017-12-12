@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> StopInternalLoadBalancerVMAsync(StopInternalLoadBalancerVMRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse StopInternalLoadBalancerVM(StopInternalLoadBalancerVMRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> StopInternalLoadBalancerVMAsync(StopInternalLoadBalancerVMRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

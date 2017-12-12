@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteBigSwitchBcfDevice(DeleteBigSwitchBcfDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteBigSwitchBcfDeviceAsync(DeleteBigSwitchBcfDeviceRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteBigSwitchBcfDevice(DeleteBigSwitchBcfDeviceRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteBigSwitchBcfDeviceAsync(DeleteBigSwitchBcfDeviceRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse AuthorizeSamlSso(AuthorizeSamlSsoRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> AuthorizeSamlSsoAsync(AuthorizeSamlSsoRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse AuthorizeSamlSso(AuthorizeSamlSsoRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> AuthorizeSamlSsoAsync(AuthorizeSamlSsoRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

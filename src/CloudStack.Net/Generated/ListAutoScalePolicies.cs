@@ -95,9 +95,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<AutoScalePolicyResponse> ListAutoScalePolicies(ListAutoScalePoliciesRequest request) => _proxy.Request<ListResponse<AutoScalePolicyResponse>>(request);
-        public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAsync(ListAutoScalePoliciesRequest request) => _proxy.RequestAsync<ListResponse<AutoScalePolicyResponse>>(request);
-        public ListResponse<AutoScalePolicyResponse> ListAutoScalePoliciesAllPages(ListAutoScalePoliciesRequest request) => _proxy.RequestAllPages<AutoScalePolicyResponse>(request);
-        public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAllPagesAsync(ListAutoScalePoliciesRequest request) => _proxy.RequestAllPagesAsync<AutoScalePolicyResponse>(request);
+        public ListResponse<AutoScalePolicyResponse> ListAutoScalePolicies(ListAutoScalePoliciesRequest request) => Proxy.Request<ListResponse<AutoScalePolicyResponse>>(request);
+        public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAsync(ListAutoScalePoliciesRequest request) => Proxy.RequestAsync<ListResponse<AutoScalePolicyResponse>>(request);
+        public ListResponse<AutoScalePolicyResponse> ListAutoScalePoliciesAllPages(ListAutoScalePoliciesRequest request) => Proxy.RequestAllPages<AutoScalePolicyResponse>(request);
+        public Task<ListResponse<AutoScalePolicyResponse>> ListAutoScalePoliciesAllPagesAsync(ListAutoScalePoliciesRequest request) => Proxy.RequestAllPagesAsync<AutoScalePolicyResponse>(request);
     }
 }

@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteStorageNetworkIpRange(DeleteStorageNetworkIpRangeRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteStorageNetworkIpRangeAsync(DeleteStorageNetworkIpRangeRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteStorageNetworkIpRange(DeleteStorageNetworkIpRangeRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteStorageNetworkIpRangeAsync(DeleteStorageNetworkIpRangeRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

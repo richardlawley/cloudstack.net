@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UcsManagerResponse AddUcsManager(AddUcsManagerRequest request) => _proxy.Request<UcsManagerResponse>(request);
-        public Task<UcsManagerResponse> AddUcsManagerAsync(AddUcsManagerRequest request) => _proxy.RequestAsync<UcsManagerResponse>(request);
+        public UcsManagerResponse AddUcsManager(AddUcsManagerRequest request) => Proxy.Request<UcsManagerResponse>(request);
+        public Task<UcsManagerResponse> AddUcsManagerAsync(AddUcsManagerRequest request) => Proxy.RequestAsync<UcsManagerResponse>(request);
     }
 }

@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request) => _proxy.Request<ListResponse<BigSwitchBcfDeviceResponse>>(request);
-        public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAsync(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAsync<ListResponse<BigSwitchBcfDeviceResponse>>(request);
-        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevicesAllPages(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAllPages<BigSwitchBcfDeviceResponse>(request);
-        public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAllPagesAsync(ListBigSwitchBcfDevicesRequest request) => _proxy.RequestAllPagesAsync<BigSwitchBcfDeviceResponse>(request);
+        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevices(ListBigSwitchBcfDevicesRequest request) => Proxy.Request<ListResponse<BigSwitchBcfDeviceResponse>>(request);
+        public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAsync(ListBigSwitchBcfDevicesRequest request) => Proxy.RequestAsync<ListResponse<BigSwitchBcfDeviceResponse>>(request);
+        public ListResponse<BigSwitchBcfDeviceResponse> ListBigSwitchBcfDevicesAllPages(ListBigSwitchBcfDevicesRequest request) => Proxy.RequestAllPages<BigSwitchBcfDeviceResponse>(request);
+        public Task<ListResponse<BigSwitchBcfDeviceResponse>> ListBigSwitchBcfDevicesAllPagesAsync(ListBigSwitchBcfDevicesRequest request) => Proxy.RequestAllPagesAsync<BigSwitchBcfDeviceResponse>(request);
     }
 }

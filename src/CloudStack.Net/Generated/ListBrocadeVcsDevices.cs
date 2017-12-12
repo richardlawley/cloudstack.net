@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevices(ListBrocadeVcsDevicesRequest request) => _proxy.Request<ListResponse<BrocadeVcsDeviceResponse>>(request);
-        public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAsync(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAsync<ListResponse<BrocadeVcsDeviceResponse>>(request);
-        public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevicesAllPages(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAllPages<BrocadeVcsDeviceResponse>(request);
-        public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAllPagesAsync(ListBrocadeVcsDevicesRequest request) => _proxy.RequestAllPagesAsync<BrocadeVcsDeviceResponse>(request);
+        public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevices(ListBrocadeVcsDevicesRequest request) => Proxy.Request<ListResponse<BrocadeVcsDeviceResponse>>(request);
+        public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAsync(ListBrocadeVcsDevicesRequest request) => Proxy.RequestAsync<ListResponse<BrocadeVcsDeviceResponse>>(request);
+        public ListResponse<BrocadeVcsDeviceResponse> ListBrocadeVcsDevicesAllPages(ListBrocadeVcsDevicesRequest request) => Proxy.RequestAllPages<BrocadeVcsDeviceResponse>(request);
+        public Task<ListResponse<BrocadeVcsDeviceResponse>> ListBrocadeVcsDevicesAllPagesAsync(ListBrocadeVcsDevicesRequest request) => Proxy.RequestAllPagesAsync<BrocadeVcsDeviceResponse>(request);
     }
 }

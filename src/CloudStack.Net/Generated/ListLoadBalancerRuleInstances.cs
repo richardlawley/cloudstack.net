@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstances(ListLoadBalancerRuleInstancesRequest request) => _proxy.Request<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
-        public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAsync(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAsync<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
-        public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstancesAllPages(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAllPages<LoadBalancerRuleVmMapResponse>(request);
-        public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAllPagesAsync(ListLoadBalancerRuleInstancesRequest request) => _proxy.RequestAllPagesAsync<LoadBalancerRuleVmMapResponse>(request);
+        public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstances(ListLoadBalancerRuleInstancesRequest request) => Proxy.Request<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
+        public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAsync(ListLoadBalancerRuleInstancesRequest request) => Proxy.RequestAsync<ListResponse<LoadBalancerRuleVmMapResponse>>(request);
+        public ListResponse<LoadBalancerRuleVmMapResponse> ListLoadBalancerRuleInstancesAllPages(ListLoadBalancerRuleInstancesRequest request) => Proxy.RequestAllPages<LoadBalancerRuleVmMapResponse>(request);
+        public Task<ListResponse<LoadBalancerRuleVmMapResponse>> ListLoadBalancerRuleInstancesAllPagesAsync(ListLoadBalancerRuleInstancesRequest request) => Proxy.RequestAllPagesAsync<LoadBalancerRuleVmMapResponse>(request);
     }
 }

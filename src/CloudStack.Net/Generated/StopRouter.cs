@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse StopRouter(StopRouterRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> StopRouterAsync(StopRouterRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse StopRouter(StopRouterRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> StopRouterAsync(StopRouterRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

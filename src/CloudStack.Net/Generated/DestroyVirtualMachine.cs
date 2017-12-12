@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DestroyVirtualMachine(DestroyVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DestroyVirtualMachineAsync(DestroyVirtualMachineRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DestroyVirtualMachine(DestroyVirtualMachineRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DestroyVirtualMachineAsync(DestroyVirtualMachineRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

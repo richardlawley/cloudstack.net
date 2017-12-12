@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TemplatePermissionsResponse ListIsoPermissions(ListIsoPermissionsRequest request) => _proxy.Request<TemplatePermissionsResponse>(request);
-        public Task<TemplatePermissionsResponse> ListIsoPermissionsAsync(ListIsoPermissionsRequest request) => _proxy.RequestAsync<TemplatePermissionsResponse>(request);
+        public TemplatePermissionsResponse ListIsoPermissions(ListIsoPermissionsRequest request) => Proxy.Request<TemplatePermissionsResponse>(request);
+        public Task<TemplatePermissionsResponse> ListIsoPermissionsAsync(ListIsoPermissionsRequest request) => Proxy.RequestAsync<TemplatePermissionsResponse>(request);
     }
 }

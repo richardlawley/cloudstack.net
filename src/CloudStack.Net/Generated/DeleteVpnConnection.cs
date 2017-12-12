@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteVpnConnection(DeleteVpnConnectionRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteVpnConnection(DeleteVpnConnectionRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

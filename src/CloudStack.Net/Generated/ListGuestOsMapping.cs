@@ -63,9 +63,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<GuestOsMappingResponse> ListGuestOsMapping(ListGuestOsMappingRequest request) => _proxy.Request<ListResponse<GuestOsMappingResponse>>(request);
-        public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAsync(ListGuestOsMappingRequest request) => _proxy.RequestAsync<ListResponse<GuestOsMappingResponse>>(request);
-        public ListResponse<GuestOsMappingResponse> ListGuestOsMappingAllPages(ListGuestOsMappingRequest request) => _proxy.RequestAllPages<GuestOsMappingResponse>(request);
-        public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAllPagesAsync(ListGuestOsMappingRequest request) => _proxy.RequestAllPagesAsync<GuestOsMappingResponse>(request);
+        public ListResponse<GuestOsMappingResponse> ListGuestOsMapping(ListGuestOsMappingRequest request) => Proxy.Request<ListResponse<GuestOsMappingResponse>>(request);
+        public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAsync(ListGuestOsMappingRequest request) => Proxy.RequestAsync<ListResponse<GuestOsMappingResponse>>(request);
+        public ListResponse<GuestOsMappingResponse> ListGuestOsMappingAllPages(ListGuestOsMappingRequest request) => Proxy.RequestAllPages<GuestOsMappingResponse>(request);
+        public Task<ListResponse<GuestOsMappingResponse>> ListGuestOsMappingAllPagesAsync(ListGuestOsMappingRequest request) => Proxy.RequestAllPagesAsync<GuestOsMappingResponse>(request);
     }
 }

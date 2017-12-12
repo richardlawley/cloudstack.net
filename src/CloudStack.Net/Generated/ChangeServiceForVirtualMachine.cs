@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse ChangeServiceForVirtualMachine(ChangeServiceForVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
-        public Task<UserVmResponse> ChangeServiceForVirtualMachineAsync(ChangeServiceForVirtualMachineRequest request) => _proxy.RequestAsync<UserVmResponse>(request);
+        public UserVmResponse ChangeServiceForVirtualMachine(ChangeServiceForVirtualMachineRequest request) => Proxy.Request<UserVmResponse>(request);
+        public Task<UserVmResponse> ChangeServiceForVirtualMachineAsync(ChangeServiceForVirtualMachineRequest request) => Proxy.RequestAsync<UserVmResponse>(request);
     }
 }

@@ -247,9 +247,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<UserVmResponse> ListVirtualMachines(ListVirtualMachinesRequest request) => _proxy.Request<ListResponse<UserVmResponse>>(request);
-        public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAsync(ListVirtualMachinesRequest request) => _proxy.RequestAsync<ListResponse<UserVmResponse>>(request);
-        public ListResponse<UserVmResponse> ListVirtualMachinesAllPages(ListVirtualMachinesRequest request) => _proxy.RequestAllPages<UserVmResponse>(request);
-        public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAllPagesAsync(ListVirtualMachinesRequest request) => _proxy.RequestAllPagesAsync<UserVmResponse>(request);
+        public ListResponse<UserVmResponse> ListVirtualMachines(ListVirtualMachinesRequest request) => Proxy.Request<ListResponse<UserVmResponse>>(request);
+        public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAsync(ListVirtualMachinesRequest request) => Proxy.RequestAsync<ListResponse<UserVmResponse>>(request);
+        public ListResponse<UserVmResponse> ListVirtualMachinesAllPages(ListVirtualMachinesRequest request) => Proxy.RequestAllPages<UserVmResponse>(request);
+        public Task<ListResponse<UserVmResponse>> ListVirtualMachinesAllPagesAsync(ListVirtualMachinesRequest request) => Proxy.RequestAllPagesAsync<UserVmResponse>(request);
     }
 }

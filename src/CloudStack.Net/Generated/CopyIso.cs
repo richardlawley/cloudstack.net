@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CopyIso(CopyIsoRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CopyIsoAsync(CopyIsoRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CopyIso(CopyIsoRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CopyIsoAsync(CopyIsoRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

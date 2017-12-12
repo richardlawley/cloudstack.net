@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SspResponse AddStratosphereSsp(AddStratosphereSspRequest request) => _proxy.Request<SspResponse>(request);
-        public Task<SspResponse> AddStratosphereSspAsync(AddStratosphereSspRequest request) => _proxy.RequestAsync<SspResponse>(request);
+        public SspResponse AddStratosphereSsp(AddStratosphereSspRequest request) => Proxy.Request<SspResponse>(request);
+        public Task<SspResponse> AddStratosphereSspAsync(AddStratosphereSspRequest request) => Proxy.RequestAsync<SspResponse>(request);
     }
 }

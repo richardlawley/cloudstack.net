@@ -93,7 +93,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateEgressFirewallRule(CreateEgressFirewallRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateEgressFirewallRuleAsync(CreateEgressFirewallRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateEgressFirewallRule(CreateEgressFirewallRuleRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateEgressFirewallRuleAsync(CreateEgressFirewallRuleRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -149,7 +149,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ZoneResponse UpdateZone(UpdateZoneRequest request) => _proxy.Request<ZoneResponse>(request);
-        public Task<ZoneResponse> UpdateZoneAsync(UpdateZoneRequest request) => _proxy.RequestAsync<ZoneResponse>(request);
+        public ZoneResponse UpdateZone(UpdateZoneRequest request) => Proxy.Request<ZoneResponse>(request);
+        public Task<ZoneResponse> UpdateZoneAsync(UpdateZoneRequest request) => Proxy.RequestAsync<ZoneResponse>(request);
     }
 }

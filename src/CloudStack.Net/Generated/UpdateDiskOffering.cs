@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DiskOfferingResponse UpdateDiskOffering(UpdateDiskOfferingRequest request) => _proxy.Request<DiskOfferingResponse>(request);
-        public Task<DiskOfferingResponse> UpdateDiskOfferingAsync(UpdateDiskOfferingRequest request) => _proxy.RequestAsync<DiskOfferingResponse>(request);
+        public DiskOfferingResponse UpdateDiskOffering(UpdateDiskOfferingRequest request) => Proxy.Request<DiskOfferingResponse>(request);
+        public Task<DiskOfferingResponse> UpdateDiskOfferingAsync(UpdateDiskOfferingRequest request) => Proxy.RequestAsync<DiskOfferingResponse>(request);
     }
 }

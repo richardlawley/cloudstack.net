@@ -77,7 +77,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddNiciraNvpDeviceAsync(AddNiciraNvpDeviceRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddNiciraNvpDevice(AddNiciraNvpDeviceRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddNiciraNvpDeviceAsync(AddNiciraNvpDeviceRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

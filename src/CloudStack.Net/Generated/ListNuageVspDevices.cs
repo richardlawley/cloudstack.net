@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<NuageVspDeviceResponse> ListNuageVspDevices(ListNuageVspDevicesRequest request) => _proxy.Request<ListResponse<NuageVspDeviceResponse>>(request);
-        public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAsync(ListNuageVspDevicesRequest request) => _proxy.RequestAsync<ListResponse<NuageVspDeviceResponse>>(request);
-        public ListResponse<NuageVspDeviceResponse> ListNuageVspDevicesAllPages(ListNuageVspDevicesRequest request) => _proxy.RequestAllPages<NuageVspDeviceResponse>(request);
-        public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAllPagesAsync(ListNuageVspDevicesRequest request) => _proxy.RequestAllPagesAsync<NuageVspDeviceResponse>(request);
+        public ListResponse<NuageVspDeviceResponse> ListNuageVspDevices(ListNuageVspDevicesRequest request) => Proxy.Request<ListResponse<NuageVspDeviceResponse>>(request);
+        public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAsync(ListNuageVspDevicesRequest request) => Proxy.RequestAsync<ListResponse<NuageVspDeviceResponse>>(request);
+        public ListResponse<NuageVspDeviceResponse> ListNuageVspDevicesAllPages(ListNuageVspDevicesRequest request) => Proxy.RequestAllPages<NuageVspDeviceResponse>(request);
+        public Task<ListResponse<NuageVspDeviceResponse>> ListNuageVspDevicesAllPagesAsync(ListNuageVspDevicesRequest request) => Proxy.RequestAllPagesAsync<NuageVspDeviceResponse>(request);
     }
 }

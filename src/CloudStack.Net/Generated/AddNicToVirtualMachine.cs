@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddNicToVirtualMachine(AddNicToVirtualMachineRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddNicToVirtualMachineAsync(AddNicToVirtualMachineRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddNicToVirtualMachine(AddNicToVirtualMachineRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddNicToVirtualMachineAsync(AddNicToVirtualMachineRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

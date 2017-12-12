@@ -77,7 +77,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddBaremetalPxeKickStartServer(AddBaremetalPxeKickStartServerRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddBaremetalPxeKickStartServerAsync(AddBaremetalPxeKickStartServerRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddBaremetalPxeKickStartServer(AddBaremetalPxeKickStartServerRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddBaremetalPxeKickStartServerAsync(AddBaremetalPxeKickStartServerRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

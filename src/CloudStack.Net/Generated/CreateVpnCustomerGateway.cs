@@ -125,7 +125,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateVpnCustomerGatewayAsync(CreateVpnCustomerGatewayRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateVpnCustomerGateway(CreateVpnCustomerGatewayRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateVpnCustomerGatewayAsync(CreateVpnCustomerGatewayRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

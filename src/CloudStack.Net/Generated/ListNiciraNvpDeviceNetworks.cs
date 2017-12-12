@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworks(ListNiciraNvpDeviceNetworksRequest request) => _proxy.Request<ListResponse<NetworkResponse>>(request);
-        public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAsync(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
-        public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworksAllPages(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAllPages<NetworkResponse>(request);
-        public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAllPagesAsync(ListNiciraNvpDeviceNetworksRequest request) => _proxy.RequestAllPagesAsync<NetworkResponse>(request);
+        public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworks(ListNiciraNvpDeviceNetworksRequest request) => Proxy.Request<ListResponse<NetworkResponse>>(request);
+        public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAsync(ListNiciraNvpDeviceNetworksRequest request) => Proxy.RequestAsync<ListResponse<NetworkResponse>>(request);
+        public ListResponse<NetworkResponse> ListNiciraNvpDeviceNetworksAllPages(ListNiciraNvpDeviceNetworksRequest request) => Proxy.RequestAllPages<NetworkResponse>(request);
+        public Task<ListResponse<NetworkResponse>> ListNiciraNvpDeviceNetworksAllPagesAsync(ListNiciraNvpDeviceNetworksRequest request) => Proxy.RequestAllPagesAsync<NetworkResponse>(request);
     }
 }

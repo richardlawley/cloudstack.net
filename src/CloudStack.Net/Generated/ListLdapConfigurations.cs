@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LdapConfigurationResponse> ListLdapConfigurations(ListLdapConfigurationsRequest request) => _proxy.Request<ListResponse<LdapConfigurationResponse>>(request);
-        public Task<ListResponse<LdapConfigurationResponse>> ListLdapConfigurationsAsync(ListLdapConfigurationsRequest request) => _proxy.RequestAsync<ListResponse<LdapConfigurationResponse>>(request);
-        public ListResponse<LdapConfigurationResponse> ListLdapConfigurationsAllPages(ListLdapConfigurationsRequest request) => _proxy.RequestAllPages<LdapConfigurationResponse>(request);
-        public Task<ListResponse<LdapConfigurationResponse>> ListLdapConfigurationsAllPagesAsync(ListLdapConfigurationsRequest request) => _proxy.RequestAllPagesAsync<LdapConfigurationResponse>(request);
+        public ListResponse<LdapConfigurationResponse> ListLdapConfigurations(ListLdapConfigurationsRequest request) => Proxy.Request<ListResponse<LdapConfigurationResponse>>(request);
+        public Task<ListResponse<LdapConfigurationResponse>> ListLdapConfigurationsAsync(ListLdapConfigurationsRequest request) => Proxy.RequestAsync<ListResponse<LdapConfigurationResponse>>(request);
+        public ListResponse<LdapConfigurationResponse> ListLdapConfigurationsAllPages(ListLdapConfigurationsRequest request) => Proxy.RequestAllPages<LdapConfigurationResponse>(request);
+        public Task<ListResponse<LdapConfigurationResponse>> ListLdapConfigurationsAllPagesAsync(ListLdapConfigurationsRequest request) => Proxy.RequestAllPagesAsync<LdapConfigurationResponse>(request);
     }
 }

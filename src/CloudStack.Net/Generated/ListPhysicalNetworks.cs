@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworks(ListPhysicalNetworksRequest request) => _proxy.Request<ListResponse<PhysicalNetworkResponse>>(request);
-        public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAsync(ListPhysicalNetworksRequest request) => _proxy.RequestAsync<ListResponse<PhysicalNetworkResponse>>(request);
-        public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworksAllPages(ListPhysicalNetworksRequest request) => _proxy.RequestAllPages<PhysicalNetworkResponse>(request);
-        public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAllPagesAsync(ListPhysicalNetworksRequest request) => _proxy.RequestAllPagesAsync<PhysicalNetworkResponse>(request);
+        public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworks(ListPhysicalNetworksRequest request) => Proxy.Request<ListResponse<PhysicalNetworkResponse>>(request);
+        public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAsync(ListPhysicalNetworksRequest request) => Proxy.RequestAsync<ListResponse<PhysicalNetworkResponse>>(request);
+        public ListResponse<PhysicalNetworkResponse> ListPhysicalNetworksAllPages(ListPhysicalNetworksRequest request) => Proxy.RequestAllPages<PhysicalNetworkResponse>(request);
+        public Task<ListResponse<PhysicalNetworkResponse>> ListPhysicalNetworksAllPagesAsync(ListPhysicalNetworksRequest request) => Proxy.RequestAllPagesAsync<PhysicalNetworkResponse>(request);
     }
 }

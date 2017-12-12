@@ -111,9 +111,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<PrivateGatewayResponse> ListPrivateGateways(ListPrivateGatewaysRequest request) => _proxy.Request<ListResponse<PrivateGatewayResponse>>(request);
-        public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAsync(ListPrivateGatewaysRequest request) => _proxy.RequestAsync<ListResponse<PrivateGatewayResponse>>(request);
-        public ListResponse<PrivateGatewayResponse> ListPrivateGatewaysAllPages(ListPrivateGatewaysRequest request) => _proxy.RequestAllPages<PrivateGatewayResponse>(request);
-        public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAllPagesAsync(ListPrivateGatewaysRequest request) => _proxy.RequestAllPagesAsync<PrivateGatewayResponse>(request);
+        public ListResponse<PrivateGatewayResponse> ListPrivateGateways(ListPrivateGatewaysRequest request) => Proxy.Request<ListResponse<PrivateGatewayResponse>>(request);
+        public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAsync(ListPrivateGatewaysRequest request) => Proxy.RequestAsync<ListResponse<PrivateGatewayResponse>>(request);
+        public ListResponse<PrivateGatewayResponse> ListPrivateGatewaysAllPages(ListPrivateGatewaysRequest request) => Proxy.RequestAllPages<PrivateGatewayResponse>(request);
+        public Task<ListResponse<PrivateGatewayResponse>> ListPrivateGatewaysAllPagesAsync(ListPrivateGatewaysRequest request) => Proxy.RequestAllPagesAsync<PrivateGatewayResponse>(request);
     }
 }

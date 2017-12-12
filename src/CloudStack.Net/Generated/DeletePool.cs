@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DeleteVolumePoolCmdResponse DeletePool(DeletePoolRequest request) => _proxy.Request<DeleteVolumePoolCmdResponse>(request);
-        public Task<DeleteVolumePoolCmdResponse> DeletePoolAsync(DeletePoolRequest request) => _proxy.RequestAsync<DeleteVolumePoolCmdResponse>(request);
+        public DeleteVolumePoolCmdResponse DeletePool(DeletePoolRequest request) => Proxy.Request<DeleteVolumePoolCmdResponse>(request);
+        public Task<DeleteVolumePoolCmdResponse> DeletePoolAsync(DeletePoolRequest request) => Proxy.RequestAsync<DeleteVolumePoolCmdResponse>(request);
     }
 }

@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateLBStickinessPolicy(CreateLBStickinessPolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateLBStickinessPolicyAsync(CreateLBStickinessPolicyRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateLBStickinessPolicy(CreateLBStickinessPolicyRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateLBStickinessPolicyAsync(CreateLBStickinessPolicyRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public HypervisorCapabilitiesResponse UpdateHypervisorCapabilities(UpdateHypervisorCapabilitiesRequest request) => _proxy.Request<HypervisorCapabilitiesResponse>(request);
-        public Task<HypervisorCapabilitiesResponse> UpdateHypervisorCapabilitiesAsync(UpdateHypervisorCapabilitiesRequest request) => _proxy.RequestAsync<HypervisorCapabilitiesResponse>(request);
+        public HypervisorCapabilitiesResponse UpdateHypervisorCapabilities(UpdateHypervisorCapabilitiesRequest request) => Proxy.Request<HypervisorCapabilitiesResponse>(request);
+        public Task<HypervisorCapabilitiesResponse> UpdateHypervisorCapabilitiesAsync(UpdateHypervisorCapabilitiesRequest request) => Proxy.RequestAsync<HypervisorCapabilitiesResponse>(request);
     }
 }

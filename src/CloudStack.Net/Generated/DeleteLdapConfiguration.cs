@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LdapConfigurationResponse DeleteLdapConfiguration(DeleteLdapConfigurationRequest request) => _proxy.Request<LdapConfigurationResponse>(request);
-        public Task<LdapConfigurationResponse> DeleteLdapConfigurationAsync(DeleteLdapConfigurationRequest request) => _proxy.RequestAsync<LdapConfigurationResponse>(request);
+        public LdapConfigurationResponse DeleteLdapConfiguration(DeleteLdapConfigurationRequest request) => Proxy.Request<LdapConfigurationResponse>(request);
+        public Task<LdapConfigurationResponse> DeleteLdapConfigurationAsync(DeleteLdapConfigurationRequest request) => Proxy.RequestAsync<LdapConfigurationResponse>(request);
     }
 }

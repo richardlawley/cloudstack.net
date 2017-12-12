@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ReleasePublicIpRange(ReleasePublicIpRangeRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> ReleasePublicIpRangeAsync(ReleasePublicIpRangeRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse ReleasePublicIpRange(ReleasePublicIpRangeRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> ReleasePublicIpRangeAsync(ReleasePublicIpRangeRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ImageStoreResponse AddSwift(AddSwiftRequest request) => _proxy.Request<ImageStoreResponse>(request);
-        public Task<ImageStoreResponse> AddSwiftAsync(AddSwiftRequest request) => _proxy.RequestAsync<ImageStoreResponse>(request);
+        public ImageStoreResponse AddSwift(AddSwiftRequest request) => Proxy.Request<ImageStoreResponse>(request);
+        public Task<ImageStoreResponse> AddSwiftAsync(AddSwiftRequest request) => Proxy.RequestAsync<ImageStoreResponse>(request);
     }
 }

@@ -173,7 +173,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ClusterResponse AddCluster(AddClusterRequest request) => _proxy.Request<ClusterResponse>(request);
-        public Task<ClusterResponse> AddClusterAsync(AddClusterRequest request) => _proxy.RequestAsync<ClusterResponse>(request);
+        public ClusterResponse AddCluster(AddClusterRequest request) => Proxy.Request<ClusterResponse>(request);
+        public Task<ClusterResponse> AddClusterAsync(AddClusterRequest request) => Proxy.RequestAsync<ClusterResponse>(request);
     }
 }

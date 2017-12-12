@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<TrafficMonitorResponse> ListTrafficMonitors(ListTrafficMonitorsRequest request) => _proxy.Request<ListResponse<TrafficMonitorResponse>>(request);
-        public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAsync(ListTrafficMonitorsRequest request) => _proxy.RequestAsync<ListResponse<TrafficMonitorResponse>>(request);
-        public ListResponse<TrafficMonitorResponse> ListTrafficMonitorsAllPages(ListTrafficMonitorsRequest request) => _proxy.RequestAllPages<TrafficMonitorResponse>(request);
-        public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAllPagesAsync(ListTrafficMonitorsRequest request) => _proxy.RequestAllPagesAsync<TrafficMonitorResponse>(request);
+        public ListResponse<TrafficMonitorResponse> ListTrafficMonitors(ListTrafficMonitorsRequest request) => Proxy.Request<ListResponse<TrafficMonitorResponse>>(request);
+        public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAsync(ListTrafficMonitorsRequest request) => Proxy.RequestAsync<ListResponse<TrafficMonitorResponse>>(request);
+        public ListResponse<TrafficMonitorResponse> ListTrafficMonitorsAllPages(ListTrafficMonitorsRequest request) => Proxy.RequestAllPages<TrafficMonitorResponse>(request);
+        public Task<ListResponse<TrafficMonitorResponse>> ListTrafficMonitorsAllPagesAsync(ListTrafficMonitorsRequest request) => Proxy.RequestAllPagesAsync<TrafficMonitorResponse>(request);
     }
 }

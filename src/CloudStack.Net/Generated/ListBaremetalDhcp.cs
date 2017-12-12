@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcp(ListBaremetalDhcpRequest request) => _proxy.Request<ListResponse<BaremetalDhcpResponse>>(request);
-        public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAsync(ListBaremetalDhcpRequest request) => _proxy.RequestAsync<ListResponse<BaremetalDhcpResponse>>(request);
-        public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcpAllPages(ListBaremetalDhcpRequest request) => _proxy.RequestAllPages<BaremetalDhcpResponse>(request);
-        public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAllPagesAsync(ListBaremetalDhcpRequest request) => _proxy.RequestAllPagesAsync<BaremetalDhcpResponse>(request);
+        public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcp(ListBaremetalDhcpRequest request) => Proxy.Request<ListResponse<BaremetalDhcpResponse>>(request);
+        public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAsync(ListBaremetalDhcpRequest request) => Proxy.RequestAsync<ListResponse<BaremetalDhcpResponse>>(request);
+        public ListResponse<BaremetalDhcpResponse> ListBaremetalDhcpAllPages(ListBaremetalDhcpRequest request) => Proxy.RequestAllPages<BaremetalDhcpResponse>(request);
+        public Task<ListResponse<BaremetalDhcpResponse>> ListBaremetalDhcpAllPagesAsync(ListBaremetalDhcpRequest request) => Proxy.RequestAllPagesAsync<BaremetalDhcpResponse>(request);
     }
 }

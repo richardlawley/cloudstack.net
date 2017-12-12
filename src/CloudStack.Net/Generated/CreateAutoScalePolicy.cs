@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateAutoScalePolicyAsync(CreateAutoScalePolicyRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateAutoScalePolicy(CreateAutoScalePolicyRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateAutoScalePolicyAsync(CreateAutoScalePolicyRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public TrafficMonitorResponse AddTrafficMonitor(AddTrafficMonitorRequest request) => _proxy.Request<TrafficMonitorResponse>(request);
-        public Task<TrafficMonitorResponse> AddTrafficMonitorAsync(AddTrafficMonitorRequest request) => _proxy.RequestAsync<TrafficMonitorResponse>(request);
+        public TrafficMonitorResponse AddTrafficMonitor(AddTrafficMonitorRequest request) => Proxy.Request<TrafficMonitorResponse>(request);
+        public Task<TrafficMonitorResponse> AddTrafficMonitorAsync(AddTrafficMonitorRequest request) => Proxy.RequestAsync<TrafficMonitorResponse>(request);
     }
 }

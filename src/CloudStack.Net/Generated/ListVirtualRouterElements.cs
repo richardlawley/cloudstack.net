@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElements(ListVirtualRouterElementsRequest request) => _proxy.Request<ListResponse<VirtualRouterProviderResponse>>(request);
-        public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAsync(ListVirtualRouterElementsRequest request) => _proxy.RequestAsync<ListResponse<VirtualRouterProviderResponse>>(request);
-        public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElementsAllPages(ListVirtualRouterElementsRequest request) => _proxy.RequestAllPages<VirtualRouterProviderResponse>(request);
-        public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAllPagesAsync(ListVirtualRouterElementsRequest request) => _proxy.RequestAllPagesAsync<VirtualRouterProviderResponse>(request);
+        public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElements(ListVirtualRouterElementsRequest request) => Proxy.Request<ListResponse<VirtualRouterProviderResponse>>(request);
+        public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAsync(ListVirtualRouterElementsRequest request) => Proxy.RequestAsync<ListResponse<VirtualRouterProviderResponse>>(request);
+        public ListResponse<VirtualRouterProviderResponse> ListVirtualRouterElementsAllPages(ListVirtualRouterElementsRequest request) => Proxy.RequestAllPages<VirtualRouterProviderResponse>(request);
+        public Task<ListResponse<VirtualRouterProviderResponse>> ListVirtualRouterElementsAllPagesAsync(ListVirtualRouterElementsRequest request) => Proxy.RequestAllPagesAsync<VirtualRouterProviderResponse>(request);
     }
 }

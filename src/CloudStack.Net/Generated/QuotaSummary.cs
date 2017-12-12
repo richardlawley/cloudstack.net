@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<QuotaSummaryResponse> QuotaSummary(QuotaSummaryRequest request) => _proxy.Request<ListResponse<QuotaSummaryResponse>>(request);
-        public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAsync(QuotaSummaryRequest request) => _proxy.RequestAsync<ListResponse<QuotaSummaryResponse>>(request);
-        public ListResponse<QuotaSummaryResponse> QuotaSummaryAllPages(QuotaSummaryRequest request) => _proxy.RequestAllPages<QuotaSummaryResponse>(request);
-        public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAllPagesAsync(QuotaSummaryRequest request) => _proxy.RequestAllPagesAsync<QuotaSummaryResponse>(request);
+        public ListResponse<QuotaSummaryResponse> QuotaSummary(QuotaSummaryRequest request) => Proxy.Request<ListResponse<QuotaSummaryResponse>>(request);
+        public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAsync(QuotaSummaryRequest request) => Proxy.RequestAsync<ListResponse<QuotaSummaryResponse>>(request);
+        public ListResponse<QuotaSummaryResponse> QuotaSummaryAllPages(QuotaSummaryRequest request) => Proxy.RequestAllPages<QuotaSummaryResponse>(request);
+        public Task<ListResponse<QuotaSummaryResponse>> QuotaSummaryAllPagesAsync(QuotaSummaryRequest request) => Proxy.RequestAllPagesAsync<QuotaSummaryResponse>(request);
     }
 }

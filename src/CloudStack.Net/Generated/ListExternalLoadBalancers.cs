@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<HostResponse> ListExternalLoadBalancers(ListExternalLoadBalancersRequest request) => _proxy.Request<ListResponse<HostResponse>>(request);
-        public Task<ListResponse<HostResponse>> ListExternalLoadBalancersAsync(ListExternalLoadBalancersRequest request) => _proxy.RequestAsync<ListResponse<HostResponse>>(request);
-        public ListResponse<HostResponse> ListExternalLoadBalancersAllPages(ListExternalLoadBalancersRequest request) => _proxy.RequestAllPages<HostResponse>(request);
-        public Task<ListResponse<HostResponse>> ListExternalLoadBalancersAllPagesAsync(ListExternalLoadBalancersRequest request) => _proxy.RequestAllPagesAsync<HostResponse>(request);
+        public ListResponse<HostResponse> ListExternalLoadBalancers(ListExternalLoadBalancersRequest request) => Proxy.Request<ListResponse<HostResponse>>(request);
+        public Task<ListResponse<HostResponse>> ListExternalLoadBalancersAsync(ListExternalLoadBalancersRequest request) => Proxy.RequestAsync<ListResponse<HostResponse>>(request);
+        public ListResponse<HostResponse> ListExternalLoadBalancersAllPages(ListExternalLoadBalancersRequest request) => Proxy.RequestAllPages<HostResponse>(request);
+        public Task<ListResponse<HostResponse>> ListExternalLoadBalancersAllPagesAsync(ListExternalLoadBalancersRequest request) => Proxy.RequestAllPagesAsync<HostResponse>(request);
     }
 }

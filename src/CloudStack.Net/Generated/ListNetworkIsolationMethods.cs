@@ -31,9 +31,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethods(ListNetworkIsolationMethodsRequest request) => _proxy.Request<ListResponse<IsolationMethodResponse>>(request);
-        public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAsync(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAsync<ListResponse<IsolationMethodResponse>>(request);
-        public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethodsAllPages(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAllPages<IsolationMethodResponse>(request);
-        public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAllPagesAsync(ListNetworkIsolationMethodsRequest request) => _proxy.RequestAllPagesAsync<IsolationMethodResponse>(request);
+        public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethods(ListNetworkIsolationMethodsRequest request) => Proxy.Request<ListResponse<IsolationMethodResponse>>(request);
+        public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAsync(ListNetworkIsolationMethodsRequest request) => Proxy.RequestAsync<ListResponse<IsolationMethodResponse>>(request);
+        public ListResponse<IsolationMethodResponse> ListNetworkIsolationMethodsAllPages(ListNetworkIsolationMethodsRequest request) => Proxy.RequestAllPages<IsolationMethodResponse>(request);
+        public Task<ListResponse<IsolationMethodResponse>> ListNetworkIsolationMethodsAllPagesAsync(ListNetworkIsolationMethodsRequest request) => Proxy.RequestAllPagesAsync<IsolationMethodResponse>(request);
     }
 }

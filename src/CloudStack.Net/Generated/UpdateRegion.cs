@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public RegionResponse UpdateRegion(UpdateRegionRequest request) => _proxy.Request<RegionResponse>(request);
-        public Task<RegionResponse> UpdateRegionAsync(UpdateRegionRequest request) => _proxy.RequestAsync<RegionResponse>(request);
+        public RegionResponse UpdateRegion(UpdateRegionRequest request) => Proxy.Request<RegionResponse>(request);
+        public Task<RegionResponse> UpdateRegionAsync(UpdateRegionRequest request) => Proxy.RequestAsync<RegionResponse>(request);
     }
 }

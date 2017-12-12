@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public InstanceGroupResponse UpdateInstanceGroup(UpdateInstanceGroupRequest request) => _proxy.Request<InstanceGroupResponse>(request);
-        public Task<InstanceGroupResponse> UpdateInstanceGroupAsync(UpdateInstanceGroupRequest request) => _proxy.RequestAsync<InstanceGroupResponse>(request);
+        public InstanceGroupResponse UpdateInstanceGroup(UpdateInstanceGroupRequest request) => Proxy.Request<InstanceGroupResponse>(request);
+        public Task<InstanceGroupResponse> UpdateInstanceGroupAsync(UpdateInstanceGroupRequest request) => Proxy.RequestAsync<InstanceGroupResponse>(request);
     }
 }

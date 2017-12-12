@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteVPCOffering(DeleteVPCOfferingRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteVPCOfferingAsync(DeleteVPCOfferingRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteVPCOffering(DeleteVPCOfferingRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteVPCOfferingAsync(DeleteVPCOfferingRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

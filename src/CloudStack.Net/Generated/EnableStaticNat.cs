@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse EnableStaticNat(EnableStaticNatRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> EnableStaticNatAsync(EnableStaticNatRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse EnableStaticNat(EnableStaticNatRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> EnableStaticNatAsync(EnableStaticNatRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

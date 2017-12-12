@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AssignToGlobalLoadBalancerRuleAsync(AssignToGlobalLoadBalancerRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AssignToGlobalLoadBalancerRule(AssignToGlobalLoadBalancerRuleRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AssignToGlobalLoadBalancerRuleAsync(AssignToGlobalLoadBalancerRuleRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

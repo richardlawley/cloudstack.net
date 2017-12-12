@@ -117,7 +117,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

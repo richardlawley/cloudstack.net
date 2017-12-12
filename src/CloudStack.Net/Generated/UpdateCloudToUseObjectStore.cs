@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ImageStoreResponse UpdateCloudToUseObjectStore(UpdateCloudToUseObjectStoreRequest request) => _proxy.Request<ImageStoreResponse>(request);
-        public Task<ImageStoreResponse> UpdateCloudToUseObjectStoreAsync(UpdateCloudToUseObjectStoreRequest request) => _proxy.RequestAsync<ImageStoreResponse>(request);
+        public ImageStoreResponse UpdateCloudToUseObjectStore(UpdateCloudToUseObjectStoreRequest request) => Proxy.Request<ImageStoreResponse>(request);
+        public Task<ImageStoreResponse> UpdateCloudToUseObjectStoreAsync(UpdateCloudToUseObjectStoreRequest request) => Proxy.RequestAsync<ImageStoreResponse>(request);
     }
 }

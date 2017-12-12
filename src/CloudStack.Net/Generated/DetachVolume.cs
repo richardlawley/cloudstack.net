@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DetachVolume(DetachVolumeRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DetachVolumeAsync(DetachVolumeRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DetachVolume(DetachVolumeRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DetachVolumeAsync(DetachVolumeRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

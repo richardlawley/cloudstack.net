@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ApiDiscoveryResponse ListApis(ListApisRequest request) => _proxy.Request<ApiDiscoveryResponse>(request);
-        public Task<ApiDiscoveryResponse> ListApisAsync(ListApisRequest request) => _proxy.RequestAsync<ApiDiscoveryResponse>(request);
+        public ApiDiscoveryResponse ListApis(ListApisRequest request) => Proxy.Request<ApiDiscoveryResponse>(request);
+        public Task<ApiDiscoveryResponse> ListApisAsync(ListApisRequest request) => Proxy.RequestAsync<ApiDiscoveryResponse>(request);
     }
 }

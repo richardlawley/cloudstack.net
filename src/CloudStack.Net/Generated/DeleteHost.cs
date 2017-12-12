@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteHost(DeleteHostRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteHostAsync(DeleteHostRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteHost(DeleteHostRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteHostAsync(DeleteHostRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

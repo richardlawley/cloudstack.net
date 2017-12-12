@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CleanVMReservations(CleanVMReservationsRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CleanVMReservationsAsync(CleanVMReservationsRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CleanVMReservations(CleanVMReservationsRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CleanVMReservationsAsync(CleanVMReservationsRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

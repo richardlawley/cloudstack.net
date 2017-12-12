@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SamlAuthorizationResponse> ListSamlAuthorization(ListSamlAuthorizationRequest request) => _proxy.Request<ListResponse<SamlAuthorizationResponse>>(request);
-        public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAsync(ListSamlAuthorizationRequest request) => _proxy.RequestAsync<ListResponse<SamlAuthorizationResponse>>(request);
-        public ListResponse<SamlAuthorizationResponse> ListSamlAuthorizationAllPages(ListSamlAuthorizationRequest request) => _proxy.RequestAllPages<SamlAuthorizationResponse>(request);
-        public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAllPagesAsync(ListSamlAuthorizationRequest request) => _proxy.RequestAllPagesAsync<SamlAuthorizationResponse>(request);
+        public ListResponse<SamlAuthorizationResponse> ListSamlAuthorization(ListSamlAuthorizationRequest request) => Proxy.Request<ListResponse<SamlAuthorizationResponse>>(request);
+        public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAsync(ListSamlAuthorizationRequest request) => Proxy.RequestAsync<ListResponse<SamlAuthorizationResponse>>(request);
+        public ListResponse<SamlAuthorizationResponse> ListSamlAuthorizationAllPages(ListSamlAuthorizationRequest request) => Proxy.RequestAllPages<SamlAuthorizationResponse>(request);
+        public Task<ListResponse<SamlAuthorizationResponse>> ListSamlAuthorizationAllPagesAsync(ListSamlAuthorizationRequest request) => Proxy.RequestAllPagesAsync<SamlAuthorizationResponse>(request);
     }
 }

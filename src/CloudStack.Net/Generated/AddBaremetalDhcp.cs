@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddBaremetalDhcpAsync(AddBaremetalDhcpRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddBaremetalDhcp(AddBaremetalDhcpRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddBaremetalDhcpAsync(AddBaremetalDhcpRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -71,9 +71,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<AsyncJobResponse> ListAsyncJobs(ListAsyncJobsRequest request) => _proxy.Request<ListResponse<AsyncJobResponse>>(request);
-        public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAsync(ListAsyncJobsRequest request) => _proxy.RequestAsync<ListResponse<AsyncJobResponse>>(request);
-        public ListResponse<AsyncJobResponse> ListAsyncJobsAllPages(ListAsyncJobsRequest request) => _proxy.RequestAllPages<AsyncJobResponse>(request);
-        public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAllPagesAsync(ListAsyncJobsRequest request) => _proxy.RequestAllPagesAsync<AsyncJobResponse>(request);
+        public ListResponse<AsyncJobResponse> ListAsyncJobs(ListAsyncJobsRequest request) => Proxy.Request<ListResponse<AsyncJobResponse>>(request);
+        public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAsync(ListAsyncJobsRequest request) => Proxy.RequestAsync<ListResponse<AsyncJobResponse>>(request);
+        public ListResponse<AsyncJobResponse> ListAsyncJobsAllPages(ListAsyncJobsRequest request) => Proxy.RequestAllPages<AsyncJobResponse>(request);
+        public Task<ListResponse<AsyncJobResponse>> ListAsyncJobsAllPagesAsync(ListAsyncJobsRequest request) => Proxy.RequestAllPagesAsync<AsyncJobResponse>(request);
     }
 }

@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateStorageNetworkIpRangeAsync(CreateStorageNetworkIpRangeRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateStorageNetworkIpRange(CreateStorageNetworkIpRangeRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateStorageNetworkIpRangeAsync(CreateStorageNetworkIpRangeRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

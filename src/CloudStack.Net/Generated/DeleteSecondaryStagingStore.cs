@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteSecondaryStagingStore(DeleteSecondaryStagingStoreRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteSecondaryStagingStoreAsync(DeleteSecondaryStagingStoreRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteSecondaryStagingStore(DeleteSecondaryStagingStoreRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteSecondaryStagingStoreAsync(DeleteSecondaryStagingStoreRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

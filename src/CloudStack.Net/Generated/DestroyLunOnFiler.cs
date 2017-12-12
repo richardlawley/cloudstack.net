@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DeleteLUNCmdResponse DestroyLunOnFiler(DestroyLunOnFilerRequest request) => _proxy.Request<DeleteLUNCmdResponse>(request);
-        public Task<DeleteLUNCmdResponse> DestroyLunOnFilerAsync(DestroyLunOnFilerRequest request) => _proxy.RequestAsync<DeleteLUNCmdResponse>(request);
+        public DeleteLUNCmdResponse DestroyLunOnFiler(DestroyLunOnFilerRequest request) => Proxy.Request<DeleteLUNCmdResponse>(request);
+        public Task<DeleteLUNCmdResponse> DestroyLunOnFilerAsync(DestroyLunOnFilerRequest request) => Proxy.RequestAsync<DeleteLUNCmdResponse>(request);
     }
 }

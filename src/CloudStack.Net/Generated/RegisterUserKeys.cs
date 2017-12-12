@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public RegisterResponse RegisterUserKeys(RegisterUserKeysRequest request) => _proxy.Request<RegisterResponse>(request);
-        public Task<RegisterResponse> RegisterUserKeysAsync(RegisterUserKeysRequest request) => _proxy.RequestAsync<RegisterResponse>(request);
+        public RegisterResponse RegisterUserKeys(RegisterUserKeysRequest request) => Proxy.Request<RegisterResponse>(request);
+        public Task<RegisterResponse> RegisterUserKeysAsync(RegisterUserKeysRequest request) => Proxy.RequestAsync<RegisterResponse>(request);
     }
 }

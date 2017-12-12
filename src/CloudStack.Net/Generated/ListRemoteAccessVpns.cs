@@ -103,9 +103,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpns(ListRemoteAccessVpnsRequest request) => _proxy.Request<ListResponse<RemoteAccessVpnResponse>>(request);
-        public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAsync(ListRemoteAccessVpnsRequest request) => _proxy.RequestAsync<ListResponse<RemoteAccessVpnResponse>>(request);
-        public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpnsAllPages(ListRemoteAccessVpnsRequest request) => _proxy.RequestAllPages<RemoteAccessVpnResponse>(request);
-        public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAllPagesAsync(ListRemoteAccessVpnsRequest request) => _proxy.RequestAllPagesAsync<RemoteAccessVpnResponse>(request);
+        public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpns(ListRemoteAccessVpnsRequest request) => Proxy.Request<ListResponse<RemoteAccessVpnResponse>>(request);
+        public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAsync(ListRemoteAccessVpnsRequest request) => Proxy.RequestAsync<ListResponse<RemoteAccessVpnResponse>>(request);
+        public ListResponse<RemoteAccessVpnResponse> ListRemoteAccessVpnsAllPages(ListRemoteAccessVpnsRequest request) => Proxy.RequestAllPages<RemoteAccessVpnResponse>(request);
+        public Task<ListResponse<RemoteAccessVpnResponse>> ListRemoteAccessVpnsAllPagesAsync(ListRemoteAccessVpnsRequest request) => Proxy.RequestAllPagesAsync<RemoteAccessVpnResponse>(request);
     }
 }

@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddOpenDaylightControllerAsync(AddOpenDaylightControllerRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddOpenDaylightController(AddOpenDaylightControllerRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddOpenDaylightControllerAsync(AddOpenDaylightControllerRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LdapConfigurationResponse AddLdapConfiguration(AddLdapConfigurationRequest request) => _proxy.Request<LdapConfigurationResponse>(request);
-        public Task<LdapConfigurationResponse> AddLdapConfigurationAsync(AddLdapConfigurationRequest request) => _proxy.RequestAsync<LdapConfigurationResponse>(request);
+        public LdapConfigurationResponse AddLdapConfiguration(AddLdapConfigurationRequest request) => Proxy.Request<LdapConfigurationResponse>(request);
+        public Task<LdapConfigurationResponse> AddLdapConfigurationAsync(AddLdapConfigurationRequest request) => Proxy.RequestAsync<LdapConfigurationResponse>(request);
     }
 }

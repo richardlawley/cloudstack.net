@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse RemoveGuestOsMapping(RemoveGuestOsMappingRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> RemoveGuestOsMappingAsync(RemoveGuestOsMappingRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse RemoveGuestOsMapping(RemoveGuestOsMappingRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> RemoveGuestOsMappingAsync(RemoveGuestOsMappingRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

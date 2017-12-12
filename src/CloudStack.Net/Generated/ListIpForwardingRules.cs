@@ -95,9 +95,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<FirewallRuleResponse> ListIpForwardingRules(ListIpForwardingRulesRequest request) => _proxy.Request<ListResponse<FirewallRuleResponse>>(request);
-        public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAsync(ListIpForwardingRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallRuleResponse>>(request);
-        public ListResponse<FirewallRuleResponse> ListIpForwardingRulesAllPages(ListIpForwardingRulesRequest request) => _proxy.RequestAllPages<FirewallRuleResponse>(request);
-        public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAllPagesAsync(ListIpForwardingRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallRuleResponse>(request);
+        public ListResponse<FirewallRuleResponse> ListIpForwardingRules(ListIpForwardingRulesRequest request) => Proxy.Request<ListResponse<FirewallRuleResponse>>(request);
+        public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAsync(ListIpForwardingRulesRequest request) => Proxy.RequestAsync<ListResponse<FirewallRuleResponse>>(request);
+        public ListResponse<FirewallRuleResponse> ListIpForwardingRulesAllPages(ListIpForwardingRulesRequest request) => Proxy.RequestAllPages<FirewallRuleResponse>(request);
+        public Task<ListResponse<FirewallRuleResponse>> ListIpForwardingRulesAllPagesAsync(ListIpForwardingRulesRequest request) => Proxy.RequestAllPagesAsync<FirewallRuleResponse>(request);
     }
 }

@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NetworkDeviceResponse AddNetworkDevice(AddNetworkDeviceRequest request) => _proxy.Request<NetworkDeviceResponse>(request);
-        public Task<NetworkDeviceResponse> AddNetworkDeviceAsync(AddNetworkDeviceRequest request) => _proxy.RequestAsync<NetworkDeviceResponse>(request);
+        public NetworkDeviceResponse AddNetworkDevice(AddNetworkDeviceRequest request) => Proxy.Request<NetworkDeviceResponse>(request);
+        public Task<NetworkDeviceResponse> AddNetworkDeviceAsync(AddNetworkDeviceRequest request) => Proxy.RequestAsync<NetworkDeviceResponse>(request);
     }
 }

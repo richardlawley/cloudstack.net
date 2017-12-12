@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteCiscoNexusVSM(DeleteCiscoNexusVSMRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteCiscoNexusVSMAsync(DeleteCiscoNexusVSMRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteCiscoNexusVSM(DeleteCiscoNexusVSMRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteCiscoNexusVSMAsync(DeleteCiscoNexusVSMRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

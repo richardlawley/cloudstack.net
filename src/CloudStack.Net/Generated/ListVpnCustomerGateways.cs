@@ -79,9 +79,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<Site2SiteCustomerGatewayResponse> ListVpnCustomerGateways(ListVpnCustomerGatewaysRequest request) => _proxy.Request<ListResponse<Site2SiteCustomerGatewayResponse>>(request);
-        public Task<ListResponse<Site2SiteCustomerGatewayResponse>> ListVpnCustomerGatewaysAsync(ListVpnCustomerGatewaysRequest request) => _proxy.RequestAsync<ListResponse<Site2SiteCustomerGatewayResponse>>(request);
-        public ListResponse<Site2SiteCustomerGatewayResponse> ListVpnCustomerGatewaysAllPages(ListVpnCustomerGatewaysRequest request) => _proxy.RequestAllPages<Site2SiteCustomerGatewayResponse>(request);
-        public Task<ListResponse<Site2SiteCustomerGatewayResponse>> ListVpnCustomerGatewaysAllPagesAsync(ListVpnCustomerGatewaysRequest request) => _proxy.RequestAllPagesAsync<Site2SiteCustomerGatewayResponse>(request);
+        public ListResponse<Site2SiteCustomerGatewayResponse> ListVpnCustomerGateways(ListVpnCustomerGatewaysRequest request) => Proxy.Request<ListResponse<Site2SiteCustomerGatewayResponse>>(request);
+        public Task<ListResponse<Site2SiteCustomerGatewayResponse>> ListVpnCustomerGatewaysAsync(ListVpnCustomerGatewaysRequest request) => Proxy.RequestAsync<ListResponse<Site2SiteCustomerGatewayResponse>>(request);
+        public ListResponse<Site2SiteCustomerGatewayResponse> ListVpnCustomerGatewaysAllPages(ListVpnCustomerGatewaysRequest request) => Proxy.RequestAllPages<Site2SiteCustomerGatewayResponse>(request);
+        public Task<ListResponse<Site2SiteCustomerGatewayResponse>> ListVpnCustomerGatewaysAllPagesAsync(ListVpnCustomerGatewaysRequest request) => Proxy.RequestAllPagesAsync<Site2SiteCustomerGatewayResponse>(request);
     }
 }

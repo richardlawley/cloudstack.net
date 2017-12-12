@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ResourceLimitResponse UpdateResourceLimit(UpdateResourceLimitRequest request) => _proxy.Request<ResourceLimitResponse>(request);
-        public Task<ResourceLimitResponse> UpdateResourceLimitAsync(UpdateResourceLimitRequest request) => _proxy.RequestAsync<ResourceLimitResponse>(request);
+        public ResourceLimitResponse UpdateResourceLimit(UpdateResourceLimitRequest request) => Proxy.Request<ResourceLimitResponse>(request);
+        public Task<ResourceLimitResponse> UpdateResourceLimitAsync(UpdateResourceLimitRequest request) => Proxy.RequestAsync<ResourceLimitResponse>(request);
     }
 }

@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddBrocadeVcsDeviceAsync(AddBrocadeVcsDeviceRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddBrocadeVcsDevice(AddBrocadeVcsDeviceRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddBrocadeVcsDeviceAsync(AddBrocadeVcsDeviceRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

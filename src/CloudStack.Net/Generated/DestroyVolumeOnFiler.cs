@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DeleteVolumeOnFilerCmdResponse DestroyVolumeOnFiler(DestroyVolumeOnFilerRequest request) => _proxy.Request<DeleteVolumeOnFilerCmdResponse>(request);
-        public Task<DeleteVolumeOnFilerCmdResponse> DestroyVolumeOnFilerAsync(DestroyVolumeOnFilerRequest request) => _proxy.RequestAsync<DeleteVolumeOnFilerCmdResponse>(request);
+        public DeleteVolumeOnFilerCmdResponse DestroyVolumeOnFiler(DestroyVolumeOnFilerRequest request) => Proxy.Request<DeleteVolumeOnFilerCmdResponse>(request);
+        public Task<DeleteVolumeOnFilerCmdResponse> DestroyVolumeOnFilerAsync(DestroyVolumeOnFilerRequest request) => Proxy.RequestAsync<DeleteVolumeOnFilerCmdResponse>(request);
     }
 }

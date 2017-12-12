@@ -63,9 +63,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DedicateClusterResponse> ListDedicatedClusters(ListDedicatedClustersRequest request) => _proxy.Request<ListResponse<DedicateClusterResponse>>(request);
-        public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAsync(ListDedicatedClustersRequest request) => _proxy.RequestAsync<ListResponse<DedicateClusterResponse>>(request);
-        public ListResponse<DedicateClusterResponse> ListDedicatedClustersAllPages(ListDedicatedClustersRequest request) => _proxy.RequestAllPages<DedicateClusterResponse>(request);
-        public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAllPagesAsync(ListDedicatedClustersRequest request) => _proxy.RequestAllPagesAsync<DedicateClusterResponse>(request);
+        public ListResponse<DedicateClusterResponse> ListDedicatedClusters(ListDedicatedClustersRequest request) => Proxy.Request<ListResponse<DedicateClusterResponse>>(request);
+        public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAsync(ListDedicatedClustersRequest request) => Proxy.RequestAsync<ListResponse<DedicateClusterResponse>>(request);
+        public ListResponse<DedicateClusterResponse> ListDedicatedClustersAllPages(ListDedicatedClustersRequest request) => Proxy.RequestAllPages<DedicateClusterResponse>(request);
+        public Task<ListResponse<DedicateClusterResponse>> ListDedicatedClustersAllPagesAsync(ListDedicatedClustersRequest request) => Proxy.RequestAllPagesAsync<DedicateClusterResponse>(request);
     }
 }

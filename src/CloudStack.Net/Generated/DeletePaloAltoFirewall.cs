@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeletePaloAltoFirewall(DeletePaloAltoFirewallRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeletePaloAltoFirewallAsync(DeletePaloAltoFirewallRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeletePaloAltoFirewall(DeletePaloAltoFirewallRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeletePaloAltoFirewallAsync(DeletePaloAltoFirewallRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

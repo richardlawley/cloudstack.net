@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateIpForwardingRuleAsync(CreateIpForwardingRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateIpForwardingRule(CreateIpForwardingRuleRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateIpForwardingRuleAsync(CreateIpForwardingRuleRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

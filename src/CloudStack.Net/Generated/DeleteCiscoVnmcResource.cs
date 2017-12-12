@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteCiscoVnmcResource(DeleteCiscoVnmcResourceRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteCiscoVnmcResourceAsync(DeleteCiscoVnmcResourceRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteCiscoVnmcResource(DeleteCiscoVnmcResourceRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteCiscoVnmcResourceAsync(DeleteCiscoVnmcResourceRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

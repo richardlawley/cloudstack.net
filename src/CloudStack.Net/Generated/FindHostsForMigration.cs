@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<HostForMigrationResponse> FindHostsForMigration(FindHostsForMigrationRequest request) => _proxy.Request<ListResponse<HostForMigrationResponse>>(request);
-        public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAsync(FindHostsForMigrationRequest request) => _proxy.RequestAsync<ListResponse<HostForMigrationResponse>>(request);
-        public ListResponse<HostForMigrationResponse> FindHostsForMigrationAllPages(FindHostsForMigrationRequest request) => _proxy.RequestAllPages<HostForMigrationResponse>(request);
-        public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAllPagesAsync(FindHostsForMigrationRequest request) => _proxy.RequestAllPagesAsync<HostForMigrationResponse>(request);
+        public ListResponse<HostForMigrationResponse> FindHostsForMigration(FindHostsForMigrationRequest request) => Proxy.Request<ListResponse<HostForMigrationResponse>>(request);
+        public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAsync(FindHostsForMigrationRequest request) => Proxy.RequestAsync<ListResponse<HostForMigrationResponse>>(request);
+        public ListResponse<HostForMigrationResponse> FindHostsForMigrationAllPages(FindHostsForMigrationRequest request) => Proxy.RequestAllPages<HostForMigrationResponse>(request);
+        public Task<ListResponse<HostForMigrationResponse>> FindHostsForMigrationAllPagesAsync(FindHostsForMigrationRequest request) => Proxy.RequestAllPagesAsync<HostForMigrationResponse>(request);
     }
 }

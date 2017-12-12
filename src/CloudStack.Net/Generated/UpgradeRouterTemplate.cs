@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public BaseResponse UpgradeRouterTemplate(UpgradeRouterTemplateRequest request) => _proxy.Request<BaseResponse>(request);
-        public Task<BaseResponse> UpgradeRouterTemplateAsync(UpgradeRouterTemplateRequest request) => _proxy.RequestAsync<BaseResponse>(request);
+        public BaseResponse UpgradeRouterTemplate(UpgradeRouterTemplateRequest request) => Proxy.Request<BaseResponse>(request);
+        public Task<BaseResponse> UpgradeRouterTemplateAsync(UpgradeRouterTemplateRequest request) => Proxy.RequestAsync<BaseResponse>(request);
     }
 }

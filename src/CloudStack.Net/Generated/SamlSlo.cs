@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LogoutCmdResponse SamlSlo(SamlSloRequest request) => _proxy.Request<LogoutCmdResponse>(request);
-        public Task<LogoutCmdResponse> SamlSloAsync(SamlSloRequest request) => _proxy.RequestAsync<LogoutCmdResponse>(request);
+        public LogoutCmdResponse SamlSlo(SamlSloRequest request) => Proxy.Request<LogoutCmdResponse>(request);
+        public Task<LogoutCmdResponse> SamlSloAsync(SamlSloRequest request) => Proxy.RequestAsync<LogoutCmdResponse>(request);
     }
 }

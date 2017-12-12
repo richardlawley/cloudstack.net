@@ -109,7 +109,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddBaremetalPxePingServer(AddBaremetalPxePingServerRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddBaremetalPxePingServerAsync(AddBaremetalPxePingServerRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddBaremetalPxePingServer(AddBaremetalPxePingServerRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddBaremetalPxePingServerAsync(AddBaremetalPxePingServerRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse GenerateAlert(GenerateAlertRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> GenerateAlertAsync(GenerateAlertRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse GenerateAlert(GenerateAlertRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> GenerateAlertAsync(GenerateAlertRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

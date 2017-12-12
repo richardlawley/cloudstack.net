@@ -87,9 +87,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRanges(ListDedicatedGuestVlanRangesRequest request) => _proxy.Request<ListResponse<GuestVlanRangeResponse>>(request);
-        public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAsync(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAsync<ListResponse<GuestVlanRangeResponse>>(request);
-        public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRangesAllPages(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAllPages<GuestVlanRangeResponse>(request);
-        public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAllPagesAsync(ListDedicatedGuestVlanRangesRequest request) => _proxy.RequestAllPagesAsync<GuestVlanRangeResponse>(request);
+        public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRanges(ListDedicatedGuestVlanRangesRequest request) => Proxy.Request<ListResponse<GuestVlanRangeResponse>>(request);
+        public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAsync(ListDedicatedGuestVlanRangesRequest request) => Proxy.RequestAsync<ListResponse<GuestVlanRangeResponse>>(request);
+        public ListResponse<GuestVlanRangeResponse> ListDedicatedGuestVlanRangesAllPages(ListDedicatedGuestVlanRangesRequest request) => Proxy.RequestAllPages<GuestVlanRangeResponse>(request);
+        public Task<ListResponse<GuestVlanRangeResponse>> ListDedicatedGuestVlanRangesAllPagesAsync(ListDedicatedGuestVlanRangesRequest request) => Proxy.RequestAllPagesAsync<GuestVlanRangeResponse>(request);
     }
 }

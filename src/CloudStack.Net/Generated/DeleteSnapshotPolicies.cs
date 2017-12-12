@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteSnapshotPolicies(DeleteSnapshotPoliciesRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteSnapshotPoliciesAsync(DeleteSnapshotPoliciesRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteSnapshotPolicies(DeleteSnapshotPoliciesRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteSnapshotPoliciesAsync(DeleteSnapshotPoliciesRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

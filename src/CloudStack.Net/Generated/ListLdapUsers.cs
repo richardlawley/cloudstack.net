@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LdapUserResponse> ListLdapUsers(ListLdapUsersRequest request) => _proxy.Request<ListResponse<LdapUserResponse>>(request);
-        public Task<ListResponse<LdapUserResponse>> ListLdapUsersAsync(ListLdapUsersRequest request) => _proxy.RequestAsync<ListResponse<LdapUserResponse>>(request);
-        public ListResponse<LdapUserResponse> ListLdapUsersAllPages(ListLdapUsersRequest request) => _proxy.RequestAllPages<LdapUserResponse>(request);
-        public Task<ListResponse<LdapUserResponse>> ListLdapUsersAllPagesAsync(ListLdapUsersRequest request) => _proxy.RequestAllPagesAsync<LdapUserResponse>(request);
+        public ListResponse<LdapUserResponse> ListLdapUsers(ListLdapUsersRequest request) => Proxy.Request<ListResponse<LdapUserResponse>>(request);
+        public Task<ListResponse<LdapUserResponse>> ListLdapUsersAsync(ListLdapUsersRequest request) => Proxy.RequestAsync<ListResponse<LdapUserResponse>>(request);
+        public ListResponse<LdapUserResponse> ListLdapUsersAllPages(ListLdapUsersRequest request) => Proxy.RequestAllPages<LdapUserResponse>(request);
+        public Task<ListResponse<LdapUserResponse>> ListLdapUsersAllPagesAsync(ListLdapUsersRequest request) => Proxy.RequestAllPagesAsync<LdapUserResponse>(request);
     }
 }

@@ -127,9 +127,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SnapshotResponse> ListSnapshots(ListSnapshotsRequest request) => _proxy.Request<ListResponse<SnapshotResponse>>(request);
-        public Task<ListResponse<SnapshotResponse>> ListSnapshotsAsync(ListSnapshotsRequest request) => _proxy.RequestAsync<ListResponse<SnapshotResponse>>(request);
-        public ListResponse<SnapshotResponse> ListSnapshotsAllPages(ListSnapshotsRequest request) => _proxy.RequestAllPages<SnapshotResponse>(request);
-        public Task<ListResponse<SnapshotResponse>> ListSnapshotsAllPagesAsync(ListSnapshotsRequest request) => _proxy.RequestAllPagesAsync<SnapshotResponse>(request);
+        public ListResponse<SnapshotResponse> ListSnapshots(ListSnapshotsRequest request) => Proxy.Request<ListResponse<SnapshotResponse>>(request);
+        public Task<ListResponse<SnapshotResponse>> ListSnapshotsAsync(ListSnapshotsRequest request) => Proxy.RequestAsync<ListResponse<SnapshotResponse>>(request);
+        public ListResponse<SnapshotResponse> ListSnapshotsAllPages(ListSnapshotsRequest request) => Proxy.RequestAllPages<SnapshotResponse>(request);
+        public Task<ListResponse<SnapshotResponse>> ListSnapshotsAllPagesAsync(ListSnapshotsRequest request) => Proxy.RequestAllPagesAsync<SnapshotResponse>(request);
     }
 }

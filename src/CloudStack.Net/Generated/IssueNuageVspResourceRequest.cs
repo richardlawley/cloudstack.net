@@ -85,7 +85,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NuageVspResourceResponse IssueNuageVspResourceRequest(IssueNuageVspResourceRequestRequest request) => _proxy.Request<NuageVspResourceResponse>(request);
-        public Task<NuageVspResourceResponse> IssueNuageVspResourceRequestAsync(IssueNuageVspResourceRequestRequest request) => _proxy.RequestAsync<NuageVspResourceResponse>(request);
+        public NuageVspResourceResponse IssueNuageVspResourceRequest(IssueNuageVspResourceRequestRequest request) => Proxy.Request<NuageVspResourceResponse>(request);
+        public Task<NuageVspResourceResponse> IssueNuageVspResourceRequestAsync(IssueNuageVspResourceRequestRequest request) => Proxy.RequestAsync<NuageVspResourceResponse>(request);
     }
 }

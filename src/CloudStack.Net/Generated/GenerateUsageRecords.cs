@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse GenerateUsageRecords(GenerateUsageRecordsRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> GenerateUsageRecordsAsync(GenerateUsageRecordsRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse GenerateUsageRecords(GenerateUsageRecordsRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> GenerateUsageRecordsAsync(GenerateUsageRecordsRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

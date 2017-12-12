@@ -63,9 +63,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DedicateZoneResponse> ListDedicatedZones(ListDedicatedZonesRequest request) => _proxy.Request<ListResponse<DedicateZoneResponse>>(request);
-        public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAsync(ListDedicatedZonesRequest request) => _proxy.RequestAsync<ListResponse<DedicateZoneResponse>>(request);
-        public ListResponse<DedicateZoneResponse> ListDedicatedZonesAllPages(ListDedicatedZonesRequest request) => _proxy.RequestAllPages<DedicateZoneResponse>(request);
-        public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAllPagesAsync(ListDedicatedZonesRequest request) => _proxy.RequestAllPagesAsync<DedicateZoneResponse>(request);
+        public ListResponse<DedicateZoneResponse> ListDedicatedZones(ListDedicatedZonesRequest request) => Proxy.Request<ListResponse<DedicateZoneResponse>>(request);
+        public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAsync(ListDedicatedZonesRequest request) => Proxy.RequestAsync<ListResponse<DedicateZoneResponse>>(request);
+        public ListResponse<DedicateZoneResponse> ListDedicatedZonesAllPages(ListDedicatedZonesRequest request) => Proxy.RequestAllPages<DedicateZoneResponse>(request);
+        public Task<ListResponse<DedicateZoneResponse>> ListDedicatedZonesAllPagesAsync(ListDedicatedZonesRequest request) => Proxy.RequestAllPagesAsync<DedicateZoneResponse>(request);
     }
 }

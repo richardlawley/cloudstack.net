@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ApiSolidFireVolumeAccessGroupIdResponse GetSolidFireVolumeAccessGroupId(GetSolidFireVolumeAccessGroupIdRequest request) => _proxy.Request<ApiSolidFireVolumeAccessGroupIdResponse>(request);
-        public Task<ApiSolidFireVolumeAccessGroupIdResponse> GetSolidFireVolumeAccessGroupIdAsync(GetSolidFireVolumeAccessGroupIdRequest request) => _proxy.RequestAsync<ApiSolidFireVolumeAccessGroupIdResponse>(request);
+        public ApiSolidFireVolumeAccessGroupIdResponse GetSolidFireVolumeAccessGroupId(GetSolidFireVolumeAccessGroupIdRequest request) => Proxy.Request<ApiSolidFireVolumeAccessGroupIdResponse>(request);
+        public Task<ApiSolidFireVolumeAccessGroupIdResponse> GetSolidFireVolumeAccessGroupIdAsync(GetSolidFireVolumeAccessGroupIdRequest request) => Proxy.RequestAsync<ApiSolidFireVolumeAccessGroupIdResponse>(request);
     }
 }

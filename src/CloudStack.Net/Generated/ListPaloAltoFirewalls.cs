@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewalls(ListPaloAltoFirewallsRequest request) => _proxy.Request<ListResponse<PaloAltoFirewallResponse>>(request);
-        public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAsync(ListPaloAltoFirewallsRequest request) => _proxy.RequestAsync<ListResponse<PaloAltoFirewallResponse>>(request);
-        public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewallsAllPages(ListPaloAltoFirewallsRequest request) => _proxy.RequestAllPages<PaloAltoFirewallResponse>(request);
-        public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAllPagesAsync(ListPaloAltoFirewallsRequest request) => _proxy.RequestAllPagesAsync<PaloAltoFirewallResponse>(request);
+        public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewalls(ListPaloAltoFirewallsRequest request) => Proxy.Request<ListResponse<PaloAltoFirewallResponse>>(request);
+        public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAsync(ListPaloAltoFirewallsRequest request) => Proxy.RequestAsync<ListResponse<PaloAltoFirewallResponse>>(request);
+        public ListResponse<PaloAltoFirewallResponse> ListPaloAltoFirewallsAllPages(ListPaloAltoFirewallsRequest request) => Proxy.RequestAllPages<PaloAltoFirewallResponse>(request);
+        public Task<ListResponse<PaloAltoFirewallResponse>> ListPaloAltoFirewallsAllPagesAsync(ListPaloAltoFirewallsRequest request) => Proxy.RequestAllPagesAsync<PaloAltoFirewallResponse>(request);
     }
 }

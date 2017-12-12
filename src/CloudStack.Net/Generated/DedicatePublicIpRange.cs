@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VlanIpRangeResponse DedicatePublicIpRange(DedicatePublicIpRangeRequest request) => _proxy.Request<VlanIpRangeResponse>(request);
-        public Task<VlanIpRangeResponse> DedicatePublicIpRangeAsync(DedicatePublicIpRangeRequest request) => _proxy.RequestAsync<VlanIpRangeResponse>(request);
+        public VlanIpRangeResponse DedicatePublicIpRange(DedicatePublicIpRangeRequest request) => Proxy.Request<VlanIpRangeResponse>(request);
+        public Task<VlanIpRangeResponse> DedicatePublicIpRangeAsync(DedicatePublicIpRangeRequest request) => Proxy.RequestAsync<VlanIpRangeResponse>(request);
     }
 }

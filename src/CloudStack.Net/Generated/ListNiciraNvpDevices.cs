@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<NiciraNvpDeviceResponse> ListNiciraNvpDevices(ListNiciraNvpDevicesRequest request) => _proxy.Request<ListResponse<NiciraNvpDeviceResponse>>(request);
-        public Task<ListResponse<NiciraNvpDeviceResponse>> ListNiciraNvpDevicesAsync(ListNiciraNvpDevicesRequest request) => _proxy.RequestAsync<ListResponse<NiciraNvpDeviceResponse>>(request);
-        public ListResponse<NiciraNvpDeviceResponse> ListNiciraNvpDevicesAllPages(ListNiciraNvpDevicesRequest request) => _proxy.RequestAllPages<NiciraNvpDeviceResponse>(request);
-        public Task<ListResponse<NiciraNvpDeviceResponse>> ListNiciraNvpDevicesAllPagesAsync(ListNiciraNvpDevicesRequest request) => _proxy.RequestAllPagesAsync<NiciraNvpDeviceResponse>(request);
+        public ListResponse<NiciraNvpDeviceResponse> ListNiciraNvpDevices(ListNiciraNvpDevicesRequest request) => Proxy.Request<ListResponse<NiciraNvpDeviceResponse>>(request);
+        public Task<ListResponse<NiciraNvpDeviceResponse>> ListNiciraNvpDevicesAsync(ListNiciraNvpDevicesRequest request) => Proxy.RequestAsync<ListResponse<NiciraNvpDeviceResponse>>(request);
+        public ListResponse<NiciraNvpDeviceResponse> ListNiciraNvpDevicesAllPages(ListNiciraNvpDevicesRequest request) => Proxy.RequestAllPages<NiciraNvpDeviceResponse>(request);
+        public Task<ListResponse<NiciraNvpDeviceResponse>> ListNiciraNvpDevicesAllPagesAsync(ListNiciraNvpDevicesRequest request) => Proxy.RequestAllPagesAsync<NiciraNvpDeviceResponse>(request);
     }
 }

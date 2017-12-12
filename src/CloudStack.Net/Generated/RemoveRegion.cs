@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse RemoveRegion(RemoveRegionRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> RemoveRegionAsync(RemoveRegionRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse RemoveRegion(RemoveRegionRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> RemoveRegionAsync(RemoveRegionRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

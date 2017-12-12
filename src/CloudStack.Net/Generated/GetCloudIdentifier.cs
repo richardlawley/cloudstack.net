@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CloudIdentifierResponse GetCloudIdentifier(GetCloudIdentifierRequest request) => _proxy.Request<CloudIdentifierResponse>(request);
-        public Task<CloudIdentifierResponse> GetCloudIdentifierAsync(GetCloudIdentifierRequest request) => _proxy.RequestAsync<CloudIdentifierResponse>(request);
+        public CloudIdentifierResponse GetCloudIdentifier(GetCloudIdentifierRequest request) => Proxy.Request<CloudIdentifierResponse>(request);
+        public Task<CloudIdentifierResponse> GetCloudIdentifierAsync(GetCloudIdentifierRequest request) => Proxy.RequestAsync<CloudIdentifierResponse>(request);
     }
 }

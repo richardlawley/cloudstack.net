@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CreateSSHKeyPairResponse CreateSSHKeyPair(CreateSSHKeyPairRequest request) => _proxy.Request<CreateSSHKeyPairResponse>(request);
-        public Task<CreateSSHKeyPairResponse> CreateSSHKeyPairAsync(CreateSSHKeyPairRequest request) => _proxy.RequestAsync<CreateSSHKeyPairResponse>(request);
+        public CreateSSHKeyPairResponse CreateSSHKeyPair(CreateSSHKeyPairRequest request) => Proxy.Request<CreateSSHKeyPairResponse>(request);
+        public Task<CreateSSHKeyPairResponse> CreateSSHKeyPairAsync(CreateSSHKeyPairRequest request) => Proxy.RequestAsync<CreateSSHKeyPairResponse>(request);
     }
 }

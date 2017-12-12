@@ -31,9 +31,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypes(ListAffinityGroupTypesRequest request) => _proxy.Request<ListResponse<AffinityGroupTypeResponse>>(request);
-        public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAsync(ListAffinityGroupTypesRequest request) => _proxy.RequestAsync<ListResponse<AffinityGroupTypeResponse>>(request);
-        public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypesAllPages(ListAffinityGroupTypesRequest request) => _proxy.RequestAllPages<AffinityGroupTypeResponse>(request);
-        public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAllPagesAsync(ListAffinityGroupTypesRequest request) => _proxy.RequestAllPagesAsync<AffinityGroupTypeResponse>(request);
+        public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypes(ListAffinityGroupTypesRequest request) => Proxy.Request<ListResponse<AffinityGroupTypeResponse>>(request);
+        public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAsync(ListAffinityGroupTypesRequest request) => Proxy.RequestAsync<ListResponse<AffinityGroupTypeResponse>>(request);
+        public ListResponse<AffinityGroupTypeResponse> ListAffinityGroupTypesAllPages(ListAffinityGroupTypesRequest request) => Proxy.RequestAllPages<AffinityGroupTypeResponse>(request);
+        public Task<ListResponse<AffinityGroupTypeResponse>> ListAffinityGroupTypesAllPagesAsync(ListAffinityGroupTypesRequest request) => Proxy.RequestAllPagesAsync<AffinityGroupTypeResponse>(request);
     }
 }

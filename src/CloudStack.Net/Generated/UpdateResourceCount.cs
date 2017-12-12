@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ResourceCountResponse UpdateResourceCount(UpdateResourceCountRequest request) => _proxy.Request<ResourceCountResponse>(request);
-        public Task<ResourceCountResponse> UpdateResourceCountAsync(UpdateResourceCountRequest request) => _proxy.RequestAsync<ResourceCountResponse>(request);
+        public ResourceCountResponse UpdateResourceCount(UpdateResourceCountRequest request) => Proxy.Request<ResourceCountResponse>(request);
+        public Task<ResourceCountResponse> UpdateResourceCountAsync(UpdateResourceCountRequest request) => Proxy.RequestAsync<ResourceCountResponse>(request);
     }
 }

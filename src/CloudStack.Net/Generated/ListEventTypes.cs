@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public EventTypeResponse ListEventTypes(ListEventTypesRequest request) => _proxy.Request<EventTypeResponse>(request);
-        public Task<EventTypeResponse> ListEventTypesAsync(ListEventTypesRequest request) => _proxy.RequestAsync<EventTypeResponse>(request);
+        public EventTypeResponse ListEventTypes(ListEventTypesRequest request) => Proxy.Request<EventTypeResponse>(request);
+        public Task<EventTypeResponse> ListEventTypesAsync(ListEventTypesRequest request) => Proxy.RequestAsync<EventTypeResponse>(request);
     }
 }

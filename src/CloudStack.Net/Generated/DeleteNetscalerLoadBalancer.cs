@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteNetscalerLoadBalancer(DeleteNetscalerLoadBalancerRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteNetscalerLoadBalancerAsync(DeleteNetscalerLoadBalancerRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteNetscalerLoadBalancer(DeleteNetscalerLoadBalancerRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteNetscalerLoadBalancerAsync(DeleteNetscalerLoadBalancerRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

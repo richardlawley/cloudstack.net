@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddGloboDnsHost(AddGloboDnsHostRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddGloboDnsHostAsync(AddGloboDnsHostRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddGloboDnsHost(AddGloboDnsHostRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddGloboDnsHostAsync(AddGloboDnsHostRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

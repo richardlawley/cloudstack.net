@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ApiSolidFireAccountIdResponse GetSolidFireAccountId(GetSolidFireAccountIdRequest request) => _proxy.Request<ApiSolidFireAccountIdResponse>(request);
-        public Task<ApiSolidFireAccountIdResponse> GetSolidFireAccountIdAsync(GetSolidFireAccountIdRequest request) => _proxy.RequestAsync<ApiSolidFireAccountIdResponse>(request);
+        public ApiSolidFireAccountIdResponse GetSolidFireAccountId(GetSolidFireAccountIdRequest request) => Proxy.Request<ApiSolidFireAccountIdResponse>(request);
+        public Task<ApiSolidFireAccountIdResponse> GetSolidFireAccountIdAsync(GetSolidFireAccountIdRequest request) => Proxy.RequestAsync<ApiSolidFireAccountIdResponse>(request);
     }
 }

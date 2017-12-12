@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CiscoVnmcResourceResponse AddCiscoVnmcResource(AddCiscoVnmcResourceRequest request) => _proxy.Request<CiscoVnmcResourceResponse>(request);
-        public Task<CiscoVnmcResourceResponse> AddCiscoVnmcResourceAsync(AddCiscoVnmcResourceRequest request) => _proxy.RequestAsync<CiscoVnmcResourceResponse>(request);
+        public CiscoVnmcResourceResponse AddCiscoVnmcResource(AddCiscoVnmcResourceRequest request) => Proxy.Request<CiscoVnmcResourceResponse>(request);
+        public Task<CiscoVnmcResourceResponse> AddCiscoVnmcResourceAsync(AddCiscoVnmcResourceRequest request) => Proxy.RequestAsync<CiscoVnmcResourceResponse>(request);
     }
 }

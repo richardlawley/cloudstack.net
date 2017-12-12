@@ -77,7 +77,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public PodResponse CreatePod(CreatePodRequest request) => _proxy.Request<PodResponse>(request);
-        public Task<PodResponse> CreatePodAsync(CreatePodRequest request) => _proxy.RequestAsync<PodResponse>(request);
+        public PodResponse CreatePod(CreatePodRequest request) => Proxy.Request<PodResponse>(request);
+        public Task<PodResponse> CreatePodAsync(CreatePodRequest request) => Proxy.RequestAsync<PodResponse>(request);
     }
 }

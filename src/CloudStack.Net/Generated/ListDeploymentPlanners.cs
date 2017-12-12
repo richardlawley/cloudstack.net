@@ -31,9 +31,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DeploymentPlannersResponse> ListDeploymentPlanners(ListDeploymentPlannersRequest request) => _proxy.Request<ListResponse<DeploymentPlannersResponse>>(request);
-        public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAsync(ListDeploymentPlannersRequest request) => _proxy.RequestAsync<ListResponse<DeploymentPlannersResponse>>(request);
-        public ListResponse<DeploymentPlannersResponse> ListDeploymentPlannersAllPages(ListDeploymentPlannersRequest request) => _proxy.RequestAllPages<DeploymentPlannersResponse>(request);
-        public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAllPagesAsync(ListDeploymentPlannersRequest request) => _proxy.RequestAllPagesAsync<DeploymentPlannersResponse>(request);
+        public ListResponse<DeploymentPlannersResponse> ListDeploymentPlanners(ListDeploymentPlannersRequest request) => Proxy.Request<ListResponse<DeploymentPlannersResponse>>(request);
+        public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAsync(ListDeploymentPlannersRequest request) => Proxy.RequestAsync<ListResponse<DeploymentPlannersResponse>>(request);
+        public ListResponse<DeploymentPlannersResponse> ListDeploymentPlannersAllPages(ListDeploymentPlannersRequest request) => Proxy.RequestAllPages<DeploymentPlannersResponse>(request);
+        public Task<ListResponse<DeploymentPlannersResponse>> ListDeploymentPlannersAllPagesAsync(ListDeploymentPlannersRequest request) => Proxy.RequestAllPagesAsync<DeploymentPlannersResponse>(request);
     }
 }

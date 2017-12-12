@@ -71,9 +71,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DiskOfferingResponse> ListDiskOfferings(ListDiskOfferingsRequest request) => _proxy.Request<ListResponse<DiskOfferingResponse>>(request);
-        public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAsync(ListDiskOfferingsRequest request) => _proxy.RequestAsync<ListResponse<DiskOfferingResponse>>(request);
-        public ListResponse<DiskOfferingResponse> ListDiskOfferingsAllPages(ListDiskOfferingsRequest request) => _proxy.RequestAllPages<DiskOfferingResponse>(request);
-        public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAllPagesAsync(ListDiskOfferingsRequest request) => _proxy.RequestAllPagesAsync<DiskOfferingResponse>(request);
+        public ListResponse<DiskOfferingResponse> ListDiskOfferings(ListDiskOfferingsRequest request) => Proxy.Request<ListResponse<DiskOfferingResponse>>(request);
+        public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAsync(ListDiskOfferingsRequest request) => Proxy.RequestAsync<ListResponse<DiskOfferingResponse>>(request);
+        public ListResponse<DiskOfferingResponse> ListDiskOfferingsAllPages(ListDiskOfferingsRequest request) => Proxy.RequestAllPages<DiskOfferingResponse>(request);
+        public Task<ListResponse<DiskOfferingResponse>> ListDiskOfferingsAllPagesAsync(ListDiskOfferingsRequest request) => Proxy.RequestAllPagesAsync<DiskOfferingResponse>(request);
     }
 }

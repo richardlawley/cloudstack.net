@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request) => _proxy.Request<ListResponse<StorageNetworkIpRangeResponse>>(request);
-        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAsync<ListResponse<StorageNetworkIpRangeResponse>>(request);
-        public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRangeAllPages(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAllPages<StorageNetworkIpRangeResponse>(request);
-        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAllPagesAsync(ListStorageNetworkIpRangeRequest request) => _proxy.RequestAllPagesAsync<StorageNetworkIpRangeResponse>(request);
+        public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRange(ListStorageNetworkIpRangeRequest request) => Proxy.Request<ListResponse<StorageNetworkIpRangeResponse>>(request);
+        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAsync(ListStorageNetworkIpRangeRequest request) => Proxy.RequestAsync<ListResponse<StorageNetworkIpRangeResponse>>(request);
+        public ListResponse<StorageNetworkIpRangeResponse> ListStorageNetworkIpRangeAllPages(ListStorageNetworkIpRangeRequest request) => Proxy.RequestAllPages<StorageNetworkIpRangeResponse>(request);
+        public Task<ListResponse<StorageNetworkIpRangeResponse>> ListStorageNetworkIpRangeAllPagesAsync(ListStorageNetworkIpRangeRequest request) => Proxy.RequestAllPagesAsync<StorageNetworkIpRangeResponse>(request);
     }
 }

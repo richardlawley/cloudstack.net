@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SAMLMetaDataResponse GetSPMetadata(GetSPMetadataRequest request) => _proxy.Request<SAMLMetaDataResponse>(request);
-        public Task<SAMLMetaDataResponse> GetSPMetadataAsync(GetSPMetadataRequest request) => _proxy.RequestAsync<SAMLMetaDataResponse>(request);
+        public SAMLMetaDataResponse GetSPMetadata(GetSPMetadataRequest request) => Proxy.Request<SAMLMetaDataResponse>(request);
+        public Task<SAMLMetaDataResponse> GetSPMetadataAsync(GetSPMetadataRequest request) => Proxy.RequestAsync<SAMLMetaDataResponse>(request);
     }
 }

@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

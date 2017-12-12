@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteTrafficMonitor(DeleteTrafficMonitorRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteTrafficMonitorAsync(DeleteTrafficMonitorRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteTrafficMonitor(DeleteTrafficMonitorRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteTrafficMonitorAsync(DeleteTrafficMonitorRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

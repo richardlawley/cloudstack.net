@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DedicateCluster(DedicateClusterRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DedicateClusterAsync(DedicateClusterRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DedicateCluster(DedicateClusterRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DedicateClusterAsync(DedicateClusterRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

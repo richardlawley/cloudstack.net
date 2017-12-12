@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse ConfigureVirtualRouterElement(ConfigureVirtualRouterElementRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> ConfigureVirtualRouterElementAsync(ConfigureVirtualRouterElementRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse ConfigureVirtualRouterElement(ConfigureVirtualRouterElementRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> ConfigureVirtualRouterElementAsync(ConfigureVirtualRouterElementRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

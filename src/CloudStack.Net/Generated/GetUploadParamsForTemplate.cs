@@ -189,7 +189,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public GetUploadParamsResponse GetUploadParamsForTemplate(GetUploadParamsForTemplateRequest request) => _proxy.Request<GetUploadParamsResponse>(request);
-        public Task<GetUploadParamsResponse> GetUploadParamsForTemplateAsync(GetUploadParamsForTemplateRequest request) => _proxy.RequestAsync<GetUploadParamsResponse>(request);
+        public GetUploadParamsResponse GetUploadParamsForTemplate(GetUploadParamsForTemplateRequest request) => Proxy.Request<GetUploadParamsResponse>(request);
+        public Task<GetUploadParamsResponse> GetUploadParamsForTemplateAsync(GetUploadParamsForTemplateRequest request) => Proxy.RequestAsync<GetUploadParamsResponse>(request);
     }
 }

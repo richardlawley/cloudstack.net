@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteStoragePool(DeleteStoragePoolRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteStoragePoolAsync(DeleteStoragePoolRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteStoragePool(DeleteStoragePoolRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteStoragePoolAsync(DeleteStoragePoolRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

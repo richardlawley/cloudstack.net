@@ -135,9 +135,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request) => _proxy.Request<ListResponse<LoadBalancerResponse>>(request);
-        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request) => _proxy.RequestAsync<ListResponse<LoadBalancerResponse>>(request);
-        public ListResponse<LoadBalancerResponse> ListLoadBalancerRulesAllPages(ListLoadBalancerRulesRequest request) => _proxy.RequestAllPages<LoadBalancerResponse>(request);
-        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAllPagesAsync(ListLoadBalancerRulesRequest request) => _proxy.RequestAllPagesAsync<LoadBalancerResponse>(request);
+        public ListResponse<LoadBalancerResponse> ListLoadBalancerRules(ListLoadBalancerRulesRequest request) => Proxy.Request<ListResponse<LoadBalancerResponse>>(request);
+        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAsync(ListLoadBalancerRulesRequest request) => Proxy.RequestAsync<ListResponse<LoadBalancerResponse>>(request);
+        public ListResponse<LoadBalancerResponse> ListLoadBalancerRulesAllPages(ListLoadBalancerRulesRequest request) => Proxy.RequestAllPages<LoadBalancerResponse>(request);
+        public Task<ListResponse<LoadBalancerResponse>> ListLoadBalancerRulesAllPagesAsync(ListLoadBalancerRulesRequest request) => Proxy.RequestAllPagesAsync<LoadBalancerResponse>(request);
     }
 }

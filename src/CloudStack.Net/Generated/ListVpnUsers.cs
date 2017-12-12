@@ -87,9 +87,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<VpnUsersResponse> ListVpnUsers(ListVpnUsersRequest request) => _proxy.Request<ListResponse<VpnUsersResponse>>(request);
-        public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAsync(ListVpnUsersRequest request) => _proxy.RequestAsync<ListResponse<VpnUsersResponse>>(request);
-        public ListResponse<VpnUsersResponse> ListVpnUsersAllPages(ListVpnUsersRequest request) => _proxy.RequestAllPages<VpnUsersResponse>(request);
-        public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAllPagesAsync(ListVpnUsersRequest request) => _proxy.RequestAllPagesAsync<VpnUsersResponse>(request);
+        public ListResponse<VpnUsersResponse> ListVpnUsers(ListVpnUsersRequest request) => Proxy.Request<ListResponse<VpnUsersResponse>>(request);
+        public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAsync(ListVpnUsersRequest request) => Proxy.RequestAsync<ListResponse<VpnUsersResponse>>(request);
+        public ListResponse<VpnUsersResponse> ListVpnUsersAllPages(ListVpnUsersRequest request) => Proxy.RequestAllPages<VpnUsersResponse>(request);
+        public Task<ListResponse<VpnUsersResponse>> ListVpnUsersAllPagesAsync(ListVpnUsersRequest request) => Proxy.RequestAllPagesAsync<VpnUsersResponse>(request);
     }
 }

@@ -79,9 +79,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<VpcOfferingResponse> ListVPCOfferings(ListVPCOfferingsRequest request) => _proxy.Request<ListResponse<VpcOfferingResponse>>(request);
-        public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAsync(ListVPCOfferingsRequest request) => _proxy.RequestAsync<ListResponse<VpcOfferingResponse>>(request);
-        public ListResponse<VpcOfferingResponse> ListVPCOfferingsAllPages(ListVPCOfferingsRequest request) => _proxy.RequestAllPages<VpcOfferingResponse>(request);
-        public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAllPagesAsync(ListVPCOfferingsRequest request) => _proxy.RequestAllPagesAsync<VpcOfferingResponse>(request);
+        public ListResponse<VpcOfferingResponse> ListVPCOfferings(ListVPCOfferingsRequest request) => Proxy.Request<ListResponse<VpcOfferingResponse>>(request);
+        public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAsync(ListVPCOfferingsRequest request) => Proxy.RequestAsync<ListResponse<VpcOfferingResponse>>(request);
+        public ListResponse<VpcOfferingResponse> ListVPCOfferingsAllPages(ListVPCOfferingsRequest request) => Proxy.RequestAllPages<VpcOfferingResponse>(request);
+        public Task<ListResponse<VpcOfferingResponse>> ListVPCOfferingsAllPagesAsync(ListVPCOfferingsRequest request) => Proxy.RequestAllPagesAsync<VpcOfferingResponse>(request);
     }
 }

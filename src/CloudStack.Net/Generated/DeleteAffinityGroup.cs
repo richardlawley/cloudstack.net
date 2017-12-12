@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteAffinityGroupAsync(DeleteAffinityGroupRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteAffinityGroup(DeleteAffinityGroupRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteAffinityGroupAsync(DeleteAffinityGroupRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

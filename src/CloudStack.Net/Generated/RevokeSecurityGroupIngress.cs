@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

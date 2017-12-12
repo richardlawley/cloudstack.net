@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ArchiveEvents(ArchiveEventsRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> ArchiveEventsAsync(ArchiveEventsRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse ArchiveEvents(ArchiveEventsRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> ArchiveEventsAsync(ArchiveEventsRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SnapshotPolicyResponse> ListSnapshotPolicies(ListSnapshotPoliciesRequest request) => _proxy.Request<ListResponse<SnapshotPolicyResponse>>(request);
-        public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAsync(ListSnapshotPoliciesRequest request) => _proxy.RequestAsync<ListResponse<SnapshotPolicyResponse>>(request);
-        public ListResponse<SnapshotPolicyResponse> ListSnapshotPoliciesAllPages(ListSnapshotPoliciesRequest request) => _proxy.RequestAllPages<SnapshotPolicyResponse>(request);
-        public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAllPagesAsync(ListSnapshotPoliciesRequest request) => _proxy.RequestAllPagesAsync<SnapshotPolicyResponse>(request);
+        public ListResponse<SnapshotPolicyResponse> ListSnapshotPolicies(ListSnapshotPoliciesRequest request) => Proxy.Request<ListResponse<SnapshotPolicyResponse>>(request);
+        public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAsync(ListSnapshotPoliciesRequest request) => Proxy.RequestAsync<ListResponse<SnapshotPolicyResponse>>(request);
+        public ListResponse<SnapshotPolicyResponse> ListSnapshotPoliciesAllPages(ListSnapshotPoliciesRequest request) => Proxy.RequestAllPages<SnapshotPolicyResponse>(request);
+        public Task<ListResponse<SnapshotPolicyResponse>> ListSnapshotPoliciesAllPagesAsync(ListSnapshotPoliciesRequest request) => Proxy.RequestAllPagesAsync<SnapshotPolicyResponse>(request);
     }
 }

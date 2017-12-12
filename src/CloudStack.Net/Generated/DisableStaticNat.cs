@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DisableStaticNat(DisableStaticNatRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DisableStaticNatAsync(DisableStaticNatRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DisableStaticNat(DisableStaticNatRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DisableStaticNatAsync(DisableStaticNatRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

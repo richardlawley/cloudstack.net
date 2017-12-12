@@ -143,9 +143,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMs(ListInternalLoadBalancerVMsRequest request) => _proxy.Request<ListResponse<DomainRouterResponse>>(request);
-        public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAsync(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAsync<ListResponse<DomainRouterResponse>>(request);
-        public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMsAllPages(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAllPages<DomainRouterResponse>(request);
-        public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAllPagesAsync(ListInternalLoadBalancerVMsRequest request) => _proxy.RequestAllPagesAsync<DomainRouterResponse>(request);
+        public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMs(ListInternalLoadBalancerVMsRequest request) => Proxy.Request<ListResponse<DomainRouterResponse>>(request);
+        public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAsync(ListInternalLoadBalancerVMsRequest request) => Proxy.RequestAsync<ListResponse<DomainRouterResponse>>(request);
+        public ListResponse<DomainRouterResponse> ListInternalLoadBalancerVMsAllPages(ListInternalLoadBalancerVMsRequest request) => Proxy.RequestAllPages<DomainRouterResponse>(request);
+        public Task<ListResponse<DomainRouterResponse>> ListInternalLoadBalancerVMsAllPagesAsync(ListInternalLoadBalancerVMsRequest request) => Proxy.RequestAllPagesAsync<DomainRouterResponse>(request);
     }
 }

@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse ListAndSwitchSamlAccount(ListAndSwitchSamlAccountRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> ListAndSwitchSamlAccountAsync(ListAndSwitchSamlAccountRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse ListAndSwitchSamlAccount(ListAndSwitchSamlAccountRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> ListAndSwitchSamlAccountAsync(ListAndSwitchSamlAccountRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

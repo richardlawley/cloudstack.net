@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<CounterResponse> ListCounters(ListCountersRequest request) => _proxy.Request<ListResponse<CounterResponse>>(request);
-        public Task<ListResponse<CounterResponse>> ListCountersAsync(ListCountersRequest request) => _proxy.RequestAsync<ListResponse<CounterResponse>>(request);
-        public ListResponse<CounterResponse> ListCountersAllPages(ListCountersRequest request) => _proxy.RequestAllPages<CounterResponse>(request);
-        public Task<ListResponse<CounterResponse>> ListCountersAllPagesAsync(ListCountersRequest request) => _proxy.RequestAllPagesAsync<CounterResponse>(request);
+        public ListResponse<CounterResponse> ListCounters(ListCountersRequest request) => Proxy.Request<ListResponse<CounterResponse>>(request);
+        public Task<ListResponse<CounterResponse>> ListCountersAsync(ListCountersRequest request) => Proxy.RequestAsync<ListResponse<CounterResponse>>(request);
+        public ListResponse<CounterResponse> ListCountersAllPages(ListCountersRequest request) => Proxy.RequestAllPages<CounterResponse>(request);
+        public Task<ListResponse<CounterResponse>> ListCountersAllPagesAsync(ListCountersRequest request) => Proxy.RequestAllPagesAsync<CounterResponse>(request);
     }
 }

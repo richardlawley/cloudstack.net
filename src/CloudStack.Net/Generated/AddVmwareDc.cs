@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VmwareDatacenterResponse AddVmwareDc(AddVmwareDcRequest request) => _proxy.Request<VmwareDatacenterResponse>(request);
-        public Task<VmwareDatacenterResponse> AddVmwareDcAsync(AddVmwareDcRequest request) => _proxy.RequestAsync<VmwareDatacenterResponse>(request);
+        public VmwareDatacenterResponse AddVmwareDc(AddVmwareDcRequest request) => Proxy.Request<VmwareDatacenterResponse>(request);
+        public Task<VmwareDatacenterResponse> AddVmwareDcAsync(AddVmwareDcRequest request) => Proxy.RequestAsync<VmwareDatacenterResponse>(request);
     }
 }

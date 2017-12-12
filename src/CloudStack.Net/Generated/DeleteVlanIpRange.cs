@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteVlanIpRange(DeleteVlanIpRangeRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteVlanIpRangeAsync(DeleteVlanIpRangeRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteVlanIpRange(DeleteVlanIpRangeRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteVlanIpRangeAsync(DeleteVlanIpRangeRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

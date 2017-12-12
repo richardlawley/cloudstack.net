@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<ExternalFirewallResponse> ListExternalFirewalls(ListExternalFirewallsRequest request) => _proxy.Request<ListResponse<ExternalFirewallResponse>>(request);
-        public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAsync(ListExternalFirewallsRequest request) => _proxy.RequestAsync<ListResponse<ExternalFirewallResponse>>(request);
-        public ListResponse<ExternalFirewallResponse> ListExternalFirewallsAllPages(ListExternalFirewallsRequest request) => _proxy.RequestAllPages<ExternalFirewallResponse>(request);
-        public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAllPagesAsync(ListExternalFirewallsRequest request) => _proxy.RequestAllPagesAsync<ExternalFirewallResponse>(request);
+        public ListResponse<ExternalFirewallResponse> ListExternalFirewalls(ListExternalFirewallsRequest request) => Proxy.Request<ListResponse<ExternalFirewallResponse>>(request);
+        public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAsync(ListExternalFirewallsRequest request) => Proxy.RequestAsync<ListResponse<ExternalFirewallResponse>>(request);
+        public ListResponse<ExternalFirewallResponse> ListExternalFirewallsAllPages(ListExternalFirewallsRequest request) => Proxy.RequestAllPages<ExternalFirewallResponse>(request);
+        public Task<ListResponse<ExternalFirewallResponse>> ListExternalFirewallsAllPagesAsync(ListExternalFirewallsRequest request) => Proxy.RequestAllPagesAsync<ExternalFirewallResponse>(request);
     }
 }

@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse UpdateVPCOffering(UpdateVPCOfferingRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> UpdateVPCOfferingAsync(UpdateVPCOfferingRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse UpdateVPCOffering(UpdateVPCOfferingRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> UpdateVPCOfferingAsync(UpdateVPCOfferingRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

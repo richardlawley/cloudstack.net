@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementors(ListTrafficTypeImplementorsRequest request) => _proxy.Request<ListResponse<TrafficTypeImplementorResponse>>(request);
-        public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAsync(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAsync<ListResponse<TrafficTypeImplementorResponse>>(request);
-        public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementorsAllPages(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAllPages<TrafficTypeImplementorResponse>(request);
-        public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAllPagesAsync(ListTrafficTypeImplementorsRequest request) => _proxy.RequestAllPagesAsync<TrafficTypeImplementorResponse>(request);
+        public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementors(ListTrafficTypeImplementorsRequest request) => Proxy.Request<ListResponse<TrafficTypeImplementorResponse>>(request);
+        public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAsync(ListTrafficTypeImplementorsRequest request) => Proxy.RequestAsync<ListResponse<TrafficTypeImplementorResponse>>(request);
+        public ListResponse<TrafficTypeImplementorResponse> ListTrafficTypeImplementorsAllPages(ListTrafficTypeImplementorsRequest request) => Proxy.RequestAllPages<TrafficTypeImplementorResponse>(request);
+        public Task<ListResponse<TrafficTypeImplementorResponse>> ListTrafficTypeImplementorsAllPagesAsync(ListTrafficTypeImplementorsRequest request) => Proxy.RequestAllPagesAsync<TrafficTypeImplementorResponse>(request);
     }
 }

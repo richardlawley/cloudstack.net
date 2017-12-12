@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public StoragePoolResponse UpdateStoragePool(UpdateStoragePoolRequest request) => _proxy.Request<StoragePoolResponse>(request);
-        public Task<StoragePoolResponse> UpdateStoragePoolAsync(UpdateStoragePoolRequest request) => _proxy.RequestAsync<StoragePoolResponse>(request);
+        public StoragePoolResponse UpdateStoragePool(UpdateStoragePoolRequest request) => Proxy.Request<StoragePoolResponse>(request);
+        public Task<StoragePoolResponse> UpdateStoragePoolAsync(UpdateStoragePoolRequest request) => Proxy.RequestAsync<StoragePoolResponse>(request);
     }
 }

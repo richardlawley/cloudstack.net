@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteSslCert(DeleteSslCertRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteSslCertAsync(DeleteSslCertRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteSslCert(DeleteSslCertRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteSslCertAsync(DeleteSslCertRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

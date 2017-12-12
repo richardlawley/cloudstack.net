@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CreateLunCmdResponse CreateLunOnFiler(CreateLunOnFilerRequest request) => _proxy.Request<CreateLunCmdResponse>(request);
-        public Task<CreateLunCmdResponse> CreateLunOnFilerAsync(CreateLunOnFilerRequest request) => _proxy.RequestAsync<CreateLunCmdResponse>(request);
+        public CreateLunCmdResponse CreateLunOnFiler(CreateLunOnFilerRequest request) => Proxy.Request<CreateLunCmdResponse>(request);
+        public Task<CreateLunCmdResponse> CreateLunOnFilerAsync(CreateLunOnFilerRequest request) => Proxy.RequestAsync<CreateLunCmdResponse>(request);
     }
 }

@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddBigSwitchBcfDevice(AddBigSwitchBcfDeviceRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddBigSwitchBcfDeviceAsync(AddBigSwitchBcfDeviceRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddBigSwitchBcfDevice(AddBigSwitchBcfDeviceRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddBigSwitchBcfDeviceAsync(AddBigSwitchBcfDeviceRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

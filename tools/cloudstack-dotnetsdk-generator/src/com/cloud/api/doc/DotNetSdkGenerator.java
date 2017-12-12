@@ -135,11 +135,11 @@ public class DotNetSdkGenerator extends ApiCommandProcessor {
                         implementation.closeTypeDef();
 
                         implementation.addType(implementationName + " : " + interfaceName, "partial class");
-                        implementation.println("public %1$s %2$s(%3$s request) => _proxy.Request<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
-                        implementation.println("public Task<%1$s> %2$sAsync(%3$s request) => _proxy.RequestAsync<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
+                        implementation.println("public %1$s %2$s(%3$s request) => Proxy.Request<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
+                        implementation.println("public Task<%1$s> %2$sAsync(%3$s request) => Proxy.RequestAsync<%1$s>(request);", actualReturnType, actualCommandName, requestTypeName);
                         if (command.isList()) {
-                            implementation.println("public %1$s %2$sAllPages(%3$s request) => _proxy.RequestAllPages<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
-                            implementation.println("public Task<%1$s> %2$sAllPagesAsync(%3$s request) => _proxy.RequestAllPagesAsync<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
+                            implementation.println("public %1$s %2$sAllPages(%3$s request) => Proxy.RequestAllPages<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
+                            implementation.println("public Task<%1$s> %2$sAllPagesAsync(%3$s request) => Proxy.RequestAllPagesAsync<%4$s>(request);", actualReturnType, actualCommandName, requestTypeName, returnType);
                         }
                         implementation.closeTypeDef();
                     }

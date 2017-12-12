@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ExternalFirewallResponse AddExternalFirewall(AddExternalFirewallRequest request) => _proxy.Request<ExternalFirewallResponse>(request);
-        public Task<ExternalFirewallResponse> AddExternalFirewallAsync(AddExternalFirewallRequest request) => _proxy.RequestAsync<ExternalFirewallResponse>(request);
+        public ExternalFirewallResponse AddExternalFirewall(AddExternalFirewallRequest request) => Proxy.Request<ExternalFirewallResponse>(request);
+        public Task<ExternalFirewallResponse> AddExternalFirewallAsync(AddExternalFirewallRequest request) => Proxy.RequestAsync<ExternalFirewallResponse>(request);
     }
 }

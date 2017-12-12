@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteIpForwardingRuleAsync(DeleteIpForwardingRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteIpForwardingRule(DeleteIpForwardingRuleRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteIpForwardingRuleAsync(DeleteIpForwardingRuleRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

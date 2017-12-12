@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LoginCmdResponse SamlSso(SamlSsoRequest request) => _proxy.Request<LoginCmdResponse>(request);
-        public Task<LoginCmdResponse> SamlSsoAsync(SamlSsoRequest request) => _proxy.RequestAsync<LoginCmdResponse>(request);
+        public LoginCmdResponse SamlSso(SamlSsoRequest request) => Proxy.Request<LoginCmdResponse>(request);
+        public Task<LoginCmdResponse> SamlSsoAsync(SamlSsoRequest request) => Proxy.RequestAsync<LoginCmdResponse>(request);
     }
 }

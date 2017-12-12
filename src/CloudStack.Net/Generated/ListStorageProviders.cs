@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<StorageProviderResponse> ListStorageProviders(ListStorageProvidersRequest request) => _proxy.Request<ListResponse<StorageProviderResponse>>(request);
-        public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAsync(ListStorageProvidersRequest request) => _proxy.RequestAsync<ListResponse<StorageProviderResponse>>(request);
-        public ListResponse<StorageProviderResponse> ListStorageProvidersAllPages(ListStorageProvidersRequest request) => _proxy.RequestAllPages<StorageProviderResponse>(request);
-        public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAllPagesAsync(ListStorageProvidersRequest request) => _proxy.RequestAllPagesAsync<StorageProviderResponse>(request);
+        public ListResponse<StorageProviderResponse> ListStorageProviders(ListStorageProvidersRequest request) => Proxy.Request<ListResponse<StorageProviderResponse>>(request);
+        public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAsync(ListStorageProvidersRequest request) => Proxy.RequestAsync<ListResponse<StorageProviderResponse>>(request);
+        public ListResponse<StorageProviderResponse> ListStorageProvidersAllPages(ListStorageProvidersRequest request) => Proxy.RequestAllPages<StorageProviderResponse>(request);
+        public Task<ListResponse<StorageProviderResponse>> ListStorageProvidersAllPagesAsync(ListStorageProvidersRequest request) => Proxy.RequestAllPagesAsync<StorageProviderResponse>(request);
     }
 }

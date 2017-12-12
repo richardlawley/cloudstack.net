@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LBStickinessResponse> ListLBStickinessPolicies(ListLBStickinessPoliciesRequest request) => _proxy.Request<ListResponse<LBStickinessResponse>>(request);
-        public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAsync(ListLBStickinessPoliciesRequest request) => _proxy.RequestAsync<ListResponse<LBStickinessResponse>>(request);
-        public ListResponse<LBStickinessResponse> ListLBStickinessPoliciesAllPages(ListLBStickinessPoliciesRequest request) => _proxy.RequestAllPages<LBStickinessResponse>(request);
-        public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAllPagesAsync(ListLBStickinessPoliciesRequest request) => _proxy.RequestAllPagesAsync<LBStickinessResponse>(request);
+        public ListResponse<LBStickinessResponse> ListLBStickinessPolicies(ListLBStickinessPoliciesRequest request) => Proxy.Request<ListResponse<LBStickinessResponse>>(request);
+        public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAsync(ListLBStickinessPoliciesRequest request) => Proxy.RequestAsync<ListResponse<LBStickinessResponse>>(request);
+        public ListResponse<LBStickinessResponse> ListLBStickinessPoliciesAllPages(ListLBStickinessPoliciesRequest request) => Proxy.RequestAllPages<LBStickinessResponse>(request);
+        public Task<ListResponse<LBStickinessResponse>> ListLBStickinessPoliciesAllPagesAsync(ListLBStickinessPoliciesRequest request) => Proxy.RequestAllPagesAsync<LBStickinessResponse>(request);
     }
 }

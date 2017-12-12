@@ -111,9 +111,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<FirewallResponse> ListEgressFirewallRules(ListEgressFirewallRulesRequest request) => _proxy.Request<ListResponse<FirewallResponse>>(request);
-        public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAsync(ListEgressFirewallRulesRequest request) => _proxy.RequestAsync<ListResponse<FirewallResponse>>(request);
-        public ListResponse<FirewallResponse> ListEgressFirewallRulesAllPages(ListEgressFirewallRulesRequest request) => _proxy.RequestAllPages<FirewallResponse>(request);
-        public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAllPagesAsync(ListEgressFirewallRulesRequest request) => _proxy.RequestAllPagesAsync<FirewallResponse>(request);
+        public ListResponse<FirewallResponse> ListEgressFirewallRules(ListEgressFirewallRulesRequest request) => Proxy.Request<ListResponse<FirewallResponse>>(request);
+        public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAsync(ListEgressFirewallRulesRequest request) => Proxy.RequestAsync<ListResponse<FirewallResponse>>(request);
+        public ListResponse<FirewallResponse> ListEgressFirewallRulesAllPages(ListEgressFirewallRulesRequest request) => Proxy.RequestAllPages<FirewallResponse>(request);
+        public Task<ListResponse<FirewallResponse>> ListEgressFirewallRulesAllPagesAsync(ListEgressFirewallRulesRequest request) => Proxy.RequestAllPagesAsync<FirewallResponse>(request);
     }
 }

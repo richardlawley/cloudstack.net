@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse ExtractTemplate(ExtractTemplateRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> ExtractTemplateAsync(ExtractTemplateRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse ExtractTemplate(ExtractTemplateRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> ExtractTemplateAsync(ExtractTemplateRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

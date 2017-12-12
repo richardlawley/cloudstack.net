@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public VMUserDataResponse GetVirtualMachineUserData(GetVirtualMachineUserDataRequest request) => _proxy.Request<VMUserDataResponse>(request);
-        public Task<VMUserDataResponse> GetVirtualMachineUserDataAsync(GetVirtualMachineUserDataRequest request) => _proxy.RequestAsync<VMUserDataResponse>(request);
+        public VMUserDataResponse GetVirtualMachineUserData(GetVirtualMachineUserDataRequest request) => Proxy.Request<VMUserDataResponse>(request);
+        public Task<VMUserDataResponse> GetVirtualMachineUserDataAsync(GetVirtualMachineUserDataRequest request) => Proxy.RequestAsync<VMUserDataResponse>(request);
     }
 }

@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse AddAccountToProject(AddAccountToProjectRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> AddAccountToProjectAsync(AddAccountToProjectRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse AddAccountToProject(AddAccountToProjectRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> AddAccountToProjectAsync(AddAccountToProjectRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

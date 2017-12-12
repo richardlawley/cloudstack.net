@@ -63,9 +63,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<DedicateHostResponse> ListDedicatedHosts(ListDedicatedHostsRequest request) => _proxy.Request<ListResponse<DedicateHostResponse>>(request);
-        public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAsync(ListDedicatedHostsRequest request) => _proxy.RequestAsync<ListResponse<DedicateHostResponse>>(request);
-        public ListResponse<DedicateHostResponse> ListDedicatedHostsAllPages(ListDedicatedHostsRequest request) => _proxy.RequestAllPages<DedicateHostResponse>(request);
-        public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAllPagesAsync(ListDedicatedHostsRequest request) => _proxy.RequestAllPagesAsync<DedicateHostResponse>(request);
+        public ListResponse<DedicateHostResponse> ListDedicatedHosts(ListDedicatedHostsRequest request) => Proxy.Request<ListResponse<DedicateHostResponse>>(request);
+        public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAsync(ListDedicatedHostsRequest request) => Proxy.RequestAsync<ListResponse<DedicateHostResponse>>(request);
+        public ListResponse<DedicateHostResponse> ListDedicatedHostsAllPages(ListDedicatedHostsRequest request) => Proxy.RequestAllPages<DedicateHostResponse>(request);
+        public Task<ListResponse<DedicateHostResponse>> ListDedicatedHostsAllPagesAsync(ListDedicatedHostsRequest request) => Proxy.RequestAllPagesAsync<DedicateHostResponse>(request);
     }
 }

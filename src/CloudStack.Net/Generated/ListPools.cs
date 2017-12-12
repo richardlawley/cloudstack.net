@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListVolumePoolsCmdResponse ListPools(ListPoolsRequest request) => _proxy.Request<ListVolumePoolsCmdResponse>(request);
-        public Task<ListVolumePoolsCmdResponse> ListPoolsAsync(ListPoolsRequest request) => _proxy.RequestAsync<ListVolumePoolsCmdResponse>(request);
+        public ListVolumePoolsCmdResponse ListPools(ListPoolsRequest request) => Proxy.Request<ListVolumePoolsCmdResponse>(request);
+        public Task<ListVolumePoolsCmdResponse> ListPoolsAsync(ListPoolsRequest request) => Proxy.RequestAsync<ListVolumePoolsCmdResponse>(request);
     }
 }

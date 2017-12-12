@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public CapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request) => _proxy.Request<CapabilitiesResponse>(request);
-        public Task<CapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request) => _proxy.RequestAsync<CapabilitiesResponse>(request);
+        public CapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request) => Proxy.Request<CapabilitiesResponse>(request);
+        public Task<CapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request) => Proxy.RequestAsync<CapabilitiesResponse>(request);
     }
 }

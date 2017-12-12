@@ -109,7 +109,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public HostResponse AddBaremetalHost(AddBaremetalHostRequest request) => _proxy.Request<HostResponse>(request);
-        public Task<HostResponse> AddBaremetalHostAsync(AddBaremetalHostRequest request) => _proxy.RequestAsync<HostResponse>(request);
+        public HostResponse AddBaremetalHost(AddBaremetalHostRequest request) => Proxy.Request<HostResponse>(request);
+        public Task<HostResponse> AddBaremetalHostAsync(AddBaremetalHostRequest request) => Proxy.RequestAsync<HostResponse>(request);
     }
 }

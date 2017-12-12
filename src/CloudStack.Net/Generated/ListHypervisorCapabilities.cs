@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilities(ListHypervisorCapabilitiesRequest request) => _proxy.Request<ListResponse<HypervisorCapabilitiesResponse>>(request);
-        public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAsync(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAsync<ListResponse<HypervisorCapabilitiesResponse>>(request);
-        public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilitiesAllPages(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAllPages<HypervisorCapabilitiesResponse>(request);
-        public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAllPagesAsync(ListHypervisorCapabilitiesRequest request) => _proxy.RequestAllPagesAsync<HypervisorCapabilitiesResponse>(request);
+        public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilities(ListHypervisorCapabilitiesRequest request) => Proxy.Request<ListResponse<HypervisorCapabilitiesResponse>>(request);
+        public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAsync(ListHypervisorCapabilitiesRequest request) => Proxy.RequestAsync<ListResponse<HypervisorCapabilitiesResponse>>(request);
+        public ListResponse<HypervisorCapabilitiesResponse> ListHypervisorCapabilitiesAllPages(ListHypervisorCapabilitiesRequest request) => Proxy.RequestAllPages<HypervisorCapabilitiesResponse>(request);
+        public Task<ListResponse<HypervisorCapabilitiesResponse>> ListHypervisorCapabilitiesAllPagesAsync(ListHypervisorCapabilitiesRequest request) => Proxy.RequestAllPagesAsync<HypervisorCapabilitiesResponse>(request);
     }
 }

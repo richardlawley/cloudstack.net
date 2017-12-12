@@ -87,9 +87,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request) => _proxy.Request<ListResponse<SSHKeyPairResponse>>(request);
-        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request) => _proxy.RequestAsync<ListResponse<SSHKeyPairResponse>>(request);
-        public ListResponse<SSHKeyPairResponse> ListSSHKeyPairsAllPages(ListSSHKeyPairsRequest request) => _proxy.RequestAllPages<SSHKeyPairResponse>(request);
-        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAllPagesAsync(ListSSHKeyPairsRequest request) => _proxy.RequestAllPagesAsync<SSHKeyPairResponse>(request);
+        public ListResponse<SSHKeyPairResponse> ListSSHKeyPairs(ListSSHKeyPairsRequest request) => Proxy.Request<ListResponse<SSHKeyPairResponse>>(request);
+        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAsync(ListSSHKeyPairsRequest request) => Proxy.RequestAsync<ListResponse<SSHKeyPairResponse>>(request);
+        public ListResponse<SSHKeyPairResponse> ListSSHKeyPairsAllPages(ListSSHKeyPairsRequest request) => Proxy.RequestAllPages<SSHKeyPairResponse>(request);
+        public Task<ListResponse<SSHKeyPairResponse>> ListSSHKeyPairsAllPagesAsync(ListSSHKeyPairsRequest request) => Proxy.RequestAllPagesAsync<SSHKeyPairResponse>(request);
     }
 }

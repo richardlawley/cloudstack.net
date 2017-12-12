@@ -56,7 +56,7 @@ namespace CloudStack.Net
 
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ViewConsoleResponse ViewConsole(ViewConsoleRequest request) => _proxy.Request<ViewConsoleResponse>(request);
-        public Task<ViewConsoleResponse> ViewConsoleAsync(ViewConsoleRequest request) => _proxy.RequestAsync<ViewConsoleResponse>(request);
+        public ViewConsoleResponse ViewConsole(ViewConsoleRequest request) => Proxy.Request<ViewConsoleResponse>(request);
+        public Task<ViewConsoleResponse> ViewConsoleAsync(ViewConsoleRequest request) => Proxy.RequestAsync<ViewConsoleResponse>(request);
     }
 }

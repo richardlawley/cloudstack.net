@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SrxFirewallResponse> ListSrxFirewalls(ListSrxFirewallsRequest request) => _proxy.Request<ListResponse<SrxFirewallResponse>>(request);
-        public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAsync(ListSrxFirewallsRequest request) => _proxy.RequestAsync<ListResponse<SrxFirewallResponse>>(request);
-        public ListResponse<SrxFirewallResponse> ListSrxFirewallsAllPages(ListSrxFirewallsRequest request) => _proxy.RequestAllPages<SrxFirewallResponse>(request);
-        public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAllPagesAsync(ListSrxFirewallsRequest request) => _proxy.RequestAllPagesAsync<SrxFirewallResponse>(request);
+        public ListResponse<SrxFirewallResponse> ListSrxFirewalls(ListSrxFirewallsRequest request) => Proxy.Request<ListResponse<SrxFirewallResponse>>(request);
+        public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAsync(ListSrxFirewallsRequest request) => Proxy.RequestAsync<ListResponse<SrxFirewallResponse>>(request);
+        public ListResponse<SrxFirewallResponse> ListSrxFirewallsAllPages(ListSrxFirewallsRequest request) => Proxy.RequestAllPages<SrxFirewallResponse>(request);
+        public Task<ListResponse<SrxFirewallResponse>> ListSrxFirewallsAllPagesAsync(ListSrxFirewallsRequest request) => Proxy.RequestAllPagesAsync<SrxFirewallResponse>(request);
     }
 }

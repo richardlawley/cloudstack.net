@@ -93,7 +93,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreatePrivateGateway(CreatePrivateGatewayRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreatePrivateGatewayAsync(CreatePrivateGatewayRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreatePrivateGateway(CreatePrivateGatewayRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreatePrivateGatewayAsync(CreatePrivateGatewayRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

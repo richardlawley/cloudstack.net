@@ -213,7 +213,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public NetworkResponse CreateNetwork(CreateNetworkRequest request) => _proxy.Request<NetworkResponse>(request);
-        public Task<NetworkResponse> CreateNetworkAsync(CreateNetworkRequest request) => _proxy.RequestAsync<NetworkResponse>(request);
+        public NetworkResponse CreateNetwork(CreateNetworkRequest request) => Proxy.Request<NetworkResponse>(request);
+        public Task<NetworkResponse> CreateNetworkAsync(CreateNetworkRequest request) => Proxy.RequestAsync<NetworkResponse>(request);
     }
 }

@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancers(ListNetscalerLoadBalancersRequest request) => _proxy.Request<ListResponse<NetscalerLoadBalancerResponse>>(request);
-        public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAsync(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAsync<ListResponse<NetscalerLoadBalancerResponse>>(request);
-        public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancersAllPages(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAllPages<NetscalerLoadBalancerResponse>(request);
-        public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAllPagesAsync(ListNetscalerLoadBalancersRequest request) => _proxy.RequestAllPagesAsync<NetscalerLoadBalancerResponse>(request);
+        public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancers(ListNetscalerLoadBalancersRequest request) => Proxy.Request<ListResponse<NetscalerLoadBalancerResponse>>(request);
+        public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAsync(ListNetscalerLoadBalancersRequest request) => Proxy.RequestAsync<ListResponse<NetscalerLoadBalancerResponse>>(request);
+        public ListResponse<NetscalerLoadBalancerResponse> ListNetscalerLoadBalancersAllPages(ListNetscalerLoadBalancersRequest request) => Proxy.RequestAllPages<NetscalerLoadBalancerResponse>(request);
+        public Task<ListResponse<NetscalerLoadBalancerResponse>> ListNetscalerLoadBalancersAllPagesAsync(ListNetscalerLoadBalancersRequest request) => Proxy.RequestAllPagesAsync<NetscalerLoadBalancerResponse>(request);
     }
 }

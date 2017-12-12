@@ -71,9 +71,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<ImageStoreResponse> ListSecondaryStagingStores(ListSecondaryStagingStoresRequest request) => _proxy.Request<ListResponse<ImageStoreResponse>>(request);
-        public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAsync(ListSecondaryStagingStoresRequest request) => _proxy.RequestAsync<ListResponse<ImageStoreResponse>>(request);
-        public ListResponse<ImageStoreResponse> ListSecondaryStagingStoresAllPages(ListSecondaryStagingStoresRequest request) => _proxy.RequestAllPages<ImageStoreResponse>(request);
-        public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAllPagesAsync(ListSecondaryStagingStoresRequest request) => _proxy.RequestAllPagesAsync<ImageStoreResponse>(request);
+        public ListResponse<ImageStoreResponse> ListSecondaryStagingStores(ListSecondaryStagingStoresRequest request) => Proxy.Request<ListResponse<ImageStoreResponse>>(request);
+        public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAsync(ListSecondaryStagingStoresRequest request) => Proxy.RequestAsync<ListResponse<ImageStoreResponse>>(request);
+        public ListResponse<ImageStoreResponse> ListSecondaryStagingStoresAllPages(ListSecondaryStagingStoresRequest request) => Proxy.RequestAllPages<ImageStoreResponse>(request);
+        public Task<ListResponse<ImageStoreResponse>> ListSecondaryStagingStoresAllPagesAsync(ListSecondaryStagingStoresRequest request) => Proxy.RequestAllPagesAsync<ImageStoreResponse>(request);
     }
 }

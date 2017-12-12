@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMs(ListCiscoNexusVSMsRequest request) => _proxy.Request<ListResponse<CiscoNexusVSMResponse>>(request);
-        public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAsync(ListCiscoNexusVSMsRequest request) => _proxy.RequestAsync<ListResponse<CiscoNexusVSMResponse>>(request);
-        public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMsAllPages(ListCiscoNexusVSMsRequest request) => _proxy.RequestAllPages<CiscoNexusVSMResponse>(request);
-        public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAllPagesAsync(ListCiscoNexusVSMsRequest request) => _proxy.RequestAllPagesAsync<CiscoNexusVSMResponse>(request);
+        public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMs(ListCiscoNexusVSMsRequest request) => Proxy.Request<ListResponse<CiscoNexusVSMResponse>>(request);
+        public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAsync(ListCiscoNexusVSMsRequest request) => Proxy.RequestAsync<ListResponse<CiscoNexusVSMResponse>>(request);
+        public ListResponse<CiscoNexusVSMResponse> ListCiscoNexusVSMsAllPages(ListCiscoNexusVSMsRequest request) => Proxy.RequestAllPages<CiscoNexusVSMResponse>(request);
+        public Task<ListResponse<CiscoNexusVSMResponse>> ListCiscoNexusVSMsAllPagesAsync(ListCiscoNexusVSMsRequest request) => Proxy.RequestAllPagesAsync<CiscoNexusVSMResponse>(request);
     }
 }

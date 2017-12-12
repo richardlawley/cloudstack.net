@@ -119,9 +119,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroups(ListAutoScaleVmGroupsRequest request) => _proxy.Request<ListResponse<AutoScaleVmGroupResponse>>(request);
-        public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAsync(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAsync<ListResponse<AutoScaleVmGroupResponse>>(request);
-        public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroupsAllPages(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAllPages<AutoScaleVmGroupResponse>(request);
-        public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAllPagesAsync(ListAutoScaleVmGroupsRequest request) => _proxy.RequestAllPagesAsync<AutoScaleVmGroupResponse>(request);
+        public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroups(ListAutoScaleVmGroupsRequest request) => Proxy.Request<ListResponse<AutoScaleVmGroupResponse>>(request);
+        public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAsync(ListAutoScaleVmGroupsRequest request) => Proxy.RequestAsync<ListResponse<AutoScaleVmGroupResponse>>(request);
+        public ListResponse<AutoScaleVmGroupResponse> ListAutoScaleVmGroupsAllPages(ListAutoScaleVmGroupsRequest request) => Proxy.RequestAllPages<AutoScaleVmGroupResponse>(request);
+        public Task<ListResponse<AutoScaleVmGroupResponse>> ListAutoScaleVmGroupsAllPagesAsync(ListAutoScaleVmGroupsRequest request) => Proxy.RequestAllPagesAsync<AutoScaleVmGroupResponse>(request);
     }
 }

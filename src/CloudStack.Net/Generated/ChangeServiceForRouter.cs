@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DomainRouterResponse ChangeServiceForRouter(ChangeServiceForRouterRequest request) => _proxy.Request<DomainRouterResponse>(request);
-        public Task<DomainRouterResponse> ChangeServiceForRouterAsync(ChangeServiceForRouterRequest request) => _proxy.RequestAsync<DomainRouterResponse>(request);
+        public DomainRouterResponse ChangeServiceForRouter(ChangeServiceForRouterRequest request) => Proxy.Request<DomainRouterResponse>(request);
+        public Task<DomainRouterResponse> ChangeServiceForRouterAsync(ChangeServiceForRouterRequest request) => Proxy.RequestAsync<DomainRouterResponse>(request);
     }
 }

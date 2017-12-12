@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPolicies(ListLBHealthCheckPoliciesRequest request) => _proxy.Request<ListResponse<LBHealthCheckResponse>>(request);
-        public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAsync(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAsync<ListResponse<LBHealthCheckResponse>>(request);
-        public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPoliciesAllPages(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAllPages<LBHealthCheckResponse>(request);
-        public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAllPagesAsync(ListLBHealthCheckPoliciesRequest request) => _proxy.RequestAllPagesAsync<LBHealthCheckResponse>(request);
+        public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPolicies(ListLBHealthCheckPoliciesRequest request) => Proxy.Request<ListResponse<LBHealthCheckResponse>>(request);
+        public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAsync(ListLBHealthCheckPoliciesRequest request) => Proxy.RequestAsync<ListResponse<LBHealthCheckResponse>>(request);
+        public ListResponse<LBHealthCheckResponse> ListLBHealthCheckPoliciesAllPages(ListLBHealthCheckPoliciesRequest request) => Proxy.RequestAllPages<LBHealthCheckResponse>(request);
+        public Task<ListResponse<LBHealthCheckResponse>> ListLBHealthCheckPoliciesAllPagesAsync(ListLBHealthCheckPoliciesRequest request) => Proxy.RequestAllPagesAsync<LBHealthCheckResponse>(request);
     }
 }

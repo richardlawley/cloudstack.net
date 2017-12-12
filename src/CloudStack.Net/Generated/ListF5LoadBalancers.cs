@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<F5LoadBalancerResponse> ListF5LoadBalancers(ListF5LoadBalancersRequest request) => _proxy.Request<ListResponse<F5LoadBalancerResponse>>(request);
-        public Task<ListResponse<F5LoadBalancerResponse>> ListF5LoadBalancersAsync(ListF5LoadBalancersRequest request) => _proxy.RequestAsync<ListResponse<F5LoadBalancerResponse>>(request);
-        public ListResponse<F5LoadBalancerResponse> ListF5LoadBalancersAllPages(ListF5LoadBalancersRequest request) => _proxy.RequestAllPages<F5LoadBalancerResponse>(request);
-        public Task<ListResponse<F5LoadBalancerResponse>> ListF5LoadBalancersAllPagesAsync(ListF5LoadBalancersRequest request) => _proxy.RequestAllPagesAsync<F5LoadBalancerResponse>(request);
+        public ListResponse<F5LoadBalancerResponse> ListF5LoadBalancers(ListF5LoadBalancersRequest request) => Proxy.Request<ListResponse<F5LoadBalancerResponse>>(request);
+        public Task<ListResponse<F5LoadBalancerResponse>> ListF5LoadBalancersAsync(ListF5LoadBalancersRequest request) => Proxy.RequestAsync<ListResponse<F5LoadBalancerResponse>>(request);
+        public ListResponse<F5LoadBalancerResponse> ListF5LoadBalancersAllPages(ListF5LoadBalancersRequest request) => Proxy.RequestAllPages<F5LoadBalancerResponse>(request);
+        public Task<ListResponse<F5LoadBalancerResponse>> ListF5LoadBalancersAllPagesAsync(ListF5LoadBalancersRequest request) => Proxy.RequestAllPagesAsync<F5LoadBalancerResponse>(request);
     }
 }

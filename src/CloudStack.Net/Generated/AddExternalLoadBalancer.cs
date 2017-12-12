@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ExternalLoadBalancerResponse AddExternalLoadBalancer(AddExternalLoadBalancerRequest request) => _proxy.Request<ExternalLoadBalancerResponse>(request);
-        public Task<ExternalLoadBalancerResponse> AddExternalLoadBalancerAsync(AddExternalLoadBalancerRequest request) => _proxy.RequestAsync<ExternalLoadBalancerResponse>(request);
+        public ExternalLoadBalancerResponse AddExternalLoadBalancer(AddExternalLoadBalancerRequest request) => Proxy.Request<ExternalLoadBalancerResponse>(request);
+        public Task<ExternalLoadBalancerResponse> AddExternalLoadBalancerAsync(AddExternalLoadBalancerRequest request) => Proxy.RequestAsync<ExternalLoadBalancerResponse>(request);
     }
 }

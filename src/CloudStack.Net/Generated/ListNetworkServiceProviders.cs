@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<ProviderResponse> ListNetworkServiceProviders(ListNetworkServiceProvidersRequest request) => _proxy.Request<ListResponse<ProviderResponse>>(request);
-        public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAsync(ListNetworkServiceProvidersRequest request) => _proxy.RequestAsync<ListResponse<ProviderResponse>>(request);
-        public ListResponse<ProviderResponse> ListNetworkServiceProvidersAllPages(ListNetworkServiceProvidersRequest request) => _proxy.RequestAllPages<ProviderResponse>(request);
-        public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAllPagesAsync(ListNetworkServiceProvidersRequest request) => _proxy.RequestAllPagesAsync<ProviderResponse>(request);
+        public ListResponse<ProviderResponse> ListNetworkServiceProviders(ListNetworkServiceProvidersRequest request) => Proxy.Request<ListResponse<ProviderResponse>>(request);
+        public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAsync(ListNetworkServiceProvidersRequest request) => Proxy.RequestAsync<ListResponse<ProviderResponse>>(request);
+        public ListResponse<ProviderResponse> ListNetworkServiceProvidersAllPages(ListNetworkServiceProvidersRequest request) => Proxy.RequestAllPages<ProviderResponse>(request);
+        public Task<ListResponse<ProviderResponse>> ListNetworkServiceProvidersAllPagesAsync(ListNetworkServiceProvidersRequest request) => Proxy.RequestAllPagesAsync<ProviderResponse>(request);
     }
 }

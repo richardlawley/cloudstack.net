@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> ReleaseDedicatedZoneAsync(ReleaseDedicatedZoneRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse ReleaseDedicatedZone(ReleaseDedicatedZoneRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> ReleaseDedicatedZoneAsync(ReleaseDedicatedZoneRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

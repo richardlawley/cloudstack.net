@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public DissociateLunCmdResponse DissociateLun(DissociateLunRequest request) => _proxy.Request<DissociateLunCmdResponse>(request);
-        public Task<DissociateLunCmdResponse> DissociateLunAsync(DissociateLunRequest request) => _proxy.RequestAsync<DissociateLunCmdResponse>(request);
+        public DissociateLunCmdResponse DissociateLun(DissociateLunRequest request) => Proxy.Request<DissociateLunCmdResponse>(request);
+        public Task<DissociateLunCmdResponse> DissociateLunAsync(DissociateLunRequest request) => Proxy.RequestAsync<DissociateLunCmdResponse>(request);
     }
 }

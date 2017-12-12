@@ -109,7 +109,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request) => _proxy.Request<ImageStoreResponse>(request);
-        public Task<ImageStoreResponse> AddImageStoreS3Async(AddImageStoreS3Request request) => _proxy.RequestAsync<ImageStoreResponse>(request);
+        public ImageStoreResponse AddImageStoreS3(AddImageStoreS3Request request) => Proxy.Request<ImageStoreResponse>(request);
+        public Task<ImageStoreResponse> AddImageStoreS3Async(AddImageStoreS3Request request) => Proxy.RequestAsync<ImageStoreResponse>(request);
     }
 }

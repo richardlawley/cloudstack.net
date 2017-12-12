@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse CreateAffinityGroup(CreateAffinityGroupRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> CreateAffinityGroupAsync(CreateAffinityGroupRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse CreateAffinityGroup(CreateAffinityGroupRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> CreateAffinityGroupAsync(CreateAffinityGroupRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

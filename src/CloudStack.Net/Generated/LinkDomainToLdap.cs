@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LinkDomainToLdapResponse LinkDomainToLdap(LinkDomainToLdapRequest request) => _proxy.Request<LinkDomainToLdapResponse>(request);
-        public Task<LinkDomainToLdapResponse> LinkDomainToLdapAsync(LinkDomainToLdapRequest request) => _proxy.RequestAsync<LinkDomainToLdapResponse>(request);
+        public LinkDomainToLdapResponse LinkDomainToLdap(LinkDomainToLdapRequest request) => Proxy.Request<LinkDomainToLdapResponse>(request);
+        public Task<LinkDomainToLdapResponse> LinkDomainToLdapAsync(LinkDomainToLdapRequest request) => Proxy.RequestAsync<LinkDomainToLdapResponse>(request);
     }
 }

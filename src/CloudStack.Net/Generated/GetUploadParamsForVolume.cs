@@ -93,7 +93,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public GetUploadParamsResponse GetUploadParamsForVolume(GetUploadParamsForVolumeRequest request) => _proxy.Request<GetUploadParamsResponse>(request);
-        public Task<GetUploadParamsResponse> GetUploadParamsForVolumeAsync(GetUploadParamsForVolumeRequest request) => _proxy.RequestAsync<GetUploadParamsResponse>(request);
+        public GetUploadParamsResponse GetUploadParamsForVolume(GetUploadParamsForVolumeRequest request) => Proxy.Request<GetUploadParamsResponse>(request);
+        public Task<GetUploadParamsResponse> GetUploadParamsForVolumeAsync(GetUploadParamsForVolumeRequest request) => Proxy.RequestAsync<GetUploadParamsResponse>(request);
     }
 }

@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public UserVmResponse RecoverVirtualMachine(RecoverVirtualMachineRequest request) => _proxy.Request<UserVmResponse>(request);
-        public Task<UserVmResponse> RecoverVirtualMachineAsync(RecoverVirtualMachineRequest request) => _proxy.RequestAsync<UserVmResponse>(request);
+        public UserVmResponse RecoverVirtualMachine(RecoverVirtualMachineRequest request) => Proxy.Request<UserVmResponse>(request);
+        public Task<UserVmResponse> RecoverVirtualMachineAsync(RecoverVirtualMachineRequest request) => Proxy.RequestAsync<UserVmResponse>(request);
     }
 }

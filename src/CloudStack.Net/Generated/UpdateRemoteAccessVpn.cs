@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse UpdateRemoteAccessVpn(UpdateRemoteAccessVpnRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> UpdateRemoteAccessVpnAsync(UpdateRemoteAccessVpnRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse UpdateRemoteAccessVpn(UpdateRemoteAccessVpnRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> UpdateRemoteAccessVpnAsync(UpdateRemoteAccessVpnRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

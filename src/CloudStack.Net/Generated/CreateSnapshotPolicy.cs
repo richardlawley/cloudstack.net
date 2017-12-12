@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SnapshotPolicyResponse CreateSnapshotPolicy(CreateSnapshotPolicyRequest request) => _proxy.Request<SnapshotPolicyResponse>(request);
-        public Task<SnapshotPolicyResponse> CreateSnapshotPolicyAsync(CreateSnapshotPolicyRequest request) => _proxy.RequestAsync<SnapshotPolicyResponse>(request);
+        public SnapshotPolicyResponse CreateSnapshotPolicy(CreateSnapshotPolicyRequest request) => Proxy.Request<SnapshotPolicyResponse>(request);
+        public Task<SnapshotPolicyResponse> CreateSnapshotPolicyAsync(CreateSnapshotPolicyRequest request) => Proxy.RequestAsync<SnapshotPolicyResponse>(request);
     }
 }

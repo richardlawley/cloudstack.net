@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteImageStore(DeleteImageStoreRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteImageStoreAsync(DeleteImageStoreRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteImageStore(DeleteImageStoreRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteImageStoreAsync(DeleteImageStoreRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

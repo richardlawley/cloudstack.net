@@ -77,7 +77,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SslCertResponse UploadSslCert(UploadSslCertRequest request) => _proxy.Request<SslCertResponse>(request);
-        public Task<SslCertResponse> UploadSslCertAsync(UploadSslCertRequest request) => _proxy.RequestAsync<SslCertResponse>(request);
+        public SslCertResponse UploadSslCert(UploadSslCertRequest request) => Proxy.Request<SslCertResponse>(request);
+        public Task<SslCertResponse> UploadSslCertAsync(UploadSslCertRequest request) => Proxy.RequestAsync<SslCertResponse>(request);
     }
 }

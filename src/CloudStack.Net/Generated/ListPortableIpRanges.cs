@@ -47,9 +47,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<PortableIpRangeResponse> ListPortableIpRanges(ListPortableIpRangesRequest request) => _proxy.Request<ListResponse<PortableIpRangeResponse>>(request);
-        public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAsync(ListPortableIpRangesRequest request) => _proxy.RequestAsync<ListResponse<PortableIpRangeResponse>>(request);
-        public ListResponse<PortableIpRangeResponse> ListPortableIpRangesAllPages(ListPortableIpRangesRequest request) => _proxy.RequestAllPages<PortableIpRangeResponse>(request);
-        public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAllPagesAsync(ListPortableIpRangesRequest request) => _proxy.RequestAllPagesAsync<PortableIpRangeResponse>(request);
+        public ListResponse<PortableIpRangeResponse> ListPortableIpRanges(ListPortableIpRangesRequest request) => Proxy.Request<ListResponse<PortableIpRangeResponse>>(request);
+        public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAsync(ListPortableIpRangesRequest request) => Proxy.RequestAsync<ListResponse<PortableIpRangeResponse>>(request);
+        public ListResponse<PortableIpRangeResponse> ListPortableIpRangesAllPages(ListPortableIpRangesRequest request) => Proxy.RequestAllPages<PortableIpRangeResponse>(request);
+        public Task<ListResponse<PortableIpRangeResponse>> ListPortableIpRangesAllPagesAsync(ListPortableIpRangesRequest request) => Proxy.RequestAllPagesAsync<PortableIpRangeResponse>(request);
     }
 }

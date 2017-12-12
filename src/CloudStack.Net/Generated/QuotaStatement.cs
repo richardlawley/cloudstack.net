@@ -69,7 +69,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public QuotaStatementItemResponse QuotaStatement(QuotaStatementRequest request) => _proxy.Request<QuotaStatementItemResponse>(request);
-        public Task<QuotaStatementItemResponse> QuotaStatementAsync(QuotaStatementRequest request) => _proxy.RequestAsync<QuotaStatementItemResponse>(request);
+        public QuotaStatementItemResponse QuotaStatement(QuotaStatementRequest request) => Proxy.Request<QuotaStatementItemResponse>(request);
+        public Task<QuotaStatementItemResponse> QuotaStatementAsync(QuotaStatementRequest request) => Proxy.RequestAsync<QuotaStatementItemResponse>(request);
     }
 }

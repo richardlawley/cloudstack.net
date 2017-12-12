@@ -55,9 +55,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResources(ListCiscoAsa1000vResourcesRequest request) => _proxy.Request<ListResponse<CiscoAsa1000vResourceResponse>>(request);
-        public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAsync(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAsync<ListResponse<CiscoAsa1000vResourceResponse>>(request);
-        public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResourcesAllPages(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAllPages<CiscoAsa1000vResourceResponse>(request);
-        public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAllPagesAsync(ListCiscoAsa1000vResourcesRequest request) => _proxy.RequestAllPagesAsync<CiscoAsa1000vResourceResponse>(request);
+        public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResources(ListCiscoAsa1000vResourcesRequest request) => Proxy.Request<ListResponse<CiscoAsa1000vResourceResponse>>(request);
+        public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAsync(ListCiscoAsa1000vResourcesRequest request) => Proxy.RequestAsync<ListResponse<CiscoAsa1000vResourceResponse>>(request);
+        public ListResponse<CiscoAsa1000vResourceResponse> ListCiscoAsa1000vResourcesAllPages(ListCiscoAsa1000vResourcesRequest request) => Proxy.RequestAllPages<CiscoAsa1000vResourceResponse>(request);
+        public Task<ListResponse<CiscoAsa1000vResourceResponse>> ListCiscoAsa1000vResourcesAllPagesAsync(ListCiscoAsa1000vResourcesRequest request) => Proxy.RequestAllPagesAsync<CiscoAsa1000vResourceResponse>(request);
     }
 }

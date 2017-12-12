@@ -95,9 +95,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<StoragePoolResponse> ListStoragePools(ListStoragePoolsRequest request) => _proxy.Request<ListResponse<StoragePoolResponse>>(request);
-        public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAsync(ListStoragePoolsRequest request) => _proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
-        public ListResponse<StoragePoolResponse> ListStoragePoolsAllPages(ListStoragePoolsRequest request) => _proxy.RequestAllPages<StoragePoolResponse>(request);
-        public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAllPagesAsync(ListStoragePoolsRequest request) => _proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
+        public ListResponse<StoragePoolResponse> ListStoragePools(ListStoragePoolsRequest request) => Proxy.Request<ListResponse<StoragePoolResponse>>(request);
+        public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAsync(ListStoragePoolsRequest request) => Proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
+        public ListResponse<StoragePoolResponse> ListStoragePoolsAllPages(ListStoragePoolsRequest request) => Proxy.RequestAllPages<StoragePoolResponse>(request);
+        public Task<ListResponse<StoragePoolResponse>> ListStoragePoolsAllPagesAsync(ListStoragePoolsRequest request) => Proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
     }
 }

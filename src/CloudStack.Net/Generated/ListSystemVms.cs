@@ -95,9 +95,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<SystemVmResponse> ListSystemVms(ListSystemVmsRequest request) => _proxy.Request<ListResponse<SystemVmResponse>>(request);
-        public Task<ListResponse<SystemVmResponse>> ListSystemVmsAsync(ListSystemVmsRequest request) => _proxy.RequestAsync<ListResponse<SystemVmResponse>>(request);
-        public ListResponse<SystemVmResponse> ListSystemVmsAllPages(ListSystemVmsRequest request) => _proxy.RequestAllPages<SystemVmResponse>(request);
-        public Task<ListResponse<SystemVmResponse>> ListSystemVmsAllPagesAsync(ListSystemVmsRequest request) => _proxy.RequestAllPagesAsync<SystemVmResponse>(request);
+        public ListResponse<SystemVmResponse> ListSystemVms(ListSystemVmsRequest request) => Proxy.Request<ListResponse<SystemVmResponse>>(request);
+        public Task<ListResponse<SystemVmResponse>> ListSystemVmsAsync(ListSystemVmsRequest request) => Proxy.RequestAsync<ListResponse<SystemVmResponse>>(request);
+        public ListResponse<SystemVmResponse> ListSystemVmsAllPages(ListSystemVmsRequest request) => Proxy.RequestAllPages<SystemVmResponse>(request);
+        public Task<ListResponse<SystemVmResponse>> ListSystemVmsAllPagesAsync(ListSystemVmsRequest request) => Proxy.RequestAllPagesAsync<SystemVmResponse>(request);
     }
 }

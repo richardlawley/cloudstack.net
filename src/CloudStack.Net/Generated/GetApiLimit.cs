@@ -21,7 +21,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ApiLimitResponse GetApiLimit(GetApiLimitRequest request) => _proxy.Request<ApiLimitResponse>(request);
-        public Task<ApiLimitResponse> GetApiLimitAsync(GetApiLimitRequest request) => _proxy.RequestAsync<ApiLimitResponse>(request);
+        public ApiLimitResponse GetApiLimit(GetApiLimitRequest request) => Proxy.Request<ApiLimitResponse>(request);
+        public Task<ApiLimitResponse> GetApiLimitAsync(GetApiLimitRequest request) => Proxy.RequestAsync<ApiLimitResponse>(request);
     }
 }

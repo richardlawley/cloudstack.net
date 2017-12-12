@@ -95,9 +95,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRules(ListGlobalLoadBalancerRulesRequest request) => _proxy.Request<ListResponse<GlobalLoadBalancerResponse>>(request);
-        public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAsync(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAsync<ListResponse<GlobalLoadBalancerResponse>>(request);
-        public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRulesAllPages(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAllPages<GlobalLoadBalancerResponse>(request);
-        public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAllPagesAsync(ListGlobalLoadBalancerRulesRequest request) => _proxy.RequestAllPagesAsync<GlobalLoadBalancerResponse>(request);
+        public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRules(ListGlobalLoadBalancerRulesRequest request) => Proxy.Request<ListResponse<GlobalLoadBalancerResponse>>(request);
+        public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAsync(ListGlobalLoadBalancerRulesRequest request) => Proxy.RequestAsync<ListResponse<GlobalLoadBalancerResponse>>(request);
+        public ListResponse<GlobalLoadBalancerResponse> ListGlobalLoadBalancerRulesAllPages(ListGlobalLoadBalancerRulesRequest request) => Proxy.RequestAllPages<GlobalLoadBalancerResponse>(request);
+        public Task<ListResponse<GlobalLoadBalancerResponse>> ListGlobalLoadBalancerRulesAllPagesAsync(ListGlobalLoadBalancerRulesRequest request) => Proxy.RequestAllPagesAsync<GlobalLoadBalancerResponse>(request);
     }
 }

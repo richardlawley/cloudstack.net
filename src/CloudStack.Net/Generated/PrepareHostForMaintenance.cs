@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse PrepareHostForMaintenance(PrepareHostForMaintenanceRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> PrepareHostForMaintenanceAsync(PrepareHostForMaintenanceRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse PrepareHostForMaintenance(PrepareHostForMaintenanceRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> PrepareHostForMaintenanceAsync(PrepareHostForMaintenanceRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

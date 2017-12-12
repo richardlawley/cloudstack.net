@@ -39,9 +39,9 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request) => _proxy.Request<ListResponse<StoragePoolResponse>>(request);
-        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
-        public ListResponse<StoragePoolResponse> FindStoragePoolsForMigrationAllPages(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAllPages<StoragePoolResponse>(request);
-        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAllPagesAsync(FindStoragePoolsForMigrationRequest request) => _proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
+        public ListResponse<StoragePoolResponse> FindStoragePoolsForMigration(FindStoragePoolsForMigrationRequest request) => Proxy.Request<ListResponse<StoragePoolResponse>>(request);
+        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAsync(FindStoragePoolsForMigrationRequest request) => Proxy.RequestAsync<ListResponse<StoragePoolResponse>>(request);
+        public ListResponse<StoragePoolResponse> FindStoragePoolsForMigrationAllPages(FindStoragePoolsForMigrationRequest request) => Proxy.RequestAllPages<StoragePoolResponse>(request);
+        public Task<ListResponse<StoragePoolResponse>> FindStoragePoolsForMigrationAllPagesAsync(FindStoragePoolsForMigrationRequest request) => Proxy.RequestAllPagesAsync<StoragePoolResponse>(request);
     }
 }

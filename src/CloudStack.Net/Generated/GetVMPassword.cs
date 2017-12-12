@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public GetVMPasswordResponse GetVMPassword(GetVMPasswordRequest request) => _proxy.Request<GetVMPasswordResponse>(request);
-        public Task<GetVMPasswordResponse> GetVMPasswordAsync(GetVMPasswordRequest request) => _proxy.RequestAsync<GetVMPasswordResponse>(request);
+        public GetVMPasswordResponse GetVMPassword(GetVMPasswordRequest request) => Proxy.Request<GetVMPasswordResponse>(request);
+        public Task<GetVMPasswordResponse> GetVMPasswordAsync(GetVMPasswordRequest request) => Proxy.RequestAsync<GetVMPasswordResponse>(request);
     }
 }

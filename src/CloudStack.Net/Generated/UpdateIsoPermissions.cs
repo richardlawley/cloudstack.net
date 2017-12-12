@@ -77,7 +77,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse UpdateIsoPermissions(UpdateIsoPermissionsRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> UpdateIsoPermissionsAsync(UpdateIsoPermissionsRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse UpdateIsoPermissions(UpdateIsoPermissionsRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> UpdateIsoPermissionsAsync(UpdateIsoPermissionsRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

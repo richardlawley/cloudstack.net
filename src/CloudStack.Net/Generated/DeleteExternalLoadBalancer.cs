@@ -29,7 +29,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse DeleteExternalLoadBalancer(DeleteExternalLoadBalancerRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> DeleteExternalLoadBalancerAsync(DeleteExternalLoadBalancerRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse DeleteExternalLoadBalancer(DeleteExternalLoadBalancerRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> DeleteExternalLoadBalancerAsync(DeleteExternalLoadBalancerRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

@@ -45,7 +45,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse UpdateFirewallRule(UpdateFirewallRuleRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> UpdateFirewallRuleAsync(UpdateFirewallRuleRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse UpdateFirewallRule(UpdateFirewallRuleRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> UpdateFirewallRuleAsync(UpdateFirewallRuleRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

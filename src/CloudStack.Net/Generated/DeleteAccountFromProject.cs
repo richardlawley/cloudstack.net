@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse DeleteAccountFromProject(DeleteAccountFromProjectRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> DeleteAccountFromProjectAsync(DeleteAccountFromProjectRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse DeleteAccountFromProject(DeleteAccountFromProjectRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> DeleteAccountFromProjectAsync(DeleteAccountFromProjectRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

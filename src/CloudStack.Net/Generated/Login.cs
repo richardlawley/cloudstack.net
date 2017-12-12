@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public LoginCmdResponse Login(LoginRequest request) => _proxy.Request<LoginCmdResponse>(request);
-        public Task<LoginCmdResponse> LoginAsync(LoginRequest request) => _proxy.RequestAsync<LoginCmdResponse>(request);
+        public LoginCmdResponse Login(LoginRequest request) => Proxy.Request<LoginCmdResponse>(request);
+        public Task<LoginCmdResponse> LoginAsync(LoginRequest request) => Proxy.RequestAsync<LoginCmdResponse>(request);
     }
 }

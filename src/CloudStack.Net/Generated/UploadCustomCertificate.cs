@@ -61,7 +61,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse UploadCustomCertificate(UploadCustomCertificateRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> UploadCustomCertificateAsync(UploadCustomCertificateRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse UploadCustomCertificate(UploadCustomCertificateRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> UploadCustomCertificateAsync(UploadCustomCertificateRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }

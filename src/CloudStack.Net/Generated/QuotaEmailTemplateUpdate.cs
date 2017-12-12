@@ -53,7 +53,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public SuccessResponse QuotaEmailTemplateUpdate(QuotaEmailTemplateUpdateRequest request) => _proxy.Request<SuccessResponse>(request);
-        public Task<SuccessResponse> QuotaEmailTemplateUpdateAsync(QuotaEmailTemplateUpdateRequest request) => _proxy.RequestAsync<SuccessResponse>(request);
+        public SuccessResponse QuotaEmailTemplateUpdate(QuotaEmailTemplateUpdateRequest request) => Proxy.Request<SuccessResponse>(request);
+        public Task<SuccessResponse> QuotaEmailTemplateUpdateAsync(QuotaEmailTemplateUpdateRequest request) => Proxy.RequestAsync<SuccessResponse>(request);
     }
 }

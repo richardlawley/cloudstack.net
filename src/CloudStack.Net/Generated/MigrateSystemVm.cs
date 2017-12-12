@@ -37,7 +37,7 @@ namespace CloudStack.Net
     }
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
-        public AsyncJobResponse MigrateSystemVm(MigrateSystemVmRequest request) => _proxy.Request<AsyncJobResponse>(request);
-        public Task<AsyncJobResponse> MigrateSystemVmAsync(MigrateSystemVmRequest request) => _proxy.RequestAsync<AsyncJobResponse>(request);
+        public AsyncJobResponse MigrateSystemVm(MigrateSystemVmRequest request) => Proxy.Request<AsyncJobResponse>(request);
+        public Task<AsyncJobResponse> MigrateSystemVmAsync(MigrateSystemVmRequest request) => Proxy.RequestAsync<AsyncJobResponse>(request);
     }
 }
