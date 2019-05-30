@@ -71,17 +71,7 @@ namespace CloudStack.Net
             return signature;
         }
 
-        /// <summary>
-        /// Produces a query string with an optional signature from arguments in key/value string form.
-        /// </summary>
-        /// <param name="arguments">Command in terms of key/value pairs</param>
-        /// <param name="secretKey">Optional secret key if the query is to be signed</param>
-        /// <returns>Http query string including the signature.</returns>
-        /// <remarks>
-        /// Reference:
-        /// http://docs.cloud.com/CloudStack_Documentation/Developer%27s_Guide%3A_CloudStack#Signing_API_Requests
-        /// </remarks>
-        public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
+        public static StringBuilder CalcUnsignedUrl(IDictionary<string, object> arguments, string apiKey)
         {
             var query = new StringBuilder();
             var sortedArgs = new SortedList<string, object>(arguments, StringComparer.OrdinalIgnoreCase);
@@ -100,6 +90,22 @@ namespace CloudStack.Net
                 }
             }
             query.Remove(query.Length - 1, 1);
+            return query;
+        }
+
+        /// <summary>
+        /// Produces a query string with an optional signature from arguments in key/value string form.
+        /// </summary>
+        /// <param name="arguments">Command in terms of key/value pairs</param>
+        /// <param name="secretKey">Optional secret key if the query is to be signed</param>
+        /// <returns>Http query string including the signature.</returns>
+        /// <remarks>
+        /// Reference:
+        /// http://docs.cloud.com/CloudStack_Documentation/Developer%27s_Guide%3A_CloudStack#Signing_API_Requests
+        /// </remarks>
+        public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
+        {
+            StringBuilder query = CalcUnsignedUrl(arguments, apiKey);
 
             if (secretKey != null)
             {
@@ -140,7 +146,7 @@ namespace CloudStack.Net
                     MethodInfo decodeListResponse = _decodeListResponseMethod.MakeGenericMethod(typeof(TResponse).GetGenericArguments().Single());
                     decodeListResponse.Invoke(null, new object[] { decodedResponse, (JContainer)rootObject });
                 }
-            } 
+            }
             else if (rootObject.Count == 1 && rootObject.First is JProperty && ((JProperty)rootObject.First).Value is JObject)
             {
                 // e.g. { "createdomainresponse" : { "domain" : { ...
@@ -170,13 +176,12 @@ namespace CloudStack.Net
                 var map = (IList<IDictionary<string, object>>)value;
                 for (int i = 0; i < map.Count; i++)
                 {
-                    IDictionary<string, object> mapEntry = map[i];
+                    IDictionary<string, object> mapEntry = new SortedDictionary<string, object>(map[i], StringComparer.Ordinal);
 
                     // Need to act on sorted keys...
-                    var sortedKeys = mapEntry.Keys.OrderBy(k => k.ToLower()).ToList();
-                    foreach (string key in sortedKeys)
+                    foreach (KeyValuePair<string, object> item in mapEntry)
                     {
-                        sb.Append($"&{name}[{i}].{Uri.EscapeDataString(key)}={Uri.EscapeDataString(mapEntry[key].ToString())}");
+                        sb.Append($"&{name}[{i}].{Uri.EscapeDataString(item.Key)}={Uri.EscapeDataString(item.Value.ToString())}");
                     }
                 }
 

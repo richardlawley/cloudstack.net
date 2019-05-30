@@ -196,3 +196,4 @@ FakesAssemblies/
 *.opt
 /tools/cloudstack-dotnetsdk-generator/log
 /tools/cloudstack-dotnetsdk-generator/.settings
+*.ncrunchsolution

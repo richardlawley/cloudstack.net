@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -18,6 +15,20 @@ namespace CloudStack.Net.Tests
         public void _Setup()
         {
             _sut = new CloudStackAPIProxy("http://localhost:8080/client/api", "foo", "foo");
+        }
+
+        [TestMethod]
+        public void SerialiseValue_CorrectlySortsKeys()
+        {
+            IDictionary<string, object> details = new Dictionary<string, object>
+            {
+                ["cpu.corespersocket"] = "1",
+                ["hypervisortoolsversion"] = "xenserver61",
+                ["Message.ReservedCapacityFreed.Flag"] = "true"
+            };
+
+            string result = CloudStackAPIProxy.SerialiseValue("details", new[] { details }.ToList());
+            result.ShouldBe("details[0].Message.ReservedCapacityFreed.Flag=true&details[0].cpu.corespersocket=1&details[0].hypervisortoolsversion=xenserver61");
         }
 
         [TestMethod]
@@ -190,7 +201,6 @@ namespace CloudStack.Net.Tests
             CloudStackAPIProxy.SerialiseValue("foo", null).ShouldBe(null);
             CloudStackAPIProxy.SerialiseValue("foo", (bool?)null).ShouldBe(null);
         }
-
 
         [TestMethod]
         public void SerializeValue_CanSerialise_String()
