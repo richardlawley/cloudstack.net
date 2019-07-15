@@ -12,9 +12,11 @@ namespace CloudStack.Net
         /// <param name="supportsImpersonation">indicates whether impersonation is supported</param>
         public APIRequest(string command, bool supportsImpersonation)
         {
-            Parameters = new Dictionary<string, object>();
-            Parameters[nameof(Command).ToLower()] = command;
-            Parameters["response"] = "json";
+            Parameters = new Dictionary<string, object>
+            {
+                [nameof(Command).ToLower()] = command,
+                ["response"] = "json"
+            };
             SupportsImpersonation = supportsImpersonation;
         }
 
@@ -54,7 +56,7 @@ namespace CloudStack.Net
         {
             if (!Parameters.ContainsKey(key))
             {
-                return default(T);
+                return default;
             }
 
             return (T)Parameters[key];

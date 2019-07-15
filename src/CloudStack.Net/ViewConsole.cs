@@ -30,7 +30,7 @@ namespace CloudStack.Net
 
     public class ViewConsoleResponse : CustomResponse
     {
-        private static Regex _rxResponse = new Regex(@"^<html><title>(?<title>.+)</title><frameset><frame src=""(?<url>.*)""></frame></frameset></html>$", RegexOptions.ExplicitCapture | RegexOptions.Compiled);
+        private static readonly Regex _rxResponse = new Regex(@"^<html><title>(?<title>.+)</title><frameset><frame src=""(?<url>.*)""></frame></frameset></html>$", RegexOptions.ExplicitCapture | RegexOptions.Compiled);
 
         public string Name { get; set; }
         public string Url { get; set; }
@@ -51,12 +51,14 @@ namespace CloudStack.Net
     public partial interface ICloudStackAPIClient
     {
         ViewConsoleResponse ViewConsole(ViewConsoleRequest request);
+
         Task<ViewConsoleResponse> ViewConsoleAsync(ViewConsoleRequest request);
     }
 
     public partial class CloudStackAPIClient : ICloudStackAPIClient
     {
         public ViewConsoleResponse ViewConsole(ViewConsoleRequest request) => Proxy.Request<ViewConsoleResponse>(request);
+
         public Task<ViewConsoleResponse> ViewConsoleAsync(ViewConsoleRequest request) => Proxy.RequestAsync<ViewConsoleResponse>(request);
     }
 }

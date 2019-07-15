@@ -16,7 +16,7 @@ namespace CloudStack.Net
 {
     public class CloudStackAPIProxy : ICloudStackAPIProxy
     {
-        private static MethodInfo _decodeListResponseMethod = typeof(CloudStackAPIProxy).GetMethod(nameof(DecodeListResponse), BindingFlags.Static | BindingFlags.NonPublic);
+        private static readonly MethodInfo _decodeListResponseMethod = typeof(CloudStackAPIProxy).GetMethod(nameof(DecodeListResponse), BindingFlags.Static | BindingFlags.NonPublic);
 
         public CloudStackAPIProxy(string serviceUrl, string apiKey, string secretKey)
             : this(serviceUrl)
@@ -134,8 +134,8 @@ namespace CloudStack.Net
             TResponse decodedResponse;
 
             // Top should always be a JProperty, normally with the name of the response
-            JProperty rootProperty = (JProperty)root.First;
-            JObject rootObject = (JObject)rootProperty.Value;
+            var rootProperty = (JProperty)root.First;
+            var rootObject = (JObject)rootProperty.Value;
 
             if (typeof(TResponse).IsGenericType && typeof(TResponse).GetGenericTypeDefinition() == typeof(ListResponse<>))
             {
@@ -165,7 +165,7 @@ namespace CloudStack.Net
             if (value == null) { return null; }
             name = name.ToLower();
 
-            var type = value.GetType();
+            Type type = value.GetType();
             if (type.IsValueType || value is string)
             {
                 return $"{name}={Uri.EscapeDataString(value.ToString())}";
@@ -188,9 +188,8 @@ namespace CloudStack.Net
                 string result = sb.ToString();
                 return !String.IsNullOrEmpty(result) ? result.Substring(1) : null;
             }
-            else if (value is IList)
+            else if (value is IList list)
             {
-                var list = (IList)value;
                 var sb = new StringBuilder();
                 if (list.Count > 0)
                 {
@@ -218,20 +217,19 @@ namespace CloudStack.Net
 
             try
             {
-                using (HttpWebResponse httpWebResponse = webRequest.GetResponse() as HttpWebResponse)
+                using (var httpWebResponse = webRequest.GetResponse() as HttpWebResponse)
                 {
                     using (Stream respStrm = httpWebResponse.GetResponseStream())
                     {
                         respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
-                        using (StreamReader streamReader = new StreamReader(respStrm, Encoding.UTF8))
+                        using (var streamReader = new StreamReader(respStrm, Encoding.UTF8))
                         {
                             string responseText = streamReader.ReadToEnd();
                             TResponse response;
                             if (request.OverrideDecodeResponse)
                             {
                                 response = new TResponse();
-                                CustomResponse customResponse = response as CustomResponse;
-                                if (customResponse == null)
+                                if (!(response is CustomResponse customResponse))
                                 {
                                     throw new InvalidOperationException($"{nameof(request.OverrideDecodeResponse)} has been selected, but result does not derive from {nameof(CustomResponse)}");
                                 }
@@ -266,12 +264,12 @@ namespace CloudStack.Net
 
             try
             {
-                using (HttpWebResponse httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse)
+                using (var httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse)
                 {
                     using (Stream respStrm = httpWebResponse.GetResponseStream())
                     {
                         respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
-                        using (StreamReader streamReader = new StreamReader(respStrm, Encoding.UTF8))
+                        using (var streamReader = new StreamReader(respStrm, Encoding.UTF8))
                         {
                             string responseText = await streamReader.ReadToEndAsync().ConfigureAwait(false);
                             try
@@ -336,10 +334,10 @@ namespace CloudStack.Net
                 var responseStream = (HttpWebResponse)we.Response;
                 try
                 {
-                    using (StreamReader reader = new StreamReader(responseStream.GetResponseStream()))
+                    using (var reader = new StreamReader(responseStream.GetResponseStream()))
                     {
                         string responseString = reader.ReadToEnd();
-                        var errorResult = DecodeResponse<APIErrorResult>(responseString);
+                        APIErrorResult errorResult = DecodeResponse<APIErrorResult>(responseString);
                         return new CloudStackException("ProtocolError on API Call", fullUri.ToString(), errorResult, we);
                     }
                 }

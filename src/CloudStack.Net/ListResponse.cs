@@ -24,8 +24,10 @@ namespace CloudStack.Net
         /// <returns>ListResponse around part of the wrapper</returns>
         public static ListResponse<T> CreateFromList(IList<T> source, APIListRequest request, int maxPageSize = 500)
         {
-            var response = new ListResponse<T>();
-            response.Count = source.Count;
+            var response = new ListResponse<T>
+            {
+                Count = source.Count
+            };
 
             int pageSize = request.PageSize ?? maxPageSize;
             int pageNumber = (request.Page ?? 1) - 1;

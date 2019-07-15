@@ -89,8 +89,8 @@ namespace CloudStack.Net
 
         public void StoreJobResult<T>(T result) where T : new()
         {
-            JObject obj = new JObject();
-            JObject inner = JObject.FromObject(result);
+            var obj = new JObject();
+            var inner = JObject.FromObject(result);
             obj.Add(new JProperty(typeof(T).Name, inner));
             JobResult = obj;
             JobResultType = "object";

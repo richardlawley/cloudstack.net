@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2C3EFD17-B9D0-4B04-8132-E5C5C70224A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudStack.Net", "src\CloudStack.Net\CloudStack.Net.csproj", "{8843F486-7521-454A-918D-AB7EE3EE1AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudStack.Net", "src\CloudStack.Net\CloudStack.Net.csproj", "{8843F486-7521-454A-918D-AB7EE3EE1AF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BCB0EC97-598B-4322-99A9-BF6475006AE0}"
 EndProject
@@ -45,5 +45,8 @@ Global
 		{8843F486-7521-454A-918D-AB7EE3EE1AF2} = {2C3EFD17-B9D0-4B04-8132-E5C5C70224A5}
 		{9CA3B30D-5879-4B72-AE38-81D413F1945F} = {BCB0EC97-598B-4322-99A9-BF6475006AE0}
 		{E8F3C221-BFFE-4FFC-9A8D-1B304531332E} = {BCB0EC97-598B-4322-99A9-BF6475006AE0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {699419E8-7914-48D1-BB29-957B4AA93147}
 	EndGlobalSection
 EndGlobal

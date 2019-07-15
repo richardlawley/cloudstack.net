@@ -20,8 +20,7 @@ namespace CloudStack.Net.Tests
         {
             var request = new TestRequest();
             request.Parameters.ShouldNotContainKey("TestList");
-
-            var existingCount = request.TestList.Count;
+            _ = request.TestList.Count;
             request.Parameters.ShouldContainKey("TestList");
         }
 
