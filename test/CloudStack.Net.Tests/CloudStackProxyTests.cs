@@ -250,7 +250,7 @@ namespace CloudStack.Net.Tests
                 "B",
                 "C D"
             };
-            CloudStackAPIProxy.SerialiseValue("lst", list).ShouldBe("lst=A,B,C%20D");
+            CloudStackAPIProxy.SerialiseValue("lst", list).ShouldBe("lst=A%2CB%2CC%20D");
         }
     }
 }

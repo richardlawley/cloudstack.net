@@ -190,20 +190,21 @@ namespace CloudStack.Net
             }
             else if (value is IList list)
             {
+                if (list.Count == 0) { return String.Empty; }
+
                 var sb = new StringBuilder();
                 if (list.Count > 0)
                 {
-                    sb.Append($"{name}=");
                     for (int i = 0; i < list.Count; i++)
                     {
                         if (i > 0)
                         {
                             sb.Append(",");
                         }
-                        sb.Append(Uri.EscapeDataString(list[i].ToString()));
+                        sb.Append(list[i].ToString());
                     }
                 }
-                return sb.ToString();
+                return $"{name}={Uri.EscapeDataString(sb.ToString())}";
             }
 
             throw new NotSupportedException($"Couldn't serialise object of type {type.FullName}");
