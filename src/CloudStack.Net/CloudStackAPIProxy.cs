@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -60,37 +59,14 @@ namespace CloudStack.Net
         /// <returns>HMAC SHA-1 signature</returns>
         public static string CalcSignature(string toSign, string secretKey)
         {
-            if (secretKey == null) { throw new ArgumentNullException(nameof(secretKey)); }
-
-            byte[] secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
-            var hasher = new System.Security.Cryptography.HMACSHA1(secretKeyBytes);
-            byte[] bytesToSign = Encoding.UTF8.GetBytes(toSign.ToLower());
-            byte[] signatureUTF8 = hasher.ComputeHash(bytesToSign);
-            string signature = Convert.ToBase64String(signatureUTF8);
-            signature = Uri.EscapeDataString(signature);
-            return signature;
-        }
-
-        public static StringBuilder CalcUnsignedUrl(IDictionary<string, object> arguments, string apiKey)
-        {
-            var query = new StringBuilder();
-            var sortedArgs = new SortedList<string, object>(arguments, StringComparer.OrdinalIgnoreCase);
-            if (!String.IsNullOrEmpty(apiKey))
+            var args = new SortedDictionary<string, string>();
+            foreach (string item in toSign.Split('&'))
             {
-                sortedArgs["apikey"] = apiKey;
+                args.Add(item.Split('=')[0], item.Split('=')[1]);
             }
 
-            foreach (string key in sortedArgs.Keys)
-            {
-                string token = SerialiseValue(key, sortedArgs[key]);
-                if (!String.IsNullOrEmpty(token))
-                {
-                    query.Append(token);
-                    query.Append("&");
-                }
-            }
-            query.Remove(query.Length - 1, 1);
-            return query;
+            Sign(args, secretKey);
+            return args["signature"];
         }
 
         /// <summary>
@@ -105,19 +81,41 @@ namespace CloudStack.Net
         /// </remarks>
         public static string CreateQuery(IDictionary<string, object> arguments, string apiKey, string secretKey, string sessionKey)
         {
-            StringBuilder query = CalcUnsignedUrl(arguments, apiKey);
+            SortedDictionary<string, string> sortedArgs = Transform(arguments);
+            if (!String.IsNullOrEmpty(apiKey))
+            {
+                sortedArgs["apiKey"] = apiKey;
+            }
+            if (sortedArgs.ContainsKey("signature"))
+            {
+                sortedArgs.Remove("signature");
+            }
 
             if (secretKey != null)
             {
-                string signature = CalcSignature(query.ToString().ToLowerInvariant(), secretKey);
-                query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "signature", signature));
+                Sign(sortedArgs, secretKey);
             }
             else if (sessionKey != null)
             {
-                query.Append(string.Format(CultureInfo.InvariantCulture, "&{0}={1}", "sessionkey", Uri.EscapeDataString(sessionKey)));
+                sortedArgs["sessionkey"] = sessionKey;
             }
+
+            if (sortedArgs.ContainsKey("expires"))      // expires requires this
+            {
+                sortedArgs["signatureVersion"] = "3";
+            }
+
+            var query = new StringBuilder();
+            foreach ((string key, string value) in sortedArgs)
+            {
+                query.Append($"&{CsEncode(key.ToLower())}={CsEncode(value)}");
+            }
+            query.Remove(0, 1);          // Remove first &
+
             return query.ToString();
         }
+
+        public static string CsEncode(string input) => Uri.EscapeDataString(input).Replace("+", "%20");
 
         public static TResponse DecodeResponse<TResponse>(string response) where TResponse : new()
         {
@@ -160,54 +158,73 @@ namespace CloudStack.Net
             return decodedResponse;
         }
 
-        public static string SerialiseValue(string name, object value)
+        /// <summary>
+        /// Calculates a HMAC SHA-1 hash of the supplied string.
+        /// </summary>
+        /// <param name="args">Values to sign</param>
+        /// <param name="secretKey">Signing private key</param>
+        public static void Sign(SortedDictionary<string, string> args, string secretKey)
         {
-            if (value == null) { return null; }
-            name = name.ToLower();
+            string toSign = String.Join("&", args.Select(kvp => $"{kvp.Key}={CsEncode(kvp.Value)}"));
 
-            Type type = value.GetType();
-            if (type.IsValueType || value is string)
+            byte[] secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
+            var hasher = new System.Security.Cryptography.HMACSHA1(secretKeyBytes);
+            byte[] bytesToSign = Encoding.UTF8.GetBytes(toSign.ToLower());
+            byte[] signatureUTF8 = hasher.ComputeHash(bytesToSign);
+            string signature = Convert.ToBase64String(signatureUTF8);
+            //signature = Uri.EscapeDataString(signature);
+
+            args["signature"] = signature;
+        }
+
+        public static SortedDictionary<string, string> Transform(IDictionary<string, object> input)
+        {
+            var result = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (KeyValuePair<string, object> kvp in input)
             {
-                return $"{name}={Uri.EscapeDataString(value.ToString())}";
-            }
-            else if (value is IList<IDictionary<string, object>>)
-            {
-                var sb = new StringBuilder();
-                var map = (IList<IDictionary<string, object>>)value;
-                for (int i = 0; i < map.Count; i++)
+                string key = kvp.Key;
+                object value = kvp.Value;
+
+                if (value == null) { continue; }
+                Type type = value.GetType();
+                if (type.IsValueType || value is string)
                 {
-                    IDictionary<string, object> mapEntry = new SortedDictionary<string, object>(map[i], StringComparer.Ordinal);
-
-                    // Need to act on sorted keys...
-                    foreach (KeyValuePair<string, object> item in mapEntry)
-                    {
-                        sb.Append($"&{name}[{i}].{Uri.EscapeDataString(item.Key)}={Uri.EscapeDataString(item.Value.ToString())}");
-                    }
+                    result.Add(key, value.ToString());
                 }
-
-                string result = sb.ToString();
-                return !String.IsNullOrEmpty(result) ? result.Substring(1) : null;
-            }
-            else if (value is IList list)
-            {
-                if (list.Count == 0) { return String.Empty; }
-
-                var sb = new StringBuilder();
-                if (list.Count > 0)
+                else
                 {
-                    for (int i = 0; i < list.Count; i++)
+                    if (value is IDictionary)
                     {
-                        if (i > 0)
+                        var wrapper = new List<object>
                         {
-                            sb.Append(",");
+                            value
+                        };
+                        value = wrapper;
+                    }
+
+                    if (value is IList list && list.Count > 0)
+                    {
+                        if (!(list[0] is IDictionary))
+                        {
+                            result.Add(key, String.Join(",", list.OfType<object>().Select(x => x.ToString())));
                         }
-                        sb.Append(list[i].ToString());
+                        else
+                        {
+                            for (int i = 0; i < list.Count; i++)
+                            {
+                                var dict = (IDictionary)list[i];
+
+                                foreach (string innerKey in dict.Keys)
+                                {
+                                    result.Add($"{key}[{i}].{innerKey}", dict[innerKey].ToString());
+                                }
+                            }
+                        }
                     }
                 }
-                return $"{name}={Uri.EscapeDataString(sb.ToString())}";
             }
 
-            throw new NotSupportedException($"Couldn't serialise object of type {type.FullName}");
+            return result;
         }
 
         public TResponse Request<TResponse>(APIRequest request) where TResponse : new()
@@ -218,40 +235,36 @@ namespace CloudStack.Net
 
             try
             {
-                using (var httpWebResponse = webRequest.GetResponse() as HttpWebResponse)
-                {
-                    using (Stream respStrm = httpWebResponse.GetResponseStream())
-                    {
-                        respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
-                        using (var streamReader = new StreamReader(respStrm, Encoding.UTF8))
-                        {
-                            string responseText = streamReader.ReadToEnd();
-                            TResponse response;
-                            if (request.OverrideDecodeResponse)
-                            {
-                                response = new TResponse();
-                                if (!(response is CustomResponse customResponse))
-                                {
-                                    throw new InvalidOperationException($"{nameof(request.OverrideDecodeResponse)} has been selected, but result does not derive from {nameof(CustomResponse)}");
-                                }
-                                customResponse.DecodeResponse(responseText);
-                            }
-                            else
-                            {
-                                try
-                                {
-                                    response = DecodeResponse<TResponse>(responseText);
-                                }
-                                catch (FormatException ex)
-                                {
-                                    throw new FormatException("Could not decode CloudStack API Response", ex);
-                                }
-                            }
+                using var httpWebResponse = webRequest.GetResponse() as HttpWebResponse;
 
-                            return response;
-                        }
+                using Stream respStrm = httpWebResponse.GetResponseStream();
+                respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
+
+                using var streamReader = new StreamReader(respStrm, Encoding.UTF8);
+                string responseText = streamReader.ReadToEnd();
+                TResponse response;
+                if (request.OverrideDecodeResponse)
+                {
+                    response = new TResponse();
+                    if (!(response is CustomResponse customResponse))
+                    {
+                        throw new InvalidOperationException($"{nameof(request.OverrideDecodeResponse)} has been selected, but result does not derive from {nameof(CustomResponse)}");
+                    }
+                    customResponse.DecodeResponse(responseText);
+                }
+                else
+                {
+                    try
+                    {
+                        response = DecodeResponse<TResponse>(responseText);
+                    }
+                    catch (FormatException ex)
+                    {
+                        throw new FormatException("Could not decode CloudStack API Response", ex);
                     }
                 }
+
+                return response;
             }
             catch (WebException e)
             {
@@ -265,24 +278,20 @@ namespace CloudStack.Net
 
             try
             {
-                using (var httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse)
+                using var httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse;
+                
+                using Stream respStrm = httpWebResponse.GetResponseStream();
+                respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
+
+                using var streamReader = new StreamReader(respStrm, Encoding.UTF8);
+                string responseText = await streamReader.ReadToEndAsync().ConfigureAwait(false);
+                try
                 {
-                    using (Stream respStrm = httpWebResponse.GetResponseStream())
-                    {
-                        respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
-                        using (var streamReader = new StreamReader(respStrm, Encoding.UTF8))
-                        {
-                            string responseText = await streamReader.ReadToEndAsync().ConfigureAwait(false);
-                            try
-                            {
-                                return DecodeResponse<TResponse>(responseText);
-                            }
-                            catch (FormatException ex)
-                            {
-                                throw new FormatException("Could not decode CloudStack API Response", ex);
-                            }
-                        }
-                    }
+                    return DecodeResponse<TResponse>(responseText);
+                }
+                catch (FormatException ex)
+                {
+                    throw new FormatException("Could not decode CloudStack API Response", ex);
                 }
             }
             catch (WebException e)
@@ -335,12 +344,10 @@ namespace CloudStack.Net
                 var responseStream = (HttpWebResponse)we.Response;
                 try
                 {
-                    using (var reader = new StreamReader(responseStream.GetResponseStream()))
-                    {
-                        string responseString = reader.ReadToEnd();
-                        APIErrorResult errorResult = DecodeResponse<APIErrorResult>(responseString);
-                        return new CloudStackException("ProtocolError on API Call", fullUri.ToString(), errorResult, we);
-                    }
+                    using var reader = new StreamReader(responseStream.GetResponseStream());
+                    string responseString = reader.ReadToEnd();
+                    APIErrorResult errorResult = DecodeResponse<APIErrorResult>(responseString);
+                    return new CloudStackException("ProtocolError on API Call", fullUri.ToString(), errorResult, we);
                 }
                 catch
                 {
