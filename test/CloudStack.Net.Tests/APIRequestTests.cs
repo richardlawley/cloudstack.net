@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace CloudStack.Net.Tests
 {
     [TestClass]
-    public class APIRequestTests
+    public partial class APIRequestTests
     {
         [TestMethod]
         public void Constructor_SerialisesCommandNameProperly()
@@ -19,20 +18,9 @@ namespace CloudStack.Net.Tests
         public void GetList_CreatesListIfNotExisting()
         {
             var request = new TestRequest();
-            request.Parameters.ShouldNotContainKey("TestList");
-            _ = request.TestList.Count;
-            request.Parameters.ShouldContainKey("TestList");
-        }
-
-        public class TestRequest : APIRequest
-        {
-            public const string COMMANDNAME = "TestRequest";
-
-            public TestRequest() : base(COMMANDNAME)
-            {
-            }
-
-            public IList<object> TestList => GetList<object>("TestList");
+            request.Parameters.ShouldNotContainKey(nameof(request.HostTags).ToLower());
+            _ = request.HostTags.Count;
+            request.Parameters.ShouldContainKey(nameof(request.HostTags).ToLower());
         }
     }
 }

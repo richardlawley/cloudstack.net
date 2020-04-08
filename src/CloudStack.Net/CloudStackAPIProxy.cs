@@ -367,7 +367,7 @@ namespace CloudStack.Net
                     we);
         }
 
-        private HttpWebRequest CreateRequest(APIRequest request)
+        internal HttpWebRequest CreateRequest(APIRequest request)
         {
             string queryString = CreateQuery(request.Parameters, ApiKey, SecretKey, SessionKey);
             string serviceUrlBase = ServiceUrl;

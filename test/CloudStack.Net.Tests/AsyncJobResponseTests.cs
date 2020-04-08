@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 
 namespace CloudStack.Net.Tests
 {
@@ -17,7 +15,7 @@ namespace CloudStack.Net.Tests
             var inner = new UserVmResponse();
             resp.StoreJobResult(inner);
 
-
+            resp.JobResult.ShouldNotBeNull();
         }
     }
 }

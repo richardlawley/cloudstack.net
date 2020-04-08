@@ -68,6 +68,7 @@
     <Compile Include="CloudStackProxyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxyExtensionTest.cs" />
+    <Compile Include="TestRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\CloudStack.Net\CloudStack.Net.csproj">

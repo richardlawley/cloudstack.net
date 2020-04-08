@@ -1,6 +1,6 @@
 param(
-    [String] $majorMinor = "4.8.1", # 1.4
-    [String] $patch = "4",          # $env:APPVEYOR_BUILD_VERSION
+    [String] $majorMinor = "4.8.2", # 1.4
+    [String] $patch = "0",          # $env:APPVEYOR_BUILD_VERSION
     [String] $branch = "master",    # $env:APPVEYOR_REPO_BRANCH
     [String] $customLogger = "",    # C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
     [Switch] $notouch
@@ -20,15 +20,15 @@ function Install-NuGetPackages()
     nuget restore CloudStack.Net.sln
 }
 
-function Invoke-MSBuild($solution, $customLogger)
+function Invoke-MSBuild($solution, $version, $customLogger)
 {
     if ($customLogger)
     {
-        msbuild "$solution" /verbosity:minimal /p:Configuration=Release /logger:"$customLogger"
+        msbuild "$solution" /p:Version="$version" /p:AssemblyVersion="$version" /verbosity:minimal /p:Configuration=Release /logger:"$customLogger"
     }
     else
     {
-        msbuild "$solution" /verbosity:minimal /p:Configuration=Release
+        msbuild "$solution" /p:Version="$version" /p:AssemblyVersion="$version" /verbosity:minimal /p:Configuration=Release
     }
 }
 
@@ -72,7 +72,7 @@ function Invoke-Build($majorMinor, $patch, $branch, $customLogger, $notouch)
 
     Install-NuGetPackages
     
-    Invoke-MSBuild "CloudStack.Net.sln" $customLogger
+    Invoke-MSBuild "CloudStack.Net.sln" $file $customLogger
 
     Invoke-NuGetPack $package
 }

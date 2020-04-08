@@ -22,40 +22,40 @@ namespace CloudStack.Net.Tests
 
             _proxy = new Mock<ICloudStackAPIProxy>();
 
-            _proxy.Setup(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestRequest>()))
-                .Returns<TestRequest>(r => ListResponse<TestResponse>.CreateFromList(_results, r, _maxPageSize));
-            _proxy.Setup(x => x.RequestAsync<ListResponse<TestResponse>>(It.IsAny<TestRequest>()))
-                .Returns<TestRequest>(r => Task.FromResult(ListResponse<TestResponse>.CreateFromList(_results, r, _maxPageSize)));
+            _proxy.Setup(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestListRequest>()))
+                .Returns<TestListRequest>(r => ListResponse<TestResponse>.CreateFromList(_results, r, _maxPageSize));
+            _proxy.Setup(x => x.RequestAsync<ListResponse<TestResponse>>(It.IsAny<TestListRequest>()))
+                .Returns<TestListRequest>(r => Task.FromResult(ListResponse<TestResponse>.CreateFromList(_results, r, _maxPageSize)));
         }
 
         [TestMethod]
         public void RequestAllPages_CallsProxyUntilNoMoreData()
         {
-            var request = new TestRequest();
+            var request = new TestListRequest();
             ListResponse<TestResponse> result = _proxy.Object.RequestAllPages<TestResponse>(request);
             result.Count.ShouldBe(_results.Count);
 
-            _proxy.Verify(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestRequest>()), Times.Exactly(4));
+            _proxy.Verify(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestListRequest>()), Times.Exactly(4));
         }
 
         [TestMethod]
         public void RequestAllPages_CustomPageSize_CallsProxyUntilNoMoreData()
         {
-            var request = new TestRequest { PageSize = 5 };
+            var request = new TestListRequest { PageSize = 5 };
             ListResponse<TestResponse> result = _proxy.Object.RequestAllPages<TestResponse>(request);
             result.Count.ShouldBe(_results.Count);
 
-            _proxy.Verify(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestRequest>()), Times.Exactly(7));
+            _proxy.Verify(x => x.Request<ListResponse<TestResponse>>(It.IsAny<TestListRequest>()), Times.Exactly(7));
         }
 
         [TestMethod]
         public async Task RequestAllPagesAsync_CallsProxyUntilNoMoreData()
         {
-            var request = new TestRequest();
+            var request = new TestListRequest();
             ListResponse<TestResponse> result = await _proxy.Object.RequestAllPagesAsync<TestResponse>(request);
             result.Count.ShouldBe(_results.Count);
 
-            _proxy.Verify(x => x.RequestAsync<ListResponse<TestResponse>>(It.IsAny<TestRequest>()), Times.Exactly(4));
+            _proxy.Verify(x => x.RequestAsync<ListResponse<TestResponse>>(It.IsAny<TestListRequest>()), Times.Exactly(4));
         }
 
         private void InitList(int count)
@@ -67,14 +67,14 @@ namespace CloudStack.Net.Tests
             }
         }
 
-        public class TestRequest : APIListRequest
+        protected class TestListRequest : APIListRequest
         {
-            public TestRequest() : base("test")
+            public TestListRequest() : base("test")
             {
             }
         }
 
-        public class TestResponse
+        protected class TestResponse
         {
             public int Value { get; set; }
         }

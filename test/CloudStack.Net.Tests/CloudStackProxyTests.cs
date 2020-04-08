@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -260,6 +261,28 @@ namespace CloudStack.Net.Tests
         {
             CloudStackAPIProxy.Transform(new Dictionary<string, object> { { "foo", null } }).ShouldNotContainKey("foo");
             CloudStackAPIProxy.Transform(new Dictionary<string, object> { { "foo", (bool?)null } }).ShouldNotContainKey("foo");
+        }
+
+        [TestMethod]
+        public void CreateRequest_CorrectlySerialisesAllValues()
+        {
+            var request = new TestRequest();
+            request.HostTags.Add("A");
+            request.HostTags.Add("B");
+
+            request.Details.ShouldBeEmpty();
+            request.Details.Add(new Dictionary<string, object>());
+            request.Details[0].Add("Foo", "Bar");
+            request.Details[0].Add("Key", "Value");
+
+            HttpWebRequest httpRequest = ((CloudStackAPIProxy)_sut).CreateRequest(request);
+            string url = httpRequest.RequestUri.PathAndQuery;
+            url.ShouldStartWith("/client/api");
+            string query = httpRequest.RequestUri.Query;
+
+            query.ShouldContain("hosttags=" + Uri.EscapeDataString("A,B"), Case.Sensitive);
+            query.ShouldContain(Uri.EscapeDataString("details[0].foo") + "=Bar", Case.Sensitive);
+            query.ShouldContain(Uri.EscapeDataString("details[0].key") + "=Value", Case.Sensitive);
         }
     }
 }
