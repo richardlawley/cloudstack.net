@@ -84,7 +84,7 @@ namespace CloudStack.Net
             SortedDictionary<string, string> sortedArgs = Transform(arguments);
             if (!String.IsNullOrEmpty(apiKey))
             {
-                sortedArgs["apiKey"] = apiKey;
+                sortedArgs["apikey"] = apiKey;
             }
             if (sortedArgs.ContainsKey("signature"))
             {
@@ -108,7 +108,7 @@ namespace CloudStack.Net
             var query = new StringBuilder();
             foreach ((string key, string value) in sortedArgs)
             {
-                query.Append($"&{CsEncode(key.ToLower())}={CsEncode(value)}");
+                query.Append($"&{CsEncode(key)}={CsEncode(value)}");
             }
             query.Remove(0, 1);          // Remove first &
 
@@ -202,9 +202,13 @@ namespace CloudStack.Net
                         value = wrapper;
                     }
 
-                    if (value is IList list && list.Count > 0)
+                    if (value is IList list)
                     {
-                        if (!(list[0] is IDictionary))
+                        if (list.Count == 0)
+                        {
+                            result.Add(key, String.Empty);
+                        }
+                        else if (!(list[0] is IDictionary))
                         {
                             result.Add(key, String.Join(",", list.OfType<object>().Select(x => x.ToString())));
                         }
@@ -279,7 +283,7 @@ namespace CloudStack.Net
             try
             {
                 using var httpWebResponse = (await webRequest.GetResponseAsync().ConfigureAwait(false)) as HttpWebResponse;
-                
+
                 using Stream respStrm = httpWebResponse.GetResponseStream();
                 respStrm.ReadTimeout = (int)this.HttpRequestTimeout.TotalMilliseconds;
 

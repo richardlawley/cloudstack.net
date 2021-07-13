@@ -65,11 +65,59 @@ namespace CloudStack.Net.Tests
             {
                 { "response", "json" },
                 { "command", "listusers" },
-                { "list", new List<string>() }
+                { "list", null }
             };
 
             const string key = "VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ";
             const string expected = "apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listusers&response=json&signature=TTpdDq%2F7j%2FJ58XCRHomKoQXEQds%3D";
+
+            string completeRequest = CloudStackAPIProxy.CreateQuery(arguments, apiKey, key, null);
+            completeRequest.ShouldBe(expected);
+        }
+
+        [TestMethod]
+        public void CreateQuery_IgnoresNullLists()
+        {
+            const string apiKey = "plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg";
+
+            var request = new TestRequest();
+
+            const string key = "VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ";
+
+            string completeRequest = CloudStackAPIProxy.CreateQuery(request.Parameters, apiKey, key, null);
+            
+            completeRequest.ShouldNotContain("hosttags");
+        }
+
+        [TestMethod]
+        public void CreateQuery_IncludesEmptyLists()
+        {
+            const string apiKey = "plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg";
+
+            var request = new TestRequest();
+            request.HostTags = new List<string>();
+
+            const string key = "VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ";
+
+            string completeRequest = CloudStackAPIProxy.CreateQuery(request.Parameters, apiKey, key, null);
+
+            completeRequest.ShouldContain("hosttags");
+        }
+
+        [TestMethod]
+        public void CreateQuery_IncludesRequestedEmptyLists()
+        {
+            const string apiKey = "plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg";
+
+            var arguments = new Dictionary<string, object>
+            {
+                { "response", "json" },
+                { "command", "listusers" },
+                { "list", new List<string>() }
+            };
+
+            const string key = "VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ";
+            const string expected = "apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listusers&list=&response=json&signature=jM1%2F%2FBntxGWasZKnDDDvC8AowsE%3D";
 
             string completeRequest = CloudStackAPIProxy.CreateQuery(arguments, apiKey, key, null);
             completeRequest.ShouldBe(expected);
@@ -281,8 +329,8 @@ namespace CloudStack.Net.Tests
             string query = httpRequest.RequestUri.Query;
 
             query.ShouldContain("hosttags=" + Uri.EscapeDataString("A,B"), Case.Sensitive);
-            query.ShouldContain(Uri.EscapeDataString("details[0].foo") + "=Bar", Case.Sensitive);
-            query.ShouldContain(Uri.EscapeDataString("details[0].key") + "=Value", Case.Sensitive);
+            query.ShouldContain(Uri.EscapeDataString("details[0].Foo") + "=Bar", Case.Sensitive);
+            query.ShouldContain(Uri.EscapeDataString("details[0].Key") + "=Value", Case.Sensitive);
         }
     }
 }
