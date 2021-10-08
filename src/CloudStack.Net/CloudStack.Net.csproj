@@ -8,6 +8,7 @@
     <RepositoryUrl>https://github.com/richardlawley/cloudstack.net</RepositoryUrl>
     <Authors>Richard Lawley</Authors>
     <Version>4.8.3.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
