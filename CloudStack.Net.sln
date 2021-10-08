@@ -9,14 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudStack.Net", "src\Cloud
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BCB0EC97-598B-4322-99A9-BF6475006AE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudStack.Net.Tests", "test\CloudStack.Net.Tests\CloudStack.Net.Tests.csproj", "{9CA3B30D-5879-4B72-AE38-81D413F1945F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudStack.Net.Tests", "test\CloudStack.Net.Tests\CloudStack.Net.Tests.csproj", "{9CA3B30D-5879-4B72-AE38-81D413F1945F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudStack.Net.TestClient", "test\CloudStack.Net.TestClient\CloudStack.Net.TestClient.csproj", "{E8F3C221-BFFE-4FFC-9A8D-1B304531332E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{330CC23E-3F6D-4F46-B836-68C59E4DC19A}"
 	ProjectSection(SolutionItems) = preProject
 		build.ps1 = build.ps1
-		assets\CommonAssemblyInfo.cs = assets\CommonAssemblyInfo.cs
 	EndProjectSection
 EndProject
 Global
